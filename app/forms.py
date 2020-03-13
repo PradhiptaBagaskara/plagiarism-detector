@@ -26,6 +26,7 @@ class InputForm(forms.Form):
             }
         )
     )
+
     gram_option = forms.ChoiceField(
         widget=forms.Select(
             attrs={
@@ -34,6 +35,7 @@ class InputForm(forms.Form):
         ), 
         choices=[(b, b) for b in range(4, 16)]
         )
+    
     winnow_option = forms.ChoiceField(
         widget=forms.Select(
             attrs={
@@ -41,4 +43,13 @@ class InputForm(forms.Form):
             }
         ), 
         choices=[(1, 'Winnowing with wordgram'), (2, 'Winnowing with ngram')]
+        )
+
+    debug = forms.ChoiceField(
+        widget=forms.Select(
+            attrs={
+                "class" : "form-control",
+            }
+        ), 
+        choices=[(0, 'Off'), (1, 'On')]
         )

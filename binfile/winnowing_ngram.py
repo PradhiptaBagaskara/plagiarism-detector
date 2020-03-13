@@ -1,35 +1,35 @@
 def sanitize(text):
-  import re
-  p = re.compile(r'\w', re.UNICODE)
+    import re
+    p = re.compile(r'\w', re.UNICODE)
 
-  def f(c):
-    return p.match(c[1]) is not None
+    def f(c):
+        return p.match(c[1]) is not None
 
-  return filter(f, map(lambda x: (x[0], x[1].lower()), text))
+    return filter(f, map(lambda x: (x[0], x[1].lower()), text))
 
 
 def kgrams(text, k=5):
-  text = list(text)
-  n = len(text)
+    text = list(text)
+    n = len(text)
 
-  if n < k:
-    yield text
-  else:
-    for i in range(n - k + 1):
-      yield text[i:i+k]
+    if n < k:
+        yield text
+    else:
+        for i in range(n - k + 1):
+            yield text[i:i+k]
 
 
 def winnowing_hash(kgram):
-  kgram = zip(*kgram)
-  kgram = list(kgram)
+    kgram = zip(*kgram)
+    kgram = list(kgram)
+    # print(kgram)
+    # FIXME: What should we do when kgram is shorter than k?
+    text = ''.join(kgram[1]) if len(kgram) > 1 else ''
+    # print(text)
+    hs = hash_function(text)
 
-  # FIXME: What should we do when kgram is shorter than k?
-  text = ''.join(kgram[1]) if len(kgram) > 1 else ''
-
-  hs = hash_function(text)
-
-  # FIXME: What should we do when kgram is shorter than k?
-  return (kgram[0][0] if len(kgram) > 1 else -1, hs)
+    # FIXME: What should we do when kgram is shorter than k?
+    return [kgram[0][0] if len(kgram) > 1 else -1, hs]
 
 
 def default_hash(text):
@@ -41,6 +41,7 @@ def default_hash(text):
 
     return hs
 
+
 def md5_hash(text):
     import hashlib
 
@@ -49,6 +50,7 @@ def md5_hash(text):
     hs = int(hs, 16)
 
     return hs
+
 
 def select_min(window):
     """In each window select the minimum hash value. If there is more than one
@@ -62,17 +64,39 @@ def select_min(window):
     return min(window, key=lambda x: x[1])[1]
 
 
-def winnow(text, k=5):
+def winnow(text, k=5, debug=False):
+    import copy
+    splitlen = 10
+    result = {
+      'steps' : {
+        'sanitize' : '',
+        'gram' : '',
+        'hashes' : '',
+        'windows' : '',
+      },
+      'data' : ''
+    }
+
     n = len(list(text))
 
     text = zip(range(n), text)
     text = sanitize(text)
+    tx = copy.deepcopy(text)
+    
+    hashes = [winnowing_hash(a) for a in kgrams(text, k)]
+    windows = [a for a in kgrams(hashes, 4)]
+    data = list(map(select_min, windows))
 
-    hashes = map(lambda x: winnowing_hash(x), kgrams(text, k))
+    if debug is True:
+        tx1 = copy.deepcopy(tx)
+        result['steps']['sanitize'] = "".join(a for i,a in list(tx1)[:200])
+        result['steps']['gram'] = ["".join(ai for i,ai in a) for a in list(kgrams(tx, k))][:splitlen]
+        result['steps']['hashes'] = hashes[:splitlen]
+        result['steps']['windows'] = windows[:splitlen]
+    
+    result['data'] = data
 
-    windows = kgrams(hashes, 4)
-
-    return list(map(select_min, windows))
+    return result
 
 
 # Specified a hash function. You may override this.

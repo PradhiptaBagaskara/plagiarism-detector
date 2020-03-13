@@ -1,30 +1,86 @@
+from sklearn.metrics.pairwise import euclidean_distances, manhattan_distances
+from sklearn.preprocessing import normalize
+from scipy.spatial import distance
+
 from .winnowing_ngram import winnow as nwinnow
 from .winnowing_wordgram import winnow as wwinnow
 from .distance_measurement import *
+import json
+import numpy as np
+import array as arr
 
-def check(origin, referer, gram, winnow_mode):
+
+def checks(origin='origin', referer='referer', gram=5, winnow_mode=1, debug=False):
+    print(type(debug))
+    print(debug)
     if (winnow_mode == 1):
-        t_origin = wwinnow(origin, gram)
-        t_referer = wwinnow(referer, gram)
+        d_origin = wwinnow(origin, gram, debug)
+        d_referer = wwinnow(referer, gram, debug)
     elif (winnow_mode == 2):
-        t_origin = nwinnow(origin, gram)
-        t_referer = nwinnow(referer, gram)
+        d_origin = nwinnow(origin, gram, debug)
+        d_referer = nwinnow(referer, gram, debug)
 
-    euc = euclidean_similarity(t_origin, t_referer)
-    manh = manhattan_similarity(t_origin, t_referer)
-    cosi = round(cosine_similarity(t_origin, t_referer) * 100, 2)
-    jacc = round(jaccard_similarity(t_origin, t_referer) * 100, 2)
-    dice = round(dice_similarity(t_origin, t_referer) * 100, 2)
-    mink = minkowski_similarity(t_origin, t_referer, 3)
-    weig = weighted_euclidean_similarity(t_origin, t_referer, 3)
-    return '''
-    <h6>Euclidean : {0}</h6>
-    <h6>Manhattan : {1}</h6>
-    <h6>Cosine : {2}</h6>
-    <h6>Jaccard : {3}</h6>
-    <h6>Dice : {4}</h6>
-    <h6>Minkowski : {5}</h6>
-    <h6>Weighted : {6}</h6>
-    '''.format(euc, manh, cosi, jacc, dice, mink, weig)
+    t_origin = d_origin['data']
+    t_referer = d_referer['data']
+
+    mins = np.min((*t_origin, *t_referer))
+    maxs = np.max((*t_origin, *t_referer))
+    deflen = 0
+
+    # print(euclidean_distance(t_origin, t_referer))
+    if (len(t_origin)>len(t_referer)):
+        n_origin = t_origin
+        deflen = len(n_origin)
+        n_referer = t_referer + [0 for i in range(abs(len(t_origin)-len(t_referer)))]
+        # t_origin = t_origin[:len(t_referer)]
+    elif (len(t_origin)<len(t_referer)):
+        n_referer = t_referer
+        deflen = len(n_referer)
+        n_origin = t_origin + [0 for i in range(abs(len(t_origin)-len(t_referer)))]
+    else:
+        n_referer = t_referer
+        n_origin = t_origin
+        deflen = len(n_referer)
+    # print(euclidean_distance(t_origin, t_referer))
+
+    matrix = [[],[]]
+    matrix[0] = normalize(np.asarray([n_origin], dtype=np.float), norm="l2", axis=1)
+    matrix[1] = normalize(np.asarray([n_referer], dtype=np.float), norm="l2", axis=1)
+    matrix[0] = matrix[0][0]
+    matrix[1] = matrix[1][0]
+    # print(matrix)
+
+    mat = np.array([matrix[0], [a for a in range(deflen)], matrix[1]]).T
+    mcov = np.cov(mat)
+    icov = np.linalg.inv(mcov)
+
+    cosine = round(cosine_similarity(n_origin, n_referer) * 100, 2)
+    jaccard = round(jaccard_similarity(n_origin, n_referer) * 100, 2)
+    dice = round(dice_similarity(n_origin, n_referer) * 100, 2)
+
+    euclidean = euclidean_distance(matrix[0], matrix[1])
+    manhattan = manhattan_distance(matrix[0], matrix[1])
+
+    
+    minkowski = minkowski_distance(matrix[0], matrix[1], 3)
+    weighted = weighted_euclidean_distance(matrix[0], matrix[1], 2)
+    mahalanobis = distance.mahalanobis(matrix[0], matrix[1], icov)
+
+    result = {
+        'origin' : d_origin,
+        'referer' : d_referer,
+        'measures' : {
+            'cosine' : cosine,
+            'jaccard' : jaccard,
+            'dice' : dice,
+            'euclidean' : round(1/(1+euclidean) * 100, 2),
+            'manhattan' : round(1/(1+manhattan) * 100, 2),
+            'minkowski' : round(1/(1+minkowski) * 100, 2),
+            'weighted' : round(1/(1+weighted) * 100, 2),
+            'mahalanobis' : round(1/(1+mahalanobis) * 100, 2),
+        }
+    }
+    return result
+
 
 
