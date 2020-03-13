@@ -11,21 +11,27 @@
             <form action="" method="POST">
               {% csrf_token %}
               <div class="row">
-                <div class="col">
+                <div class="col-sm-12 col-md-12 col-lg-6">
                   {{ form.origin }}
                 </div>
-                <div class="col">
+                <div class="col-sm-12 col-md-12 col-lg-6">
                   {{ form.referer }}
                 </div>
               </div>
               <div class="row mt-2">
-                <div class="col-4">
+                <div class="col-sm-12  col-lg-3">
+                  <label for="id_gram_option">Grams :</label>
                   {{ form.gram_option }}
                 </div>
-                <div class="col-4">
+                <div class="col-sm-12 col-lg-3">
+                  <label for="id_winnow_option">Mode :</label>
                   {{ form.winnow_option }}
                 </div>
-                <div class="col">
+                <div class="col-sm-12 col-lg-3">
+                  <label for="id_debug">Debug :</label>
+                  {{ form.debug }}
+                </div>
+                <div class="col-sm-12 col-lg-3 mt-4">
                   <button type="submit" class="btn btn-primary float-right">Check</button>
                 </div>
               </div>
@@ -33,13 +39,151 @@
           </div>
         </div>
 
+        {% if data %}
+        {% if form.debug.value == '1' %}
         <div class="card">
           <div class="card-body">
-            {% if data %}
-            {{ data|safe|escape }}
-            {% endif %}
+            <div class="row">
+              <div class="col-6">
+                <h4>Origin (first 10)</h4>
+                <h5>Sanitize</h5>
+                <p>
+                  {% if form.winnow_option.value == '1' %}
+                    {% for s in data.origin.steps.sanitize %}
+                    {{ s|add:" " }}
+                    {% endfor %}
+                  {% else %}
+                    {{ data.origin.steps.sanitize }}
+                  {% endif %}
+                  ...
+                </p>
+                <h5>Grams</h5>
+                <p>
+                  {% if form.winnow_option.value == '1' %}
+                    {% for s in data.origin.steps.gram %}
+                    [
+                    {% for si in s %}
+                      {{ si|add:" " }}
+                    {% endfor %}
+                    ]
+                    {% endfor %}
+                  {% else %}
+                    {% for s in data.origin.steps.gram %}
+                      {{ s|add:" " }}
+                    {% endfor %}
+                  {% endif %}
+                  ...
+                </p>
+                <h5>Hashes</h5>
+                <p>
+                  {% for s in data.origin.steps.hashes %}
+                  {{ s.1 }}
+                  {% endfor %}
+                  ...
+                </p>
+                <h5>Windows</h5>
+                <p>
+                  {% for s in data.origin.steps.windows %}
+                  {
+                    {% for si in s %}
+                    {{ si.1 }}
+                    {% endfor %}
+                  }
+                  {% endfor %}
+                  ...
+                </p>
+                <h5>Fingerprint</h5>
+                <p>
+                  {% for s in data.origin.data %}
+                  {{ s }}
+                  {% endfor %}
+                </p>
+              </div>
+              <div class="col-6">
+                <h4>Referer (first 10)</h4>
+                <h5>Sanitize</h5>
+                <p>
+                  {% if form.winnow_option.value == '1' %}
+                    {% for s in data.referer.steps.sanitize %}
+                    {{ s|add:" " }}
+                    {% endfor %}
+                  {% else %}
+                    {{ data.referer.steps.sanitize }}
+                  {% endif %}
+                  ...
+                </p>
+                <h5>Grams</h5>
+                <p>
+                  {% if form.winnow_option.value == '1' %}
+                    {% for s in data.referer.steps.gram %}
+                    [
+                    {% for si in s %}
+                      {{ si|add:" " }}
+                    {% endfor %}
+                    ]
+                    {% endfor %}
+                  {% else %}
+                    {% for s in data.referer.steps.gram %}
+                      {{ s|add:" " }}
+                    {% endfor %}
+                  {% endif %}
+                  ...
+                </p>
+                <h5>Hashes</h5>
+                <p>
+                  {% for s in data.referer.steps.hashes %}
+                  {{ s.1 }}
+                  {% endfor %}
+                  ...
+                </p>
+                <h5>Windows</h5>
+                <p>
+                  {% for s in data.referer.steps.windows %}
+                  {
+                    {% for si in s %}
+                    {{ si.1 }}
+                    {% endfor %}
+                  }
+                  {% endfor %}
+                  ...
+                </p>
+                <h5>Fingerprint</h5>
+                <p>
+                  {% for s in data.referer.data %}
+                  {{ s }}
+                  {% endfor %}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
+        {% endif %}
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col">
+                <h4>Measurement Result</h4>
+              </div>
+            </div>
+            {% for i,d in data.measures.items %}
+            <div class="row my-1">
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                <strong>{{ i }} </strong>
+              </div>
+              <div class="col-lg-9 col-md-6 col-sm-6">
+                <div class="clearfix">
+                  <div class="float-left"><strong>{{d}}%</strong></div>
+                  <!-- <div class="float-right"><small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small></div> -->
+                </div>
+                <div class="progress progress-xs">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: {{d}}%" aria-valuenow="{{d}}" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
       </div>
     </div>
 
