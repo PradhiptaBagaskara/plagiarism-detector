@@ -42,9 +42,17 @@ class InputForm(forms.Form):
                 "class" : "form-control",
             }
         ), 
-        choices=[(1, 'Winnowing with wordgram'), (2, 'Winnowing with ngram')]
+        choices=[(1, 'wordgram'), (2, 'ngram')]
         )
 
+    plag_option = forms.ChoiceField(
+        widget=forms.Select(
+            attrs={
+                "class" : "form-control",
+            }
+        ), 
+        choices=[(1, 'Winnowing'), (2, 'Rabin-Karp')]
+        )
     debug = forms.ChoiceField(
         widget=forms.Select(
             attrs={

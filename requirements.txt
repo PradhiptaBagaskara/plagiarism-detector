@@ -16,8 +16,7 @@ python-decouple==3.3
 pytz==2019.3
 requests==2.23.0
 scikit-learn==0.22.2.post1
-scipy==1.4.1
-sklearn==0.0
+sklearn
 soupsieve==2.0
 sqlparse==0.3.0
 Unipath==1.1

@@ -66,6 +66,7 @@ def select_min(window):
 
 def winnow(text, k=5, debug=False):
     import copy
+    tmp_text = text
     splitlen = 10
     result = {
       'steps' : {
@@ -89,12 +90,13 @@ def winnow(text, k=5, debug=False):
 
     if debug is True:
         tx1 = copy.deepcopy(tx)
-        result['steps']['sanitize'] = "".join(a for i,a in list(tx1)[:200])
+        result['steps']['sanitize'] = tmp_text[:200]
         result['steps']['gram'] = ["".join(ai for i,ai in a) for a in list(kgrams(tx, k))][:splitlen]
         result['steps']['hashes'] = hashes[:splitlen]
         result['steps']['windows'] = windows[:splitlen]
     
     result['data'] = data
+    # print(windows)
 
     return result
 

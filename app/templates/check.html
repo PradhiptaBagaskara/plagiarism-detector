@@ -28,13 +28,21 @@
                   {{ form.winnow_option }}
                 </div>
                 <div class="col-sm-12 col-lg-3">
+                  <label for="id_winnow_option">Plagirism Options :</label>
+                  {{ form.plag_option }}
+                </div>
+                <div class="col-sm-12 col-lg-3">
                   <label for="id_debug">Debug :</label>
                   {{ form.debug }}
                 </div>
-                <div class="col-sm-12 col-lg-3 mt-4">
+                <br>
+               
+              </div>
+              <div class="row" style="margin-top: 15px;">
+                <div class="col-sm-12">
                   <button type="submit" class="btn btn-primary float-right">Check</button>
                 </div>
-              </div>
+               </div>
             </form>
           </div>
         </div>
@@ -160,6 +168,20 @@
         {% endif %}
         <div class="card">
           <div class="card-body">
+            <div class="row">
+            {% for index,da in data.kmp.items %}
+
+              <div class="col-6">
+                <h4>KMP</h4>
+                <h5>String {{ index }}</h5>
+                <!-- <textarea name="" id="" class="form-control" cols="30" rows="10" readonly> -->
+                  {{da}}
+
+                <!-- </textarea> -->
+              </div>
+              {% endfor %}
+
+            </div>
             <div class="row">
               <div class="col">
                 <h4>Measurement Result</h4>

@@ -92,6 +92,7 @@ def winnow(text, k=5, debug=False):
     data = list(map(select_min, windows))
 
     result['data'] = data
+    # print(data)
     
     return result
 

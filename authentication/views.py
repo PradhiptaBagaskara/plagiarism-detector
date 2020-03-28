@@ -55,7 +55,8 @@ def register_user(request):
             #return redirect("/login/")
 
         else:
-            msg = 'Form is not valid'    
+            print(form.errors)
+            msg = form.errors   
     else:
         form = SignUpForm()
 

@@ -46,14 +46,16 @@ def check(request):
             gram_option = int(form.cleaned_data.get("gram_option"))
             winnow_option = int(form.cleaned_data.get("winnow_option"))
             debug = bool(form.cleaned_data.get("debug") == '1')
-            diff = chk(origin, referer, gram_option, winnow_option, debug)
+            plag = int(form.cleaned_data.get("plag_option"))
+            diff = chk(origin, referer, gram_option, winnow_option, debug,plag)
             if diff is not None:
                 data = diff
             else:    
                 msg = 'Error on Checking'
         else:
-            msg = 'No input specified' 
+            msg = 'No input specified'
+        print(msg) 
 
     context = {"form" : form, "msg" : msg, "data" : data}
-    template = loader.get_template('check.html');
+    template = loader.get_template('check.html')
     return HttpResponse(template.render(context, request))

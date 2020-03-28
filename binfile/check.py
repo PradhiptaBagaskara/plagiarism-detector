@@ -8,20 +8,37 @@ from .distance_measurement import *
 import json
 import numpy as np
 import array as arr
+from .rabin import rabin_word
+from .kmp import kmp as kmp_cek
 
 
-def checks(origin='origin', referer='referer', gram=5, winnow_mode=1, debug=False):
-    print(type(debug))
-    print(debug)
+
+def checks(origin='origin', referer='referer', gram=5, winnow_mode=1, debug=False, plag=1):
+    # print(type(debug))
+    # print(debug)
     if (winnow_mode == 1):
-        d_origin = wwinnow(origin, gram, debug)
-        d_referer = wwinnow(referer, gram, debug)
+        if plag == 1:
+            d_origin = wwinnow(origin, gram, debug)
+            d_referer = wwinnow(referer, gram, debug)
+            rabin_word(referer, gram,debug)
+        else:
+            d_origin = rabin_word(origin, gram, debug)
+            d_referer = rabin_word(referer, gram, debug)
     elif (winnow_mode == 2):
-        d_origin = nwinnow(origin, gram, debug)
-        d_referer = nwinnow(referer, gram, debug)
+        if plag == 1:
+            d_origin = nwinnow(origin, gram, debug)
+            d_referer = nwinnow(referer, gram, debug)
+        else:
+            d_origin = rabin_word(origin, gram, debug, 2)
+            d_referer = rabin_word(referer, gram, debug, 2)
 
     t_origin = d_origin['data']
     t_referer = d_referer['data']
+
+    kmp = kmp_cek(origin,referer,gram)
+
+
+  
 
     mins = np.min((*t_origin, *t_referer))
     maxs = np.max((*t_origin, *t_referer))
@@ -69,6 +86,7 @@ def checks(origin='origin', referer='referer', gram=5, winnow_mode=1, debug=Fals
     result = {
         'origin' : d_origin,
         'referer' : d_referer,
+        'kmp' : kmp,
         'measures' : {
             'cosine' : cosine,
             'jaccard' : jaccard,
