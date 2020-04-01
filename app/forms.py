@@ -33,7 +33,7 @@ class InputForm(forms.Form):
                 "class" : "form-control",
             }
         ), 
-        choices=[(b, b) for b in range(4, 16)]
+        choices=[(b, b) for b in range(1, 16)]
         )
     
     winnow_option = forms.ChoiceField(

@@ -35,7 +35,10 @@ def checks(origin='origin', referer='referer', gram=5, winnow_mode=1, debug=Fals
     t_origin = d_origin['data']
     t_referer = d_referer['data']
 
-    kmp = kmp_cek(origin,referer,gram)
+    kmp = kmp_cek(origin,referer,gram,winnow_mode)
+    # for i in  t_origin:
+    #     if i in t_referer:
+    #         print("sama: ",i) 
 
 
   
@@ -70,8 +73,9 @@ def checks(origin='origin', referer='referer', gram=5, winnow_mode=1, debug=Fals
     mat = np.array([matrix[0], [a for a in range(deflen)], matrix[1]]).T
     mcov = np.cov(mat)
     icov = np.linalg.inv(mcov)
+    # print(t_origin)
 
-    cosine = round(cosine_similarity(n_origin, n_referer) * 100, 2)
+    cosine = round(cosine_sim(n_origin, n_referer) * 100, 2)
     jaccard = round(jaccard_similarity(n_origin, n_referer) * 100, 2)
     dice = round(dice_similarity(n_origin, n_referer) * 100, 2)
 

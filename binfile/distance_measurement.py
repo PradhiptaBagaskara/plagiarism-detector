@@ -7,6 +7,30 @@ def cosine_similarity(x,y):
     denominator = square_rooted(x) * square_rooted(y)
     return round(numerator/float(denominator),3)
 
+def cosine_sim(x,y):
+    X_list = x
+    Y_list = y 
+    l1 =[];l2 =[] 
+  
+    # remove stop words from strin
+    X_set = {w for w in x}  
+    Y_set = {w for w in y} 
+    # form a set containing keywords of both strings  
+    rvector = X_set.union(Y_set)  
+    for w in rvector: 
+        if w in X_set: l1.append(1) # create a vector 
+        else: l1.append(0) 
+        if w in Y_set: l2.append(1) 
+        else: l2.append(0) 
+    c = 0
+    
+    # cosine formula  
+    for i in range(len(rvector)): 
+            c+= l1[i]*l2[i] 
+    cosine = c / float((sum(l1)*sum(l2))**0.5) 
+    print("similarity: ", cosine)
+    return cosine 
+
 
 def jaccard_similarity(x,y):
     intersection_cardinality = len(set.intersection(*[set(map(lambda x1: x1, x)), set(map(lambda y1: y1, y))]))
@@ -23,6 +47,7 @@ def dice_similarity(x,y):
 
 def euclidean_distance(x,y):
     return sqrt(sum([(a-b)**2 for a, b in zip(x, y)]))
+
 
 
 def weighted_euclidean_distance(x,y, w):
