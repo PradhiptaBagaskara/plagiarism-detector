@@ -16,10 +16,12 @@ from pdfminer.layout import LAParams
 from binfile.winnowing_ngram import winnow as n_winnow
 from binfile.winnowing_wordgram import winnow as word_winnow
 from binfile.rabin import rabin_word
-
+from django.utils.translation import gettext as _
 import json
 
 from django.core.files.base import ContentFile
+from django.core.files import File
+
 
 # Create your models here.
 
@@ -43,7 +45,33 @@ def _get_upload_path(instance, filename):
 
   return path
 
+def _similarity_result_path(instance, filename):
+  ident = uuid.uuid4().hex
+  if instance.content.name:
+      instance.content.delete()
+
+  if instance.document:
+    path = "similarity/%s%s" % (
+      instance.document.filename,
+      ".txt"
+    )
+  else:
+    path = "similarity/%s-%s-%s" % (
+      ident[:2],
+      ident[:8],
+      filename
+    )
+
+  return path
+
 class Document(models.Model):
+
+  class Statuses(models.TextChoices):
+    UPLOADED = 'uploaded', _('Uploaded')
+    PROCESS = 'process', _('Process')
+    FINISHED = 'finished', _('Finished')
+
+  id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
   filename = models.CharField(max_length=128, db_index=True, blank=True)
   metadata = models.TextField(blank=True, null=True)
   user = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
@@ -55,6 +83,8 @@ class Document(models.Model):
   keyword = models.CharField(max_length=191, null=True, blank=True)
   size_bytes = models.IntegerField(default=0, db_index=True)
   fingerprint = models.FileField(upload_to="fingerprint/", max_length=191)
+  is_dataset = models.BooleanField(default=False)
+  status = models.CharField(max_length=10, choices=Statuses.choices, default=Statuses.UPLOADED)
   created = models.DateTimeField(auto_now_add=True, editable=False, help_text="DB Insertion Time")
   modified = models.DateTimeField(auto_now=True, editable=False, help_text="DB Modification Time")
 
@@ -64,7 +94,7 @@ class Document(models.Model):
   def save(self, *args, **kwargs):
 
     self.size_bytes = self.content.size
-    self.filename = os.path.basename(self.content.path)
+    self.filename, _ = os.path.splitext(os.path.basename(self.content.path))
     super(Document, self).save(*args, **kwargs)
 
   def extract_content(self):
@@ -74,12 +104,12 @@ class Document(models.Model):
         html = StringIO()
         extract_text_to_fp(self.content, text)
         extract_text_to_fp(self.content, html, laparams=LAParams(), output_type='html', codec=None)
-        textfile = '%s.txt' % filename
-        with ContentFile(content=text.getvalue()) as file:
-            self.text.save(name=os.path.basename(textfile), content=file)
+        textfile = "%s.txt" % filename
+        with ContentFile(content=text.getvalue().encode("utf-8")) as file:
+            self.text.save(name=os.path.basename(textfile), content=File(file))
 
         htmlfile = '%s.html' % filename
-        with ContentFile(content=html.getvalue()) as file:
+        with ContentFile(content=html.getvalue().encode("utf-8")) as file:
             self.html.save(name=os.path.basename(htmlfile), content=file)
 
     return "{}".format(self.text.name)
@@ -92,8 +122,8 @@ class Document(models.Model):
 
     result = {}
     jsonf = {}
-    with self.text.open(mode="rt") as file:
-        read = file.read()
+    with self.text.open(mode="rb") as file:
+        read = file.read().decode('utf-8')
         result['word_winnowing'] = word_winnow(text=read, k=kgram, debug=debug)
         result['n_winnowing'] = n_winnow(text=read, k=kgram, debug=debug)
         result['rabin'] = rabin_word(text=read, k=kgram, debug=debug)
@@ -104,7 +134,7 @@ class Document(models.Model):
     if not self.fingerprint.name:
         name, _ = os.path.splitext(os.path.basename(self.content.path))
         filename = '%s.fp' % name
-        fp = json.dumps(jsonf)
+        fp = json.dumps(jsonf).encode("utf-8")
         with ContentFile(content=fp) as file:
             self.fingerprint.save(name=filename, content=file)
 
@@ -115,8 +145,8 @@ class Document(models.Model):
       return
 
     text = ""
-    with self.text.open(mode="r") as file:
-      text = file.read()
+    with self.text.open(mode="rb") as file:
+      text = file.read().decode('utf-8')
 
     return "{}".format(text)
 
@@ -125,8 +155,8 @@ class Document(models.Model):
       return
 
     fp = ""
-    with self.fingerprint.open(mode="r") as file:
-        fp = file.read()
+    with self.fingerprint.open(mode="rb") as file:
+        fp = file.read().decode('utf-8')
 
     return json.loads(fp)
 
@@ -147,4 +177,22 @@ class Document(models.Model):
     }
   
 
+class Similarity(models.Model):
+  document = models.OneToOneField("Document", related_name="similarity", on_delete=models.CASCADE)
+  content = models.FileField(upload_to=_similarity_result_path, max_length=191, unique=True, db_index=True)
+  created = models.DateTimeField(auto_now_add=True, editable=False, help_text="DB Insertion Time")
+  modified = models.DateTimeField(auto_now=True, editable=False, help_text="DB Modification Time")
+
+  def __str__(self):
+    return "%s Similarity" % self.document.filename
+
+  def get_result(self):
+    if not self.content.name:
+      return
+    
+    result = ""
+    with self.content.open(mode="rb") as file:
+      result = file.read().decode("utf-8")
+
+    return result
 
