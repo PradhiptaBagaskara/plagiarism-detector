@@ -1,0 +1,45 @@
+{% extends "layouts/base-site.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+{% block content %}
+
+    <div class="container-fluid">
+      <div class="fade-in">
+        <div class="card">
+          <div class="card-body">
+            <form action="" method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-6">
+                    {{ form.title.label_tag }}
+                    {{ form.title }}
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6">
+                    {{ form.author.label_tag }}
+                    {{ form.author }}
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6">
+                    {{ form.content.label_tag }}
+                    {{ form.content }}
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-sm-12 col-lg-3 mt-4">
+                  <button type="submit" class="btn btn-primary float-right">Check</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock content %}
+
+{% block javascripts %}
+
+<script src="/static/assets/vendors/@coreui/coreui-chartjs/js/coreui-chartjs.bundle.js"></script>
+<script src="/static/assets/js/main.js"></script>
+
+{% endblock javascripts %}

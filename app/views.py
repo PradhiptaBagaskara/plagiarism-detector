@@ -5,12 +5,15 @@ Copyright (c) 2019 - present AppSeed.us
 """
 
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404, redirect
 from django.template import loader
 from django.http import HttpResponse
 from binfile.distance_measurement import *
 from binfile.check import checks as chk
-from .forms import InputForm
+from .forms import InputForm, DocumentForm
+# from django_q.tasks import async
+from .models import Document as tblDocument
 
 @login_required(login_url="/login/")
 def index(request):
@@ -56,6 +59,25 @@ def check(request):
             msg = 'No input specified'
         print(msg) 
 
-    context = {"form" : form, "msg" : msg, "data" : data}
+    context = {"form": form, "msg": msg, "data": data}
     template = loader.get_template('check.html')
+    return HttpResponse(template.render(context, request))
+
+@login_required(login_url="/login/")
+def upload(request):
+    form = DocumentForm(request.POST, request.FILES)
+    msg = None
+
+    if request.method == "POST":
+        if form.is_valid():
+            doc = form.save(commit=False)
+            doc.user = request.user
+
+            doc.save()
+            msg = 'Valid'
+        else:
+            msg = 'No input specified'
+
+    context = {"form": form, "msg": msg}
+    template = loader.get_template('upload_document.html');
     return HttpResponse(template.render(context, request))

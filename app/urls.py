@@ -15,4 +15,5 @@ urlpatterns = [
     path('', views.index, name='home'),
 
     path('check', views.check),
+    path('upload', views.upload),
 ]
