@@ -84,14 +84,14 @@ def winnow(text, k=5, debug=False):
     windows = [a for a in kgrams(hashes, 4)]
 
     if debug is True:
-      result['steps']['sanitize'] = text[:20]
+      result['steps']['sanitize'] = ''
       result['steps']['gram'] = [a for a in kgrams(text, k)][:splitlen]
       result['steps']['hashes'] = hashes[:splitlen]
       result['steps']['windows'] = windows[:splitlen]
 
     data = list(map(select_min, windows))
 
-    result['data'] = data
+    result['data'] = list(set(data))
     # print(data)
     
     return result
