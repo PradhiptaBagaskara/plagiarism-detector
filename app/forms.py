@@ -7,6 +7,7 @@ Copyright (c) 2019 - present AppSeed.us
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from app.models import Document
 
 
 class InputForm(forms.Form):
@@ -61,3 +62,34 @@ class InputForm(forms.Form):
         ), 
         choices=[(0, 'Off'), (1, 'On')]
         )
+
+class DocumentForm(forms.ModelForm):
+    class Meta:
+        model = Document
+        widgets = {
+            'title': forms.TextInput(
+                attrs={
+                    "placeholder": "Judul Dokumen",
+                    "class": "form-control",
+                }
+            ),
+            'author': forms.TextInput(
+                attrs={
+                    "placeholder": "Pengarang",
+                    "class": "form-control",
+                }
+            ),
+            'content': forms.FileInput(
+                attrs={
+                    "placeholder": "File",
+                    "class": "form-control",
+                }
+            ),
+            'keyword': forms.TextInput(
+                attrs={
+                    "placeholder": "File",
+                    "class": "form-control",
+                }
+            ),
+        }
+        fields = ['title', 'author', 'content', 'keyword']
