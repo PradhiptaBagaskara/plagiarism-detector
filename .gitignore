@@ -29,3 +29,7 @@ staticfiles/*
 
 core/templates/*
 app/static/*
+app/templates/pages/*
+django_cache/*
+.vscode/*
+.idea/*
