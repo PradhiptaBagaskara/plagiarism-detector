@@ -13,7 +13,7 @@ from binfile.distance_measurement import *
 from binfile.check import checks as chk
 from .forms import InputForm, DocumentForm
 # from django_q.tasks import async
-from .models import Document as tblDocument
+from .models import Document, Similarity
 
 @login_required(login_url="/login/")
 def index(request):
@@ -81,3 +81,22 @@ def upload(request):
     context = {"form": form, "msg": msg}
     template = loader.get_template('upload_document.html');
     return HttpResponse(template.render(context, request))
+
+@login_required(login_url="/login/")
+def document_list(request):
+    documents = Document.objects.all()
+    msg = ""
+    context = {"documents": documents, "msg": msg}
+    template = loader.get_template('document_list.html');
+    return HttpResponse(template.render(context, request))
+
+@login_required
+def get_fingerprint(request, filename):
+    print(filename)   
+    file = get_object_or_404(Document, filename=filename)
+
+    response = HttpResponse(file.get_html())
+    response.status_code = 200
+    response['Access-Control-Allow-Origin'] = '*'
+    response['Content-Type'] = 'text/html'
+    return response

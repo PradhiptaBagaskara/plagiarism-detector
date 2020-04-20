@@ -99,6 +99,7 @@ class Document(models.Model):
 
   def extract_content(self):
     if not self.text.name:
+        self.status = "process"
         filename, _ = os.path.splitext(self.content.path)
         text = StringIO()
         html = StringIO()
@@ -132,12 +133,13 @@ class Document(models.Model):
         jsonf['rabin'] = result['rabin']['data']
 
     if not self.fingerprint.name:
+        self.status = "process"
         name, _ = os.path.splitext(os.path.basename(self.content.path))
         filename = '%s.fp' % name
         fp = json.dumps(jsonf).encode("utf-8")
         with ContentFile(content=fp) as file:
             self.fingerprint.save(name=filename, content=file)
-
+    
     return result
 
   def get_text(self):
@@ -150,15 +152,26 @@ class Document(models.Model):
 
     return "{}".format(text)
 
+  def get_html(self):
+    if not self.html.name:
+      return
+
+    html = ""
+    with self.html.open(mode="rb") as file:
+      html = file.read().decode('utf-8')
+
+    return "{}".format(html)
+
   def get_fingerprint(self):
     if not self.fingerprint:
       return
 
+    self.status = "finished"
     fp = ""
     with self.fingerprint.open(mode="rb") as file:
         fp = file.read().decode('utf-8')
-
-    return json.loads(fp)
+    
+    return fp
 
   def serialize(self):
     return {
