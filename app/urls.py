@@ -19,6 +19,8 @@ urlpatterns = [
     path('check', views.check),
     path('upload', views.upload),
     path('document', views.document_list),
+    path('dataset', views.dataset_list),
     path('fingerprint/<filename>', views.get_fingerprint),
-    path('dataset/<UUID:id>/finish', views.dataset_finishing),
+    path('similarity/<uuid:id>/check', views.similarity_check),
+    path('dataset/<uuid:id>/finish', views.dataset_finishing),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

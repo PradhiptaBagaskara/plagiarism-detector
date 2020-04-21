@@ -170,13 +170,15 @@ class Document(models.Model):
     with self.fingerprint.open(mode="rb") as file:
         fp = file.read().decode('utf-8')
     
-    return fp
+    return json.loads(fp)
 
   def get_actions(self):
     html = '<div class="btn-group">'
     html += '<a href="/fingerprint/{}" class="btn btn-primary"> Fingerprint</a>'.format(self.filename)
-    if self.is_dataset and self.status is not 'finished':
+    if self.is_dataset and self.status != 'finished':
       html += '<a href="/dataset/{}/finish" class="btn btn-warning"> Finish Dataset</a>'.format(self.id)
+    if not self.is_dataset and self.status == 'finished' and hasattr(self, 'similarity') and self.similarity.content.name == '':
+      html += '<a href="/similarity/{}/check" class="btn btn-warning"> Check</a>'.format(self.id)
     html += '<a href="#" class="btn btn-success"> Edit</a>'
     html += '</div>'
     
@@ -203,7 +205,7 @@ class Document(models.Model):
 
 class Similarity(models.Model):
   document = models.OneToOneField("Document", related_name="similarity", on_delete=models.CASCADE)
-  content = models.FileField(upload_to=_similarity_result_path, max_length=191, unique=True, db_index=True)
+  content = models.FileField(upload_to=_similarity_result_path, max_length=191, db_index=True)
   created = models.DateTimeField(auto_now_add=True, editable=False, help_text="DB Insertion Time")
   modified = models.DateTimeField(auto_now=True, editable=False, help_text="DB Modification Time")
 
