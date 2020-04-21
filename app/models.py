@@ -173,12 +173,13 @@ class Document(models.Model):
     return fp
 
   def get_actions(self):
-    html = '''
-    <div class="btn-group">
-    <a href="/file/{}" class="btn btn-primary"> Fingerprint</a>
-    <a href="#" class="btn btn-success"> Edit</a>
-    </div>
-    '''.format(self.filename)
+    html = '<div class="btn-group">'
+    html += '<a href="/fingerprint/{}" class="btn btn-primary"> Fingerprint</a>'.format(self.filename)
+    if self.is_dataset and self.status is not 'finished':
+      html += '<a href="/dataset/{}/finish" class="btn btn-warning"> Finish Dataset</a>'.format(self.id)
+    html += '<a href="#" class="btn btn-success"> Edit</a>'
+    html += '</div>'
+    
 
     return html
 

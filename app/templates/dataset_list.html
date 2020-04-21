@@ -1,6 +1,6 @@
 {% extends "layouts/base-site.html" %}
 
-{% block title %} Document List {% endblock %} 
+{% block title %} Dataset List {% endblock %} 
 
 {% block content %}
 
@@ -11,9 +11,9 @@
             <table class="table">
               <thead>
                 <tr>
+                  <th>#</th>
                   <th>Filename</th>
                   <th>Title</th>
-                  <th>Fingerprint</th>
                   <th>Created At</th>
                   <th>Status</th>
                   <th>Action</th>
@@ -22,9 +22,9 @@
               <tbody>
                 {% for doc in documents  %}
                 <tr>
+                  <td>{{ doc.id }}</td>
                   <td>{{ doc.filename }}</td>
                   <td>{{ doc.title }}</td>
-                  <td>{{ doc.fingerprint }}</td>
                   <td>{{ doc.created }}</td>
                   <td>{{ doc.status }}</td>
                   <td>{{ doc.get_actions | safe }}</td>

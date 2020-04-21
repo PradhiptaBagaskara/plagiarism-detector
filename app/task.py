@@ -65,11 +65,11 @@ def process_file_by_path(path):
         sf.content.save(name=os.path.basename(path), content=file)
 
     sf.save()
-    finishing_document(sf.id)
+    finishing_dataset(sf.id)
 
     return sf.id
 
-def finishing_document(id):
+def finishing_dataset(id):
     try:
         sf = Document.objects.get(id=id)
     except Document.DoesNotExist:

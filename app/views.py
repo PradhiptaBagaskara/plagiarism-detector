@@ -14,6 +14,7 @@ from binfile.check import checks as chk
 from .forms import InputForm, DocumentForm
 # from django_q.tasks import async
 from .models import Document, Similarity
+from .task import process_doc, finishing_dataset
 
 @login_required(login_url="/login/")
 def index(request):
@@ -73,7 +74,9 @@ def upload(request):
             doc = form.save(commit=False)
             doc.user = request.user
             doc.save()
+            process_doc(doc.id) # 
             msg = 'Valid'
+            return redirect("/document")
         else:
             msg = 'No input specified'
 
@@ -83,15 +86,29 @@ def upload(request):
 
 @login_required(login_url="/login/")
 def document_list(request):
-    documents = Document.objects.filter(user=request.user)
+    documents = Document.objects.filter(user=request.user, is_dataset=False)
     msg = ""
     context = {"documents": documents, "msg": msg}
     template = loader.get_template('document_list.html');
     return HttpResponse(template.render(context, request))
 
+@login_required(login_url="/login/")
+def dataset_list(request):
+    datasets = Document.objects.filter(is_dataset=True)
+    msg = ""
+    context = {"datasets": datasets, "msg": msg}
+    template = loader.get_template('dataset_list.html');
+    return HttpResponse(template.render(context, request))
+
+@login_required(login_url="/login/")
+def dataset_finishing(request, id):
+    dataset = get_object_or_404(Document, id=id)
+    if dataset.is_dataset:
+        finishing_dataset(dataset.id)
+    return HttpResponse(dataset.status)
+
 @login_required
 def get_fingerprint(request, filename):
-    print(filename)   
     file = get_object_or_404(Document, filename=filename)
 
     response = HttpResponse(file.get_fingerprint())
