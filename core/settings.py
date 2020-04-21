@@ -33,10 +33,10 @@ CACHES = {
 
 Q_CLUSTER = {
     'redis': {
-        'host': 'localhost',
-        'port': 6379,
+        'host': config('REDIS_HOST', default='127.0.0.1'),
+        'port': config('REDIS_PORT', default=6379, cast=int),
         'db': 0,
-        'password': None,
+        'password': config('REDIS_PASSWORD', default=None),
         'socket_timeout': None,
         'charset': 'utf-8',
         'errors': 'strict',
@@ -51,8 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app',  # Enable the inner app 
-    # 'background_task'
+    'app',
     # 'django_q'
 ]
 
@@ -100,17 +99,13 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.'+config('DB_CONNECTION', default='sqlite3'),
+        'NAME': config('DB_DATABASE', default=os.path.join(BASE_DIR, 'db.sqlite3')),
+        'USER': config('DB_USERNAME'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT'),
     }
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'db_skripsi',
-    #     'USER': 'root',
-    #     'PASSWORD': '',
-    #     'HOST': '127.0.0.1',
-    #     'PORT': '3306',
-    # }
 }
 
 # Password validation

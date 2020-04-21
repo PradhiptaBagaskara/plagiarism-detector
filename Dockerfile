@@ -2,7 +2,7 @@ FROM python:3.6
 
 ENV FLASK_APP run.py
 
-COPY manage.py requirements.txt .env.dev ./
+COPY manage.py requirements.txt .env ./
 COPY gunicorn gunicorn
 COPY app app
 COPY authentication authentication
