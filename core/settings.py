@@ -17,7 +17,7 @@ PROJECT_DIR = Path(__file__).parent
 SECRET_KEY = config('SECRET_KEY', default='S#perS3crEt_5548')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False)
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS        = ['localhost', '127.0.0.1', config('PRODUCTION_SERVER', default='127.0.0.1')]
 CSRF_TRUSTED_ORIGINS = [config('PRODUCTION_SERVER', default='127.0.0.1')]

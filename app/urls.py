@@ -14,7 +14,7 @@ urlpatterns = [
     re_path(r'^.*\.html', views.pages, name='pages'),
 
     # The home page
-    path('', views.index, name='home'),
+    path('', views.check, name='home'),
 
     path('check', views.check),
     path('upload', views.upload),
