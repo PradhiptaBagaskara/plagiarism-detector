@@ -72,7 +72,6 @@ def upload(request):
         if form.is_valid():
             doc = form.save(commit=False)
             doc.user = request.user
-
             doc.save()
             msg = 'Valid'
         else:
@@ -84,7 +83,7 @@ def upload(request):
 
 @login_required(login_url="/login/")
 def document_list(request):
-    documents = Document.objects.all()
+    documents = Document.objects.filter(user=request.user)
     msg = ""
     context = {"documents": documents, "msg": msg}
     template = loader.get_template('document_list.html');
@@ -95,8 +94,8 @@ def get_fingerprint(request, filename):
     print(filename)   
     file = get_object_or_404(Document, filename=filename)
 
-    response = HttpResponse(file.get_html())
+    response = HttpResponse(file.get_fingerprint())
     response.status_code = 200
     response['Access-Control-Allow-Origin'] = '*'
-    response['Content-Type'] = 'text/html'
+    response['Content-Type'] = 'text/json'
     return response

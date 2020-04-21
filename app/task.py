@@ -17,7 +17,7 @@ IGNORE = [
     ".git",
 ]
 
-
+#  for datasets
 def process_path(path):
 
     if not path.endswith("/"):
@@ -42,11 +42,6 @@ def process_path(path):
 
     return path
 
-
-def process_hook(task):
-    print(task.result)
-
-
 def process_file_by_path(path):
     _, ext = os.path.splitext(path)
     print(ext)
@@ -70,18 +65,47 @@ def process_file_by_path(path):
         sf.content.save(name=os.path.basename(path), content=file)
 
     sf.save()
-    sf.extract_content()
-    sf.fingerprinting()
-    sf.save()
+    finishing_document(sf.id)
 
     return sf.id
 
-
-def check_similarity(uid):
+def finishing_document(id):
     try:
-        sf = Document.objects.get(id=uid)
+        sf = Document.objects.get(id=id)
+    except Document.DoesNotExist:
+        return
+
+    sf.extract_content()
+    sf.fingerprinting()
+    sf.is_dataset = True
+    sf.save()
+
+    return sf
+
+# for user document
+def process_doc(id):
+    try:
+        sf = Document.objects.get(id=id)  # filename
+    except Document.DoesNotExist:
+        print("NOT EXIST", id)
+        return
+
+    sf.extract_content()
+    sf.fingerprinting()
+    sf.save()
+    check_similarity(sf.id)
+
+    return sf.id
+
+def process_hook(task):
+    print(task.result)
+
+def check_similarity(id):
+    try:
+        sf = Document.objects.get(id=id)
     except Document.DoesNotExist:
         print("Document not Exist")
+        return
 
     datasets = Document.objects.filter(is_dataset=True, status="finished")
     similarty = sf.similarity if hasattr(sf, 'similarity') else Similarity(document=sf)

@@ -19,5 +19,5 @@ urlpatterns = [
     path('check', views.check),
     path('upload', views.upload),
     path('document', views.document_list),
-    re_path(r'^file(?P<filename>.+)', views.get_fingerprint),
+    path('file/<filename>', views.get_fingerprint),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

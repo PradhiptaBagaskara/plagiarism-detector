@@ -29,7 +29,7 @@
                   <td>{{ doc.fingerprint }}</td>
                   <td>{{ doc.created }}</td>
                   <td>{{ doc.status }}</td>
-                  <td>{{ doc.status }}</td>
+                  <td>{{ doc.get_actions | safe }}</td>
                 </tr>
                 {% endfor %}
               </tbody>

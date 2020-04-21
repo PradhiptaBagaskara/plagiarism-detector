@@ -133,7 +133,7 @@ class Document(models.Model):
         jsonf['rabin'] = result['rabin']['data']
 
     if not self.fingerprint.name:
-        self.status = "process"
+        self.status = "finished"
         name, _ = os.path.splitext(os.path.basename(self.content.path))
         filename = '%s.fp' % name
         fp = json.dumps(jsonf).encode("utf-8")
@@ -166,12 +166,22 @@ class Document(models.Model):
     if not self.fingerprint:
       return
 
-    self.status = "finished"
     fp = ""
     with self.fingerprint.open(mode="rb") as file:
         fp = file.read().decode('utf-8')
     
     return fp
+
+  def get_actions(self):
+    html = '''
+    <div class="btn-group">
+    <a href="/file/{}" class="btn btn-primary"> Fingerprint</a>
+    <a href="#" class="btn btn-success"> Edit</a>
+    </div>
+    '''.format(self.filename)
+
+    return html
+
 
   def serialize(self):
     return {
