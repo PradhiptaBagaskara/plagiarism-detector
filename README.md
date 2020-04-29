@@ -1,14 +1,13 @@
-# [Django Dashboard CoreUI](https://appseed.us/admin-dashboards/django-dashboard-coreui)
+# PROGRAM PENELITIAN PLAGIASI DOKUMEN with Django
 
-**Open-Source Admin Dashboard** coded in **[Django Framework](https://www.djangoproject.com/)** - Provided by **AppSeed** [Web App Generator](https://appseed.us/app-generator).
+Using **Open-Source Admin Dashboard** coded in **[Django Framework](https://www.djangoproject.com/)** - Provided by **AppSeed** [Web App Generator](https://appseed.us/app-generator).
 
-### Dashboard Features
+### Features
 
-- SQLite, Django native ORM
-- Modular design
-- Session-Based Authentication (login, register)
-- Forms validation
-- UI Kit: **CoreUI Dashboard** (Free Version)
+- Document Fingerprinting with Rabin-Karp and Winnowing
+- Similarity Check with some Similarity measurement
+- Translating with Google Translate API
+- KMP similar text highlighting
 
 ### Deployment Scripts
 
@@ -17,35 +16,15 @@
 - **Gunicorn** / Nginx
 - **Waitress** - Gunicorn equivalent for Windows.
 
-### Web App Links
+### Configuration
 
-- [Django Dashboard CoreUI](https://appseed.us/admin-dashboards/django-dashboard-coreui) - product page
-- [Django Dashboard CoreUI](https://django-dashboard-coreui.appseed.us/) - LIVE Demo
-
-<br />
-
-## Want more? Go PRO
-
-PRO versions include **Premium UI Kits**, Lifetime updates and **24/7 LIVE Support** (via [Discord](https://discord.gg/fZC6hup))
-
-| [Django Dashboard Material PRO](https://appseed.us/admin-dashboards/django-dashboard-material-pro) | [Django Dashboard Black PRO](https://appseed.us/admin-dashboards/django-dashboard-black-pro) | [Django Dashboard Dashkit PRO](https://appseed.us/admin-dashboards/django-dashboard-dashkit-pro) |
-| --- | --- | --- |
-| [![Django Dashboard Material PRO](https://raw.githubusercontent.com/app-generator/static/master/products/django-dashboard-material-pro-screen.png)](https://appseed.us/admin-dashboards/django-dashboard-material-pro)  | [![Django Dashboard Black PRO](https://raw.githubusercontent.com/app-generator/static/master/products/django-dashboard-black-pro-screen.png)](https://appseed.us/admin-dashboards/django-dashboard-black-pro) | [![Django Dashboard Dashkit PRO](https://raw.githubusercontent.com/app-generator/static/master/products/django-dashboard-dashkit-pro-screen.png)](https://appseed.us/admin-dashboards/django-dashboard-dashkit-pro)
-
-<br />
-<br />
-
-![Django Dashboard CoreUI - Open-Source Web App.](https://raw.githubusercontent.com/app-generator/static/master/products/django-dashboard-coreui-screen.png)
+- **Heroku** - Cloud Application Platform
 
 <br />
 
 ## How to use it
 
 ```bash
-$ # Get the code
-$ git clone https://github.com/app-generator/django-dashboard-coreui.git
-$ cd django-dashboard-coreui
-$
 $ # Virtualenv modules installation (Unix based systems)
 $ virtualenv --no-site-packages env
 $ source env/bin/activate
@@ -80,10 +59,6 @@ The app is provided with a basic configuration to be executed in [Heroku](https:
 ### [Heroku](https://heroku.com/) platform
 
 ```bash
-$ # Get the code
-$ git clone https://github.com/app-generator/django-dashboard-coreui.git
-$ cd django-dashboard-coreui
-$
 $ # Heroku Login
 $ heroku login
 $
@@ -113,13 +88,6 @@ $ heroku run python manage.py createsuperuser
 ---
 
 The application can be easily executed in a docker container. The steps:
-
-> Get the code
-
-```bash
-$ git clone https://github.com/app-generator/django-dashboard-coreui.git
-$ cd django-dashboard-coreui
-```
 
 > Start the app in Docker
 
@@ -174,15 +142,9 @@ Visit `http://localhost:8001` in your browser. The app should be up & running.
 
 <br />
 
-## Support
-
-- Free support via eMail < [support @ appseed.us](https://appseed.us/support) > and **Github** issues tracker
-- 24/7 Live Support via [Discord](https://discord.gg/fZC6hup) for paid plans and commercial products.
-
-<br />
-
 ## Credits
 
+- [Django Dashboard CoreUI](https://appseed.us/admin-dashboards/django-dashboard-coreui) - Github
 - [Django Dashboard CoreUI](https://www.youtube.com/watch?v=RJkCTn55ywo) - yTube presentation
 - [Django Framework](https://www.djangoproject.com/) - Offcial website
 - [Django Admin Dashboards](https://appseed.us/admin-dashboards/django) - Open-source and paid admin panels coded in **Django**
@@ -194,6 +156,3 @@ Visit `http://localhost:8001` in your browser. The app should be up & running.
 @MIT
 
 <br />
-
----
-[Django Dashboard CoreUI](https://appseed.us/admin-dashboards/django-dashboard-coreui) - Provided by **AppSeed** [Web App Generator](https://appseed.us/app-generator).
