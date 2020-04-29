@@ -18,7 +18,7 @@ Using **Open-Source Admin Dashboard** coded in **[Django Framework](https://www.
 
 ### Configuration
 
-- **Heroku** - Cloud Application Platform
+- **Google Translate API** - See setup [Docs](https://cloud.google.com/translate/docs/basic/setup-basic)
 
 <br />
 

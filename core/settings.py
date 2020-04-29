@@ -22,6 +22,9 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS        = ['localhost', '127.0.0.1', config('PRODUCTION_SERVER', default='127.0.0.1')]
 CSRF_TRUSTED_ORIGINS = [config('PRODUCTION_SERVER', default='127.0.0.1')]
 
+#Google Translate API, default false to save translation quota
+TRANSLATION_ENABLED = config('TRANSLATION_ENABLED', cast=bool, default=False)
+
 # Application definition
 
 CACHES = {

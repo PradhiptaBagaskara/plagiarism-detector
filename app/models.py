@@ -12,6 +12,7 @@ import os
 from io import StringIO
 from pdfminer.high_level import extract_text, extract_text_to_fp
 from pdfminer.layout import LAParams
+from django.conf import settings
 
 from binfile.winnowing_ngram import winnow as n_winnow
 from binfile.winnowing_wordgram import winnow as word_winnow
@@ -148,22 +149,23 @@ class Document(models.Model):
     return "{}".format(self.text.name)
 
   def translate(self):
-    text = self.get_text()
-    if text is None:
-        return
+    if settings.TRANSLATION_ENABLED:
+      text = self.get_text()
+      if text is None:
+          return
 
-    # os.environ['GRPC_DNS_RESOLVER'] = 'native'
-    translate_client = translate.Client()
+      # os.environ['GRPC_DNS_RESOLVER'] = 'native'
+      translate_client = translate.Client()
 
-    try:
-      result = translate_client.translate(text, target_language="id")
-      self.lang = result['detectedSourceLanguage']
-      with ContentFile(content=result['translatedText'].encode("utf-8")) as file:
-          self.text.save(name='any', content=File(file))
-      return True
-    except:
-      print("Translate Error")
-      return False
+      try:
+        result = translate_client.translate(text, target_language="id")
+        self.lang = result['detectedSourceLanguage']
+        with ContentFile(content=result['translatedText'].encode("utf-8")) as file:
+            self.text.save(name='any', content=File(file))
+        return True
+      except:
+        print("Translate Error")
+        return False
 
   def fingerprinting(self, save=True, debug=False):
     if not self.text.name:
