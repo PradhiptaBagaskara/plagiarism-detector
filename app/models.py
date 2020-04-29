@@ -22,6 +22,7 @@ import json
 from django.core.files.base import ContentFile
 from django.core.files import File
 
+from google.cloud import translate_v2 as translate
 
 # Create your models here.
 
@@ -64,6 +65,39 @@ def _similarity_result_path(instance, filename):
 
   return path
 
+def _text_path(instance, filename):
+  if instance.text.name:
+      instance.text.delete()
+
+  path = "text/%s%s" % (
+    instance.filename,
+    ".txt"
+  )
+
+  return path
+
+def _html_path(instance, filename):
+  if instance.html.name:
+      instance.html.delete()
+
+  path = "html/%s%s" % (
+    instance.filename,
+    ".html"
+  )
+
+  return path
+
+def _fingerprint_path(instance, filename):
+  if instance.fingerprint.name:
+      instance.fingerprint.delete()
+
+  path = "fingerprint/%s%s" % (
+    instance.filename,
+    ".fp"
+  )
+
+  return path
+
 class Document(models.Model):
 
   class Statuses(models.TextChoices):
@@ -74,15 +108,16 @@ class Document(models.Model):
   id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
   filename = models.CharField(max_length=128, db_index=True, blank=True)
   metadata = models.TextField(blank=True, null=True)
+  lang = models.CharField(max_length=50, blank=True)
   user = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
   title = models.CharField(max_length=191, null=True, blank=True)
   author = models.CharField(max_length=191, null=True, blank=True)
   content = models.FileField(upload_to=_get_upload_path, max_length=191, unique=True, db_index=True)
-  text = models.FileField(upload_to="text/", max_length=191)
-  html = models.FileField(upload_to="html/", max_length=191)
+  text = models.FileField(upload_to=_text_path, max_length=191)
+  html = models.FileField(upload_to=_html_path, max_length=191)
   keyword = models.CharField(max_length=191, null=True, blank=True)
   size_bytes = models.IntegerField(default=0, db_index=True)
-  fingerprint = models.FileField(upload_to="fingerprint/", max_length=191)
+  fingerprint = models.FileField(upload_to=_fingerprint_path, max_length=191)
   is_dataset = models.BooleanField(default=False)
   status = models.CharField(max_length=10, choices=Statuses.choices, default=Statuses.UPLOADED)
   created = models.DateTimeField(auto_now_add=True, editable=False, help_text="DB Insertion Time")
@@ -98,24 +133,39 @@ class Document(models.Model):
     super(Document, self).save(*args, **kwargs)
 
   def extract_content(self):
-    if not self.text.name:
+    if not self.text.name or self.text.name == "":
         self.status = "process"
-        filename, _ = os.path.splitext(self.content.path)
         text = StringIO()
         html = StringIO()
         extract_text_to_fp(self.content, text)
         extract_text_to_fp(self.content, html, laparams=LAParams(), output_type='html', codec=None)
-        textfile = "%s.txt" % filename
         with ContentFile(content=text.getvalue().encode("utf-8")) as file:
-            self.text.save(name=os.path.basename(textfile), content=File(file))
+            self.text.save(name='any', content=File(file))
 
-        htmlfile = '%s.html' % filename
         with ContentFile(content=html.getvalue().encode("utf-8")) as file:
-            self.html.save(name=os.path.basename(htmlfile), content=file)
+            self.html.save(name='any', content=file)
 
     return "{}".format(self.text.name)
 
-  def fingerprinting(self, debug=False):
+  def translate(self):
+    text = self.get_text()
+    if text is None:
+        return
+
+    # os.environ['GRPC_DNS_RESOLVER'] = 'native'
+    translate_client = translate.Client()
+
+    try:
+      result = translate_client.translate(text, target_language="id")
+      self.lang = result['detectedSourceLanguage']
+      with ContentFile(content=result['translatedText'].encode("utf-8")) as file:
+          self.text.save(name='any', content=File(file))
+      return True
+    except:
+      print("Translate Error")
+      return False
+
+  def fingerprinting(self, save=True, debug=False):
     if not self.text.name:
         return
 
@@ -132,7 +182,7 @@ class Document(models.Model):
         jsonf['n_winnowing'] = result['n_winnowing']['data']
         jsonf['rabin'] = result['rabin']['data']
 
-    if not self.fingerprint.name:
+    if save:
         self.status = "finished"
         name, _ = os.path.splitext(os.path.basename(self.content.path))
         filename = '%s.fp' % name
@@ -182,9 +232,7 @@ class Document(models.Model):
     html += '<a href="#" class="btn btn-success"> Edit</a>'
     html += '</div>'
     
-
     return html
-
 
   def serialize(self):
     return {
@@ -205,7 +253,7 @@ class Document(models.Model):
 
 class Similarity(models.Model):
   document = models.OneToOneField("Document", related_name="similarity", on_delete=models.CASCADE)
-  content = models.FileField(upload_to=_similarity_result_path, max_length=191, db_index=True)
+  content = models.FileField(upload_to=_similarity_result_path, max_length=191, blank=True)
   created = models.DateTimeField(auto_now_add=True, editable=False, help_text="DB Insertion Time")
   modified = models.DateTimeField(auto_now=True, editable=False, help_text="DB Modification Time")
 

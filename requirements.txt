@@ -7,3 +7,5 @@ scipy==1.4.1
 scikit_learn==0.22.2.post1
 unipath==1.1
 pdfminer.six==20200402
+mysqlclient==1.4.6
+google-cloud-translate==2.0.0

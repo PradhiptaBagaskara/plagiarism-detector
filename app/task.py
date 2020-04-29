@@ -66,6 +66,7 @@ def process_file_by_path(path):
 
     sf.save()
     finishing_dataset(sf.id)
+    # async(finishing_dataset, sf.id)
 
     return sf.id
 
@@ -76,6 +77,7 @@ def finishing_dataset(id):
         return
 
     sf.extract_content()
+    sf.translate()
     sf.fingerprinting()
     sf.is_dataset = True
     sf.save()
@@ -91,6 +93,7 @@ def process_doc(id):
         return
 
     sf.extract_content()
+    sf.translate()
     sf.fingerprinting()
     sf.save()
     check_similarity(sf.id)
