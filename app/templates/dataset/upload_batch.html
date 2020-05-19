@@ -1,0 +1,43 @@
+{% extends "layouts/base-site.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+{% block content %}
+
+    <div class="container-fluid">
+      <div class="fade-in">
+        <div class="card">
+          <div class="card-body">
+            <form action="{% url 'dataset.upload_batch' %}" method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="row mb-4">
+                  <div class="col">
+                      <h2>Upload Datasets Batch</h2>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                    <div class="custom-file">
+                        <label for="dataset_batch" class="custom-file-label">Dataset </label>
+                        <input type="file" name="dataset_batch" id="dataset_batch">
+                    </div>
+                </div>
+              <div class="col-6">
+                  <button type="submit" class="btn btn-primary float-right">Upload</button>
+                </div>
+              </div>
+            </form>
+              {{ uploaded_file_url }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock content %}
+
+{% block javascripts %}
+
+<script src="/static/assets/vendors/@coreui/coreui-chartjs/js/coreui-chartjs.bundle.js"></script>
+<script src="/static/assets/js/main.js"></script>
+
+{% endblock javascripts %}

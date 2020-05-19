@@ -82,7 +82,7 @@ class DocumentForm(forms.ModelForm):
             'content': forms.FileInput(
                 attrs={
                     "placeholder": "File",
-                    "class": "form-control",
+                    "class": "custom-file-input",
                 }
             ),
             'keyword': forms.TextInput(

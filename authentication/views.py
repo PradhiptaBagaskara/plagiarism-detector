@@ -9,7 +9,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Permission
 from django.forms.utils import ErrorList
 from django.http import HttpResponse
 from .forms import LoginForm, SignUpForm
@@ -50,6 +50,8 @@ def register_user(request):
             username = form.cleaned_data.get("username")
             raw_password = form.cleaned_data.get("password1")
             user = authenticate(username=username, password=raw_password)
+            permission = Permission.objects.filter(codename__in=['add_document', 'change_document', 'view_document', 'delete_document'])
+            user.user_permissions.set(permission)
             
             msg = 'User created, please login'
             #return redirect("/login/")

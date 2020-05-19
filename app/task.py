@@ -1,7 +1,9 @@
 from django.contrib.auth.models import User
-# from django_q.tasks import async
+from django_q.tasks import async
 from app.models import Document, Similarity
-from binfile.distance_measurement import cosine_sim, jaccard_similarity, dice_similarity
+from binfile.distance_measurement import cosine_sim, jaccard_similarity, dice_similarity, mahalanobis_distance, \
+    euclidean_distance, minkowski_distance, manhattan_distance, weighted_euclidean_distance
+from django.conf import settings
 
 import glob
 import re
@@ -11,15 +13,30 @@ import json
 from django.core.files.base import ContentFile
 from django.core.files import File
 
+import asyncio, time
+from functools import wraps
+from concurrent import futures
+
 IGNORE = [
     "env",
     ".local",
     ".git",
 ]
 
-#  for datasets
-def process_path(path):
+_DEFAULT_POOL = futures.ThreadPoolExecutor(max_workers=200)
 
+
+def threadpool(f, executor=None):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        asyncio.set_event_loop(asyncio.new_event_loop())
+        return asyncio.wrap_future((executor or _DEFAULT_POOL).submit(f, *args, **kwargs))
+
+    return wrap
+
+
+#  for datasets
+def process_path(path, username='admin'):
     if not path.endswith("/"):
         path = path + "/"
 
@@ -38,14 +55,17 @@ def process_path(path):
         if not will_ignore:
             print("PROCESSING", filename)
             # async(process_file_by_path, filename)
-            process_file_by_path(filename)
+            process_file_by_path(filename, username)
 
     return path
 
-def process_file_by_path(path):
+
+@threadpool
+def process_file_by_path(path, username='admin'):
     _, ext = os.path.splitext(path)
+    original_filename = os.path.basename(path)
     print(ext)
-    if ext not in [".pdf"]:
+    if ext not in [".pdf", ".docx", ".doc"]:
         return
 
     print("PROCESSING ONE FILE", path)
@@ -59,17 +79,22 @@ def process_file_by_path(path):
         # If it does NOT have an entry, create one
         sf = Document()
 
-    user = User.objects.get(username='admin')  # static
+    user = User.objects.get(username=username)  # static
     sf.user = user
     with open(path, mode="rb") as file:
         sf.content.save(name=os.path.basename(path), content=file)
 
+    sf.original_filename = original_filename
     sf.save()
     finishing_dataset(sf.id)
     # async(finishing_dataset, sf.id)
+    os.remove(path)
+    print("DELETE FILE ", path)
 
     return sf.id
 
+
+@threadpool
 def finishing_dataset(id):
     try:
         sf = Document.objects.get(id=id)
@@ -78,13 +103,15 @@ def finishing_dataset(id):
 
     sf.extract_content()
     sf.translate()
-    sf.fingerprinting()
+    sf.fingerprinting(save=True, debug=True)
     sf.is_dataset = True
     sf.save()
 
     return sf
 
+
 # for user document
+@threadpool
 def process_doc(id):
     try:
         sf = Document.objects.get(id=id)  # filename
@@ -100,9 +127,29 @@ def process_doc(id):
 
     return sf.id
 
+
 def process_hook(task):
     print(task.result)
 
+
+def extract_n_process(name, username='admin'):
+    from pyunpack import Archive
+    import sys
+    # if sys.platform.startswith('win32'):
+    # # FreeBSD-specific code here...
+    # elif sys.platform.startswith('linux'):
+    # # Linux-specific code here....
+    dest = os.path.join(settings.MEDIA_ROOT, 'extract')
+    src = os.path.join(settings.MEDIA_ROOT, name)
+    print(dest)
+    print(src)
+    Archive(src).extractall(dest, auto_create_dir=True)
+    process_path(dest, username)
+    # os.remove(src)
+    # print('Source Deleted')
+
+
+@threadpool
 def check_similarity(id):
     try:
         sf = Document.objects.get(id=id)
@@ -117,17 +164,30 @@ def check_similarity(id):
 
     for d in datasets:
         pre = {
-            'winnowing': {
-                'cosine': cosine_sim(sf.get_fingerprint()['word_winnowing'], d.get_fingerprint()['word_winnowing']),
-                'jaccard': jaccard_similarity(sf.get_fingerprint()['word_winnowing'], d.get_fingerprint()['word_winnowing']),
-                'dice': dice_similarity(sf.get_fingerprint()['word_winnowing'], d.get_fingerprint()['word_winnowing']),
-            }
+            'title': d.title,
+            'author': d.author,
+            'cosine': round(cosine_sim(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint']) * 100, 2),
+            'jaccard': round(jaccard_similarity(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint']) * 100, 2),
+            'dice': round(dice_similarity(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint']) * 100, 2),
+            'manhattan': round(
+                manhattan_distance(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint']) * 100, 2),
+            'mahalanobis': round(
+                mahalanobis_distance(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint']) * 100, 2),
+            'minkowski': round(
+                minkowski_distance(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint'], 2) * 100,
+                2),
+            'euclidean': round(
+                euclidean_distance(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint']) * 100, 2),
+            'weighted': round(
+                weighted_euclidean_distance(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint'],
+                                            3) * 100, 2),
         }
         sim[d.id.hex] = pre
 
     res = json.dumps(sim)
 
+    # print(res)
     similarty.content.save('any', content=ContentFile(res))
 
-    print(res)
+    return id
 

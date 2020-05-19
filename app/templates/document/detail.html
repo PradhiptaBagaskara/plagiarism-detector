@@ -1,0 +1,63 @@
+{% extends "layouts/base-site.html" %}
+
+{% block title %} Document List {% endblock %} 
+
+{% block content %}
+
+    <div class="container-fluid">
+      <div class="fade-in">
+        <div class="card">
+          <div class="card-body">
+              <p><strong>Title :</strong> {{ document.title }}</p>
+              <p><strong>Author :</strong> {{ document.author }}</p>
+              <p><strong>Saved Name :</strong> {{ document.filename }}</p>
+              <p><strong>Original Name :</strong> {{ document.original_filename }}</p>
+              <p><strong>Uploaded :</strong> {{ document.created }}</p>
+              <p><strong>Las Modified :</strong> {{ document.modified }}</p>
+              <p><strong>Uploaded by :</strong> {{ document.user.username }}</p>
+              <p><strong>Content :</strong></p>
+              <iframe height="500px" width="100%" src="{% url 'document.html' document.id %}"></iframe>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h3 class="mb-3">Similarity Result</h3>
+            {{ document.similarity_table | safe }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock content %}
+
+{% block javascripts %}
+
+<script src="/static/assets/vendors/@coreui/coreui-chartjs/js/coreui-chartjs.bundle.js"></script>
+<script src="/static/assets/js/main.js"></script>
+<script>
+
+$(document).ready(function(){
+$('#similarity-table tbody').on('click', 'td.expand-btn', function () {
+        var tr = $(this).closest('tr');
+        var rr = tr.next('tr')
+
+        if ( tr.hasClass('hide') ) {
+            rr.show();
+            tr.removeClass('hide');
+            tr.find('button').removeClass('btn-success')
+            tr.find('button').addClass('btn-danger')
+            tr.find('button').html("-")
+        } else {
+            rr.hide();
+            tr.addClass('hide');
+            tr.find('button').removeClass('btn-danger')
+            tr.find('button').addClass('btn-success')
+            tr.find('button').html("+")
+        }
+    } );
+})
+
+</script>
+
+{% endblock javascripts %}

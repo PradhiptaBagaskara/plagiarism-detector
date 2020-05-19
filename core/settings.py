@@ -24,7 +24,7 @@ CSRF_TRUSTED_ORIGINS = [config('PRODUCTION_SERVER', default='127.0.0.1')]
 
 #Google Translate API, default false to save translation quota
 TRANSLATION_ENABLED = config('TRANSLATION_ENABLED', cast=bool, default=False)
-
+FINGERPRINTING = config('FINGERPRINTING', default='winnowing')
 # Application definition
 
 CACHES = {
@@ -55,7 +55,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
-    # 'django_q'
+    'django_q'
 ]
 
 FILE_UPLOAD_HANDLERS = [
@@ -104,10 +104,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.'+config('DB_CONNECTION', default='sqlite3'),
         'NAME': config('DB_DATABASE', default=os.path.join(BASE_DIR, 'db.sqlite3')),
-        'USER': config('DB_USERNAME'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT'),
+        'USER': config('DB_USERNAME',default='root'),
+        'PASSWORD': config('DB_PASSWORD', default=None),
+        'HOST': config('DB_HOST', default='127.0.0.1'),
+        'PORT': config('DB_PORT', default=3306),
     }
 }
 

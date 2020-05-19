@@ -8,14 +8,17 @@
       <div class="fade-in">
         <div class="card">
           <div class="card-body">
+            <h3 class="mb-5">Documents</h3>
             <table class="table">
               <thead>
                 <tr>
+                  <th>#</th>
                   <th>Filename</th>
                   <th>Title</th>
                   <th>Author</th>
-                  <th>Keyword</th>
-                  <th>Created At</th>
+{#                  <th>Keyword</th>#}
+                  <th>Uploaded At</th>
+                  <th>Last Modified</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
@@ -23,12 +26,14 @@
               <tbody>
                 {% for doc in documents  %}
                 <tr>
-                  <td>{{ doc.filename }}</td>
+                  <td>{{ forloop.counter }}</td>
+                  <td>{{ doc.original_filename }}</td>
                   <td>{{ doc.title }}</td>
                   <td>{{ doc.author }}</td>
-                  <td>{{ doc.keyword }}</td>
+{#                  <td>{{ doc.keyword }}</td>#}
                   <td>{{ doc.created }}</td>
-                  <td>{{ doc.status }}</td>
+                  <td>{{ doc.modified }}</td>
+                  <td>{{ doc.status_badge | safe }}</td>
                   <td>{{ doc.get_actions | safe }}</td>
                 </tr>
                 {% endfor %}

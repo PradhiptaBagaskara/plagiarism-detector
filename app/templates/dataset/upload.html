@@ -10,10 +10,10 @@
           <div class="card-body">
               <div class="row mb-3">
                   <div class="col">
-                      <h3>Upload new document</h3>
+                      <h3>Upload new dataset</h3>
                   </div>
               </div>
-            <form action="{% url 'document.upload' %}" method="POST" enctype="multipart/form-data">
+            <form action="{% url 'dataset.upload' %}" method="POST" enctype="multipart/form-data">
               {% csrf_token %}
               <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-6">

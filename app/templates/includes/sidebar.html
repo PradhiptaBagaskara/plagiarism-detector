@@ -10,12 +10,13 @@
                 </a>
               </li> -->
               <li class="c-sidebar-nav-item">
-                <a class="c-sidebar-nav-link" href="/check">
+                <a class="c-sidebar-nav-link" href="{% url 'demo_check' %}">
                   <svg class="c-sidebar-nav-icon">
                     <use xlink:href="/static/assets/vendors/@coreui/icons/svg/free.svg#cil-speedometer"></use>
                   </svg> Check How it works <span class="badge badge-info">DEMO</span>
                 </a>
               </li>
+            {% if perms.app.view_document %}
               <li class="c-sidebar-nav-title">Documents</li>
               <li class="c-sidebar-nav-item c-sidebar-nav-dropdown">
                 <a class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle" href="#">
@@ -24,10 +25,13 @@
                   </svg> My Documents
                 </a>
                 <ul class="c-sidebar-nav-dropdown-items">
-                  <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/document"><span class="c-sidebar-nav-icon"></span> All</a></li>
-                  <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/upload"><span class="c-sidebar-nav-icon"></span> Upload</a></li>
+                  <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{% url 'document.index' %}"><span class="c-sidebar-nav-icon"></span> All</a></li>
+                  <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{% url 'document.upload' %}"><span class="c-sidebar-nav-icon"></span> Upload</a></li>
                 </ul>
               </li>
+            {% endif %}
+
+            {% if perms.app.view_dataset %}
               <li class="c-sidebar-nav-title">System</li>
               <li class="c-sidebar-nav-item c-sidebar-nav-dropdown">
                 <a class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle" href="#">
@@ -36,10 +40,12 @@
                   </svg> Dataset
                 </a>
                 <ul class="c-sidebar-nav-dropdown-items">
-                  <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/dataset"><span class="c-sidebar-nav-icon"></span> All</a></li>
+                  <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{% url 'dataset.index' %}"><span class="c-sidebar-nav-icon"></span> All</a></li>
+                  <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{% url 'dataset.upload' %}"><span class="c-sidebar-nav-icon"></span> Upload</a></li>
+                  <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{% url 'dataset.upload_batch' %}"><span class="c-sidebar-nav-icon"></span> Upload Batch</a></li>
                 </ul>
               </li>
-              .
+            {% endif %}
 
               <li class="c-sidebar-nav-item">
                 <a class="c-sidebar-nav-link" href={% url 'logout' %} >

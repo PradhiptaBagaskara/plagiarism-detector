@@ -8,13 +8,16 @@
       <div class="fade-in">
         <div class="card">
           <div class="card-body">
+            <h3 class="mb-5">Datasets</h3>
             <table class="table">
               <thead>
                 <tr>
                   <th>#</th>
                   <th>Filename</th>
+                  <th>Original Filename</th>
                   <th>Title</th>
-                  <th>Created At</th>
+                  <th>Uploaded At</th>
+                  <th>Last Modified</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
@@ -22,11 +25,13 @@
               <tbody>
                 {% for doc in datasets  %}
                 <tr>
-                  <td>{{ doc.id }}</td>
+                  <td>{{ forloop.counter }}</td>
                   <td>{{ doc.filename }}</td>
+                  <td>{{ doc.original_filename }}</td>
                   <td>{{ doc.title }}</td>
                   <td>{{ doc.created }}</td>
-                  <td>{{ doc.status }}</td>
+                  <td>{{ doc.modified }}</td>
+                  <td>{{ doc.status_badge | safe }}</td>
                   <td>{{ doc.get_actions | safe }}</td>
                 </tr>
                 {% endfor %}

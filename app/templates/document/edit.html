@@ -10,10 +10,10 @@
           <div class="card-body">
               <div class="row mb-3">
                   <div class="col">
-                      <h3>Upload new document</h3>
+                      <h4>Edit </h4><small>{{ document.original_filename }}</small>
                   </div>
               </div>
-            <form action="{% url 'document.upload' %}" method="POST" enctype="multipart/form-data">
+            <form action="{% url 'document.edit' document.id %}" method="POST" enctype="multipart/form-data">
               {% csrf_token %}
               <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-6">
@@ -25,20 +25,13 @@
                     {{ form.author }}
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6">
-                    <label>File: </label>
-                    <div class="custom-file">
-                        <label id="content_id" class="custom-file-label">File </label>
-                        {{ form.content }}
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-6">
                     {{ form.keyword.label_tag }}
                     {{ form.keyword }}
                 </div>
               </div>
               <div class="row mt-2">
                 <div class="col-sm-12 col-lg-3 mt-4">
-                  <button type="submit" class="btn btn-primary">Upload</button>
+                  <button type="submit" class="btn btn-primary float-right">Edit</button>
                 </div>
               </div>
             </form>

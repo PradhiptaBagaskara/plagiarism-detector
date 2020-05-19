@@ -45,7 +45,8 @@
     <!-- Main styles for this application-->
     <link href="/static/assets/css/style.css" rel="stylesheet">
     <link href="/static/assets/vendors/pace-progress/css/pace.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css"/>
+ 
     <link href="/static/assets/vendors/@coreui/coreui-chartjs/css/coreui-chartjs.css" rel="stylesheet">
     <style>
        .scroll { 
@@ -72,6 +73,17 @@
 
       <div class="c-body">
         <main class="c-main">
+
+        <div class="container-fluid">
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
+        </div>
 
           {% block content %}{% endblock content %}
 
