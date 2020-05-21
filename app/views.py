@@ -116,8 +116,7 @@ def document_upload(request):
 def document_show(request, id):
     document = get_object_or_404(Document, id=id)
     msg = ""
-    if hasattr(document, 'similarity'):
-        document.similarity_table = document.similarity.get_result(True)
+    document.similarity_table = document.get_similarity(True)
 
     context = {"document": document, "msg": msg}
     template = loader.get_template('document/detail.html') if not document.is_dataset else loader.get_template('dataset/detail.html')
@@ -203,7 +202,7 @@ def document_similarity(request, id):
     if not hasattr(file, 'similarity'):
         HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
-    response = HttpResponse(file.similarity.get_result(True))
+    response = HttpResponse(file.get_similarity(True))
     response.status_code = 200
     response['Access-Control-Allow-Origin'] = '*'
     response['Content-Type'] = 'text/html'

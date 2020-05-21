@@ -60,11 +60,10 @@ def process_path(path, username='admin'):
     return path
 
 
-@threadpool
+# @threadpool
 def process_file_by_path(path, username='admin'):
     _, ext = os.path.splitext(path)
     original_filename = os.path.basename(path)
-    print(ext)
     if ext not in [".pdf", ".docx", ".doc"]:
         return
 
@@ -94,7 +93,7 @@ def process_file_by_path(path, username='admin'):
     return sf.id
 
 
-@threadpool
+# @threadpool
 def finishing_dataset(id):
     try:
         sf = Document.objects.get(id=id)
@@ -125,31 +124,23 @@ def process_doc(id):
     sf.save()
     check_similarity(sf.id)
 
-    return sf.id
-
 
 def process_hook(task):
     print(task.result)
 
 
+# should call from view
 def extract_n_process(name, username='admin'):
     from pyunpack import Archive
-    import sys
-    # if sys.platform.startswith('win32'):
-    # # FreeBSD-specific code here...
-    # elif sys.platform.startswith('linux'):
-    # # Linux-specific code here....
     dest = os.path.join(settings.MEDIA_ROOT, 'extract')
     src = os.path.join(settings.MEDIA_ROOT, name)
-    print(dest)
-    print(src)
     Archive(src).extractall(dest, auto_create_dir=True)
     process_path(dest, username)
     # os.remove(src)
     # print('Source Deleted')
 
 
-@threadpool
+# @threadpool
 def check_similarity(id):
     try:
         sf = Document.objects.get(id=id)
@@ -158,36 +149,26 @@ def check_similarity(id):
         return
 
     datasets = Document.objects.filter(is_dataset=True, status="finished")
-    similarty = sf.similarity if hasattr(sf, 'similarity') else Similarity(document=sf)
-    similarty.save()
-    sim = {}
 
     for d in datasets:
-        pre = {
-            'title': d.title,
-            'author': d.author,
-            'cosine': round(cosine_sim(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint']) * 100, 2),
-            'jaccard': round(jaccard_similarity(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint']) * 100, 2),
-            'dice': round(dice_similarity(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint']) * 100, 2),
-            'manhattan': round(
-                manhattan_distance(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint']) * 100, 2),
-            'mahalanobis': round(
-                mahalanobis_distance(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint']) * 100, 2),
-            'minkowski': round(
-                minkowski_distance(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint'], 2) * 100,
-                2),
-            'euclidean': round(
-                euclidean_distance(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint']) * 100, 2),
-            'weighted': round(
-                weighted_euclidean_distance(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint'],
-                                            3) * 100, 2),
-        }
-        sim[d.id.hex] = pre
+        cosine = round(cosine_sim(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint']) * 100, 2)
+        jaccard = round(jaccard_similarity(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint']) * 100, 2)
+        dice = round(dice_similarity(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint']) * 100, 2)
+        manhattan = round(manhattan_distance(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint']) * 100, 2)
+        mahalanobis = round(mahalanobis_distance(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint']) * 100, 2)
+        minkowski = round(minkowski_distance(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint'], 2) * 100, 2)
+        euclidean = round(euclidean_distance(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint']) * 100, 2)
+        weighted = round(weighted_euclidean_distance(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint'], 3) * 100, 2)
 
-    res = json.dumps(sim)
-
-    # print(res)
-    similarty.content.save('any', content=ContentFile(res))
-
-    return id
+        sf.add_similarity(
+            d,
+            cosine=cosine,
+            jaccard=jaccard,
+            dice=dice,
+            manhattan=manhattan,
+            mahalanobis=mahalanobis,
+            minkowski=minkowski,
+            euclidean=euclidean,
+            weighted=weighted
+        )
 

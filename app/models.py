@@ -138,6 +138,7 @@ class Document(models.Model):
     size_bytes = models.IntegerField(default=0, db_index=True)
     fingerprint = models.FileField(upload_to=_fingerprint_path, max_length=191)
     is_dataset = models.BooleanField(default=False)
+    similarities = models.ManyToManyField('self', through='Similarity', symmetrical=False, related_name='similar_to')
     status = models.CharField(max_length=10, choices=Statuses.choices, default=Statuses.UPLOADED)
     created = models.DateTimeField(auto_now_add=True, editable=False, help_text="DB Insertion Time")
     modified = models.DateTimeField(auto_now=True, editable=False, help_text="DB Modification Time")
@@ -145,18 +146,69 @@ class Document(models.Model):
     def __str__(self):
         return "{}".format(self.content.name)
 
-    def save(self, *args, **kwargs):
+    def add_similarity(self, dataset, cosine=0.0, jaccard=0.0, dice=0.0, manhattan=0.0, minkowski=0.0, mahalanobis=0.0, euclidean=0.0, weighted=0.0):
+        similarity, created = Similarity.objects.update_or_create(
+            document=self,
+            dataset=dataset,
+            cosine=cosine,
+            jaccard=jaccard,
+            dice=dice,
+            manhattan=manhattan,
+            minkowski=minkowski,
+            mahalanobis=mahalanobis,
+            euclidean=euclidean,
+            weighted=weighted
+        )
 
+        return similarity
+
+    def remove_similarity(self, dataset):
+        Similarity.objects.filter(
+            document=self,
+            dataset=dataset).delete()
+        return
+
+    def get_datasets(self):
+        return self.similarities.filter(
+            to_datasets__document=self)
+
+    def get_similarity(self, as_table=False):
+        sort = ['-cosine', '-dice', '-jaccard', '-manhattan']
+        similarity = Similarity.objects.filter(document=self).order_by(*sort)
+        result = []
+        if as_table:
+            res = list(similarity)
+            for item in res:
+                result.append(item)
+
+            result = render_to_string('document/includes/similarity-table1.html', {'data': result})
+        else:
+            result = similarity
+            result.label = list(similarity.values_list('dataset__original_filename', flat=True))
+            result.cosine = list(similarity.values_list('cosine', flat=True))
+            result.dice = list(similarity.values_list('dice', flat=True))
+            result.jaccard = list(similarity.values_list('jaccard', flat=True))
+            result.manhattan = list(similarity.values_list('manhattan', flat=True))
+            result.euclidean = list(similarity.values_list('euclidean', flat=True))
+            result.minkowski = list(similarity.values_list('minkowski', flat=True))
+            result.mahalanobis = list(similarity.values_list('mahalanobis', flat=True))
+            result.weighted = list(similarity.values_list('weighted', flat=True))
+
+        return result
+
+    def get_compared_to(self):
+        return self.similar_to.filter(
+            form_documents__dataset=self)
+
+    def save(self, *args, **kwargs):
         if self.content.name:
             self.size_bytes = self.content.size
             self.filename, _ = os.path.splitext(os.path.basename(self.content.path))
-            
+
         super(Document, self).save(*args, **kwargs)
 
     def delete(self, using=None, keep_parents=False):
         try:
-            if hasattr(self, 'similarity') and self.similarity.content.storage.exists(self.similarity.content.name):
-                self.similarity.content.delete()
             if self.fingerprint.name != '' and self.fingerprint.storage.exists(self.fingerprint.name):
                 self.fingerprint.delete()
             if self.html.name != '' and self.html.storage.exists(self.html.name):
@@ -165,9 +217,10 @@ class Document(models.Model):
                 self.text.delete()
             if self.content.name != '' and self.content.storage.exists(self.content.name):
                 self.content.delete()
+        except PermissionError:
+            print("permission error : ", self.content.name)
 
-        finally:
-            super().delete()
+        super().delete()
 
     def extract_content(self):
         self.status = "process"
@@ -185,6 +238,7 @@ class Document(models.Model):
                 html.write(result.value)
                 result = mammoth.extract_raw_text(file)
                 text.write(result.value)
+                file.close()
 
         with ContentFile(content=text.getvalue().encode("utf-8")) as file:
             self.text.save(name='any', content=file)
@@ -220,7 +274,8 @@ class Document(models.Model):
         jsonf = {}
         with self.text.open(mode="rb") as file:
             read = file.read().decode('utf-8')
-            result['fingerprint'] = word_winnow(text=read, k=kgram, debug=debug) if settings.FINGERPRINTING == 'winnowing' else \
+            result['fingerprint'] = word_winnow(text=read, k=kgram,
+                                                debug=debug) if settings.FINGERPRINTING == 'winnowing' else \
                 rabin_word(text=read, k=kgram, debug=debug)
             # result['n_winnowing'] = n_winnow(text=read, k=kgram, debug=debug)
             # result['rabin'] = rabin_word(text=read, k=kgram, debug=debug)
@@ -276,9 +331,10 @@ class Document(models.Model):
         if self.status != 'finished':
             html += self.btn('finish')
 
-        if not self.is_dataset and self.status == 'finished' and hasattr(self, 'similarity'):
-            # html += self.btn('similarity')
-            if self.similarity.content.name == '':
+        if not self.is_dataset and self.status == 'finished':
+            if self.similarities.count() > 0:
+                html += self.btn('similarity')
+            else:
                 html += self.btn('check')
 
         html += self.btn('edit')
@@ -291,10 +347,13 @@ class Document(models.Model):
             "show": '<a href="%s" class="btn btn-success"> Show</a>' % resolve_url(to='document.show', id=self.id),
             "edit": '<a href="%s" class="btn btn-success"> Edit</a>' % resolve_url(to='document.edit', id=self.id),
             "delete": '<a href="%s" class="btn btn-danger"> Delete</a>' % resolve_url(to='document.delete', id=self.id),
-            "finish": '<a href="%s" class="btn btn-warning"> Finishing</a>' % resolve_url(to='document.finish', id=self.id),
-            "fingerprint": '<a href="%s" class="btn btn-primary"> Fingerprint</a>' % resolve_url(to='document.fingerprint', id=self.id),
+            "finish": '<a href="%s" class="btn btn-warning"> Finishing</a>' % resolve_url(to='document.finish',
+                                                                                          id=self.id),
+            "fingerprint": '<a href="%s" class="btn btn-primary"> Fingerprint</a>' % resolve_url(
+                to='document.fingerprint', id=self.id),
             "check": '<a href="%s" class="btn btn-warning"> Check</a>' % resolve_url(to='document.check', id=self.id),
-            "similarity": '<a href="%s" class="btn btn-success"> Result</a>' % resolve_url(to='document.similarity', id=self.id),
+            "similarity": '<a href="%s" class="btn btn-success"> Result</a>' % resolve_url(to='document.similarity',
+                                                                                           id=self.id),
         }
         return buttons.get(name, "")
 
@@ -321,28 +380,19 @@ class Document(models.Model):
 
 
 class Similarity(models.Model):
-    document = models.OneToOneField("Document", related_name="similarity", on_delete=models.CASCADE)
-    content = models.FileField(upload_to=_similarity_result_path, max_length=191, blank=True)
+    document = models.ForeignKey("Document", related_name="form_documents", on_delete=models.CASCADE)
+    dataset = models.ForeignKey("Document", related_name="to_datasets", on_delete=models.CASCADE)
+    cosine = models.FloatField(null=True, default=0.0)
+    jaccard = models.FloatField(null=True, default=0.0)
+    dice = models.FloatField(null=True, default=0.0)
+    manhattan = models.FloatField(null=True, default=0.0)
+    minkowski = models.FloatField(null=True, default=0.0)
+    mahalanobis = models.FloatField(null=True, default=0.0)
+    euclidean = models.FloatField(null=True, default=0.0)
+    weighted = models.FloatField(null=True, default=0.0)
+    content = models.FileField(upload_to=_similarity_result_path, max_length=191, blank=True) # change to save additional information only
     created = models.DateTimeField(auto_now_add=True, editable=False, help_text="DB Insertion Time")
     modified = models.DateTimeField(auto_now=True, editable=False, help_text="DB Modification Time")
 
     def __str__(self):
         return "%s Similarity" % self.document.filename
-
-    def get_result(self, as_table=False):
-        if not self.content.name:
-            return
-
-        result = ""
-        with self.content.open(mode="rb") as file:
-            result = file.read().decode("utf-8")
-
-        if as_table:
-            result = json.loads(result)
-            for uid in result:
-                ds = Document.objects.get(id=uid)
-                result[uid]['filename'] = ds.original_filename
-
-            result = render_to_string('document/includes/similarity-table.html', {'data': result})
-
-        return result
