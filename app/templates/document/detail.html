@@ -21,6 +21,17 @@
         </div>
 
         <div class="card">
+          <div class="card-header">
+              <h3>Similarity Chart</h3>
+          </div>
+          <div class="card-body">
+            <div class="c-chart-wrapper">
+              <canvas id="canvas-2" height="500"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
           <div class="card-body">
             <h3 class="mb-3">Similarity Result</h3>
             {{ document.similarity_table | safe }}
@@ -57,6 +68,75 @@ $('#similarity-table tbody').on('click', 'td.expand-btn', function () {
         }
     } );
 })
+
+var barChart = new Chart(document.getElementById('canvas-2'), {
+  type: 'line',
+  data: {
+    labels: [...{{ document.get_similarity.label | safe }}],
+    datasets: [
+        {
+          label: 'Cosine',
+          backgroundColor: 'rgba(220, 220, 220, 0.2)',
+          borderColor: 'rgba(220, 220, 220, 1)',
+          pointBackgroundColor: 'rgba(220, 220, 220, 1)',
+          pointBorderColor: '#fff',
+          data: [...{{ document.get_similarity.cosine }}]
+        },
+        {
+          label: 'Dice',
+          backgroundColor: 'rgba(151, 187, 205, 0.2)',
+          borderColor: 'rgba(151, 187, 205, 1)',
+          pointBackgroundColor: 'rgba(151, 187, 205, 0.8)',
+          pointBorderColor: 'rgba(214,255,228, 1)',
+          data: [...{{ document.get_similarity.dice }}]
+        },
+        {
+          label: 'Jaccard',
+          backgroundColor: 'rgba(113,220,160, 0.2)',
+          borderColor: 'rgba(113,220,160, 1)',
+          pointBackgroundColor: 'rgba(113,220,160, 0.8)',
+          pointBorderColor: 'rgba(192,255,177,1)',
+          data: [...{{ document.get_similarity.jaccard }}]
+        },
+        {
+          label: 'Manhattan',
+          backgroundColor: 'rgba(128,153,220,0.2)',
+          borderColor: 'rgba(128,153,220,1)',
+          pointBackgroundColor: 'rgba(128,153,220,0.8)',
+          pointBorderColor: 'rgba(191,190,255,0.87)',
+          data: [...{{ document.get_similarity.manhattan }}]
+        },
+        {
+          label: 'Euclidean',
+          backgroundColor: 'rgba(220,109,202,0.2)',
+          borderColor: 'rgba(220,109,202,1)',
+          pointBackgroundColor: 'rgba(220,109,202,0.8)',
+          pointBorderColor: 'rgba(255,156,208,0.89)',
+          data: [...{{ document.get_similarity.euclidean }}]
+        },
+        {
+          label: 'Minkowski',
+          backgroundColor: 'rgba(220,115,117,0.2)',
+          borderColor: 'rgba(220,115,117,1)',
+          pointBackgroundColor: 'rgba(220,115,117,0.8)',
+          pointBorderColor: 'rgba(255,170,190,0.95)',
+          data: [...{{ document.get_similarity.minkowski }}]
+        },
+        {
+          label: 'Weighted',
+          backgroundColor: 'rgba(220,220,59,0.2)',
+          borderColor: 'rgba(220,220,59,1)',
+          pointBackgroundColor: 'rgba(220,220,59,0.8)',
+          pointBorderColor: 'rgba(255,249,192,0.95)',
+          data: [...{{ document.get_similarity.weighted }}]
+        }
+    ]
+  },
+  options: {
+    responsive: true
+  }
+}); // eslint-disable-next-line no-unused-vars
+
 
 </script>
 

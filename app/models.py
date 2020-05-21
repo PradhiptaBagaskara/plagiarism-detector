@@ -181,7 +181,7 @@ class Document(models.Model):
             for item in res:
                 result.append(item)
 
-            result = render_to_string('document/includes/similarity-table1.html', {'data': result})
+            result = render_to_string('document/includes/similarity-table.html', {'data': result})
         else:
             result = similarity
             result.label = list(similarity.values_list('dataset__original_filename', flat=True))

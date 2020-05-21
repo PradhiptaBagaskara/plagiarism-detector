@@ -1,75 +1,35 @@
 <table id="similarity-table" class="table">
   <thead>
-    <tr><th>#</th><th>Title</th><th>Author</th><th>Filename</th></tr>
+    <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Filename</th>
+        <th>Cosine</th>
+        <th>Jaccard</th>
+        <th>Dice</th>
+        <th>Manhattan</th>
+        <th>Minkowski</th>
+        <th>Mahalanobis</th>
+        <th>Euclidean</th>
+        <th>Weighted</th>
+    </tr>
   </thead>
   <tbody>
-    {% for index,item in data.items %}
+    {% for item in data %}
     <tr class="hide">
-      <td class="expand-btn"><button class="btn btn-sm btn-success">+</button></td>
-      <td>{{ item.title }}</td>
-      <td>{{ item.author }}</td>
-      <td>{{ item.filename }}</td>
-    </tr>
-    <tr style="display: none">
-      <td colspan="4" class="p-0">
-        <table class="table">
-          <tr>
-            <td>Cosine</td><td>:</td>
-            <td>
-              <div class="clearfix">
-                <div class="float-left"><strong>{{item.cosine}}</strong></div>
-                <!-- <div class="float-right"><small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small></div> -->
-              </div>
-              <div class="progress progress-xs">
-                <div class="progress-bar bg-success" role="progressbar" style="width: {{item.cosine}}%" aria-valuenow="{{item.cosine}}"
-                  aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>Jaccard</td><td>:</td>
-            <td>
-            {{ item.jaccard }}
-            </td>
-          </tr>
-          <tr>
-            <td>Dice</td><td>:</td>
-            <td>
-            {{ item.dice }}
-            </td>
-          </tr>
-          <tr>
-            <td>Manhattan</td><td>:</td>
-            <td>
-            {{ item.manhattan }}
-            </td>
-          </tr>
-          <tr>
-            <td>Minkowski</td><td>:</td>
-            <td>
-            {{ item.minkowski }}
-            </td>
-          </tr>
-          <tr>
-            <td>Euclidean</td><td>:</td>
-            <td>
-            {{ item.euclidean }}
-            </td>
-          </tr>
-          <tr>
-            <td>Mahalanobis</td><td>:</td>
-            <td>
-            {{ item.mahalanobis }}
-            </td>
-          </tr>
-          <tr>
-            <td>Weighted</td><td>:</td>
-            <td>
-            {{ item.weighted }}
-            </td>
-          </tr>
-        </table>
-      </td>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ item.dataset.title }}</td>
+      <td>{{ item.dataset.author }}</td>
+      <td>{{ item.dataset.original_filename }}</td>
+      <td>{{ item.cosine }}</td>
+      <td>{{ item.jaccard }}</td>
+      <td>{{ item.dice }}</td>
+      <td>{{ item.manhattan }}</td>
+      <td>{{ item.minkowski }}</td>
+      <td>{{ item.mahalanobis }}</td>
+      <td>{{ item.euclidean }}</td>
+      <td>{{ item.weighted }}</td>
     </tr>
     {% endfor %}
   </tbody>
