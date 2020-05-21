@@ -13,6 +13,9 @@ from django.contrib.auth.models import User, Permission
 from django.forms.utils import ErrorList
 from django.http import HttpResponse
 from .forms import LoginForm, SignUpForm
+from django.conf import settings
+
+app_title = settings.APP_NAME
 
 def login_view(request):
 
@@ -37,7 +40,7 @@ def login_view(request):
         else:
             msg = 'Error validating the form'    
 
-    return render(request, "accounts/login.html", {"form": form, "msg" : msg})
+    return render(request, "accounts/login.html", {"form": form, "msg": msg, 'app_title': app_title})
 
 def register_user(request):
 
@@ -62,4 +65,4 @@ def register_user(request):
     else:
         form = SignUpForm()
 
-    return render(request, "accounts/register.html", {"form": form, "msg" : msg})
+    return render(request, "accounts/register.html", {"form": form, "msg" : msg, 'app_title': app_title})

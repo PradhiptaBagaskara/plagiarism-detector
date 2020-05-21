@@ -43,7 +43,7 @@ class InputForm(forms.Form):
                 "class" : "form-control",
             }
         ), 
-        choices=[(1, 'wordgram'), (2, 'ngram')]
+        choices=[(1, 'wordgram')]
         )
 
     plag_option = forms.ChoiceField(
@@ -62,6 +62,7 @@ class InputForm(forms.Form):
         ), 
         choices=[(0, 'Off'), (1, 'On')]
         )
+
 
 class DocumentForm(forms.ModelForm):
     class Meta:
@@ -83,6 +84,7 @@ class DocumentForm(forms.ModelForm):
                 attrs={
                     "placeholder": "File",
                     "class": "custom-file-input",
+                    "accept": ".doc,.docx,.pdf"
                 }
             ),
             'keyword': forms.TextInput(

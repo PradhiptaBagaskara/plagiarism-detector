@@ -15,7 +15,10 @@ from app.forms import InputForm, DocumentForm
 from app.models import Document, Similarity
 from app.task import process_doc, finishing_dataset, check_similarity, extract_n_process
 from django.contrib import messages
+import os
+from django.conf import settings
 
+app_title = settings.APP_NAME
 
 @login_required(login_url="/login/")
 def pages(request):
@@ -88,13 +91,17 @@ def document_upload(request):
 
     if request.method == "POST":
         if form.is_valid():
+            _, ext = os.path.splitext(request.FILES['content'].name)
+            if ext not in ['.doc', '.docx', '.pdf']:
+                messages.warning(request, 'not file Document type')
+                return redirect("document.upload")
+
             doc = form.save(commit=False)
             doc.original_filename = request.FILES['content'].name
             doc.user = request.user
             doc.save()
             process_doc(doc.id)
-            msg = 'Document Uploaded'
-            messages.success(request, msg)
+            messages.success(request, 'Document Uploaded')
             return redirect("document.index")
         else:
             msg = 'No input specified'
@@ -236,6 +243,11 @@ def dataset_upload(request):
 
     if request.method == "POST":
         if form.is_valid():
+            _, ext = os.path.splitext(request.FILES['content'].name)
+            if ext not in ['.doc', '.docx', '.pdf']:
+                messages.warning(request, 'not file Document type')
+                return redirect("dataset.upload")
+
             doc = form.save(commit=False)
             doc.original_filename = request.FILES['content'].name
             doc.user = request.user
@@ -260,6 +272,11 @@ def dataset_upload_batch(request):
     msg = None
     if request.method == 'POST' and request.FILES['dataset_batch']:
         dataset_batch = request.FILES['dataset_batch']
+        _, ext = os.path.splitext(dataset_batch.name)
+        if ext not in ['.zip', '.rar', '.7zip']:
+            messages.warning(request, "File is not compressed!")
+            return redirect('dataset.upload_batch')
+
         fs = FileSystemStorage()
         filename = fs.save(dataset_batch.name, dataset_batch)
         uploaded_file_url = fs.url(filename)
@@ -267,10 +284,10 @@ def dataset_upload_batch(request):
             'uploaded_file_url': uploaded_file_url
         }
         msg = "Extracting and Processing Datasets..."
-        messages.success(request, msg)
         extract_n_process(filename, request.user.username)
 
     context = {}
+    messages.success(request, msg)
     template = loader.get_template('dataset/upload_batch.html')
     return HttpResponse(template.render(context, request))
 
