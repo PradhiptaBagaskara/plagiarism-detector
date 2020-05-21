@@ -18,7 +18,7 @@
                 <div class="text-center">
 
                   <h2>
-                    <a href="https://appseed.us/admin-dashboards/django-dashboard-coreui" >Django Dashboard CoreUI</a>
+                    <a href="{% url 'home' %}" >{{ app_title }}</a>
                   </h2>
                   <h5>Login</h5>
                   
@@ -28,9 +28,7 @@
                       {{ msg | safe }}
                     {% else %}
                       <span>
-                        Use default credentials: <strong>test / ApS12_ZZs8</strong>
-                        <br />
-                        OR <a href={% url 'register' %} >create your own user</a>
+                        Use your credentials OR <a href={% url 'register' %} >create your own user</a>
                       </span>
                     {% endif %}
 
