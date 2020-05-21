@@ -37,16 +37,13 @@ CACHES = {
 }
 
 Q_CLUSTER = {
-    'redis': {
-        'host': config('REDIS_HOST', default='127.0.0.1'),
-        'port': config('REDIS_PORT', default=6379, cast=int),
-        'db': 0,
-        'password': config('REDIS_PASSWORD', default=None),
-        'socket_timeout': None,
-        'charset': 'utf-8',
-        'errors': 'strict',
-        'unix_socket_path': None
-    }
+    'name': 'DjangORM',
+    'workers': 4,
+    'timeout': 90,
+    'retry': 120,
+    'queue_limit': 50,
+    'bulk': 10,
+    'orm': 'default'
 }
 
 INSTALLED_APPS = [

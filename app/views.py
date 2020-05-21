@@ -17,6 +17,7 @@ from app.task import process_doc, finishing_dataset, check_similarity, extract_n
 from django.contrib import messages
 import os
 from django.conf import settings
+from django_q import async
 
 app_title = settings.APP_NAME
 
@@ -283,7 +284,7 @@ def dataset_upload_batch(request):
             'uploaded_file_url': uploaded_file_url
         }
         msg = "Extracting and Processing Datasets..."
-        extract_n_process(filename, request.user.username)
+        async(extract_n_process, filename, request.user.username)
 
     context = {}
     messages.success(request, msg)

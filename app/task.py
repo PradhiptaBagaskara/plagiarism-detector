@@ -23,7 +23,7 @@ IGNORE = [
     ".git",
 ]
 
-_DEFAULT_POOL = futures.ThreadPoolExecutor(max_workers=200)
+_DEFAULT_POOL = futures.ThreadPoolExecutor(max_workers=8)
 
 
 def threadpool(f, executor=None):
@@ -60,7 +60,7 @@ def process_path(path, username='admin'):
     return path
 
 
-# @threadpool
+@threadpool
 def process_file_by_path(path, username='admin'):
     _, ext = os.path.splitext(path)
     original_filename = os.path.basename(path)
@@ -93,7 +93,7 @@ def process_file_by_path(path, username='admin'):
     return sf.id
 
 
-# @threadpool
+@threadpool
 def finishing_dataset(id):
     try:
         sf = Document.objects.get(id=id)
@@ -140,7 +140,7 @@ def extract_n_process(name, username='admin'):
     # print('Source Deleted')
 
 
-# @threadpool
+@threadpool
 def check_similarity(id):
     try:
         sf = Document.objects.get(id=id)
