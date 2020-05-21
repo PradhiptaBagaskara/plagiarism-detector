@@ -20,6 +20,17 @@ Using **Open-Source Admin Dashboard** coded in **[Django Framework](https://www.
 
 - **Google Translate API** - See setup [Docs](https://cloud.google.com/translate/docs/basic/setup-basic)
 
+### Background Task (Django Q)
+`core/settings.py`  Q_CLUSTER 
+
+run it on upload dataset
+
+```bash
+$ # Run Cluster
+$ python manage.py qcluster
+$ # Run Monitor
+$ python manage.py qmonitor
+```
 <br />
 
 ## How to use it
