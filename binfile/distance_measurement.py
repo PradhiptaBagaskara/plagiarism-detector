@@ -1,112 +1,91 @@
 import numpy as np
 from math import *
-from decimal import Decimal
 
-def cosine_similarity(x,y):
-    numerator = sum(a*b for a,b in zip(x,y))
-    denominator = square_rooted(x) * square_rooted(y)
-    return round(numerator/float(denominator),3)
 
-def cosine_sim(x,y):
-    X_list = x
-    Y_list = y 
-    l1 =[];l2 =[] 
-  
-    # remove stop words from strin
-    X_set = {w for w in x}  
-    Y_set = {w for w in y} 
+def cosine_similarity(a, b):
+    # numerator = sum(a*b for a,b in zip(x,y))
+    # denominator = square_rooted(x) * square_rooted(y)
+    return dot(a, b) / ((dot(a, a) ** .5) * (dot(b, b) ** .5))
+    # return round(numerator/float(denominator),3)
+
+
+def dot(A, B):
+    return (sum(a * b for a, b in zip(A, B)))
+
+
+def cosine_sim(x, y):
+    l1 = []
+    l2 = []
+
+    X_set = set(x)
+    Y_set = set(y)
     # form a set containing keywords of both strings  
-    rvector = X_set.union(Y_set)  
-    for w in rvector: 
-        if w in X_set: l1.append(1) # create a vector 
-        else: l1.append(0) 
-        if w in Y_set: l2.append(1) 
-        else: l2.append(0) 
-    c = 0
-    
-    # cosine formula  
-    for i in range(len(rvector)): 
-            c+= l1[i]*l2[i] 
-    cosine = c / float((sum(l1)*sum(l2))**0.5) 
-    print("similarity: ", cosine)
-    return cosine 
+    rvector = X_set.union(Y_set)
+
+    for w in rvector:
+        l1.append(1) if w in X_set else l1.append(0)  # create a vector
+        l2.append(1) if w in Y_set else l2.append(0)
+
+        # cosine formula
+    cs = sum(w1 * w2 for w1, w2 in zip(l1, l2))
+
+    cosine = cs / float((sum(l1) * sum(l2)) ** 0.5)
+    # print("similarity: ", cosine)
+    return cosine
 
 
-def jaccard_similarity(x,y):
-    intersection_cardinality = len(set.intersection(*[set(map(lambda x1: x1, x)), set(map(lambda y1: y1, y))]))
-    union_cardinality = len(set.union(*[set(map(lambda x1: x1, x)), set(map(lambda y1: y1, y))]))
-    return intersection_cardinality/float(union_cardinality)
+def jaccard_similarity(x, y):
+    intersection_cardinality = len(set.intersection(*[set(x), set(y)]))
+    union_cardinality = len(set.union(*[set(x), set(y)]))
+    return intersection_cardinality / float(union_cardinality)
 
 
-def dice_similarity(x,y):
-    len_x = len(x)
-    len_y = len(y)
-    intersection_cardinality = len(set.intersection(*[set(map(lambda x1: x1, x)), set(map(lambda y1: y1, y))]))
-    return (2.0*intersection_cardinality)/(len_x+len_y)
+def dice_similarity(x, y):
+    len_x = len(set(x))
+    len_y = len(set(y))
+    intersection_cardinality = len(set.intersection(*[set(x), set(y)]))
+    return (2.0 * intersection_cardinality) / (len_x + len_y)
 
 
-def euclidean_distance(x,y):
-    return sqrt(sum([(a-b)**2 for a, b in zip(x, y)]))
+def euclidean_distance(x, y):
+    return sqrt(sum([(a - b) ** 2 for a, b in zip(x, y)]))
 
 
+def weighted_euclidean_distance(x, y, w):
+    return sqrt(sum(w * (pow(a - b, 2)) for a, b in zip(x, y)))
 
-def weighted_euclidean_distance(x,y, w):
-    return sqrt(sum(w*(pow(a-b,2)) for a, b in zip(x, y)))
 
-
-def manhattan_distance(x,y):
-    return sum(abs(a-b) for a,b in zip(x,y))
+def manhattan_distance(x, y):
+    return sum(abs(a - b) for a, b in zip(x, y))
 
 
 def square_rooted(x):
-    return round(sqrt(sum([a*a for a in x])),3)
+    return round(sqrt(sum([a * a for a in x])), 3)
 
 
 def nth_root(value, n_root):
-    root_value = 1/float(n_root)
-    return round (value ** root_value,3)
+    root_value = 1 / float(n_root)
+    return round(value ** root_value, 3)
 
 
-def minkowski_distance(x,y,p_value):
-    return nth_root(sum(pow(abs(a-b),p_value) for a,b in zip(x, y)),p_value)
+def minkowski_distance(x, y, p_value):
+    return nth_root(sum(pow(abs(a - b), p_value) for a, b in zip(x, y)), p_value)
 
 
 def mahalanobis_distance(x, y):
-    ax = np.array(*[set(map(lambda x1:x1, x))])
-    ay = np.array(*[set(map(lambda y1:y1, y))])
-    a_substract = np.subtract(ax, ay)
-    print(a_substract)
+    ax = np.array(x)
+    ay = np.array(y)
+    delta = ax - ay
+
+    mat = np.array([x, [a for a in range(len(x))], y]).T
+    mcov = np.cov(mat)
     try:
-        inv = np.linalg.inv(a_substract)
+        icov = np.linalg.inv(mcov)
     except np.linalg.LinAlgError:
-        pass
+        icov = None
 
-    # return a_substract
+    if icov is not None:
+        m = abs(np.dot(np.dot(delta, icov), delta))
+        return np.sqrt(m)
 
-    return np.matmul(np.matmul(a_substract.transpose(), inv), a_substract)
-
-
-
-def manhattan_similarity(x,y):
-    dist = 1/(1+manhattan_distance(x,y))
-    return dist if dist == 1 else dist * 100000
-    return '{:.10f}'.format(dist*100)
-
-def euclidean_similarity(x,y):
-    dist = 1/(1+euclidean_distance(x,y))
-    return dist if dist == 1 else dist * 100000
-    return '{:.10f}'.format(dist*100)
-
-
-def weighted_euclidean_similarity(x, y, w):
-    dist = 1/(1+weighted_euclidean_distance(x,y, w))
-    return dist if dist == 1 else dist * 100000
-    return '{:.10f}'.format(dist*100)
-
-
-def minkowski_similarity(x, y, z):
-    div = (1.0+minkowski_distance(x,y,z))
-    dist = 1/div
-    return dist 
-    return '{:.10f}'.format(dist*100)
-
+    return 0.0

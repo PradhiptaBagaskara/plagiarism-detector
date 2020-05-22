@@ -43,6 +43,7 @@ Q_CLUSTER = {
     'retry': 120,
     'queue_limit': 50,
     'bulk': 10,
+    'sync': True,
     'orm': 'default'
 }
 

@@ -108,6 +108,11 @@ def _fingerprint_path(instance, filename):
 
     return path
 
+def _simfmt(point, enable=True):
+    if not enable:
+        return point
+    return (1 / (1 + point)) * 100
+
 
 class Document(models.Model):
     class Statuses(models.TextChoices):
@@ -150,15 +155,17 @@ class Document(models.Model):
         similarity, created = Similarity.objects.update_or_create(
             document=self,
             dataset=dataset,
-            cosine=cosine,
-            jaccard=jaccard,
-            dice=dice,
-            manhattan=manhattan,
-            minkowski=minkowski,
-            mahalanobis=mahalanobis,
-            euclidean=euclidean,
-            weighted=weighted
         )
+
+        similarity.cosine = cosine
+        similarity.jaccard = jaccard
+        similarity.dice = dice
+        similarity.manhattan = manhattan
+        similarity.minkowski = minkowski
+        similarity.mahalanobis = mahalanobis
+        similarity.euclidean = euclidean
+        similarity.weighted = weighted
+        similarity.save()
 
         return similarity
 
@@ -188,11 +195,12 @@ class Document(models.Model):
             result.cosine = list(similarity.values_list('cosine', flat=True))
             result.dice = list(similarity.values_list('dice', flat=True))
             result.jaccard = list(similarity.values_list('jaccard', flat=True))
-            result.manhattan = list(similarity.values_list('manhattan', flat=True))
-            result.euclidean = list(similarity.values_list('euclidean', flat=True))
-            result.minkowski = list(similarity.values_list('minkowski', flat=True))
-            result.mahalanobis = list(similarity.values_list('mahalanobis', flat=True))
-            result.weighted = list(similarity.values_list('weighted', flat=True))
+
+            result.minkowski = [_simfmt(a, False) for a in similarity.values_list('minkowski', flat=True)]
+            result.manhattan = [_simfmt(a, False) for a in similarity.values_list('manhattan', flat=True)]
+            result.euclidean = [_simfmt(a, False) for a in similarity.values_list('euclidean', flat=True)]
+            result.mahalanobis = [_simfmt(a, False) for a in similarity.values_list('mahalanobis', flat=True)]
+            result.weighted = [_simfmt(a, False) for a in similarity.values_list('weighted', flat=True)]
 
         return result
 

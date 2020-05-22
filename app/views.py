@@ -13,11 +13,10 @@ from django.http import HttpResponse, HttpResponseRedirect
 from binfile.check import checks as chk
 from app.forms import InputForm, DocumentForm
 from app.models import Document, Similarity
-from app.task import process_doc, finishing_dataset, check_similarity, extract_n_process
+from app.task import process_doc, finishing_dataset, check_similarity, extract_n_process, async
 from django.contrib import messages
 import os
 from django.conf import settings
-from django_q import async
 
 app_title = settings.APP_NAME
 

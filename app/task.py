@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django_q.tasks import async
 from app.models import Document, Similarity
-from binfile.distance_measurement import cosine_sim, jaccard_similarity, dice_similarity, mahalanobis_distance, \
+from binfile.distance_measurement import cosine_sim, cosine_similarity, jaccard_similarity, dice_similarity, mahalanobis_distance, \
     euclidean_distance, minkowski_distance, manhattan_distance, weighted_euclidean_distance
 from django.conf import settings
 
@@ -140,8 +140,11 @@ def extract_n_process(name, username='admin'):
     # print('Source Deleted')
 
 
-@threadpool
+# @threadpool
 def check_similarity(id):
+    from sklearn.preprocessing import normalize
+    import numpy as np
+    from scipy.spatial import distance
     try:
         sf = Document.objects.get(id=id)
     except Document.DoesNotExist:
@@ -151,15 +154,39 @@ def check_similarity(id):
     datasets = Document.objects.filter(is_dataset=True, status="finished")
 
     for d in datasets:
-        cosine = round(cosine_sim(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint']) * 100, 2)
-        jaccard = round(jaccard_similarity(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint']) * 100, 2)
-        dice = round(dice_similarity(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint']) * 100, 2)
-        manhattan = round(manhattan_distance(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint']) * 100, 2)
-        mahalanobis = round(mahalanobis_distance(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint']) * 100, 2)
-        minkowski = round(minkowski_distance(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint'], 2) * 100, 2)
-        euclidean = round(euclidean_distance(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint']) * 100, 2)
-        weighted = round(weighted_euclidean_distance(sf.get_fingerprint()['fingerprint'], d.get_fingerprint()['fingerprint'], 3) * 100, 2)
+        t_origin = sf.get_fingerprint()['fingerprint']
+        t_referer = d.get_fingerprint()['fingerprint']
 
+        if len(t_origin) > len(t_referer):
+            n_origin = t_origin
+            n_referer = t_referer + [0 for i in range(abs(len(t_origin) - len(t_referer)))]
+            # t_origin = t_origin[:len(t_referer)]
+        elif len(t_origin) < len(t_referer):
+            n_referer = t_referer
+            n_origin = t_origin + [0 for i in range(abs(len(t_origin) - len(t_referer)))]
+        else:
+            n_referer = t_referer
+            n_origin = t_origin
+
+        matrix = [[], []]
+        matrix[0] = normalize(np.asarray([n_origin], dtype=np.float), norm="l2", axis=1)
+        matrix[1] = normalize(np.asarray([n_referer], dtype=np.float), norm="l2", axis=1)
+        matrix[0] = matrix[0][0]
+        matrix[1] = matrix[1][0]
+
+        cosine = round(cosine_sim(n_origin, n_referer) * 100, 2)
+        print(cosine, "++++++++++++++")
+        jaccard = round(jaccard_similarity(n_origin, n_referer) * 100, 2)
+        dice = round(dice_similarity(n_origin, n_referer) * 100, 2)
+
+        euclidean = euclidean_distance(matrix[0], matrix[1])
+        manhattan = manhattan_distance(matrix[0], matrix[1])
+
+        minkowski = minkowski_distance(matrix[0], matrix[1], 3)
+        weighted = weighted_euclidean_distance(matrix[0], matrix[1], 2)
+        mahalanobis = mahalanobis_distance(matrix[0], matrix[1])
+
+        # print((cosine, jaccard, dice, euclidean, manhattan, minkowski, weighted, mahalanobis))
         sf.add_similarity(
             d,
             cosine=cosine,

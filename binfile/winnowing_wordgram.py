@@ -12,14 +12,14 @@ def sanitize(text):
 def kgrams(text, k=5):
     text = list(text)
     n = len(text)
-    
+
     if n < k:
-      yield text
+        yield text
     else:
-      # text = text.split(" ")
-      # text = [" ".join(text[i:i+k]) for i,b in enumerate(text, start=0)]
-      for i in range(n - k + 1):
-        yield text[i:i+k]
+        # text = text.split(" ")
+        # text = [" ".join(text[i:i+k]) for i,b in enumerate(text, start=0)]
+        for i in range(n - k + 1):
+            yield text[i:i + k]
 
 
 def winnowing_hash(kgram):
@@ -46,6 +46,7 @@ def default_hash(text):
 
     return hs
 
+
 def md5_hash(text):
     import hashlib
 
@@ -54,6 +55,7 @@ def md5_hash(text):
     hs = int(hs, 16)
 
     return hs
+
 
 def select_min(window):
     """In each window select the minimum hash value. If there is more than one
@@ -67,16 +69,16 @@ def select_min(window):
     return min(window, key=lambda x: x[1])[1]
 
 
-def winnow(text, k=5, debug=False):  
+def winnow(text, k=5, debug=False):
     splitlen = 10
     result = {
-      'steps' : {
-        'sanitize' : '',
-        'gram' : '',
-        'hashes' : '',
-        'windows' : '',
-      },
-      'data' : ''
+        'steps': {
+            'sanitize': '',
+            'gram': '',
+            'hashes': '',
+            'windows': '',
+        },
+        'data': ''
     }
     # sanitize
     text = sanitize(text)
@@ -84,16 +86,16 @@ def winnow(text, k=5, debug=False):
     windows = [a for a in kgrams(hashes, 4)]
 
     if debug is True:
-      result['steps']['sanitize'] = ''
-      result['steps']['gram'] = [a for a in kgrams(text, k)][:splitlen]
-      result['steps']['hashes'] = hashes[:splitlen]
-      result['steps']['windows'] = windows[:splitlen]
+        result['steps']['sanitize'] = ''
+        result['steps']['gram'] = [a for a in kgrams(text, k)][:splitlen]
+        result['steps']['hashes'] = hashes[:splitlen]
+        result['steps']['windows'] = windows[:splitlen]
 
     data = list(map(select_min, windows))
 
     result['data'] = list(set(data))
     # print(data)
-    
+
     return result
 
 
