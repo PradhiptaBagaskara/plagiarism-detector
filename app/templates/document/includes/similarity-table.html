@@ -18,7 +18,12 @@
   <tbody>
     {% for item in data %}
     <tr class="hide">
-      <td>{{ forloop.counter }}</td>
+      <td class="expand-btn">
+          <div class="btn-group">
+              <button class="btn btn-sm btn-success">{{ forloop.counter }}</button>
+              <button class="btn btn-sm btn-success expand">+</button>
+          </div>
+      </td>
       <td>{{ item.dataset.title }}</td>
       <td>{{ item.dataset.author }}</td>
       <td>{{ item.dataset.original_filename }}</td>
@@ -30,6 +35,24 @@
       <td>{{ item.mahalanobis }}</td>
       <td>{{ item.euclidean }}</td>
       <td>{{ item.weighted }}</td>
+    </tr>
+    <tr style="display: none">
+      <td colspan="12" class="p-0">
+        <table class="table">
+          <tr>
+            <td>
+              <p><strong>Title :</strong> {{ item.dataset.title }}</p>
+              <p><strong>Author :</strong> {{ item.dataset.author }}</p>
+              <p><strong>Saved Name :</strong> {{ item.dataset.filename }}</p>
+              <p><strong>Original Name :</strong> {{ item.dataset.original_filename }}</p>
+              <p><strong>Uploaded :</strong> {{ item.dataset.created }}</p>
+              <p><strong>Las Modified :</strong> {{ item.dataset.modified }}</p>
+              <p><strong>Uploaded by :</strong> {{ item.dataset.user.username }}</p>
+              <p><strong>Content :</strong> <a href="{% url 'document.html' item.dataset.id %}" target="_blank"> Link </a> </p>
+            </td>
+          </tr>
+        </table>
+      </td>
     </tr>
     {% endfor %}
   </tbody>

@@ -56,15 +56,15 @@ $('#similarity-table tbody').on('click', 'td.expand-btn', function () {
         if ( tr.hasClass('hide') ) {
             rr.show();
             tr.removeClass('hide');
-            tr.find('button').removeClass('btn-success')
-            tr.find('button').addClass('btn-danger')
-            tr.find('button').html("-")
+            tr.find('button.expand').removeClass('btn-success')
+            tr.find('button.expand').addClass('btn-danger')
+            tr.find('button.expand').html("-")
         } else {
             rr.hide();
             tr.addClass('hide');
-            tr.find('button').removeClass('btn-danger')
-            tr.find('button').addClass('btn-success')
-            tr.find('button').html("+")
+            tr.find('button.expand').removeClass('btn-danger')
+            tr.find('button.expand').addClass('btn-success')
+            tr.find('button.expand').html("+")
         }
     } );
 })
@@ -100,31 +100,44 @@ var barChart = new Chart(document.getElementById('canvas-2'), {
         },
         {
           label: 'Manhattan',
-          backgroundColor: 'rgba(128,153,220,0.2)',
-          borderColor: 'rgba(128,153,220,1)',
-          pointBackgroundColor: 'rgba(128,153,220,0.8)',
+          type: 'bar',
+          backgroundColor: 'rgba(77,104,220,1.0)',
+          borderColor: 'rgba(77,104,220,1)',
+          pointBackgroundColor: 'rgba(77,104,220,0.8)',
           pointBorderColor: 'rgba(191,190,255,0.87)',
           data: [...{{ document.get_similarity.manhattan }}]
         },
         {
           label: 'Euclidean',
-          backgroundColor: 'rgba(220,109,202,0.2)',
-          borderColor: 'rgba(220,109,202,1)',
-          pointBackgroundColor: 'rgba(220,109,202,0.8)',
+          type: 'bar',
+          backgroundColor: 'rgba(203,66,220,1.0)',
+          borderColor: 'rgba(203,66,220,1)',
+          pointBackgroundColor: 'rgba(203,66,220,0.8)',
           pointBorderColor: 'rgba(255,156,208,0.89)',
           data: [...{{ document.get_similarity.euclidean }}]
         },
         {
           label: 'Minkowski',
-          backgroundColor: 'rgba(220,115,117,0.2)',
+          type: 'bar',
+          backgroundColor: 'rgba(220,115,117,1.0)',
           borderColor: 'rgba(220,115,117,1)',
           pointBackgroundColor: 'rgba(220,115,117,0.8)',
           pointBorderColor: 'rgba(255,170,190,0.95)',
           data: [...{{ document.get_similarity.minkowski }}]
         },
         {
+          label: 'Mahalanobis',
+          type: 'bar',
+          backgroundColor: 'rgba(220,28,40,1.0)',
+          borderColor: 'rgba(220,28,40,1)',
+          pointBackgroundColor: 'rgba(220,28,40,0.8)',
+          pointBorderColor: 'rgba(220,124,143,0.95)',
+          data: [...{{ document.get_similarity.mahalanobis }}]
+        },
+        {
           label: 'Weighted',
-          backgroundColor: 'rgba(220,220,59,0.2)',
+          type: 'bar',
+          backgroundColor: 'rgba(220,220,59,1.0)',
           borderColor: 'rgba(220,220,59,1)',
           pointBackgroundColor: 'rgba(220,220,59,0.8)',
           pointBorderColor: 'rgba(255,249,192,0.95)',
