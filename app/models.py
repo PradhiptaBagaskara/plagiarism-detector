@@ -108,10 +108,11 @@ def _fingerprint_path(instance, filename):
 
     return path
 
+
 def _simfmt(point, enable=True):
-    if not enable:
-        return point
-    return (1 / (1 + point)) * 100
+    if enable:
+        return round(point, 3)
+    return point
 
 
 class Document(models.Model):
@@ -180,7 +181,8 @@ class Document(models.Model):
             to_datasets__document=self)
 
     def get_similarity(self, as_table=False):
-        sort = ['-cosine', '-dice', '-jaccard', '-manhattan']
+        sort = ['-cosine', '-dice', '-jaccard']
+        # sort = ['-euclidean', '-weighted', '-manhattan']
         similarity = Similarity.objects.filter(document=self).order_by(*sort)
         result = []
         if as_table:
@@ -196,11 +198,11 @@ class Document(models.Model):
             result.dice = list(similarity.values_list('dice', flat=True))
             result.jaccard = list(similarity.values_list('jaccard', flat=True))
 
-            result.minkowski = [_simfmt(a, False) for a in similarity.values_list('minkowski', flat=True)]
-            result.manhattan = [_simfmt(a, False) for a in similarity.values_list('manhattan', flat=True)]
-            result.euclidean = [_simfmt(a, False) for a in similarity.values_list('euclidean', flat=True)]
+            result.minkowski = [_simfmt(a) for a in similarity.values_list('minkowski', flat=True)]
+            result.manhattan = [_simfmt(a) for a in similarity.values_list('manhattan', flat=True)]
+            result.euclidean = [_simfmt(a) for a in similarity.values_list('euclidean', flat=True)]
+            result.weighted = [_simfmt(a) for a in similarity.values_list('weighted', flat=True)]
             result.mahalanobis = [_simfmt(a, False) for a in similarity.values_list('mahalanobis', flat=True)]
-            result.weighted = [_simfmt(a, False) for a in similarity.values_list('weighted', flat=True)]
 
         return result
 
@@ -342,8 +344,8 @@ class Document(models.Model):
         if not self.is_dataset and self.status == 'finished':
             if self.similarities.count() > 0:
                 html += self.btn('similarity')
-            else:
                 html += self.btn('check')
+            # else:
 
         html += self.btn('edit')
         html += self.btn('delete')

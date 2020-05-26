@@ -13,10 +13,10 @@
               <p><strong>Saved Name :</strong> {{ document.filename }}</p>
               <p><strong>Original Name :</strong> {{ document.original_filename }}</p>
               <p><strong>Uploaded :</strong> {{ document.created }}</p>
-              <p><strong>Las Modified :</strong> {{ document.modified }}</p>
+              <p><strong>Last Modified :</strong> {{ document.modified }}</p>
               <p><strong>Uploaded by :</strong> {{ document.user.username }}</p>
               <p><strong>Content :</strong></p>
-              <iframe height="500px" width="100%" src="{% url 'document.html' document.id %}"></iframe>
+              <iframe height="500px" width="100%" src="{% url 'document.pdf' document.id %}"></iframe>
           </div>
         </div>
 

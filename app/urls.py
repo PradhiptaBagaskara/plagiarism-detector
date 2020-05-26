@@ -26,6 +26,7 @@ urlpatterns = [
     path('document/<uuid:id>/finish', views.document_finishing, name='document.finish'),
     path('document/<uuid:id>/fingerprint', views.document_fingerprint, name='document.fingerprint'),
     path('document/<uuid:id>/html', views.document_html, name='document.html'),
+    path('document/<uuid:id>/pdf', views.document_pdf, name='document.pdf'),
     path('document/<uuid:id>/similarity', views.document_similarity, name='document.similarity'),
     path('document/<uuid:id>/check', views.similarity_check, name='document.check'),
 

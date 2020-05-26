@@ -77,7 +77,7 @@ def mahalanobis_distance(x, y):
     ay = np.array(y)
     delta = ax - ay
 
-    mat = np.array([x, [a for a in range(len(x))], y]).T
+    mat = np.array([x, y]).T
     mcov = np.cov(mat)
     try:
         icov = np.linalg.inv(mcov)
@@ -85,7 +85,26 @@ def mahalanobis_distance(x, y):
         icov = None
 
     if icov is not None:
-        m = abs(np.dot(np.dot(delta, icov), delta))
-        return np.sqrt(m)
+        m = np.dot(np.dot(delta, icov), delta)
+        return np.sqrt(m) if m >= 0 else -np.sqrt(abs(m))
 
     return 0.0
+    # X = np.vstack([x, y])
+    # V = np.cov(X.T)
+    # print(V)
+    # return 0.0
+    # VI = np.linalg.inv(V)
+    # print(np.diag(np.sqrt(np.dot(np.dot((x - y), VI), (x - y).T))))
+
+
+def weighted_euclidean_distances(X, w):
+    from itertools import combinations
+    res = []
+
+    for xx, yy in combinations(X, 2):
+        res.append(weighted_euclidean_distance(xx, yy, w))
+
+    for xx in X:
+        res.append(weighted_euclidean_distance(xx, xx, w))
+
+    return res

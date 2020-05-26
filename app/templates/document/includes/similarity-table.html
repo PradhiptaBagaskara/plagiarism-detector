@@ -1,4 +1,4 @@
-<table id="similarity-table" class="table">
+<table id="similarity-table" class="table table-responsive table-hover">
   <thead>
     <tr>
         <th>#</th>
@@ -10,9 +10,9 @@
         <th>Dice</th>
         <th>Manhattan</th>
         <th>Minkowski</th>
-        <th>Mahalanobis</th>
         <th>Euclidean</th>
         <th>Weighted</th>
+        <th>Mahalanobis</th>
     </tr>
   </thead>
   <tbody>
@@ -32,9 +32,9 @@
       <td>{{ item.dice }}</td>
       <td>{{ item.manhattan }}</td>
       <td>{{ item.minkowski }}</td>
-      <td>{{ item.mahalanobis }}</td>
       <td>{{ item.euclidean }}</td>
       <td>{{ item.weighted }}</td>
+      <td>{{ item.mahalanobis }}</td>
     </tr>
     <tr style="display: none">
       <td colspan="12" class="p-0">
@@ -46,9 +46,9 @@
               <p><strong>Saved Name :</strong> {{ item.dataset.filename }}</p>
               <p><strong>Original Name :</strong> {{ item.dataset.original_filename }}</p>
               <p><strong>Uploaded :</strong> {{ item.dataset.created }}</p>
-              <p><strong>Las Modified :</strong> {{ item.dataset.modified }}</p>
+              <p><strong>Last Modified :</strong> {{ item.dataset.modified }}</p>
               <p><strong>Uploaded by :</strong> {{ item.dataset.user.username }}</p>
-              <p><strong>Content :</strong> <a href="{% url 'document.html' item.dataset.id %}" target="_blank"> Link </a> </p>
+              <p><strong>Content :</strong> <a href="{% url 'document.pdf' item.dataset.id %}" target="_blank"> Link </a> </p>
             </td>
           </tr>
         </table>

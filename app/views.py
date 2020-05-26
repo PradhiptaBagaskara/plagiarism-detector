@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404, redirect
 from django.template import loader
 from django.http import HttpResponse, HttpResponseRedirect
-from binfile.check import checks as chk
+from binfile.check import demo_check as chk
 from app.forms import InputForm, DocumentForm
 from app.models import Document, Similarity
 from app.task import process_doc, finishing_dataset, check_similarity, extract_n_process, async
@@ -190,6 +190,19 @@ def document_html(request, id):
     response.status_code = 200
     response['Access-Control-Allow-Origin'] = '*'
     response['Content-Type'] = 'text/html'
+    response['X-Frame-Options'] = 'ALLOW'
+    return response
+
+
+@login_required
+@permission_required('app.view_document')
+def document_pdf(request, id):
+    file = get_object_or_404(Document, id=id)
+    content = file.content.open("rb")
+    response = HttpResponse(content)
+    response.status_code = 200
+    response['Access-Control-Allow-Origin'] = '*'
+    response['Content-Type'] = 'application/pdf'
     response['X-Frame-Options'] = 'ALLOW'
     return response
 

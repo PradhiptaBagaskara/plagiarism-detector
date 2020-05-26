@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django_q.tasks import async
 from app.models import Document, Similarity
 from binfile.distance_measurement import cosine_sim, cosine_similarity, jaccard_similarity, dice_similarity, mahalanobis_distance, \
-    euclidean_distance, minkowski_distance, manhattan_distance, weighted_euclidean_distance
+    euclidean_distance, minkowski_distance, manhattan_distance, weighted_euclidean_distance, weighted_euclidean_distances
 from django.conf import settings
 
 import glob
@@ -143,8 +143,9 @@ def extract_n_process(name, username='admin'):
 # @threadpool
 def check_similarity(id):
     from sklearn.preprocessing import normalize
+    from sklearn.metrics.pairwise import pairwise_distances
     import numpy as np
-    from scipy.spatial import distance
+
     try:
         sf = Document.objects.get(id=id)
     except Document.DoesNotExist:
@@ -152,50 +153,84 @@ def check_similarity(id):
         return
 
     datasets = Document.objects.filter(is_dataset=True, status="finished")
-
+    similarities = []
+    fingerprints = []
+    fingerprints.append(sf.get_fingerprint()['fingerprint'])
+    minlen = len(fingerprints[0])
     for d in datasets:
         t_origin = sf.get_fingerprint()['fingerprint']
         t_referer = d.get_fingerprint()['fingerprint']
 
-        if len(t_origin) > len(t_referer):
-            n_origin = t_origin
-            n_referer = t_referer + [0 for i in range(abs(len(t_origin) - len(t_referer)))]
-            # t_origin = t_origin[:len(t_referer)]
-        elif len(t_origin) < len(t_referer):
-            n_referer = t_referer
-            n_origin = t_origin + [0 for i in range(abs(len(t_origin) - len(t_referer)))]
-        else:
-            n_referer = t_referer
-            n_origin = t_origin
+        if len(t_origin) == 1 or len(t_referer) == 1:
+            print("Fingerprint not valid!", d.id)
+            continue
 
-        matrix = [[], []]
-        matrix[0] = normalize(np.asarray([n_origin], dtype=np.float), norm="l2", axis=1)
-        matrix[1] = normalize(np.asarray([n_referer], dtype=np.float), norm="l2", axis=1)
-        matrix[0] = matrix[0][0]
-        matrix[1] = matrix[1][0]
+        fingerprints.append(t_referer)
+        minlen = min(minlen, len(t_referer))
 
-        cosine = round(cosine_sim(n_origin, n_referer) * 100, 2)
-        print(cosine, "++++++++++++++")
-        jaccard = round(jaccard_similarity(n_origin, n_referer) * 100, 2)
-        dice = round(dice_similarity(n_origin, n_referer) * 100, 2)
+        cosine = cosine_sim(t_origin, t_referer) * 100
+        jaccard = jaccard_similarity(t_origin, t_referer) * 100
+        dice = dice_similarity(t_origin, t_referer) * 100
 
-        euclidean = euclidean_distance(matrix[0], matrix[1])
-        manhattan = manhattan_distance(matrix[0], matrix[1])
+        similarities.append([
+            d,
+            jaccard,
+            dice,
+            cosine,
+        ])
 
-        minkowski = minkowski_distance(matrix[0], matrix[1], 3)
-        weighted = weighted_euclidean_distance(matrix[0], matrix[1], 2)
-        mahalanobis = mahalanobis_distance(matrix[0], matrix[1])
+        # print((cosine, jaccard, dice, euclidean, manhattan, minkowski, weighted, mahalanobis), "=================")
 
-        # print((cosine, jaccard, dice, euclidean, manhattan, minkowski, weighted, mahalanobis))
+    for i, m in enumerate(fingerprints):  # trim length
+        if len(m) > minlen:
+            fingerprints[i] = m[:minlen]
+
+    matx = normalize(np.asarray(fingerprints, dtype=np.float))
+    # matx = fingerprints
+
+    for i, n in enumerate(matx):
+        if i == 0:
+            continue
+        euclidean = np.max(1 - pairwise_distances([matx[0]], [n], metric='euclidean') / np.max(pairwise_distances(matx, metric='euclidean'))) * 100
+        manhattan = np.max(1 - pairwise_distances([matx[0]], [n], metric='manhattan') / np.max(pairwise_distances(matx, metric='manhattan'))) * 100
+        minkowski = np.max(1 - pairwise_distances([matx[0]], [n], metric='minkowski') / np.max(pairwise_distances(matx, metric='minkowski'))) * 100
+        weighted = np.max(1 - weighted_euclidean_distance(matx[0], n, 5) / np.max(weighted_euclidean_distances(matx, 5))) * 100
+        mahalanobis = mahalanobis_distance(matx[0], n)
+        similarities[i-1] = similarities[i-1] + [euclidean, manhattan, minkowski, weighted, mahalanobis]
+        # print(similarities[i-1])
+
+    for sim in similarities:
+        d, jaccard, dice, cosine, euclidean, manhattan, minkowski, weighted, mahalanobis = sim
+
+        # print((cosine, jaccard, dice, euclidean, manhattan, minkowski, weighted, mahalanobis), "=================")
+
         sf.add_similarity(
             d,
             cosine=cosine,
             jaccard=jaccard,
             dice=dice,
             manhattan=manhattan,
-            mahalanobis=mahalanobis,
             minkowski=minkowski,
             euclidean=euclidean,
-            weighted=weighted
+            weighted=weighted,
+            mahalanobis=mahalanobis
         )
 
+
+def randome():
+    from random import randint
+    ma = []
+    mb = []
+
+    for a in range(100):
+        ma.append(randint(0, 200))
+        mb.append(randint(0, 200))
+
+    return [ma, mb]
+
+
+def normalize(x, y):
+    from sklearn.preprocessing import normalize
+    import numpy as np
+
+    return normalize(np.asarray([x, y], dtype=np.float), norm="l1", axis=1)
