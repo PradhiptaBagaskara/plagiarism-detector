@@ -50,7 +50,16 @@ def default_hash(text):
 def md5_hash(text):
     import hashlib
 
-    hs = hashlib.md5(text.encode())
+    hs = hashlib.md5(text.encode('utf-8'))
+    hs = hs.hexdigest()[-4:]
+    hs = int(hs, 16)
+
+    return hs
+
+def sha256_hash(text):
+    import hashlib
+
+    hs = hashlib.sha256(text.encode('utf-8'))
     hs = hs.hexdigest()[-4:]
     hs = int(hs, 16)
 
@@ -64,13 +73,11 @@ def select_min(window):
     :param window: A list of (index, hash) tuples.
     """
 
-    # print(window, min(window, key=lambda x: x[1]))
-
     return min(window, key=lambda x: x[1])[1]
 
 
-def winnow(text, k=5, debug=False):
-    splitlen = 10
+def winnow(text, k=15, debug=False):
+    splitlen = 7
     result = {
         'steps': {
             'sanitize': '',
@@ -83,7 +90,7 @@ def winnow(text, k=5, debug=False):
     # sanitize
     text = sanitize(text)
     hashes = [winnowing_hash(a) for a in kgrams(text, k)]
-    windows = [a for a in kgrams(hashes, 4)]
+    windows = [a for a in kgrams(hashes, 5)]
 
     if debug is True:
         result['steps']['sanitize'] = ''
@@ -100,4 +107,4 @@ def winnow(text, k=5, debug=False):
 
 
 # Specified a hash function. You may override this.
-hash_function = md5_hash
+hash_function = sha256_hash

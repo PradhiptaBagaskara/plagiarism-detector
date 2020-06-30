@@ -23,7 +23,7 @@ IGNORE = [
     ".git",
 ]
 
-_DEFAULT_POOL = futures.ThreadPoolExecutor(max_workers=8)
+_DEFAULT_POOL = futures.ThreadPoolExecutor(max_workers=3)
 
 
 def threadpool(f, executor=None):
@@ -43,6 +43,8 @@ def process_path(path, username='admin'):
     if not path.endswith("**"):
         path = path + "**"
 
+    import time
+    start = time.time()
     for filename in glob.iglob(path, recursive=True):
         print("Checking", filename)
         will_ignore = False
@@ -57,6 +59,7 @@ def process_path(path, username='admin'):
             # async(process_file_by_path, filename)
             process_file_by_path(filename, username)
 
+    print("=== Finished on ", time.time() - start)
     return path
 
 
@@ -67,6 +70,8 @@ def process_file_by_path(path, username='admin'):
     if ext not in [".pdf", ".docx", ".doc"]:
         return
 
+    import time
+    start = time.time()
     print("PROCESSING ONE FILE", path)
     if not os.path.isfile(path):
         print("NOT A FILE", path)
@@ -84,9 +89,10 @@ def process_file_by_path(path, username='admin'):
         sf.content.save(name=os.path.basename(path), content=file)
 
     sf.original_filename = original_filename
+    sf.is_dataset = True
     sf.save()
     finishing_dataset(sf.id)
-    # async(finishing_dataset, sf.id)
+    print("FINISHHED ONE FILE, Elapsed", time.time() - start)
     os.remove(path)
     print("DELETE FILE ", path)
 
@@ -100,11 +106,16 @@ def finishing_dataset(id):
     except Document.DoesNotExist:
         return
 
+    import time
+    start = time.time()
+    print("PROCESS ON : ", sf.id)
     sf.extract_content()
+    time.sleep(0.5)
     sf.translate()
+    time.sleep(3)
     sf.fingerprinting(save=True, debug=True)
-    sf.is_dataset = True
     sf.save()
+    print("FINISHED ON : ", sf.id, " Elapsed ",  time.time() - start)
 
     return sf
 
@@ -136,41 +147,63 @@ def extract_n_process(name, username='admin'):
     src = os.path.join(settings.MEDIA_ROOT, name)
     Archive(src).extractall(dest, auto_create_dir=True)
     process_path(dest, username)
-    # os.remove(src)
-    # print('Source Deleted')
+    os.remove(src)
+    print('Source Deleted')
 
 
-# @threadpool
+def translate_and_finish():
+    untranslated = Document.objects.filter(is_dataset=True)
+    for unt in untranslated:
+        # unt.extract_content()
+        # unt.translate()
+        # print("Translating ", unt.id)
+        unt.fingerprinting(save=True, debug=True)
+        print("Fingerprinting ", unt.id)
+        # time.sleep(5)
+
+
+@threadpool
 def check_similarity(id):
     from sklearn.preprocessing import normalize
     from sklearn.metrics.pairwise import pairwise_distances
     import numpy as np
+
+    mode = 1
 
     try:
         sf = Document.objects.get(id=id)
     except Document.DoesNotExist:
         print("Document not Exist")
         return
+    start = time.time()
+    print("SIMILARITY ON : ", sf.id)
+    sf.status = Document.Statuses.PROCESS
+    sf.save()
 
     datasets = Document.objects.filter(is_dataset=True, status="finished")
     similarities = []
     fingerprints = []
-    fingerprints.append(sf.get_fingerprint()['fingerprint'])
+    t_origin = sf.get_fingerprint()['fingerprint']
+    fingerprints.append(t_origin)
     minlen = len(fingerprints[0])
+    maxlen = len(fingerprints[0])
+
     for d in datasets:
-        t_origin = sf.get_fingerprint()['fingerprint']
         t_referer = d.get_fingerprint()['fingerprint']
 
-        if len(t_origin) == 1 or len(t_referer) == 1:
+        if len(t_origin) <= 1 or len(t_referer) <= 1:
             print("Fingerprint not valid!", d.id)
             continue
 
-        fingerprints.append(t_referer)
-        minlen = min(minlen, len(t_referer))
+        # text1, text2 = trim_to_min(t_origin, t_referer)
+        text1, text2 = padd_to_max(t_origin, t_referer) if mode == 1 else trim_to_min(t_origin, t_referer)
+        cosine = cosine_sim(text1, text2) * 100
+        jaccard = jaccard_similarity(text1, text2) * 100
+        dice = dice_similarity(text1, text2) * 100
 
-        cosine = cosine_sim(t_origin, t_referer) * 100
-        jaccard = jaccard_similarity(t_origin, t_referer) * 100
-        dice = dice_similarity(t_origin, t_referer) * 100
+        minlen = min(minlen, len(t_referer))
+        maxlen = max(maxlen, len(t_referer))
+        fingerprints.append(t_referer) # append as set
 
         similarities.append([
             d,
@@ -180,21 +213,26 @@ def check_similarity(id):
         ])
 
         # print((cosine, jaccard, dice, euclidean, manhattan, minkowski, weighted, mahalanobis), "=================")
-
-    for i, m in enumerate(fingerprints):  # trim length
-        if len(m) > minlen:
-            fingerprints[i] = m[:minlen]
-
+    
+    if mode == 0:
+        for i, m in enumerate(fingerprints):  # trim length
+            if len(m) > minlen:
+                fingerprints[i] = m[:minlen]
+    elif mode == 1:
+        for i, m in enumerate(fingerprints):  # padding
+            if len(m) < maxlen:
+                fingerprints[i] = m + [0.0 for a in range(0, maxlen - len(m))]
+     
     matx = normalize(np.asarray(fingerprints, dtype=np.float))
     # matx = fingerprints
 
     for i, n in enumerate(matx):
         if i == 0:
             continue
-        euclidean = np.max(1 - pairwise_distances([matx[0]], [n], metric='euclidean') / np.max(pairwise_distances(matx, metric='euclidean'))) * 100
-        manhattan = np.max(1 - pairwise_distances([matx[0]], [n], metric='manhattan') / np.max(pairwise_distances(matx, metric='manhattan'))) * 100
-        minkowski = np.max(1 - pairwise_distances([matx[0]], [n], metric='minkowski') / np.max(pairwise_distances(matx, metric='minkowski'))) * 100
-        weighted = np.max(1 - weighted_euclidean_distance(matx[0], n, 5) / np.max(weighted_euclidean_distances(matx, 5))) * 100
+        euclidean = euclidean_distance(matx[0], n)
+        manhattan = manhattan_distance(matx[0], n)
+        minkowski = minkowski_distance(matx[0], n, 2)
+        weighted = weighted_euclidean_distance(matx[0], n, 5)
         mahalanobis = mahalanobis_distance(matx[0], n)
         similarities[i-1] = similarities[i-1] + [euclidean, manhattan, minkowski, weighted, mahalanobis]
         # print(similarities[i-1])
@@ -216,6 +254,31 @@ def check_similarity(id):
             mahalanobis=mahalanobis
         )
 
+    sf.status = Document.Statuses.FINISHED
+    sf.save()
+    print("SIMILARITY FINISHED ON : ", sf.id, " Elapsed", time.time() - start)
+
+@threadpool
+def refingerprint():
+    docs = Document.objects.all()
+
+    for d in docs:
+        print(d.fingerprinting(debug=True))
+        # if d.is_dataset:
+        # else:
+        #     print(d.fingerprinting())
+    
+    return True
+
+
+def recheck():
+    docs = Document.objects.filter(is_dataset=False)
+
+    for d in docs:
+        check_similarity(d.id)
+    
+    return True
+
 
 def randome():
     from random import randint
@@ -229,8 +292,103 @@ def randome():
     return [ma, mb]
 
 
-def normalize(x, y):
-    from sklearn.preprocessing import normalize
-    import numpy as np
+# def normalize(x, y):
+#     from sklearn.preprocessing import normalize
+#     import numpy as np
+#
+#     return normalize(np.asarray([x, y], dtype=np.float), norm="l1", axis=1)
 
-    return normalize(np.asarray([x, y], dtype=np.float), norm="l1", axis=1)
+
+def trim_to_min(text1 = [], text2 = []):
+    text1 = list(set(text1))
+    text2 = list(set(text2))
+
+    if len(text1) > len(text2):
+        text1 = text1[:len(text2)]
+    elif len(text1) < len(text2):
+        text2 = text2[:len(text1)]
+
+    return text1, text2
+
+def padd_to_max(text1 = [], text2 = []):
+    text1 = text1
+    text2 = text2
+
+    if len(text1) > len(text2):
+        text2 = text2 + [0 for a in range(0, len(text1) - len(text2))]
+    elif len(text1) < len(text2):
+        text1 = text1 + [0 for a in range(0, len(text2) - len(text1))]
+
+    return text1, text2
+
+
+class NRollingHash(object):
+    def __init__(self, text, base_size=256, modulo=1000003, kgram=5):
+        self.text = text
+        self.base_size = base_size
+        self.modulo = modulo
+        self.modulo_power = 1
+        self.kgram = kgram
+        self.hashes = []
+        super().__init__()
+
+    def normal_hash(self, text):
+        text = text.split(' ')
+        p_hash = 0
+        self.modulo_power = 1
+        for i in range(len(text)):
+            p_hash = (hash(text[i]) + p_hash * self.base_size) % self.modulo
+            if i == len(text) - 1:
+                continue
+            self.modulo_power = (self.modulo_power * self.base_size) % self.modulo
+        return p_hash 
+
+    def rolling_hash(self, ohash, pre, nex):
+        return ((ohash - hash(pre) * self.modulo_power) * self.base_size + hash(nex)) % self.modulo
+
+    def hash_kgrams(self, kgrams=[]): # mod
+        prev_kgram = kgrams[0]
+        self.hashes = []
+        prev_hash = self.normal_hash(' '.join(prev_kgram))
+        self.hashes.append(prev_hash)
+        # print(prev_hash, prev_kgram)
+        for i, cur_kgram in enumerate(kgrams[1:]):
+            prev_hash = self.rolling_hash(
+                prev_hash, prev_kgram[0], cur_kgram[-1])
+            self.hashes.append(prev_hash)
+            prev_kgram = cur_kgram
+            # print(prev_hash, prev_kgram)
+
+        return self.hashes
+
+    def compare(self):
+        text = self.text.split(' ')
+        p_len = self.kgram
+        cur_gram = ' '.join(text[0:p_len])
+        cur_hash = self.normal_hash(cur_gram)
+        rolled = []
+        normal = []
+        rolled.append((cur_hash, cur_gram))
+        print('N', cur_gram)
+
+        for i in range(0, len(text) - p_len + 1):
+            cur_gram = ' '.join(text[i:i+p_len])
+            print('N', cur_gram)
+
+            nh = self.normal_hash(cur_gram)
+            normal.append((nh, cur_gram))
+            
+            if i == len(text) - p_len:
+                    continue
+            # print(text[i:i+p_len])
+            # print(text[i], text[i+p_len])
+            cur_hash = self.rolling_hash(cur_hash, text[i], text[i+p_len])
+            rolled.append((cur_hash, [text[i], text[i+p_len]]))
+        
+        valid = []
+
+        for a, b in zip(rolled, normal):
+            valid.append(a[0] == b[0])
+
+        return normal, rolled, len(set(valid)) == 1 and valid[0]
+

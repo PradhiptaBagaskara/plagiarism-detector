@@ -1,0 +1,1 @@
+waitress-serve --port=5005 core.wsgi:application

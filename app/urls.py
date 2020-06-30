@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 """
 License: MIT
-Copyright (c) 2019 - present AppSeed.us
+Copyright (c) 2020 - Winnowing Similarity Measurement
 """
 
 from django.urls import path, re_path
@@ -18,6 +18,9 @@ urlpatterns = [
 
     path('check', views.check, name='demo_check'),
 
+    path('re_fingerprint', views.re_fingerprint, name='document.re_fingerprint'),
+    path('re_check', views.re_check, name='document.re_check'),
+
     path('document', views.document_list, name='document.index'),
     path('document/upload', views.document_upload, name='document.upload'),
     path('document/<uuid:id>', views.document_show, name='document.show'),
@@ -27,6 +30,7 @@ urlpatterns = [
     path('document/<uuid:id>/fingerprint', views.document_fingerprint, name='document.fingerprint'),
     path('document/<uuid:id>/html', views.document_html, name='document.html'),
     path('document/<uuid:id>/pdf', views.document_pdf, name='document.pdf'),
+    path('document/<uuid:id>/text', views.document_text, name='document.text'),
     path('document/<uuid:id>/similarity', views.document_similarity, name='document.similarity'),
     path('document/<uuid:id>/check', views.similarity_check, name='document.check'),
 

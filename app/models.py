@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 """
 License: MIT
-Copyright (c) 2019 - present AppSeed.us
+Copyright (c) 2020 - Winnowing Similarity Measurement
 """
 
 from django.db import models
@@ -19,6 +19,7 @@ import mammoth
 from binfile.winnowing_ngram import winnow as n_winnow
 from binfile.winnowing_wordgram import winnow as word_winnow
 from binfile.rabin import rabin_word
+from binfile.fingerprint import WinnowingFingerprint
 from django.utils.translation import gettext as _
 import json
 
@@ -28,6 +29,7 @@ from django.core.files import File
 from django.template.loader import render_to_string
 
 from google.cloud import translate_v2 as translate
+from math import *
 
 
 # Create your models here.
@@ -111,6 +113,7 @@ def _fingerprint_path(instance, filename):
 
 def _simfmt(point, enable=True):
     if enable:
+        # return pow(10, -point) * 100
         return round(point, 3)
     return point
 
@@ -181,9 +184,9 @@ class Document(models.Model):
             to_datasets__document=self)
 
     def get_similarity(self, as_table=False):
-        sort = ['-cosine', '-dice', '-jaccard']
+        sort = ['-dice', '-jaccard', '-cosine', 'euclidean', 'weighted', 'minkowski', 'manhattan']
         # sort = ['-euclidean', '-weighted', '-manhattan']
-        similarity = Similarity.objects.filter(document=self).order_by(*sort)
+        similarity = Similarity.objects.filter(document=self).order_by(*sort)[:10]
         result = []
         if as_table:
             res = list(similarity)
@@ -193,11 +196,11 @@ class Document(models.Model):
             result = render_to_string('document/includes/similarity-table.html', {'data': result})
         else:
             result = similarity
-            result.label = list(similarity.values_list('dataset__original_filename', flat=True))
+            result.label = [a[:15] for a in similarity.values_list('dataset__original_filename', flat=True)]
             result.cosine = list(similarity.values_list('cosine', flat=True))
             result.dice = list(similarity.values_list('dice', flat=True))
             result.jaccard = list(similarity.values_list('jaccard', flat=True))
-
+            
             result.minkowski = [_simfmt(a) for a in similarity.values_list('minkowski', flat=True)]
             result.manhattan = [_simfmt(a) for a in similarity.values_list('manhattan', flat=True)]
             result.euclidean = [_simfmt(a) for a in similarity.values_list('euclidean', flat=True)]
@@ -218,37 +221,38 @@ class Document(models.Model):
         super(Document, self).save(*args, **kwargs)
 
     def delete(self, using=None, keep_parents=False):
+        if self.fingerprint.name != '' and self.fingerprint.storage.exists(self.fingerprint.name):
+            self.fingerprint.delete()
+        if self.html.name != '' and self.html.storage.exists(self.html.name):
+            self.html.delete()
+        if self.text.name != '' and self.text.storage.exists(self.text.name):
+            self.text.delete()
         try:
-            if self.fingerprint.name != '' and self.fingerprint.storage.exists(self.fingerprint.name):
-                self.fingerprint.delete()
-            if self.html.name != '' and self.html.storage.exists(self.html.name):
-                self.html.delete()
-            if self.text.name != '' and self.text.storage.exists(self.text.name):
-                self.text.delete()
             if self.content.name != '' and self.content.storage.exists(self.content.name):
                 self.content.delete()
         except PermissionError:
-            print("permission error : ", self.content.name)
+            print("permission error : ", self.content.path)
 
         super().delete()
 
     def extract_content(self):
-        self.status = "process"
+        self.status = Document.Statuses.PROCESS
 
         text = StringIO()
         html = StringIO()
 
         _, ext = os.path.splitext(self.content.path)
-        if ext == ".pdf":
-            extract_text_to_fp(self.content, text)
-            extract_text_to_fp(self.content, html, laparams=LAParams(), output_type='html', codec=None)
-        elif ext in [".docx", ".doc"]:
-            with self.content.open("rb") as file:
+        with self.content as file:
+            if ext == ".pdf":
+                laparams = LAParams()
+                setattr(laparams, 'all_texts', True)
+                extract_text_to_fp(self.content, text, laparams=laparams)
+                extract_text_to_fp(self.content, html, laparams=laparams, output_type='html', codec=None)
+            elif ext in [".docx", ".doc"]:
                 result = mammoth.convert_to_html(file)
                 html.write(result.value)
                 result = mammoth.extract_raw_text(file)
                 text.write(result.value)
-                file.close()
 
         with ContentFile(content=text.getvalue().encode("utf-8")) as file:
             self.text.save(name='any', content=file)
@@ -278,15 +282,24 @@ class Document(models.Model):
                 return False
 
     def fingerprinting(self, save=True, debug=False):
-        kgram = 6
+        kgram = 7
 
         result = {}
         jsonf = {}
-        with self.text.open(mode="rb") as file:
+        wf = WinnowingFingerprint(kgram_len=kgram, window_len=5, base=256, modulo=100003)
+        with self.text.open() as file:
             read = file.read().decode('utf-8')
-            result['fingerprint'] = word_winnow(text=read, k=kgram,
-                                                debug=debug) if settings.FINGERPRINTING == 'winnowing' else \
-                rabin_word(text=read, k=kgram, debug=debug)
+            # import StemmerFactory class
+            # from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
+            # # create stemmer
+            # factory = StemmerFactory()
+            # stemmer = factory.create_stemmer()
+            # # stemming process
+            # read = stemmer.stem(read)
+            result['fingerprint'] = wf.generate(str=read, debug=debug)
+            # result['fingerprint'] = word_winnow(text=read, k=kgram,
+            #                         debug=debug) if settings.FINGERPRINTING == 'winnowing' else \
+            #                         rabin_word(text=read, k=kgram, debug=debug)
             # result['n_winnowing'] = n_winnow(text=read, k=kgram, debug=debug)
             # result['rabin'] = rabin_word(text=read, k=kgram, debug=debug)
 
@@ -296,21 +309,21 @@ class Document(models.Model):
             # jsonf['rabin'] = result['rabin']['data']
 
         if save:
-            self.status = "finished"
+            self.status = Document.Statuses.FINISHED
             name, _ = os.path.splitext(os.path.basename(self.content.path))
             filename = '%s.fp' % name
             fp = json.dumps(jsonf).encode("utf-8")
             with ContentFile(content=fp) as file:
                 self.fingerprint.save(name=filename, content=file)
 
-        return result
+        return "{} Finished".format(self.id)
 
     def get_text(self):
         if not self.text.name:
             return
 
         text = ""
-        with self.text.open(mode="rb") as file:
+        with self.text as file:
             text = file.read().decode('utf-8')
 
         return "{}".format(text)
@@ -320,7 +333,7 @@ class Document(models.Model):
             return
 
         html = ""
-        with self.html.open(mode="rb") as file:
+        with self.html as file:
             html = file.read().decode('utf-8')
 
         return "{}".format(html)
@@ -329,7 +342,7 @@ class Document(models.Model):
         if not self.fingerprint:
             return
         fp = ""
-        with self.fingerprint.open(mode="rb") as file:
+        with self.fingerprint.open() as file:
             fp = file.read().decode('utf-8')
 
         return json.loads(fp)

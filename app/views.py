@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 """
 License: MIT
-Copyright (c) 2019 - present AppSeed.us
+Copyright (c) 2020 - Winnowing Similarity Measurement
 """
 
 from django.contrib.auth.decorators import login_required, permission_required
@@ -13,7 +13,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from binfile.check import demo_check as chk
 from app.forms import InputForm, DocumentForm
 from app.models import Document, Similarity
-from app.task import process_doc, finishing_dataset, check_similarity, extract_n_process, async
+from app.task import process_doc, finishing_dataset, check_similarity, extract_n_process, async, refingerprint, recheck
 from django.contrib import messages
 import os
 from django.conf import settings
@@ -69,6 +69,22 @@ def check(request):
     context = {"form": form, "msg": msg, "data": data}
     template = loader.get_template('check.html')
     return HttpResponse(template.render(context, request))
+
+
+@login_required(login_url="/login/")
+@permission_required('app.edit_document')
+@permission_required('app.edit_dataset')
+def re_fingerprint(request):
+    refingerprint()
+    return redirect('dataset.index')
+
+
+@login_required(login_url="/login/")
+@permission_required('app.edit_document')
+@permission_required('app.edit_dataset')
+def re_check(request):
+    recheck()
+    return redirect('document.index')
 
 
 @login_required(login_url="/login/")
@@ -209,6 +225,18 @@ def document_pdf(request, id):
 
 @login_required
 @permission_required('app.view_document')
+def document_text(request, id):
+    file = get_object_or_404(Document, id=id)
+    response = HttpResponse(file.get_text())
+    response.status_code = 200
+    response['Access-Control-Allow-Origin'] = '*'
+    response['Content-Type'] = 'text/plain'
+    response['X-Frame-Options'] = 'ALLOW'
+    return response
+
+
+@login_required
+@permission_required('app.view_document')
 @permission_required('app.view_similarity')
 def document_similarity(request, id):
     file = get_object_or_404(Document, id=id)
@@ -238,7 +266,7 @@ def similarity_check(request, id):
 @permission_required('app.view_document')
 @permission_required('app.view_dataset')
 def dataset_list(request):
-    datasets = Document.objects.filter(is_dataset=True).order_by('-modified', '-created')
+    datasets = Document.objects.filter(is_dataset=True).order_by('-modified', '-created', '-lang')
     msg = ""
 
     context = {"datasets": datasets, "msg": msg}

@@ -52,7 +52,7 @@ def euclidean_distance(x, y):
 
 
 def weighted_euclidean_distance(x, y, w):
-    return sqrt(sum(w * (pow(a - b, 2)) for a, b in zip(x, y)))
+    return sqrt(sum((1 if a <= 0 else w) * (pow(a - b, 2)) for a, b in zip(x, y)))
 
 
 def manhattan_distance(x, y):
@@ -73,6 +73,7 @@ def minkowski_distance(x, y, p_value):
 
 
 def mahalanobis_distance(x, y):
+    x, y = trim_to_min(x, y)
     ax = np.array(x)
     ay = np.array(y)
     delta = ax - ay
@@ -86,7 +87,7 @@ def mahalanobis_distance(x, y):
 
     if icov is not None:
         m = np.dot(np.dot(delta, icov), delta)
-        return np.sqrt(m) if m >= 0 else -np.sqrt(abs(m))
+        return np.sqrt(m) if m >= 0 else np.sqrt(abs(m))
 
     return 0.0
     # X = np.vstack([x, y])
@@ -108,3 +109,15 @@ def weighted_euclidean_distances(X, w):
         res.append(weighted_euclidean_distance(xx, xx, w))
 
     return res
+
+
+def trim_to_min(text1 = [], text2 = []):
+    text1 = list(set(text1))
+    text2 = list(set(text2))
+
+    if len(text1) > len(text2):
+        text1 = text1[:len(text2)]
+    elif len(text1) < len(text2):
+        text2 = text2[:len(text1)]
+
+    return text1, text2

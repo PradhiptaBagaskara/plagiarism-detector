@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 """
 License: Commercial
-Copyright (c) 2019 - present AppSeed.us
+Copyright (c) 2020 - Winnowing Similarity Measurement
 """
 
 from django.shortcuts import render

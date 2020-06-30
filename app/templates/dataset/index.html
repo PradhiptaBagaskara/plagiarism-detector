@@ -19,6 +19,7 @@
                   <th>Uploaded At</th>
                   <th>Last Modified</th>
                   <th>Status</th>
+                  <th>Language</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -32,6 +33,7 @@
                   <td>{{ doc.created }}</td>
                   <td>{{ doc.modified }}</td>
                   <td>{{ doc.status_badge | safe }}</td>
+                  <td>{{ doc.lang }}</td>
                   <td>{{ doc.get_actions | safe }}</td>
                 </tr>
                 {% endfor %}

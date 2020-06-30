@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
 License: MIT
-Copyright (c) 2019 - present AppSeed.us
+Copyright (c) 2020 - Winnowing Similarity Measurement
 """
 
 import os

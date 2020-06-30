@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 """
 License: MIT
-Copyright (c) 2019 - present AppSeed.us
+Copyright (c) 2020 - Winnowing Similarity Measurement
 """
 
 from django import forms
@@ -93,5 +93,11 @@ class DocumentForm(forms.ModelForm):
                     "class": "form-control",
                 }
             ),
+            'lang': forms.TextInput(
+                attrs={
+                    "placeholder": "Language",
+                    "class": "form-control",
+                }
+            ),
         }
-        fields = ['title', 'author', 'content', 'keyword']
+        fields = ['title', 'author', 'content', 'keyword', 'lang']
