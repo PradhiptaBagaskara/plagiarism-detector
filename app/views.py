@@ -207,18 +207,21 @@ def document_html(request, id):
     html = file.get_html()
     txts = []
 
-    with open("media/data/bag-"+id.hex+".json", 'rb') as f:
-        txts = json.loads(f.read().decode("utf-8"))
-    
-    
-    patterns = [[r'(<[^>]+>|\W+|\r+|\n+|amp|lt|gt|copy|Page [0-9]+)*'.join(x) for x in txt] for txt in txts ]
-    # print(patterns)
-    ress = [[re.search('('+ x + ')', html) for x in pattern] for pattern in patterns]
+    try:
+        with open("media/data/bag-"+id.hex+".json", 'rb') as f:
+            txts = json.loads(f.read().decode("utf-8"))
+        
+        
+        patterns = [[r'(<[^>]+>|\W+|\r+|\n+|amp|lt|gt|copy|Page [0-9]+)*'.join(x) for x in txt] for txt in txts ]
+        # print(patterns)
+        ress = [[re.search('('+ x + ')', html) for x in pattern] for pattern in patterns]
 
-    for x in ress:
-        for y in x:
-            if y:
-                html = html.replace(y.group(0), "{}{}{}".format('<span style="color: red" class="kakaka">', y.group(0), '</span>'))
+        for x in ress:
+            for y in x:
+                if y:
+                    html = html.replace(y.group(0), "{}{}{}".format('<span style="color: red" class="kakaka">', y.group(0), '</span>'))
+    except:
+        pass
 
     response = HttpResponse(html)
     response.status_code = 200
