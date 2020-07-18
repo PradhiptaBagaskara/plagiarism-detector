@@ -184,7 +184,7 @@ def process_doc(id):
     start, _ = process_time(sf.id.hex, type="PROCESS DOC")
     sf.extract_content()
     sf.translate()
-    sf.fingerprinting()
+    sf.fingerprinting(debug=True)
     sf.save()
     check_similarity(sf.id)
     process_time(sf.id.hex, type="PROCESS DOC", start=start)
