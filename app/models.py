@@ -16,6 +16,8 @@ from pdfminer.layout import LAParams
 from django.conf import settings
 import mammoth
 
+from django.conf import settings
+
 from binfile.winnowing_ngram import winnow as n_winnow
 from binfile.winnowing_wordgram import winnow as word_winnow
 from binfile.rabin import rabin_word
@@ -190,8 +192,16 @@ class Document(models.Model):
         result = []
         if as_table:
             res = list(similarity)
+            # jsoning = []
             for item in res:
+                # jsoning.append(item.serialize())
                 result.append(item)
+
+            # pa = os.path.join(settings.MEDIA_ROOT, 'export', self.id.hex+'.json')
+            # with open(pa, mode='w+') as fa:
+            #     aa = json.dumps(jsoning)
+            #     fa.write(aa)
+
 
             result = render_to_string('document/includes/similarity-table.html', {'data': result})
         else:
@@ -296,17 +306,11 @@ class Document(models.Model):
             # stemmer = factory.create_stemmer()
             # # stemming process
             # read = stemmer.stem(read)
-            result['fingerprint'] = wf.generate(str=read, debug=debug)
-            # result['fingerprint'] = word_winnow(text=read, k=kgram,
-            #                         debug=debug) if settings.FINGERPRINTING == 'winnowing' else \
-            #                         rabin_word(text=read, k=kgram, debug=debug)
-            # result['n_winnowing'] = n_winnow(text=read, k=kgram, debug=debug)
-            # result['rabin'] = rabin_word(text=read, k=kgram, debug=debug)
+            result['fingerprint'] = wf.generate(str=read, debug=debug) if settings.FINGERPRINTING == 'winnowing' else \
+                                    rabin_word(text=read, k=kgram, debug=debug)
 
             jsonf['fingerprint'] = result['fingerprint']['data']
             jsonf['debug'] = result['fingerprint']['steps']
-            # jsonf['n_winnowing'] = result['n_winnowing']['data']
-            # jsonf['rabin'] = result['rabin']['data']
 
         if save:
             self.status = Document.Statuses.FINISHED
@@ -387,7 +391,7 @@ class Document(models.Model):
 
     def serialize(self):
         return {
-            "id": self.id,
+            "id": self.id.hex,
             "author": self.author,
             "title": self.title,
             "keyword": self.keyword,
@@ -419,3 +423,21 @@ class Similarity(models.Model):
 
     def __str__(self):
         return "%s Similarity" % self.document.filename
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "document_filename": self.document.filename,
+            "document": self.document.id.hex,
+            "dataset": self.dataset.id.hex,
+            "dice": self.dice,
+            "jaccard": self.jaccard,
+            "cosine": self.cosine,
+            "manhattan": self.manhattan,
+            "minkowski": self.minkowski,
+            "mahalanobis": self.mahalanobis,
+            "euclidean": self.euclidean,
+            "weighted": self.weighted,
+            "created": self.created.isoformat() if self.created else None,
+            "modified": self.modified.isoformat() if self.modified else None,
+        }

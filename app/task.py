@@ -10,6 +10,9 @@ import re
 import os
 import json
 
+from math import *
+import numpy as np
+
 from django.core.files.base import ContentFile
 from django.core.files import File
 
@@ -23,7 +26,7 @@ IGNORE = [
     ".git",
 ]
 
-_DEFAULT_POOL = futures.ThreadPoolExecutor(max_workers=3)
+_DEFAULT_POOL = futures.ThreadPoolExecutor(max_workers=4)
 
 
 def threadpool(f, executor=None):
@@ -33,6 +36,22 @@ def threadpool(f, executor=None):
         return asyncio.wrap_future((executor or _DEFAULT_POOL).submit(f, *args, **kwargs))
 
     return wrap
+
+def process_time(id, type="PROCESS", start=None):
+    if start:
+        elapsed = time.time() - start
+        msg = "FINISHED, {}, {}, {}".format(type, id, elapsed)
+        with open(os.path.join(settings.MEDIA_ROOT, 'logging.csv'), 'a') as f:
+            f.write(msg+'\n')
+        print(msg)
+        return elapsed, msg
+    else:
+        start = time.time()
+        msg = "START, {}, {}, {}".format(type, id, start)
+        # with open(os.path.join(settings.MEDIA_ROOT, 'logging.csv'), 'a') as f:
+        #     f.write(msg+'\n')
+        print(msg)
+        return start, msg
 
 
 #  for datasets
@@ -63,6 +82,42 @@ def process_path(path, username='admin'):
     return path
 
 
+def projson():
+    from os import path
+    pathh = path.join(settings.MEDIA_ROOT, 'export')
+    if not pathh.endswith("/"):
+        pathh = pathh + "/"
+
+    if not pathh.endswith("**"):
+        pathh = pathh + "**"
+
+    import time
+    start = time.time()
+    arrai = []
+    for filename in glob.iglob(pathh, recursive=True):
+        print("Checking", filename)
+        will_ignore = False
+        for ignore in IGNORE:
+            if re.match(ignore, filename):
+                print("IGNORING", filename)
+                will_ignore = True
+                break
+
+        if path.isfile(filename) and not will_ignore and not filename.endswith('merged.json'):
+            print("PROCESSING", filename)
+            aa = []
+            with open(filename, 'r') as fa:
+                aa = fa.read()
+                aa = json.loads(aa)
+            arrai = arrai + aa
+
+    with open(path.join(settings.MEDIA_ROOT, 'export', 'merged.json'), 'w+') as ff:
+        ff.write(json.dumps(arrai))
+
+    print("=== Finished on ", time.time() - start)
+    return pathh
+
+
 @threadpool
 def process_file_by_path(path, username='admin'):
     _, ext = os.path.splitext(path)
@@ -70,9 +125,7 @@ def process_file_by_path(path, username='admin'):
     if ext not in [".pdf", ".docx", ".doc"]:
         return
 
-    import time
-    start = time.time()
-    print("PROCESSING ONE FILE", path)
+    start, _ = process_time(sf.id.hex, type="DATASET FILE")
     if not os.path.isfile(path):
         print("NOT A FILE", path)
         return
@@ -92,7 +145,7 @@ def process_file_by_path(path, username='admin'):
     sf.is_dataset = True
     sf.save()
     finishing_dataset(sf.id)
-    print("FINISHHED ONE FILE, Elapsed", time.time() - start)
+    process_time(sf.id.hex, type="DATASET FILE", start=start)
     os.remove(path)
     print("DELETE FILE ", path)
 
@@ -106,16 +159,15 @@ def finishing_dataset(id):
     except Document.DoesNotExist:
         return
 
-    import time
-    start = time.time()
-    print("PROCESS ON : ", sf.id)
+    start, _ = process_time(sf.id.hex, type="DATASET FINISH")
     sf.extract_content()
     time.sleep(0.5)
     sf.translate()
     time.sleep(3)
     sf.fingerprinting(save=True, debug=True)
     sf.save()
-    print("FINISHED ON : ", sf.id, " Elapsed ",  time.time() - start)
+    process_time(sf.id.hex, type="DATASET FINISH", start=start)
+
 
     return sf
 
@@ -128,16 +180,14 @@ def process_doc(id):
     except Document.DoesNotExist:
         print("NOT EXIST", id)
         return
-
+    
+    start, _ = process_time(sf.id.hex, type="PROCESS DOC")
     sf.extract_content()
     sf.translate()
     sf.fingerprinting()
     sf.save()
     check_similarity(sf.id)
-
-
-def process_hook(task):
-    print(task.result)
+    process_time(sf.id.hex, type="PROCESS DOC", start=start)
 
 
 # should call from view
@@ -166,7 +216,6 @@ def translate_and_finish():
 def check_similarity(id):
     from sklearn.preprocessing import normalize
     from sklearn.metrics.pairwise import pairwise_distances
-    import numpy as np
 
     mode = 1
 
@@ -175,8 +224,7 @@ def check_similarity(id):
     except Document.DoesNotExist:
         print("Document not Exist")
         return
-    start = time.time()
-    print("SIMILARITY ON : ", sf.id)
+    start, _ = process_time(sf.id.hex, type="SIMILARITY")
     sf.status = Document.Statuses.PROCESS
     sf.save()
 
@@ -184,18 +232,25 @@ def check_similarity(id):
     similarities = []
     fingerprints = []
     t_origin = sf.get_fingerprint()['fingerprint']
+    t_debug = sf.get_fingerprint()['debug']
     fingerprints.append(t_origin)
     minlen = len(fingerprints[0])
     maxlen = len(fingerprints[0])
 
+    bag = []
+
     for d in datasets:
-        t_referer = d.get_fingerprint()['fingerprint']
+        reff = d.get_fingerprint()
+        t_referer = reff['fingerprint']
 
         if len(t_origin) <= 1 or len(t_referer) <= 1:
             print("Fingerprint not valid!", d.id)
             continue
+        
+        az = set(t_referer).intersection(set(t_origin))
+        asz = [x[0] for x in t_debug['hashes'] if x[1] in az]
+        bag.append(asz)
 
-        # text1, text2 = trim_to_min(t_origin, t_referer)
         text1, text2 = padd_to_max(t_origin, t_referer) if mode == 1 else trim_to_min(t_origin, t_referer)
         cosine = cosine_sim(text1, text2) * 100
         jaccard = jaccard_similarity(text1, text2) * 100
@@ -213,6 +268,7 @@ def check_similarity(id):
         ])
 
         # print((cosine, jaccard, dice, euclidean, manhattan, minkowski, weighted, mahalanobis), "=================")
+    # fingerprints, _,_ = norm(fingerprints)
     
     if mode == 0:
         for i, m in enumerate(fingerprints):  # trim length
@@ -225,6 +281,15 @@ def check_similarity(id):
      
     matx = normalize(np.asarray(fingerprints, dtype=np.float))
     # matx = fingerprints
+
+    with open(os.path.join(settings.MEDIA_ROOT, 'data', 'bag-'+sf.id.hex+'.json'), 'w') as fx:
+        # fx.write(json.dumps(matx))
+        fx.write(json.dumps(bag))
+
+    # tcov = np.array(matx).T
+    # # print(cov.shape)
+    # ccov = np.cov(tcov)
+    # iccov = np.linalg.inv(ccov)
 
     for i, n in enumerate(matx):
         if i == 0:
@@ -256,7 +321,7 @@ def check_similarity(id):
 
     sf.status = Document.Statuses.FINISHED
     sf.save()
-    print("SIMILARITY FINISHED ON : ", sf.id, " Elapsed", time.time() - start)
+    process_time(sf.id.hex, type="SIMILARITY", start=start)
 
 @threadpool
 def refingerprint():
@@ -292,11 +357,18 @@ def randome():
     return [ma, mb]
 
 
-# def normalize(x, y):
-#     from sklearn.preprocessing import normalize
-#     import numpy as np
-#
-#     return normalize(np.asarray([x, y], dtype=np.float), norm="l1", axis=1)
+def norm(arr):
+    maxes = max(map(max, arr))
+    minus = min(map(min, arr))
+    new = []
+
+    for i, a in enumerate(arr):
+        subnew = []
+        for s in arr[i]:
+            subnew.append((s-minus)/(maxes-minus))
+        new.append(subnew)
+
+    return new, minus, maxes
 
 
 def trim_to_min(text1 = [], text2 = []):
