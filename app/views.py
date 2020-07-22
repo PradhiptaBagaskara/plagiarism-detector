@@ -211,15 +211,13 @@ def document_html(request, id):
         with open("media/data/bag-"+id.hex+".json", 'rb') as f:
             txts = json.loads(f.read().decode("utf-8"))
         
-        
-        patterns = [[r'(<[^>]+>|\W+|\r+|\n+|amp|lt|gt|copy|Page [0-9]+)*'.join(x) for x in txt] for txt in txts ]
-        # print(patterns)
-        ress = [[re.search('('+ x + ')', html) for x in pattern] for pattern in patterns]
+        patterns = ['(' + r'(<[^>]+>|\W|\r|\n|amp|lt|gt|copy|Page [0-9]+)+'.join(x) + ')' for txt in txts for x in txt]
 
-        for x in ress:
-            for y in x:
-                if y:
-                    html = html.replace(y.group(0), "{}{}{}".format('<span style="color: red" class="kakaka">', y.group(0), '</span>'))
+        for pat in patterns:
+            ma = re.compile(pat).search(html)
+            if ma:
+                html = html.replace(ma.group(0), '<span style="color: red">'+ma.group(0)+'</span>')
+                # html = re.sub(pat, r'<span style="color: red">\1</span>', html)
     except:
         pass
 

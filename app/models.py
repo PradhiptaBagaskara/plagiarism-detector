@@ -360,7 +360,7 @@ class Document(models.Model):
 
         if not self.is_dataset and self.status == 'finished':
             if self.similarities.count() > 0:
-                html += self.btn('similarity')
+                # html += self.btn('similarity')
                 html += self.btn('check')
             # else:
 
