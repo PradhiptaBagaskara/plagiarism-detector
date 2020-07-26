@@ -211,12 +211,14 @@ def document_html(request, id):
         with open("media/data/bag-"+id.hex+".json", 'rb') as f:
             txts = json.loads(f.read().decode("utf-8"))
         
-        patterns = ['(' + r'(<[^>]+>|\W|\r|\n|amp|lt|gt|copy|Page [0-9]+)+'.join(x) + ')' for txt in txts for x in txt]
+        patterns = [(txt[0], txt[1], '(' + r'(<[^>]+>|\W|\r|\n|amp|lt|gt|copy|Page [0-9]+)+'.join(x) + ')') for txt in txts for x in txt[2:]]
 
         for pat in patterns:
-            ma = re.compile(pat).search(html)
+            ma = re.compile(pat[2]).search(html)
             if ma:
-                html = html.replace(ma.group(0), '<span style="color: red">'+ma.group(0)+'</span>')
+                # html = html.replace(ma.group(0), '<a href="#{}" alt="referer to dataset {}" style="color: red">'.format(pat[0], pat[0])+ma.group(0)+'</a>')
+                html = html.replace(ma.group(0), '<a href="/document/{}" target="_blank" id="#{}" data-info="{} {}" style="color: red;" title="Referer to {}" ><sup><i style="font-size:16px" class="fas fa-info-circle"></i></sup><strong>'.format(pat[0], pat[0], pat[1], pat[1], pat[1]) +ma.group(0)+'</strong></a>')
+            
                 # html = re.sub(pat, r'<span style="color: red">\1</span>', html)
     except:
         pass

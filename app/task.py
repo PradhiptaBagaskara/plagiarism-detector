@@ -247,8 +247,8 @@ def check_similarity(id):
             print("Fingerprint not valid!", d.id)
             continue
         
-        az = set(t_referer).intersection(set(t_origin))
-        asz = [x[0] for x in t_debug['hashes'] if x[1] in az]
+        az = set.intersection(set(t_origin), set(t_referer))
+        asz = [str(d.id), d.filename] + [x[0] for x in reff['debug']['hashes'] if x[1] in az]
         bag.append(asz)
 
         text1, text2 = padd_to_max(t_origin, t_referer) if mode == 1 else trim_to_min(t_origin, t_referer)
