@@ -93,7 +93,7 @@ def select_min(window):
     return min(window, key=lambda x: x[1])[1]
 
 
-def rabin_word(text, k=5, debug=False, mode=1):  
+def rabin_word(text, k=5, debug=False, mode=2):  
     import copy
     tmp_txt = text
 
@@ -108,38 +108,32 @@ def rabin_word(text, k=5, debug=False, mode=1):
       'data' : ''
     }
     # sanitize
-    if mode > 1:
-        n = len(list(text))
-        text = zip(range(n), text)
-        text = sanitize_grams(text)
-        tx = copy.deepcopy(text)
 
-    else:
-        text = sanitize(text)
+    text = sanitize(text)
 
     # print(text)
     hashes = [winnowing_hash(a, mode) for a in kgrams(text, k)]
     windows = [a for a in kgrams(hashes, k)]
 
     if debug is True:
-        if mode > 1:
-            tx1 = copy.deepcopy(tx)
-            result['steps']['sanitize'] = tmp_txt[:200]
-            result['steps']['gram'] = ["".join(ai for i,ai in a) for a in list(kgrams(tx, k))][:splitlen]
-            result['steps']['hashes'] = hashes[:splitlen]
-            # result['steps']['windows'] = ""
-        else:
-            result['steps']['sanitize'] = text[:20]
+        # if mode > 1:
+        #     tx1 = copy.deepcopy(tx)
+        #     result['steps']['sanitize'] = tmp_txt[:200]
+        #     result['steps']['gram'] = ["".join(ai for i,ai in a) for a in list(kgrams(tx, k))][:splitlen]
+        #     result['steps']['hashes'] = hashes[:splitlen]
+        #     # result['steps']['windows'] = ""
+        # else:
+            result['steps']['sanitize'] = tmp_txt[:20]
             result['steps']['gram'] = [a for a in kgrams(text, k)][:splitlen]
             result['steps']['hashes'] = hashes[:splitlen]
     #   result['steps']['windows'] = windows[:splitlen]
 
     # data = list(map(select_min, windows))
     data = [a[1] for a in hashes]
-    if mode > 1:
-        kmp = [a[0] for a in hashes]
-    else:
-        kmp = [free_search(a) for a in kgrams(text, k)]
+    # if mode > 1:
+    #     kmp = [a[0] for a in hashes]
+    # else:
+    #     kmp = [free_search(a) for a in kgrams(text, k)]
 
 
     result['data'] = data

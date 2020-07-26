@@ -13,7 +13,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from binfile.check import demo_check as chk
 from app.forms import InputForm, DocumentForm
 from app.models import Document, Similarity
-from app.task import process_doc, finishing_dataset, check_similarity, extract_n_process, async, refingerprint, recheck
+from app.task import process_doc, finishing_dataset, check_similarity, extract_n_process, async_task, refingerprint, recheck
 from django.contrib import messages
 import os
 from django.conf import settings
@@ -345,7 +345,7 @@ def dataset_upload_batch(request):
             'uploaded_file_url': uploaded_file_url
         }
         msg = "Extracting and Processing Datasets..."
-        async(extract_n_process, filename, request.user.username)
+        async_task(extract_n_process, filename, request.user.username)
 
     context = {}
     messages.success(request, msg)

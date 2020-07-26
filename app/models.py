@@ -21,7 +21,7 @@ from django.conf import settings
 from binfile.winnowing_ngram import winnow as n_winnow
 from binfile.winnowing_wordgram import winnow as word_winnow
 from binfile.rabin import rabin_word
-from binfile.fingerprint import WinnowingFingerprint
+from binfile.fingerprint import Fingerprint
 from django.utils.translation import gettext as _
 import json
 
@@ -254,10 +254,10 @@ class Document(models.Model):
         _, ext = os.path.splitext(self.content.path)
         with self.content as file:
             if ext == ".pdf":
-                laparams = LAParams()
+                laparams = LAParams(line_margin=0.1)
                 setattr(laparams, 'all_texts', True)
                 extract_text_to_fp(self.content, text, laparams=laparams)
-                extract_text_to_fp(self.content, html, laparams=laparams, output_type='html', codec=None)
+                extract_text_to_fp(self.content, html, laparams=laparams, output_type='html', codec=None, scale=1.9, rotation=0, layoutmode='normal')
             elif ext in [".docx", ".doc"]:
                 result = mammoth.convert_to_html(file)
                 html.write(result.value)
@@ -296,7 +296,7 @@ class Document(models.Model):
 
         result = {}
         jsonf = {}
-        wf = WinnowingFingerprint(kgram_len=kgram, window_len=5, base=256, modulo=100003)
+        wf = Fingerprint(kgram_len=kgram, window_len=5, base=256, modulo=100003)
         with self.text.open() as file:
             read = file.read().decode('utf-8')
             # import StemmerFactory class
@@ -307,7 +307,7 @@ class Document(models.Model):
             # # stemming process
             # read = stemmer.stem(read)
             result['fingerprint'] = wf.generate(str=read, debug=debug) if settings.FINGERPRINTING == 'winnowing' else \
-                                    rabin_word(text=read, k=kgram, debug=debug)
+                                    wf.generate_rabin(str=read, debug=debug)
 
             jsonf['fingerprint'] = result['fingerprint']['data']
             jsonf['debug'] = result['fingerprint']['steps']

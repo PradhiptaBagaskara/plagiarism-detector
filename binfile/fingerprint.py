@@ -29,7 +29,7 @@ class FingerprintException(Exception):
         Exception.__init__(self, *args, **kwargs)
 
 
-class WinnowingFingerprint(object):
+class Fingerprint(object):
     """
     Generates fingerprints of the input text file or plain string. Please consider taking a look at http://theory.stanford.edu/~aiken/publications/papers/sigmod03.pdf for detailed description on how fingerprints are computed.
 
@@ -112,6 +112,10 @@ class WinnowingFingerprint(object):
                 cur_min_hash, cur_min_pos = min_hash, min_pos
                 self.fingerprints.append((min_hash, min_pos))
 
+    def rabin_fingerprints(self):
+        self.fingerprints = self.hashes
+
+
     def validate_config(self):
         if len(self.str) < self.window_len:
             raise FingerprintException(
@@ -129,6 +133,57 @@ class WinnowingFingerprint(object):
         sanitized = re.sub(r'\r+', ' ', sanitized)
         sanitized = re.sub(r'\s+', ' ', sanitized)
         return sanitized
+
+    def generate_rabin(self, str=None, debug=False):
+        """generates fingerprints of the input. Either provide `str` to compute fingerprint directly from your string or `fpath` to compute fingerprint from the text of the file. Make sure to have your text decoded in `utf-8` format if you pass the input string.
+
+        Args:
+            str (Optional(str)): string whose fingerprint is to be computed.
+
+        Returns:
+            List(int): fingerprints of the input.
+
+        Raises:
+            FingerprintException: If the input string do not meet the requirements of parameters provided for fingerprinting.
+        """
+
+        result = {
+            'steps': {
+                'sanitize': [],
+                'gram': [],
+                'hashes': [],
+                # 'windows': [],
+            },
+            'data': []
+        }
+
+        try:
+          self.prepare_storage()
+          self.str = self.sanitize(str)
+          self.validate_config()
+          self.generate_kgrams()
+          # print(len(self.kgrams))
+          self.hash_kgrams()
+        #   print(self.hashes[:10])
+          self.rabin_fingerprints()
+        except FingerprintException:
+          return result
+        
+        # print(self.fingerprints[:5])
+
+        
+
+        xipped = [[b, a] for a, b in zip(self.hashes, self.kgrams)]
+        # wipped = [[['', b] for b in a] for a in self.windows]
+        # print(wipped[:10])
+
+        result['steps']['sanitize'] = self.str if debug else []
+        result['steps']['gram'] = self.kgrams if debug else []
+        result['steps']['hashes'] = xipped if debug else []
+        # result['steps']['windows'] = wipped if debug else []
+        result['data'] = list(map(lambda x: x, self.fingerprints))
+
+        return result
 
     def generate(self, str=None, debug=False):
         """generates fingerprints of the input. Either provide `str` to compute fingerprint directly from your string or `fpath` to compute fingerprint from the text of the file. Make sure to have your text decoded in `utf-8` format if you pass the input string.
@@ -168,7 +223,6 @@ class WinnowingFingerprint(object):
 
         xipped = [[b, a] for a, b in zip(self.hashes, self.kgrams)]
         wipped = [[['', b] for b in a] for a in self.windows]
-        # print(wipped[:10])
 
         result['steps']['sanitize'] = self.str if debug else []
         result['steps']['gram'] = self.kgrams if debug else []

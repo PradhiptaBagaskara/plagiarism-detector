@@ -7,7 +7,7 @@ scikit_learn==0.22.2.post1
 unipath==1.1
 pdfminer.six==20200402
 mysqlclient==1.4.6
-django_q==0.9.4
+django_q
 google-cloud-translate==2.0.0
 patool==1.12
 mammoth==1.4.10

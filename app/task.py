@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from django_q.tasks import async
+from django_q.tasks import async_task
 from app.models import Document, Similarity
 from binfile.distance_measurement import cosine_sim, cosine_similarity, jaccard_similarity, dice_similarity, mahalanobis_distance, \
     euclidean_distance, minkowski_distance, manhattan_distance, weighted_euclidean_distance, weighted_euclidean_distances
@@ -19,6 +19,7 @@ from django.core.files import File
 import asyncio, time
 from functools import wraps
 from concurrent import futures
+
 
 IGNORE = [
     "env",
@@ -118,23 +119,24 @@ def projson():
     return pathh
 
 
-@threadpool
+# @threadpool
 def process_file_by_path(path, username='admin'):
     _, ext = os.path.splitext(path)
     original_filename = os.path.basename(path)
     if ext not in [".pdf", ".docx", ".doc"]:
         return
-
-    start, _ = process_time(sf.id.hex, type="DATASET FILE")
-    if not os.path.isfile(path):
-        print("NOT A FILE", path)
-        return
-
     try:
         sf = Document.objects.get(content=path)  # filename
     except Document.DoesNotExist:
         # If it does NOT have an entry, create one
         sf = Document()
+        
+    start, _ = process_time(sf.id.hex, type="DATASET FILE")
+    if not os.path.isfile(path):
+        print("NOT A FILE", path)
+        return
+
+
 
     user = User.objects.get(username=username)  # static
     sf.user = user
@@ -152,7 +154,7 @@ def process_file_by_path(path, username='admin'):
     return sf.id
 
 
-@threadpool
+# @threadpool
 def finishing_dataset(id):
     try:
         sf = Document.objects.get(id=id)
@@ -173,7 +175,7 @@ def finishing_dataset(id):
 
 
 # for user document
-@threadpool
+# @threadpool
 def process_doc(id):
     try:
         sf = Document.objects.get(id=id)  # filename
@@ -197,7 +199,13 @@ def extract_n_process(name, username='admin'):
     src = os.path.join(settings.MEDIA_ROOT, name)
     Archive(src).extractall(dest, auto_create_dir=True)
     process_path(dest, username)
-    os.remove(src)
+    import shutil
+    try:
+        shutil.rmtree(dest)
+        os.unlink(src)
+    except:
+        pass
+    # os.remove(src)
     print('Source Deleted')
 
 
@@ -212,10 +220,13 @@ def translate_and_finish():
         # time.sleep(5)
 
 
-@threadpool
+# @threadpool
 def check_similarity(id):
     from sklearn.preprocessing import normalize
     from sklearn.metrics.pairwise import pairwise_distances
+    from sklearn.metrics.pairwise import euclidean_distances, manhattan_distances
+    from sklearn.preprocessing import normalize
+    from scipy.spatial import distance
 
     mode = 1
 
@@ -239,6 +250,8 @@ def check_similarity(id):
 
     bag = []
 
+
+
     for d in datasets:
         reff = d.get_fingerprint()
         t_referer = reff['fingerprint']
@@ -252,19 +265,19 @@ def check_similarity(id):
         bag.append(asz)
 
         text1, text2 = padd_to_max(t_origin, t_referer) if mode == 1 else trim_to_min(t_origin, t_referer)
-        cosine = cosine_sim(text1, text2) * 100
-        jaccard = jaccard_similarity(text1, text2) * 100
-        dice = dice_similarity(text1, text2) * 100
+        # cosine = cosine_sim(text1, text2) * 100
+        # jaccard = jaccard_similarity(text1, text2) * 100
+        # dice = dice_similarity(text1, text2) * 100
 
         minlen = min(minlen, len(t_referer))
         maxlen = max(maxlen, len(t_referer))
         fingerprints.append(t_referer) # append as set
 
         similarities.append([
-            d,
-            jaccard,
-            dice,
-            cosine,
+            d
+            # jaccard,
+            # dice,
+            # cosine,
         ])
 
         # print((cosine, jaccard, dice, euclidean, manhattan, minkowski, weighted, mahalanobis), "=================")
@@ -280,7 +293,7 @@ def check_similarity(id):
                 fingerprints[i] = m + [0.0 for a in range(0, maxlen - len(m))]
      
     matx = normalize(np.asarray(fingerprints, dtype=np.float))
-    # matx = fingerprints
+
 
     with open(os.path.join(settings.MEDIA_ROOT, 'data', 'bag-'+sf.id.hex+'.json'), 'w') as fx:
         # fx.write(json.dumps(matx))
@@ -294,12 +307,41 @@ def check_similarity(id):
     for i, n in enumerate(matx):
         if i == 0:
             continue
-        euclidean = euclidean_distance(matx[0], n)
-        manhattan = manhattan_distance(matx[0], n)
-        minkowski = minkowski_distance(matx[0], n, 2)
-        weighted = weighted_euclidean_distance(matx[0], n, 5)
-        mahalanobis = mahalanobis_distance(matx[0], n)
-        similarities[i-1] = similarities[i-1] + [euclidean, manhattan, minkowski, weighted, mahalanobis]
+        
+        cosine = round(distance.cosine(matx[0],matx[i]) , 8)
+        # print("cossine: ", distance.cosine(matx[0],matx[1]))
+        # jaccard = round(distance.jaccard(matx[0],matx[i])  , 8)
+        jaccard = distance.cdist([matx[0]],[matx[i]], 'jaccard')
+        # print("jaccard: ", distance.jaccard(matx[0],matx[1],5))
+        # dice = round(1-distance.dice(matx[0],matx[i]) , 8)
+        dice = distance.cdist([matx[0]],[matx[i]], 'dice')
+        # print("dice: ",i- distance.dice(matx[0],matx[i]))
+        # weighted = distance.sqeuclidean(matx[0], matx[i])
+        weighted = distance.cdist([matx[0]],[matx[i]], 'wminkowski', p=2., w=n)
+        # print("weig",weighted)cdist(XA, XB, 'euclidean')
+        
+        # euclidean = distance.euclidean(matx[0], matx[i])
+        euclidean = distance.cdist([matx[0]], [matx[i]], 'euclidean')
+        # print("enclu", euclidean)
+        manhattan = manhattan_distances([matx[0]], [matx[i]], sum_over_features=False)
+        # print("manha",manhattan)
+
+        manhattan = np.max(manhattan)
+        # minkowski = distance.minkowski(matx[0], matx[i])
+        minkowski = distance.cdist([matx[0]],[matx[i]], 'minkowski', p=2.)
+        try:
+            mate = np.array([matx[0],  matx[i]]).T
+            mcov = np.cov(mate)
+            mahalanobis = distance.mahalanobis([matx[0]],[matx[i]], mcov)
+            mahalanobis = round(mahalanobis, 8)
+        except:
+            mahalanobis = round(1.0, 8)
+    #     euclidean = euclidean_distance(matx[0], n)
+    #     manhattan = manhattan_distance(matx[0], n)
+    #     minkowski = minkowski_distance(matx[0], n, 2)
+    #     weighted = weighted_euclidean_distance(matx[0], n, 5)
+    #     mahalanobis = mahalanobis_distance(matx[0], n)
+        similarities[i-1] = similarities[i-1] + [jaccard, dice, cosine, euclidean, manhattan, minkowski, weighted, mahalanobis]
         # print(similarities[i-1])
 
     for sim in similarities:
@@ -323,7 +365,7 @@ def check_similarity(id):
     sf.save()
     process_time(sf.id.hex, type="SIMILARITY", start=start)
 
-@threadpool
+# @threadpool
 def refingerprint():
     docs = Document.objects.all()
 
