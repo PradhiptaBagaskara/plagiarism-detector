@@ -1,0 +1,1654 @@
+JNTETI, Vol. 8, No. 3, Agustus 2019 
+
+ 
+
+ 
+
+ 
+
+Konsistensi Ranking pada Sistem Rekomendasi Resep 
+Masakan dengan Simple Additive Weighting 
+Ratih Kartika Dewi1, Komang Candra Brata2, Nabila3 
+
+ 
+
+ 
+
+Abstract—Along with the development of internet technology, 
+recipes  can  easily  be  obtained  from  various  sources,  such  as 
+websites,  mobile  applications,  and  social  media.  The  variety  of 
+recipes that available in various media still have one disadvantage: 
+it can not accommodate user preferences. In this kind of problem, 
+the role of a Decision Support System (DSS) is needed by people 
+who  actively  cook  using  recipes  in  daily  cooking  activities.  DSS 
+recommendations  for  recipes  can  be  built  by  using  Simple 
+Additive  Weighting  (SAW)  algorithm.  The  variables  chosen  as 
+criteria for recipe recommendations are duration of cooking, level 
+of complexity, and calories. The ranking consistency test aims to 
+see if there is a ranking reversal (the first ranking is swapped with 
+the latest ranking) when there is a change in the number of recipes 
+(alternatives).  The  purpose  of  this  research  is  to  find  out  the 
+reliability  of  the  SAW  algorithm 
+issue  of  recipe 
+recommendations.  The  ranking  consistency  test  result  shows 
+consistency  of  100%  and  there  is  no  rank  reversal  (last 
+recommendation becomes first recommendation) for this case. 
+ 
+
+in  the 
+
+Intisari—  Seiring  dengan  perkembangan  teknologi  internet, 
+resep  masakan  dapat  dengan  mudah  didapatkan  dari  beragam 
+sumber, seperti website, aplikasi perangkat bergerak, dan media 
+sosial.  Banyaknya  pilihan  resep  masakan  yang  tersedia  di 
+berbagai  media  memiliki  satu  kekurangan,  yaitu  belum  dapat 
+mengakomodasi  preferensi  pengguna.  Dalam  permasalahan  ini, 
+peran  sebuah  Sistem  Pendukung  Keputusan  (SPK)  sangat 
+dibutuhkan oleh orang yang aktif memasak menggunakan resep 
+dalam  kegiatan  memasak  sehari-hari.  SPK  rekomendasi  resep 
+masakan  dapat  dibangun  dengan  algoritme  Simple  Additive 
+Weighting  (SAW).  Variabel  yang  dipilih  sebagai  kriteria  untuk 
+rekomendasi resep adalah lama memasak, tingkat kerumitan, dan 
+kalori.  Pengujian  konsistensi  ranking  dilakukan  untuk  melihat 
+ada  rank  reversal  (ranking  pertama  tertukar  dengan  ranking 
+terakhir)  atau  tidak  apabila  dilakukan  perubahan  terhadap 
+jumlah  resep  masakan  (alternatif).  Tujuan  dari  pengujian  ini 
+adalah  mengetahui  keandalan 
+algoritme  SAW  untuk 
+permasalahan  rekomendasi  resep  masakan.  Hasil  pengujian 
+konsistensi ranking menunjukkan konsistensi sebesar 100% dan 
+tidak  ada  rank  reversal 
+terakhir  menjadi 
+rekomendasi pertama) untuk kasus ini. 
+ 
+Kata Kunci— sistem pendukung keputusan, resep masakan, SAW, 
+konsistensi ranking, rank reversal. 
+
+(rekomendasi 
+
+I.  PENDAHULUAN 
+
+Beragam  pilihan  resep  masakan  yang  tersedia  di  internet 
+memiliki  sebuah  kekurangan,  yaitu  belum  dapat  meng-
+
+1,2  Dosen,  Fakultas  Ilmu  Komputer,  Universitas  Brawijaya,  Jl. 
+Veteran 8 Malang, Jawa Timur, INDONESIA (telp/fax: 0341-577911; 
+email: ratihkartikad@ub.ac.id,  k.candra.brata@ub.ac.id) 
+
+3 Mahasiswa, Fakultas Ilmu Komputer, Universitas Brawijaya, Jl. 
+Veteran 8 Malang, Jawa Timur, INDONESIA (telp/fax: 0341-577911; 
+email: syarifahnabilaasseri@yahoo.com) 
+
+yang 
+
+lainnya,  misalnya 
+
+akomodasi  preferensi  yang  berbeda  antara  pengguna  satu 
+dengan 
+pengguna 
+menginginkan  resep  yang  waktu  memasaknya  cepat,  tingkat 
+kerumitan  sedang,  dan  kalori  kecil.  Dalam  permasalahan  ini, 
+tentu peran sebuah Sistem Pendukung Keputusan (SPK) sangat 
+dibutuhkan oleh orang yang aktif memasak menggunakan resep 
+dalam kegiatan memasak sehari-hari. 
+
+seorang 
+
+penelitian 
+
+rekomendasi 
+
+Penelitian dengan topik terkait berkembang sejak tahun 2014. 
+Perkembangan  penelitian  mengenai  SPK  rekomendasi  resep 
+masakan bermula dari [1] yang melakukan penelitian mengenai 
+rekomendasi  resep  masakan  dengan  metode  case-based 
+reasoning.  Case-based  reasoning  adalah  salah  satu  metode 
+sistem  pakar,  yaitu  menggunakan  penalaran  maju  untuk 
+menyelesaikan  sebuah  masalah.  Kelebihan  sistem  seperti  ini 
+adalah adanya pakar yang dapat memberikan pengetahuannya 
+untuk membuat komputer belajar. Akan tetapi, sistem ini juga 
+tidak  dapat  memberikan 
+memiliki  kekurangan,  yaitu 
+rekomendasi  sesuai  dengan  keinginan  pengguna.  Misalnya 
+pengguna  lebih  memprioritaskan  kriteria  lama  memasak 
+daripada  kerumitan, 
+sistem  belum  dapat  memberikan 
+rekomendasi  kepada  pengguna.  Penelitian  berikutnya 
+resep  masakan  berdasarkan 
+mempelajari 
+ketersediaan  barang  yang  ada  menggunakan  SPK  untuk 
+memberikan  rekomendasi  resep  masakan  [2].  Namun,  sistem 
+yang  dibangun 
+tidak  menggunakan  pengetahuan  pakar. 
+dapat  memberikan 
+Kelebihan 
+rekomendasi  sesuai  dengan  keinginan  pengguna,  sedangkan 
+kekurangannya  adalah  nilai  untuk  setiap  kriteria  dibuat 
+berdasarkan  pendapat  pribadi  yang  di-fuzzy-kan,  belum  ada 
+pengetahuan  pakar  yang  digunakan  untuk  menentukan  nilai 
+untuk  masing-masing  kriteria.  Beberapa  kriteria  untuk 
+membentuk  rekomendasi  yang  digunakan  dalam  penelitian 
+tersebut  menggunakan  kriteria  waktu  dan  tingkat  kerumitan 
+dan  menggunakan  metode  Simple  Additive  weighting  (SAW) 
+sebagai  salah  satu  komponen  SPK.  Penelitian  mengenai 
+rekomendasi resep masakan berdasarkan barang yang ada juga 
+dikembangkan  dalam  [3]  dengan  mengembangkan  metode 
+SAW yang telah dilakukan pada [2] dengan Range of Centroid 
+(ROC)  dan  juga  menambahkan  satu  variabel  untuk  kriteria, 
+yaitu  asal  daerah.  Kelebihan  [3]  adalah  adanya  penambahan 
+variabel  dan  penggunaaan  ROC  sebagai  alternatif  untuk 
+memperbaiki metode fuzzy pada penelitian sebelumnya dalam 
+sedangkan 
+menentukan 
+kekurangannya  adalah  nilai  untuk  setiap  kriteria  dibuat 
+berdasarkan  pendapat  pribadi  yang  di-ROC-kan,  belum  ada 
+pengetahuan  pakar  yang  digunakan  untuk  menentukan  nilai 
+untuk masing-masing kriteria. 
+
+nilai  masing-masing 
+
+kriteria, 
+
+adalah 
+
+ini 
+
+Penelitian  terkait  rekomendasi  resep  masakan  yang  telah 
+dilakukan  dalam  kriteria  waktu  dan  tingkat  kerumitan  resep 
+masakan  masih  belum  menggunakan  pakar  sebagai  sumber 
+
+Ratih Kartika Dewi: Konsistensi Ranking pada Sistem ... 
+
+ISSN 2301 - 4156 
+
+235
+
+ 
+
+JNTETI, Vol. 8, No. 3, Agustus 2019 
+
+ 
+
+ 
+
+(1) 
+
+(2) 
+
+(3) 
+
+(4) 
+
+(5) 
+
+W = [W1, W2, W3, ......Wn] 
+
+2.  Membuat matriks X, dengan Xij yang mewakili nilai kriteria 
+
+untuk setiap alternatif. 
+
+X = 
+
+𝑋𝑋11 𝑋𝑋12 𝑋𝑋𝑋𝑋𝑋𝑋
+⋮
+⋮
+�
+𝑋𝑋31 𝑋𝑋32 𝑋𝑋𝑋𝑋𝑋𝑋
+
+⋮
+
+�
+
+3.  Menghitung  nilai  rij  pada  (3) dari  setiap  nilai  Xij.  Sebuah 
+kriteria dikatakan keuntungan apabila nilainya makin besar, 
+makin menguntungkan pengguna; dan dikatakan biaya jika 
+tidak  menguntungkan 
+nilainya  makin  besar,  makin 
+pengguna,  seperti  tiga  kriteria  yang  digunakan  dalam 
+penelitian  ini,  yaitu  lama  memasak,  kalori,  dan  tingkat 
+kerumitan. 
+
+Max
+
+Xij
+
+)
+
+keuntungan
+
+rij{ 
+
+(
+Xij
+
+Xij
+(
+
+biaya
+
+Min
+
+Xij
+
+)
+
+pada (4). 
+
+R = 
+
+4.  Hasil dari nilai rij membentuk matriks normalisasi R seperti 
+
+𝑅𝑅11 𝑅𝑅12 𝑅𝑅𝑋𝑋𝑋𝑋
+⋮
+⋮
+�
+𝑅𝑅31 𝑅𝑅32 𝑅𝑅𝑋𝑋𝑋𝑋
+
+⋮
+
+�
+
+5.  Langkah  terakhir  adalah  menghitung  nilai  preferensi  Vi 
+dengan  mengalikan  nilai  pada  matriks  R  dengan  bobot 
+prioritas W seperti terdapat pada (5). 
+
+Vi  = 
+
+ 
+
+ 
+
+𝑛𝑛
+𝑗𝑗=1
+∑ 𝑊𝑊𝑋𝑋
+
+𝑅𝑅𝑋𝑋𝑋𝑋
+
+Nilai  Vi  yang  tertinggi  menunjukkan  alternatif  Ai  yang 
+merupakan  alternatif  terbaik  (ranking  pertama).  Jadi, 
+aplikasi memberikan rekomendasi resep masakan dari nilai 
+Vi yang tertinggi sampai Vi yang terendah. 
+
+C.  Manajemen Komunikasi/User Interface 
+
+Manajemen  komunikasi  dibangun  berbasis  Android. 
+
+Screenshoot aplikasi ditampilkan pada Gbr. 2. 
+
+pengetahuan  dan  sistem  yang  dibangun  merekomendasikan 
+resep masakan berdasarkan ketersediaan barang yang ada [2], 
+[3]. Selanjutnya, penelitian berkembang dengan menambahkan 
+fitur  GPS  untuk  pencarian  lokasi  pembelian  bahan  masakan 
+tersebut 
+yang  kurang  atau  belum  ada  [4].  Penelitian 
+menitikberatkan  penggunaan  GPS  untuk  mencari 
+lokasi 
+pembelian bahan masakan yang kurang atau belum ada di dapur. 
+Oleh  karena  itu,  penelitian  ini  mengembangkan  [4]  dengan 
+melakukan analisis terhadap konsistensi ranking rekomendasi 
+yang  diberikan  kepada  pengguna.  Pengujian  konsistensi 
+ranking  dilakukan  untuk  melihat  ada  rank  reversal  (ranking 
+pertama  tertukar  dengan  ranking  terakhir)  atau  tidak  apabila 
+dilakukan perubahan terhadap jumlah alternatif resep masakan. 
+
+II.  ARSITEKTUR SISTEM PENDUKUNG KEPUTUSAN 
+
+Dalam  sebuah  SPK  terdapat  tiga  komponen  utama  yang 
+saling  terhubung.  Komponen  sistem  pendukung  keputusan 
+terdiri  atas  manajemen  data,  manajemen  model,  dan 
+manajemen komunikasi, seperti terdapat dalam Gbr. 1 [5]. 
+
+Gbr. 1 Arsitektur Sistem Pendukung Keputusan [5]. 
+
+A.  Manajemen Data 
+
+Data  resep  masakan  akan  direkomendasikan  berdasarkan 
+waktu memasak, tingkat kerumitan memasak (jumlah langkah), 
+dan kalori. Data  yang digunakan berjumlah  30 data alternatif 
+menu  masakan  yang  sebagian  besar  berasal  dari  penelitian 
+sebelumnya  [3],  [4]  serta  penambahan  data  kalori  dari  [6]. 
+Dalam  SPK  terdapat  dua  istilah  penting,  yaitu  kriteria  dan 
+alternatif. Kriteria dalam penelitian ini adalah variabel  waktu 
+memasak,  tingkat  kerumitan  memasak  (jumlah  langkah),  dan 
+kalori.  Alternatif  dalam  penelitian  ini  adalah  30  data  resep 
+masakan,  mulai  dari  ayam  panggang  sampai  gule  kambing 
+bumbu simpel. Secara  keseluruhan, data resep  masakan  yang 
+didapatkan disajikan dalam Tabel I. 
+
+B.  Manajemen Model 
+
+Manajemen  model  yang  digunakan  dalam  SPK  resep 
+masakan adalah algoritme SAW. SAW pertama kali ditemukan 
+oleh  Churchman,  Ackoff,  and  Arnoff.  Langkah  komputasi 
+rekomendasi  resep  masakan  dengan  SAW  adalah  sebagai 
+berikut [7]. 
+1.  Menentukan nilai bobot (W) pada kriteria waktu, kalori, dan 
+jumlah  langkah.  Preferensi  pengguna  untuk  nilai  bobot 
+masing-masing kriteria ditunjukkan pada (1). 
+
+Gbr. 2 Hasil rekomendasi. 
+
+ 
+
+ISSN 2301 – 4156 
+
+ 
+
+Ratih Kartika Dewi: Konsistensi Ranking pada Sistem ... 
+
+236
+
+JNTETI, Vol. 8, No. 3, Agustus 2019 
+
+ 
+
+ 
+
+ 
+
+jumlah  alternatif.  Pengujian  konsistensi  ranking  dibangun 
+berdasarkan  adaptasi  dari  skenario  pengujian  pada  [8]  yang 
+melakukan analisis perbandingan kemampuan fuzzy AHP dan 
+fuzzy  TOPSIS 
+jumlah  alternatif. 
+Permasalahan  konsistensi  ranking  pada  SPK  seperti  terdapat 
+pada  [8]-[11]  adalah  fenomena  rank  reversal,  yaitu  posisi 
+ranking pertama tertukar dengan ranking terakhir. 
+
+terhadap  perubahan 
+
+Skenario pengujian pada [8] adalah melakukan penambahan 
+satu  alternatif  dengan  nilai  yang  sama  dengan  salah  satu 
+alternatif yang sudah ada. Dalam kasus pemilihan supplier pada 
+penelitian  tersebut,  terdapat  lima  supplier  (A1-A5).  Pada 
+kondisi  normal,  seperti  pada  Gbr.  3(a),  dari  kelima  alternatif 
+tersebut,  supplier  yang  paling  direkomendasikan  adalah  A2 
+(ranking pertama), kemudian A5, A1, dan A4. Ranking terakhir 
+(supplier yang paling tidak direkomendasikan) adalah A3. 
+
+Apabila ditambahkan satu alternatif yang sama dengan A1, 
+A3, A4, A5, ranking rekomendasi tidak mengalami perubahan 
+(ranking setara dengan alternatif yang diubah). Namun, apabila 
+alternatif yang ditambahkan bernilai sama dengan A2 (ranking 
+pertama),  maka  terjadi  rank  reversal,  (A2  dan  A3  tertukar), 
+seperti terlihat pada Gbr. 3(b). 
+
+Dalam penelitian tersebut, inkonsistensi ranking terjadi saat 
+ranking  pertama  tertukar  dengan  ranking  terakhir,  sehingga 
+dapat disimpulkan bahwa parameter adanya ranking yang tidak 
+konsisten  adalah  munculnya  fenomena  rank  reversal.  Hal  ini 
+terjadi saat dilakukan penambahan alternatif yang sama dengan 
+alternatif  dengan  ranking  teratas  pada  [8].  Fenomena  rank 
+reversal  tersebut  terjadi  pada  fuzzy  AHP,  tetapi  tidak  terjadi 
+pada  fuzzy  TOPSIS,  sehingga  dapat  dikatakan  bahwa  fuzzy 
+TOPSIS  tidak  memiliki  masalah  dalam  konsistensi  ranking. 
+Fenomena rank reversal pada fuzzy AHP juga didukung oleh 
+penelitian lainnya [9]-[11]. 
+
+TABEL I 
+DATA KRITERIA DAN ALTERNATIF UNTUK REKOMENDASI RESEP MASAKAN 
+
+No. 
+
+Alternatif 
+
+Kalori 
+
+Lama 
+memasak 
+60 
+
+120 
+
+Tingkat 
+kerumitan 
+6 
+
+3 
+
+2 
+
+1  Ayam Panggang 
+Ayam Panggang 
+Paniki 
+Gado Gado Sayuran 
+dan Telur 
+Nasi Goreng Ayam 
+Praktis 
+Nasi Goreng Praktis 
+dan Cepat 
+
+4 
+
+5 
+
+6  Rawon 
+
+7  Rujak Uleg Mantaap 
+
+8 
+
+9 
+
+Soto Ayam 
+
+Tumis Jamur Simple 
+
+10  Tumis Kangkung 
+
+11  Tumis Brokoli Udang 
+Tumis Oatmeal 
+Dengan Sayur 
+
+12 
+
+13  Sup Labu Energi 
+
+14  Sup Pembakar Lemak 
+Tumis Kacang 
+Panjang 
+
+15 
+
+16  Simple Fried Carp 
+
+17  Telur Dadar Mentega 
+Cumi Goreng Tepung 
+(Fried Squid) 
+19  Pepes Tahu Kemangi 
+
+18 
+
+20  Nasi Uduk 
+
+21  Pecel Lele 
+
+22 
+
+Semur Daging 
+Manis+Pedas 
+
+23  Opor Ayam 
+
+24  Mie Ayam 
+
+Nugget Ayam 
+(Chicken Nugget) 
+Mie Ayam Bakso 
+Extra Sayuran 
+
+27  Bakso ayam 
+
+25 
+
+26 
+
+28 
+
+29 
+
+30 
+
+45 
+
+20 
+
+10 
+
+45 
+
+15 
+
+30 
+
+15 
+
+5 
+
+15 
+
+25 
+
+40 
+
+25 
+
+15 
+
+10 
+
+15 
+
+30 
+
+30 
+
+30 
+
+40 
+
+45 
+
+45 
+
+45 
+
+60 
+
+60 
+
+90 
+
+45 
+
+167 
+
+167 
+
+132 
+
+329 
+
+222 
+
+119 
+
+121 
+
+312 
+
+28 
+
+211 
+
+329 
+
+273 
+
+249 
+
+48 
+
+280 
+
+125 
+
+98 
+
+12 
+
+78 
+
+260 
+
+292 
+
+141 
+
+392 
+
+421 
+
+48 
+
+388 
+
+45 
+
+110 
+
+137 
+
+271 
+
+6 
+
+5 
+
+6 
+
+2 
+
+3 
+
+2 
+
+7 
+
+3 
+
+3 
+
+1 
+
+3 
+
+3 
+
+3 
+
+3 
+
+4 
+
+5 
+
+4 
+
+3 
+
+2 
+
+4 
+
+4 
+
+6 
+
+7 
+
+5 
+
+7 
+
+5 
+
+6 
+
+4 
+
+3 
+
+Pelasan/Pepes 
+Tongkol 
+Bakwan Sayur (Bala-
+bala) 
+Gulai Kambing 
+Bumbu Simple 
+
+120 
+
+45 
+
+D.  Pengujian untuk Konsistensi Ranking 
+
+Pengujian  akurasi  untuk  SPK  rekomendasi  resep  masakan 
+bersifat subjektif, tergantung pilihan pengguna. Oleh karena itu, 
+penelitian  ini  menggunakan  pengujian  konsistensi  ranking 
+sebagai  alternatif  pengujian 
+lain  selain  akurasi  untuk 
+mengetahui  keandalan  algoritme  SAW  terhadap  perubahan 
+
+ 
+
+Gbr. 3 Pengujian konsistensi ranking fuzzy AHP [1]. 
+
+pengujian 
+
+ Pada  penelitian 
+
+III.  HASIL DAN PEMBAHASAN 
+dilakukan 
+sebelumnya, 
+menggunakan  pengujian  akurasi  [4].  Pengujian  akurasi 
+dilakukan dengan membandingkan hasil keluaran sistem (satu 
+rekomendasi  teratas)  dengan  preferensi  pengguna.  Apabila 
+keluaran  sistem  sama  dengan  preferensi  pengguna,  maka 
+dihitung satu data benar. Pengujian akurasi dilakukan pada 30 
+pengguna dan menghasilkan 25 data benar atau cocok dan lima 
+data  tidak  cocok,  sehingga  akurasi  yang  dihasilkan  sejumlah 
+83,33%.  Hasil  ini  merupakan  hasil  yang  subjektif,  sehingga 
+pengujian akurasi kurang tepat apabila diterapkan untuk kasus 
+ini. Oleh karena itu, diusulkan pengujian konsistensi ranking. 
+
+Ratih Kartika Dewi: Konsistensi Ranking pada Sistem ... 
+
+ISSN 2301 - 4156 
+
+237
+
+ 
+
+JNTETI, Vol. 8, No. 3, Agustus 2019 
+
+SPK  rekomendasi  resep  masakan  yang  telah  dibangun 
+dengan  SAW  pada  penelitian  ini  dievaluasi  menggunakan 
+metode konsistensi ranking, yaitu dilakukan dengan mengukur 
+hasil  ranking  rekomendasi  apabila  jumlah  alternatif  berubah. 
+Pengujian ini bertujuan untuk mengetahui  hasil ranking yang 
+dikeluarkan  konsisten  (sama)  atau  tidak  ketika  ada  satu 
+alternatif yang ditambahkan 
+
+Pengujian konsistensi ranking dilakukan pada lima skenario 
+pengujian,  dengan  penambahan  alternatif.  Batasan  jumlah 
+alternatif yang dilakukan dalam pengujian adalah satu alternatif. 
+Sebagai  contoh,  untuk  skenario  menu  berikut,  hasil  data 
+perhitungan ranking sementara untuk lima alternatif dan enam 
+alternatif (penambahan satu alternatif yang sama dengan salah 
+satu  dari  lima  alternatif  yang  sudah  ada)  ditunjukkan  pada 
+Tabel II dan Tabel III. Nilai SAW yang ada pada Tabel II dan 
+Tabel  III  adalah  hasil  perhitungan  dari  (5)  yang  diperoleh 
+melalui proses perhitungan nilai (1) sampai dengan (5). 
+
+TABEL II 
+HASIL RANKING DENGAN LIMA ALTERNATIF 
+
+Ranking 
+
+Nama Menu 
+
+Nilai SAW 
+
+1 
+
+2 
+
+3 
+
+4 
+
+5 
+
+Nasi Goreng Ayam Praktis 
+
+Nasi Goreng Praktis dan Cepat 
+
+Telur Dadar Mentega 
+
+Mie Ayam 
+
+4,166667 
+
+3,877551 
+
+3,608108 
+
+1,743668 
+
+Mie Ayam Bakso Extra Sayuran 
+
+1,653998 
+
+TABEL III 
+HASIL RANKING DENGAN LIMA ALTERNATIF YANG DITAMBAH SATU 
+
+Ranking 
+
+Nama Menu 
+
+Nilai SAW 
+
+1 
+
+2 
+
+3 
+
+4 
+
+5 
+
+Penambahan 1 
+alternatif 
+ranking 
+setara dengan 
+alternatif yang 
+diubah 
+
+Nasi Goreng Ayam Praktis 
+Nasi Goreng Praktis dan 
+Cepat 
+Telur Dadar Mentega 
+
+Mie Ayam 
+Mie Ayam Bakso extra 
+Sayuran 
+Nasi Goreng Ayam Praktis 
+Nasi Goreng Praktis dan 
+Cepat 
+Telur Dadar Mentega 
+
+Mie Ayam 
+Mie Ayam Bakso extra 
+Sayuran 
+
+4,166667 
+
+3,877551 
+
+3,608108 
+
+1,743668 
+
+1,653998 
+
+4,166667 
+
+3,877551 
+
+3,608108 
+
+1,743668 
+
+1,653998 
+
+Penjelasan  detail  Tabel  III  dapat  dijabarkan  menjadi 
+penjelasan  skenario  uji  1  sampai  dengan  5.  Pengujian 
+konsistensi ranking dengan skenario uji 1 sampai 5 dilakukan 
+dengan  membandingkan  ranking  rekomendasi  lima  alternatif 
+(Tabel  II  atau  Gbr.  4)  dengan  ranking  rekomendasi  enam 
+alternatif (penambahan satu alternatif) sebagai berikut. 
+
+A.  Skenario Uji 1 
+
+Pada skenario uji 1, dilakukan penambahan  satu alternatif, 
+yaitu mie ayam bakso ekstra sayuran yang merupakan alternatif 
+
+dengan  ranking  terakhir  atau  ranking  kelima  dari  Tabel  II 
+(acuan). Tabel II dapat digambarkan berupa grafik seperti pada 
+Gbr. 4.  
+
+7
+6
+6
+6
+6
+1
+
+,
+
+4
+
+1
+5
+5
+7
+7
+8
+
+,
+
+3
+
+8
+0
+1
+8
+0
+6
+
+,
+
+3
+
+8
+6
+6
+3
+4
+7
+
+,
+
+1
+
+8
+9
+9
+3
+5
+6
+
+,
+
+1
+
+N A S I  
+G O R E N G  
+A Y A M  
+P R A K T I S
+
+N A S I  
+G O R E N G  
+P R A K T I S   D A N  
+C E P A T
+
+T E L U R  
+D A D A R  
+M E N T E G A
+
+M I E   A Y A M
+
+M I E   A Y A M  
+B A K S O   E X T R A  
+S A Y U R A N
+
+ 
+
+Gbr. 4 Ranking lima alternatif. 
+
+Penambahan satu alternatif pada skenario uji 1 digambarkan 
+dalam Gbr. 5. Dari Gbr. 4 dan Gbr. 5, dapat diambil informasi 
+bahwa  penambahan  satu  alternatif  (mie  ayam  bakso  ekstra 
+sayuran)  menghasilkan  ranking  yang  sama  dengan  alternatif 
+yang  ditambahkan  (sama-sama  menjadi  ranking  5),  dengan 
+nilai vektor 1,653998. 
+
+7
+6
+6
+6
+6
+1
+
+,
+
+4
+
+1
+5
+5
+7
+7
+8
+
+,
+
+3
+
+8
+0
+1
+8
+0
+6
+
+,
+
+3
+
+8
+6
+6
+3
+4
+7
+
+,
+
+1
+
+8
+9
+9
+3
+5
+6
+
+,
+
+1
+
+8
+9
+9
+3
+5
+6
+
+,
+
+1
+
+N A S I  
+G O R E N G  
+A Y A M  
+P R A K T I S
+
+N A S I  
+G O R E N G  
+P R A K T I S  
+D A N   C E P A T
+
+T E L U R  
+D A D A R  
+M E N T E G A
+
+B A K S O  
+E X T R A  
+S A Y U R A N
+
+M I E   A Y A M M I E   A Y A M  
+
+T A M B A H A N
+
+ 
+
+Gbr. 5 Ranking dengan penambahan alternatif ranking ke 5 
+
+B.  Skenario Uji 2 
+
+Pada skenario uji 2, dilakukan penambahan  satu alternatif, 
+yaitu  mie  ayam  yang  merupakan  alternatif  dengan  ranking 
+keempat  dari  Tabel  II.  Tabel  II  dapat  digambarkan  berupa 
+grafik  seperti  pada  Gbr.  4.  Penambahan  satu  alternatif  pada 
+skenario uji 2 digambarkan dalam Gbr. 6. Dari Gbr. 4 dan Gbr. 
+6, dapat diambil  informasi bahwa penambahan satu  alternatif 
+(mie ayam) menghasilkan ranking yang sama dengan alternatif 
+yang  ditambahkan  (sama-sama  menjadi  ranking  4),  dengan 
+nilai vektor 1,743668. 
+
+C.  Skenario Uji 3 
+
+Pada skenario uji 3, dilakukan penambahan  satu alternatif, 
+yaitu  telur  dadar  mentega  yang  merupakan  alternatif  dengan 
+ranking ketiga dari Tabel II. Tabel II dapat digambarkan berupa 
+grafik seperti pada Gbr. 4.  
+
+Penambahan satu alternatif pada skenario uji 3 digambarkan 
+dalam Gbr. 7. Dari Gbr. 4 dan Gbr. 7, dapat diambil informasi 
+
+ISSN 2301 – 4156 
+
+ 
+
+Ratih Kartika Dewi: Konsistensi Ranking pada Sistem ... 
+
+238
+
+JNTETI, Vol. 8, No. 3, Agustus 2019 
+
+ 
+
+ 
+
+ 
+
+bahwa  penambahan  satu  alternatif  (telur  dadar  mentega) 
+menghasilkan  ranking  yang  sama  dengan  alternatif  yang 
+ditambahkan  (sama-sama  menjadi  ranking  3),  dengan  nilai 
+vektor 3,608108. 
+
+Penambahan  satu  alternatif  pada  skenario  uji  5  ditunjukkan 
+dalam Gbr. 9. 
+
+7
+6
+6
+6
+6
+1
+
+,
+
+4
+
+1
+5
+5
+7
+7
+8
+
+,
+
+3
+
+1
+5
+5
+7
+7
+8
+
+,
+
+3
+
+8
+0
+1
+8
+0
+6
+
+,
+
+3
+
+7
+6
+6
+6
+6
+1
+
+,
+
+4
+
+1
+5
+5
+7
+7
+8
+
+,
+
+3
+
+8
+0
+1
+8
+0
+6
+
+,
+
+3
+
+8
+6
+6
+3
+4
+7
+
+,
+
+1
+
+8
+6
+6
+3
+4
+7
+
+,
+
+1
+
+8
+9
+9
+3
+5
+6
+
+,
+
+1
+
+N A S I  
+G O R E N G  
+A Y A M  
+P R A K T I S
+
+N A S I  
+G O R E N G  
+P R A K T I S  
+D A N   C E P A T
+
+T E L U R  
+D A D A R  
+M E N T E G A
+
+M I E   A Y A M T A M B A H A N M I E   A Y A M  
+
+B A K S O  
+E X T R A  
+S A Y U R A N
+
+ 
+
+Gbr. 6 Ranking dengan penambahan alternatif ranking ke-4. 
+
+7
+6
+6
+6
+6
+1
+
+,
+
+4
+
+1
+5
+5
+7
+7
+8
+
+,
+
+3
+
+8
+0
+1
+8
+0
+6
+
+,
+
+3
+
+8
+0
+1
+8
+0
+6
+
+,
+
+3
+
+N A S I  
+G O R E N G  
+A Y A M  
+P R A K T I S
+
+N A S I  
+G O R E N G  
+P R A K T I S  
+D A N   C E P A T
+
+T E L U R  
+D A D A R  
+M E N T E G A
+
+T A M B A H A N
+
+M I E   A Y A M M I E   A Y A M  
+
+B A K S O  
+E X T R A  
+S A Y U R A N
+
+ 
+
+Gbr. 8 Ranking dengan penambahan alternatif ranking ke-2. 
+
+Dari  Gbr.  4  dan  Gbr.  9,  dapat  diambil  informasi  bahwa 
+penambahan  satu  alternatif  (nasi  goreng  ayam  praktis) 
+menghasilkan  ranking  yang  sama  dengan  alternatif  yang 
+ditambahkan  (sama-sama  menjadi  ranking  1),  dengan  nilai 
+vektor 4,166667. 
+
+8
+6
+6
+3
+4
+7
+
+,
+
+1
+
+8
+9
+9
+3
+5
+6
+
+,
+
+1
+
+7
+6
+6
+6
+6
+1
+
+,
+
+4
+
+7
+6
+6
+6
+6
+1
+
+,
+
+4
+
+1
+5
+5
+7
+7
+8
+
+,
+
+3
+
+8
+0
+1
+8
+0
+6
+
+,
+
+3
+
+8
+6
+6
+3
+4
+7
+
+,
+
+1
+
+8
+9
+9
+3
+5
+6
+
+,
+
+1
+
+8
+6
+6
+3
+4
+7
+
+,
+
+1
+
+8
+9
+9
+3
+5
+6
+
+,
+
+1
+
+N A S I  
+G O R E N G  
+A Y A M  
+P R A K T I S
+
+N A S I  
+G O R E N G  
+P R A K T I S  
+D A N   C E P A T
+
+T E L U R  
+D A D A R  
+M E N T E G A
+
+T A M B A H A N M I E   A Y A M M I E   A Y A M  
+
+B A K S O  
+E X T R A  
+S A Y U R A N
+
+ 
+
+Gbr. 7 Ranking dengan penambahan alternatif ranking ke-3. 
+
+D.  Skenario Uji 4 
+
+Pada skenario uji 4, dilakukan penambahan  satu alternatif, 
+yaitu nasi goreng praktis dan cepat yang merupakan alternatif 
+dengan  ranking  kedua  dari  Tabel  II.  Tabel  II  dapat 
+digambarkan berupa grafik seperti pada Gbr. 4.  
+
+Penambahan satu alternatif pada skenario uji 4 digambarkan 
+dalam Gbr. 8. Dari Gbr. 4 dan Gbr. 8, dapat diambil informasi 
+bahwa  penambahan  satu  alternatif  (nasi  goreng  praktis  dan 
+cepat) menghasilkan ranking yang sama dengan alternatif yang 
+ditambahkan  (sama-sama  menjadi  ranking  3),  dengan  nilai 
+vektor 3,877551. 
+
+E.  Skenario Uji 5 
+
+Pada skenario uji 5, dilakukan penambahan  satu alternatif, 
+yaitu  nasi  goreng  ayam  praktis  yang  merupakan  alternatif 
+dengan ranking kesatu (paling direkomendasikan) dari Tabel II. 
+Pada pengujian dalam [8], apabila alternatif yang ditambahkan 
+adalah  alternatif  yang  sama  dengan  ranking  teratas  (dalam 
+penelitian ini seperti pada skenario uji 5), pada fuzzy AHP akan 
+terjadi  inkonsistensi  ranking,  yaitu  ranking  pertama  tertukar 
+dengan ranking terakhir (rank reversal). 
+
+ Pada penelitian ini dilakukan pengujian untuk skenario uji 
+demikian  terjadi  rank  reversal  atau  tidak.  Tabel  II  sebagai 
+acuan  dapat  digambarkan  berupa  grafik  seperti  pada  Gbr.  4. 
+
+N A S I  
+G O R E N G  
+A Y A M  
+P R A K T I S
+
+N A S I  
+G O R E N G  
+A Y A M  
+P R A K T I S
+
+T E L U R  
+D A D A R  
+M E N T E G A
+
+N A S I  
+G O R E N G  
+P R A K T I S  
+D A N  
+C E P A T
+
+M I E   A Y A M M I E   A Y A M  
+
+B A K S O  
+E X T R A  
+S A Y U R A N
+
+ 
+
+Gbr. 9 Ranking dengan penambahan alternatif ranking ke-1. 
+
+TABEL IV 
+PENGUJIAN KONSISTENSI RANKING 
+
+Hasil Pengujian 
+
+Skenario 
+uji 
+
+Konsistensi 
+ranking dengan 
+Penambahan 
+satu alternatif 
+
+Ranking 
+alternatif yang 
+ditambahkan 
+
+Rank 
+reversal 
+
+1 
+
+2  
+
+3 
+
+4  
+
+5 
+
+TOTAL 
+
+100% 
+
+100% 
+
+100% 
+
+setara dengan 
+alternatif 5 
+setara dengan 
+alternatif 4 
+setara dengan 
+alternatif 3 
+setara dengan 
+alternatif 2 
+setara dengan 
+alternatif 1 
+Seluruh data konsisten (100%) 
+
+100% 
+
+100% 
+
+Tidak ada 
+
+Tidak ada 
+
+Tidak ada 
+
+Tidak ada 
+
+Tidak ada 
+
+Tidak ada 
+
+Berdasarkan pengujian konsistensi ranking pada skenario uji 
+1-5,  didapatkan  hasil  konsistensi  100%  untuk  penambahan 
+alternatif.  Berdasarkan  hasil  tersebut  juga  diketahui  tidak 
+
+Ratih Kartika Dewi: Konsistensi Ranking pada Sistem ... 
+
+ISSN 2301 - 4156 
+
+239
+
+ 
+
+JNTETI, Vol. 8, No. 3, Agustus 2019 
+
+didapatkannya  rank  reversal.  Berdasarkan  skenario  uji  yang 
+telah  dilakukan,  dapat  diambil  kesimpulan  pengujian 
+konsistensi  ranking  dalam  SPK  rekomendasi  resep  masakan 
+dengan SAW seperti Tabel IV. 
+
+Pengujian  konsistensi  ranking  untuk  penambahan  dan 
+pengurangan alternatif menunjukkan bahwa rekomendasi yang 
+diberikan sistem memiliki rata-rata konsistensi ranking sebesar 
+100%.  Pada  pengujian  juga  didapatkan  bahwa  tidak  ada 
+rekomendasi  pertama  dari  sistem  yang  tertukar  dengan 
+rekomendasi  terakhir  (rank  reversal).  Hal  ini  menunjukkan 
+bahwa sistem yang dibangun mampu memberikan rekomendasi 
+yang  konsisten  dalam  menangani  penambahan 
+jumlah 
+alternatif. 
+
+IV.  KESIMPULAN 
+Pengujian  konsistensi  ranking  dilakukan  dalam 
+
+lima 
+skenario  pengujian  menunjukkan  hasil  konsistensi  ranking 
+rekomendasi  resep  masakan  dengan  SAW  sebesar  100%  dan 
+tidak  terdapat  rank  reversal.  Hal  ini  menunjukkan  bahwa 
+sistem yang dibangun mampu memberikan rekomendasi yang 
+konsisten dalam menangani perubahan jumlah alternatif.  
+
+UCAPAN TERIMA KASIH 
+
+Penelitian  ini  dibiayai  oleh  DIPA  FILKOM  Universitas 
+Brawijaya Malang 2018 pada skema penelitian pemula. Terima 
+kasih  diucapkan  kepada  semua  pihak  dari  Universitas 
+Brawijaya,  Fakultas  Ilmu  Komputer  serta  Laboratorium 
+Teknologi  Media,  Game  dan  Piranti  Bergerak  yang  turut 
+membantu terlaksananya penelitian ini. 
+
+ 
+
+REFERENSI 
+
+[1] 
+
+P.  Setyahadi,  "Rancang  Bangun  Aplikasi  Resep  Masakan  Berbasis 
+Mobile  Web  Dengan  Metode  Case-Based  Reasoning," Skripsi, 
+Universitas Islam Negeri Sunan Kalijaga, Yogyakarta, Indonesia, 2014. 
+[2]  A.  Salsabella,  "Sistem  Pendukung  Keputusan  Penentuan  Resep 
+Masakan  Berdasarkan  Ketersediaan  Bahan  Makanan  Menggunakan 
+Metode  Simple  Additive  Weighting  (SAW)  Berbasis  Web," Jurnal 
+Sistem dan Teknologi Informasi (JUSTIN), Vol. 2, No. 3, hal. 110-117, 
+2014. 
+T.A.  Santoso,  “Aplikasi  Pencarian  Resep  Masakan  Berbasis  Mobile 
+Web Berdasarkan Ketersediaan Bahan dengan Metode Simple Additive 
+Weighting.”  Skripsi,  Universitas 
+Indonesia,  Yogyakarta, 
+Indonesia, 2016. 
+
+Islam 
+
+[3] 
+
+[5] 
+
+[4]  Nabila,  R.K.  Dewi,  K.C.  Brata,”SPK  Pemilihan  Resep  Masakan  dan 
+Fitur Berbasis Lokasi,” Jurnal Pengembangan Teknologi Informasi dan 
+Ilmu Komputer (JPTIIK), Vol. 2, No. 9, hal. 3081-3085, 2018. 
+E. Turban, Decision Support and Expert Systems: Management Support 
+Systems, Upper Saddle River, USA: Prentice Hall PTR, 1993. 
+(2018)  The  Fatsecret  website,  [Online],  https://www.fatsecret.co.id/, 
+tanggal akses: 20 Mei 2018. 
+
+[6] 
+
+[7]  C.-L.  Hwang,  dan  K.  Yoon. Multiple  Attribute  Decision  Making: 
+Methods  and  Applications  A  State-of-the-Art  Survey,  Heidelberg, 
+Germany: Springer Science & Business Media, 2012. 
+F.R.L. Junior, L. Osiro, dan L.C.R. Carpinetti, "A Comparison between 
+Fuzzy AHP and Fuzzy TOPSIS Methods to Supplier Selection," Applied 
+Soft Computing, Vol. 21, hal. 194-209, 2014. 
+
+[8] 
+
+[9]  V.  Belton  dan  T.  Gear,  On  a  Short-coming  of  Saaty’s  Method  of 
+Analytic Hierarchies, Omega, Vol. 11, No. 3, hal. 228–230, 1983.  
+[10]  T.L.  Saaty,  Making  and  Validating  Complex  Decisions  with  the 
+AHP/ANP, J. Syst. Sci. Syst. Eng., Vol. 14, No. 1, hal. 1–36, 2005.  
+[11]  S.  Zahir,  Normalisation  and  Rank  Reversals  in  the  Additive  Analytic 
+Hierarchy Process: A New Analysis, Int. J. Oper. Res., Vol. 4, No. 4, 
+hal. 446–467, 2009. 
+
+ISSN 2301 – 4156 
+
+ 
+
+Ratih Kartika Dewi: Konsistensi Ranking pada Sistem ... 
+
+240
+
+

@@ -1,0 +1,1529 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html">
+</head><body>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:50px; width:595px; height:842px;"></span>
+<div style="position:absolute; top:50px;"><a name="1">Page 1</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:67px; top:88px; width:146px; height:36px;"><span style="font-family: Sylfaen; font-size:9px">JOIN (Jurnal Online Informatika) 
+<br></span><span style="font-family: Sylfaen; font-size:10px">Volume 4 No. 1 | Juni 2019 : 16-23 
+<br>DOI: 10.15575/join.v4i1.304</span><span style="font-family: Sylfaen; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:533px; top:86px; width:2px; height:9px;"><span style="font-family: ArialMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:131px; width:2px; height:11px;"><span style="font-family: Calibri; font-size:11px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:845px; width:2px; height:11px;"><span style="font-family: Calibri; font-size:11px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:62px; top:146px; width:475px; height:141px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:24px">Implementation of SHA512 Hash Function 
+<br>and Boyer-Moore String Matching Algorithm 
+<br>for JPEG/exif Message Digest Compilation 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:11px">Rachmad Fitriyanto</span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:6px">1</span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:11px">, Anton Yudhana</span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:6px">2</span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:11px">, Sunardi</span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:6px">3 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:6px">1</span><span style="font-family: TimesNewRomanPSMT; font-size:11px">Magister of Informatics Engineering, Universitas Ahmad Dahlan, Yogyakarta, Indonesia 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:6px">2,3</span><span style="font-family: TimesNewRomanPSMT; font-size:11px">Electrical Engineering Department, Universitas Ahmad Dahlan, Yogyakarta, Indonesia 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:6px">1</span><span style="font-family: TimesNewRomanPSMT; font-size:11px">1fitriyanto7477@gmail.com, </span><span style="font-family: TimesNewRomanPSMT; font-size:6px">2</span><span style="font-family: TimesNewRomanPSMT; font-size:11px">yudhana@ee.uad.ac.id, </span><span style="font-family: TimesNewRomanPSMT; font-size:6px">3</span><span style="font-family: TimesNewRomanPSMT; font-size:11px">sunardi@mti.uad.ac.id</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:289px; width:484px; height:197px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px"> 
+<br> 
+<br>Abstract-</span><span style="font-family: TimesNewRomanPSMT; font-size:11px">  </span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">Security  information  method  for  JPEG/exif  documents  generally  aims  to  prevent  security  attacks  by  protecting 
+<br>documents with password and watermark. Both methods cannot be used to determine the condition of data integrity at the 
+<br>detection stage of the information security cycle. Message Digest is the essence of a file that has a function as a digital fingerprint 
+<br>to  represent  data  integrity.  This  study  aims  to  compile  digital  fingerprints  to  detect  changes  that  occurred  in  JPEG  /  exif 
+<br>documents in information security. The research phase consists of five stages. The first stage, identification of the JPEG / exif 
+<br>document structure conducted using the Boyer-Moore string matching algorithm to find JPEG/exif segments location. The 
+<br>Second  stage  is  segment  content  acquisition,  conducted  based  on  segment  location  and  length  obtained.  The  Third  step, 
+<br>computing message digest for each segment using SHA512 hash function. Fourth stage, JPEG / exif document modification 
+<br>experiments to identified affected segments. The fifth stage is selecting and combining the hash value of the segment into the 
+<br>message digest. The obtained result shows the message digest for JPEG/exif documents composed of three hash values. The 
+<br>SOI segment hash value used to detect modifications for JPEG to png conversion and image editing. The APP1 hash value used 
+<br>to detect metadata editing. The SOF0 hash values use to detect modification for image recoloring, cropping and resizing — the 
+<br>combination from three hash values as JPEG/exif’s message digest.  
+<br></span><span style="font-family: TimesNewRomanPS-BoldItalicMT; font-size:9px"> 
+<br>Keywords</span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">-</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> </span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">Message digest, JPEG/exif, SHA512, Hash value, Boyer-Moore 
+<br></span><span style="font-family: TimesNewRomanPS-BoldItalicMT; font-size:9px">  
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:11px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:128px; top:487px; width:92px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">I.</span><span style="font-family: ArialMT; font-size:10px">  </span><span style="font-family: TimesNewRomanPSMT; font-size:10px">INTRODUCTION 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:499px; width:236px; height:320px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">The  JPEG/exif  document  is  a  document  format  that 
+<br>results  from  the  use  of  digital  cameras  such  as  a 
+<br>smartphone  camera.  The  JPEG/exif  documents  as  image 
+<br>files are widely used in digital communications such as on 
+<br>social  media.  The  Exchange  of  information  requires 
+<br>security to ensure the information received is the same as 
+<br>the  information  sent.  Information  security  for  JPEG/exif 
+<br>documents  generally  designed  to  prevent  document 
+<br>modifications.  The  password  usages  in  the  JPEG/exif 
+<br>document  has  long  been  used  but  can  still  be  overcome 
+<br>with a variety of password remover tools that are widely 
+<br>available.  The  other  technique  for  securing  JPEG/exif  is 
+<br>shown in the study by Wijayanto [1]. This study shows exif 
+<br>metadata data from JPEG/exif documents can be used to 
+<br>prevent  copyright  theft.  The  exif  metadata  provided 
+<br>information for digital analysis to detect altered JPEG/exif. 
+<br>Gangwar in [2] presented the methodology by comparing 
+<br>two  exif  metadata  to  analysis  the  data  integrity  of 
+<br>JPEG/exif’s  file.  Another  image  file  securing  technique 
+<br>found  in  [3].  Int  this  research,  the  JPEG  file  secured  by 
+<br>replacing selected parts of an image with another object. 
+<br>The exif metadata has secured before replacing the process 
+<br>beginning. The other technique beside the usages of exif 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:10px">metadata  is  the  usage  of  watermark  as  an  information 
+<br>security  method  in  a  study  by  Sukarno  [4]  to  protect 
+<br>preventing  document  for  modification.  The  purpose  of 
+<br>watermark  usage  for  JPEG/exif  file  security  is  to  inform 
+<br>the attacker that the files protected by the physical presence 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:488px; width:236px; height:102px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">of  owner  copyright  [5].  The  watermarks  as  a  security 
+<br>method given robust protection for image geometry attack 
+<br>found  in  [6].  The  research  shows  hidden  and  extracted 
+<br>watermark  make  the  image  files  have  more  security  the 
+<br>visible watermarks.   The use of passwords, exif metadata, 
+<br>and watermark given great protection to prevent an attack 
+<br>on image files, but cannot be used in the detection stage of 
+<br>information security cycle to detect changes that occur in 
+<br>received JPEG/exif documents. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:591px; width:236px; height:136px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">Message Digest is the essence of a file that can use to 
+<br>represent data integrity. The Message Digest is widely used 
+<br>to detect the integrity of data in installers provided by open-
+<br>source  application  developers.  The  Message  digest 
+<br>compiled using the hash function. The Hash function is a 
+<br>cryptographic method for the one-way encryption process. 
+<br>The  output  hash  function  is  a  hash  value  that  has 
+<br>characteristics  that  cannot  translate  or  decrypt  into  the 
+<br>original  form  [7].  The  Hash  value  is  very  sensitive  to 
+<br>changes in the input of any size. Secure Hash Algorithm 
+<br>(SHA)  is  a  hash  function  developed  by  the  National 
+<br>Institute of Science and Technology (NIST).  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:474px; top:729px; width:45px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">that  used 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:414px; top:729px; width:51px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">from  SHA 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:322px; top:729px; width:85px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">The  characteristics 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:729px; width:236px; height:79px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">for 
+<br>information  security  are  one-way  hash  functions.  This 
+<br>means that SHA generates a hash value that cannot decrypt 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:10px">[8]. Another SHA characteristic is this hash algorithm has 
+<br>high sensitivity for every input even a small change. Any 
+<br>modification  or  change  in  the  input  message  will  give 
+<br>different results [9]. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:62px; top:833px; width:377px; height:9px;"><span style="font-family: Sylfaen; font-size:9px">Received: May 26 , 2019; Revised: July 22, 2019; Received: July 30, 2019; Published: August 31,2019 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:522px; top:833px; width:12px; height:10px;"><span style="font-family: Sylfaen; font-size:10px">16 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:61px; top:128px; width:236px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:61px; top:125px; width:236px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:297px; top:125px; width:4px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:297px; top:128px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:301px; top:128px; width:236px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:301px; top:125px; width:236px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:56px; top:825px; width:450px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:56px; top:826px; width:450px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:506px; top:825px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:506px; top:826px; width:4px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:510px; top:825px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:510px; top:826px; width:27px; height:2px;"></span>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:942px; width:595px; height:842px;"></span>
+<div style="position:absolute; top:942px;"><a name="2">Page 2</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:62px; top:980px; width:128px; height:9px;"><span style="font-family: Sylfaen; font-size:9px">JOIN (Jurnal Online Informatika) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:1018px; width:236px; height:182px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">SHA implementation for information security found in 
+<br>research  by  [8].  The  SHA  used  to  secure  wireless 
+<br>communication  by  creating  a  message  digest  from  the 
+<br>transmitted  messages.  The  hash  function  in  this  research 
+<br>use the second generation of SHA. SHA consists of several 
+<br>categories that distinguished based on the size of the output 
+<br>hash value [10]. SHA variant from [8] use SHA-1 which 
+<br>has  a  160-bit size of  the  hash value. The weakness from 
+<br>SHA-1  found  in  2005  by  Rijmen  and  Oswald  [11].  The 
+<br>attack on SHA-1 made NIST developed the next generation 
+<br>of  SHA.  The  variants  of  SHA  produced  SHA-2  with 
+<br>SHA256 and SHA512. Both variants in SHA-2 have longer 
+<br>hash value. Between two variants from SHA-2, SHA512 
+<br>have  better  performance  from  SHA256.  SHA512  has  an 
+<br>output size of 512 bits that make this variant better than the 
+<br>previous hash function [11]. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:1202px; width:236px; height:136px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">The  use  of  SHA512  for  information  security  was 
+<br>found in a study by Refialy [12]. This study uses SHA512 
+<br>to compile the hash value of a pdf document. The obtained 
+<br>results indicate the hash value can detect small changes in 
+<br>the modification of pdf documents. The JPEG/exif file has 
+<br>a larger size than a pdf document. The size of the JPEG/exif 
+<br>document  is  the  result  of  the  development  of  optical 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:10px">technology  in  digital  cameras.  The  larger  the  size  of  the 
+<br>document,  the  process  of  composing  the  message  digest 
+<br>requires more time. This study aims to compile a concise 
+<br>message digest to detect changes in JPEG /exif documents 
+<br>in information security.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:1339px; width:236px; height:136px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">String  matching  algorithms  are  used  to  match  or 
+<br>compare  one  or  several  characters  and  strings  [13].  The 
+<br>Boyer-Moore string matching algorithm is included in the 
+<br>exact string matching algorithm that performs searches by 
+<br>comparing  the  characters  of  the  strings  tested  with  the 
+<br>pattern  sought  [14].  The  implementation  of  the  Boyer-
+<br>Moore  string  matching  algorithm  found  in  research  by 
+<br>Ramos-Frías [15]. This research was presenting the usage 
+<br>of  the  Boyer-Moore  string  matching  algorithm  for 
+<br>enhanced data processing in the graphics processing unit 
+<br>(GPU). Another implementation is in medical science for 
+<br>human DNA searching [16][17].  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:1477px; width:236px; height:56px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">The  Boyer-Moore  has  two  rules  for  the  searching 
+<br>process,  Good-Character  rule,  and  Bad-Character  Rule. 
+<br>These two rules determined the direction of the searching 
+<br>process.  Bad-Character  rule  occurred  if  a  character  from 
+<br>the pattern is not  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:1535px; width:236px; height:101px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">the  same  as  in  string.  This  condition  will  make  a 
+<br>comparison  shift  to  the  left  to  next  character  of  pattern. 
+<br>Good-Character  rule  occurred  if  a  character  from  the 
+<br>pattern  is  the  same  as  in  string  after  Bad-Character  rule 
+<br>occurred.  This  condition  will  make  the  next  comparison 
+<br>shift right aligning two-match characters. Those two rules 
+<br>searching  make  the  searching  process  faster  than  other 
+<br>exact  string  matching  algorithms  by  avoiding  not-
+<br>necessary character comparison [18]. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:74px; top:1638px; width:5px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:145px; top:1650px; width:59px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">II.</span><span style="font-family: ArialMT; font-size:10px">  </span><span style="font-family: TimesNewRomanPSMT; font-size:10px">METHOD 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:1007px; width:2px; height:9px;"><span style="font-family: Calibri; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:1737px; width:2px; height:11px;"><span style="font-family: Calibri; font-size:11px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:438px; top:979px; width:96px; height:21px;"><span style="font-family: Sylfaen; font-size:9px">ISSN 2527-1682 (Print)</span><span style="font-family: ArialMT; font-size:9px"> 
+<br></span><span style="font-family: Sylfaen; font-size:9px">ISSN 2527-9165 (Online)</span><span style="font-family: ArialMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:1018px; width:236px; height:67px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">file  segment.  This  stage  has  the  purpose  to  identify  the 
+<br>JPEG/exif  file  structure.  Image  files  as  research  object 
+<br>acquired  from  two  smartphone  types,  Asus  Z00UD,  and 
+<br>Samsung  Galaxy  A5.  Each  smartphone  takes  10  images. 
+<br>Images file taken with embedded camera apps from each 
+<br>smartphone with mode auto from indoor and outdoor sites. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:319px; top:1086px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:375px; top:1303px; width:94px; height:20px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Figure 1. Research stages 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:523px; top:1294px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:1325px; width:236px; height:147px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">A result of the first stage is the location index of each 
+<br>file part. This location index will use on the second stage 
+<br>as  a  parameter  to  identify  the  beginning  and  end  of  file 
+<br>parts. Identification process conducted by use the Boyer-
+<br>Moore  string  matching  algorithm  for  segment  marker 
+<br>searching.  Segment  markers  are  data  bit  located  at  the 
+<br>beginning  of  each  JPEG/exif  segments  [19].  JPEG/exif 
+<br>segment  marker  consists  of  four-bit  hexadecimal.  These 
+<br>bits have functioned as file structure signatures and contain 
+<br>specific  information  for  computer  and  image  viewer 
+<br>application  to  determine  the  suitable  method  to  display 
+<br>image.  Table  1  shows  a  segment  marker  value  for  each 
+<br>segment. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:357px; top:1474px; width:130px; height:20px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">Table 1. JPEG/exif segment marker 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:383px; top:1502px; width:35px; height:9px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">Segment 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:338px; top:1518px; width:124px; height:60px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">SOI (Start Of Image) 
+<br>APP1 (Application-1) 
+<br>DQT (Define Quantization Table) 
+<br>SOF0 (Start Of Frame-0) 
+<br>DHT (Define Huffman Table) 
+<br>SOS (Start Of Scan) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:471px; top:1497px; width:35px; height:82px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">Segment 
+<br>Marker 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">ffd8 
+<br>ffe1 
+<br>ffdb 
+<br>ffc0 
+<br>ffc4 
+<br>ffda 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:1581px; width:238px; height:90px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br>Segmen  structured  as  sequences  as  shown  in  Table  1 
+<br>for the image file that has not altered. Each segment marker 
+<br>used as a pattern that sought in string matching algorithm. 
+<br>Boyer-Moore  string  matching  algorithm  start  pattern 
+<br>searching from most-right pattern character and shift to left 
+<br>until  reaching  the  leftmost  character  from  pattern  [20].  
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:10px">Figure 2 shown the Boyer-Moore flowchart. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:1662px; width:236px; height:21px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">A research study conducted in five stages that shown as 
+<br>in Figure 1. The first stage is the identification of the image 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:319px; top:1673px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:67px; top:1702px; width:386px; height:32px;"><span style="font-family: Sylfaen; font-size:9px">Implementation SHA512 Hash Function And Boyer-Moore String Matching Algorithm For JPEG/exif  
+<br></span><span style="font-family: Sylfaen; font-size:9px">Message Digest Compilation 
+<br>(Rachmad Fitriyanto, Anton Yudhana, SUnardi)</span><span style="font-family: Calibri; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:528px; top:1701px; width:12px; height:10px;"><span style="font-family: Calibri; font-size:10px">17 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:55px; top:1004px; width:236px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:55px; top:1001px; width:236px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:291px; top:1001px; width:4px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:291px; top:1004px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:295px; top:1004px; width:242px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:295px; top:1001px; width:242px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:62px; top:1694px; width:450px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:62px; top:1696px; width:450px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:512px; top:1694px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:512px; top:1696px; width:4px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:516px; top:1694px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:516px; top:1696px; width:27px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:333px; top:1495px; width:133px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:466px; top:1495px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:467px; top:1495px; width:43px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:333px; top:1516px; width:133px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:466px; top:1516px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:467px; top:1516px; width:43px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:332px; top:1579px; width:134px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:465px; top:1579px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:466px; top:1579px; width:44px; height:0px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:320px; top:1097px; width:202px; height:204px;"></div><span style="position:absolute; border: gray 1px solid; left:0px; top:1834px; width:595px; height:842px;"></span>
+<div style="position:absolute; top:1834px;"><a name="3">Page 3</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:67px; top:1872px; width:180px; height:10px;"><span style="font-family: Sylfaen; font-size:10px">JOIN | Volume 4 No. 1 | Juni 2019 : 16-23  </span><span style="font-family: Sylfaen; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:1889px; width:2px; height:11px;"><span style="font-family: Calibri; font-size:11px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:180px; top:2116px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:84px; top:2128px; width:181px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Figure 2. Boyer-Moore string matching flowchart 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:2138px; width:236px; height:148px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br>The Boyer-Moore string matching algorithm has two 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:10px">is  preprocessing, 
+<br>searching  stages.  The  first  stage 
+<br>comprises  of  variable  assignments  such  as  m  for  pattern 
+<br>length, n for string length idxstr for string character index, 
+<br>idxpatter  for  pattern  character  index  and  match  for 
+<br>character  match  comparison  that  occurred.  The  second 
+<br>stage  is  the  character  comparison.  The  second  stage 
+<br>executed  as  an  iteration  loop  that  boundary  by  two 
+<br>conditions.  Looping  will  stop  if  the  match  variable  has 
+<br>valued the same as m variable or comparison has reached 
+<br>the end of the string. The segment location index identified 
+<br>by the last value of idxstr variable. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:2288px; width:236px; height:136px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">The  second  stage  is  segment  content  acquisition.  To 
+<br>acquire segment content, we need two parameters, starting 
+<br>index and length of content. The starting index provided by 
+<br>the segment index location. Segment length computes from 
+<br>subtraction  between  index  location  values  from  two 
+<br>adjacent  segments.  The  third  stage  is  the  hash  value 
+<br>computation.  The  computation  conducted  for  every 
+<br>segment.  Hash  value  computation  with  SHA512  hash 
+<br>function  consists  of  three  stages,  preprocessing,  hash 
+<br>computation  and  hash  value  compilation.  Figure  3  show 
+<br>the sequences of the stages. 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:533px; top:1870px; width:2px; height:9px;"><span style="font-family: ArialMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:1901px; width:236px; height:56px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">size of input data so that the processed data has a size of 
+<br>multiples of 512 bits. The parsing process is to divide the 
+<br>data bits into groups of data with 64-bit size. The process 
+<br>of determining initial hash values and register assignments 
+<br>arranged as shown in Table 2. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:357px; top:1968px; width:130px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Table 2. JPEG/exif segment marker 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:347px; top:1979px; width:34px; height:92px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">Register 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">a 
+<br>b 
+<br>c 
+<br>d 
+<br>e 
+<br>f 
+<br>g 
+<br>h 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:420px; top:1979px; width:47px; height:9px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">Hash Value 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:390px; top:1990px; width:13px; height:81px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">H</span><span style="font-family: TimesNewRomanPSMT; font-size:6px">(0)
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">H</span><span style="font-family: TimesNewRomanPSMT; font-size:6px">(1)
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">H</span><span style="font-family: TimesNewRomanPSMT; font-size:6px">(2)
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">H</span><span style="font-family: TimesNewRomanPSMT; font-size:6px">(3)
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">H</span><span style="font-family: TimesNewRomanPSMT; font-size:6px">(4)
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">H</span><span style="font-family: TimesNewRomanPSMT; font-size:6px">(5)
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">H</span><span style="font-family: TimesNewRomanPSMT; font-size:6px">(6)
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">H</span><span style="font-family: TimesNewRomanPSMT; font-size:6px">(7)
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:403px; top:1989px; width:93px; height:82px;"><span style="font-family: TimesNewRomanPSMT; font-size:6px">0</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">  = 6a09e667f3bcc908 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:6px">0</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">  = bb67ae8584caa73b 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:6px">0</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br>= 3c6ef372fe94f82b 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:6px">0</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br>= a54ff53a5f1d36f1 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:6px">0</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">  = 510e527fade682d1 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:6px">0</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">  = 9b05688c2b3e6c1f 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:6px">0</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">  = 1f83d9abfb41bd6b 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:6px">0</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">  = 5be0cd19137e2179 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:2073px; width:236px; height:55px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br>The eight registers (a, b, c, d, e, f, g, h) and blocks of 
+<br>input data are used in computing the hash value according 
+<br>to the message expanding block sequence shown in Figure 
+<br>4. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:296px; top:2107px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:322px; top:1959px; width:1px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:322px; top:2130px; width:1px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:538px; top:2225px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:322px; top:2235px; width:198px; height:27px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">Figure 4. Message expanding block sequence diagram 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:2264px; width:236px; height:56px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">The  hash  value  computing  executed  iteratively  as 
+<br>much as the block of data bits generated from the parsing 
+<br>stage.  The  mathematical  equation  in  Figure  4  used 
+<br>according to what is shown in equations 1 to 6.  
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:326px; top:2321px; width:41px; height:9px;"><span style="font-family: CambriaMath; font-size:9px">𝐶ℎ(𝑥, 𝑦, 𝑧)</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:394px; top:2321px; width:86px; height:9px;"><span style="font-family: CambriaMath; font-size:9px">= (𝑥 ∧ 𝑦) ⊕ (¬𝑥 ∧ 𝑧)</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:321px; top:2332px; width:176px; height:56px;"><span style="font-family: CambriaMath; font-size:9px">𝑀𝑎𝑗(𝑥, 𝑦, 𝑧)</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">  </span><span style="font-family: CambriaMath; font-size:9px">= (𝑥 ∧ 𝑦) ⊕ (𝑥 ∧ 𝑧) ⊕ (𝑦 ∧ 𝑧)</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">  
+<br></span><span style="font-family: CambriaMath; font-size:9px">∑0(𝑥)</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">  </span><span style="font-family: CambriaMath; font-size:9px">= 𝑆</span><span style="font-family: CambriaMath; font-size:6px">34</span><span style="font-family: CambriaMath; font-size:9px">(𝑥) ⊕ 𝑆</span><span style="font-family: CambriaMath; font-size:6px">56</span><span style="font-family: CambriaMath; font-size:9px">(𝑥) ⊕ 𝑆</span><span style="font-family: CambriaMath; font-size:6px">57</span><span style="font-family: CambriaMath; font-size:9px">(𝑥)</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">  
+<br></span><span style="font-family: CambriaMath; font-size:9px">∑1(𝑥)</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">  </span><span style="font-family: CambriaMath; font-size:9px">= 𝑆</span><span style="font-family: CambriaMath; font-size:6px">96</span><span style="font-family: CambriaMath; font-size:9px">(𝑥) ⊕ 𝑆</span><span style="font-family: CambriaMath; font-size:6px">94</span><span style="font-family: CambriaMath; font-size:9px">(𝑥) ⊕ 𝑆</span><span style="font-family: CambriaMath; font-size:6px">69</span><span style="font-family: CambriaMath; font-size:9px">(𝑥)</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">  
+<br></span><span style="font-family: CambriaMath; font-size:9px">= 𝑆</span><span style="font-family: CambriaMath; font-size:6px">9</span><span style="font-family: CambriaMath; font-size:9px">(𝑥) ⊕ 𝑆</span><span style="font-family: CambriaMath; font-size:6px">4</span><span style="font-family: CambriaMath; font-size:9px">(𝑥) ⊕ 𝑅</span><span style="font-family: CambriaMath; font-size:6px">=</span><span style="font-family: CambriaMath; font-size:9px">(𝑥)</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">  
+<br></span><span style="font-family: CambriaMath; font-size:9px">𝜎</span><span style="font-family: CambriaMath; font-size:6px">;</span><span style="font-family: CambriaMath; font-size:9px">(𝑥)</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span><span style="font-family: CambriaMath; font-size:9px">𝜎</span><span style="font-family: CambriaMath; font-size:6px">9</span><span style="font-family: CambriaMath; font-size:9px">(𝑥)</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">  </span><span style="font-family: CambriaMath; font-size:9px">= 𝑆</span><span style="font-family: CambriaMath; font-size:6px">97</span><span style="font-family: CambriaMath; font-size:9px">(𝑥) ⊕ 𝑆</span><span style="font-family: CambriaMath; font-size:6px">&gt;9</span><span style="font-family: CambriaMath; font-size:9px">(𝑥) ⊕ 𝑅</span><span style="font-family: CambriaMath; font-size:6px">&gt;</span><span style="font-family: CambriaMath; font-size:9px">(𝑥)</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:508px; top:2321px; width:12px; height:65px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">(1) 
+<br>(2) 
+<br>(3) 
+<br>(4) 
+<br>(5) 
+<br>(6) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:2401px; width:236px; height:42px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">The  results  of  the  computing  process  are  eight  hash 
+<br>values stored in eight registers. Figure 5 shows the results 
+<br>of calculating the hash value for the input &quot;abc&quot; string. 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:2389px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:2532px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:290px; top:2536px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:297px; top:2629px; width:2px; height:11px;"><span style="font-family: Calibri; font-size:11px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:113px; top:2546px; width:140px; height:19px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br>Figure 3. SHA512 computation stages 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:2566px; width:236px; height:42px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:10px">The  preprocessing  stages  consist  of  four  processes, 
+<br>padding,  parsing,  setting  initial  hash  value  and  variable 
+<br>assigning [3]. The padding process is the adjustment of the 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:2543px; width:236px; height:53px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Figure 5. Hash value stored in eight registers 
+<br> 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:10px">Each hash value in eight registers (a, b, c, d, e, f, g, h) then 
+<br>add with the initial hash value as shown in Figure 6. 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:67px; top:2617px; width:2px; height:9px;"><span style="font-family: Sylfaen; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:525px; top:2522px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:528px; top:2616px; width:12px; height:10px;"><span style="font-family: Calibri; font-size:10px">18 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:61px; top:1886px; width:236px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:61px; top:1882px; width:236px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:297px; top:1882px; width:4px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:297px; top:1886px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:301px; top:1886px; width:237px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:301px; top:1882px; width:237px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:62px; top:2610px; width:450px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:62px; top:2611px; width:450px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:512px; top:2610px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:512px; top:2611px; width:4px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:516px; top:2610px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:516px; top:2611px; width:27px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:342px; top:1977px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:384px; top:1977px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:385px; top:1977px; width:115px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:342px; top:1988px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:384px; top:1988px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:385px; top:1988px; width:26px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:412px; top:1988px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:412px; top:1988px; width:88px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:341px; top:2071px; width:43px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:384px; top:2071px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:384px; top:2071px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:411px; top:2071px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:412px; top:2071px; width:88px; height:0px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:56px; top:1900px; width:240px; height:214px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:56px; top:2424px; width:233px; height:119px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:304px; top:2138px; width:233px; height:94px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:317px; top:2443px; width:208px; height:87px;"></div><span style="position:absolute; border: gray 1px solid; left:0px; top:2726px; width:595px; height:842px;"></span>
+<div style="position:absolute; top:2726px;"><a name="4">Page 4</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:62px; top:2764px; width:128px; height:9px;"><span style="font-family: Sylfaen; font-size:9px">JOIN (Jurnal Online Informatika) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:77px; top:2866px; width:193px; height:19px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br>Figure 6. registers hash values and initial hash values 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:2899px; width:236px; height:44px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">The  result  of  the  hash  value  of  SHA512  is  a 
+<br>combination of eight hash values from Figure 6 composed 
+<br>sequentially as shown in Figure 7.  
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:129px; top:2984px; width:91px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Figure 7. SHA512 result</span><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:3004px; width:236px; height:44px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">Research’s  third  stage  is  modification  experiments 
+<br>that  consist  of  six  types  of  file  modification.  This  stage 
+<br>consists of three main steps as shown in Figure 8. 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:90px; top:3160px; width:170px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Figure 8. Image file modification experiments </span><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:200px; top:3226px; width:26px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">image 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:3181px; width:236px; height:171px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">Image  recoloring,  resizing,  cropping  conducted  with 
+<br>ACDSee  Pro.8  application.  Metadata  manipulation 
+<br>conducted  with  Hex  Editor  Neo.  Image  file  format 
+<br>conversion  from  JPEG  to  png  conducted  by  using 
+<br>FormatFactory  application  and 
+<br>text  addition 
+<br>conducted by using Paint application. This third stage has 
+<br>the purpose of identified altered segments caused by image 
+<br>modification. Identification conducted by comparing each 
+<br>segment&#x27;s  hash  value  from  the  original  image  with  hash 
+<br>values from a modified image as shown in Figure 8. Before 
+<br>the image file modified, the hash value calculated from the 
+<br>original file (HV</span><span style="font-family: TimesNewRomanPSMT; font-size:6px">0</span><span style="font-family: TimesNewRomanPSMT; font-size:10px">). The hash value of the original file used 
+<br>in comparison to the hash value of the modified file (HV</span><span style="font-family: TimesNewRomanPSMT; font-size:6px">1</span><span style="font-family: TimesNewRomanPSMT; font-size:10px">, 
+<br>HV</span><span style="font-family: TimesNewRomanPSMT; font-size:6px">2</span><span style="font-family: TimesNewRomanPSMT; font-size:10px">, HV</span><span style="font-family: TimesNewRomanPSMT; font-size:6px">3</span><span style="font-family: TimesNewRomanPSMT; font-size:10px">, HV</span><span style="font-family: TimesNewRomanPSMT; font-size:6px">4</span><span style="font-family: TimesNewRomanPSMT; font-size:10px">, HV</span><span style="font-family: TimesNewRomanPSMT; font-size:6px">5</span><span style="font-family: TimesNewRomanPSMT; font-size:10px">, HV</span><span style="font-family: TimesNewRomanPSMT; font-size:6px">5</span><span style="font-family: TimesNewRomanPSMT; font-size:10px">, and HV6). Each modified form 
+<br>will have the value hash of each segment compiled. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:3353px; width:236px; height:125px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">The comparison of hash values conducted for each of 
+<br>the  same  segments.  The  hash  value  that  has  changed  in 
+<br>each form of modification will be used as the compiler of 
+<br>the  fingerprint  file  at  a  later  stage.  The  last  stage  is  a 
+<br>message digest compiling. Each hash value from the third 
+<br>stage  compiles  into  one  string  file  to  form  one  message 
+<br>digest. 
+<br> 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br> 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:290px; top:2857px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:290px; top:2964px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:290px; top:3140px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:319px; top:2836px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:319px; top:3071px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:319px; top:3329px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:438px; top:2763px; width:96px; height:21px;"><span style="font-family: Sylfaen; font-size:9px">ISSN 2527-1682 (Print)</span><span style="font-family: ArialMT; font-size:9px"> 
+<br></span><span style="font-family: Sylfaen; font-size:9px">ISSN 2527-9165 (Online)</span><span style="font-family: ArialMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:319px; top:2802px; width:222px; height:21px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">III.</span><span style="font-family: ArialMT; font-size:10px">  </span><span style="font-family: TimesNewRomanPSMT; font-size:10px">RESULTS AND DISCUSSION 
+<br>Table  3  shows  the  image  file  size  and  picture  mode, 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:2825px; width:153px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">taken from smartphone Asus Z00UD. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:337px; top:2847px; width:184px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Table 3. Image file from smartphone Asus Z00UD 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:347px; top:2863px; width:51px; height:7px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">JPEG/Exif file 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:331px; top:2878px; width:68px; height:109px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">P_20180723_ 41211 
+<br>P_20180731_ 34049 
+<br>P_20180823_ 24724 
+<br>P_20180905_ 85850 
+<br>P_20190110_ 00735 
+<br>P_20190324_10003 
+<br>P_20190324_10004 
+<br>P_20190324_11402 
+<br>P_20190324_11530 
+<br>P_20190324_12100 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:430px; top:2858px; width:19px; height:127px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">Size 
+<br>(KB) 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:7px">2.117 
+<br>1.915 
+<br>2.488 
+<br>1.977 
+<br>1.482 
+<br>1.601 
+<br>1.564 
+<br>2.315 
+<br>1.538 
+<br>1.703 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:466px; top:2858px; width:46px; height:127px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">Picture 
+<br>Mode 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:7px">Auto/Outdoor 
+<br>Auto/Outdoor 
+<br>Auto/Indoor 
+<br>Auto/Outdoor 
+<br>Auto/Indoor 
+<br>Auto/Indoor 
+<br>Auto/Indoor 
+<br>Auto/Indoor 
+<br>Auto/Outdoor 
+<br>Auto/Outdoor 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:2990px; width:236px; height:79px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br>The  images  data  shown  in  Table  3,  taken  from  two 
+<br>categories place, indoor and outdoor. These two locations 
+<br>did not affect the file size. The biggest file from Table 3 
+<br>shows that images with multiple colors will make a file size 
+<br>bigger.    Table  4  shows  image  files  from  the  smartphone 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:10px">Samsung Galaxy A5. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:324px; top:3082px; width:211px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Table 4. Image file from smartphone Samsung Galaxy A5 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:347px; top:3098px; width:51px; height:7px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">JPEG/Exif file 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:336px; top:3113px; width:73px; height:109px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">01_20180825_131753 
+<br>02_20171225_111236 
+<br>03_20171201_124906 
+<br>04_20171201_130420 
+<br>05_20180825_134942 
+<br>06_20181213_172235 
+<br>07_20190114_154205 
+<br>08_20190114_154209 
+<br>09_20190114_154215 
+<br>10_20190114_154220 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:430px; top:3093px; width:19px; height:128px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">Size 
+<br>(KB) 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:7px">4.968 
+<br>3.346 
+<br>3.075 
+<br>3.304 
+<br>2.203 
+<br>1.208 
+<br>2.422 
+<br>2.101 
+<br>2.065 
+<br>2.151 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:466px; top:3093px; width:46px; height:128px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">Picture 
+<br>Mode 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:7px">Auto/Outdoor 
+<br>Auto/Outdoor 
+<br>Auto/Outdoor 
+<br>Auto/Outdoor 
+<br>AutoOutdoor 
+<br>Auto/Indoor 
+<br>Auto/Indoor 
+<br>Auto/Indoor 
+<br>Auto/indoor 
+<br>Auto/indoor 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:3225px; width:236px; height:102px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br>The image files from the smartphone Samsung Galaxy 
+<br>A5  have  different  characteristics  than  image  files  from 
+<br>smartphone  Asus  Z00UD.  The  file  size  from  Table  4 
+<br>influenced by the amount of light and color captured in the 
+<br>image. The result of JPEG / exif file segment identification 
+<br>shown  in  Tables  3  and  4.  Table  3  shown  the  segment 
+<br>location  index  for  an  image  file  from  the  Asus  Z00UD 
+<br>smartphone. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:329px; top:3340px; width:200px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Table 3. Segment index location for an image file from 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:375px; top:3350px; width:98px; height:31px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">smartphone Asus Z00UD 
+<br></span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">Segment Index 
+<br>SOF0 
+<br>DQT 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:384px; top:3374px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">APP1 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:355px; top:3374px; width:15px; height:7px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">SOI 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:3363px; width:38px; height:17px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">JPEG/Exif 
+<br>file 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:3385px; width:36px; height:90px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">P_2018072
+<br>3_ 41211 
+<br>P_2018073
+<br>1_ 34049 
+<br>P_2018082
+<br>3_ 24724 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:7px">P_2018090
+<br>5_ 85850 
+<br>P_2019011
+<br>0_ 00735 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:359px; top:3389px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">0 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:359px; top:3408px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">0 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:359px; top:3426px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">0 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:359px; top:3444px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">0 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:359px; top:3463px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">0 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:486px; top:3374px; width:19px; height:7px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">DHT 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:520px; top:3374px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">SOS 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:418px; top:3389px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">26400 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:451px; top:3389px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">26844 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:485px; top:3389px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">26726 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:518px; top:3389px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">27630 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:418px; top:3408px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">26368 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:451px; top:3408px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">61656 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:485px; top:3408px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">26694 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:518px; top:3408px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">27598 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:418px; top:3426px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">26378 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:451px; top:3426px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">26664 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:485px; top:3426px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">26704 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:518px; top:3426px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">27610 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:418px; top:3444px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">25350 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:451px; top:3444px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">25636 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:485px; top:3444px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">25676 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:518px; top:3444px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">26580 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:418px; top:3463px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">26318 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:451px; top:3463px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">26602 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:485px; top:3463px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">26642 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:518px; top:3463px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">27548 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:391px; top:3389px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:391px; top:3408px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:391px; top:3426px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:391px; top:3444px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:391px; top:3463px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:67px; top:3486px; width:386px; height:32px;"><span style="font-family: Sylfaen; font-size:9px">Implementation SHA512 Hash Function And Boyer-Moore String Matching Algorithm For JPEG/exif  
+<br></span><span style="font-family: Sylfaen; font-size:9px">Message Digest Compilation 
+<br>(Rachmad Fitriyanto, Anton Yudhana, SUnardi)</span><span style="font-family: Calibri; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:528px; top:3485px; width:12px; height:10px;"><span style="font-family: Calibri; font-size:10px">19 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:2791px; width:2px; height:9px;"><span style="font-family: Calibri; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:2887px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:2973px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:2995px; width:1px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:3149px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:3171px; width:1px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:3521px; width:2px; height:11px;"><span style="font-family: Calibri; font-size:11px"> 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:55px; top:2788px; width:236px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:55px; top:2785px; width:236px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:291px; top:2785px; width:4px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:291px; top:2788px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:295px; top:2788px; width:242px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:295px; top:2785px; width:242px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:62px; top:3478px; width:450px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:62px; top:3480px; width:450px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:512px; top:3478px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:512px; top:3480px; width:4px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:516px; top:3478px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:516px; top:3480px; width:27px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:325px; top:2857px; width:92px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:2857px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:2857px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:460px; top:2857px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:461px; top:2857px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:325px; top:2876px; width:92px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:2876px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:2876px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:460px; top:2876px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:461px; top:2876px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:325px; top:2988px; width:92px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:417px; top:2988px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:417px; top:2988px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:459px; top:2988px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:460px; top:2988px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:325px; top:3091px; width:92px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:3091px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:3091px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:460px; top:3091px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:461px; top:3091px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:325px; top:3110px; width:92px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:3110px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:418px; top:3110px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:460px; top:3110px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:461px; top:3110px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:325px; top:3223px; width:92px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:417px; top:3223px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:417px; top:3223px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:459px; top:3223px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:460px; top:3223px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:298px; top:3359px; width:49px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:347px; top:3359px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:348px; top:3359px; width:196px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:347px; top:3371px; width:28px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:375px; top:3371px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:376px; top:3371px; width:35px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:411px; top:3371px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:412px; top:3371px; width:32px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:444px; top:3371px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:445px; top:3371px; width:32px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:478px; top:3371px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:478px; top:3371px; width:32px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:511px; top:3371px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:512px; top:3371px; width:32px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:298px; top:3383px; width:49px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:347px; top:3383px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:348px; top:3383px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:375px; top:3383px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:376px; top:3383px; width:35px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:411px; top:3383px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:412px; top:3383px; width:32px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:444px; top:3383px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:445px; top:3383px; width:32px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:478px; top:3383px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:478px; top:3383px; width:32px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:511px; top:3383px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:512px; top:3383px; width:32px; height:0px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:56px; top:2800px; width:233px; height:64px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:56px; top:2943px; width:233px; height:28px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:56px; top:3049px; width:233px; height:99px;"></div><span style="position:absolute; border: gray 1px solid; left:0px; top:3618px; width:595px; height:842px;"></span>
+<div style="position:absolute; top:3618px;"><a name="5">Page 5</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:67px; top:3656px; width:180px; height:10px;"><span style="font-family: Sylfaen; font-size:10px">JOIN | Volume 4 No. 1 | Juni 2019 : 16-23  </span><span style="font-family: Sylfaen; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:143px; top:3787px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:143px; top:3768px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:143px; top:3750px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:143px; top:3732px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:143px; top:3713px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:111px; top:3787px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">0 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:111px; top:3768px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">0 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:111px; top:3750px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">0 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:111px; top:3732px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">0 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:111px; top:3713px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">0 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:106px; top:3699px; width:15px; height:7px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">SOI 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:272px; top:3699px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">SOS 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:238px; top:3699px; width:19px; height:7px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">DHT 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:136px; top:3699px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">APP1 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:236px; top:3787px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">25564 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:203px; top:3787px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">25663 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:170px; top:3787px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">25405 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:236px; top:3768px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">25792 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:203px; top:3768px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">25789 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:170px; top:3768px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">25348 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:236px; top:3750px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">25809 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:203px; top:3750px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">25769 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:170px; top:3750px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">25278 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:236px; top:3732px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">25704 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:203px; top:3732px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">25662 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:170px; top:3732px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">25378 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:236px; top:3713px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">25584 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:203px; top:3713px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">25544 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:170px; top:3713px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">34212 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:270px; top:3787px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">26580 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:270px; top:3768px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">26713 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:270px; top:3750px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">26713 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:270px; top:3732px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">26608 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:270px; top:3713px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">26490 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:171px; top:3687px; width:53px; height:19px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">Segment Index 
+<br>SOF0 
+<br>DQT 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:3673px; width:236px; height:334px;"><span style="font-family: Calibri; font-size:11px"> 
+<br></span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">JPEG/Exif 
+<br>file 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:7px">P_2019032
+<br>4_10003 
+<br>P_2019032
+<br>4_10004 
+<br>P_2019032
+<br>4_11402 
+<br>P_2019032
+<br>4_11530 
+<br>P_2019032
+<br>4_12100 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br>Segments  index  value  obtained  from  variable  idxstr 
+<br>that shown in Figure 2. Variable idxstr that uses is the last 
+<br>value  before  the  looping  process  stopped.  The  location 
+<br>index of the SOI and APP1 segment in all JPEG / exif files 
+<br>in Table 3 have the same values 0 and 4. This is because 
+<br>the SOI segment is located in the initial bit of the image file 
+<br>and  consists  of  only  four  bits  containing  the  segment 
+<br>marker segment, ffd8. The location index and length of the 
+<br>segments DQT, SOF0, DHT and SOS in ten JPEG / exif 
+<br>files have different values. This makes the index location 
+<br>of a segment of a JPEG / exif file not be used to identify 
+<br>the location of the segment in another file. Therefore, the 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:10px">Boyer-Moore algorithm matching string is always used to 
+<br>identify  the  location  of  the  segment  for  each  time  the 
+<br>message digest compiled. The identification of the location 
+<br>of the JPEG / exif file segment from the Samsung Galaxy 
+<br>A5 smartphone shown in Table 4. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:74px; top:4020px; width:200px; height:19px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Table 4. Segment index location for an image file from 
+<br>smartphone Samsung Galaxy A5</span><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:110px; top:4054px; width:15px; height:7px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">SOI 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:138px; top:4054px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">APP1 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:239px; top:4054px; width:19px; height:7px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">DHT 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:272px; top:4054px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">SOS 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:171px; top:4042px; width:54px; height:19px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">Segment Index 
+<br>SOF0 
+<br>DQT 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:114px; top:4069px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">0 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:114px; top:4087px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">0 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:114px; top:4106px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">0 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:114px; top:4124px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">0 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:114px; top:4143px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">0 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:114px; top:4161px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">0 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:114px; top:4179px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">0 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:114px; top:4198px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">0 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:114px; top:4217px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">0 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:114px; top:4235px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">0 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:145px; top:4069px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:145px; top:4087px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:145px; top:4106px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:145px; top:4124px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:145px; top:4143px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:145px; top:4161px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:145px; top:4179px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:145px; top:4198px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:145px; top:4217px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:145px; top:4235px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:172px; top:4069px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2000 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:204px; top:4069px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2286 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:240px; top:4069px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2326 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:272px; top:4069px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">3218 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:172px; top:4087px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2000 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:204px; top:4087px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2286 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:240px; top:4087px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2326 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:272px; top:4087px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">3218 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:172px; top:4106px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2000 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:204px; top:4106px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2286 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:240px; top:4106px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2326 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:272px; top:4106px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">3218 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:172px; top:4124px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2000 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:204px; top:4124px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2286 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:240px; top:4124px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2326 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:272px; top:4124px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">3218 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:172px; top:4143px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2000 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:204px; top:4143px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2286 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:240px; top:4143px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2326 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:272px; top:4143px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">3218 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:172px; top:4161px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2000 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:204px; top:4161px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2286 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:240px; top:4161px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2326 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:272px; top:4161px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">3218 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:172px; top:4179px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2000 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:204px; top:4179px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2286 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:240px; top:4179px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2326 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:272px; top:4179px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">3218 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:172px; top:4198px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2000 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:204px; top:4198px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2286 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:240px; top:4198px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2326 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:272px; top:4198px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">3218 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:172px; top:4217px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2000 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:204px; top:4217px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2286 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:240px; top:4217px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2326 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:272px; top:4217px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">3218 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:172px; top:4235px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2000 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:204px; top:4235px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2286 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:240px; top:4235px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">2326 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:272px; top:4235px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">3218 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:4249px; width:236px; height:111px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:10px">The location index of the SOI and APP1 segment in all 
+<br>JPEG / exif files in Table 4 has the same values 0 and 4. 
+<br>This is because the SOI segment is located in the initial bit 
+<br>of  the  image  file  and  the  segment  location  index  on  the 
+<br>JPEG/exif file from the Samsung Galaxy A5 smartphone 
+<br>shows  that  each  file  has  the  same  segment  location. 
+<br>Therefore, identification of the location of the JPEG/exif 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:10px">segment  that  will  be  conducted  in  the  future  does  not 
+<br>require a search from the start. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:4362px; width:236px; height:21px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">The location index of Tables 3 and 4 used to calculate 
+<br>the length of each segment. This calculation accomplished 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:4008px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:59px; top:4043px; width:38px; height:17px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">JPEG/Exif 
+<br>file 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:59px; top:4064px; width:37px; height:183px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">01_201808
+<br>25_131753 
+<br>02_201712
+<br>25_111236 
+<br>03_201712
+<br>01_124906 
+<br>04_201712
+<br>01_130420 
+<br>05_201808
+<br>25_134942 
+<br>06_201812
+<br>13_172235 
+<br>07_201901
+<br>14_154205 
+<br>08_201901
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:7px">14_154209 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:7px">09_201901
+<br>14_154215 
+<br>10_201901
+<br>14_154220 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:533px; top:3654px; width:2px; height:9px;"><span style="font-family: ArialMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:3685px; width:236px; height:21px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">by finding the difference in location index values from two 
+<br>adjacent segments as formulated in equation 7. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:387px; top:3720px; width:110px; height:10px;"><span style="font-family: CambriaMath; font-size:10px">= 𝐼𝑛𝑑𝑒𝑥(𝑛) − 𝐼𝑛𝑑𝑒𝑥(𝑚)</span><span style="font-family: TimesNewRomanPSMT; font-size:10px">  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:3708px; width:236px; height:78px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span><span style="font-family: CambriaMath; font-size:10px">𝑃</span><span style="font-family: CambriaMath; font-size:6px">@ABCAD(D)</span><span style="font-family: TimesNewRomanPSMT; font-size:10px">  
+<br> 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:10px">An  example  of  the  calculation  of  segment  length  for 
+<br>JPEG / exif documents from the Asus Z00UD smartphone 
+<br>shown in Table 5. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:515px; top:3721px; width:14px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">(7) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:365px; top:3799px; width:129px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Table 5. Image file Segment length 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:411px; top:3811px; width:74px; height:7px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">Segment Length (bit) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:358px; top:3821px; width:15px; height:7px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">SOI 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:386px; top:3821px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">APP1 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:420px; top:3821px; width:19px; height:7px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">DQT 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:449px; top:3821px; width:49px; height:7px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">SOF0  DHT 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:515px; top:3821px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">SOS 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:385px; top:3835px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">26396 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:422px; top:3835px; width:13px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">444 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:452px; top:3835px; width:13px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">118 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:482px; top:3835px; width:13px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">904 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:509px; top:3835px; width:29px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">9181254 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:319px; top:3788px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:310px; top:3816px; width:35px; height:7px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">File name 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:3831px; width:40px; height:185px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">P_20180723
+<br>_141211 
+<br>P_20180823
+<br>_124724 
+<br>P_20180905
+<br>_085850 
+<br>P_20190324
+<br>_100013 
+<br>P_20190324
+<br>_100202 
+<br>01_2018082
+<br>5_131753 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:7px">02_2017122
+<br>5_111236 
+<br>03_2017120
+<br>1_124906 
+<br>04_2017120
+<br>1_130420 
+<br>05_2018082
+<br>5_134942 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:363px; top:3835px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:363px; top:3854px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:363px; top:3873px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:363px; top:3892px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:363px; top:3910px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:363px; top:3929px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:363px; top:3948px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:363px; top:3967px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:363px; top:3985px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:363px; top:4004px; width:5px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:385px; top:3854px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">26374 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:422px; top:3854px; width:13px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">286 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:482px; top:3854px; width:13px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">906 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:509px; top:3854px; width:29px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">5386020 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:385px; top:3873px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">25346 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:422px; top:3873px; width:13px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">286 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:482px; top:3873px; width:13px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">904 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:509px; top:3873px; width:29px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">5319634 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:385px; top:3892px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">34208 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:420px; top:3892px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">8668 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:482px; top:3892px; width:13px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">906 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:509px; top:3892px; width:29px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">3197654 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:385px; top:3910px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">63584 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:418px; top:3910px; width:21px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">38180 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:482px; top:3910px; width:13px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">906 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:509px; top:3910px; width:29px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">5009834 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:387px; top:3929px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">1996 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:422px; top:3929px; width:13px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">286 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:482px; top:3929px; width:13px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">892 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:507px; top:3929px; width:33px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">10805918 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:387px; top:3948px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">1996 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:422px; top:3948px; width:13px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">286 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:482px; top:3948px; width:13px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">892 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:509px; top:3948px; width:29px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">7275684 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:387px; top:3967px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">1996 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:422px; top:3967px; width:13px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">286 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:482px; top:3967px; width:13px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">892 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:509px; top:3967px; width:29px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">6686880 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:387px; top:3985px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">1996 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:422px; top:3985px; width:13px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">286 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:482px; top:3985px; width:13px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">892 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:509px; top:3985px; width:29px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">6598378 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:387px; top:4004px; width:17px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">1996 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:422px; top:4004px; width:13px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">286 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:482px; top:4004px; width:13px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">892 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:509px; top:4004px; width:29px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">4788372 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:454px; top:3854px; width:9px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">40 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:454px; top:3873px; width:9px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">40 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:454px; top:3892px; width:9px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">40 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:454px; top:3910px; width:9px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">40 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:454px; top:3929px; width:9px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">40 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:454px; top:3948px; width:9px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">40 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:454px; top:3967px; width:9px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">40 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:454px; top:3985px; width:9px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">40 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:454px; top:4004px; width:9px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">40 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:4019px; width:236px; height:203px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:10px">The APP1 segment length in the first file in Table 3 has 
+<br>a value of 26396 obtained using equation 7, which is the 
+<br>result  of  a  reduction  between  the  DQT  segment  location 
+<br>index  and  the  APP  segment1.  The  results  of  the  long 
+<br>calculation of all segments show that the SOS segment has 
+<br>the  largest  segment  length.  This  is  because  the  SOS 
+<br>segment contains image data that is the main data from the 
+<br>Image  file.  The  bigger  the  size  of  the  JPEG  /  exif 
+<br>document,  the  longer  the  SOS  segment  will  be.  The 
+<br>calculation  of  SOS  segment  length  accomplished  by 
+<br>operating  a  subtraction  between  the  overall  image  bit 
+<br>length and the SOS segment location index. The bit length 
+<br>of image data, obtained from the length calculation of the 
+<br>converted file at the beginning of the identification phase 
+<br>of the segment location that is also stored in the n variable 
+<br>in  the  searching  process  with  the  Boyer-Moore  string 
+<br>matching algorithm.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:4223px; width:236px; height:88px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">Figure  9  shows  the  application  interface  for  content 
+<br>acquisition  and  calculation  of  hash  values  for  each 
+<br>segment.  Segment  content  acquired  use  location  index 
+<br>value  and  segment  length  as  boundary  parameters. 
+<br>Location index to identify  an acquisition starting point and 
+<br>segment  length  for  numbers  of  characters  that  should 
+<br>acquire 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:67px; top:4401px; width:2px; height:9px;"><span style="font-family: Sylfaen; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:528px; top:4400px; width:12px; height:10px;"><span style="font-family: Calibri; font-size:10px">20 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:297px; top:4413px; width:2px; height:11px;"><span style="font-family: Calibri; font-size:11px"> 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:61px; top:3670px; width:236px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:61px; top:3666px; width:236px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:297px; top:3666px; width:4px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:297px; top:3670px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:301px; top:3670px; width:237px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:301px; top:3666px; width:237px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:62px; top:4394px; width:450px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:62px; top:4395px; width:450px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:512px; top:4394px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:512px; top:4395px; width:4px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:516px; top:4394px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:516px; top:4395px; width:27px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:50px; top:3684px; width:49px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:99px; top:3684px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:100px; top:3684px; width:196px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:99px; top:3696px; width:28px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:127px; top:3696px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:128px; top:3696px; width:35px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:163px; top:3696px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:164px; top:3696px; width:32px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:197px; top:3696px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:197px; top:3696px; width:32px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:230px; top:3696px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:230px; top:3696px; width:32px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:263px; top:3696px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:264px; top:3696px; width:32px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:50px; top:3708px; width:49px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:99px; top:3708px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:100px; top:3708px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:127px; top:3708px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:128px; top:3708px; width:35px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:163px; top:3708px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:164px; top:3708px; width:32px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:197px; top:3708px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:197px; top:3708px; width:32px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:230px; top:3708px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:230px; top:3708px; width:32px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:263px; top:3708px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:264px; top:3708px; width:32px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:49px; top:3800px; width:50px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:99px; top:3800px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:99px; top:3800px; width:28px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:127px; top:3800px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:127px; top:3800px; width:36px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:163px; top:3800px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:163px; top:3800px; width:33px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:196px; top:3800px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:196px; top:3800px; width:33px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:229px; top:3800px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:230px; top:3800px; width:33px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:263px; top:3800px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:263px; top:3800px; width:33px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:53px; top:4039px; width:49px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:102px; top:4039px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:103px; top:4039px; width:190px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:102px; top:4051px; width:28px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:131px; top:4051px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:131px; top:4051px; width:33px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:164px; top:4051px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:165px; top:4051px; width:30px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:195px; top:4051px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:196px; top:4051px; width:33px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:229px; top:4051px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:230px; top:4051px; width:35px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:265px; top:4051px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:266px; top:4051px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:53px; top:4063px; width:49px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:102px; top:4063px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:103px; top:4063px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:131px; top:4063px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:131px; top:4063px; width:33px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:164px; top:4063px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:165px; top:4063px; width:30px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:195px; top:4063px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:196px; top:4063px; width:33px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:229px; top:4063px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:230px; top:4063px; width:35px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:265px; top:4063px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:266px; top:4063px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:53px; top:4210px; width:49px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:102px; top:4210px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:103px; top:4210px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:131px; top:4210px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:131px; top:4210px; width:33px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:164px; top:4210px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:165px; top:4210px; width:30px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:195px; top:4210px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:196px; top:4210px; width:33px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:229px; top:4210px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:230px; top:4210px; width:35px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:265px; top:4210px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:266px; top:4210px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:52px; top:4248px; width:50px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:102px; top:4248px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:102px; top:4248px; width:28px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:130px; top:4248px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:130px; top:4248px; width:34px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:164px; top:4248px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:164px; top:4248px; width:30px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:194px; top:4248px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:195px; top:4248px; width:34px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:229px; top:4248px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:229px; top:4248px; width:36px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:265px; top:4248px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:265px; top:4248px; width:28px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:301px; top:3809px; width:49px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:351px; top:3809px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:351px; top:3809px; width:190px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:351px; top:3819px; width:25px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:376px; top:3819px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:377px; top:3819px; width:34px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:412px; top:3819px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:412px; top:3819px; width:30px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:443px; top:3819px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:443px; top:3819px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:471px; top:3819px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:472px; top:3819px; width:30px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:502px; top:3819px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:502px; top:3819px; width:39px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:301px; top:3829px; width:49px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:351px; top:3829px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:351px; top:3829px; width:25px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:376px; top:3829px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:377px; top:3829px; width:34px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:412px; top:3829px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:412px; top:3829px; width:30px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:443px; top:3829px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:443px; top:3829px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:471px; top:3829px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:472px; top:3829px; width:30px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:502px; top:3829px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:502px; top:3829px; width:39px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:300px; top:4017px; width:50px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:350px; top:4017px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:350px; top:4017px; width:25px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:376px; top:4017px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:376px; top:4017px; width:35px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:411px; top:4017px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:411px; top:4017px; width:31px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:442px; top:4017px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:443px; top:4017px; width:28px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:470px; top:4017px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:471px; top:4017px; width:30px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:501px; top:4017px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:501px; top:4017px; width:40px; height:0px;"></span>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:4510px; width:595px; height:842px;"></span>
+<div style="position:absolute; top:4510px;"><a name="6">Page 6</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:62px; top:4548px; width:128px; height:9px;"><span style="font-family: Sylfaen; font-size:9px">JOIN (Jurnal Online Informatika) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:438px; top:4547px; width:96px; height:21px;"><span style="font-family: Sylfaen; font-size:9px">ISSN 2527-1682 (Print)</span><span style="font-family: ArialMT; font-size:9px"> 
+<br></span><span style="font-family: Sylfaen; font-size:9px">ISSN 2527-9165 (Online)</span><span style="font-family: ArialMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:4752px; width:1px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:286px; top:4780px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:350px; top:4741px; width:145px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Figure 11. Example of metadata editing 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:531px; top:4732px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:4761px; width:236px; height:67px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">Metadata editing from Figure 11, modified smartphone 
+<br>type  from  “Z00UD”  into  “123456”.  The  modification 
+<br>conducted by change the original data bytes 5a 30 30 55 44 
+<br>00 into 31 32 33 34 35 36 in hexadecimal number format. 
+<br>The result from this modification is the metadata section 
+<br>has altered while the image still can be displayed.   
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:4830px; width:236px; height:55px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">The third experiment selects a part of an image using 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:10px">the  ACDSee  Pro.8  application.  Figure  12  shows  a 
+<br>comparison  between  the  original  image  and  the  cropped 
+<br>image. 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:83px; top:4789px; width:183px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Figure 9. segment content acquisition and hashing</span><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:4811px; width:236px; height:33px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">Six hash values from six JPEG/segments form figure 9 can 
+<br>use  as  message  digest  elements  that  will  conduct  on 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:10px">research fourth stage.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:4846px; width:236px; height:55px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">The research’s fourth stage begins with modifying the 
+<br>image file. The modification process consists of six type 
+<br>experiments.  The  first  modification  is  recoloring  image, 
+<br>change the image file into a grayscale image as shown in 
+<br>Figure 10. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:4800px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:4903px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:168px; top:5019px; width:2px; height:11px;"><span style="font-family: TimesNewRomanPSMT; font-size:11px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:264px; top:5019px; width:2px; height:11px;"><span style="font-family: TimesNewRomanPSMT; font-size:11px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:120px; top:5029px; width:12px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">(a) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:216px; top:5029px; width:12px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">(b) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:108px; top:5039px; width:146px; height:19px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Figure 10. Example of recoloring image 
+<br>(a).Original image (b).Modified image 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:5060px; width:236px; height:85px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:10px">Recoloring  image  conducted  shown  from  Figure  10, 
+<br>uses ACDSee Pro.8 application. The Second modification 
+<br>is metadata editing. This experiment conducted using the 
+<br>Neo  Hex  editor  application  to  change  smartphone  type 
+<br>inside  the  APP1  segment.  Figure  11  shows  a  metadata 
+<br>comparison between the original and modified image. 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:380px; top:5022px; width:12px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">(a) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:472px; top:5022px; width:12px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">(b) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:436px; top:5012px; width:2px; height:11px;"><span style="font-family: TimesNewRomanPSMT; font-size:11px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:5032px; width:236px; height:75px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Figure 12. Example of cropping image 
+<br>(a).Original image (b).Cropped image 
+<br> 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:10px">The fourth modification experiment is resizing. Figure 
+<br>13 shows a comparison between the original and modified 
+<br>image.  
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:507px; top:4979px; width:2px; height:11px;"><span style="font-family: TimesNewRomanPSMT; font-size:11px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:505px; top:5180px; width:2px; height:11px;"><span style="font-family: TimesNewRomanPSMT; font-size:11px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:67px; top:5270px; width:386px; height:32px;"><span style="font-family: Sylfaen; font-size:9px">Implementation SHA512 Hash Function And Boyer-Moore String Matching Algorithm For JPEG/exif  
+<br></span><span style="font-family: Sylfaen; font-size:9px">Message Digest Compilation 
+<br>(Rachmad Fitriyanto, Anton Yudhana, SUnardi)</span><span style="font-family: Calibri; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:528px; top:5269px; width:12px; height:10px;"><span style="font-family: Calibri; font-size:10px">21 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:434px; top:5227px; width:2px; height:11px;"><span style="font-family: TimesNewRomanPSMT; font-size:11px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:381px; top:5237px; width:12px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">(a) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:469px; top:5237px; width:12px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">(b) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:360px; top:5248px; width:138px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Figure 13. Example of resizing image 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:4575px; width:2px; height:9px;"><span style="font-family: Calibri; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:5305px; width:2px; height:11px;"><span style="font-family: Calibri; font-size:11px"> 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:55px; top:4572px; width:236px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:55px; top:4569px; width:236px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:291px; top:4569px; width:4px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:291px; top:4572px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:295px; top:4572px; width:242px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:295px; top:4569px; width:242px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:62px; top:5262px; width:450px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:62px; top:5264px; width:450px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:512px; top:5262px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:512px; top:5264px; width:4px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:516px; top:5262px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:516px; top:5264px; width:27px; height:2px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:60px; top:4584px; width:225px; height:203px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:82px; top:4913px; width:84px; height:113px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:179px; top:4913px; width:85px; height:113px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:311px; top:4584px; width:219px; height:155px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:335px; top:4886px; width:100px; height:134px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:446px; top:4886px; width:61px; height:101px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:338px; top:5108px; width:96px; height:128px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:444px; top:5108px; width:60px; height:80px;"></div><span style="position:absolute; border: gray 1px solid; left:0px; top:5402px; width:595px; height:842px;"></span>
+<div style="position:absolute; top:5402px;"><a name="7">Page 7</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:67px; top:5440px; width:180px; height:10px;"><span style="font-family: Sylfaen; font-size:10px">JOIN | Volume 4 No. 1 | Juni 2019 : 16-23  </span><span style="font-family: Sylfaen; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:533px; top:5438px; width:2px; height:9px;"><span style="font-family: ArialMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:111px; top:5469px; width:141px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">(a).Original image (b).Modified image 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:5480px; width:78px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">Image  dimension 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:156px; top:5480px; width:79px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">(width-height)  on 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:5480px; width:236px; height:44px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">fourth 
+<br>modification experiment, reduced into 50% smaller from 
+<br>the  original  image.  This  modification  conducted  uses 
+<br>ACDSee Pro.8 application. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:244px; top:5480px; width:14px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">the 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:5526px; width:236px; height:78px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">The  fifth  modification  is  file  type  conversion.  The 
+<br>original  file  type  is  JPEG/exif,  converted  into  png  uses 
+<br>Format Factory application. The conversion result did not 
+<br>show the significance result from the displayed image. The 
+<br>differences  clearly  are  shown  if  the  converted  image 
+<br>opened in the hex editor application as shown in Figure 14. 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:5469px; width:236px; height:67px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">Each  original  and  modified  image  processed  with 
+<br>SHA512 to produce hash values from each segment inside 
+<br>each  image  file.  The  obtained  hash  value  then  compared 
+<br>between  the  original  and  modified  images.  Figure  16 
+<br>shows  hash  values  comparison  from  recoloring  image 
+<br>modification. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:319px; top:5539px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:5730px; width:236px; height:30px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">Figure 14. Example of a comparison image’s data bytes from the 
+<br>converted file 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:273px; top:5721px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:5774px; width:236px; height:136px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">The file type from the two files the different values. The 
+<br>original file has exif type while the modified file has png 
+<br>file  type.  The  change  of  file  type  made  identified  by 
+<br>searching  the  file  signature  from  both  files.  The  file 
+<br>signature used by the computer to determine how to open 
+<br>a file. The file signature located at the beginning of the data 
+<br>file. The original segment marker on JPEG/exif file type, 
+<br>have  file  signatures  that  identified  as  ffd8.  File  type 
+<br>conversion  on  this  modification  experiments,  not  just 
+<br>affected the change of file signature only, but also altered 
+<br>the  entire  data  bytes  of  the  image  file.  This  condition 
+<br>caused by the changed of the file structure. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:5912px; width:236px; height:67px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">The  sixth  image  modification  is  text  addition.  This 
+<br>experiment  conducted  by  uses  Core  Photo-Paint  X3. 
+<br>Figure 15 shows a comparison between the original image 
+<br>and the modified image. The experiment conducted by add 
+<br>text into the image. 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:112px; top:6116px; width:12px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">(a) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:224px; top:6116px; width:12px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">(b) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:168px; top:6106px; width:2px; height:11px;"><span style="font-family: TimesNewRomanPSMT; font-size:11px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:280px; top:6106px; width:2px; height:11px;"><span style="font-family: TimesNewRomanPSMT; font-size:11px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:69px; top:6138px; width:210px; height:19px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Figure 15. Example of text modification on the image file 
+<br>(a).Original image (b).modified image</span><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:313px; top:5688px; width:218px; height:29px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">Figure 16. Application interface for hash values comparison</span><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:5719px; width:238px; height:204px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">The left section of Figure 16 shows the hash value of 
+<br>six segments from the original file. The right section shows 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:10px">the  hash  value  of  five  segments  from  the  recoloring 
+<br>modification 
+<br>file.  The  comparison  conducted  by 
+<br>comparing  two  hash  values  from  the  same  segment.  The 
+<br>comparison  results  consist  of  two  conditions,  “Match”  if 
+<br>the  hash  values  of  the  two  segments  are  equal  and  “Not 
+<br>match” if not the same. The comparison result from Figure 
+<br>16 shows, only the value of the SOI segment hash value 
+<br>that altered. These results show that four other segments&#x27; 
+<br>content  altered  when  recoloring  modifications  occurred.  
+<br>The  affected  segments  from  each  modified  experiments 
+<br>shown in Table 6. The result from Table 6 categorized into 
+<br>three groups. The first group has shown that the metadata 
+<br>modification experiment affected the APP1 segment only. 
+<br>The second group showed that the SOI segment altered for 
+<br>image file conversion and text/object addition experiments. 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:338px; top:5925px; width:182px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Table 6. Affected segment for image modification 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:310px; top:5936px; width:75px; height:75px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">Modification 
+<br>Experiments 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:7px">Recoloring 
+<br>Metadata Modification 
+<br>Resizing 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:7px">Convert to PNG 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:7px">Text addition 
+<br>Cropping 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:393px; top:5936px; width:144px; height:17px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px">Affected Segment 
+<br>SOI  APP1  DQT  SOF0  DHT  SOS 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:397px; top:5956px; width:8px; height:55px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px">- 
+<br>- 
+<br>- 
+<br></span><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px"> 
+<br></span><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px"> 
+<br>- 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:422px; top:5955px; width:8px; height:55px;"><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:448px; top:5955px; width:8px; height:55px;"><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px"> 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:7px">- 
+<br></span><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px"> 
+<br></span><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px"> 
+<br></span><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px"> 
+<br></span><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:474px; top:5955px; width:8px; height:55px;"><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br>- 
+<br></span><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:501px; top:5955px; width:8px; height:55px;"><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px"> 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:7px">- 
+<br></span><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px"> 
+<br></span><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px"> 
+<br></span><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px"> 
+<br></span><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:7px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:525px; top:5955px; width:8px; height:55px;"><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br>- 
+<br></span><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span><span style="font-family: Wingdings2; font-size:7px">P</span><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:6014px; width:236px; height:113px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br>The third group shown all segments altered for image 
+<br>display modification (recoloring, resizing, cropping). Each 
+<br>result group used as a base to determine the file fingerprint 
+<br>components  as  JPEG/exif  message  digest.  The  first 
+<br>component is SOI hash value from the first group and the 
+<br>second  component  is  APP1  hash  value  from  the  second 
+<br>group.  Third  component  selected  from  four  segments 
+<br>(DQT, SOF0, DHT, SOS) based on segment content and 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:10px">segment length. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:6128px; width:236px; height:44px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">SOS  segment  has  the  most  length  content  from  other 
+<br>segments because this segment stored the image data. This 
+<br>condition made the segment marker searching process need 
+<br>more  time  because  the  Boyer-Moore  string  matching 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:528px; top:6184px; width:12px; height:10px;"><span style="font-family: Calibri; font-size:10px">22 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:297px; top:6197px; width:2px; height:11px;"><span style="font-family: Calibri; font-size:11px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:5457px; width:2px; height:11px;"><span style="font-family: Calibri; font-size:11px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:5762px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:6127px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:67px; top:6185px; width:2px; height:9px;"><span style="font-family: Sylfaen; font-size:9px"> 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:61px; top:5454px; width:236px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:61px; top:5450px; width:236px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:297px; top:5450px; width:4px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:297px; top:5454px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:301px; top:5454px; width:237px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:301px; top:5450px; width:237px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:62px; top:6178px; width:450px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:62px; top:6179px; width:450px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:512px; top:6178px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:512px; top:6179px; width:4px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:516px; top:6178px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:516px; top:6179px; width:27px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:304px; top:5934px; width:83px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:388px; top:5934px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:388px; top:5934px; width:149px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:388px; top:5944px; width:22px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:410px; top:5944px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:410px; top:5944px; width:26px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:437px; top:5944px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:438px; top:5944px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:462px; top:5944px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:463px; top:5944px; width:26px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:490px; top:5944px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:490px; top:5944px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:515px; top:5944px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:516px; top:5944px; width:22px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:304px; top:5954px; width:83px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:388px; top:5954px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:388px; top:5954px; width:21px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:410px; top:5954px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:410px; top:5954px; width:26px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:437px; top:5954px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:438px; top:5954px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:462px; top:5954px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:463px; top:5954px; width:26px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:490px; top:5954px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:490px; top:5954px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:515px; top:5954px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:516px; top:5954px; width:22px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:304px; top:6012px; width:84px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:387px; top:6012px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:387px; top:6012px; width:22px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:409px; top:6012px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:409px; top:6012px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:436px; top:6012px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:437px; top:6012px; width:25px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:462px; top:6012px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:462px; top:6012px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:489px; top:6012px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:490px; top:6012px; width:25px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:514px; top:6012px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:515px; top:6012px; width:23px; height:0px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:56px; top:5605px; width:216px; height:123px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:66px; top:5980px; width:101px; height:135px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:179px; top:5980px; width:101px; height:135px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:317px; top:5549px; width:209px; height:147px;"></div><span style="position:absolute; border: gray 1px solid; left:0px; top:6294px; width:595px; height:842px;"></span>
+<div style="position:absolute; top:6294px;"><a name="8">Page 8</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:438px; top:6331px; width:96px; height:21px;"><span style="font-family: Sylfaen; font-size:9px">ISSN 2527-1682 (Print)</span><span style="font-family: ArialMT; font-size:9px"> 
+<br></span><span style="font-family: Sylfaen; font-size:9px">ISSN 2527-9165 (Online)</span><span style="font-family: ArialMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:326px; top:6369px; width:214px; height:19px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Arnold Scrambling,” </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Int. J. Netw. Secur.</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, vol. 18, no. 5, pp. 
+<br>832–841, 2017. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:6390px; width:236px; height:29px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[7]  C. B. Shah and D. R. Panchal, “Secured Hash Algorithm-1: 
+<br>Review Paper,” </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Int. J. Adv. Res. Eng. Technol.</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, vol. 2, no. 
+<br>10, pp. 26–30, 2014. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:6421px; width:236px; height:40px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[8]  N.  Tiwari  and  A.  Sinhal,  “An  Implementation  on  Secure 
+<br>Hash  Algorithm  in  Wireless  Algorithms  to  Ensure  the 
+<br>Integrity,”  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Int.  J.  Comput.  Sci.  Inf.  Technol.</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">,  vol.  5,  no. 
+<br>January, pp. 4779–4781, 2014. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:6463px; width:236px; height:29px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[9]  N. C. Iyer and S. Mandal, “Implementation of Secure Hash 
+<br>Algorithm-1  using  FPGA,”  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Int.  J.  Inf.  Comput.  Technol.</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, 
+<br>vol. 3, no. 8, pp. 757–764, 2013. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:6493px; width:236px; height:30px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[10]  NIST, </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">FIPS PUB 180-4 Secure Hash Standard ( SHS )</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, no. 
+<br>August. Gaithersburg: National Institute of Standards and 
+<br>Technology, 2015. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:6525px; width:236px; height:40px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[11]  I.  Riadi  and  M.  Sumagita,  “Analysis  of  Secure  Hash 
+<br>Algorithm  (SHA)  512  for  Encryption  Process  on  Web 
+<br>Based Application,” </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Int. J. Cyber-Security Digit. Forensics</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, 
+<br>vol. 7, no. 4, 2018. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:6566px; width:236px; height:30px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[12]  L.Refialy,  E.Sediyono,  and  A.Setiawan,  “Pengamanan 
+<br>Sertifikat  Tanah  Digital  Menggunakan  Digital  Signature 
+<br>SHA-512,” </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">JUTISI</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, vol. 1, pp. 229–234, 2015. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:6597px; width:236px; height:40px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[13]  N.  Jiji  and  T.  Mahalakshmi,  “Survey  of  Exact  String 
+<br>Matching  Algorithm  for  Detecting  Patterns  in  Protein 
+<br>Sequence,” </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Adv. Comput. Sci. Technol.</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, vol. 10, no. 8, pp. 
+<br>2707–2720, 2017. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:6638px; width:236px; height:29px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[14]  K. Al-Khamaiseh and S. Al-Shagarin, “A Survey of String 
+<br>Matching Algorithms,” </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Int. J. Eng. Res. Appl.</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, vol. 4, no. 
+<br>June 2015, pp. 144–156, 2014. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:6670px; width:236px; height:40px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[15]  R.  Ramos-frí  and  M.  Vargas-lombardo,  “A  Review  of 
+<br>String  Matching  Algorithms  and  Recent  Implementations 
+<br>using GPU,” </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Int. J. Secur. Its Appl.</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, vol. 11, no. 6, pp. 69–
+<br>76, 2017. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:6711px; width:236px; height:29px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[16]  J. Bhandari and A. Kumar, “String Matching Rules Used 
+<br>By  Variants  of  Boyer-Moore  Algorithm,”  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">J.  Glob.  Res. 
+<br>Comput. Sci.</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, vol. 5, no. 1, pp. 8–11, 2014. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:6742px; width:236px; height:40px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[17]  Y. D. Prabowo, “Pencocokan DNA NR_108049 dan DNA 
+<br>DI203322  Menggunakan  Algoritma  Boyer  Moore,” </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Pros. 
+<br>Semin.  Nas.  Teknol.  Inf.  dan  Komun.</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">,  no.  40,  pp.  18–19, 
+<br>2016. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:6783px; width:236px; height:40px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[18]  D. R. Candra and K. D. Tania, “Application of Knowledge 
+<br>Sharing  Features  Using  the  algorithm  Boyer-moore  On 
+<br>Knowledge Management System (KMS),” </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">J. Sist. Inf.</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, vol. 
+<br>9, no. 1, pp. 1216–1221, 2017. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:6825px; width:236px; height:40px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[19]  A. L. . Sandoval, D. M. . Gonzales, L. J. . Villaba, and J. 
+<br>Hernandez-Castro, “Analysis of errors in exif metadata on 
+<br>mobile devices,” </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Multimed Tools Appl</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, no. 74, pp. 4735–
+<br>4763, 2015. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:6866px; width:236px; height:40px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[20]  N. Jiji and T. Mahalaksmi, “An Efficient String Matching 
+<br>Algorithm  for  Detecting  Pattern  Using  Forward  and 
+<br>Backward Searching Approach,” </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Int. J. Comput. Sci.</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, vol. 
+<br>6, no. 2, pp. 16–26, 2018.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:62px; top:6332px; width:128px; height:9px;"><span style="font-family: Sylfaen; font-size:9px">JOIN (Jurnal Online Informatika) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:6359px; width:236px; height:101px;"><span style="font-family: Calibri; font-size:9px"> 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:10px">algorithm  has  O(mn)  time  complexity  for  worst-case 
+<br>conditions. SOF0 has the smallest size than others except 
+<br>for the SOI segment. SOF0 store image information such 
+<br>as image dimension and the number of color components 
+<br>that always change if image altered as in 1st, 2nd, 5th and 
+<br>6th experiments. Figure 17 shown JPEG/exif file message 
+<br>digest  that  arranged  from  three  hash  values,  SOI,  APP1, 
+<br>and SOF0. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:6461px; width:1px; height:7px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:6625px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:108px; top:6560px; width:132px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Figure 17 JPEG/exif message digest 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:6570px; width:236px; height:53px;"><span style="font-family: TimesNewRomanPSMT; font-size:7px"> 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:10px">Hash value from each segment in Figure 17, has 128-
+<br>bit  length.  This  caused  by  number  format  from  an 
+<br>application is in hexadecimal which in binary can convert 
+<br>to 512-bit length by computing 128 x 4. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:282px; top:6551px; width:2px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:134px; top:6637px; width:81px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">IV.</span><span style="font-family: ArialMT; font-size:10px"> </span><span style="font-family: TimesNewRomanPSMT; font-size:10px">CONCLUSION 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:109px; top:6718px; width:17px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">that 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:78px; top:6672px; width:46px; height:10px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">identifying 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:6648px; width:236px; height:171px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">JPEG/exif message-digest consist of three hash values 
+<br>that represent modified experiments. SOI hash values use 
+<br>text  addition 
+<br>file  conversion  and 
+<br>for 
+<br>modification.  APP1  hash  values  use  for  identifying 
+<br>metadata  editing  modification  and  SOF0  hash  value  for 
+<br>identifying recoloring, resizing and cropping modification. 
+<br>three-segment  will  make  segments 
+<br>Identifying 
+<br>searching  faster  for  the  Boyer-Moore  string  matching 
+<br>algorithm.  The  compilation  of  Message  digest  from 
+<br>SHA512 hash value has an advantage because of its small 
+<br>size and cannot decrypt. Future research hope can develop 
+<br>message  digest  compilation  for  other  file  types  that 
+<br>common use in digital communication such as video and 
+<br>audio. 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:6821px; width:236px; height:51px;"><span style="font-family: TimesNewRomanPSMT; font-size:10px">V.</span><span style="font-family: ArialMT; font-size:10px">  </span><span style="font-family: TimesNewRomanPSMT; font-size:10px">REFERENCES 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">[1]  H. Wijayanto, I. Riadi, and Y. Prayudi, “Encryption EXIF 
+<br>Metadata for Protection Photographic Image of Copyright 
+<br>Piracy,” </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Int. J. Res. Comput. Commun. Technol.</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, vol. 5, no. 
+<br>5, 2016. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:6874px; width:236px; height:40px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[2]  D. P. Gangwar and A. Pathania, “Authentication of Digital 
+<br>Image using Exif Metadata and Decoding Properties,” </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Int. 
+<br>J.  Sci.  Res.  Comput.  Sci.  Eng.  Inf.  Technol.</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">,  vol.  3,  no. 
+<br>January, pp. 335–341, 2019. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:6915px; width:236px; height:29px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[3]  L. Yuan and T. Ebrahimi, “Image Privacy Protection with 
+<br>Secure JPEG ransmorphing,” </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Inst. Eng. Technol. Journals</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, 
+<br>vol. 11, no. 9, pp. 1–8, 2017. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:6946px; width:236px; height:50px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[4]  A.S.Sukarno,  “Pengembangan  Aplikasi  Pengamanan 
+<br>Dokumen  Digital  Memanfaatkan  Algoritma  Advance 
+<br>Encryption Standard, RSA Digital Signature dan Invisible 
+<br>Watermarking,” </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Pros. Semin. Nas. Apl. Teknol. Inf. 2013</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, 
+<br>pp. 1–8, NaN-5022, 2013. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:6998px; width:236px; height:40px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[5]  A.  Chauhan,  “Digital  Watermarking-Revisit,”  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Int.  J. 
+<br>Comput. Sci. Inf. Technol.</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, vol. 6, no. 1, pp. 833–838, 2015. 
+<br>[6]  D. Vaishnavi and T. S. Subashini, “A Secure and Robust 
+<br>Image  Watermarking  System  Using  Normalization  and 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:67px; top:7054px; width:386px; height:32px;"><span style="font-family: Sylfaen; font-size:9px">Implementation SHA512 Hash Function And Boyer-Moore String Matching Algorithm For JPEG/exif  
+<br></span><span style="font-family: Sylfaen; font-size:9px">Message Digest Compilation 
+<br>(Rachmad Fitriyanto, Anton Yudhana, SUnardi)</span><span style="font-family: Calibri; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:528px; top:7053px; width:12px; height:10px;"><span style="font-family: Calibri; font-size:10px">23 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:7089px; width:2px; height:11px;"><span style="font-family: Calibri; font-size:11px"> 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:55px; top:6356px; width:236px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:55px; top:6353px; width:236px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:291px; top:6353px; width:4px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:291px; top:6356px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:295px; top:6356px; width:242px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:295px; top:6353px; width:242px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:62px; top:7046px; width:450px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:62px; top:7048px; width:450px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:512px; top:7046px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:512px; top:7048px; width:4px; height:2px;"></span>
+<span style="position:absolute; border: black 1px solid; left:516px; top:7046px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:516px; top:7048px; width:27px; height:2px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:65px; top:6469px; width:216px; height:89px;"></div><div style="position:absolute; top:0px;">Page: <a href="#1">1</a>, <a href="#2">2</a>, <a href="#3">3</a>, <a href="#4">4</a>, <a href="#5">5</a>, <a href="#6">6</a>, <a href="#7">7</a>, <a href="#8">8</a></div>
+</body></html>

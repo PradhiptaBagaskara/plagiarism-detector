@@ -1,0 +1,842 @@
+Jurnal Informatika: Jurnal Pengembangan IT (JPIT), Vol.04, No.01, Januari 2019   
+DOI: 10.30591/jpit.v4i1.1104 
+ 
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ISSN: 2477-5126     
+
+e-ISSN: 2548-9356 
+ 
+
+ 
+
+Penerapan Algoritma Pencarian Binary Search dan 
+QuickSort pada Aplikasi Kamus Bahasa Palembang 
+Berbasis Web 
+
+ 
+ 
+
+Andri*) 
+Jurusan Sistem Informasi, Fakultas Ilmu Komputer, Universitas Bina Darma, Palembang 
+Jln. A. Yani No.3 Plaju, Kota Palembang, 30264, Indonesia 
+email: andri@binadarma.ac.id  
+ 
+ 
+Copyright ©2019, Politeknik Harapan Bersama, Tegal 
+
+ 
+ 
+Abstract   Dictionaries can be used as a means to find meaning 
+and  meaning  in  a  word.  Palembang  language  is  one  of  the 
+regional  languages  in  the  province  of  South  Sumatra.  In  their 
+daily  lives  besides  using  Indonesian,  the  Palembang  people  also 
+use the Palembang language as a means of communication with 
+each  other.  This  study  aims  to  create  a  web-based  Palembang 
+language dictionary application so that it can  be  accessed using 
+internet  media.  This  dictionary  application  was  created  to  help 
+people  who  are  not  native  to  the  city  who  live  in  the  city  of 
+Palembang.  This  dictionary  application  provides  a  simple  user 
+interface  that  makes  it  easy  for  users  to  use  it.  In  the 
+development  of  this  dictionary  application  is  made  using  the 
+RAD  method.  The  search  algorithm  used  in  word  search  in  a 
+database  is  using  the  binary  search  method.  The  binary  search 
+method  has  the  advantage  of  linear  search.  In  practice  binary 
+search searches by first dividing into two data in a database that 
+has  been  sorted  first.  This  application  can  do  an  effective word 
+search  and  the  information  displayed  in  this  application  in 
+addition to the  meaning and meaning of the word also provides 
+an  example  of  how  to  use  the  searched  word  in  Palembang 
+sentences. 
+ 
+Abstrak    Kamus  dapat  digunakan  sebagai  sarana  untuk 
+mencari  arti  dan  makna  pada  suatu  kata.  Bahasa  Palembang 
+merupakan  salah  satu  bahasa  daerah  yang  ada  di  provinsi 
+Sumatera  Selatan.  Dalam  kesehariannya  selain  menggunakan 
+bahasa  Indonesia,  masyarakat  Palembang  juga  menggunakan 
+bahasa  Palembang  sebagai  sarana  komunikasi  satu  sama  lain. 
+Penelitian ini bertujuan untuk membuat aplikasi kamus  bahasa 
+Palembang  yang  berbasis  web 
+sehingga  dapat  diakses 
+menggunakan  media  internet.  Aplikasi  kamus  ini  dibuat  untuk 
+membantu  masyarakat  yang  bukan  penduduk  asli  kota  yang 
+berdomisili di kota Palembang. Aplikasi kamus ini menyediakan 
+user interface yang sederhana sehingga memudahkan user dalam 
+menggunakannya. Dalam pengembangannya aplikasi kamus ini 
+dibuat  dengan  menggunakan  metode  RAD  (Rapid  Application 
+Development).  Algoritma  pencarian  yang  digunakan  pada 
+pencarian  kata  dalam  basisdata  adalah  menggunakan  metode 
+binary  search.  Metode  binary  search  memiliki  kelebihan  dari 
+linear  search.  Dalam  prakteknya  binary  search  melakukan 
+pencarian  dengan  terlebih  dahulu  membagi  menjadi  dua  data 
+dalam basisdata yang sudah terurut terlebih dahulu. Aplikasi ini 
+dapat  melakukan  pencarian  kata  yang  efektif  dan  informasi 
+
+*) Corresponding Author: (Andri) 
+Email: andri@binadarma.ac.id 
+
+ 
+ 
+ 
+ 
+Andri: Penerapan Algoritma Binary Search … 
+ 
+
+yang ditampilkan dalam aplikasi ini selain arti dan makna kata 
+juga  memberikan  contoh  cara  penggunaan  kata  yang  dicari 
+dalam kalimat berbahasa Palembang. 
+ 
+Kata Kunci  kamus, binary search, RAD, quicksort 
+
+I. 
+
+PENDAHULUAN 
+Kamus  merupakan  buku  acuan  yang  memuat  kata  dan 
+ungkapan  yang  biasanya  disusun  menurut  abjad  dengan 
+disertai  keterangan 
+tentang  makna,  pemakaian  dan 
+terjemahannya  [1].  Kamus  sangat  berguna  dalam  mengenal 
+kata-kata  yang  disertai  dengan  maknanya.  Dalam  kamus 
+biasanya  terdapat  cara-cara  pengucapan  kata  tersebut  serta 
+menerangkan 
+contoh 
+penggunaannya.  Kamus  bisa  memberikan  ilmu  pengetahuan 
+juga  dapat 
+berupa  kosakata  suatu  bahasa. 
+memberikan  manfaat  untuk  mengetahui  makna  kata,  lafal 
+kata,  ejaan  kata,  penyukuan  kata,  serta  kebakuan  kata  dan 
+istilah-istilah penting lainnya. 
+
+  Kamus 
+
+diberikan 
+
+yang 
+
+kata 
+
+asal 
+
+ragam 
+
+suku  bangsa, 
+
+Indonesia  merupakan  negara  kepulauan  yang  terdiri  dari 
+beraneka 
+agama  dan  bahasa. 
+Keanekaragaman  ini  merupakan  kekayaan  yang  harus  terus 
+dilestarikan oleh bangsa Indonesia terutama keanekaragaman 
+bahasa.  Bahasa  merupakan  alat  yang  digunakan  untuk 
+berkomunikasi  antara  satu  orang  dengan  yang  lainnya. 
+Bangsa 
+Indonesia  merupakan  negara  kepulauan  yang 
+memiliki  bahasa  yang  berbeda-beda  antara  satu  daerah 
+dengan  daerah  yang  lainnya  contohnya  bahasa  Palembang.  
+Palembang  merupakan  ibukota  provinsi  Sumatera  Selatan 
+salah  satu  wilayah  yang  ada  di  sumatera  bagian  selatan. 
+Untuk  menjaga  kelestariannya  maka  dalam  kesehariannya 
+selain  menggunakan  bahasa  Indonesia  masyarakat  yang 
+tinggal  di  Sumatera  Selatan  juga  menggunakan  bahasa 
+Palembang sebagai bahasa sehari-hari. Sebagian pendudukan 
+yang tinggal di Palembang bukan merupakan pendudukan asli 
+kota  Palembang,  banyak  warga  pendatang  dari  wilayah  lain 
+tinggal  dan  menetap  dikota  Palembang  sehingga 
+yang 
+sebagian  kecil  ada  yang  belum  begitu  paham  dengan  bahasa 
+Palembang. Untuk mengatasi kondisi ini maka penulis tertarik 
+untuk  membuat  sebuah  aplikasi  kamus  bahasa  Palembang 
+berbasis web yang nantinya dapat digunakan oleh masyarakat 
+
+ 
+
+70 
+
+Jurnal Informatika: Jurnal Pengembangan IT (JPIT), Vol.04, No.01, Januari 2019   
+DOI: 10.30591/jpit.v4i1.1104 
+ 
+yang  ingin  tahu  lebih  jauh  mengenai  bahasa  Palembang 
+tersebut.  
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ISSN: 2477-5126     
+
+e-ISSN: 2548-9356 
+ 
+
+ 
+
+Algoritma  yang  digunakan  untuk  pencarian  kata  dalam 
+kamus  yang  akan  dibuat  akan  menggunakan  Algoritma 
+pencarian Binary Search. Algoritma pencarian Binary Search 
+dapat  diterapkan  pada  data  yang  sudah  terlebih  dahulu 
+dilakukan tahapan pengurutan (Asscending/Descending)[2]. 
+
+jumlah  besar.  Algoritma 
+
+Algoritma pengurutan yang digunakan untuk mengurutkan 
+data  dalam  basisdata  menggunakan  menggunakan  algoritma 
+quicksort.  Algoritma  ini  sangat  cocok  untuk  mengurutkan 
+data  dalam 
+ini  melakukan 
+pengurutan  data  dengan  melakukan  pemecahan  data  menjadi 
+partisi-partisi[3].  Dalam  memulai  iterasi  pengurutan,  diawali 
+pemilihan  elemen  dari  data,  kemudian  elemen  data  tersebut 
+akan  diurutkan  sedemikian  rupa.  Strategi  yang  digunakan 
+dalam pengurutan quicksort adalah divide and conqueror.  
+
+II. 
+
+PENELITIAN YANG TERKAIT 
+Terdapat  beberapa  penelitian  yang  terkait  dengan  dengan 
+penelitian  yang  ini  diantaranya  penelitian  yang  berjudul 
+Implementasi  Teknik  Binary  Search  pada  Kamus  Indonesia-
+Batak  Toba  [2].  Pada  penelitian  aplikasi  kamus  dibuat 
+menggunakan Bahasa pemrograman berbasis  desktop. Dalam 
+artikel  ini  aplikasi  kamus  yang  dibuat  merupakan  aplikasi 
+yang  berbasis  web  sehingga  dapat  diakses  oleh  banyak  user 
+menggunakan media internet. 
+
+Penelitian  berikutnya  yang  terkait  adalah  penelitian  yang 
+berjudul  A  Review  On  Comparision  Of  Binary  Search  And 
+Linear  Search  [4].  Dalam  penelitian  membahas  tentang 
+perbandingan  algoritma  pencarian  Binary  Search  dan  Linear 
+Search. 
+
+III. 
+
+RAPID APLLICATION DEVELOPMENT & 
+ALGORITMA QUICKSORT 
+
+A.  Rapid Application Development (RAD) 
+
+RAD  merupakan 
+
+suatu  metode  pendekatan  yang 
+berorientasi objek untuk menghasilkan sebuah sistem dengan 
+tujuan utamanya adalah mempersingkat waktu pengembangan 
+dan  prosesnya  serta  sesegera  mungkin  memberdayakan 
+perangkat lunak sistem secara cepat dan tepat waktu[7]. 
+
+ 
+
+B.  Algoritma Quicksort 
+
+Algoritma quicksort merupakan algoritma yang digunakan 
+untuk  mengurutkan  item  dalam  sebuah  array  dengan  cepat, 
+tidak  peduli  seberapa  besar  array  tersebut.  Algoritma  ini 
+bekerja  relatif  baik  untuk  set  data  kecil  ataupun  besar  dan 
+mudah untuk diimplementasikan dengan kompleksitas  waktu 
+yang  sedikit.  Algoritma  quicksort  melakukan  perulangan 
+dengan  membagi  sebuah  array  besar  menjadi  dua  bagian 
+kecil.  Langkah-langkah  dalam  algoritma  quicksort  terdiri 
+dari: 
+
+ Penentuan data yang akan diurutkan 
+ Memilih elemen pivot, elemen pivot ini sementara yang 
+
+digunakan sebagai acuan selesainya proses partisi. 
+
+ Kemudian memilih elemen pertama dan elemen terakhir. 
+ Selanjutnya  melakukan  pertukaran  elemen  berdasarkan 
+pergerakan  dari  kiri  ke  kanan  dan  dari  kanan  ke  kiri 
+sampai ditemukan nilai kiri >= pivot dan nilai kanan <= 
+pivot. 
+ 
+
+Dengan  cara  ini,  seluruh  elemen  data  diurutkan  secara 
+
+ 
+ 
+ 
+ 
+Andri: Penerapan Algoritma Binary Search … 
+ 
+
+ 
+
+rekursif menggunakan algoritma  yang sama.  Pemilihan pivot 
+atau  elemen  nilai  tengah  dalam  algoritma  quicksort  sangat 
+tersebut  menghasilkan 
+menentukan 
+performa  yang  baik  atau  tidak.  Ada  beberapa  cara  dalam 
+menentukan elemen pivot diantaranya: 
+
+algoritma 
+
+apakah 
+
+a)  Menentukan pivot dari elemen  yang pertama, terakhir 
+atau elemen tengah dalam tabel. Cara seperti ini hanya 
+bak jika elemen dalam tabel tersusun secara acak. 
+b)  Menentukan  pivot  secara  acak  dari  salah  satu  elemen 
+
+tabel. 
+
+c)  Menentukan  pivot  berdasarkan  elemen  median  dari 
+tabel.  Ini  adalah  cara  yang  palng  tepat  karena  hasil 
+partisi  akan  menghasilkan  dua  bagian  tabel  yang 
+berukuran  seimbang.  Kompleksitas  waktu  yang 
+diberikan minimum.  
+
+Pseudocode  untuk  menentukan  pivot  quicksort  adalah 
+
+ 
+
+ 
+
+sebagai berikut: 
+
+ 
+
+function partisi(kiri, kanan, pivot) 
+   kiriPointer = kiri 
+   kananPointer = kanan - 1 
+   while Benar do 
+      while X[++kiriPointer] < pivot do 
+         //do-nothing             
+      end while 
+      while kananPointer > 0 && X[--kananPointer] > pivot do 
+         //do-nothing          
+      end while 
+      if kiriPointer >= kananPointer 
+         break 
+      else                 
+         swap kiriPointer,kananPointer 
+      end if 
+   end while  
+   swap kiriPointer,kanan 
+   return kiriPointer 
+end function 
+ 
+Setelah  proses  penentuan  pivot  selanjut  algoritma  quicksort 
+dapat dilihat dari pseudocode berikut ini: 
+ 
+procedure QS(kiri, kanan) 
+ 
+   if kanan-kiri <= 0 
+      return 
+   else      
+      pivot = X[kanan] 
+      partisi_x = partisi(kiri, kanan, pivot) 
+      QS(kiri,partisi-1) 
+      QS(partisi+1,kanan)     
+ 
+   end if 
+    
+end procedure 
+ 
+
+ 
+
+C.  Algoritma Pencarian 
+
+Menurut  Kamus  Besar  Bahasa  Indonesia  pencarian 
+merupakan proses, cara, atau perbuatan mencari. Dalam ilmu 
+komputerisasi  pencarian  adalah  kegiatan  untuk  mendapatkan 
+suatu  bentuk  data  atau  informasi  yang  tersimpan  di  media 
+langkah-
+penyimpanan[1].  Algoritma  pencarian  adalah 
+langkah  untuk  mencari  data  atau  informasi  yang  tersimpan 
+menggunakan  kata  kunci.  Dalam  algoritma  pencarian  kata 
+kunci digunakan sebagai masukan yang akan dicari kemudian 
+diproses  dan  menghasilkan  kesimpulan  ditemukan  atau  tidak 
+ditemukan.  Algoritma  pencarian  dapat  berupa  pencarian 
+sekuensial dan pencarian biner [8].  
+
+71 
+
+Jurnal Informatika: Jurnal Pengembangan IT (JPIT), Vol.04, No.01, Januari 2019   
+DOI: 10.30591/jpit.v4i1.1104 
+ 
+ 
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ISSN: 2477-5126     
+
+e-ISSN: 2548-9356 
+ 
+
+ 
+
+D.  Binary Search 
+
+Binary  search  merupakan  sebuah  metode  pencarian  data 
+yang telah terurut. Dalam metode ini semua elemen data yang 
+telah  terurut  akan  diuji  satu  per  satu  sampai  ditemukan 
+elemen  yang  diinginkan.  Pencarian  pada  data  yang  telah 
+diurutkan  akan  menghasilkan  pencarian  yang  cepat. 
+Algoritma  ini  digunakan  untuk  kebutuhan  pencarian  dengan 
+waktu  yang  cepat[9].  Cara  kerja  algoritma  pencarian  ini 
+dengan  membagi  data  menjadi  dua  bagian.  Binary  search 
+merupakan  teknik  untuk  menemukan  nilai  tertentu  yang 
+tersimpan dalam sebuah array. 
+
+Pencarian binary search ini dilakukan untuk memperkecil 
+jumlah  operasi  perbandingan  antara  data  yang  akan  dicari 
+dengan  data  yang  ada  dalam  tabel.  Prinsipnya  melakukan 
+pembagian  ruang  pencarian  secara  berulang-ulang  sampai 
+data yang cari ditemukan atau sampai tidak dapat dibagi lagi 
+dengan kata lain data yang dicari tidak ditemukan. 
+
+ 
+
+Pseudocode metode binary search adalah sebagai berikut: 
+Procedure pencarian_biner 
+   X ← sorted array 
+   Y ← size of array 
+   Z ← value to be searched 
+   Set data_low = 1 
+   Set data_up = Y  
+   while Z not found 
+      if data_up < low  
+         EXIT: Z does not exists.   
+      Set   mid_point = low + (data_up – data_low ) / 2 
+      if X[  mid_point] < Z 
+         set data_low =   mid_point + 1 
+      if X[mid_point] > Z 
+         set data_up =   mid_point – 1  
+      if X[mid_point] = Z  
+         EXIT: Z found at location   mid_point 
+   end while 
+end procedure 
+
+ 
+Penjelasan  dari  pseudocode  binary  search  dapat  dijelaskan 
+dalam langkah-langkah berikut: 
+
+1)  Mula-mula ditentukan batasbawah (data_low) = 1 dan 
+batasatas (data_up) = N dari array yang sudah terurut 
+2)  Cari  posisi  data  tengah  (mid_Point)  dengan  rumus: 
+
+data_low + (data_up - data_low)/2 
+
+3)  Data (Z) yang dicari dibandingkan dengan data tengah 
+
+(mid_Point) 
+
+4)  Jika  lebih  kecil,  proses  dilakukan  kembali  tetapi 
+data_up  dianggap  sama  dengan  posisi  tengah  –  1  { 
+data_up = mid_Point -1} 
+
+5)  Jika  lebih  besar,  proses  dilakukan  kembali  tetapi 
+data_low  dianggap  sama  dengan  posisi  tengah  +  1  { 
+data_low = mid_Point + 1} 
+
+6)  Demikian seterusnya sampai data tengah sama dengan 
+
+data yang dicari (mid_Point = Z) 
+
+ 
+
+Penjelasan  dapat  dilihat  pada  contoh  berikut,  misalkan  akan 
+dicari 
+berikut: 
+{8,12,17,24,25,29,31,33,40,42} 
+
+sekumpulan 
+
+angka 
+
+pada 
+
+data 
+
+29 
+
+1)  Mencari  data  tengah  dengan  rumus  data_mid  = 
+data_low  +  (data_high  –  data_low)/2  data_mid  =  0  + 
+(9 – 0)/2 = 4 maka akan didapat data tengah adalah 25. 
+2)  Kemudian  data  yang  dicari  29  dibandingkan  dengan 
+
+data tengah (data_mid) yang diperoleh yaitu 25. 
+
+ 
+ 
+ 
+ 
+Andri: Penerapan Algoritma Binary Search … 
+ 
+
+ 
+
+3)  Hasil  perbandingan  29  >  25  maka  set  data_low  = 
+data_mid  +  1,  data_mid  =  data_low  +  (data_high  – 
+data_low)/2 = 7, Nilai data_mid sekarang adalah 33 
+4)  Kemudian  data  yang  dicari  29  dibandingkan  dengan 
+
+data tengah (data_mid) yang peroleh yaitu 33. 
+
+5)  Hasil  perbandingan  29  <  33  maka  set  data_low  = 
+data_mid – 1, set data_up = data_mid - 1, data_mid = 
+data_low + (data_up – data_low)/2 = 6, Nilai data_mid 
+sekarang adalah 31 
+
+6)  Kemudian  data  yang  dicari  29  dibandingkan  dengan 
+
+data tengah (data_mid) yang diperoleh yaitu 31. 
+
+7)  Hasil  perbandingan  29  <  31  maka  set  data_low  = 
+data_mid-1,  set  upperBoud  =  data_mid  –  1,  data_mid 
+=  data_low  +  (data_up  –  data_low)  =  5,  nilai  mid 
+sekarang adalah 29  
+
+8)  Kemudian  data  yang  dicari  29  dibandingkan  dengan 
+
+data tengah (data_mid) yang diperoleh yaitu 29  
+
+9)  Hasil perbandingan 29 =  29, data  ditemukan di posisi 
+
+5, maka perulangan berhenti. 
+
+ 
+
+IV. 
+
+METODE PENELITIAN 
+Dalam  pembuatan  aplikasi  kamus  bahasa  Palembang 
+berbasis  web  metode  penelitian  yang  digunakan  adalah 
+metode  Rapid  Applicatioan  Development.  Metode  RAD 
+sangat tepat digunakan untuk pengembangan perangkat lunak 
+dengan  kebutuhan  mendesak  yang  memerlukan  waktu  yang 
+singkat[5].  Pengembangan  perangkat  lunak  menggunakan 
+metode RAD memiliki beberapa tahapan seperti Requirement 
+Planning, Design System dan Implementation[6].  Pada tahap 
+pertama  requirement  planning,  pemakai  dan  sistem  analis 
+akan  melakukan  pertemuan  untuk  melakukan  identifikasi 
+tujuan  dari  sistem  serta  menentukan  kebutuhan  dari  sistem 
+yang akan dibangun. Tahap kedua  design system,  yaitu akan 
+melakukan rancangan terhadap sistem berdasarkan kebutuhan 
+sistem  yang  sudah  didefinisikan  pada 
+tahap  pertama. 
+Selanjutnya  tahap  ketiga  melakukan  implementasi  sistem 
+yaitu  membuat  atau  mengembangkan  desain  program 
+berdasarakan rancangan yang telah dibuat sebelumnya. 
+
+RAD  merupakan 
+
+suatu  metode  pendekatan  yang 
+berorientasi objek untuk menghasilkan sebuah sistem dengan 
+tujuan utamanya adalah mempersingkat waktu pengembangan 
+dan  prosesnya  serta  sesegera  mungkin  memberdayakan 
+perangkat lunak sistem secara cepat dan tepat waktu[7]. 
+
+Metode  RAD  memiliki  beberapa  keunggulan  karena 
+tahapan dalam RAD mengikuti tahapan pada umumnya, tetapi 
+mempunyai  kelebihan  penggunaan  kembali  komponen  yang 
+sudah ada (reusable object). 
+
+V. 
+
+HASIL DAN PEMBAHASAN 
+Berdasarkan  tahapan  requirement  system,  diidentifikasi 
+kebutuhan  sistem  aplikasi  kamus  berupa  user  interface 
+berbasis  web.  Proses  pencarian  kata  yang  tersimpan  dalam 
+sebuah  basisdata  menerapkan  algoritma  pencarian  binary 
+search  sehingga  dihasilkan  membutuhkan  waktu  yang  cepat 
+dan  efisien.  Aplikasi  kamus  bahasa  Palembang  ini  dibuat 
+dengan  menggunakan  bahasa  pemrograman  web  PHP  dan 
+database  yang  digunakan  untuk  menyimpan  kata  bahasa 
+Palembang  adalah  MySQL.  Untuk  menyimpan  daftar  kata 
+bahasa  Palembang  dan  Indonesia  dalam  aplikasi  kamus  ini 
+dibuat  sebuah  tabel  yang  terdiri  dari  tiga  kolom  yang  berisi 
+
+72 
+
+Jurnal Informatika: Jurnal Pengembangan IT (JPIT), Vol.04, No.01, Januari 2019   
+DOI: 10.30591/jpit.v4i1.1104 
+ 
+daftar kata bahasa Palembang dan bahasa Indonesia serta tata 
+cara penggunaannya dalam kalimat. 
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ISSN: 2477-5126     
+
+e-ISSN: 2548-9356 
+ 
+
+ 
+
+Kamus  ini  akan  menterjemahkan  kata  perkata  yang 
+diinputkan  dalam  sistem,  kemudian  kata  tersebut  akan  dicari 
+padanannya  dalam  database  dengan  menerapkan  algoritma 
+pencarian binary search. Algoritma binary search diterapkan 
+pada  pencarian  data  dalam  tabel  ketika  pengguna  menekan 
+tombol  Terjemah.  Alur  proses  dari  aplikasi  kamus  ini  dapat 
+dilihat pada flowchart Gbr. 1 
+
+Teknik  pencarian  binary 
+
+search  akan  melakukan 
+pengurutan  data  terlebih  dahulu  sebelum  dilakukan  proses 
+pencarian.  Dalam  sistem  ini  terdapat  sebuah  tabel  yang 
+berfungsi  untuk  menyimpan  daftar  kata-kata  bahasa 
+Palembang  beserta  arti  dalam  bahasa  Indonesia.  Berikut  ini 
+adalah contoh daftar kata kamus bahasa Palembang. 
+ 
+
+1)  amen  kalau, jika 
+2)  cekel  pegang 
+3)  balek  kembali,pulang 
+4)  gancang  cepat 
+5)  calak  cerdik 
+6)  abang  merah 
+7)  campak  jatuh 
+8)  dewek  sendiri 
+9)  denget  sebentar 
+10)  enjok  beri 
+
+ 
+
+Daftar  kata  tersebut  belum  dilakukan  pengurutan,  proses 
+pengurutan akan dilakukan ketika algoritma pencarian binary 
+search  diterapkan.  Berikut  ini  adalah  contoh  penerapan 
+algoritma binary search untuk mencari arti kata ’enjok’ pada 
+urutan  8  (indeks  array  dimulai  dari  0)  dalam  aplikasi  kamu 
+bahasa Palembang. 
+Langkah penyelesaian: 
+
+1.  Proses pengurutan data  
+
+abang  merah 
+amen  kalau, jika 
+balek  kembali,pulang 
+calak  cerdik 
+campak  jatuh 
+cekel  pegang 
+denget  sebentar 
+dewek  sendiri 
+enjok  beri 
+gancang  cepat 
+diketahui : low = 0 (abang), high = 9 (gancang) 
+
+2.  Menghitung jumlah data (count = 10) 
+3.  Menentukan nilai tengah  
+
+set mid_Point = data_low + (data_high - data_low ) / 2 
+set mid_Point = 0 + ( 9 – 0) / 2 = 4 (campak) 
+
+4.  Mengecek  apakah  kata  ”enjok”[8]  =  ”campak”[4] 
+
+5.  mid_Point < kata,  maka set data_low = mid_Point + 
+
+(false) 
+
+1 (data_low = 5) 
+
+6.  set mid_Point = 5 + ( 9 - 5 ) / 2  7 (dewek) 
+7.  Mengecek  apakah  kata  ”enjok”[8]  =  ”dewek”[7] 
+
+8.  mid_Point < kata,  maka set data_low = mid_Point + 
+
+9.  set mid_Point = 8 + ( 9 - 8 ) / 2  8 (enjok) 
+10.  Mengecek  apakah  kata  ”enjok”[8]  =  ”enjok”[8] 
+
+(false) 
+
+1 (low = 8) 
+
+(true) 
+
+11.  Kata ditemukan, perulangan berhenti. 
+
+VI. 
+
+KESIMPULAN 
+Penelitian ini menghasilkan sebuah aplikasi kamus bahasa 
+Palembang berbasis web. Aplikasi ini dibuat untuk membantu 
+masyarakat  dalam  belajar  dan  memahami  bahasa  Palembang 
+yang  merupakan  bahasa  daerah  salah  satu  kota  yang  ada  di 
+
+73 
+
+Gbr. 1 Flowchart Aplikasi 
+
+  
+
+ 
+
+Tampilan  utama  aplikasi  kamus  bahasa  Palembang 
+berbasis web yang telah dibuat dalam penelitian dapat dilihat 
+pada  Gbr.2.  Aplikasi  ini  menyediakan  user  interface  yang 
+menyediakan  fungsi  input  kata  dalam  bahasa  Palembang. 
+Kata  yang  digunakan  sebagai  key  word  diinputkan  user 
+kemudian  dicari  padanan  katanya  dalam  basisdata  dengan 
+menggunakan metode binary searching.  
+
+Algoritma pencarian binary search akan dijalankan ketika 
+user  melakukan  pencaria  kata.  Sebelum  proses  pencarian 
+kata,  terlebih  dahulu  akan  dilakukan  pengurutan  data  yang 
+menerapkan  algoritma  quicksort.  Hasil  pencarian  berupa  arti 
+kata  dalam  bahasa  Indonesia  dan  penggunaannya  dalam 
+bahasa Palembang. 
+ 
+
+Gbr. 2 User interface aplikasi kamus 
+
+ 
+ 
+ 
+ 
+Andri: Penerapan Algoritma Binary Search … 
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+Jurnal Informatika: Jurnal Pengembangan IT (JPIT), Vol.04, No.01, Januari 2019   
+DOI: 10.30591/jpit.v4i1.1104 
+ 
+provinsi  Sumatera  Selatan.  Penerapan  algoritma  pencarian 
+kata  dalam  basisdata  menggunakan  teknik  binary  search 
+sangat tepat karena menghasilkan waktu pencarian yang cepat 
+dan  efisien.  Untuk  mempermudah  menerapkan  algoritma 
+pencarian  binary  search  yang  mengharuskan  data  harus 
+terurut  terlebih  dahulu  maka  digunakan  teknik  pengurutan 
+quicksort. Metode quicksort ini sangat tepat digunakan karena 
+data yang digunakan cukup besar. 
+
+[3] 
+
+ 
+
+Saran  bagi  penelitian  berikutnya  dapat  menggunakan 
+algoritma pencarian lain untuk melihat perbandingan efisiensi 
+waktu  pencarian.  Selain 
+aplikasi  kamus  dapat 
+dikembangkan lebih lanjut berupa pemberian fasilitas koreksi 
+penulisan kata yang akan dicari. 
+ 
+
+itu 
+
+DAFTAR PUSTAKA 
+
+[1]  KBBI,  Kamus  Besar  Bahasa  Indonesia  (KBBI).  [Online]  Available: 
+
+http://kbbi.web.id/kamus, [Accessed: 15- Nov-2018]. 
+
+[2]  G.  Syahputra  and  B.  Sinurat,  “Implementasi  Teknik  Binary  Search 
+Pada  Kamus  Indonesia  -  Batak  Toba,”  J.  Informatics  Pelita  Nusant., 
+vol. 1, no. 1, pp. 28–37, 2016. 
+ 
+
+ 
+
+ISSN: 2477-5126     
+
+e-ISSN: 2548-9356 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+I.  M.  Alturani,  A.  Mahmoud,  and  I.  Alturani,  “Review  on  Sorting 
+Algorithms A Comparative Study,” Int. J. Comput. Sci. Secur., vol. 7, 
+no. 3, pp. 120–126, 2013. 
+
+[4]  A.  Mehta,  A.  Saxena,  J.  Patel,  and  A.  Thanna,  “a  Review  on 
+Comparision  of  Binary  Search  and  Linear  Search,”  Int.  J.  Eng.  Sci. 
+Manag. Res., vol. 2, no. 10, pp. 85–89, 2015. 
+
+[5]  S. Kosasi, “Penerapan Rapid Application Development Dalam Sistem 
+Perniagaan Elektronik Furniture,” Citec J., vol. 2, no. 4, pp. 265–276, 
+2015. 
+
+[6]  S.  Aswati  and  Y.  Siagian,  “Model  Rapid  Application  Development 
+Dalam  Rancang  Bangun  Sistem  Informasi  Pemasaran  Rumah  (  Studi 
+Kasus :  Perum  Perumnas  Cabang  Medan,”  Sesindo,  pp.  317–324, 
+2016. 
+
+[7]  G. W. Sasmito and S. Wiyono, “Implementation of Rapid Application 
+Development Method on Academic Staff System of Harapan Bersama 
+Polytechnic,” Int. J. Comput. Trends Technol., vol. 50, no. 1, pp. 11–
+13, 2017. 
+
+[8]  V.  Mutiawani,  “Hashtable  Sebagai  Alternatif  Dari  Algoritma 
+Pencarian  Biner  Pada  Aplikasi  E-Acesia,”  J.  Inform.  Univ.  Syiah 
+Kuala, vol. 8, no. 2, pp. 943–952, 2014. 
+
+[9]  A. Oommen and C. Pal, “Binary search algorithm,” Codility Limited., 
+
+vol. 1, no. x, pp. 1–4, 2015. 
+
+ 
+ 
+ 
+ 
+Andri: Penerapan Algoritma Binary Search … 
+ 
+
+ 
+
+74 
+
+

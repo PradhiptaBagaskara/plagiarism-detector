@@ -1,0 +1,1997 @@
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Jurnal Informatika: Jurnal Pengembangan IT (JPIT), Vol.03, No.02, Mei 2018    
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+   ISSN: 2477-5126 
+
+e-ISSN: 2548-9356   
+
+ 
+
+Klasifikasi Daya Tarik Konten Artikel Media Daring 
+
+Dari Data Google Analytics Dengan C-FDT 
+
+Jurusan Informatika, Fakultas Teknik Dan Ilmu Komputer, Universitas Indraprasta PGRI, Jakarta 
+
+Jl. Nangka No. 58 C (TB. Simatupang), Tanjung Barat, Jagakarsa, RT.5/RW.5, Jakarta Selatan, Jakarta, 12530, Indonesia 
+
+Erlin Windia Ambarsari*) 
+
+email: erlin.windia@unindra.ac.id 
+
+Received: 30 Maret 2018; Revised: 8 Mei 2018; Accepted: 14 Mei 2018 
+
+Copyright ©2018 Politeknik Harapan Bersama Tegal. All rights reserved 
+
+Abstract - Information of article which had attractive contains as 
+
+Tujuan  dari  penelitian  ini  adalah  hasil  dari  FDT  diharapkan 
+
+Trending  Topics,  although  this  is  article  hoax  or  not.  The 
+
+dapat memudahkan pengelola media daring untuk menganalisis 
+
+frequency of article's content which created by online  media, it 
+
+konten  artikel.dan  mengevaluasi  kelompok  konten  yang 
+
+can  be  monitored  by  Google  Analytics.  One  of  the  reasons  for 
+
+kemungkinan berpotensi dapat mendulang trafik sebagai syarat 
+
+using  Google  Analytics  is  to  understand  the  content  of  a  site 
+
+untuk mendapatkan iklan promosi maupun pemasaran sebagai 
+
+which  leads  to  the  change  and  behavior  of  behind  the  content. 
+
+pendapatan  dari  situs  media  daring.  Hasil  yang  didapatkan 
+
+Google  Analytics  can  be  regarded  as  web  analytics  software 
+
+adalah  C-FDT  dapat  mengenali  pola  dari  metrik  Google 
+
+with ease of installation. Classification of Google Analytics data 
+
+Analytics  sehingga  memudahkan  pencarian  konten  artikel  ke 
+
+with C-Fuzzy Decision Tree (C-FDT), aims to get the attraction 
+
+dalam  bentuk  yang  sederhana  yaitu  adanya  pengurangan 
+
+of  article  content,  which  means  having  special  attention  from 
+
+atribut dengan cara mengkelompokkan data dengan objek yang 
+
+visitors  and  the  article  can  be  interesting  or  not,  and  observed 
+
+sama dan adanya Pruning. Pengelola media daring dapat fokus 
+
+whether C-FDT can recognize patterns from metric data Google 
+
+dengan  atribut  tertentu  saja  yang  berpengaruh  besar  dengan 
+
+Analytics.  The  purpose  of  this  study  is  the  results  of  FDT  are 
+
+Daya  Tarik  Konten  Artikel. 
+
+  Namun  C-FDT  mengalami 
+
+expected  to  facilitate  online  media  managers  to  analyze  the 
+
+kesulitan  ketika  menghadapi  ketidaksinkron  data  karena 
+
+content  of  articles  and  evaluate  content  groups  tend  to 
+
+kesalahan  sistem  saat  penarikan  data  dari  Google  Analytics. 
+
+potentially  gain  traffic  for  getting  promotional  or  marketing 
+
+Oleh  sebab  itu  perlu  dilakukan  monitoring  data  secara  time 
+
+advertising  as  revenue  from  online  media  sites.  The  results 
+
+series.   
+
+obtained  are  C-FDT  can  recognize  the  pattern  of  Google 
+
+Analytics  metrics  thus  as  facilitating  the  search  of  the  article 
+
+Kata  Kunci  -  Media  Daring,  Google  Analytics,  C-FDT,  Konten 
+
+content into a simple form that is the reduction of attributes by 
+
+Artikel  
+
+grouping  data  with  the  same  object  and  the  data  had  Pruning. 
+
+Online  media  managers  can  focus  on  certain  attributes  that 
+
+have a big effect on Content Articles. However C-FDT is having 
+
+trouble  dealing  with  data  sync  due  to  system  errors  when 
+
+retrieving data from Google Analytics. Therefore it is necessary 
+
+to monitor data in time series. 
+
+Abstrak - Informasi dalam bentuk artikel yang mempunyai daya 
+
+tarik  tersendiri  menjadi  Trending  Topics  atau  viral,  walaupun 
+
+artikel  tersebut  termasuk  hoaks  atau  tidak.  pengukuran 
+
+frekuensi  konten  artikel  yang  dibuat  oleh  media  daring  dapat 
+
+dipantau  oleh  Google  Analytics.  Salah  satu  alasan  penggunaan 
+
+Google  Analytics  adalah  untuk  memahami  konten  situs  yang 
+
+mengarah pada perubahan dan perilaku di balik konten. Google 
+
+Analytics dapat dikatakan sebagai perangkat lunak analisis web 
+
+dengan  kemudahan  instalasi.  Klasifikasi  data  Google  Analytics 
+
+dengan  C-Fuzzy  Decision  Tree  (C-FDT)  untuk  mendapatkan 
+
+daya  tarik  konten  artikel,  yang  berarti  mempunyai  perhatian 
+
+khusus  dari  pengunjung  sehingga  artikel  tersebut  dapat 
+
+dikatakan  menarik  atau  tidak,  kemudian  diamati  apakah  C-
+
+FDT  dapat  mengenali  pola  dari  data  metrik  Google  Analytics. 
+
+*) Corresponding author: Erlin Windia Ambarsari 
+
+Email: erlin.windia@unindra.ac.id 
+
+I. 
+
+PENDAHULUAN 
+
+Perkembangan  Informasi  di  Indonesia  sangat  pesat, 
+
+terutama  surat-surat  kabar  media  elektronik  berbasis  daring 
+
+yang  memberikan 
+
+informasi  kepada  warganet  untuk 
+
+mengetahui  apa  yang  terjadi  didalam  negerinya  sendiri. 
+
+Informasi  dalam  bentuk  artikel  yang  mempunyai  daya  tarik 
+
+tersendiri  menjadi  Trending  Topic  atau  viral,  walaupun 
+
+artikel  tersebut  termasuk  hoaks  atau  tidak.  Namun  hal  ini 
+
+menjadi  perhatian  khusus  bagi  generasi  muda  sebagai  lahan 
+
+bisnis  yang  menjanjikan  karena  pesatnya  perkembangan 
+
+informasi  masa  kini  dimana  membuat  media  daring  sudah 
+
+sangat mudah.  
+
+Salah satu media daring yang berbasis M.I.C.E (Meeting, 
+
+Incentive,  Convention,  and  Exhibition)  Media  Have  Fun 
+
+menyajikan  artikel  bagi  warganet  dilihat  dari  sisi  budaya, 
+
+teknologi  dan  kegiatan  anak-anak  generasi  muda  dalam 
+
+membuat  acara  dimana  membuat  konten  artikel  menarik 
+
+dengan  tujuan  menaikan  peringkat  situs,  sehingga  dapat 
+
+menarik  pengunjung  yang  mau  membaca  konten  artikel. 
+
+Keuntungan  didapatkan  dapat  berupa  periklanan  ataupun 
+
+Erlin Windia Ambarsari: Klasifikasi Daya Tarik Konten … 
+
+211 
+
+Jurnal Informatika: Jurnal Pengembangan IT (JPIT), Vol.03, No.02, Mei 2018    
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+   ISSN: 2477-5126 
+
+e-ISSN: 2548-9356   
+
+ 
+
+ 
+
+ 
+
+undangan  dari  Event  Organizer  yang  berujung  pada  bisnis 
+
+mengangkat kembali masalah konten per halaman artikel dari 
+
+pemasaran dan promosi. 
+
+banyaknya  pengunjung  tersebut  untuk  periode  2017-2018, 
+
+Atas  dasar  keuntungan  tersebut,  pengukuran  frekuensi 
+
+dengan  mencari  tahu  penyebab  dampak  besar  pada  tampilan 
+
+konten  artikel  yang dibuat oleh  media daring dapat dipantau 
+
+halaman dilihat dari data  tarik konten dengan ketidakpastian 
+
+oleh Google Analytics. Salah satu alasan penggunaan Google 
+
+data  dari  metrik  Google  Analytics.  Penggunaan  Fuzzy 
+
+Analytics  adalah  untuk  memahami  konten  situs  yang 
+
+Decision  Tree  (FDT)  merupakan  algoritma  ditujukan  untuk 
+
+mengarah  pada  perubahan  dan  perilaku  di  balik  konten  [1]. 
+
+menangani  ketidakpastian  data.  Algoritma  FDT 
+
+telah 
+
+Google  Analytics  dapat  dikatakan  sebagai  perangkat  lunak 
+
+menunjukkan  keunggulan  algoritma  pohon  keputusan  klasik 
+
+analisis web dengan kemudahan instalasi [2]. 
+
+[4]. Namun pada FDT yang berdasarkan teori himpunan fuzzy 
+
+Pertimbangan  yang  perlu  diperhatikan,  bahwa  perubahan 
+
+memiliki  beberapa  keterbatasan  yang  berasal  dari  bagian 
+
+dan  perilaku  disebabkan  daya  tarik  dari  konten  artikel  yang 
+
+dalam dirinya [5].  
+
+berkualitas SEO (Search Engine Optimization) dengan tujuan 
+
+Banyak  cara  mengkolaborasikan  himpunan  fuzzy  dalam 
+
+dapat mendulang trafik sehingga mudah terindeks oleh mesin 
+
+logika  fuzzy  dengan  2  atau  3  metode  seperti  :  ANFIS[6], 
+
+pencarian  Google.  Semakin  konten  artikel  mudah  diindeks, 
+
+Fuzzy Ant[7], FMADM[8], Fuzzy C-Means[9]. Metode FDT 
+
+maka  peringkat  situs  akan  menaik,  sehingga  warganet  akan 
+
+dengan  Fuzzy  C-Means  dapat  dipertimbangkan  untuk 
+
+sering mengunjungi situs tersebut.  
+
+menangani  ketidakpastian  data  Google  Analytics,  Fuzzy  C-
+
+Namun,  permasalahan  terjadi  pada  Google  Analytics 
+
+Means dalam FDT dikatakan sebagai C-Fuzzy Decicion Tree 
+
+adalah  sulitnya  menganalisis  konten  artikel  oleh  pengelola 
+
+(C-FDT),  dalam  penelitian  Gadomer  L.  dan  Sosnowski  Z.A 
+
+media daring. Permasalahan lain yang terjadi, ketidaksinkron 
+
+mengatakan  bahwa  C-FDT  yang  diusulkan  oleh  Pedrycz  W. 
+
+data  metrik  yang  ditarik  dari  Google  Analytics  yang 
+
+dan  Sosnowski  Z.A  [10]  dimana  gagasan  jenis  pohon  ini 
+
+memungkinkan  data 
+
+tidak  dapat  dibaca.  Karena 
+
+itu 
+
+didasari  dengan  asumsi  memperlakukan  data  sebagai 
+
+diperlukan metode untuk menyederhanakan data dengan cara 
+
+kumpulan  butiran  informasi  yang  hampir  sama  dengan 
+
+mengelompokan variabel  yang  memiliki kemiripan sehingga 
+
+kelompok  Fuzzy. Pohon  yang diusulkan dibentangkan diatas 
+
+memudahkan pengelola media daring membaca indikator dari 
+
+butiran-butiran 
+
+tersebut.  C-FDT  mengasumsikan  data 
+
+Google  Analytics 
+
+serta  menangani 
+
+data-data 
+
+yang 
+
+pengelompokan  dalam  butiran  yang  dicirikan  oleh 
+
+kemungkinan tidak dapat terbaca karena kendala  sistem dari 
+
+variabilitas rendah (yang berarti objek yang  sama  sampai ke 
+
+Google  Analytics,  sehingga  metode  yang  digunakan  sebagai 
+
+cluster  yang sama). Butiran ini adalah blok bangunan  utama 
+
+alat bantu untuk penelitian ini adalah C-Fuzzy Decision Tree 
+
+dari suatu pohon [11].  
+
+(C-FDT). C-FDT menjadi salah satu solusi untuk mengetahui 
+
+Pada  dasarnya  dalam  membangun  pohon  FDT  berbasis 
+
+pola  data  pengunjung  berdasarkan  setiap  konten  artikel, 
+
+pada  ID3  [12],  [13],  [14].  ID3  dilanjutkan  oleh  WEKA 
+
+karena daya tarik konten bergantung kepada  minat  warganet 
+
+(Waikato  Environment  for  Knowledge  Analysis)  dengan 
+
+membaca artikel. 
+
+nama J48. J48 adalah implementasi Java dari algoritma C4.5 
+
+Berdasarkan  alasan  diatas,  penulis  melakukan  klasifikasi 
+
+dengan  melakukan 
+
+perbaikan 
+
+dari 
+
+ID3, 
+
+termasuk 
+
+data  Google  Analytics  dengan  C-FDT  untuk  mendapatkan 
+
+mengizinkan  variabel  kontinu  menjadi  fitur-fitur  dengan 
+
+daya  tarik  konten  artikel,  yang  berarti  mempunyai  perhatian 
+
+memilih  nilai  ambang  (threshold)  dengan  cara  dipisahkan, 
+
+khusus  dari  pengunjung  sehingga  artikel  tersebut  dapat 
+
+membuat  menjadi 
+
+lebih 
+
+fleksibel 
+
+dan  melakukan 
+
+dikatakan  menarik  atau  tidak,  kemudian  diamati  apakah  C-
+
+pemangkasan pohon (pruning tree) yang membuat klasifikasi 
+
+FDT dapat mengenali pola dari data metrik Google Analytics. 
+
+menjadi  efisien.  Penelitian  yang  dilakukan  Ahishakiye  E., 
+
+Tujuan  dari  penelitian  ini  adalah  hasil  dari  FDT  diharapkan 
+
+Taremwa  D.,  Omulo  E.O.,  dan  Niyonzima  I  memilih  J48 
+
+dapat  memudahkan  pengelola  media  daring  untuk 
+
+model klasifikasi dikarenakan kinerjanya mengadaptasi pada 
+
+menganalisis  konten  artikel.dan  mengevaluasi  kelompok 
+
+kumpulan  data.  Hasil  eksperimen  dari  WEKA  menunjukan 
+
+konten yang kemungkinan berpotensi dapat mendulang trafik 
+
+bahwa  J48  dapat  memprediksi  kategori  data  kriminal  yang 
+
+sebagai  syarat  untuk  mendapatkan  iklan  promosi  maupun 
+
+tidak diketahui dengan akurasi 94,25287% dimana sistem ini 
+
+pemasaran sebagai pendapatan dari situs media daring.              
+
+cukup  baik  dalam  keandalannya  untuk  memprediksi 
+
+  
+
+kejahatan  dan  membutuhkan  waktu  sedikit  untuk  dijalankan 
+
+II. 
+
+PENELITIAN YANG TERKAIT 
+
+dibandingkan dengan algoritma klasifikasi lain [15]. 
+
+Penelitian  mengenai  Google  Analytics  dari  Omidvar 
+
+Berdasarkan  pengumpulan  literatur  yang  dijabarkan  oleh 
+
+M.A.,  Mirabi  V.R,  dan  Shokry  N  membahas  bagaimana 
+
+penulis dalam penyelesaian masalah untuk Google Analytics, 
+
+warganet  yang  mengunjungi  situs  dapat  menyebabkan 
+
+maka  metode  yang  digunakan  antara  lain  C-FDT  dengan 
+
+dampak besar pada tampilan halaman. Google Analytics pada 
+
+basis  J48  (kolaborasi  Fuzzy  C-Means  dan  J48).  Terdapat 
+
+penelitian 
+
+tersebut  menggunakan  autoregressive-moving-
+
+perbedaan dari [10] yaitu hasil clustering dari Fuzzy C-Means 
+
+average  (ARMA)  models  dengan  mengambil  19.703  entri 
+
+yang  sudah  di  interferensi  bagi  objek  yang  sama  dan  data 
+
+data  selama  23  bulan  untuk  dianalisis  kinerja  tampilan 
+
+dengan  objek  yang  berbeda,  kemudian  dimasukkan  kedalam 
+
+halaman  atau  tampilan  perhalaman  yang  dikunjungi  [3]. 
+
+Class  J48  sebagai  instance  termasuk  didalamnya  kategori 
+
+Penelitian  mengenai  Google  Analytics  tidak  berlanjut  pada 
+
+data  yang tidak diketahui atau data  yang tidak dapat di baca 
+
+pengembangan  sistem  masa  sekarang,  sehingga  penulis 
+
+Erlin Windia Ambarsari: Klasifikasi Daya Tarik Konten … 
+
+212 
+
+                        ( 4 ) 
+
+Jurnal Informatika: Jurnal Pengembangan IT (JPIT), Vol.03, No.02, Mei 2018    
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+   ISSN: 2477-5126 
+
+e-ISSN: 2548-9356   
+
+dari  Google  Analytics  (pemodelannya  akan  dijelaskan  pada 
+
+sub bagian C-Fuzzy Decision Tree (C-FDT)). 
+
+ 
+
+III.  METODE PENELITIAN 
+
+A.  Fuzzy C-Means (FCM) 
+
+ 
+
+ 
+
+  
+
+[7] :  
+
+Metode  Clustering  (Pengelompokkan)  Fuzzy  C-Means 
+
+6)  Proses  akan  berhenti  ketika 
+
+  atau 
+
+yang  dikembangkan  oleh  J.C  Dunn  tersebut  bertujuan  untuk 
+
+mengenali  pola  dengan  mengizinkan  beberapa  data  yang 
+
+dibagi  ke  dalam  beberapa  cluster,  berikut  langkah-langkah 
+
+algoritma Fuzzy yang berdasarkan dengan konsep c-partition 
+
+  
+
+B.  Algoritma J48 
+
+jumlah iterasi yang ditentukan sudah tercapai. 
+
+1)  {x1,…,xn}  merupakan  himpunan  data  dari  X,  dimana 
+
+setiap  titik  data  dari  xk  (k=1,…,n)  merupakan  vektor 
+dalam  dimensi  ℜp,  sehingga  persamaan  diasumsikan 
+
+sebagai berikut [16] : 
+
+J48  merupakan  kelanjutan  dari  algoritma  ID3  dengan 
+
+menambahkan  fitur  seperti  menghitung  nilai  (value)  yang 
+
+hilang,  pemangkasan  decision  tree,  derivasi  aturan  (rule), 
+
+rentang nilai atribut secara kontinu dan sebagainya. J48 juga 
+
+merupakan  implementasi  dari  algoritma  C4.5  di  Weka 
+
+dimana  klasifikasi  dilakukan  secara  rekursif  sampai  setiap 
+
+leaf  tunggal  menjadi  jelas  dengan  menghasilkan  aturan 
+
+identitas  data  tertentu  yang  dikeluarkan.  Tujuannya  adalah 
+
+                         
+
+( 1 ) 
+
+mengeneralisasikan secara progresif dari decision tree sampai 
+
+mendapatkan keseimbangan yang luwes dan akurat. 
+
+Langkah-langkah algoritma J48 adalah sebagai berikut:    
+
+1) 
+
+Jika  Instance  termasuk  Class  yang  sama  dengan 
+
+Tree yang mewakili Leaf, maka Leaf yang sudah diberi tanda 
+
+2) 
+
+Informasi potensial dihitung untuk setiap atribut dan 
+
+diberikan  pengujian  pada  atribut,  maka  dihitung  untuk 
+
+mendapatkan  hasil  perolehan  (Gain)  informasi.  Proses  ini 
+
+menggunakan  Entropy,  dimana  formulanya  sebagai  berikut 
+
+Ucn adalah himpunan bilangan real dengan matrik c x n; 
+
+c adalah integer dengan 2 ≤ c < n. 
+
+Uik  adalah  nilai  anggota  dengan  xk  pada  cluster  i 
+
+dikembalikan ke dalam Class yang sama. 
+
+Dimana: 
+
+(i=1,…,c). 
+
+ 
+
+ 
+
+ 
+
+2)  Target  dari  FCM  adalah  menemukan  pilihan  fuzzy  c-
+
+partition  dan  dibangun  dalam  bentuk  minimalisasi 
+
+fungsi objektif, seperti persamaan di bawah ini [16] : 
+
+[17]: 
+
+ 
+
+ ( 2 ) 
+
+Dimana: 
+V = (v1, v2,…,vc) adalah matrik cluster center vi = ℜp.   
+
+ adalah Euclidean norm. 
+
+Bobot  eksponen  m  dalam  [1,  ∞)  adalah  konstan 
+
+mempengaruhi nilai derajat keanggotaan.  
+
+Tujuannya untuk memaksimalkan  Gain dengan membagi 
+
+keseluruhan  Entropy  dengan  memisahkan  uraian 
+
+  dengan 
+
+3)  Kriteria minimalisasi Jm yang dikendalikan fuzzy, FCM 
+
+nilai j[17].  
+
+didefinisikan  sebagai  algoritma  minimalisasi  bergilir 
+
+yaitu: 
+
+positif. 
+
+a)  Memilih  nilai  c,  m,  dan  ɛ  sebagai  konstanta  kecil 
+
+b)  Menghasilkan  fuzzy  c-partition  secara  acak  U0  dan 
+
+dimasukkan ke dalam Branch. 
+
+mengatur iterasi t = 0. 
+
+4)  Proses perulangan dua langkah tersebut berjalan dengan 
+
+memberikan  nilai  derajat  keanggotaan 
+
+,  cluster 
+
+center 
+
+(i =1,…,c) dihitung oleh [16] : 
+
+4)  Beberapa  Instance  dalam  himpunan  data  (data  set) 
+
+kemungkinan 
+
+tidak 
+
+terdefinisi,  karena 
+
+itu  diperlukan 
+
+pemangkasan 
+
+(Pruning).  Pruning 
+
+dilakukan 
+
+untuk 
+
+mengurangi  kesalahan  klasifikasi  yang  sedang  diproduksi 
+
+oleh  spesialisasi  dalam  Training  Set.  Pruning  dilakukan 
+
+3)  Atribut  terbaik  didapatkan  dari  hasil  seleksi  dan 
+
+                              ( 3 ) 
+
+untuk generalisasi Tree. 
+
+ 
+
+ 
+
+5)  Memberikan 
+
+cluster 
+
+center  baru 
+
+  dengan 
+
+memperbaharui nilai derajat keanggotaan 
+
+ [16] : 
+
+C.  C-Fuzzy Decision Tree (C-FDT) 
+
+C-FDT  untuk  mengklasifikasi  data  Google  Analytics 
+
+berdasarkan  daya  tarik  konten  artikel,  dengan  melakukan 
+
+penarikan  data  metrik  Google  Analytics.  Himpunan  data 
+
+metrik  kemudian  dikelompokkan  dan  dihitung  dengan  FCM 
+
+untuk  mendapatkan  derajat  keanggotaan  tiap  cluster  bagi 
+
+himpunan  data  dengan  objek  yang  sama,  sedangkan 
+
+            ( 5 ) 
+
+             ( 6 ) 
+
+    ( 7 ) 
+
+Erlin Windia Ambarsari: Klasifikasi Daya Tarik Konten … 
+
+213 
+
+Jurnal Informatika: Jurnal Pengembangan IT (JPIT), Vol.03, No.02, Mei 2018    
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+   ISSN: 2477-5126 
+
+e-ISSN: 2548-9356   
+
+ 
+
+ 
+
+ 
+
+himpunan  data  yang  berbeda  dipisahkan 
+
+tersendiri. 
+
+warganet  yang  banyak  mengunjungi  situs  tersebut  adalah 
+
+Kemudian  tiap  cluster  dengan  derajat  keanggotaan  tertinggi 
+
+anak-anak muda berusia 19 tahun dari Indonesia (Gbr. 3).   
+
+di interferensikan. Hasil interferensi tiap  cluster dimasukkan 
+
+sebagai  atribut, 
+
+termasuk  himpunan  data  yang 
+
+tadi 
+
+dipisahkan.  Penetapan  class  menarik  atau  tidak  dilihat  dari 
+
+instance  setiap  data.  Jika  ada  data  yang  tidak  dapat  dibaca 
+
+dari  metrik  Google  Analytics,  maka  diberi  label  unknown 
+
+pada  class.  Lebih  jelas  mengenai  tahap-tahap  penelitian  ini 
+
+dalam pengolahan C-FDT dapat dilihat pada Gbr. 1. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Gbr. 2 Frekuensi Pengunjung Situs Bulan November 2017 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Gbr 1. Tahapan Penelitian 
+
+ 
+
+ 
+
+ 
+
+ 
+
+IV. 
+
+HASIL DAN PEMBAHASAN 
+
+Data  yang  diambil  dari  Google  Analytics  pada  media 
+
+daring Media Have Fun yang dilakukan selama 4 bulan dari 
+
+bulan  Januari  2017  sampai  dengan  Februari  2018  (Gbr.  2) 
+
+dengan  sebanyak  217  konten  artikel,  dimana  rata-rata 
+
+Gbr. 3 Pengunjung Berdasarkan Negara 
+
+Erlin Windia Ambarsari: Klasifikasi Daya Tarik Konten … 
+
+214 
+
+Jurnal Informatika: Jurnal Pengembangan IT (JPIT), Vol.03, No.02, Mei 2018    
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+   ISSN: 2477-5126 
+
+e-ISSN: 2548-9356   
+
+ 
+
+ 
+
+Halaman 
+
+Tayangan 
+
+Halaman 
+
+Masuk 
+
+Rasio 
+
+% 
+
+Nilai 
+
+Pentalan 
+
+Keluar 
+
+Halaman 
+
+ 
+
+TABEL I 
+
+DATA GOOGLE ANALYTICS MEDIA HAVE HUN 
+
+Tayangan 
+
+Halaman 
+
+Unik 
+
+325 
+
+Waktu 
+
+Rta. Di 
+
+Halaman 
+
+36.60 
+
+311 
+
+50.48% 
+
+43.78% 
+
+0.00 
+
+156 
+
+37.20 
+
+146 
+
+11.64% 
+
+27.65% 
+
+0.00 
+
+48.16 
+
+37 
+
+13.51% 
+
+27.15% 
+
+0.00 
+
+kampus-dengan-suasanya-
+
+132 
+
+16.89 
+
+27 
+
+0.00% 
+
+12.88% 
+
+0.00 
+
+/tahun-ini-starnifest-2017-
+
+hadir-kembali-di-surabaya 
+
+/japanese-film-festival-
+
+2017-hadir-di-cgv-grand-
+
+indonesia 
+
+/japanese-film-festival-
+
+2017-opening-ceremony 
+
+/escape-room-didalam-
+
+667 
+
+452 
+
+151 
+
+menyeramkan 
+
+ 
+
+66 
+
+37 
+
+Data  Google  Analytics  di  tarik  (ekspor)  ke  dalam  Microsoft 
+
+Excel,  dimana  data  yang  didapatkan  adalah  Nama  Konten 
+
+Artikel  (Halaman),  Tayangan  Halaman,  Waktu  Rata-rata 
+
+Halaman,  Masuk,  Rasio  Pentalan,  Keluar,  dan  Nilai 
+
+Halaman,  dilihat  dari  tabel  1.  Data  Google  Analytics  pada 
+
+tabel  1  mempunyai  objek  yang  sama,  seperti  Tayangan 
+
+Halaman  dan  Tayangan  Halaman  Unik  atau  Rasio  Pentalan 
+
+dan  %Keluar.  Objek  tersebut  dibuat  Clustering  Fuzzy  C-
+
+Means dibagi menjadi 2 atribut yang terdiri dari 2 sub-atribut. 
+
+Data  dari  atribut  Waktu  Rata-rata  Halaman  dan  Masuk 
+
+dipisahkan karena bukan objek yang sama, sedangkan atribut 
+
+Nilai Halaman di abaikan karena nilainya nol.  
+
+Nama atribut diasumsikan dengan nama atribut Tayangan 
+
+yang 
+
+terdiri  dari  sub-atribut  Tayangan  Halaman  dan 
+
+Tayangan Halaman Unik, atribut Pementalan terdiri dari sub-
+
+atribut  Rasio  Pentalan  dan  %Keluar.  Kemudian  masing-
+
+masing dari Kedua atribut dibuat clustering 2 dimensi dengan 
+
+membagi menjadi 3 cluster, yaitu c1, c2, dan c3. Nilai anggota 
+
+tiap cluster dibuat secara acak yang kemudian dihitung fungsi 
+
+obyektif  dengan  nilai  bobot  eksponen  adalah  2.  Nilai  bobot 
+
+ini dapat mempengaruhi nilai derajat keanggotaan.  
+
+Iterasi  berhenti  pada  Iterasi  ke  30  pada  masing-masing 
+
+atribut, dimana pada atribut Tayangan dengan nilai kesalahan 
+
+2.44E-09  dan  atribut  Pementalan  dengan  nilai  kesalahan 
+
+3.54E-07 dengan nilai derajat keanggotaan pada tabel II. 
+
+Kemudian  nilai  derajat  keanggotaan  terbesar  diambil 
+
+berdasarkan  nilai  cluster  c1,  c2,  dan  c3,  seperti  pada  tabel  2 
+
+bahwa data 1 sampai 19 semua berada di cluster c3. Data-data 
+
+clustering  dapat  dilihat  pada  grafik  dibawah  ini  (Gbr  4  dan 
+
+5). 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Erlin Windia Ambarsari: Klasifikasi Daya Tarik Konten … 
+
+NILAI DERAJAT KEANGGOTAAN CLASS TAYANGAN 
+
+TABEL II 
+
+c1 
+
+0.016106553 
+
+0.007180189 
+
+0.000662028 
+
+0.000425952 
+
+0.000383666 
+
+0.00028559 
+
+0.000115032 
+
+0.000160153 
+
+4.37181E-05 
+
+3.60524E-05 
+
+2.67426E-05 
+
+3.83983E-05 
+
+2.53258E-05 
+
+2.12384E-05 
+
+2.29703E-05 
+
+2.01724E-05 
+
+1.80418E-05 
+
+1.92855E-05 
+
+8.64481E-06 
+
+c2 
+
+0.255197 
+
+0.084858 
+
+0.006002 
+
+0.003779 
+
+0.003386 
+
+0.002496 
+
+0.000981 
+
+0.001377 
+
+0.000368 
+
+0.000303 
+
+0.000224 
+
+0.000322 
+
+0.000212 
+
+0.000177 
+
+0.000192 
+
+0.000168 
+
+0.00015 
+
+0.000161 
+
+7.17E-05 
+
+c3 
+
+0.728697 
+
+0.907962 
+
+0.993336 
+
+0.995795 
+
+0.996231 
+
+0.997218 
+
+0.998904 
+
+0.998463 
+
+0.999589 
+
+0.999661 
+
+0.99975 
+
+0.999639 
+
+0.999763 
+
+0.999802 
+
+0.999785 
+
+0.999812 
+
+0.999832 
+
+0.99982 
+
+0.99992 
+
+µ 
+
+1 
+
+2 
+
+3 
+
+4 
+
+5 
+
+6 
+
+7 
+
+8 
+
+9 
+
+10 
+
+11 
+
+12 
+
+13 
+
+14 
+
+15 
+
+16 
+
+17 
+
+18 
+
+19 
+
+ 
+
+ 
+
+Gbr. 4 Clustering atribut Tayangan 
+
+ 
+
+215 
+
+Jurnal Informatika: Jurnal Pengembangan IT (JPIT), Vol.03, No.02, Mei 2018    
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+   ISSN: 2477-5126 
+
+e-ISSN: 2548-9356   
+
+ 
+
+ 
+
+ 
+
+ 
+
+  
+
+itu  penentuan  dilakukan  secara  garis  besar  dimana  dilihat 
+
+Tayangan dari konten itu sendiri, yaitu semakin banyak yang 
+
+masuk  ke  dalam  konten  dan  Pementalan  yang  rendah  dapat 
+
+dikatakan  artikel  tersebut  menarik.  Bagi  konten  artikel  yang 
+
+tidak  dapat  didefinisikan  menarik  atau  tidak,  maka  diberi 
+
+label unknown. 
+
+Kemudian  semua  atribut  dari  Tabel  3  diolah  ke  dalam 
+
+metode  Decision  Tree  J48  menggunakan  software  WEKA 
+
+dengan Training Set dimana didapatkan Klasifikasi Instances 
+
+yang benar sekitar 93.5185 % sebanyak 202 data, sedangkan 
+
+yang  salah  adalah  6.4815  %  sebanyak  14  data  pada  Gbr.  6. 
+
+Rincian data klasifikasi Decision Tree dapat dilihat pada Gbr. 
+
+7. 
+
+ 
+
+ 
+
+Gbr. 5 Clustering atribut Pementalan 
+
+INTERFERENSI DAN KLASIFIKASI ATRIBUT  
+
+TABEL III 
+
+Tayangan 
+
+Halaman  Masuk 
+
+Pementalan  Menarik 
+
+ 
+
+ 
+
+ 
+
+Rendah 
+
+Rendah 
+
+Rendah 
+
+Rendah 
+
+Rendah 
+
+Rendah 
+
+Rendah 
+
+Rendah 
+
+Rendah 
+
+Waktu 
+
+Rata-rata 
+
+36.60 
+
+37.20 
+
+48.16 
+
+16.89 
+
+16.87 
+
+16.09 
+
+35.86 
+
+39.94 
+
+19.98 
+
+311  Sedang 
+
+146  Rendah 
+
+37  Rendah 
+
+27  Rendah 
+
+11  Rendah 
+
+19  Rendah 
+
+9  Rendah 
+
+11  Sedang 
+
+9  Rendah 
+
+Tidak 
+
+Ya 
+
+Ya 
+
+Ya 
+
+Ya 
+
+Ya 
+
+Ya 
+
+Tidak 
+
+Ya 
+
+Hasil  Cluster  kemudian  diinterferensikan  menjadi 
+
+Rendah, Sedang dan Tinggi  yang diambil dari  cluster c1, c2, 
+
+dan c3. Penentuan dapat dilihat dari Gbr. 4 dan 5; yaitu atribut 
+
+Tayangan pada Gbr. 4 yang diberi warna hijau adalah Tinggi, 
+
+warna biru adalah Sedang, dan warna kuning adalah Rendah. 
+
+Atribut Pementalan diberi warna hijau adalah Rendah, warna 
+
+kuning  adalah  Sedang,  dan  warna  biru  adalah  Tinggi.  Hasil 
+
+yang sudah diinterferensikan dapat dilihat tabel III. 
+
+Masing-masing atribut,  yaitu: atribut Tayangan  mewakili 
+
+konten  yang  berkualitas  SEO,  atribut  Waktu  Rata-rata 
+
+Halaman  mewakili  lamanya  warganet  mengunjungi  konten 
+
+artikel,  atribut  Masuk  mewakili  banyaknya  warganet  yang 
+
+masuk  untuk  melihat  konten  artikel,  atribut  Pementalan 
+
+mewakili  warganet  yang  keluar  dari  konten  artikel,  Atribut 
+
+tersebut  dijadikan  satu  dilihat  instance  dalam  penentuan 
+
+Class Menarik untuk mengetahui apakah konten artikel dapat 
+
+dikatakan menarik atau tidak.  
+
+Namun  kesulitan  disini  adalah  ketidaksinkron  data  dari 
+
+Google  Analytics  sehingga  sulit  untuk  dianalisa  dalam 
+
+penentuan  Class  Menarik,  misalkan  terdapat  nilai  nol  pada 
+
+Waktu  Rata-rata  Halaman  akan  tetapi  pengunjung  yang 
+
+masuk  dikatakan  banyak  dan  Pementalannya  rendah,  karena 
+
+Gbr. 6 Training Set J48 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Gbr. 7 Decision Tree 
+
+ 
+
+ 
+
+Erlin Windia Ambarsari: Klasifikasi Daya Tarik Konten … 
+
+216 
+
+Jurnal Informatika: Jurnal Pengembangan IT (JPIT), Vol.03, No.02, Mei 2018    
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+   ISSN: 2477-5126 
+
+e-ISSN: 2548-9356   
+
+ 
+
+ 
+
+ 
+
+Pada  gambar  Gbr.  7  dapat  dilihat  bahwa  ada  2  atribut 
+
+Daya  Tarik  Konten  Artikel.    Namun  C-FDT  mengalami 
+
+dihilangkan,  yaitu atribut Tayangan dan atribut Waktu Rata-
+
+kesulitan  ketika  menghadapi  ketidak-sinkron  data  karena 
+
+rata  Halaman.  Hilangnya  kedua  atribut  disebabkan  Pruning 
+
+kesalahan  sistem  saat  penarikan  data  dari  Google  Analytics. 
+
+karena  Instance  dalam  himpunan  data  dari  atribut-atribut 
+
+Perlu  dilakukan  monitoring  data  secara 
+
+time  series 
+
+tersebut  tidak  terdefinisi,  Decision  Tree  dari  C-FDT  dapat 
+
+sebelumnya seperti yang dilakukan oleh [3].  
+
+disimpulkan  mengenai  Daya  Tarik  Konten  Artikel  Media 
+
+Berikut  pada  Tabel  IV  adalah  artikel  yang  dinyatakan 
+
+Daring adalah sebagai berikut: 
+
+ 
+
+Jika  Pementalan  Tinggi  maka  konten  artikel  tidak 
+
+menarik  dengan  kebenaran 
+
+instance  88  data  dan 
+
+kesalahan instance 2 data. 
+
+ 
+
+Jika  Pementalan  Rendah  maka  konten  artikel  menarik 
+
+dengan  kebenaran  instance  63  data  dan  kesalahan 
+
+menarik  berdasarkan  hasil  dari  C-FDT.  Pada  tabel  IV,  dari 
+
+hasil  olahan  C-FDT  bahwa  rata-rata  warganet  sering 
+
+mengunjungi  situs  dengan  konten  artikel  mengenai  tema 
+
+showbiz  tentang  perfilman  yang  ditayangkan  serta  korelasi 
+
+dibalik  real  story  pada  film  tersebut,  tema  game,  tema 
+
+kerajinan tangan, tema kuliner, serta acara jejepangan.  
+
+instance 8 data. 
+
+ 
+
+ 
+
+Jika  Pementalan  Sedang  Dan  Masuk  <=  149  maka 
+
+konten artikel tidak menarik dengan kebenaran instance 
+
+62 data dan kesalahan instance 3 data. 
+
+ 
+
+Jika Pementalan Sedang Dan Masuk > 149 maka konten 
+
+artikel  menarik  dengan  kebenaran  instance  3  data  dan 
+
+kesalahan instance 1 data. 
+
+ 
+
+ 
+
+TABEL IV 
+
+NAMA KONTEN YANG MENARIK 
+
+Nama Konten 
+
+/mengenal-kompetisi-ballroom-dance 
+
+/neo-comicfest-id-2017 
+
+/penampilan-perdana-samurai-x-otome-di-indonesia 
+
+/chibi-maruko-chan-meramaikan-jff-2017 
+
+/keseruan-beauty-workshop-japanese-kawaii-look-
+
+bersama-canmake-x-reon-comics 
+
+/japanese-film-festival-2017-kini-hadir-kembali-di-empat-
+
+kota-di-indonesia 
+
+/lukisan-3d-kurumie-art-tutorialnya 
+
+/bermain-game-di-indonesia-comic-con-2017 
+
+/international-education-korean-contemporary-history-
+
+2017 
+
+food-ingredients 
+
+/jakarta-international-food-expo-jifex-creative-innovation-
+
+/rudolf-seekor-kucing-hitam-kembali-hadir-dalam-
+
+japanese-film-festival-2017 
+
+/japanese-film-festival-2017-di-indonesia 
+
+/nitendo-switch-meranah-ke-penggemar-game-rpg-
+
+termasuk-skyrim 
+
+/lukisan-3d-kurumie-art-tutorialnya 
+
+/fakta-dari-cerita-greatest-showman 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+V. 
+
+KESIMPULAN 
+
+Hasil penelitian yang dilakukan dapat disimpulkan bahwa 
+
+data yang diolah berdasarkan Training Set pada J48 Decision 
+
+Tree dimana Klasifikasi Instances yang benar sekitar 93.5185 
+
+%  sebanyak  202  data,  sedangkan  yang  tidak  benar  adalah 
+
+6.4815  %  sebanyak  14  data.  Konten  Artikel  Media  Daring 
+
+dapat dikatakan menarik adalah jika Pementalan Tinggi maka 
+
+konten  artikel  tidak  menarik,  jika  Pementalan  Rendah  maka 
+
+konten  artikel  menarik,  jika  Pementalan  Sedang  Dan  Masuk 
+
+<=  149  maka  konten  artikel  tidak  menarik,  jika  Pementalan 
+
+Sedang Dan Masuk > 149 maka konten artikel menarik.  
+
+C-FDT  dapat  mengenali  pola  dari  metrik  Google 
+
+Analytics sehingga memudahkan pencarian konten artikel ke 
+
+dalam  bentuk  yang  sederhana  yaitu  adanya  pengurangan 
+
+atribut  dengan  cara  mengkelompokkan  data  dengan  objek 
+
+yang sama dan adanya Pruning. C-FDT mengalami kesulitan 
+
+ketika  menghadapi  ketidaksinkron  data  karena  kesalahan 
+
+sistem 
+
+saat  penarikan  data  dari  Google  Analytics. 
+
+Berdasarkan  data  olahan  C-FDT  rata-rata  warganet  sering 
+
+mengunjungi  situs  dengan  konten  artikel  mengenai  tema 
+
+showbiz  tentang  perfilman  tyang  ditayangkan  serta  korelasi 
+
+dibalik  real  story  pada  film  tersebut,  tema  game,  tema 
+
+kerajinan  tangan,  tema  kuliner,  serta  acara  “jejepangan”. 
+
+Metode  C-FDT  perlu  dikembangkan  dengan  penambahan 
+
+metode  time  series  khususnya  untuk  kasus  pada  Google 
+
+Analytics. 
+
+UCAPAN TERIMA KASIH 
+
+Terimakasih  kepada  Public  Relationship  Media  Have 
+
+Fun,  Gravita  Alfiani  untuk  pengambilan  data  Google 
+
+Analytics. 
+
+DAFTAR PUSTAKA 
+
+ 
+
+[1]  M. SOAT, “Google Analytics in 2016.,” Marketing News, vol. 50, no. 
+
+Berdasarkan  pengolahan  data  yang  telah  dilakukan,  C-
+
+2, pp. 8–9, 2016. 
+
+FDT  dapat  mengenali  pola  dari  metrik  Google  Analytics 
+
+sehingga  memudahkan  pencarian  konten  artikel  ke  dalam 
+
+bentuk  yang  sederhana  yaitu  adanya  pengurangan  atribut 
+
+dengan cara mengkelompokkan data dengan objek yang sama 
+
+dan  adanya  Pruning.  Pengelola  media  daring  dapat  fokus 
+
+dengan  atribut  tertentu  saja  yang  berpengaruh  besar  dengan 
+
+[2]  R. F. Uviña, “Bibliotecas y analítica web: una cuestión de privacidad,” 
+
+Información,  cultura  y  sociedad,  vol.  1,  no.  33,  pp.  105–112,  Dec. 
+
+2015. 
+
+[3]  M.  A.  Omidvar,  V.  R.  Mirabi,  and  N.  Shokry,  “ANALYZING  THE 
+
+IMPACT  OF  VISITORS  ON  PAGE  VIEWS  WITH  GOOGLE 
+
+ANALYTICS,” International Journal of Web & Semantic Technology 
+
+(IJWesT), vol. 2, no. 1, pp. 14–32, 2011. 
+
+[4] 
+
+S.  A.  Ludwig,  S.  Picek, and  D.  Jakobovic,  “Classification  of  Cancer 
+
+Erlin Windia Ambarsari: Klasifikasi Daya Tarik Konten … 
+
+217 
+
+Jurnal Informatika: Jurnal Pengembangan IT (JPIT), Vol.03, No.02, Mei 2018    
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+   ISSN: 2477-5126 
+
+e-ISSN: 2548-9356   
+
+ 
+
+Data: Analyzing Gene Expression Data Using a Fuzzy Decision Tree 
+
+[11]  Ł.  Gadomer  and  Z.  A.  Sosnowski,  “Knowledge  aggregation  in 
+
+Algorithm,”  in  Operations  Research  Applications  in  Health  Care 
+
+decision-making  process  with  C-fuzzy  random  forest  using  OWA 
+
+Management, Springer, Cham, 2018, pp. 327–347. 
+
+operators,” Soft Computing, pp. 1–15, Jan. 2018. 
+
+[5] 
+
+L.  Van  Tuong  Lan,  N.  Mau  Han,  and  N.  Cong  Hao,  “AN 
+
+[12]  J.  Yun,  J.  Won  Seo,  and  T.  Yoon,  “FUZZY  DECISION  TREE,” 
+
+ALGORITHM  TO  BUILDING  A  FUZZY  DECISION  TREE  FOR 
+
+International  Journal  of  Fuzzy  Logic  Systems  (IJFLS),  vol.  4,  no.  3, 
+
+DATA  CLASSIFICATION  PROBLEM  BASED  ON  THE 
+
+2014. 
+
+FUZZINESS 
+
+INTERVALS  MATCHING,”  Annales  Univ.  Sci. 
+
+[13]  S. J. Narayanan, I. Paramasivam, and R. B. Bhatt, “On the estimation 
+
+Budapest., Sect. Comp, vol. 45, pp. 319–335, 2016. 
+
+of  optimal  number  of  clusters  for  the  induction  of  fuzzy  decision 
+
+[6] 
+
+I.  Afriliana,  E.  Budihartono,  and  A.  Maulana,  “Pengukuran  Kinerja 
+
+trees,”  International  Journal  of  Data  Science,  vol.  2,  no.  3,  p.  221, 
+
+Dosen  Menggunakan  Metode  Adaptive  Neuro  Fuzzy  Inference 
+
+2017. 
+
+System (ANFIS),” JURNAL INFORMATIKA : Jurnal Pengembangan 
+
+[14]  S. M. S. Askari and M. A. Hussain, “Credit card fraud detection using 
+
+IT, vol. 2, no. 2, pp. 109–112, Jul. 2017. 
+
+fuzzy  ID3,”  in  2017  International  Conference  on  Computing, 
+
+[7] 
+
+E.  W.  Ambarsari  and  S.  Khotijah,  “Clustering  Algoritma  Fuzzy  Ant 
+
+Communication and Automation (ICCCA), 2017, pp. 446–452. 
+
+Untuk  Optimalisasi  Penentuan  Rute  Kemacetan  Tanah  Abang,” 
+
+[15]  E. Ahishakiye, D. Taremwa, E. O. Omulo, and I. Niyonzima, “Crime 
+
+Computatio : Journal  of  Computer  Science  and  Information  Systems, 
+
+vol. 1, no. 2, pp. 187–194, Nov. 2017. 
+
+Prediction  Using  Decision  Tree  (J48)  Classification  Algorithm,” 
+
+International  Journal of Computer and  Information  Technology,  vol. 
+
+[8]  A.  Hadiana,  “Design  of  Kansei  Engineering  Support  System  Using 
+
+06, no. 03, pp. 2279–764, 2017. 
+
+Fuzzy Multiple Attribute Decision Making,”  International Journal of 
+
+[16]  D. Parwatiningtyas, E. W. Ambarsari, and S. Mariko, “The calculation 
+
+Basic and Applied Science, vol. 5, no. 1, pp. 24–30, 2016. 
+
+[9]  A.  Stetco,  X.  J.  Zeng,  and  J.  Keane,  “Fuzzy  C-means++:  Fuzzy  C-
+
+of  the  highest  leak  level  of  water  pipe  lines  region  at  PDAM  Tirta 
+
+Kahuripan  using  fuzzy  C-means  and  ArcGIS  method  analysis,”  AIP 
+
+means  with  effective  seeding  initialization,”  Expert  Systems  with 
+
+Conference Proceedings, vol. 030196, no. 1, p. 030196, 2017. 
+
+Applications, vol. 42, no. 21, pp. 7541–7548, 2015. 
+
+[17]  G. Kaur and A. Chhabra, “Improved J48 Classification Algorithm for 
+
+[10]  W.  Pedrycz  and  Z.  A.  Sosnowski,  “C-fuzzy  decision  trees,”  IEEE 
+
+the  Prediction  of  Diabetes,”  International  Journal  of  Computer 
+
+Transactions on Systems, Man and Cybernetics Part C: Applications 
+
+Applications, vol. 98, no. 22, pp. 13–17, Jul. 2014. 
+
+and Reviews, vol. 35, no. 4, pp. 498–511, 2005. 
+
+ 
+
+ 
+
+ 
+
+Erlin Windia Ambarsari: Klasifikasi Daya Tarik Konten … 
+
+218 
+
+

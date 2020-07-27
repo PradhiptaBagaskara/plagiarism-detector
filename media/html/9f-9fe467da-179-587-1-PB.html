@@ -1,0 +1,1511 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html">
+</head><body>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:50px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:50px;"><a name="1">Page 1</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:62px; top:88px; width:156px; height:36px;"><span style="font-family: Segoe UI,Bold; font-size:9px">JOIN (Jurnal Online Informatika) 
+<br></span><span style="font-family: Segoe UI; font-size:9px">Volume 3 No. 1 | Juni 2018 : 29-35 
+<br>DOI: 10.15575/join.v3i1.179</span><span style="font-family: Segoe UI; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:532px; top:86px; width:2px; height:9px;"><span style="font-family: Arial; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:144px; width:484px; height:529px;"><span style="font-family: Times New Roman,Bold; font-size:24px">Implementasi Komputasi Paralel untuk 
+<br>Optimalisasi Komputasi pada Aplikasi 
+<br>Transliterasi Huruf Latin ke Aksara Jawa 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman,Bold; font-size:11px">A’la Syauqi</span><span style="font-family: Times New Roman,Bold; font-size:6px">1</span><span style="font-family: Times New Roman,Bold; font-size:11px">, Anis Nurul Hidayah</span><span style="font-family: Times New Roman,Bold; font-size:6px">2 
+<br></span><span style="font-family: Times New Roman; font-size:6px">1,2</span><span style="font-family: Times New Roman; font-size:11px">Jurusan Teknik Informatika Fakultas Sains dan Teknologi  
+<br>Universitas Islam Negeri Maulana Malik Ibrahim 
+<br>Malang, Indonesia 
+<br></span><span style="font-family: Times New Roman; font-size:6px">1</span><span style="font-family: Times New Roman; font-size:11px">syauqi@ti.uin-malang.ac.id, </span><span style="font-family: Times New Roman; font-size:6px">2</span><span style="font-family: Times New Roman; font-size:11px">anisnurul20@gmail.com 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br> 
+<br></span><span style="font-family: Times New Roman,BoldItalic; font-size:9px">Abstract</span><span style="font-family: Times New Roman,Bold; font-size:9px">-Javanese  script  is  one  of  the  ancestral  heritage  of  Indonesia  that  must  be  preserved.  Nowadays  javanese  script  is 
+<br>increasingly  abandoned,  since  latin writing  is  often  used  in  daily  activities.  This  is  become  worse  by  student  difficulties    of 
+<br>learning to read and write javanese script because the methods are less attractive for example teacher centered learning.</span><span style="font-family: Calibri; font-size:11px">  </span><span style="font-family: Times New Roman,Bold; font-size:9px">One 
+<br>of  solution  to  solve  this  problem  is  interactive  latin  to  javanese  script  transliteration  application.  Research  on  the  latin  to 
+<br>javanese  script transliteration  has  been  produced various applications such as JawaTex, Hanacaraka, and  Pandawa. From 
+<br></span><span style="font-family: Times New Roman,Bold; font-size:9px">these three applications is showed that the Pandawa application with decision tree method has the highest level of accuracy. 
+<br></span><span style="font-family: Times New Roman,Bold; font-size:9px">However,  the  computational  time  required  by  this  application  method  is  also  highest  than  other  applications.  The  more 
+<br>transliterated text is conduct the longer process time  is used. This research aims to shorten Pandawa application computing 
+<br>time  with  parallel  computing  method  without  modifies  decesion  tree  algorithm.  Parallel  computing  is  implemented  with 
+<br>multithread  on  java  programming  language  to  perform  the  process  of  latin  into  javanese  script  transliteration 
+<br>simultaneously. Experimental results obtained that the implementation of multithread in decicion tree method for latin into 
+<br>javanese script transliteration reduce the average computation time up to 97.05% 
+<br></span><span style="font-family: Times New Roman,BoldItalic; font-size:9px"> 
+<br>Kata kunci</span><span style="font-family: Times New Roman,Bold; font-size:9px">- javanese script, parallel computing, transliteration, multithread 
+<br></span><span style="font-family: Times New Roman,BoldItalic; font-size:9px"> 
+<br> 
+<br></span><span style="font-family: Times New Roman,Bold; font-size:9px">Abstrak— Aksara jawa merupakan salah satu warisan leluhur bangsa Indonesia yang harus dilestarikan. Aksara jawa kini 
+<br>semakin ditinggalkan, karena tulisan latin lebih sering digunakan dalam kegiatan sehari-hari. Hal ini diperburuk oleh sulit 
+<br>diterimanya  pembelajaran  baca  tulis  aksara  jawa  dikarenakan  metode  pembelajaran  yang  kurang  menarik  contohnya 
+<br>pembelajaran yang terpusat pada guru. Salah satu solusi untuk untuk penyelesaian permasalahan ini adalah dengan aplikasi 
+<br>transliterasi  aksara  latin  ke  aksara  jawa  interaktif.  Aplikasi  dari  hasil  penelitian  transliterasi  huruf  latin  ke  aksara  jawa 
+<br>telah banyak dihasilkan, antara lain JawaTex, Hanacaraka, dan Pandawa. Dari ketiga aplikasi tersebut ditunjukkan bahwa 
+<br>aplikasi  Pandawa  dengan  metode  </span><span style="font-family: Times New Roman,BoldItalic; font-size:9px">decision  tree</span><span style="font-family: Times New Roman,Bold; font-size:9px">  mempunyai  tingkat  keakurasian  paling  tinggi.  Namun  demikian,  waktu 
+<br>komputasi  yang  dibutuhkan  oleh  metode  dalam  aplikasi  ini  juga  paling  tinggi  daripada  dua  aplikasi  lainnya.  Hal  ini 
+<br>berbanding lurus dengan banyaknya teks  yang ditransliterasikan, semakin banyak teks yang ditransliterasikan maka akan 
+<br>semakin  lama  pula  waktu  prosesnya.  Penelitian  ini  bertujuan  untuk  mempersingkat  waktu  komputasi  aplikasi  Pandawa 
+<br>dengan  metode  komputasi  paralel  tanpa  modifikasi  algoritma  </span><span style="font-family: Times New Roman,BoldItalic; font-size:9px">decision  tree</span><span style="font-family: Times New Roman,Bold; font-size:9px">.  Komputasi  paralel  diimplementasikan  dengan 
+<br></span><span style="font-family: Times New Roman,BoldItalic; font-size:9px">multithread</span><span style="font-family: Times New Roman,Bold; font-size:9px"> pada pemrograman java untuk melakukan proses transliterasi huruf latin ke aksara jawa secara simultan. Dari 
+<br>pengujian  diperoleh  hasil  bahwa  implementasi  multithread  pada  metode  </span><span style="font-family: Times New Roman,BoldItalic; font-size:9px">decicion  tree</span><span style="font-family: Times New Roman,Bold; font-size:9px">  untuk  transliterasi    huruf  latin  ke 
+<br>aksara jawa ini berhasil dapat mengurangi waktu komputasi rata-rata hingga 97.05%. 
+<br></span><span style="font-family: Times New Roman,BoldItalic; font-size:9px"> 
+<br>Keywords</span><span style="font-family: Times New Roman,Bold; font-size:9px">-aksara jawa, komputasi paralel, transliterasi, multithread 
+<br></span><span style="font-family: Times New Roman,Bold; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:11px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:128px; top:675px; width:92px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">I.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">PENDAHULUAN 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:687px; width:236px; height:136px;"><span style="font-family: Times New Roman; font-size:9px">Salah  satu  diantara  kekayaan  budaya  Indonesia 
+<br>adalah  adanya  bahasa  daerah.  Bahasa  Jawa  merupakan 
+<br>salah  satu  bahasa  daerah  dengan  jumlah  penutur  yang 
+<br>paling  banyak.  Berdasarkan  sensus  tahun  2000  jumlah 
+<br>penutur  Bahasa  Jawa  mencapai  84,3  juta  orang.  Namun 
+<br>data  tersebut  bertolak  belakang  dengan  kenyataan  bahwa 
+<br></span><span style="font-family: Times New Roman; font-size:9px">pada  saat  ini  banyak  kalangan  muda  yang  enggan 
+<br>menggunakan  Bahasa  Jawa  yang  disebabkan  oleh 
+<br>beberapa  hal  diantaranya  penggunaan  bahasa  gaul  yang 
+<br>lebih  populer  di  kalangan  pemuda[1], 
+<br>semakin 
+<br>berkurangnya  pemahaman  kosakata  Bahasa  Jawa  oleh 
+<br>pemuda[2],  dan  hal-hal  lain  yang  secara  tidak  langsung 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:374px; top:675px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">remaja 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:675px; width:236px; height:101px;"><span style="font-family: Times New Roman; font-size:9px">lebih  memilih  menggunakan 
+<br>mempengaruhi 
+<br>Bahasa  Indonesia  daripada  Bahasa  Jawa  yaitu  tingkat 
+<br>pendidikan  dan  jenis  pekerjaan  orangtua,  tempat  asal, 
+<br>jenis  kelamin,  dan  lawan  bicara[3].  Sedangkan  secara 
+<br>umum  orang  tidak  lagi  menggunakan  Bahasa  Jawa  salah 
+<br>satunya disebakan karena migrasi[4]. Selain itu penetapan 
+<br>Bahasa 
+<br>juga 
+<br></span><span style="font-family: Times New Roman; font-size:9px">mempengaruhi  penggunaan  Bahasa  Jawa  di  kalangan 
+<br>masyarakat luas[5]. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:397px; top:744px; width:113px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">sebagai  Lingua  Franca 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:346px; top:744px; width:41px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Indonesia 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:779px; width:236px; height:44px;"><span style="font-family: Times New Roman; font-size:9px">Upaya  Pemerintah  dalam  pelestarian  bahasa  daerah 
+<br>telah dinyatakan dalam Undang-Undang Dasar 1945 Pasal 
+<br>32  bahwa  bahasa  daerah  yang  masih  digunakan  oleh 
+<br>masyarakat  penuturnya  dipelihara  oleh  Negara.  Di 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:62px; top:831px; width:379px; height:9px;"><span style="font-family: Segoe UI; font-size:9px">Makalah dikirim: 22 Mei 2017; Revisi: 22 Juni 2017; Diterima: 22 Juni 2017; Publish: 30 Juni 2017 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:521px; top:831px; width:13px; height:9px;"><span style="font-family: Segoe UI; font-size:9px">29 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:131px; width:2px; height:9px;"><span style="font-family: Calibri; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:844px; width:3px; height:11px;"><span style="font-family: Segoe UI; font-size:11px"> 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:55px; top:129px; width:238px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:55px; top:125px; width:238px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:294px; top:125px; width:4px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:294px; top:129px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:298px; top:129px; width:239px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:298px; top:125px; width:239px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:56px; top:824px; width:450px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:56px; top:825px; width:450px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:506px; top:824px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:506px; top:825px; width:4px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:511px; top:824px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:511px; top:825px; width:27px; height:3px;"></span>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:941px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:941px;"><a name="2">Page 2</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:980px; width:182px; height:9px;"><span style="font-family: Segoe UI; font-size:9px">JOIN | Volume 3 No. 1 | Juni 2018 : 29-35</span><span style="font-family: Segoe UI; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:997px; width:236px; height:171px;"><span style="font-family: Calibri; font-size:11px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px">samping  itu,  dalam  Undang-Undang  Nomor  32  Tahun 
+<br>2004  tentang  Pemerintahan  Daerah  Pasal  22  huruf  n 
+<br>dinyatakan  bahwa  dalam  menyelenggarakan  otonomi, 
+<br>daerah  mempunyai  kewajiban  melestarikan  nilai  sosial 
+<br>budaya[6].  Di  bidang  pendidikan  kebijakan  untuk 
+<br>pelestarian  kebudayaan  daerah  dinyatakan  dalam  UU 
+<br>Sisdiknas  No  20  tahun  2003  Bab  X  Pasal  37  yang 
+<br>mewajibkan  muatan  lokal  dalam  kurikulum  pendidikan 
+<br>dasar  dan  menengah.  Sebagai  bentuk  pelaksanaannya 
+<br>misalnya  dengan  diwujudkannya  Keputusan  Gubernur 
+<br>Jawa  Tengah  Nomor:  423.5/5/2010  tentang  Kurikulum 
+<br>Muatan  Lokal  (Bahasa  Jawa)  untuk  Jenjang  Pendidikan 
+<br>SD/SDLB/MI dan SMP/SMPLB/MTs Negeri dan Swasta 
+<br>Provinsi Jawa Tengah. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:74px; top:1170px; width:186px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Namun  demikian  pembelajaran  Bahasa 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:1170px; width:236px; height:147px;"><span style="font-family: Times New Roman; font-size:9px">Jawa 
+<br>khususnya  materi  baca  tulis  aksara  jawa  dinilai  masih 
+<br>sulit  diterima  oleh  siswa.  Hal  tersebut  disebabkan  oleh 
+<br>metode  pembelajaran  yang 
+<br>terpusat  pada  guru[7], 
+<br>berbasiskan buku teks dan lembar kerja siswa[8], strategi 
+<br>pembelajaran  yang  kurang  menarik[9],  dan  kurangnya 
+<br>waktu  yang  disediakan[10].  Hal  tersebut  mengakibatkan 
+<br>kemampuan baca tulis siswa rendah[11]. Salah satu upaya 
+<br></span><span style="font-family: Times New Roman; font-size:9px">dalam  penyelesaian  masalah  pembelajaran  baca  tulis 
+<br></span><span style="font-family: Times New Roman; font-size:9px">aksara  jawa  maka  telah  dibangun  aplikasi  transliterasi 
+<br>huruf  latin  ke  aksara  jawa  interaktif  yang  mampu 
+<br>mengubah  kalimat  yang  tertulis  dengan  huruf  latin  ke 
+<br>aksara jawa. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:213px; top:1331px; width:17px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">lain 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:1377px; width:126px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">tertinggi  dibanding  aplikasi 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:1320px; width:236px; height:136px;"><span style="font-family: Times New Roman; font-size:9px">Penelitian  tentang  aplikasi  transliterasi  aksara  jawa 
+<br>telah  banyak  dilakukan,  antara 
+<br>Jawatex[12], 
+<br>Hanacaraka[13],  dan  Pandawa[14].  Dari  hasil  penelitian 
+<br>tersebut  ditunjukkan  bahwa  metode  aplikasi  Pandawa 
+<br>dengan  metode  </span><span style="font-family: Times New Roman,Italic; font-size:9px">decision  tree</span><span style="font-family: Times New Roman; font-size:9px">  memiliki  tingkat  akurasi 
+<br>yang 
+<br>lainnya.  Namun 
+<br>demikian, waktu komputasi yang dibutuhkan oleh metode 
+<br>dalam  aplikasi 
+<br>tinggi  dibandingkan 
+<br>aplikasi  yang  lain.  Hal  ini  berbanding  lurus  dengan 
+<br>banyaknya  teks  yang  ditransliterasikan.  Semakin  banyak 
+<br>teks yang ditransliterasikan maka akan semakin lama pula 
+<br>waktu pemrosesan yang diperlukan. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:128px; top:1400px; width:71px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">ini  juga  paling 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:1458px; width:236px; height:90px;"><span style="font-family: Times New Roman; font-size:9px">Oleh  karena  itu,  penelitian  ini  bertujuan  untuk 
+<br>mempersingkat waktu pemrosesan pada aplikasi Pandawa 
+<br>tanpa  perubahan  pada  algoritma  </span><span style="font-family: Times New Roman,Italic; font-size:9px">decision  tree</span><span style="font-family: Times New Roman; font-size:9px">.  Dalam 
+<br>penelitian  ini  diajukan  metode  komputasi  paralel  untuk 
+<br>paralel 
+<br>solusi 
+<br>pada 
+<br>diimplementasikan 
+<br>pemrograman  java  untuk  melakukan  proses  transliterasi 
+<br></span><span style="font-family: Times New Roman; font-size:9px">huruf latin ke aksara jawa secara simultan. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:159px; top:1504px; width:93px; height:21px;"><span style="font-family: Times New Roman; font-size:9px">tersebut.  Komputasi 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">multithread</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:92px; top:1504px; width:57px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">permasalahan 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:153px; top:1515px; width:31px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">dengan 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:74px; top:1550px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:115px; top:1573px; width:119px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">II.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">METODE PENELITIAN 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:1584px; width:236px; height:124px;"><span style="font-family: Times New Roman; font-size:9px">Desain  sistem  dari  metode  untuk  mempersingkat 
+<br>waktu komputasi dengan komputasi paralel ini terdiri dari 
+<br>tiga  bagian 
+<br>ialah:  preprocessing,  pemrosesan,  dan 
+<br>penggabungan. Bagian </span><span style="font-family: Times New Roman,Italic; font-size:9px">preprocessing</span><span style="font-family: Times New Roman; font-size:9px"> terdiri: perhitungan 
+<br>jumlah  kata  dalam  teks  yang  akan  diproses,  pembagian 
+<br>teks  masukan  menjadi  beberapa  bagian  (halaman),  dan 
+<br></span><span style="font-family: Times New Roman; font-size:9px">pembuatan 
+<br>teks. 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">Preprocessing</span><span style="font-family: Times New Roman; font-size:9px">  ini  bertujuan  untuk  membagi  teks  huruf 
+<br>latin  menjadi  beberapa  bagian  agar  dapat  dikerjakan 
+<br>secara  paralel.    Berikutnya  adalah  bagian  pemrosesan 
+<br>yaitu  proses  transliterasi  yang  dikerjakan  secara  paralel 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:108px; top:1653px; width:157px; height:9px;"><span style="font-family: Times New Roman,Italic; font-size:9px">thread</span><span style="font-family: Times New Roman; font-size:9px">  sebanyak  bagian  (halaman) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:1561px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:1725px; width:2px; height:22px;"><span style="font-family: Segoe UI; font-size:9px"> 
+<br></span><span style="font-family: Calibri; font-size:11px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:522px; top:978px; width:2px; height:9px;"><span style="font-family: Arial; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:1009px; width:236px; height:55px;"><span style="font-family: Times New Roman; font-size:9px">dengan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">thread</span><span style="font-family: Times New Roman; font-size:9px">  yang  telah  dibuat.  Terakhir  adalah  bagian 
+<br>penggabungan,  dimana  pada  bagian  ini  hasil  transliterasi 
+<br>yang  berupa  aksara  jawa  akan  digabungkan  kembali  dan 
+<br>ditampilan  ke  pengguna.  Diagram  desain  sistem  seperti 
+<br>ditunjukkan pada gambar 1. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:322px; top:1067px; width:5px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:375px; top:1277px; width:96px; height:19px;"><span style="font-family: Times New Roman; font-size:9px">Gambar 1. Desain Sistem  
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:463px; top:1267px; width:2px; height:11px;"><span style="font-family: Calibri; font-size:11px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:1297px; width:128px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">A.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Penghitungan Jumlah Kata 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:1309px; width:236px; height:67px;"><span style="font-family: Times New Roman; font-size:9px">Penghitungan  kata  dilakukan  dengan  memecah  kata 
+<br>berdasarkan  karakter  spasi.  Kemudian  disimpan  dalam 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">array</span><span style="font-family: Times New Roman; font-size:9px">.  Selanjutnya  jumlah  kata  didapatkan  dari  panjang 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">array</span><span style="font-family: Times New Roman; font-size:9px">. 
+<br> 
+<br>B.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Penghitungan dan Pembagian Halaman 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:1378px; width:236px; height:182px;"><span style="font-family: Times New Roman; font-size:9px">Proses  penghitungan  jumlah  halaman  atau  pembagi 
+<br>dilakukan  untuk  menentukan  jumlah  </span><span style="font-family: Times New Roman,Italic; font-size:9px">thread</span><span style="font-family: Times New Roman; font-size:9px">  yang  akan 
+<br>dibuat  sehingga  banyaknya  halaman  sama  dengan 
+<br>banyaknya  </span><span style="font-family: Times New Roman,Italic; font-size:9px">thread</span><span style="font-family: Times New Roman; font-size:9px">  yang  dibuat.  Teks  dibagi  setiap  380 
+<br>kata  (diasumsikan  sebagai 
+<br>jumlah  kata  dalam  satu 
+<br>halaman).  Pembagian  dilakukan  berdasarkan  titik  karena 
+<br>dalam  aturan  penulisan  aksara  Jawa  terdapat  aturan 
+<br>pasangan  yang  mana  pasangan  memiliki  fungsi  untuk 
+<br>menghubungkan  suku  kata  yang  berakhiran  konsonan 
+<br>dengan  suku  kata  berikutnya.  Oleh  karena  itu  tidak  bisa 
+<br>sembarangan  memisahkan  kata-perkatanya  karena  akan 
+<br>menyebabkan  terjadinya  kekeliruan  pada  hasil  yang 
+<br>diperoleh dan akan menyebabkan penurunan pada tingkat 
+<br></span><span style="font-family: Times New Roman; font-size:9px">akurasinya.  Jika  karakter  terakhir  pada  kata  terakhir  di 
+<br>sebuah  halaman  bukan  titik,  maka  akan  dicari  kata 
+<br>selanjutnya yang memiliki karakter terakhir titik. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:1562px; width:236px; height:67px;"><span style="font-family: Times New Roman; font-size:9px">Proses pencarian  karakter titik pada  kata selanjutnya 
+<br>ini  akan  menghasilkan  batas  baru  yang  menjadikan  satu 
+<br>halaman  tidak  persis  berjumlah  380  kata.  Dan  proses  ini 
+<br>juga  menyebabkan  kemungkinan  bahwa  jumlah  halaman 
+<br>tidak  sama  dengan  jumlah  array  halaman  yang  telah 
+<br>dibuat sebelumnya. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:322px; top:1631px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:1642px; width:95px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">C.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Pembuatan Thread 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:1654px; width:236px; height:55px;"><span style="font-family: Times New Roman; font-size:9px">Pembuatan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">thread</span><span style="font-family: Times New Roman; font-size:9px">  dilakukan  setelah  mendapatkan 
+<br></span><span style="font-family: Times New Roman; font-size:9px">jumlah  halaman.  Setelah  jumlah  halaman  didapatkan 
+<br>maka  dilakukan  perulangan  berdasarkan  indeks  halaman 
+<br>dari  halaman  pertama  sampai  halaman  terakhir.  Setelah 
+<br>thread dibuat maka </span><span style="font-family: Times New Roman,Italic; font-size:9px">thread</span><span style="font-family: Times New Roman; font-size:9px"> akan dihidupkan (</span><span style="font-family: Times New Roman,Italic; font-size:9px">start</span><span style="font-family: Times New Roman; font-size:9px">). 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:517px; top:1724px; width:12px; height:9px;"><span style="font-family: Calibri; font-size:9px">30 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:50px; top:994px; width:236px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:50px; top:990px; width:236px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:990px; width:4px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:994px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:290px; top:994px; width:237px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:290px; top:990px; width:237px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:51px; top:1718px; width:450px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:51px; top:1719px; width:450px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:501px; top:1718px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:501px; top:1719px; width:4px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:505px; top:1718px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:505px; top:1719px; width:27px; height:3px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:381px; top:1077px; width:80px; height:198px;"></div><span style="position:absolute; border: gray 1px solid; left:0px; top:1833px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:1833px;"><a name="3">Page 3</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:62px; top:1871px; width:129px; height:9px;"><span style="font-family: Segoe UI; font-size:9px">JOIN (Jurnal Online Informatika) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:1899px; width:2px; height:9px;"><span style="font-family: Calibri; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:74px; top:1909px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:1921px; width:208px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">D.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Proses Transliterasi Menggunakan </span><span style="font-family: Times New Roman,Italic; font-size:9px">Multithread</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:74px; top:1932px; width:28px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Proses 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:112px; top:1932px; width:47px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">selanjutnya 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:169px; top:1932px; width:65px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">adalah  proses 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:1932px; width:236px; height:67px;"><span style="font-family: Times New Roman; font-size:9px">transliterasi 
+<br>menggunakan  metode  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Desicion  Tree</span><span style="font-family: Times New Roman; font-size:9px">  secara  paralel. 
+<br>Pemrosesan  transliterasi  akan  dikerjakan  secara  paralel 
+<br>menggunakan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">thread</span><span style="font-family: Times New Roman; font-size:9px">  yang  jumlahnya  dibuat  sebanyak 
+<br>halaman dokumen seperti ditunjukkan pada gambar 2.  
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:435px; top:1871px; width:100px; height:21px;"><span style="font-family: Segoe UI; font-size:9px">ISSN 2527-1682 (Print)</span><span style="font-family: Arial; font-size:9px"> 
+<br></span><span style="font-family: Segoe UI; font-size:9px">ISSN 2527-9165 (Online)</span><span style="font-family: Arial; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:276px; top:2179px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:99px; top:2187px; width:152px; height:19px;"><span style="font-family: Times New Roman; font-size:9px">Gambar 2. Alur Kerja Komputasi Paralel  
+<br>Menggunakan Multithread 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:2208px; width:236px; height:78px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br>Beberapa  </span><span style="font-family: Times New Roman,Italic; font-size:9px">thread</span><span style="font-family: Times New Roman; font-size:9px">  yang  jumlahnya  sesuai  dengan 
+<br>jumlah  halaman.  Komputasi  paralel  yang  digunakan 
+<br>adalah  model komputasi  </span><span style="font-family: Times New Roman,Italic; font-size:9px">single instruction, multiple data 
+<br>stream</span><span style="font-family: Times New Roman; font-size:9px">  (SIMD)  yang  mana  adalah  salah  satu  klasifikasi 
+<br>komputasi paralel klasifikasi Flynn[15]. 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:103px; top:2289px; width:141px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">III.</span><span style="font-family: Arial; font-size:9px"> </span><span style="font-family: Times New Roman; font-size:9px">HASIL DAN PEMBAHASAN 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:2300px; width:236px; height:44px;"><span style="font-family: Times New Roman; font-size:9px">Pada bagian ini akan akan dibahas proses-proses yang 
+<br>terdapat  dalam  desain  secara  logis  algoritmik.  Kemudian 
+<br>dipaparkan  data-data  hasil  pengujian  untuk  menguji 
+<br>performa metode yang diajukan. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:2346px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:2358px; width:128px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">A.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Penghitungan Jumlah Kata 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:2369px; width:28px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Proses 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:110px; top:2369px; width:56px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">penghitungan 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:2369px; width:236px; height:44px;"><span style="font-family: Times New Roman; font-size:9px">setelah 
+<br>diinputkan teks dengan huruf latin. </span><span style="font-family: Times New Roman,Italic; font-size:9px">Flowchar</span><span style="font-family: Times New Roman; font-size:9px">t dari proses 
+<br>ini dapat dilihat pada gambar 3. Berikut adalah algoritma 
+<br>proses penghitungan jumlah kata.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:207px; top:2369px; width:44px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">dijalankan 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:177px; top:2369px; width:19px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">kata 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:74px; top:2415px; width:77px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">1.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Teks masukan 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:74px; top:2427px; width:218px; height:55px;"><span style="font-family: Times New Roman; font-size:9px">Teks dimasukkan ke dalam teks area. Kemudian 
+<br>program  akan  melakukan  pemecahan  teks  yang 
+<br>dimasukkan  setelah  pengguna  menekan  tombol 
+<br>transliterasi. 
+<br>2.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Pemecahan Teks 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:92px; top:2484px; width:200px; height:44px;"><span style="font-family: Times New Roman; font-size:9px">Pemecahan  teks  dilakukan  berdasarkan  spasi 
+<br>menggunakan  fungsi  split  dan  disimpan  ke 
+<br>dalam sebuah array. 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:333px; top:2069px; width:178px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Gambar 3. Flowchart Penghitungan Jumlah Kata 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:464px; top:2061px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:2080px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:322px; top:2091px; width:128px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">3.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Penghitungan Jumlah Kata 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:340px; top:2102px; width:200px; height:22px;"><span style="font-family: Times New Roman; font-size:9px">Jumlah  kata  didapatkan  dari  panjang  </span><span style="font-family: Times New Roman,Italic; font-size:9px">array</span><span style="font-family: Calibri; font-size:11px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px">dengan menggunakan fungsi </span><span style="font-family: Courier New; font-size:9px">array.length</span><span style="font-family: Times New Roman; font-size:9px">.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:2126px; width:236px; height:56px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br>B.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Penghitungan dan Pembagian Halaman 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">Flowchart</span><span style="font-family: Times New Roman; font-size:9px">  dari  proses  penghitungan  dan  pembagian 
+<br></span><span style="font-family: Times New Roman; font-size:9px">halaman ini dapat dilihat pada  gambar 4. Berikut  adalah 
+<br></span><span style="font-family: Times New Roman; font-size:9px">penjelasan dari diagram alur pada gambar 4: 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:322px; top:2184px; width:132px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">1.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Pembagian teks dengan 380 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:340px; top:2195px; width:200px; height:44px;"><span style="font-family: Times New Roman; font-size:9px">Jumlah  kata  yang  telah  didapatkan  dari  proses 
+<br>pemecahan  kata  (splitting)  akan  dibagi  dengan 
+<br>380,  yang  diasumsikan  sebagai  rata-rata  jumlah 
+<br>kata dalam satu halaman dokumen. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:322px; top:2241px; width:67px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">2.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Pembulatan 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:372px; top:2264px; width:44px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">dibulatkan 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:340px; top:2253px; width:200px; height:56px;"><span style="font-family: Times New Roman; font-size:9px">Jika  pembagian  tidak  habis  dibagi  380  maka 
+<br>ini 
+<br>keatas.  Pembulatan 
+<br>akan 
+<br>menggunakan  fungsi  </span><span style="font-family: Courier New; font-size:9px">divide()</span><span style="font-family: Times New Roman; font-size:9px">  yang 
+<br>telah 
+<br>disediakan  oleh  Java  dengan  mode  pembulatan 
+<br>(</span><span style="font-family: Times New Roman,Italic; font-size:9px">rounding mode</span><span style="font-family: Times New Roman; font-size:9px">) </span><span style="font-family: Courier New; font-size:9px">CEILING</span><span style="font-family: Times New Roman; font-size:9px"> atau keatas.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:322px; top:2312px; width:153px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">3.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Pembagian teks berdasarkan titik 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:340px; top:2323px; width:200px; height:102px;"><span style="font-family: Times New Roman; font-size:9px">Pembagian  teks  menjadi  halaman  dilakukan 
+<br>setelah tanda  baca titik,  karena  penulisan aksara 
+<br>jawa  berdasarkan  suku  kata.  Jika  suku  kata 
+<br>berakhiran  huruf  konsonan  dan  bertemu  huruf 
+<br>konsonan  di  awal  suku  kata  berikutnya  maka 
+<br>aksara  pasangan.  Maka  untuk 
+<br>digunakan 
+<br>pemotongan 
+<br>teks  harus  dipastikan  di  akhir 
+<br>kalimat  yang  ditandai  dengan  karakter  titik 
+<br></span><span style="font-family: Times New Roman; font-size:9px">setelah kata terakhir pada kalimat tersebut. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:322px; top:2427px; width:74px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">4.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Penyimpanan 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:406px; top:2427px; width:134px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">teks  ke  dalam  </span><span style="font-family: Times New Roman,Italic; font-size:9px">array</span><span style="font-family: Times New Roman; font-size:9px">  dan 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:340px; top:2438px; width:200px; height:136px;"><span style="font-family: Times New Roman; font-size:9px">penghapusan </span><span style="font-family: Times New Roman,Italic; font-size:9px">array</span><span style="font-family: Times New Roman; font-size:9px"> kosong 
+<br>Hasil  pembagian  teks  disimpan  dalam  </span><span style="font-family: Times New Roman,Italic; font-size:9px">array</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">index</span><span style="font-family: Times New Roman; font-size:9px">  sesuai  dengan  proses 
+<br>dengan  urutan 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">array</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br>Panjang 
+<br>pemotongan 
+<br>teks. 
+<br>(</span><span style="font-family: Courier New; font-size:9px">array.length</span><span style="font-family: Times New Roman; font-size:9px">) 
+<br>untuk 
+<br>digunakan 
+<br>yang 
+<br>penyimpanan hasil pembagian teks menunjukkan 
+<br>akan 
+<br>jumlah 
+<br>ditransliterasikan.  Setelah  proses  pembagian 
+<br>halaman  selesai  dan  setiap  halaman 
+<br>telah 
+<br>berakhiran  titik,  array  yang  digunakan  sebagai 
+<br></span><span style="font-family: Times New Roman; font-size:9px">penyimpan  teks  ini  digunakan  sebagai  acuan 
+<br>untuk  penghapusan  array  kosong.  Selanjutnya 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:432px; top:2508px; width:39px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">dokumen 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:383px; top:2508px; width:36px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">halaman 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:485px; top:2508px; width:21px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">yang 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:62px; top:2593px; width:382px; height:33px;"><span style="font-family: Segoe UI; font-size:9px">Implementasi Komputasi Paralel untuk Optimalisasi Komputasi pada Aplikasi Transliterasi Huruf  
+<br></span><span style="font-family: Segoe UI; font-size:9px">Latin ke Aksara Jawa 
+<br></span><span style="font-family: Segoe UI; font-size:9px">(A’la Syauqi, Anis Nurul Hidayah)</span><span style="font-family: Segoe UI; font-size:6px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:522px; top:2593px; width:12px; height:9px;"><span style="font-family: Calibri; font-size:9px">31 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:2629px; width:2px; height:11px;"><span style="font-family: Calibri; font-size:11px"> 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:55px; top:1896px; width:238px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:55px; top:1893px; width:238px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:294px; top:1893px; width:4px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:294px; top:1896px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:298px; top:1896px; width:239px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:298px; top:1893px; width:239px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:56px; top:2586px; width:450px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:56px; top:2588px; width:450px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:506px; top:2586px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:506px; top:2588px; width:4px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:511px; top:2586px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:511px; top:2588px; width:27px; height:3px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:379px; top:1908px; width:85px; height:160px;"><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:388px; top:1969px; width:66px; height:4px;"><span style="font-family: Arial; font-size:4px">Pecah teks simpan dalam array
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:391px; top:1997px; width:60px; height:10px;"><span style="font-family: Arial; font-size:4px">Hitung panjang array,
+<br>Jumlah kata = panjang array
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:416px; top:1915px; width:10px; height:4px;"><span style="font-family: Arial; font-size:4px">Start
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:416px; top:1942px; width:10px; height:4px;"><span style="font-family: Arial; font-size:4px">Teks
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:410px; top:2028px; width:23px; height:10px;"><span style="font-family: Arial; font-size:4px">Tampilkan 
+<br>hasil
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:417px; top:2057px; width:8px; height:4px;"><span style="font-family: Arial; font-size:4px">End
+<br></span></div><span style="position:absolute; border: black 1px solid; left:400px; top:1909px; width:42px; height:16px;"></span>
+<span style="position:absolute; border: black 1px solid; left:400px; top:1909px; width:42px; height:16px;"></span>
+<span style="position:absolute; border: black 1px solid; left:396px; top:1936px; width:50px; height:16px;"></span>
+<span style="position:absolute; border: black 1px solid; left:396px; top:1936px; width:50px; height:16px;"></span>
+<span style="position:absolute; border: black 1px solid; left:379px; top:1963px; width:83px; height:16px;"></span>
+<span style="position:absolute; border: black 1px solid; left:379px; top:1963px; width:83px; height:16px;"></span>
+<span style="position:absolute; border: black 1px solid; left:383px; top:1991px; width:75px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:383px; top:1991px; width:75px; height:21px;"></span>
+<span style="position:absolute; border: black 1px solid; left:396px; top:2025px; width:50px; height:16px;"></span>
+<span style="position:absolute; border: black 1px solid; left:396px; top:2025px; width:50px; height:16px;"></span>
+<span style="position:absolute; border: black 1px solid; left:400px; top:2051px; width:42px; height:16px;"></span>
+<span style="position:absolute; border: black 1px solid; left:400px; top:2051px; width:42px; height:16px;"></span>
+<span style="position:absolute; border: black 1px solid; left:421px; top:1925px; width:0px; height:7px;"></span>
+<span style="position:absolute; border: black 1px solid; left:419px; top:1933px; width:3px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:421px; top:1952px; width:0px; height:7px;"></span>
+<span style="position:absolute; border: black 1px solid; left:419px; top:1960px; width:3px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:421px; top:1979px; width:0px; height:9px;"></span>
+<span style="position:absolute; border: black 1px solid; left:419px; top:1988px; width:3px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:421px; top:2013px; width:0px; height:9px;"></span>
+<span style="position:absolute; border: black 1px solid; left:419px; top:2022px; width:3px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:421px; top:2041px; width:0px; height:6px;"></span>
+<span style="position:absolute; border: black 1px solid; left:419px; top:2048px; width:3px; height:3px;"></span>
+</div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:72px; top:2000px; width:203px; height:186px;"></div><span style="position:absolute; border: gray 1px solid; left:0px; top:2725px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:2725px;"><a name="4">Page 4</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:2763px; width:182px; height:9px;"><span style="font-family: Segoe UI; font-size:9px">JOIN | Volume 3 No. 1 | Juni 2018 : 29-35</span><span style="font-family: Segoe UI; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:522px; top:2762px; width:2px; height:9px;"><span style="font-family: Arial; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:92px; top:2793px; width:200px; height:56px;"><span style="font-family: Times New Roman; font-size:9px">dijalankan  proses  transliterasi  secara  paralel 
+<br>menggunakan </span><span style="font-family: Times New Roman,Italic; font-size:9px">multithread</span><span style="font-family: Times New Roman; font-size:9px"> dengan jumlah thread 
+<br>sesuai  dengan  panjang  </span><span style="font-family: Times New Roman,Italic; font-size:9px">array</span><span style="font-family: Times New Roman; font-size:9px">  (</span><span style="font-family: Courier New; font-size:9px">array.length</span><span style="font-family: Times New Roman; font-size:9px">) 
+<br>yang memuat teks. 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:63px; top:3135px; width:222px; height:20px;"><span style="font-family: Times New Roman; font-size:9px">Gambar 4. Flowchart Penghitungan dan Pembagian Halaman 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:3156px; width:187px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">C.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Pembuatan </span><span style="font-family: Times New Roman,Italic; font-size:9px">thread</span><span style="font-family: Times New Roman; font-size:9px"> dan proses transliterasi 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:3168px; width:50px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Pemrosesan 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:3168px; width:236px; height:91px;"><span style="font-family: Times New Roman; font-size:9px">transliterasi  dilakukan  secara  paralel 
+<br>dengan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">multithread</span><span style="font-family: Times New Roman; font-size:9px">. 
+<br>thread  yang  dibuat 
+<br>Jumlah 
+<br>didasarkan  pada  panjang  array  (</span><span style="font-family: Courier New; font-size:9px">array.length</span><span style="font-family: Times New Roman; font-size:9px">)  yang 
+<br>digunakan  untuk  penyimpanan  teks.  Adapun  algoritma 
+<br>dalam  proses  ini  seperti  ditunjukkan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">flowchart</span><span style="font-family: Times New Roman; font-size:9px">  pada 
+<br>gambar  5.  Dari  gambar  tersebut  dapat  dilihat  bahwa 
+<br>proses  transliterasi  dengan  multithread  dengan  algoritma 
+<br>sebagai berikut: 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:74px; top:3260px; width:61px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">1.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Penentuan 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:148px; top:3261px; width:45px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">banyaknya 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:92px; top:3261px; width:200px; height:33px;"><span style="font-family: Times New Roman; font-size:9px">dalam 
+<br>pembuatan  thread  berdasarkan  panjang  </span><span style="font-family: Times New Roman,Italic; font-size:9px">array</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br>(</span><span style="font-family: Courier New; font-size:9px">array.length</span><span style="font-family: Times New Roman; font-size:9px">) yang memuat teks.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:206px; top:3261px; width:46px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">perulangan 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:74px; top:3296px; width:218px; height:33px;"><span style="font-family: Times New Roman; font-size:9px">2.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Thread  yang  telah  dibuat  kemudian  dijalankan 
+<br></span><span style="font-family: Times New Roman; font-size:9px">(</span><span style="font-family: Times New Roman,Italic; font-size:9px">start</span><span style="font-family: Times New Roman; font-size:9px">)  dan  digunakan  untuk  mentransliterasikan 
+<br>teks. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:74px; top:3330px; width:218px; height:44px;"><span style="font-family: Times New Roman; font-size:9px">3.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Setelah  transliterasi  selesai  maka  teks  hasil  dari 
+<br>beberapa  </span><span style="font-family: Times New Roman,Italic; font-size:9px">thread</span><span style="font-family: Times New Roman; font-size:9px">  akan  digabungkan  kembali  dan 
+<br>proses 
+<br>ditampilkan 
+<br>transliterasi. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:155px; top:3353px; width:32px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">sebagai 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:200px; top:3353px; width:21px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">hasil 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:234px; top:3353px; width:18px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">dari 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:3353px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:346px; top:3105px; width:154px; height:30px;"><span style="font-family: Times New Roman; font-size:9px">Gambar 5. Flowchart Proses Transliterasi  
+<br>Menggunakan Multithread 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:514px; top:3096px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:272px; top:3126px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:3137px; width:60px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">D.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Pengujian 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:3149px; width:236px; height:55px;"><span style="font-family: Times New Roman; font-size:9px">Dalam  pengujian  digunakan  data  teks  latin  berbahasa 
+<br>jawa  yang  diambil  dari  website  www.sastra.org,  yang 
+<br>dikelompokkan  menjadi  10  halaman,  20  halaman,  30 
+<br>halaman  dan  seterusnya  sampai  100  halaman  dimana 
+<br>setiap kelompok tersebut dijadikan satu dokumen (</span><span style="font-family: Times New Roman,Italic; font-size:9px">file</span><span style="font-family: Times New Roman; font-size:9px">). 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:319px; top:3206px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:367px; top:3342px; width:109px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Gambar 6. Tampilan Aplikasi 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:519px; top:3333px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:3364px; width:238px; height:136px;"><span style="font-family: Times New Roman; font-size:9px">Adapun tahap-tahap pengujian sebagai berikut:  mula-
+<br>mula  aplikasi  dijalankan.  Kemudian  ketika  aplikasi  telah 
+<br>berjalan  seperti  ditunjukkan  pada  gambar  6,  teks  uji 
+<br>dalam  bentuk  dokumen  (</span><span style="font-family: Times New Roman,Italic; font-size:9px">file</span><span style="font-family: Times New Roman; font-size:9px">)  yang  telah  disiapkan 
+<br>dimasukkan ke dalam </span><span style="font-family: Times New Roman,Italic; font-size:9px">text area</span><span style="font-family: Times New Roman; font-size:9px"> </span><span style="font-family: Times New Roman,Italic; font-size:9px">input</span><span style="font-family: Times New Roman; font-size:9px"> dengan klik tombol 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">input  file</span><span style="font-family: Times New Roman; font-size:9px">  kemudian  dicari  nama  dan  di  folder  mana  file 
+<br>yang  akan  digunakan  berada.  Selanjutnya  setelah  tombol  
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">transliterasi</span><span style="font-family: Times New Roman; font-size:9px">  ditekan  maka  proses 
+<br>transliterasi  akan 
+<br>dimulai  dan  hasil  alih  aksara  akan  dimunculkan  di  </span><span style="font-family: Times New Roman,Italic; font-size:9px">text 
+<br>area output</span><span style="font-family: Times New Roman; font-size:9px">. Pengujian dilakukan dengan cara yang sama 
+<br>terhadap  teks  10  halaman,  20  halaman,  sampai  dengan 
+<br>100 halaman. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:517px; top:3508px; width:12px; height:9px;"><span style="font-family: Calibri; font-size:9px">32 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:2781px; width:2px; height:11px;"><span style="font-family: Calibri; font-size:11px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:3509px; width:2px; height:22px;"><span style="font-family: Segoe UI; font-size:9px"> 
+<br></span><span style="font-family: Calibri; font-size:11px"> 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:50px; top:2778px; width:236px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:50px; top:2774px; width:236px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:2774px; width:4px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:2778px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:290px; top:2778px; width:237px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:290px; top:2774px; width:237px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:51px; top:3502px; width:450px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:51px; top:3503px; width:450px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:501px; top:3502px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:501px; top:3503px; width:4px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:505px; top:3502px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:505px; top:3503px; width:27px; height:3px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:75px; top:2850px; width:196px; height:283px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:330px; top:2792px; width:183px; height:311px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:325px; top:3216px; width:193px; height:124px;"></div><span style="position:absolute; border: gray 1px solid; left:0px; top:3617px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:3617px;"><a name="5">Page 5</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:62px; top:3655px; width:129px; height:9px;"><span style="font-family: Segoe UI; font-size:9px">JOIN (Jurnal Online Informatika) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:435px; top:3655px; width:100px; height:21px;"><span style="font-family: Segoe UI; font-size:9px">ISSN 2527-1682 (Print)</span><span style="font-family: Arial; font-size:9px"> 
+<br></span><span style="font-family: Segoe UI; font-size:9px">ISSN 2527-9165 (Online)</span><span style="font-family: Arial; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:319px; top:3693px; width:222px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Pengujian  selanjutnya  dilakukan  pada  komputer 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:3705px; width:142px; height:32px;"><span style="font-family: Times New Roman; font-size:9px">dengan spesifikasi sebagai berikut: 
+<br>Sistem Operasi 
+<br>Processor 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:375px; top:3716px; width:140px; height:21px;"><span style="font-family: Times New Roman; font-size:9px">:   Windows 10 Pro 64-bit 
+<br>:  Intel(R) Core(TM) i5-4460 CPU 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:3751px; width:36px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Memory 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:375px; top:3751px; width:50px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">:  16384MB 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:382px; top:3739px; width:85px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">@3.20GHz (4CPUs) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:3762px; width:236px; height:44px;"><span style="font-family: Times New Roman; font-size:9px">Data  hasil  pengujian  kedua  yang  disajikan  pada  tabel 
+<br>2  menunjukkan  bahwa  dengan  dokumen  100  halaman 
+<br>maka  selisih  waktu  pemrosesan  sekuensal  dengan 
+<br>multithread mencapai 28, 3 jam. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:503px; top:3841px; width:26px; height:29px;"><span style="font-family: Times New Roman; font-size:9px">Selisih 
+<br>Waktu 
+<br>(detik) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:335px; top:3820px; width:177px; height:159px;"><span style="font-family: Times New Roman; font-size:9px">Tabel 2 Hasil Pengujian pada Komputer dengan  
+<br>Prosesor Empat Inti dan Memory 16 GB 
+<br> 
+<br>Banyak 
+<br>Halaman 
+<br>10 
+<br>20 
+<br>30 
+<br>40 
+<br>50 
+<br>60 
+<br>70 
+<br>80 
+<br>90 
+<br>100 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:311px; top:3852px; width:229px; height:151px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br>No 
+<br>1 
+<br>2 
+<br>3 
+<br>4 
+<br>5 
+<br>6 
+<br>7 
+<br>8 
+<br>9 
+<br>10 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br>Tampilan  grafik  dari  data  hasil  pengujian  tabel  2 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:384px; top:3841px; width:98px; height:138px;"><span style="font-family: Times New Roman; font-size:9px">Waktu Komputasi (detik) 
+<br>Dengan 
+<br>Multithread 
+<br>81,2 
+<br>186,5 
+<br>314,6 
+<br>336,4 
+<br>539,5 
+<br>651,6 
+<br>727,6 
+<br>936,5 
+<br>1211,0 
+<br>1289,0 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:442px; top:3852px; width:47px; height:127px;"><span style="font-family: Times New Roman; font-size:9px">Tanpa 
+<br>Multithread 
+<br>895,3 
+<br>3715,0 
+<br>11242,0 
+<br>13146,0 
+<br>26501,0 
+<br>35618,0 
+<br>49033,0 
+<br>55396,0 
+<br>78647,0 
+<br>103060,0 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:499px; top:3873px; width:35px; height:106px;"><span style="font-family: Times New Roman; font-size:9px">814,1 
+<br>3528,5 
+<br>10927,4 
+<br>12809,6 
+<br>25961,5 
+<br>34966,4 
+<br>48305,4 
+<br>54459,5 
+<br>77436,0 
+<br>101771,0 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:4005px; width:99px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">disajikan pada gambar 8 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:319px; top:3808px; width:5px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:319px; top:4016px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:3693px; width:236px; height:102px;"><span style="font-family: Times New Roman; font-size:9px">Pengujian  ini  diftekankan  pada  perbandingan  waktu 
+<br>yang diperlukan pada dua proses komputasi yang berbeda, 
+<br>yaitu  menggunakan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">multithread</span><span style="font-family: Times New Roman; font-size:9px">  dan  tanpa  </span><span style="font-family: Times New Roman,Italic; font-size:9px">multithread</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br>(sekuensial)  dengan  pencatatan  waktu  yang  digunakan. 
+<br>Waktu  komputasi  yang  digunakan  dicatat  kemudian 
+<br>ditabelkan  sehingga  diperoleh  perbandingan  catatan 
+<br>waktunya. 
+<br> 
+<br>E.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Hasil 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:3797px; width:222px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Pengujian  pertama  digunakan  komputer  dengan 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:3808px; width:110px; height:32px;"><span style="font-family: Times New Roman; font-size:9px">spesifikasi sebagai berikut: 
+<br>Sistem Operasi 
+<br>Processor 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:127px; top:3820px; width:149px; height:21px;"><span style="font-family: Times New Roman; font-size:9px">:  Windows 7 Home Premium 32-bit 
+<br>:  Intel(R) Core(TM) i5-2410M CPU 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:134px; top:3843px; width:85px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">@2.30GHz (4CPUs) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:127px; top:3854px; width:45px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">:  4096MB 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:3854px; width:236px; height:44px;"><span style="font-family: Times New Roman; font-size:9px">Memory 
+<br>Adapun  hasil  pengujian  pertama  ini  seperti  ditunjukkan 
+<br>pada tabel 1 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:3900px; width:179px; height:19px;"><span style="font-family: Times New Roman; font-size:9px">Tabel 1. Hasil Pengujian pada Komputer dengan  
+<br>Prosesor Empat Inti dan Memory 4 GB  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:63px; top:3932px; width:13px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">No 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:86px; top:3927px; width:34px; height:19px;"><span style="font-family: Times New Roman; font-size:9px">Banyak 
+<br>Halaman 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:64px; top:3956px; width:11px; height:106px;"><span style="font-family: Times New Roman; font-size:9px">1 
+<br>2 
+<br>3 
+<br>4 
+<br>5 
+<br>6 
+<br>7 
+<br>8 
+<br>9 
+<br>10 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:96px; top:3956px; width:15px; height:106px;"><span style="font-family: Times New Roman; font-size:9px">10 
+<br>20 
+<br>30 
+<br>40 
+<br>50 
+<br>60 
+<br>70 
+<br>80 
+<br>90 
+<br>100 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:190px; top:3933px; width:44px; height:19px;"><span style="font-family: Times New Roman; font-size:9px">Tanpa 
+<br></span><span style="font-family: Times New Roman; font-size:9px">Multithread 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:130px; top:3921px; width:110px; height:140px;"><span style="font-family: Times New Roman; font-size:9px">Waktu Komputasi (detik) 
+<br>Dengan 
+<br></span><span style="font-family: Times New Roman; font-size:9px">Multithread 
+<br></span><span style="font-family: Times New Roman; font-size:9px">239,4 
+<br>482,8 
+<br>859,5 
+<br>780,9 
+<br>1651,0 
+<br>2583,0  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Out of Memory 
+<br></span><span style="font-family: Times New Roman; font-size:9px">2704,0  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Out of Memory 
+<br></span><span style="font-family: Times New Roman; font-size:9px">3666,0  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Out of Memory 
+<br></span><span style="font-family: Times New Roman; font-size:9px">5407,0  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Out of Memory 
+<br></span><span style="font-family: Times New Roman; font-size:9px">5849,0  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Out of Memory 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:206px; top:3922px; width:80px; height:140px;"><span style="font-family: Times New Roman; font-size:9px">Selisih 
+<br>Waktu 
+<br></span><span style="font-family: Times New Roman; font-size:9px">(detik) 
+<br></span><span style="font-family: Times New Roman; font-size:9px">2450,6 
+<br>2690,0 
+<br>16553,2 
+<br>17036,0 
+<br>40862,5 
+<br>41722,0 
+<br>61913,0 
+<br>61132,1 
+<br>121080,0  119429,0 
+<br>- 
+<br>- 
+<br>- 
+<br>- 
+<br>- 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:4076px; width:236px; height:113px;"><span style="font-family: Times New Roman; font-size:9px">Dari  tabel  1  dapat  dilihat  proses  tanpa  multithread 
+<br>pada  teks  60  halaman  sampai  100  halaman  mengalami 
+<br>kekurangan  memori  sehingga  proses  tidak  selesai,  atau 
+<br>terhenti  saat  proses  berlangsung.  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Error</span><span style="font-family: Times New Roman; font-size:9px">  tersebut  terjadi 
+<br>karena  tidak  cukupnya  memori  untuk  mengalokasikan 
+<br>objek  dalam  java  </span><span style="font-family: Times New Roman,Italic; font-size:9px">heap</span><span style="font-family: Times New Roman; font-size:9px">.  Ketika  sebuah  program  java 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">java  virtual  machine</span><span style="font-family: Times New Roman; font-size:9px">  (JVM)  mendapatkan 
+<br>dimulai, 
+<br>sejumlah  memori  dari  sistem  operasi.  Dari  tabel  1 
+<br>dihasilkan grafik seperti pada gambar 7. 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:341px; top:4186px; width:164px; height:30px;"><span style="font-family: Times New Roman; font-size:9px">Gambar 8. Grafik Waktu Komputasi dengan  
+<br>Prosesor 4 Inti dan Memori 16 GB 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:511px; top:4177px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:319px; top:4218px; width:221px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Pengujian  ketiga  dilakukan  pada  komputer  dengan 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:4230px; width:107px; height:32px;"><span style="font-family: Times New Roman; font-size:9px">spesifikasi sebagai berikut 
+<br>Sistem Operasi 
+<br>Processor 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:375px; top:4241px; width:133px; height:32px;"><span style="font-family: Times New Roman; font-size:9px">:  Windows 7 Professional 64-bit 
+<br>:  Intel(R)  Core(TM) 
+<br>@3.40GHz (8 CPUs) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:477px; top:4253px; width:63px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">i7-6700  CPU 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:4276px; width:36px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Memory 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:375px; top:4276px; width:75px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">:   8192MB RAM  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:4287px; width:236px; height:78px;"><span style="font-family: Times New Roman; font-size:9px">Data  hasil  pengujian  ketiga  disajikan  pada  tabel  3. 
+<br>Dari data tersebut ditunjukkan bahwa dengan prosesor inti 
+<br>8  dan  memori  8  GB  selisih  waktu  komputasi  terbesar 
+<br></span><span style="font-family: Times New Roman; font-size:9px">antara  pemrosesan  dengan  multithread  dan 
+<br>tanpa 
+<br>multithread  yang  terjadi  pada  dokumen  100  halaman 
+<br>menunjukkan  58658,8  detik.  Dimana  hasil  ini  hampir 
+<br>setengahnya  dari  selisih  waktu  komputasi  yang  terjadi 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:92px; top:4349px; width:164px; height:19px;"><span style="font-family: Times New Roman; font-size:9px">Gambar 7. Grafik Waktu Komputasi dengan 
+<br>Prosesor Empat Inti dan Memori 4 GB RAM 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:257px; top:4340px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:62px; top:4377px; width:382px; height:33px;"><span style="font-family: Segoe UI; font-size:9px">Implementasi Komputasi Paralel untuk Optimalisasi Komputasi pada Aplikasi Transliterasi Huruf  
+<br></span><span style="font-family: Segoe UI; font-size:9px">Latin ke Aksara Jawa 
+<br></span><span style="font-family: Segoe UI; font-size:9px">(A’la Syauqi, Anis Nurul Hidayah)</span><span style="font-family: Segoe UI; font-size:6px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:522px; top:4376px; width:12px; height:9px;"><span style="font-family: Calibri; font-size:9px">33 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:3683px; width:2px; height:9px;"><span style="font-family: Calibri; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:4064px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:4412px; width:2px; height:11px;"><span style="font-family: Calibri; font-size:11px"> 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:55px; top:3680px; width:238px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:55px; top:3677px; width:238px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:294px; top:3677px; width:4px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:294px; top:3680px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:298px; top:3680px; width:239px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:298px; top:3677px; width:239px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:56px; top:4370px; width:450px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:56px; top:4371px; width:450px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:506px; top:4370px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:506px; top:4371px; width:4px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:511px; top:4370px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:511px; top:4371px; width:27px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:57px; top:3920px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:81px; top:3920px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:81px; top:3920px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:124px; top:3920px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:125px; top:3920px; width:120px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:245px; top:3920px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:245px; top:3920px; width:44px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:124px; top:3931px; width:53px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:177px; top:3931px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:178px; top:3931px; width:66px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:57px; top:3953px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:81px; top:3953px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:81px; top:3953px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:124px; top:3953px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:125px; top:3953px; width:52px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:177px; top:3953px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:178px; top:3953px; width:66px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:245px; top:3953px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:245px; top:3953px; width:44px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:57px; top:3965px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:81px; top:3965px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:81px; top:3965px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:124px; top:3965px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:125px; top:3965px; width:52px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:177px; top:3965px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:178px; top:3965px; width:66px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:245px; top:3965px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:245px; top:3965px; width:44px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:57px; top:3976px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:81px; top:3976px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:81px; top:3976px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:124px; top:3976px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:125px; top:3976px; width:52px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:177px; top:3976px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:178px; top:3976px; width:66px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:245px; top:3976px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:245px; top:3976px; width:44px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:57px; top:3987px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:81px; top:3987px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:81px; top:3987px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:124px; top:3987px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:125px; top:3987px; width:52px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:177px; top:3987px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:178px; top:3987px; width:66px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:245px; top:3987px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:245px; top:3987px; width:44px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:57px; top:3997px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:81px; top:3997px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:81px; top:3997px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:124px; top:3997px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:125px; top:3997px; width:52px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:177px; top:3997px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:178px; top:3997px; width:66px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:245px; top:3997px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:245px; top:3997px; width:44px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:57px; top:4008px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:81px; top:4008px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:81px; top:4008px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:124px; top:4008px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:125px; top:4008px; width:52px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:177px; top:4008px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:178px; top:4008px; width:66px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:245px; top:4008px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:245px; top:4008px; width:44px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:57px; top:4019px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:81px; top:4019px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:81px; top:4019px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:124px; top:4019px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:125px; top:4019px; width:52px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:177px; top:4019px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:178px; top:4019px; width:66px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:245px; top:4019px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:245px; top:4019px; width:44px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:57px; top:4030px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:81px; top:4030px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:81px; top:4030px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:124px; top:4030px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:125px; top:4030px; width:52px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:177px; top:4030px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:178px; top:4030px; width:66px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:245px; top:4030px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:245px; top:4030px; width:44px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:57px; top:4041px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:81px; top:4041px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:81px; top:4041px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:124px; top:4041px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:125px; top:4041px; width:52px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:177px; top:4041px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:178px; top:4041px; width:66px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:245px; top:4041px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:245px; top:4041px; width:44px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:57px; top:4052px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:81px; top:4052px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:81px; top:4052px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:124px; top:4052px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:125px; top:4052px; width:52px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:177px; top:4052px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:178px; top:4052px; width:66px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:245px; top:4052px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:245px; top:4052px; width:44px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:56px; top:4063px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:80px; top:4063px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:81px; top:4063px; width:43px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:123px; top:4063px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:124px; top:4063px; width:53px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:177px; top:4063px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:177px; top:4063px; width:67px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:244px; top:4063px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:245px; top:4063px; width:44px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:3839px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:329px; top:3839px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:330px; top:3839px; width:46px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:376px; top:3839px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:377px; top:3839px; width:116px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:493px; top:3839px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:493px; top:3839px; width:44px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:376px; top:3850px; width:58px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:434px; top:3850px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:435px; top:3850px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:3871px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:329px; top:3871px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:330px; top:3871px; width:46px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:376px; top:3871px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:377px; top:3871px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:434px; top:3871px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:435px; top:3871px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:493px; top:3871px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:493px; top:3871px; width:44px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:3882px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:329px; top:3882px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:330px; top:3882px; width:46px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:376px; top:3882px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:377px; top:3882px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:434px; top:3882px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:435px; top:3882px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:493px; top:3882px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:493px; top:3882px; width:44px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:3893px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:329px; top:3893px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:330px; top:3893px; width:46px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:376px; top:3893px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:377px; top:3893px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:434px; top:3893px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:435px; top:3893px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:493px; top:3893px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:493px; top:3893px; width:44px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:3904px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:329px; top:3904px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:330px; top:3904px; width:46px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:376px; top:3904px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:377px; top:3904px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:434px; top:3904px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:435px; top:3904px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:493px; top:3904px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:493px; top:3904px; width:44px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:3915px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:329px; top:3915px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:330px; top:3915px; width:46px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:376px; top:3915px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:377px; top:3915px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:434px; top:3915px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:435px; top:3915px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:493px; top:3915px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:493px; top:3915px; width:44px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:3926px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:329px; top:3926px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:330px; top:3926px; width:46px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:376px; top:3926px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:377px; top:3926px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:434px; top:3926px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:435px; top:3926px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:493px; top:3926px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:493px; top:3926px; width:44px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:3936px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:329px; top:3936px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:330px; top:3936px; width:46px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:376px; top:3936px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:377px; top:3936px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:434px; top:3936px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:435px; top:3936px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:493px; top:3936px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:493px; top:3936px; width:44px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:3947px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:329px; top:3947px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:330px; top:3947px; width:46px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:376px; top:3947px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:377px; top:3947px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:434px; top:3947px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:435px; top:3947px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:493px; top:3947px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:493px; top:3947px; width:44px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:3958px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:329px; top:3958px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:330px; top:3958px; width:46px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:376px; top:3958px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:377px; top:3958px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:434px; top:3958px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:435px; top:3958px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:493px; top:3958px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:493px; top:3958px; width:44px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:3969px; width:24px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:329px; top:3969px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:330px; top:3969px; width:46px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:376px; top:3969px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:377px; top:3969px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:434px; top:3969px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:435px; top:3969px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:493px; top:3969px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:493px; top:3969px; width:44px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:304px; top:3980px; width:25px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:328px; top:3980px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:329px; top:3980px; width:47px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:375px; top:3980px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:376px; top:3980px; width:58px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:434px; top:3980px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:434px; top:3980px; width:58px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:492px; top:3980px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:493px; top:3980px; width:45px; height:0px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:91px; top:4189px; width:165px; height:158px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:333px; top:4026px; width:177px; height:158px;"></div><span style="position:absolute; border: gray 1px solid; left:0px; top:4509px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:4509px;"><a name="6">Page 6</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:4547px; width:182px; height:9px;"><span style="font-family: Segoe UI; font-size:9px">JOIN | Volume 3 No. 1 | Juni 2018 : 29-35</span><span style="font-family: Segoe UI; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:4564px; width:236px; height:57px;"><span style="font-family: Calibri; font-size:11px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px">pada  prosesor  4  inti  dan  memori  16  GB  dengan  jumlah 
+<br>halaman  yang  sama  yaitu  101771,0  detik.  Namun 
+<br>demikian  waktu  58658,8  detik  ini  masih  cukup  besar 
+<br>karena setara dengan 16 jam. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:4623px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:65px; top:4688px; width:11px; height:106px;"><span style="font-family: Times New Roman; font-size:9px">1 
+<br>2 
+<br>3 
+<br>4 
+<br>5 
+<br>6 
+<br>7 
+<br>8 
+<br>9 
+<br>10 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:64px; top:4666px; width:13px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">No 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:89px; top:4661px; width:34px; height:19px;"><span style="font-family: Times New Roman; font-size:9px">Banyak 
+<br>Halaman 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:4634px; width:179px; height:19px;"><span style="font-family: Times New Roman; font-size:9px">Tabel 3. Hasil Pengujian pada Komputer dengan  
+<br>Prosesor Delapan Inti dan Memory 8GB 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:137px; top:4656px; width:98px; height:138px;"><span style="font-family: Times New Roman; font-size:9px">Waktu Komputasi (detik) 
+<br>Dengan 
+<br>Multithread 
+<br>58,1 
+<br>141,6 
+<br>215,6 
+<br>244,4 
+<br>394,5 
+<br>432,2 
+<br>487,0 
+<br>676,2 
+<br>818,5 
+<br>889,2 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:196px; top:4666px; width:47px; height:127px;"><span style="font-family: Times New Roman; font-size:9px">Tanpa 
+<br>Multithread 
+<br>634,5 
+<br>2340,0 
+<br>6043,0 
+<br>9474,0 
+<br>17607,0 
+<br>22263,0 
+<br>26130,0 
+<br>43119,0 
+<br>57843,0 
+<br>59548,0 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:256px; top:4656px; width:26px; height:29px;"><span style="font-family: Times New Roman; font-size:9px">Selisih 
+<br>Waktu 
+<br>(detik) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:256px; top:4688px; width:31px; height:106px;"><span style="font-family: Times New Roman; font-size:9px">576,4 
+<br>2198,4 
+<br>5827,4 
+<br>9229,6 
+<br>17212,5 
+<br>21830,8 
+<br>25643,0 
+<br>42442,8 
+<br>57024,5 
+<br>58658,8 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:99px; top:4688px; width:15px; height:106px;"><span style="font-family: Times New Roman; font-size:9px">10 
+<br>20 
+<br>30 
+<br>40 
+<br>50 
+<br>60 
+<br>70 
+<br>80 
+<br>90 
+<br>100 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:4808px; width:222px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Dari  tabel  3  diperoleh  grafik  seperti  yang  disajikan 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:4819px; width:63px; height:21px;"><span style="font-family: Times New Roman; font-size:9px">pada gambar 9. 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:522px; top:4546px; width:2px; height:9px;"><span style="font-family: Arial; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:4580px; width:118px; height:24px;"><span style="font-family: Times New Roman; font-size:9px">Persentase Selisih Waktu = </span><span style="font-family: Cambria Math; font-size:9px">|
+<br></span><span style="font-family: Times New Roman; font-size:9px">Dimana,  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:422px; top:4577px; width:23px; height:6px;"><span style="font-family: Cambria Math; font-size:6px">     
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:430px; top:4588px; width:9px; height:6px;"><span style="font-family: Cambria Math; font-size:6px">  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:448px; top:4580px; width:41px; height:10px;"><span style="font-family: Cambria Math; font-size:9px">      |</span><span style="font-family: Times New Roman; font-size:9px">  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:524px; top:4580px; width:14px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">(1) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:322px; top:4607px; width:211px; height:22px;"><span style="font-family: Symbol; font-size:9px"></span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">N1 Nilai Waktu Komputasi tanpa multithread 
+<br></span><span style="font-family: Symbol; font-size:9px"></span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">N2 Nilai Waktu Komputasi dengan </span><span style="font-family: Times New Roman,Italic; font-size:9px">multithread</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:339px; top:4642px; width:168px; height:19px;"><span style="font-family: Times New Roman; font-size:9px">Tabel 4.4 Rata-rata Selisih Waktu Komputasi  
+<br>Perjumlah Halaman 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:314px; top:4671px; width:34px; height:19px;"><span style="font-family: Times New Roman; font-size:9px">Jumlah 
+<br>Halaman 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:326px; top:4702px; width:11px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">10 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:326px; top:4717px; width:11px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">20 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:326px; top:4733px; width:11px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">30 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:326px; top:4748px; width:11px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">40 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:326px; top:4764px; width:11px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">50 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:326px; top:4779px; width:11px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">60 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:326px; top:4794px; width:11px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">70 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:326px; top:4810px; width:11px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">80 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:326px; top:4825px; width:11px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">90 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:362px; top:4665px; width:170px; height:45px;"><span style="font-family: Times New Roman; font-size:9px">Persentase Selisih Waktu per Jumlah Halaman 
+<br>core i5 
+<br>4GB 
+<br>91,10% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:458px; top:4678px; width:29px; height:32px;"><span style="font-family: Times New Roman; font-size:9px">core i7 
+<br>8GB 
+<br>90,84% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:409px; top:4678px; width:29px; height:32px;"><span style="font-family: Times New Roman; font-size:9px">core i5 
+<br>16GB 
+<br>90,93% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:503px; top:4678px; width:29px; height:32px;"><span style="font-family: Times New Roman; font-size:9px">Rata-
+<br>rata 
+<br>90,95% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:363px; top:4717px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">97,17% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:409px; top:4717px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">94,98% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:458px; top:4717px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">93,95% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:503px; top:4717px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">95,36% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:363px; top:4733px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">97,94% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:409px; top:4733px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">97,20% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:458px; top:4733px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">96,43% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:503px; top:4733px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">97,19% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:363px; top:4748px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">98,74% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:409px; top:4748px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">97,44% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:458px; top:4748px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">97,42% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:503px; top:4748px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">97,87% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:363px; top:4764px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">98,64% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:409px; top:4764px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">97,96% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:458px; top:4764px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">97,76% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:503px; top:4764px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">98,12% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:409px; top:4779px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">98,17% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:458px; top:4779px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">98,06% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:503px; top:4779px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">98,74% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:409px; top:4794px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">98,52% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:458px; top:4794px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">98,17% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:503px; top:4794px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">98,88% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:409px; top:4810px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">98,31% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:458px; top:4810px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">98,43% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:503px; top:4810px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">98,91% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:409px; top:4825px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">98,46% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:458px; top:4825px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">98,58% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:503px; top:4825px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">99,01% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:376px; top:4779px; width:5px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">- 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:376px; top:4794px; width:5px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">- 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:376px; top:4810px; width:5px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">- 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:376px; top:4825px; width:5px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">- 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:376px; top:4841px; width:5px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">- 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:324px; top:4841px; width:15px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">100 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:409px; top:4841px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">98,75% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:458px; top:4841px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">98,50% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:503px; top:4841px; width:29px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">99,08% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:4866px; width:236px; height:78px;"><span style="font-family: Times New Roman; font-size:9px">Dari  Tabel  4  didapatkan  rata-rata  persentase  selisih 
+<br>waktu  komputasi  per  jumlah  halaman.  Dari  rata-rata 
+<br>tersebut  dapat  digunakan  untuk  mendapatkan  rata-rata 
+<br>selisih seluruh waktu komputasi antara komputasi dengan 
+<br>menggunakan  multithread  dan  tanpa  multithread.  Untuk 
+<br>mendapatkan  persentase  rata-rata  selisih  keseluruhan 
+<br>digunakan rumus (2)[17]: 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:4961px; width:121px; height:9px;"><span style="font-family: Cambria Math; font-size:9px">                           
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:428px; top:4957px; width:61px; height:6px;"><span style="font-family: Cambria Math; font-size:6px">             
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:489px; top:4961px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:520px; top:4961px; width:14px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">(2) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:456px; top:4968px; width:4px; height:6px;"><span style="font-family: Cambria Math; font-size:6px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:4631px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:4854px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:5034px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:93px; top:5001px; width:164px; height:30px;"><span style="font-family: Times New Roman; font-size:9px">Gambar 9. Grafik Waktu Komputasi dengan  
+<br>Prosesor 8 Inti dan Memori 8 GB 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:5033px; width:236px; height:147px;"><span style="font-family: Times New Roman; font-size:9px">Pada grafik yang ditunjukkan oleh Gambar 7, 8, dan 9 
+<br>terdapat perbedaan garis merah dan biru yang sangat jauh. 
+<br>Garis  merah  (yang  menunjukkan  waktu  proses  tanpa 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">multithread</span><span style="font-family: Times New Roman; font-size:9px">)  pada  grafik  menunjukkan  kenaikan  waktu 
+<br>yang  signifikan  dibanding  garis  biru  (yang  menunjukkan 
+<br></span><span style="font-family: Times New Roman; font-size:9px">waktu proses menggunakan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">multithread</span><span style="font-family: Times New Roman; font-size:9px">). Semakin tinggi 
+<br>garis  semakin  banyak  pula  waktu  yang  dibutuhkan  oleh 
+<br>CPU  untuk  melakukan  eksekusi  program.  Selain  itu 
+<br>perbedaan  juga  dipengaruhi  jumlah  memori  dan  jenis 
+<br>CPU  yang  digunakan.  Semakin  besar  memori  maka 
+<br>semakin  kecil  kemungkinan  terjadi  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Out  of  memory</span><span style="font-family: Times New Roman; font-size:9px">  pada 
+<br>komputer.  Hal  ini  dikarenakan  memori  yang  dibutuhkan 
+<br>untuk proses semakin besar. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:5183px; width:236px; height:78px;"><span style="font-family: Times New Roman; font-size:9px">Untuk  menunjukkan  seberapa  efisien  implementasi 
+<br>komputasi  paralel  </span><span style="font-family: Times New Roman,Italic; font-size:9px">multithread</span><span style="font-family: Times New Roman; font-size:9px">  maka  dihitung  persentase 
+<br>dari  selisih  waktu  dari  hasil  percobaan  yang  telah 
+<br>dilakukan.  Penghitungan  presentase  dilakukan  dengan 
+<br></span><span style="font-family: Times New Roman; font-size:9px">membandingkan  nilai  dari  selisih  waktu  komputasi 
+<br>dengan nilai dari waktu komputasi sebelum implementasi 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">multithread</span><span style="font-family: Times New Roman; font-size:9px"> yang mana dapat dilihat pada rumus (1)[16]: 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:92px; top:5263px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:265px; top:4992px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:4987px; width:36px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Dimana, 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:322px; top:4999px; width:206px; height:10px;"><span style="font-family: Symbol; font-size:9px"></span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman,Italic; font-size:9px">P1, </span><span style="font-family: Times New Roman; font-size:9px">P2, P3 …Pn Persentase selisih waktu pada 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:340px; top:5010px; width:76px; height:22px;"><span style="font-family: Times New Roman; font-size:9px">data ke 1 sampai n 
+<br>n jumlah data uji 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:322px; top:5023px; width:7px; height:10px;"><span style="font-family: Symbol; font-size:9px"></span><span style="font-family: Arial; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:5046px; width:236px; height:67px;"><span style="font-family: Times New Roman; font-size:9px">Dari rumus nilai rata-rata tersebut dapat dihitung nilai 
+<br>rata-rata  persentase  dari  selisih  waktu  komputasi  dan 
+<br>didapatkan  bahwa  nilai  rata-rata  persentase  selisih  waktu 
+<br>komputasi  dengan  menggunakan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">multithread</span><span style="font-family: Times New Roman; font-size:9px">  dan  tanpa 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">multithread</span><span style="font-family: Times New Roman; font-size:9px"> adalah 97,05%. 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:392px; top:5115px; width:61px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">IV.</span><span style="font-family: Arial; font-size:9px"> </span><span style="font-family: Times New Roman; font-size:9px">PENUTUP 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:318px; top:5126px; width:222px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Berdasarkan  pengujian  yang  telah  dilakukan,  maka 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:5138px; width:236px; height:44px;"><span style="font-family: Times New Roman; font-size:9px">didapatkan kesimpulan sebagai berikut: 
+<br>1.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Komputasi  paralel  model  pemrograman  </span><span style="font-family: Times New Roman,Italic; font-size:9px">multithread</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br>dapat diterapkan untuk mempercepat waktu komputasi 
+<br>pada aplikasi transliterasi huruf latin ke aksara jawa. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:5184px; width:193px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">2.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Implementasi  komputasi  paralel  pada 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:319px; top:5184px; width:222px; height:32px;"><span style="font-family: Times New Roman; font-size:9px">aplikasi 
+<br>transliterasi  huruf  latin  ke  aksara  jawa  ini  dapat 
+<br>menghemat waktu proses sebesar 97,05%. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:5218px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:5241px; width:12px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">[1] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:388px; top:5230px; width:70px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">V.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">REFERENSI 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:336px; top:5241px; width:197px; height:40px;"><span style="font-family: Times New Roman; font-size:9px">N. J. Smith-Hefner, “Youth Language, Gaul 
+<br>Sociability, and the New Indonesian Middle Class,” </span><span style="font-family: Times New Roman,Italic; font-size:9px">J. 
+<br>Linguist. Anthropol.</span><span style="font-family: Times New Roman; font-size:9px">, vol. 17, no. 2, pp. 184–203, Dec. 
+<br>2007. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:517px; top:5292px; width:12px; height:9px;"><span style="font-family: Calibri; font-size:9px">34 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:4797px; width:2px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:5293px; width:2px; height:22px;"><span style="font-family: Segoe UI; font-size:9px"> 
+<br></span><span style="font-family: Calibri; font-size:11px"> 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:50px; top:4562px; width:236px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:50px; top:4558px; width:236px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:4558px; width:4px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:4562px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:290px; top:4562px; width:237px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:290px; top:4558px; width:237px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:51px; top:5285px; width:450px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:51px; top:5287px; width:450px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:501px; top:5285px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:501px; top:5287px; width:4px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:505px; top:5285px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:505px; top:5287px; width:27px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:56px; top:4654px; width:26px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:82px; top:4654px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:83px; top:4654px; width:46px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:129px; top:4654px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:129px; top:4654px; width:116px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:246px; top:4654px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:247px; top:4654px; width:43px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:129px; top:4665px; width:58px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:187px; top:4665px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:188px; top:4665px; width:58px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:56px; top:4686px; width:26px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:82px; top:4686px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:83px; top:4686px; width:46px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:129px; top:4686px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:129px; top:4686px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:187px; top:4686px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:188px; top:4686px; width:58px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:246px; top:4686px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:247px; top:4686px; width:43px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:56px; top:4697px; width:26px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:82px; top:4697px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:83px; top:4697px; width:46px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:129px; top:4697px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:129px; top:4697px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:187px; top:4697px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:188px; top:4697px; width:58px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:246px; top:4697px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:247px; top:4697px; width:43px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:56px; top:4708px; width:26px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:82px; top:4708px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:83px; top:4708px; width:46px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:129px; top:4708px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:129px; top:4708px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:187px; top:4708px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:188px; top:4708px; width:58px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:246px; top:4708px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:247px; top:4708px; width:43px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:56px; top:4719px; width:26px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:82px; top:4719px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:83px; top:4719px; width:46px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:129px; top:4719px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:129px; top:4719px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:187px; top:4719px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:188px; top:4719px; width:58px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:246px; top:4719px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:247px; top:4719px; width:43px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:56px; top:4729px; width:26px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:82px; top:4729px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:83px; top:4729px; width:46px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:129px; top:4729px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:129px; top:4729px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:187px; top:4729px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:188px; top:4729px; width:58px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:246px; top:4729px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:247px; top:4729px; width:43px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:56px; top:4740px; width:26px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:82px; top:4740px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:83px; top:4740px; width:46px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:129px; top:4740px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:129px; top:4740px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:187px; top:4740px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:188px; top:4740px; width:58px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:246px; top:4740px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:247px; top:4740px; width:43px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:56px; top:4751px; width:26px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:82px; top:4751px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:83px; top:4751px; width:46px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:129px; top:4751px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:129px; top:4751px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:187px; top:4751px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:188px; top:4751px; width:58px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:246px; top:4751px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:247px; top:4751px; width:43px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:56px; top:4762px; width:26px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:82px; top:4762px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:83px; top:4762px; width:46px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:129px; top:4762px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:129px; top:4762px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:187px; top:4762px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:188px; top:4762px; width:58px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:246px; top:4762px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:247px; top:4762px; width:43px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:56px; top:4773px; width:26px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:82px; top:4773px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:83px; top:4773px; width:46px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:129px; top:4773px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:129px; top:4773px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:187px; top:4773px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:188px; top:4773px; width:58px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:246px; top:4773px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:247px; top:4773px; width:43px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:56px; top:4784px; width:26px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:82px; top:4784px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:83px; top:4784px; width:46px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:129px; top:4784px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:129px; top:4784px; width:57px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:187px; top:4784px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:188px; top:4784px; width:58px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:246px; top:4784px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:247px; top:4784px; width:43px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:55px; top:4795px; width:26px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:81px; top:4795px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:82px; top:4795px; width:47px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:128px; top:4795px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:129px; top:4795px; width:58px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:187px; top:4795px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:187px; top:4795px; width:58px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:245px; top:4795px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:246px; top:4795px; width:44px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:422px; top:4585px; width:23px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:4662px; width:50px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:356px; top:4662px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:356px; top:4662px; width:180px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:356px; top:4677px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:399px; top:4677px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:399px; top:4677px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:448px; top:4677px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:448px; top:4677px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:496px; top:4677px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:4677px; width:40px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:4698px; width:50px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:356px; top:4698px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:356px; top:4698px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:399px; top:4698px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:448px; top:4698px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:448px; top:4698px; width:47px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:496px; top:4698px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:4698px; width:39px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:4713px; width:50px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:356px; top:4713px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:399px; top:4713px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:400px; top:4713px; width:47px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:448px; top:4713px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:448px; top:4713px; width:47px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:496px; top:4713px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:4713px; width:39px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:4729px; width:50px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:356px; top:4729px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:399px; top:4729px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:400px; top:4729px; width:47px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:448px; top:4729px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:448px; top:4729px; width:47px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:496px; top:4729px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:4729px; width:39px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:4744px; width:50px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:356px; top:4744px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:399px; top:4744px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:400px; top:4744px; width:47px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:448px; top:4744px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:448px; top:4744px; width:47px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:496px; top:4744px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:4744px; width:39px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:4759px; width:50px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:356px; top:4759px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:399px; top:4759px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:400px; top:4759px; width:47px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:448px; top:4759px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:448px; top:4759px; width:47px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:496px; top:4759px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:4759px; width:39px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:4775px; width:50px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:356px; top:4775px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:399px; top:4775px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:400px; top:4775px; width:47px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:448px; top:4775px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:448px; top:4775px; width:47px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:496px; top:4775px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:4775px; width:39px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:4790px; width:50px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:356px; top:4790px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:399px; top:4790px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:400px; top:4790px; width:47px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:448px; top:4790px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:448px; top:4790px; width:47px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:496px; top:4790px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:4790px; width:39px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:4806px; width:50px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:356px; top:4806px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:399px; top:4806px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:400px; top:4806px; width:47px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:448px; top:4806px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:448px; top:4806px; width:47px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:496px; top:4806px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:4806px; width:39px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:4821px; width:50px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:356px; top:4821px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:399px; top:4821px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:400px; top:4821px; width:47px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:448px; top:4821px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:448px; top:4821px; width:47px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:496px; top:4821px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:4821px; width:39px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:4837px; width:50px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:356px; top:4837px; width:42px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:399px; top:4837px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:400px; top:4837px; width:47px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:448px; top:4837px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:448px; top:4837px; width:47px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:496px; top:4837px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:4837px; width:39px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:4852px; width:51px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:355px; top:4852px; width:43px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:398px; top:4852px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:399px; top:4852px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:447px; top:4852px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:448px; top:4852px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:496px; top:4852px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:4852px; width:40px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:428px; top:4965px; width:61px; height:0px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:83px; top:4841px; width:180px; height:158px;"></div><span style="position:absolute; border: gray 1px solid; left:0px; top:5401px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:5401px;"><a name="7">Page 7</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:62px; top:5439px; width:129px; height:9px;"><span style="font-family: Segoe UI; font-size:9px">JOIN (Jurnal Online Informatika) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:435px; top:5439px; width:100px; height:21px;"><span style="font-family: Segoe UI; font-size:9px">ISSN 2527-1682 (Print)</span><span style="font-family: Arial; font-size:9px"> 
+<br></span><span style="font-family: Segoe UI; font-size:9px">ISSN 2527-9165 (Online)</span><span style="font-family: Arial; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:304px; top:5477px; width:2px; height:412px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:88px; top:5477px; width:204px; height:578px;"><span style="font-family: Times New Roman; font-size:9px">D. E. Subroto, M. D. Rahardjo, and B. Setiawan, 
+<br>“Endangered krama and krama Inggil varieties of the 
+<br>Javanese language,” </span><span style="font-family: Times New Roman,Italic; font-size:9px">Linguist. Indones.</span><span style="font-family: Times New Roman; font-size:9px">, vol. 26, no. 1, 
+<br>pp. 89–96, 2008. 
+<br>S. Nurdjanah, “Factors that Influence Junior 
+<br>HighSchool Students in Semarang Prefer to Use Bahasa 
+<br>Indonesiathan the Javanese Language,” Diponegoro 
+<br>University, 2015. 
+<br>J. Juliansyah, A. Saragih, and B. Gurning, “Language 
+<br>Shift of the Javanese in Stabat,” </span><span style="font-family: Times New Roman,Italic; font-size:9px">Linguist. Terap.</span><span style="font-family: Times New Roman; font-size:9px">, vol. 
+<br>12, no. 1, pp. 17–24, 2015. 
+<br>G. Poedjosoedarmo, “The effect of Bahasa Indonesia as 
+<br>a lingua franca on the Javanese system of speech levels 
+<br>and their functions,” </span><span style="font-family: Times New Roman,Italic; font-size:9px">Int. J. Soc. Lang.</span><span style="font-family: Times New Roman; font-size:9px">, vol. 2006, no. 
+<br>177, pp. 111–121, 2006. 
+<br>A. Dharma, “Pembinaan dan Pengembangan Bahasa 
+<br>Daerah,” in </span><span style="font-family: Times New Roman,Italic; font-size:9px">Language Maintenance and Shift</span><span style="font-family: Times New Roman; font-size:9px">, 2011, pp. 
+<br>8–11. 
+<br>H. Sulistyorini, Sutijan, and Samidi, “Peningkatan 
+<br>Keterampilan Membaca Dan Menulis Aksara Jawa 
+<br>Melalui Model Pembelajaran Kooperatif Tipe 
+<br>Cooperative Integrated Reading and Composition 
+<br>(Circ),” </span><span style="font-family: Times New Roman,Italic; font-size:9px">Didakt. Dwija Indria</span><span style="font-family: Times New Roman; font-size:9px">, vol. II, no. 1, pp. 1–6, 
+<br>2012. 
+<br>E. A. MARSELIA, “Peningkatan Kemampuan 
+<br>Membaca Huruf Jawa Melalui Strategi Pembelajaran 
+<br>Teams Games Tournament Pada Siswa Kelas V SD N 
+<br>Gawanan Ii Colomadu Tahun Pelajaran 2013 / 2014,” 
+<br>Universitas Muhammadiyah Surakarta, 2014. 
+<br>D. R. Ardiyani, “Keterampilan Membaca Aksara Jawa 
+<br>Melalui Model Quantum Learning Dengan Media 
+<br>Kartu Kata Siswa Kelas Iiia Sdn Petompon 02 
+<br>Semarang,” Universitas Negeri Semarang, Semarang, 
+<br>2013. 
+<br>T. O. TENDEAN, “Perancangan Permainan Edukatif 
+<br>Sebagai Sarana Bantu Pembelajaran Aksara Jawa 
+<br>Dengan Studi Kasus Pada Siswa Sekolah Dasar Kelas 
+<br>3,” </span><span style="font-family: Times New Roman,Italic; font-size:9px">Calyptra</span><span style="font-family: Times New Roman; font-size:9px">, vol. II, no. 2, pp. 1–18, 2013. 
+<br>A. Indaryatiningsih, “Peningkatan Keterampilan 
+<br>Membaca dan Menulis Aksara Jawa Menggunakan 
+<br>Model Pembelajaran Kooperatif Teknik Make a Match 
+<br>pada Peserta Didik Kelas IV SDN Peleman 01 Sragen 
+<br>Tahun Pelajaran 2012/2013,” UNS (Sebelas Maret 
+<br>University), 2013. 
+<br>E. Utami, J. E. Istiyanto, S. Hartati, M. Marsono, and 
+<br>A. Ashari, “Penerapan Rule Based dalam Membangun 
+<br>Transliterator Jawatex,” </span><span style="font-family: Times New Roman,Italic; font-size:9px">Berk. Ilm. MIPA</span><span style="font-family: Times New Roman; font-size:9px">, vol. 23, no. 
+<br>1, Jan. 2014. 
+<br>GigaPurbalingga, “Hanacaraka V1.0 - Software 
+<br></span><span style="font-family: Times New Roman; font-size:8px">Menulis Huruf Jawa,” 2014. . 
+<br></span><span style="font-family: Times New Roman; font-size:9px">F. H. Ayumitha, “Transliterasi huruf latin ke dalam 
+<br>aksara Jawa dengan menggunakan decision tree,” 
+<br>Universitas Islam Negeri Maulana Malik Ibrahim 
+<br>Malang, 2014. 
+<br>B. Barney and L. Livermore, “Introduction to Parallel 
+<br>Computing,” 2018. . 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:6057px; width:226px; height:19px;"><span style="font-family: Times New Roman; font-size:9px">[16]  Microsoft, “Menghitung Persentase,” 2018. . 
+<br>[17]  Microsoft, “Menghitung Rata-rata dari Grup Angka,” 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:88px; top:6077px; width:26px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">2018. . 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:5467px; width:12px; height:19px;"><span style="font-family: Calibri; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px">[2] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:5518px; width:12px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">[3] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:5560px; width:12px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">[4] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:5591px; width:12px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">[5] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:5632px; width:12px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">[6] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:5663px; width:12px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">[7] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:5725px; width:12px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">[8] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:5777px; width:12px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">[9] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:5829px; width:17px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">[10] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:5870px; width:17px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">[11] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:5932px; width:17px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">[12] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:5974px; width:17px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">[13] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:5995px; width:17px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">[14] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:6036px; width:17px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">[15] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:6088px; width:2px; height:56px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br> 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:6196px; width:2px; height:11px;"><span style="font-family: Calibri; font-size:11px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:62px; top:6161px; width:382px; height:33px;"><span style="font-family: Segoe UI; font-size:9px">Implementasi Komputasi Paralel untuk Optimalisasi Komputasi pada Aplikasi Transliterasi Huruf  
+<br></span><span style="font-family: Segoe UI; font-size:9px">Latin ke Aksara Jawa 
+<br></span><span style="font-family: Segoe UI; font-size:9px">(A’la Syauqi, Anis Nurul Hidayah)</span><span style="font-family: Segoe UI; font-size:6px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:522px; top:6160px; width:12px; height:9px;"><span style="font-family: Calibri; font-size:9px">35 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:55px; top:5464px; width:238px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:55px; top:5460px; width:238px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:294px; top:5460px; width:4px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:294px; top:5464px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:298px; top:5464px; width:239px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:298px; top:5460px; width:239px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:56px; top:6154px; width:450px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:56px; top:6155px; width:450px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:506px; top:6154px; width:4px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:506px; top:6155px; width:4px; height:3px;"></span>
+<span style="position:absolute; border: black 1px solid; left:511px; top:6154px; width:27px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:511px; top:6155px; width:27px; height:3px;"></span>
+<div style="position:absolute; top:0px;">Page: <a href="#1">1</a>, <a href="#2">2</a>, <a href="#3">3</a>, <a href="#4">4</a>, <a href="#5">5</a>, <a href="#6">6</a>, <a href="#7">7</a></div>
+</body></html>

@@ -1,0 +1,1291 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html">
+</head><body>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:50px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:50px;"><a name="1">Page 1</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:110px; top:108px; width:376px; height:23px;"><span style="font-family: TimesNewRomanPSMT; font-size:11px">Jurnal Ilmu Komputer dan Informasi (Journal of Computer Science and Information) 
+<br>13/1 (2020), 35-45. DOI: http://dx:doi:org/10:21609/jiki:v13i1:845 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:119px; top:147px; width:361px; height:127px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">VISUAL RECOGNITION OF GRAPHICAL USER INTERFACE COMPONENTS  
+<br>USING DEEP LEARNING TECHNIQUE 
+<br> 
+<br>Agyl A. Rahmadi* and Aris Sudaryanto 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br>Informatics Department, Faculty of Engineering, Universitas 17 Agustus 1945 Surabaya, 
+<br>Jl. Semolowaru No. 45, Surabaya, 60118, Indonesia 
+<br> 
+<br>*E-mail: agyl.rahmadi@untag-sby.ac.id  
+<br> 
+<br></span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">Abstract 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:113px; top:276px; width:371px; height:204px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br>Graphical User Interface (GUI) building in software development is a process which ideally 
+<br>need to go through several steps. Those steps in the process start from idea or rough sketch 
+<br>of the GUI, then refined into visual design, implemented in coding or prototype, and finally 
+<br>evaluated for its function and usability to discover design problem and to get feedback from 
+<br>users.  Those  steps  repeated  until  the  GUI  considered  satisfactory.  Computer  vision 
+<br>technique  has  been  researched  and  developed  to  make  the  process  faster  and  easier;  for 
+<br>example  generating  code  for  implementation,  or  automatic  GUI  testing  using  component 
+<br>images. But among those techniques, there are still few for usability testing purpose. This 
+<br></span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">preliminary research</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> attempted to make the foundation for usability testing using computer 
+<br>vision technique by built dataset which has images of various GUI components, and used 
+<br>the  dataset  in  deep  learning  experiment  for  GUI  components  visual  recognition.  The 
+<br>experiment  results  showed  deep  learning  technique  suitable  for  the  intended  task  using 
+<br>transfer  learning  as  preferable  method,  with  accuracy  achieved  at  95%  for  recognition  of 
+<br>two different types of component, between 80 – 94% for two similar types of component, 
+<br>and above 70% for six different types of GUI components.</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">Keywords: </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">User Interface, Usability Testing, GUI, Computer Vision, Deep Learning</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:113px; top:482px; width:371px; height:272px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br> 
+<br></span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">Abstrak 
+<br></span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px"> 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">Pembuatan  antarmuka  grafis  (GUI)  dalam  perangkat  lunak  adalah  sebuah  proses  yang 
+<br>idealnya perlu melewati beberapa tahapan. Tahapan-tahapan tersebut dimulai dari ide atau 
+<br>sketsa  kasar  dari  GUI,  dikembangkan  menjadi  desain  visual,  diimplementasikan  dengan 
+<br>pengodean  atau  purwarupa,  hingga  akhirnya  dilakukan  evaluasi  fungsi  dan  kebergunaan 
+<br>untuk mencari tahu masalah desain dan mendapatkan umpan balik dari pengguna. Tahapan-
+<br>tahapan  tersebut  dilakukan  berulang  kali  sampai  GUI  dianggap  memuaskan.  Teknik  visi 
+<br>komputer  telah  diteliti  dan  dikembangkan  untuk  mempercepat  dan  mempermudah  proses 
+<br>tersebut;  seperti  menghasilkan  kode  program  implementasi  dari  desain  visual,  atau 
+<br>pengujian  GUI  secara  otomatis  berdasarkan  citra  komponen. Tapi  dari  teknik-teknik yang 
+<br>ada, belum banyak yang terkait uji kebergunaan.  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Penelitian awal</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> ini mencoba meletakkan 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">fondasi  untuk  melakukan  uji  kebergunaan  menggunakan  teknik  penglihatan  komputer 
+<br>dengan  membangun  dataset  dari  berbagai  komponen-komponen  GUI,  dan  menggunakan 
+<br>dataset  tersebut  untuk  eksperimen  pengenalan  visual  dari  komponen  GUI  menggunakan 
+<br>teknik  deep  learning.  Hasil  eksperimen  menunjukkan  teknik  deep  learning  cocok  untuk 
+<br>tujuan yang diinginkan menggunakan metode transfer lerning, dengan tingkat akurasi yang 
+<br>dicapai 95% untuk pengenalan dua jenis komponen yang berbeda, antara 80-94% untuk dua 
+<br>jenis  komponen  yang  serupa,  dan  di  atas  70%  untuk  enam  jenis  komponen  GUI  yang 
+<br>berbeda. 
+<br> 
+<br></span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">Kata Kunci:</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Antarmuka Pengguna, Uji Kebergunaan, GUI, Computer Vision, Deep Learning</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:297px; top:755px; width:2px; height:44px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br> 
+<br> 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:292px; top:832px; width:12px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">35 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:133px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:843px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:263px; top:130px; width:181px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:255px; top:251px; width:122px; height:0px;"></span>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:941px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:941px;"><a name="2">Page 2</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:999px; width:377px; height:33px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">36</span><span style="font-family: TimesNewRomanPS-BoldItalicMT; font-size:9px">  Jurnal Ilmu Komputer dan Informasi (Journal of Computer Science and Information), 
+<br></span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">      </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">volume 13, issue 1, February 2020</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:325px; top:1009px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:297px; top:1034px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:1046px; width:10px; height:10px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">1.</span><span style="font-family: Arial-BoldMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:106px; top:1046px; width:59px; height:9px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">Introduction  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:103px; top:1057px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:1069px; width:205px; height:171px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">In  an  interactive  software,  there  are  user 
+<br>interfaces  (UIs)  which  used  by  user  to  interact 
+<br>with the system. The most common form of UI is 
+<br>graphical  user  interface  (GUI)  because  of  its 
+<br>visual nature which allows direct manipulation of 
+<br>the  software.  In  many  software,  GUI  plays 
+<br>important  role  to  ease  the  use  of  it  by  utilizing 
+<br>visual design and human cognitive aspects such as 
+<br>correct  use  of  colors,  or  how  human  comfortable 
+<br>with  visual  structure  when  reading  contents. 
+<br>Development of GUI which does not pay attention 
+<br>to those  two aspects, could lead to human errors, 
+<br>business loss, and even death of a patient [1]. One 
+<br>of  the  important  factors  which  define  whether  a 
+<br>GUI could easily use by user is called usability. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:1241px; width:205px; height:182px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Usability is a quality attribute which measure 
+<br>how  easy  to  learn,  how  efficient  to  use,  or  how 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">pleasant  a  UI  are  [2].  In  a  UI  design,  one  of 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">principles  commonly  used  is Eight  Golden  Rules 
+<br>of  Interface  Design  [3].  One of  the  rule  from  the 
+<br>principle  is  “seek  universal  usability”  where  a 
+<br>system should have plasticity. In related to visual 
+<br>aspect,  it  means  facilitating  transformation  of 
+<br>contents  or  the  view  medium.  It  is  already 
+<br>implemented  in  a  web  design  technique  called 
+<br>responsive web design [4]. It helps a website to be 
+<br>able  to  be  viewed  from  various  screen  devices, 
+<br>and  its  contents  should be  realigned  according  to 
+<br>the  screen  –so  it  improves  the  usability  of  the 
+<br>website. 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:289px; top:1555px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:95px; top:1566px; width:183px; height:28px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:8px">Figure 1. Simplified stages of GUI development, fidelity 
+<br>levels, and its deliverable 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:1596px; width:205px; height:101px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br>With  the  importance  of  it,  User-Centered 
+<br>Design  (UCD)  method  [5]  is  now  commonly 
+<br>employed  in  UI  design  and  development  which 
+<br>could ensure good usability of it and does not lead 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">to  fatal  problem.  UCD  dictate  itself  as  iterative 
+<br>design  process  where  a  UI  should  not  be 
+<br>developed  once  and  for  all,  but  in  a  phased  and 
+<br>iterative  process.  In  related  to  GUI,  iterative  UI 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:1046px; width:205px; height:124px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">design  could  lead  to  better  quality  even  in 
+<br>redesign process [6]. In practice, visual aspect of a 
+<br>GUI develops in stages of increasing fidelity [7]–
+<br>[9] which could be simplified and summarized as 
+<br>seen  in  figure  1.  Iteratively,  steps  2  until  4  from 
+<br>the  figure  above  repeated  until  the  GUI  is 
+<br>considered satisfactory, which means satisfy, or at 
+<br>the minimum it should be acceptable by the users 
+<br>or  business  requirements,  and  does  not  have 
+<br>serious  problem  whether 
+<br>in  functionality  or 
+<br>usability.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:423px; top:1184px; width:8px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">it 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:444px; top:1184px; width:17px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">still 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:364px; top:1184px; width:46px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">developing 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:1172px; width:205px; height:124px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">While  GUI  with  good  usability  is  very 
+<br>important, 
+<br>consume 
+<br>development  resources,  especially  time,  with  all 
+<br>of  those  steps.  Even  though  the  ideal  process  of 
+<br>the  development  is  repeating  the  mockup  to 
+<br>evaluation stage until the result is acceptable, it is 
+<br>often  neglected  because  of  limited  resources, 
+<br>management 
+<br>communication 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">process  [10].  Furthermore,  integrating  GUI  and 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">functionality  process  often  limits  how  it  can  be 
+<br>wholly redesigned and reimplemented. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:371px; top:1253px; width:38px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">interests, 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:420px; top:1253px; width:16px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">and 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:1310px; width:101px; height:21px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">2.</span><span style="font-family: Arial-BoldMT; font-size:9px">  </span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">Literature Review 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:1333px; width:205px; height:67px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">To  address  those  problems,  previous  works 
+<br>that  utilized  computer  vision,  or  A.I  in  general 
+<br>had done in order to sped up or to aid the process 
+<br>of GUI development. The works tried to improve 
+<br>the  steps  from  figure  1  which  either  sketch, 
+<br>mockup, implementation, or evaluation. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:325px; top:1299px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:325px; top:1402px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:1414px; width:140px; height:9px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Computational Vision Approaches 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:1428px; width:205px; height:262px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">One  of  earlier  works  that  utilized  computer 
+<br>vision technique was done by Riedl &amp; Amant [11] 
+<br>and  Gibss  et  al  [12]  where  they  made  system 
+<br>called  SegMan  and  Lens  respectively.  SegMan 
+<br>was an attempt to make an automatic exploration 
+<br>of  a  GUI  using  pixel  groups  segmentation  based 
+<br>on  cognitive  model.  While  Lens  was  an 
+<br>improvement from SegMan where it added higher 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">interface  abstraction  such  as 
+<br>level  of  user 
+<br>interfaces  or  units,  and  capable  ran  on  multiple 
+<br>OSes.  Both  system  was  for  evaluation  purpose 
+<br>even  though  addressed  different  problem;  where 
+<br>SegMan  towards  automatic  exploration  of  UI, 
+<br>while  Lens  more  on  understanding  of  UI 
+<br>(structure  and  classification)  and  was  part  of 
+<br>bigger system called Visual Total Access System 
+<br>(VisualTAS) that aims to help blind user in using 
+<br>GUI. Another works for evaluation purposes done 
+<br>by  Chang  et  al.  [13].  They  made  a  system  for 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">helping  tester  to  automate  GUI  testing  process 
+<br>(evaluation  step).  The  system  called  Sikuli  Test 
+<br>enabled testers to write script test based on images 
+<br>of  GUI  components,  or  even  generate  the  visual 
+<br></span></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:85px; top:1423px; width:203px; height:140px;"></div><span style="position:absolute; border: gray 1px solid; left:0px; top:1833px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:1833px;"><a name="3">Page 3</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:1890px; width:382px; height:74px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">A.A. Rahmadi, et. al.,</span><span style="font-family: TimesNewRomanPSMT; font-size:12px"> </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Visual Recognition of GUI Components using Deep Learning Technique  
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">script test after manually run the test once. It was 
+<br>platform  agnostic  and  could  be  used  to  test 
+<br>desktop, web, or mobile applications. 
+<br></span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Usability Factors Evaluation 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:500px; top:1891px; width:12px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">37 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:409px; top:1920px; width:10px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">In 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:363px; top:1920px; width:34px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">(dense). 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:433px; top:1920px; width:40px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">computer 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:1920px; width:205px; height:216px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">connected 
+<br>vision 
+<br>applications,  conv  layer  producing  feature  maps 
+<br>of  an  image  from  a  convolution  operation.  That 
+<br>feature  maps  goes  through  additional  operation 
+<br>called  rectified  linear  units  (ReLu)  to  introduce 
+<br>non-linearity operation to conform with real world 
+<br>data  which  often  is  non-linear.  Concretely,  ReLu 
+<br>make  the  feature  maps  with  negative  values  zero 
+<br>by  applying  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">max</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">(0,</span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">x</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">)    function  [20].  The  feature 
+<br>maps then goes through pool layer to downsize it 
+<br>but  still  retains 
+<br>important  feature 
+<br>the  most 
+<br>information. The last layer is dense layer where its 
+<br>act  is  similar  to  multi  layer  perceptron  (MLP)  in 
+<br>traditional  NN,  to  calculate  the  classification 
+<br>based on feature maps and usually using softmax 
+<br>function.  In  practice,  CNN  architecture  could 
+<br>consist of multiple sequence of conv, pool, ReLu, 
+<br>and dense layer which repeated many times before 
+<br>producing final output. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:325px; top:2138px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:2150px; width:106px; height:9px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Deep Learning Technique 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:2164px; width:205px; height:251px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">A  system  that  used  deep  learning  done  by 
+<br>Fernandez &amp; Deja [21]  where they did a work in 
+<br>usability  evaluation 
+<br>for  automatic  websites 
+<br>heuristic  evaluation  using  CNN.  They  built  the 
+<br>dataset  based  on  heuristic  score  provided  by 
+<br>participants  for  various  websites  screenshots.  Lu 
+<br>et al. [22] also did similar work where they collect 
+<br>dataset  of  software  GUI  and  classified  them  into 
+<br>positive (good) or negative (bad) categories based 
+<br>on  its  page  layout,  comfort,  and  brightness. 
+<br>Another utilization of deep convolutional network 
+<br>done by Hassan et al. [23] where they made  GUI 
+<br>components detection system from an image of UI 
+<br>mockup,  so  it  could  enhance  GUI  development. 
+<br>Nguyen  et  al.  [24]  also  did  similar  work  in 
+<br>utilizing  deep  learning  where  they  proposed 
+<br>DeepUI system that use recurrent neural networks 
+<br>(RNN) to learn UI design pattern, and generative 
+<br>adversarial  network  (GAN)  to  generate    visual 
+<br>design  from  a  wireframe.  Both  later  works 
+<br>developed  for  mobile  apps  development,  and 
+<br>supports step 1 until 3 of process from Fig. 1. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:2417px; width:205px; height:171px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">In related to  those steps, the  mentioned Rico 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">dataset  done  by  Deka  et  al.  [18]  were  aimed  at 
+<br>supporting data-driven design including UI layout 
+<br>and  code  generation.  Previously  Nguyen  &amp; 
+<br>Csallner  [25]  made  REMAUI  that  capable  in 
+<br>generating  mobile  apps  UI  based  on  its  mockup. 
+<br>The  system  processes  the  mockup  image  using 
+<br>computer vision technique, generates source code, 
+<br>and  deploy  it  to  mobile  phone.  Next  work  by 
+<br>Beltramelli  [26]  also  support  GUI  generation  for 
+<br>three platforms: iOS, Android, and Web-based. In 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">tune  with  other  works,  pix2code  system  also  use 
+<br>image  of  UI  mockup  for  generating  UI  code.  It 
+<br>was capable of 77% accuracy in generating GUI. 
+<br>Another work in mobile GUI development called 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:103px; top:1969px; width:145px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">For  usability  evaluation  where 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:1969px; width:205px; height:228px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">the  UI 
+<br>evaluated as a whole, Koch &amp; Oulasvirta [14] did 
+<br>a  work  for  evaluating  layout  perception  of  a  UI 
+<br>based  on  algorithmic  representation  of  gestalt 
+<br>psychology  principles  –which  closely  tied  to 
+<br>human  visual  perception  such  as  proximity  [15]. 
+<br>Oulasvirta et al. [16] also made an online service 
+<br>called  Aalto  Interface  Metrics  (AIM)  where  it 
+<br>provides  17  different  metrics  evaluation  using  a 
+<br>page  of  UI.  Those  metrics  based  on  many 
+<br>different researches which has validated result on 
+<br>user  perception  and  attention  towards  GUI  (e.g 
+<br>color blindness, white space). Works by Liu et al. 
+<br>[17]  similarly  built  a  system  that  generates 
+<br>semantic  information  of  UIs  from  mobile  apps 
+<br>screenshots.  From  the  images,  view  hierarchy  is 
+<br>defined, then it is segmented by colors, and finally 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">annotated semantically based on GUI components 
+<br>classification.  The  system  utilized  Rico  dataset 
+<br>[18] and focused on method development. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:103px; top:2199px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:2210px; width:95px; height:9px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Deep Learning &amp; CNN 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:2225px; width:205px; height:171px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Some  of  the  recent  works  use  deep  learning 
+<br>technique  in  their  researches.  Deep  learning  [19] 
+<br>itself is a class of machine learning technique that 
+<br>allows raw data with multiple level of abstraction 
+<br>to  be  processed  without  any  feature  engineering 
+<br>such  as  done  in  conventional  machine  learning 
+<br>technique. For example of multilevel abstractions 
+<br>is  an  image  of  object  which  has  edges,  motif  of 
+<br>edges, edges’ motifs that form shapes, and shapes 
+<br>that  from  objects.  Those  layer  of  features  can  be 
+<br>learned using deep learning by the machine using 
+<br>a  streamlined  learning  process  using  only  the 
+<br>images as input data. In the conventional method, 
+<br>those  layers  need  to  be  processed  one  by  one 
+<br>which is very challenging. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:103px; top:2397px; width:10px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">In 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:123px; top:2397px; width:11px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">its 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:145px; top:2397px; width:99px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">implementation,  deep 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:2397px; width:207px; height:147px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">learning 
+<br>technique commonly use one type of deep neural 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">network  which  proven  success  in  many  practical  
+<br>computer vision applications called convolutional 
+<br>neural  networks  (CNN)  or  ConvNets  [19].  CNN 
+<br>differ itself with traditional neural networks (NN) 
+<br>by able to accept input data that come in form of 
+<br>multiple arrays; in term of images, they are mostly 
+<br>2-dimensional array of pixels with  three channels 
+<br>of colors. CNN enable deep learning to accept raw 
+<br>input  data  and  process  it  in  its  deep  multilayer 
+<br>architecture  which  is  a  series  of  stages.  Each  of 
+<br>the stages composed of different types of layers. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:2547px; width:204px; height:32px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Type of layers in CNN has its own function. 
+<br>in  CNN  are: 
+<br>The  commonly  used 
+<br>convolutional  (conv),  pooling  (pool),  and  fully 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:190px; top:2558px; width:26px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">layers 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:2627px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:297px; top:2613px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><span style="position:absolute; border: gray 1px solid; left:0px; top:2725px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:2725px;"><a name="4">Page 4</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:325px; top:2793px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:2783px; width:377px; height:171px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">38</span><span style="font-family: TimesNewRomanPS-BoldItalicMT; font-size:9px">  Jurnal Ilmu Komputer dan Informasi (Journal of Computer Science and Information), 
+<br></span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">      </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">volume 13, issue 1, February 2020</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br> 
+<br>ReDraw by Moran et al [27] was built in order to 
+<br>help  the  process  of  mockup  to  prototype.  It  was 
+<br>able to reach 91% of component classification and 
+<br>generate  acceptable  code  while  maintain  visual 
+<br>affinity  with  the  mockup.  Similar  system  also 
+<br>built  by  Chen  et  al.  [28]  where  their  work  was 
+<br>able  to  generate  GUI  skeleton  code  from  a 
+<br>mockup design. While most works in aiding GUI 
+<br>development  start  from  mockup,  there  are  works 
+<br>by Robinson [29] and Kim et al. [30] where they 
+<br>made  system  capable  in  generating  web  UI  from 
+<br>sketch or wireframe stage. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:2818px; width:205px; height:159px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">has  synthesized  GUI  screenshots  for  different 
+<br>kind  of  app  platforms.  In  ReDraw  dataset,  there 
+<br>are  images  data  of  various  GUI  components 
+<br>which are similar to this study intended dataset –
+<br>but  not  satisfy  all  of  planned  classification.  The 
+<br>dataset  designed  to  have    various  standard  GUI 
+<br>components  such  as  text  field,  button,  etc.  In 
+<br>ReDraw,  the  dataset  classification  is  based  on 
+<br>Android system UI building term where it need to 
+<br>be  reclassified  to  conform  our  needs.  Many  of 
+<br>them  are  also  from  mobile  specific  UI  whereas 
+<br>this  research  wanted 
+<br>to  build  general  GUI 
+<br>componets  dataset.  Therefore  ReDraw  dataset 
+<br>does not included in our dataset 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:2967px; width:161px; height:9px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Uncharted Map in Usability Evaluation 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:103px; top:2956px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:203px; top:2993px; width:45px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">third  step 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:211px; top:3005px; width:56px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">–  mockup 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:2982px; width:205px; height:217px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">In  all  those  mentioned  works,  almost  half  of 
+<br>them  deal  with  first  to 
+<br>in  GUI 
+<br>– 
+<br>sketching 
+<br>development: 
+<br>implementation.  It  is  understandable  as  those 
+<br>steps  take  major  portion  of  GUI  development 
+<br>time.  While  the  rest  deal  with  evaluation process 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">of GUI, it is still divided into two problems: GUI 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">Testing and Usability Testing. Research related to 
+<br>GUI  testing  in  general  proposed  method  for 
+<br>automatic 
+<br>testing,  whereas  works 
+<br>related  to  usability  testing  attempted  to  automate 
+<br>usability factors evaluation which usually done by 
+<br>experts.  Even  though  many  works  already  done 
+<br>for  automatic  usability  evaluation,  it  still  leaves 
+<br>rooms  for  exploration  in  that  topic  such  as 
+<br>typography  and  readability,  forms  usability,  or 
+<br>even  autonomous  user  for  usability 
+<br>testing. 
+<br>Hence,  this  paper  attempted  to  also  explore  the 
+<br>possibilities in the topic. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:133px; top:3085px; width:42px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">functional 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:3200px; width:205px; height:113px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">The  most  common  way  to  evaluate  usability 
+<br>automatically 
+<br>is  by  using  computer  vision 
+<br>technique as done by many mentioned researches. 
+<br>One  of  common  method  is  by  detecting  GUI 
+<br>components  inside  a  UI,  classify  them,  and 
+<br>the 
+<br>process 
+<br>components  by  colors  and  annotate 
+<br>them 
+<br>semantically  [17],    segment  the  layout  based  on 
+<br>gestalt  perception  [14],  or  even  generate  GUI 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">code implementation [24] [25] [26] [27] [28] [30]. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:123px; top:3258px; width:145px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">them  further  such  as  segment 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:103px; top:3315px; width:5px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:3327px; width:121px; height:9px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Dataset from Previous Works 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:3341px; width:205px; height:136px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Some  of  those  results  achieved  by  train  the 
+<br>system using UIs dataset in deep learning process. 
+<br>The  dataset  required  in  the  process  to  teach  the 
+<br>system for learning and understanding about GUI. 
+<br>That  is  why  some  of  previous  works  was  for 
+<br>specific  platforms  because  it  depends  on  the 
+<br>dataset. Some of dataset openly available such as 
+<br>REMAUI  [25], pix2code  [26],  ReDraw  [27],  and 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">Rico  [18].  REMAUI,  ReDraw,  and  Rico  dataset 
+<br>mainly  consist  of  mobile  apps  screenshots  mined 
+<br>from  official  apps  marketplace  such  as  Google 
+<br>Play  Store  or  Apple  App  Store;  while  pix2code 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:325px; top:2979px; width:117px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">This  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">preliminary  research</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:2979px; width:205px; height:182px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">  attempted  to 
+<br>layout  foundation  for  a  computer  vision  system 
+<br>to  evaluate  usability  of  a  UI 
+<br>which  able 
+<br>automatically.  From  previous  works’  dataset,  all 
+<br>of them consists of many whole apps screenshot; 
+<br>which  utilized  by  detecting  the  GUI  components 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">first,  then  followed  by  other step;  in  other  words 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">their  dataset  approaches  started  from  bigger 
+<br>picture and processed to get detail of the UI (top-
+<br>down  approach).  This  work 
+<br>tried  different 
+<br>approach  by  building  GUI  components  images, 
+<br>and  start  building  system  to  bigger  picture  in 
+<br>future  works  (bottom-up).  The  dataset  itself  is 
+<br>used  to  make  basic  computer  vision  application 
+<br>which  is  recognition  –where  the  machine  could 
+<br>classify various GUI components correctly.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:3163px; width:205px; height:101px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">At  least  there  are  two  contributions  in  this 
+<br>research:  1)  Initial  GUI  Component  Images 
+<br>Dataset,  and  2)  Proof  of  Concept  of  GUI 
+<br>Recognition  system  using  the  dataset  and  deep 
+<br>learning 
+<br>technique  [19]  was 
+<br>chosen  because  of  its  capability  in  computer 
+<br>vision technique used in previous works. 
+<br> 
+<br></span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">3.</span><span style="font-family: Arial-BoldMT; font-size:9px">  </span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">Methods 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:348px; top:3209px; width:67px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">technique.  The 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:3266px; width:205px; height:205px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br>In  general,  there  were  three  steps  that  are 
+<br>done  in  this  research:  Dataset  Building,  Deep 
+<br>Learning  Experiment,  and  Result Analysis  which 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">each  respective  step  contains  several  processes. 
+<br>Dataset  building  consist  of  four  processes: 
+<br>the 
+<br>defining  dataset  sources,  building  from 
+<br>for 
+<br>sources,  cleaning  dataset,  prepare  data 
+<br>experiment. After that, the dataset is used as input 
+<br>in  the  experiment  in  which  there  were  four 
+<br>important 
+<br>data 
+<br>data 
+<br>augmentation,  setting  CNN  models,  and  training 
+<br>there  were 
+<br>the 
+<br>&amp;  validation.  For 
+<br>visualization  of  training  and validation  data  from 
+<br>the  experiment,  and 
+<br>the 
+<br>visualization 
+<br>for  drawing  conclusions.  The 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">diagram  in  figure  2  shows  the  steps  done  in  this 
+<br>research. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:413px; top:3427px; width:76px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">the  analysis  of 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:432px; top:3381px; width:50px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">preparation, 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:359px; top:3381px; width:31px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">phases: 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:425px; top:3404px; width:27px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">result, 
+<br></span></div><span style="position:absolute; border: gray 1px solid; left:0px; top:3617px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:3617px;"><a name="5">Page 5</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:3673px; width:382px; height:25px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">A.A. Rahmadi, et. al.,</span><span style="font-family: TimesNewRomanPSMT; font-size:12px"> </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Visual Recognition of GUI Components using Deep Learning Technique  
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:500px; top:3675px; width:12px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">39 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:3715px; width:105px; height:9px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Defining Dataset Sources 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:3729px; width:205px; height:182px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">The  first  step  in  this  research  was  building 
+<br>the  dataset  required  to  be  used  in  deep  learning 
+<br>process. The purpose is to make a system that able 
+<br>to  discern  differences  between  GUI  components, 
+<br>so  it  is  important  to define  which  platform  of  UI 
+<br>that  become  the  target  of  the  system.  In  the  long 
+<br>run, it is expected the system could be applied to 
+<br>any  platform,  but  in  this  work  images  of  GUI 
+<br>components  from  some  CSS  framework  and 
+<br>design  systems  that  is  available  online  was  used. 
+<br>Web-based UI is chosen because in recent years it 
+<br>became more prominent in software development 
+<br>that  some  non-web  platforms  use  web-based 
+<br>technology  such  HTML,  CSS,  and  Javascript  to 
+<br>be  used  in  apps  development  (e.g.  Universal 
+<br>Windows Platform/UWP,  Electron.js). 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:106px; top:3703px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:106px; top:3913px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:3703px; width:205px; height:182px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">1)  Popularly used such as Bootstrap, Foundation, 
+<br>and Semantic UI; 2) There is  a </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">kitchen sink page</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br>[31] which contains usage example of frameworks 
+<br>or  design  system  –where  most  of  the  dataset  is 
+<br>taken  from;  3)  Easily  found  in  search  engine 
+<br>results;  4)  Recommended  in many  online  articles 
+<br>related  to  web  design  and  development.  The 
+<br>conditions considered with long term purpose that 
+<br>the  system  should  be  able  to  recognize  most  of 
+<br>GUI  components  implemented  in  the  wild/real 
+<br>world  websites. With that purposes, if the dataset 
+<br>is  taken  from  widely  used  or  known  GUI 
+<br>framework  or  design  system,  than  the  system 
+<br>should have minimal problem in recognizing them 
+<br>in the wild. 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:3887px; width:126px; height:9px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Building Dataset from Sources 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:328px; top:3902px; width:18px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">The 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:340px; top:4074px; width:23px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">those 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:385px; top:3959px; width:30px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">images 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:355px; top:3902px; width:56px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">images  was 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:422px; top:3959px; width:66px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">then  classified 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:3902px; width:205px; height:400px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">taken  by  manually 
+<br>screenshotting  GUI  components  examples  from 
+<br>the  kitchen  sink  page  from  respective  CSS 
+<br>frameworks  and  design  systems,  or  from  each 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">example  page  of  GUI  component  from  their 
+<br>websites.  Those 
+<br>into 
+<br>specific categories; but with a condition where not 
+<br>all  of  those  images  of  GUI  components  evenly 
+<br>taken  –especially  for  button  component.  For 
+<br>example while from Bootstrap there are 29 image 
+<br>of buttons that could be extracted, there were none 
+<br>taken  from  Paper  CSS  because  of  it  lacks  of 
+<br>button state variations such as primary, danger, or 
+<br>disabled.  Therefore,  buttons  data  was  only  taken 
+<br>from  Bootstrap,  Foundation,  and  Semantic  UI 
+<br>where 
+<br>three  frameworks  have  similar 
+<br>variations for button. Another consideration was if 
+<br>all  button  data  is  taken  from  mentioned  sources, 
+<br>the  amount  will  be  outnumber  all  other 
+<br>component as button is the most common element 
+<br>in UI. Even with limited button data, the numbers 
+<br>of the button images already bigger than the other. 
+<br>Crawling  technique  for  automatic  images 
+<br>mining was also considered. Previous works done 
+<br>the  implementation  by  got  the  screenshot  of  web 
+<br>or  apps,  using  object  detection  to  segment  the 
+<br>image  and  classify  them.  The  technique,  as 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">explained  before,  was  using  top-down  approach 
+<br>where 
+<br>the  whole  page; 
+<br>meanwhile approach in this research was bottom-
+<br>up  where  the  dataset  building  started  from  the 
+<br>GUI  components  itself,  not  the  whole  page.  For 
+<br>mining  them  directly  from  a  web  page  using 
+<br>crawler, it needs novel implementation which can 
+<br>be considered as focus in another research. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:341px; top:4224px; width:55px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">they  started 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:404px; top:4224px; width:21px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">from 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:328px; top:4304px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:4316px; width:72px; height:9px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Cleaning Dataset 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:4330px; width:205px; height:32px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">For classification, at first there were defined 
+<br>eight class of GUI components which are: </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">button</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, 
+<br></span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">textfield</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">,  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">textarea</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">,  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">checkbox</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">,  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">radio</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">button</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">,  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">select, 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:274px; top:4203px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:124px; top:4214px; width:125px; height:17px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px"> 
+<br>Figure 2. Steps in the research method</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:143px; top:4256px; width:20px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">CSS 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:180px; top:4256px; width:49px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">framework: 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:4233px; width:205px; height:113px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br>The  dataset  in  this  research  taken  from  the 
+<br>following 
+<br>Bootstrap, 
+<br>Foundation,  Pure  CSS,  Semantic  UI,  UI  Kit, 
+<br>Bulma,  Tailwind  CSS,  Materialize  CSS,  Picnic 
+<br>CSS, Paper CSS, Primer CSS; and for the  design 
+<br>system,  it  was  utilized  the  images  from  the 
+<br>following:  Carbon  Design  System,  United  States 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">Web Design System, Ant Design System, Mozilla 
+<br>Protocol, Blueprint, and Material UI.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:106px; top:4348px; width:26px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Those 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:4348px; width:205px; height:21px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">frameworks  and  design  systems 
+<br>chosen  by  considering  the  following  conditions: 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:4411px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:297px; top:4397px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:97px; top:3923px; width:176px; height:288px;"></div><span style="position:absolute; border: gray 1px solid; left:0px; top:4509px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:4509px;"><a name="6">Page 6</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:325px; top:4577px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:4567px; width:377px; height:159px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">40</span><span style="font-family: TimesNewRomanPS-BoldItalicMT; font-size:9px">  Jurnal Ilmu Komputer dan Informasi (Journal of Computer Science and Information), 
+<br></span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">      </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">volume 13, issue 1, February 2020</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br> 
+<br></span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">breadcrumbs,  </span><span style="font-family: TimesNewRomanPSMT; font-size:9px">and</span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">  pagination.  </span><span style="font-family: TimesNewRomanPSMT; font-size:9px">As  preliminary 
+<br>research,  the  categories  are  reduced  to  six  with 
+<br>breadcrumbs  and  pagination  being  omitted  to 
+<br>make the recognition effort easier. Also, the rest of 
+<br>six  are  common  elements  of  UI  which  usually 
+<br>used  in  a  digital  form.  Similar  visual  nature  of 
+<br>those elements is considered such as textfield with 
+<br>textarea,  and  checkbox  with  radio  button.  Those 
+<br>similarities  were  tested  for  recognition  in  the 
+<br>experiment. 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:4601px; width:207px; height:124px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">test data because of limited numbers of the dataset 
+<br>itself.  The  dataset  divided  into  training  and 
+<br>validation  folders,  where  each  of  them  contains 
+<br>six  categories  of  data.  Figure  4  shows  the 
+<br>structure  of  the  dataset.  For  the  deep  learning 
+<br>experiment, it is implemented using Google Colab  
+<br>tools  (Colab)  which  has  cloud  GPU  that  is 
+<br>available  to  use  for  deep  learning  process.  The 
+<br>dataset uploaded to Google Drive (Drive) so it can 
+<br>be  used  through  import  and  mount  command  in 
+<br>Colab. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:4840px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:106px; top:4850px; width:161px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Figure 3. Example of button images in the dataset</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:268px; top:4831px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:4861px; width:96px; height:21px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Dataset for Experiment 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:145px; top:4933px; width:30px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">images 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:4887px; width:205px; height:239px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">The  finished  dataset  contains  images  of  85 
+<br>buttons, 70 textfields, 24 textarea, 49 checkboxes, 
+<br>62  radio  buttons,  and  40  selects  with  example  of 
+<br>the  dataset  can  be  seen  at  figure  3.  Uneven 
+<br>is  caused  by  different 
+<br>numbers  of 
+<br>characteristic  of  GUI  components.  For  example 
+<br>buttons could have ten variations of states such as 
+<br>primary, secondary, success, warning, or disabled, 
+<br>while  textarea  usually  only  have  three  states: 
+<br>disabled,  read  only,  and  resizable.  The  ideal 
+<br>dataset 
+<br>should  have  even  number  across 
+<br>categories,  and  the  number  of  data  in  a  category 
+<br>should  have  sufficient  amount  to  avoid  under 
+<br>fitting  problem  in  learning  process.  Images  of 
+<br>GUI components are inserted into their respective 
+<br>classification  folder,  and  they  are  inside  a  folder 
+<br>called  gui-core-alpha  where  GUI  CORE  is  the 
+<br>name  of  the  dataset  (from  GUI  COmponents 
+<br>REcognition),  and  alpha  is  the  version  of  the 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">dataset.  The dataset  is openly available online at 
+<br>https://github.com/agylardi/guicore-alpha.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:5128px; width:205px; height:67px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Because of limited resources, the experiment 
+<br>still  used  the  limited  (alpha  version)  dataset  to 
+<br>answer the main question in this research: whether 
+<br>deep learning technique can be used to recognize 
+<br>GUI  components  or  not.  The  lack  of  data  was 
+<br>tackled using data augmentation. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:106px; top:5198px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:5209px; width:101px; height:9px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Data Input Preparations 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:5223px; width:205px; height:32px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">For  setting  up  the  experiment,  the  dataset 
+<br>was  splitted  into  two  parts:  70%  for  training 
+<br>process,  and  30%  for  validation.  There  were  no 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:444px; top:4871px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:4882px; width:205px; height:155px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px"> 
+<br>Figure 4. Structure of the dataset in the experiment</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br> 
+<br>Colab is chosen because of limited hardware 
+<br>resources where the technique needs capable GPU 
+<br>for  processing  the  calculation  –usually  from 
+<br>NVIDIA  vendor  which  leads  in  deep  learning 
+<br>infrastructure  product.  Colab  allows  access  to 
+<br>NVIDIA Tesla K80 GPU by cloud connection but 
+<br>limited  to  12  hours  per  day.  For  this  preliminary 
+<br>research, 
+<br>In 
+<br>implementation using Colab, jupyter notebook file 
+<br>which  allows  real-time  python  code  processing 
+<br>was initiated.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:424px; top:4993px; width:69px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">than  sufficient. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:378px; top:4993px; width:39px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">is  more 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:353px; top:4993px; width:17px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">that 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:5039px; width:205px; height:113px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">For  implementation,  Keras  framework  and 
+<br>Tensorflow Library was chosen as it is suitable to 
+<br>be  used  in  Colab  environment.  First  process  was 
+<br>importing  data  from  Drive,  and  checked  if  the 
+<br>data  loaded  correctly  by  displaying  some  of  the 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">data  using  matplotlib  library.  Next  step  was 
+<br>setting  basic  parameter  of  the  input  with  height 
+<br>and width 224 for resizing all of the input data to 
+<br>224  x  224  px.  The  number  was  chosen  to  make 
+<br>input in chosen approaches has the same size. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:328px; top:5154px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:5165px; width:81px; height:9px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Data Augmentation 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:479px; top:5180px; width:10px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">in 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:388px; top:5180px; width:14px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">the 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:328px; top:5180px; width:52px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Because  of 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:409px; top:5180px; width:63px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">lack  of  data, 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:5180px; width:205px; height:78px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">this 
+<br>experiment the dataset was augmented using data 
+<br>augmentation  process.  This  was  done  before  the 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">data  processed  by  the  models.  In  this  research, 
+<br>training  data  was  augmented  with  rescale  1./255 
+<br>value for normalizing the input data. Training data 
+<br>also  applied  shear,  zoom,  and  horizontal  flip 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:85px; top:5126px; width:166px; height:0px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:86px; top:4728px; width:179px; height:109px;"></div><span style="position:absolute; border: black 1px solid; left:86px; top:4727px; width:180px; height:110px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:374px; top:4728px; width:69px; height:151px;"></div><span style="position:absolute; border: black 1px solid; left:373px; top:4727px; width:70px; height:152px;"></span>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:5400px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:5400px;"><a name="7">Page 7</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:5457px; width:382px; height:62px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">A.A. Rahmadi, et. al.,</span><span style="font-family: TimesNewRomanPSMT; font-size:12px"> </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Visual Recognition of GUI Components using Deep Learning Technique  
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">transformation 
+<br>augmentation.  For 
+<br>the 
+<br>validation  data,  it  was  only  applied  with  rescale 
+<br>for normalization purpose.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:5487px; width:138px; height:21px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">type  of  GUI 
+<br>(textfield  and 
+<br>classification of six types of GUI. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:156px; top:5487px; width:14px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">for 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:328px; top:5510px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:500px; top:5458px; width:12px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">41 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:453px; top:5487px; width:58px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">textarea);  3) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:5521px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:5533px; width:84px; height:24px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px"> 
+<br>Setting CNN Models 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:5562px; width:205px; height:90px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">After the data is ready, next is preparing the 
+<br>models.  In  this  study,  there  were  two  approaches 
+<br>used:  custom  CNN,  and  transfer  learning.  For 
+<br>custom  CNN  it  was  a  custom  made  architecture 
+<br>that  defined  before 
+<br>the  model.  The 
+<br>architecture  can  be  seen  in  the  following  table  1, 
+<br>with the initial input was set at 224 x 224 x 3, and 
+<br>stride for every Conv layer is 3. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:187px; top:5608px; width:15px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">ran 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:106px; top:5521px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:106px; top:5654px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:129px; top:5665px; width:118px; height:18px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">TABLE 1 
+<br>CUSTOM CNN ARCHITECTURE  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:127px; top:5693px; width:38px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Layer Type 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:208px; top:5693px; width:45px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Output Shape 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:123px; top:5713px; width:45px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Conv + ReLu 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:206px; top:5713px; width:50px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">224 x 224 x 32 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:114px; top:5727px; width:64px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Max Pool (stride 2) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:206px; top:5727px; width:49px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">112 x 112 x 32 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:123px; top:5741px; width:45px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Conv + ReLu 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:206px; top:5741px; width:50px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">112 x 112 x 64 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:114px; top:5755px; width:64px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Max Pool (stride 2) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:210px; top:5755px; width:41px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">56 x 56 x 64 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:123px; top:5769px; width:45px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Conv + ReLu 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:208px; top:5769px; width:46px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">56 x 56 x 128 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:114px; top:5783px; width:64px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Max Pool (stride 2) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:208px; top:5783px; width:46px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">28 x 28 x 128 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:123px; top:5797px; width:45px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Conv + ReLu 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:208px; top:5797px; width:46px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">28 x 28 x 256 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:114px; top:5812px; width:64px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Max Pool (stride 2) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:208px; top:5812px; width:46px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">14 x 14 x 256 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:116px; top:5826px; width:59px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Dropout (rate 0.5) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:208px; top:5826px; width:46px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">14 x 14 x 256 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:134px; top:5840px; width:24px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Flatten 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:122px; top:5854px; width:48px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Dense + ReLu 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:220px; top:5840px; width:22px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">50176 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:224px; top:5854px; width:14px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">256 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:118px; top:5868px; width:56px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Dense (Softmax) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:215px; top:5868px; width:32px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Classifier 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:345px; top:5533px; width:129px; height:29px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px"> 
+<br>TABLE 2 
+<br>MOBILENET CNN ARCHITECTURE 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:353px; top:5571px; width:38px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Layer Type 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:431px; top:5571px; width:45px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Output Shape 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:347px; top:5591px; width:50px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Conv (stride 2) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:428px; top:5591px; width:50px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">112 x 112 x 32 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:341px; top:5605px; width:62px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Conv dw (stride 1) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:429px; top:5605px; width:49px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">112 x 112 x 32 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:347px; top:5619px; width:50px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Conv (stride 1) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:428px; top:5619px; width:50px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">112 x 112 x 64 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:341px; top:5633px; width:62px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Conv dw (stride 2) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:433px; top:5633px; width:42px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">56 x 56 x 64 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:347px; top:5647px; width:50px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Conv (stride 1) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:430px; top:5647px; width:46px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">56 x 56 x 128 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:341px; top:5661px; width:62px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Conv dw (stride 1) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:430px; top:5661px; width:46px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">56 x 56 x 128 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:347px; top:5675px; width:50px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Conv (stride 1) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:430px; top:5675px; width:46px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">56 x 56 x 128 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:341px; top:5690px; width:62px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Conv dw (stride 2) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:430px; top:5690px; width:46px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">28 x 28 x 128 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:347px; top:5704px; width:50px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Conv (stride 1) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:430px; top:5704px; width:46px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">28 x 28 x 256 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:341px; top:5718px; width:62px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Conv dw (stride 1) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:430px; top:5718px; width:46px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">28 x 28 x 256 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:347px; top:5732px; width:50px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Conv (stride 1) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:430px; top:5732px; width:46px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">28 x 28 x 256 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:341px; top:5746px; width:62px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Conv dw (stride 2) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:430px; top:5746px; width:46px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">14 x 14 x 256 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:335px; top:5760px; width:74px; height:40px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Conv (stride 1) 
+<br>5 x Conv dw (stride 1) 
+<br>Conv (stride 1) 
+<br>Conv dw (stride 2) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:430px; top:5760px; width:46px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">14 x 14 x 512 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:430px; top:5777px; width:46px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">14 x 14 x 512 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:434px; top:5793px; width:38px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">7 x 7 x 512 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:347px; top:5807px; width:50px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Conv (stride 1) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:433px; top:5807px; width:42px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">7 x 7 x 1024 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:338px; top:5821px; width:68px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Conv dw 2 (stride 2) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:433px; top:5821px; width:42px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">7 x 7 x 1024 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:347px; top:5835px; width:50px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Conv (stride 1) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:433px; top:5835px; width:42px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">7 x 7 x 1024 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:343px; top:5850px; width:57px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Avg. Pool (7 x 7) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:433px; top:5850px; width:42px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">1 x 1 x 1024 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:361px; top:5864px; width:22px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Dense 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:433px; top:5864px; width:42px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">1 x 1 x 1000 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:344px; top:5878px; width:56px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Dense (Softmax) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:437px; top:5878px; width:32px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Classifier 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:5881px; width:205px; height:67px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br>For  this  approach,  loss  function  was  set  to 
+<br>sparse  categorical  cross  entropy,  implemented  in 
+<br>mentioned  library  with Adam  optimizer,  to  make 
+<br>sure  the  classification  output  is  exactly  for  each 
+<br>GUI component. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:5950px; width:205px; height:159px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">In second approach, transfer learning method 
+<br>was used. The method use existing trained model 
+<br>of  CNN  and  improve  upon  it  by  trained  it  again 
+<br>using our dataset so it can do the proposed task. In 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">this  case,  MobileNet  [33]  was  used  because  its 
+<br>efficiency  in  deep  learning  implementation  while 
+<br>still  maintains  acceptable  accuracy  performance. 
+<br>Architecture of MobileNet itself utilize what was 
+<br>called  Depthwise  Separable  Convolution  layer 
+<br>(Conv dw) which differ from normal convolution 
+<br>layer  and  helped 
+<br>in  achieving  efficiency. 
+<br>MobileNet architecture can be seen in table 2 with 
+<br>initial  input,  loss  function  and  its  optimizer  were 
+<br>the same as custom CNN settings.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:6111px; width:205px; height:44px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Both  using  batch  valued  at  32  implemented 
+<br>in  Colab,  and  the  experiment  was  conducted 
+<br>based on following conditions: 1) classification of 
+<br>two types of GUI; 2) classification of two similar 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:5902px; width:112px; height:10px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">4.</span><span style="font-family: Arial-BoldMT; font-size:9px">  </span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">Results and Analysis 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:328px; top:5890px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:328px; top:5913px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:5925px; width:144px; height:9px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Classification of Two Types of GUI 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:5939px; width:205px; height:78px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">In this experiment scenario,  only button and 
+<br>textfield categories were chosen, and epoch set at 
+<br>50.  Figure  5  at  the  right  side  shows  the  achieved 
+<br>accuracy  in  training  and  validation  process  with 
+<br>red line indicates training accuracy, and green line 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">indicates  validation  accuracy;  the  left  side  shows 
+<br>the value from loss function.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:6020px; width:205px; height:78px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">It  can  be  seen  that  the  process  experience 
+<br>under  fitting  because  of  insufficient  dataset  with 
+<br>accuracy of validation is below training;  but with 
+<br>the  accuracy  of  recognition  (validation)  could 
+<br>reach  between  80  –  90%,  the  machine  already 
+<br>capable  discerning  between  button  and  textfield 
+<br>components.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:6100px; width:205px; height:55px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">For transfer learning approach, the result can 
+<br>be seen at Figure 6 below. It can be seen the result 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">still under fitting but with boost on faster accuracy 
+<br>achievement.  While  custom  CNN  achieved 
+<br>transfer 
+<br>accuracy  of  90%  above  epoch  40, 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:6194px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:297px; top:6180px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:99px; top:5685px; width:92px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:191px; top:5685px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:192px; top:5685px; width:77px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:99px; top:5708px; width:92px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:191px; top:5708px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:192px; top:5708px; width:77px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:98px; top:5879px; width:92px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:190px; top:5879px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:191px; top:5879px; width:78px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:328px; top:5563px; width:85px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:414px; top:5563px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:414px; top:5563px; width:77px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:328px; top:5586px; width:85px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:414px; top:5586px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:414px; top:5586px; width:77px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:328px; top:5888px; width:85px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:413px; top:5888px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:413px; top:5888px; width:78px; height:0px;"></span>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:6292px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:6292px;"><a name="8">Page 8</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:6350px; width:377px; height:78px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">42</span><span style="font-family: TimesNewRomanPS-BoldItalicMT; font-size:9px">  Jurnal Ilmu Komputer dan Informasi (Journal of Computer Science and Information), 
+<br></span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">      </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">volume 13, issue 1, February 2020</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br> 
+<br>learning  approach  could  reach  it  in  10  epochs. 
+<br>This  shows  how  transfer  learning  could  help 
+<br>greatly 
+<br>of  GUI 
+<br>in 
+<br>components. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:146px; top:6408px; width:48px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">recognition 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:205px; top:6408px; width:32px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">process 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:325px; top:6360px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:328px; top:6385px; width:10px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">In 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:6385px; width:205px; height:136px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">this  scenario,  all  of  six  mentioned 
+<br>categories  of  GUI  components  were  included. 
+<br>With  more  categories  and  files  to  be  processed, 
+<br>the result of custom CNN approach can be seen in 
+<br>Figure  8.  It  can  be  seen  the  validation  accuracy 
+<br>suffered  heavily  and  could  not  even  reach  stable 
+<br>70%  of  accuracy  while  training  accuracy  still 
+<br>could  reach  90%  -an  under  fitting.  It  is  expected 
+<br>as more categories need sufficient number of data, 
+<br>and current one  is far from ideal. At the least, the 
+<br>classification  of  six  types  of  GUI  components  is 
+<br>still shown possible to do using this technique. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:99px; top:6600px; width:175px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Figure 5. Result of custom CNN for two types of GUI</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:172px; top:6590px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:106px; top:6611px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:106px; top:7023px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:337px; top:6705px; width:174px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Figure 7. Result of custom CNN for two similar types</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:408px; top:6694px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:537px; top:6682px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:537px; top:6876px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:103px; top:6791px; width:168px; height:21px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Figure 6. Result of MobileNet for two types of GUI</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:6813px; width:176px; height:9px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Classification of Two Similar Types of GUI 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:6828px; width:205px; height:113px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">For this scenario, only textfield and textarea 
+<br>categories  were  used  with  the  epoch  set  at  100. 
+<br>Figure 7 shows the result. While it seems did not 
+<br>experience  under  fitting,  the  accuracy  of  training 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">and validation was both very fluctuated and could 
+<br>not stable until 100 epochs. It can be inferred that 
+<br>similar  visual  characteristic  could  leads  to  false 
+<br>classification  of  GUI  components;  because  one 
+<br>component type can be  identified as another type 
+<br>which showed in the fluctuation of accuracy. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:6943px; width:205px; height:78px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">By  using  transfer  learning  approach,  the 
+<br>result was also similar  as seen on Figure  8. Even 
+<br>though  it  was  able  to  reach  higher  accuracy,  but 
+<br>the  fluctuation  of  accuracy  is  still  happened 
+<br>between  80%  and  around  94%  which  was  very 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">wide. Still, transfer learning still considered better 
+<br>for the result. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:7035px; width:139px; height:9px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Classification of Six Types of GUI 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:6887px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:6910px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:7012px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:326px; top:6900px; width:167px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Figure 8. Result of MobileNet for two similar types 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:6921px; width:205px; height:78px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">For  transfer  learning  approach,  recognition 
+<br>result of six types of GUI components can be seen 
+<br>in Figure 9. Using this approach gave better result 
+<br>with  validation  accuracy  is  higher  (~70%)  and 
+<br>more  stable  than  custom  CNN,  but  still  suffered 
+<br>from under fitting. Once again, it is expected with 
+<br>the current dataset 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:451px; top:7013px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:287px; top:6581px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:290px; top:6772px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:287px; top:6781px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:328px; top:6523px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:328px; top:6716px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:328px; top:7002px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:59px; top:6431px; width:226px; height:155px;"></div><span style="position:absolute; border: black 1px solid; left:59px; top:6430px; width:227px; height:156px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:58px; top:6622px; width:230px; height:155px;"></div><span style="position:absolute; border: black 1px solid; left:57px; top:6622px; width:231px; height:156px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:309px; top:6534px; width:226px; height:155px;"></div><span style="position:absolute; border: black 1px solid; left:308px; top:6534px; width:227px; height:156px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:309px; top:6728px; width:226px; height:155px;"></div><span style="position:absolute; border: black 1px solid; left:308px; top:6727px; width:227px; height:156px;"></span>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:7184px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:7184px;"><a name="9">Page 9</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:7240px; width:382px; height:40px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">A.A. Rahmadi, et. al.,</span><span style="font-family: TimesNewRomanPSMT; font-size:12px"> </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Visual Recognition of GUI Components using Deep Learning Technique  
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">5.</span><span style="font-family: Arial-BoldMT; font-size:9px">  </span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">Conclusion 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:500px; top:7242px; width:12px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">43 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:7271px; width:205px; height:32px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">resources  in  doing  deep  learning  technique  as  it 
+<br>requires 
+<br>original 
+<br>architecture of CNN wanted to be freely explored. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:405px; top:7282px; width:44px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">equipment 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:352px; top:7282px; width:42px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">expensive 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:460px; top:7282px; width:8px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">if 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:106px; top:7282px; width:109px; height:21px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br>This  study  proposes  a 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:223px; top:7293px; width:45px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">foundation 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:7293px; width:205px; height:136px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">for 
+<br>building  computer  vision  system  using  deep 
+<br>learning  technique,  with  the  final  purpose  for 
+<br>usabilty evaluation of UIs. This study contributes 
+<br>by 1) built GUI component images dataset, and 2) 
+<br>did  deep  learning  experiment  to  validate  whether 
+<br>it  is  suitable  for  basic  recognition  task  of  GUI 
+<br>components. From the results, it can be concluded 
+<br>that deep learning technique is suitable for visual 
+<br>recognition 
+<br>types  of  GUI 
+<br>components. 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:139px; top:7397px; width:77px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">task  of  different 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:7317px; width:81px; height:9px;"><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">Acknowledgement 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:328px; top:7305px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:328px; top:7328px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:7340px; width:205px; height:115px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Thank  you  for  Universitas  17  Agustus  1945 
+<br>Surabaya  (Untag  Surabaya)  that  funded  this 
+<br>research  in  a  form  of  internal  research  grant  for 
+<br>the  lecturers,  and  also  for  Institute  of  Research 
+<br>and  Community  Service  (LPPM)  of  Untag 
+<br>Surabaya  that  was  managing  the  whole  grant 
+<br>process and being really helpful to grantees</span><span style="font-family: TimesNewRomanPSMT; font-size:12px">.</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px"> 
+<br>References 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:377px; top:7583px; width:10px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">of 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:430px; top:7480px; width:33px; height:9px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">to  Fix 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:376px; top:7618px; width:37px; height:9px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Effective 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:401px; top:7583px; width:88px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Interface  Design,” 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:339px; top:7457px; width:173px; height:435px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">J.  Shariat  and  C.  S.  Saucier,  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Tragic 
+<br>Design :  The  Impact  of  Bad  Product 
+<br>Design  and  How 
+<br>It</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">,  First. 
+<br>Sebastopol: O’Reilly Media, 2017. 
+<br>D. Norman and J. Nielsen, “Usability 101: 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">Introduction to Usability,” 2012. [Online]. 
+<br>Available: 
+<br>https://www.nngroup.com/articles/usabilit
+<br>y-101-introduction-to-usability/. 
+<br>[Accessed: 11-Dec-2019]. 
+<br>B.  Shneiderman,  “The  Eight  Golden 
+<br>Rules 
+<br>in 
+<br></span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Shneiderman,  B.  and  Plaisant,  C., 
+<br>Designing  the  User  Interface:  Strategies 
+<br>for 
+<br>Human-Computer 
+<br>Interaction: Fifth Edition</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, 2010. 
+<br>E. Marcotte, </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Responsive Web Design</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, 2nd 
+<br>Edition. New York: A Book Apart, 2014. 
+<br>D.  A.  Norman,  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">The  Design  of  Everyday 
+<br>Things</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">. USA: Basic Books, Inc., 2002. 
+<br>J.  Nielsen, 
+<br>“Iterative  User-Interface 
+<br>Design,” </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Computer (Long. Beach. Calif).</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, 
+<br>doi: 
+<br>vol. 
+<br>doi.org/10.1109/2.241424. 
+<br>J.  Cao,  K.  Zieba,  and  M.  Ellis,  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">The 
+<br>Ultimate  Guide  to  Prototyping</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">.  Mountain 
+<br>View: UXPin Studio, 2015. 
+<br>S.  Minhas,  “User  Experience  Design 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">Process,”  2018. 
+<br>[Online].  Available: 
+<br>https://uxplanet.org/user-experience-
+<br>design-process-d91df1a45916.  [Accessed: 
+<br>01-Dec-2019]. 
+<br>C.  Murphy,  “A  Comprehensive  Guide  To 
+<br>Wireframing  And  Prototyping,”  2018. 
+<br>[Online]. 
+<br>Available: 
+<br>https://www.smashingmagazine.com/2018
+<br>/03/guide-wireframing-prototyping/#top. 
+<br>[Accessed: 11-Dec-2019]. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:456px; top:7710px; width:24px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">1993, 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:399px; top:7710px; width:15px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">no. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:371px; top:7710px; width:14px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">26, 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:428px; top:7710px; width:14px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">11, 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:7894px; width:204px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[10]  G.  Venturi  and  J.  Troost,  “Survey  on  the 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:339px; top:7905px; width:160px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">UCD integration in the industry,” 2004. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:7917px; width:205px; height:21px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[11]  M.  O.  Riedl  and  R.  St  Amant,  “Toward 
+<br>Interactive 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:339px; top:7928px; width:120px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Automated  Exploration  of 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:7457px; width:14px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[1] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:7503px; width:14px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[2] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:7572px; width:14px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[3] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:7641px; width:14px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[4] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:7664px; width:14px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[5] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:7687px; width:14px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[6] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:7733px; width:14px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[7] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:7767px; width:14px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[8] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:7825px; width:14px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[9] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:287px; top:7581px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:287px; top:7772px; width:2px; height:19px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:297px; top:7964px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:7591px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:106px; top:7611px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:101px; top:7602px; width:172px; height:8px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Figure 9. Result of custom CNN for six types of GUI 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:7791px; width:205px; height:147px;"><span style="font-family: TimesNewRomanPSMT; font-size:8px">Figure 10. Result of MobileNet for six types of GUI</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br>. 
+<br>For  future  work  it  is  suggested  to  build  the 
+<br>dataset  further  so  it  is  sufficient  for  the  intended 
+<br>task, and to avoid under fitting in training process. 
+<br>For  the  method,  it  is  preferable  to  use  transfer 
+<br>learning  approach  in  building  computer  vision 
+<br>application  as  it  eliminates  the  trial  and  error  of 
+<br>setting  CNN  architecture of  the  model  –It  is  also 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">could  reach  better  result  in  shorter  time.  If 
+<br>possible, optimizations of parameters also done to 
+<br>explore  which setting are best for the task. Other 
+<br>things  that  could  be  considered  is  availability  of 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:7978px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:59px; top:7431px; width:226px; height:155px;"></div><span style="position:absolute; border: black 1px solid; left:59px; top:7431px; width:227px; height:156px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:58px; top:7623px; width:228px; height:155px;"></div><span style="position:absolute; border: black 1px solid; left:57px; top:7622px; width:229px; height:156px;"></span>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:8076px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:8076px;"><a name="10">Page 10</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:8134px; width:377px; height:33px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">44</span><span style="font-family: TimesNewRomanPS-BoldItalicMT; font-size:9px">  Jurnal Ilmu Komputer dan Informasi (Journal of Computer Science and Information), 
+<br></span><span style="font-family: TimesNewRomanPS-BoldMT; font-size:9px">      </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">volume 13, issue 1, February 2020</span><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:325px; top:8144px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:117px; top:8168px; width:67px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Systems,” 2002. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:8214px; width:19px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[13] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:8180px; width:205px; height:170px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[12]  K.  Gibbs,  T.  Winograd,  and  N.  Scott, 
+<br>“Lens: A System for Visual Interpretation 
+<br>of Graphical User Interfaces,” 2002. 
+<br>T.-H.  Chang,  T.  Yeh,  and  R.  C.  Miller, 
+<br>“GUI Testing Using Computer Vision,” in 
+<br></span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Proceedings of the SIGCHI Conference on 
+<br>Human  Factors  in  Computing  Systems</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, 
+<br>2010. 
+<br>J. 
+<br>Oulasvirta, 
+<br>“Computational  layout  perception  using 
+<br>Gestalt  laws,”  in  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Conference  on  Human 
+<br>- 
+<br>Factors 
+<br>Proceedings</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, 2016, vol. 07-12-May-2016, 
+<br>pp. 
+<br>doi: 
+<br>1423–1429, 
+<br>10.1145/2851581.2892537. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:161px; top:8306px; width:67px; height:9px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">in  Computing 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:239px; top:8306px; width:34px; height:9px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Systems 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:142px; top:8272px; width:24px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Koch 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:8272px; width:19px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[14] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:182px; top:8272px; width:16px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">and 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:215px; top:8272px; width:12px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">A. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:181px; top:8364px; width:64px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Connectedness, 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:8352px; width:205px; height:113px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[15]  M.  Soegaard,  “Laws  of  Proximity, 
+<br>Uniform 
+<br>and 
+<br>Continuation  –  Gestalt  Principles  (2),” 
+<br></span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Interaction  Design  Foundation</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">,  2020. 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">Available: 
+<br>[Online]. 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">https://www.interaction-
+<br>design.org/literature/article/laws-of-
+<br>proximity-uniform-connectedness-and-
+<br>continuation-gestalt-principles-2. 
+<br>[Accessed: 11-Dec-2019]. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:8467px; width:205px; height:171px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[16]  A.  Oulasvirta  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">et  al.</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">,  “Aalto  Interface 
+<br>Metrics  (AIM):  A  service  and  codebase 
+<br>for  computational  GUI  evaluation,”  in 
+<br></span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">UIST  2018 Adjunct  - Adjunct  Publication 
+<br>of  the  31st  Annual  ACM  Symposium  on 
+<br>User  Interface  Software  and  Technology</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, 
+<br>2018, 
+<br>doi: 
+<br>pp. 
+<br>10.1145/3266037.3266087. 
+<br>T.  F.  Liu,  M.  Craft,  J.  Situ,  E. Yumer,  R. 
+<br>Mech,  and  R.  Kumar,  “Learning  design 
+<br>semantics for mobile apps,” in </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">UIST 2018 
+<br>-  Proceedings  of  the  31st  Annual  ACM 
+<br>Symposium  on  User  Interface  Software 
+<br>and  Technology</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">,  2018,  pp.  569–579,  doi: 
+<br>10.1145/3242587.3242650. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:213px; top:8536px; width:29px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">16–19, 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:8559px; width:19px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[17] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:8640px; width:205px; height:78px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[18]  B.  Deka  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">et  al.</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">,  “Rico:  A  mobile  app 
+<br>dataset  for  building  data-driven  design 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">applications,” in </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">UIST 2017 - Proceedings 
+<br>of  the  30th  Annual  ACM  Symposium  on 
+<br>User  Interface  Software  and  Technology</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, 
+<br>doi: 
+<br>pp. 
+<br>2017, 
+<br>10.1145/3126594.3126651. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:207px; top:8697px; width:40px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">845–854, 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:8720px; width:205px; height:56px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[19]  Y.  Lecun,  Y.  Bengio,  and  G.  Hinton, 
+<br>“Deep  learning,”  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Nature</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">,  vol.  521,  no. 
+<br>7553.  Nature  Publishing  Group, pp.  436–
+<br>doi: 
+<br>27-May-2015, 
+<br>444, 
+<br>10.1038/nature14539. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:8778px; width:205px; height:44px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[20]  U.  Karn,  “An  Intuitive  Explanation  of 
+<br>Convolutional  Neural  Networks,”  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">The 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">[Online]. 
+<br></span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Data  Science  Blog</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">,  2016. 
+<br>Available: 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:339px; top:8168px; width:170px; height:32px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">https://ujjwalkarn.me/2016/08/11/intuitive
+<br>-explanation-convnets/. 
+<br>[Accessed:  11-
+<br>Dec-2019]. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:8203px; width:205px; height:78px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[21]  R. A.  Fernandez,  J. A.  Deja,  and  B.  P. V. 
+<br>Samson, “Automating heuristic evaluation 
+<br>of  websites  using  convolutional  neural 
+<br>in  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Conference  on  Human 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">networks,” 
+<br></span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">- 
+<br>Factors 
+<br>Proceedings</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">,  2018,  pp.  9–12,  doi: 
+<br>10.1145/3205851.3205854. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:383px; top:8249px; width:67px; height:9px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">in  Computing 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:462px; top:8249px; width:34px; height:9px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Systems 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:8467px; width:19px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[24] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:8410px; width:19px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[23] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:401px; top:8329px; width:65px; height:9px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Advanced  &amp; 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:367px; top:8433px; width:97px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Interface  Components 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:8283px; width:205px; height:435px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[22]  H.  Lu,  L.  Wang,  M.  Ye,  K.  Yan,  and  Q. 
+<br>Jin, “DNN-based Image Classification for 
+<br>Software  GUI  Testing,”  in  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">  2018  IEEE 
+<br>SmartWorld,  Ubiquitous  Intelligence  &amp; 
+<br>Computing, 
+<br>Trusted 
+<br>Computing,  Scalable  Computing  &amp; 
+<br>Communications,  Cloud  &amp;  Big  Data 
+<br>Computing, Internet of  People  and Smart 
+<br>City 
+<br>Innovation 
+<br>(SmartWorld/SCALCOM/UIC/ATC/CBDC
+<br></span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">om/IOP/SCI)</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, 2018, pp. 1818–1823. 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">S. Hassan, M. Arya, U. Bhardwaj, and S. 
+<br>Kole,  “Extraction  and  Classification  of 
+<br>User 
+<br>from  an 
+<br>Image,” </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Int. J. Pure Appl. Math.</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, vol. 118, 
+<br>no. 24, 2018. 
+<br>T. T. Nguyen, P. M. Vu, H. V. Pham, and 
+<br>T.  T.  Nguyen,  “Deep  learning  UI  design 
+<br>patterns of mobile apps,” in </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Proceedings - 
+<br>International  Conference  on  Software 
+<br>Engineering</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">,  2018,  pp.  65–68,  doi: 
+<br>10.1145/3183399.3183422. 
+<br>T.  A.  Nguyen  and  C.  Csallner,  “Reverse 
+<br>Engineering  Mobile  Application  User 
+<br>Interfaces  With  REMAUI,”  in  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">ASE  ’15: 
+<br>Proceedings  of 
+<br>IEEE/ACM 
+<br>International  Conference  on  Automated 
+<br>Software Engineering</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, 2015, pp. 248–259, 
+<br>doi: 10.1109/ASE.2015.32. 
+<br>T.  Beltramelli,  “pix2code:  Generating 
+<br>Code  from  a  Graphical  User  Interface 
+<br>Screenshot,”  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Comput.  Researcy  Repos.</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">, 
+<br>vol. abs/1705.07962, May 2017. 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">[27]  K.  Moran,  C.  Bernal-Cárdenas,  M. 
+<br>Curcio,  R.  Bonett,  and  D.  Poshyvanyk, 
+<br>“Machine  Learning-Based  Prototyping  of 
+<br>Graphical  User  Interfaces  for  Mobile 
+<br>Apps,” Feb. 2018. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:415px; top:8571px; width:41px; height:9px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">the  30th 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:8536px; width:19px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[25] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:8617px; width:19px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[26] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:8720px; width:205px; height:90px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[28]  C. Chen, T. Su, G. Meng, Z. Xing, and Y. 
+<br>Liu,  “From  UI  Design  Image  to  GUI 
+<br>Skeleton: A Neural Machine Translator to 
+<br>Bootstrap  Mobile  GUI  Implementation,” 
+<br>in  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Proceedings  of 
+<br>’18:  40th 
+<br>International  Conference  on  Software 
+<br>Engineering</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">,  2018,  pp.  665–676,  doi: 
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:9px">10.1145/3180155.3180240. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:434px; top:8767px; width:23px; height:9px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">ICSE 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:8812px; width:205px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[29]  A. Robinson, “Sketch2code: Generating a 
+<br></span></div><span style="position:absolute; border: gray 1px solid; left:0px; top:8968px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:8968px;"><a name="11">Page 11</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:9024px; width:382px; height:25px;"><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">A.A. Rahmadi, et. al.,</span><span style="font-family: TimesNewRomanPSMT; font-size:12px"> </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Visual Recognition of GUI Components using Deep Learning Technique  
+<br></span><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:500px; top:9026px; width:12px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">45 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:117px; top:9054px; width:173px; height:32px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">website  from  a  paper  mockup,”  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Comput. 
+<br>Res.  Repos.</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">,  vol.  abs/1905.13750,  May 
+<br>2019. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:9089px; width:205px; height:113px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[30]  B.  Kim,  S.  Park,  T.  Won,  J.  Heo,  and  B. 
+<br>Kim,  “Deep-learning  based  web  UI 
+<br>automatic  programming,”  in  </span><span style="font-family: TimesNewRomanPS-ItalicMT; font-size:9px">Proceedings 
+<br>of  the  2018  Research  in  Adaptive  and 
+<br>Convergent  Systems,  RACS  2018</span><span style="font-family: TimesNewRomanPSMT; font-size:9px">,  2018, 
+<br>doi: 
+<br>64–65, 
+<br>pp. 
+<br>10.1145/3264746.3264807. 
+<br>J.  Win, 
+<br>Components, 
+<br>Boilerplates,  Frameworks,  and  Kitchen 
+<br>Sink:  How  Do  They  Differ?,”  2017. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:175px; top:9169px; width:45px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">“Libraries, 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:9169px; width:19px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[31] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:339px; top:9054px; width:173px; height:55px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[Online]. 
+<br>Available: 
+<br>https://medium.com/@justinewin/libraries
+<br>-components-boilerplates-frameworks-
+<br>and-kitchen-sink-whats-their-difference-
+<br>a0fa20128f11. [Accessed: 11-Dec-2019]. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:9112px; width:205px; height:32px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[32]  A.  Krizhevsky,  I.  Sutskever,  and  G.  E. 
+<br>Hinton,  “ImageNet  Classification  with 
+<br>Deep Convolutional Neural Networks.” 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:9146px; width:205px; height:44px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">[33]  M.  Tan  and  Q.  V.  Le,  “EfficientNet: 
+<br>Rethinking  Model 
+<br>for 
+<br>Convolutional  Neural  Networks,”  May 
+<br>2019. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:449px; top:9158px; width:32px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px">Scaling 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:307px; top:9192px; width:2px; height:9px;"><span style="font-family: TimesNewRomanPSMT; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:9215px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:85px; top:9761px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:297px; top:9748px; width:3px; height:12px;"><span style="font-family: TimesNewRomanPSMT; font-size:12px"> 
+<br></span></div><div style="position:absolute; top:0px;">Page: <a href="#1">1</a>, <a href="#2">2</a>, <a href="#3">3</a>, <a href="#4">4</a>, <a href="#5">5</a>, <a href="#6">6</a>, <a href="#7">7</a>, <a href="#8">8</a>, <a href="#9">9</a>, <a href="#10">10</a>, <a href="#11">11</a></div>
+</body></html>

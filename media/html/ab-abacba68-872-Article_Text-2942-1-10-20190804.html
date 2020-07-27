@@ -1,0 +1,966 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html">
+</head><body>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:50px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:50px;"><a name="1">Page 1</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:223px; top:122px; width:304px; height:41px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Terakreditasi SINTA Peringkat 2 
+<br></span><span style="font-family: Times New Roman; font-size:8px">Surat Keputusan Dirjen Penguatan Riset dan Pengembangan Ristek Dikti No. 10/E/KPT/2019 
+<br>masa berlaku mulai Vol. 1 No. 1 tahun 2017 s.d  Vol. 5 No. 3 tahun 2021 
+<br></span><span style="font-family: Times New Roman; font-size:12px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:152px; top:166px; width:293px; height:12px;"><span style="font-family: Times New Roman; font-size:12px">Terbit online pada laman web jurnal: </span><span style="font-family: Times New Roman,Bold; font-size:12px">http://jurnal.iaii.or.id 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:154px; top:183px; width:361px; height:61px;"><span style="font-family: Stencil; font-size:21px">JURNAL RESTI 
+<br></span><span style="font-family: Cooper Black; font-size:14px">(Rekayasa Sistem dan Teknologi Informasi) </span><span style="font-family: Cooper Black; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:12px">     ISSN Media Elektronik: 2580-0760 
+<br>  Vol. 3 No. 2 (2019) 113 - 123 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:140px; top:233px; width:3px; height:15px;"><span style="font-family: Times New Roman,Bold; font-size:15px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:86px; top:266px; width:425px; height:32px;"><span style="font-family: Times New Roman; font-size:15px">Rancang Bangun Engine ETL </span><span style="font-family: Times New Roman,Italic; font-size:15px">Data Warehouse</span><span style="font-family: Times New Roman; font-size:15px"> dengan Menggunakan 
+<br>Bahasa Python 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:147px; top:317px; width:301px; height:23px;"><span style="font-family: Times New Roman; font-size:9px">I Made Suwija Putra</span><span style="font-family: Times New Roman; font-size:6px">1</span><span style="font-family: Times New Roman; font-size:9px">, Dewa Komang Tri Adhitya Putra</span><span style="font-family: Times New Roman; font-size:6px">2 </span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:6px">1,2 </span><span style="font-family: Times New Roman; font-size:9px">Program Studi Teknologi Informasi, Fakultas Teknik, Universitas Udayana, Bali 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:196px; top:340px; width:215px; height:10px;"><span style="font-family: Times New Roman; font-size:6px">1</span><span style="font-family: Times New Roman; font-size:9px">putrasuwija@unud.ac.id, </span><span style="font-family: Times New Roman; font-size:6px">2</span><span style="font-family: Times New Roman; font-size:9px">dewa.adhitya21@gmail.com      
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:388px; width:455px; height:122px;"><span style="font-family: Times New Roman; font-size:9px">Big companies that have many branches in different locations often have difficulty with analyzing transaction processes from 
+<br>each branch. The problem experienced by the company  management is the rapid delivery of  massive data provided by the 
+<br>branch to the head office so that the analysis process of the company&#x27;s performance becomes slow and inaccurate. The results 
+<br>of this process used as a consideration in decision making which produce the right information if the data is complete and 
+<br>relevant. The right method of massive data collection is using the </span><span style="font-family: Times New Roman,Italic; font-size:9px">data warehouse</span><span style="font-family: Times New Roman; font-size:9px"> approach. </span><span style="font-family: Times New Roman,Italic; font-size:9px">Data warehouse</span><span style="font-family: Times New Roman; font-size:9px"> is a relational 
+<br>database designed to optimize queries in Online Analytical Processing (OLAP) from the transaction process of various data 
+<br>sources  that  can  record  any  changes  in  data  that  occur  so  that  the  data  becomes  more  structured.  In  applying  the  data 
+<br>collection,  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  warehouse</span><span style="font-family: Times New Roman; font-size:9px">  has  extracted,  transform,  and  load  (ETL)  steps  to  read  data  from  the  Online  Transaction 
+<br>Processing (OLTP) system, change the form of data through uniform data structures, and save to the final location in the </span><span style="font-family: Times New Roman,Italic; font-size:9px">data 
+<br>warehouse</span><span style="font-family: Times New Roman; font-size:9px">. This study provides an overview of the solution for implementing ETL that can work automatically or manually 
+<br>according to needs using the Python programming language  so that it can  facilitate the ETL process and can adjust to the 
+<br>conditions of the database in the company system. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:518px; width:242px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Keywords: Manually, Automation, ETL, Python, </span><span style="font-family: Times New Roman,Italic; font-size:9px">Data Warehouse</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:371px; width:42px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Abstract  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:541px; width:37px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Abstrak 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:558px; width:455px; height:133px;"><span style="font-family: Times New Roman; font-size:9px">Perusahaan besar yang memiliki banyak cabang dengan lokasi berbeda sering sekali mengalami kesulitan dalam menganalisis 
+<br>proses transaksi dari setiap cabang. Masalah yang dialami dari pihak manajemen perusahaan terletak pada kurang cepatnya 
+<br>penyampaian data yang massive diberikan oleh cabang ke kantor pusat sehingga proses analisa kinerja perusahaan menjadi 
+<br>lambat  dan  kurang  akurat.  Hasil  proses  analisa  yang  digunakan  sebagai  pendukung  dalam  pengambilan  keputusan  akan 
+<br>menghasilkan informasi yang tepat jika data yang tersedia lengkap dan relevan. Metode pengumpulan data massive yang baik 
+<br>dan handal digunakan adalah dengan menggunakan pendekatan teknologi </span><span style="font-family: Times New Roman,Italic; font-size:9px">data warehouse</span><span style="font-family: Times New Roman; font-size:9px">. </span><span style="font-family: Times New Roman,Italic; font-size:9px">Data warehouse</span><span style="font-family: Times New Roman; font-size:9px"> merupakan basis 
+<br>data relasional yang didesain lebih kepada mengoptimalkan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">query</span><span style="font-family: Times New Roman; font-size:9px"> dalam Online Analytical Processing (OLAP) dari proses 
+<br>transaksi  berbagai  macam  sumber  data  dan  dapat  mencatat  segala  perubahan  data  yang  terjadi  sehingga  menjadi  lebih 
+<br>terstruktur. Dalam penerapan pengumpulan datanya, </span><span style="font-family: Times New Roman,Italic; font-size:9px">data warehouse</span><span style="font-family: Times New Roman; font-size:9px"> mempunyai tahapan </span><span style="font-family: Times New Roman,Italic; font-size:9px">extract</span><span style="font-family: Times New Roman; font-size:9px">, </span><span style="font-family: Times New Roman,Italic; font-size:9px">transform</span><span style="font-family: Times New Roman; font-size:9px">, dan </span><span style="font-family: Times New Roman,Italic; font-size:9px">load</span><span style="font-family: Times New Roman; font-size:9px"> (ETL) 
+<br>untuk  dapat  membaca  data  dari  sistem  Online  Transaction  Processing  (OLTP),  merubah  bentuk  data  melalui  penyamaan 
+<br>struktur data, dan menyimpan ke lokasi akhir di </span><span style="font-family: Times New Roman,Italic; font-size:9px">data warehouse</span><span style="font-family: Times New Roman; font-size:9px">. Penelitian ini memberikan gambaran solusi implementasi 
+<br>ETL yang bisa bekerja secara otomatis maupun manual sesuai dengan kebutuhan dengan menggunakan bahasa pemrograman 
+<br>Python sehingga bisa memudahkan dalam proses ETL dan bisa menyesuaikan dengan kondisi </span><span style="font-family: Times New Roman,Italic; font-size:9px">database</span><span style="font-family: Times New Roman; font-size:9px"> di sistem perusahaan. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:698px; width:237px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Kata kunci: Manual, Otomatisasi, ETL, Python, </span><span style="font-family: Times New Roman,Italic; font-size:9px">Data Warehouse</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:445px; top:715px; width:78px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">© 2019 Jurnal RESTI
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:737px; width:75px; height:10px;"><span style="font-family: Times New Roman,Bold; font-size:9px">1.</span><span style="font-family: Arial,Bold; font-size:9px">  </span><span style="font-family: Times New Roman,Bold; font-size:9px">Pendahuluan  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:755px; width:226px; height:44px;"><span style="font-family: Times New Roman; font-size:9px">Perkembangan  kebutuhan  informasi  bagi  perusahaan 
+<br>dewasa  ini  semakin  meningkat.  Informasi  memiliki 
+<br>sangat  penting  dalam  menentukan 
+<br>peran  yang 
+<br>kelangsungan  hidup  perusahaan.  Informasi  dihasilkan 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:737px; width:226px; height:67px;"><span style="font-family: Times New Roman; font-size:9px">dari pengolahan berbagai data yang memiliki fakta dan 
+<br>arti  yang  kemudian  disimpulkan.  Dengan  demikian 
+<br></span><span style="font-family: Times New Roman; font-size:9px">ketersediaan  dan  penyajian  data  menjadi  penting  guna 
+<br>akurat, 
+<br>menghasilkan 
+<br>konsisten  dan  relevan  [1].  Beberapa  perusahaan  besar 
+<br>yang  memiliki  banyak  cabang  tersebar  di  berbagai 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:368px; top:772px; width:40px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">informasi 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:450px; top:772px; width:36px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">lengkap, 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:419px; top:772px; width:21px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">yang 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:106px; top:810px; width:384px; height:23px;"><span style="font-family: Times New Roman; font-size:9px"> Diterima Redaksi : 21-04-2019 | Selesai Revisi : 05-07-2019 | Diterbitkan Online : 01-08-2019 
+<br>113 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:834px; width:2px; height:21px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:69px; top:821px; width:456px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:69px; top:178px; width:456px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:70px; top:246px; width:78px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:148px; top:246px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:149px; top:246px; width:162px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:311px; top:246px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:312px; top:246px; width:212px; height:0px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:79px; top:185px; width:60px; height:59px;"></div><span style="position:absolute; border: gray 1px solid; left:0px; top:941px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:941px;"><a name="2">Page 2</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:118px; top:978px; width:360px; height:22px;"><span style="font-family: Times New Roman; font-size:9px">I Made Suwija Putra, Dewa Komang Tri Adhitya Putra 
+<br>Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi) Vol</span><span style="font-family: Times New Roman,Bold; font-size:9px"> </span><span style="font-family: Times New Roman; font-size:9px">. 3 No. 2 (2019) 113 – 123 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:1004px; width:226px; height:182px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br>lokasi  sering  sekali  mengalami  kesulitan  dalam 
+<br>mengumpulkan  informasi  mengenai  proses  transaksi 
+<br>dari  setiap  cabang.  Proses  pengambilan  data  transaksi 
+<br>dari  masing  –  masing  cabang  ke  kantor  pusat  dalam 
+<br>beberapa  kasus  sering  dilakukan  secara  manual  lewat 
+<br>ini  menyebakan  kurangnya 
+<br>email  atau  sms.  Hal 
+<br>reliabelnya  data  yang  diberikan  oleh  masing  –  masing 
+<br>kantor  cabang  (tidak  adanya  sinkronisasi  data  antara 
+<br>pusat  dan  kantor  cabang)[2].  Ada  beberapa  penyebab 
+<br>permasalahan  ini,  salah  satunya  karena  sumber  daya 
+<br>manusia  yang  ada  di  masing  –  masing  kantor  cabang 
+<br>kurang  memadai  dalam  hal  pembuatan 
+<br>laporan 
+<br>transaksi yang rinci, real time dan mudah dianalisa oleh 
+<br>tepat 
+<br>pusat  atau  belum  adanya 
+<br>diterapkan oleh perusahaan tersebut. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:199px; top:1165px; width:68px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">teknologi  yang 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:238px; top:1205px; width:21px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">yang 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:185px; top:1205px; width:40px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">teknologi 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:1194px; width:226px; height:102px;"><span style="font-family: Times New Roman; font-size:9px">Alasan  yang  terakhir  ini  bisa  dicarikan  solusi  yaitu 
+<br>dengan  menggunakan 
+<br>dapat 
+<br>mengumpulkan  data  traksaksi  yang  bersifat  historis 
+<br>atau 
+<br>secara 
+<br>lampau,  kemudian  menyimpannya 
+<br>terstruktur  dalam  sebuah  media  penyimpanan  yang 
+<br>dinamakan  dengan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  warehouse</span><span style="font-family: Times New Roman; font-size:9px">.  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Data  warehouse</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px">diharapkan dapat  menjadi sumber kebutuhan informasi 
+<br></span><span style="font-family: Times New Roman; font-size:9px">eksekutif  dalam  pengambilan  keputusan  bisnis  dengan 
+<br>cepat [3]. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:1303px; width:226px; height:113px;"><span style="font-family: Times New Roman,Italic; font-size:9px">Data warehouse</span><span style="font-family: Times New Roman; font-size:9px"> merupakan teknologi menyimpan data 
+<br>yang  berasal  dari  basis  data  relasional,  dimana  dalam 
+<br>pembuatannya lebih menitikberatkan dalam kemudahan 
+<br>melakukan query dan analisa proses dari data transaksi 
+<br>yang ada  di OLTP.  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Data warehouse</span><span style="font-family: Times New Roman; font-size:9px"> mengandung data 
+<br>historis  dari  proses  transaksi  dan  bisa  juga  data  dari 
+<br>sumber  lainnya.  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Data  warehouse</span><span style="font-family: Times New Roman; font-size:9px">  memisahkan  beban 
+<br>kerja  analisis  dari  beban  kerja  transaksi  sehingga 
+<br>memungkinkan  konsolidasi  data  dari  berbagai  macam 
+<br>sumber dalam organiasasi [4]. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:1424px; width:226px; height:147px;"><span style="font-family: Times New Roman; font-size:9px">Penggunaan </span><span style="font-family: Times New Roman,Italic; font-size:9px">data warehouse</span><span style="font-family: Times New Roman; font-size:9px"> pada perusahaan bertujuan 
+<br>untuk  memperbaiki  proses  pendataan  pada  suatu 
+<br>perusahaan sehingga perusahaan dapat mencatat segala 
+<br>perubahan  data  yang  terjadi  sehingga  menjadi  lebih 
+<br>terstruktur.  Dalam  penerapannya,  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  warehouse</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br>merupakan  sebuah  wadah  sinkronisasi  data  transaksi 
+<br>dengan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  warehouse</span><span style="font-family: Times New Roman; font-size:9px">,  yang  didalamnya  akan  terjadi 
+<br>proses penyamaan struktur data sehingga data transaksi 
+<br>dapat  diterima  oleh  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  warehouse</span><span style="font-family: Times New Roman; font-size:9px">  [5].  Proses 
+<br></span><span style="font-family: Times New Roman; font-size:9px">sinkronisasi  tersebut  dalam  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  warehouse</span><span style="font-family: Times New Roman; font-size:9px">  disebut 
+<br>dengan proses ETL (</span><span style="font-family: Times New Roman,Italic; font-size:9px">extract</span><span style="font-family: Times New Roman; font-size:9px">, </span><span style="font-family: Times New Roman,Italic; font-size:9px">transform</span><span style="font-family: Times New Roman; font-size:9px">, dan </span><span style="font-family: Times New Roman,Italic; font-size:9px">load</span><span style="font-family: Times New Roman; font-size:9px">) yang 
+<br>merupakan  sebuah  jembatan  antara  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  warehouse</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br>dengan data transaksi yang dimiliki perusahaan.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:1580px; width:226px; height:102px;"><span style="font-family: Times New Roman; font-size:9px">ETL  merupakan  proses  mengumpulkan,  menyaring, 
+<br>mengolah, dan menggabungkan data-data yang relevan 
+<br>dari  berbagai  sumber  untuk  disimpan  ke  dalam  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data 
+<br></span><span style="font-family: Times New Roman; font-size:9px">juga  dapat  digunakan  untuk 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">warehouse</span><span style="font-family: Times New Roman; font-size:9px">.  ETL 
+<br>mengintegrasikan  data  dari    sistem  yang  sudah  ada 
+<br>sebelumnya.  Hasil  proses  ETL  adalah  data  yang 
+<br>memenuhi  kriteria  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  warehouse</span><span style="font-family: Times New Roman; font-size:9px">,  seperti  data 
+<br></span><span style="font-family: Times New Roman; font-size:9px">historis, 
+<br>terangkum,  statis,  dan  memiliki 
+<br>struktur yang dirancang untuk keperluan proses analisis 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:110px; top:1660px; width:34px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">terpadu, 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:1015px; width:226px; height:90px;"><span style="font-family: Times New Roman; font-size:9px">[6].  Proses  ETL  tersebut  memerlukan  sebuah  tabel 
+<br>proses  atau  file  JSON  yang  dimana  berfungsi  sebagai 
+<br>tabel  padanan  antara  tabel  OLTP  dengan  tabel  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data 
+<br>warehouse</span><span style="font-family: Times New Roman; font-size:9px">. Proses </span><span style="font-family: Times New Roman,Italic; font-size:9px">load</span><span style="font-family: Times New Roman; font-size:9px"> ke dalam </span><span style="font-family: Times New Roman,Italic; font-size:9px">data warehouse</span><span style="font-family: Times New Roman; font-size:9px"> akan 
+<br>mengambil dari tabel proses atau file JSON yang sudah 
+<br>berisikan  data  dari  basis  data  sumber  dan  hal  ini  akan 
+<br>dijalankan  sesuai  dengan  kapan  eksekusi  algoritma 
+<br>ETL itu dilakukan. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:1113px; width:226px; height:113px;"><span style="font-family: Times New Roman; font-size:9px">ETL secara umum bisa dijalankan dengan 2 cara  yaitu 
+<br>bisa  secara  manual  dan  bisa  secara  otomatis  melalui 
+<br>penjadwalan.  Cara manual adalah menjalankan proses 
+<br>ETL  dengan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">user  administrator</span><span style="font-family: Times New Roman; font-size:9px">  sebagai  operator  yang 
+<br>memustuskan untuk mejalankan </span><span style="font-family: Times New Roman,Italic; font-size:9px">engine</span><span style="font-family: Times New Roman; font-size:9px"> ETL sedangkan 
+<br>cara  otomatis  adalah  dengan  membuat  penjadwalan 
+<br>eksekusi  proses  ETL,  hal  ini  memudahkan  bagi  </span><span style="font-family: Times New Roman,Italic; font-size:9px">user</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">administrator</span><span style="font-family: Times New Roman; font-size:9px">  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  warehouse</span><span style="font-family: Times New Roman; font-size:9px">  dalam  merencanakan, 
+<br>mengelola dan  melaksanakan proses pengambilan data 
+<br>dari OLTP [7].  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:1234px; width:226px; height:125px;"><span style="font-family: Times New Roman; font-size:9px">Penelitian  sebelumnya  mengenai  penerapan  teknologi 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">data  warehouse</span><span style="font-family: Times New Roman; font-size:9px">  di  sebuah  perusahaan  seperti  yang 
+<br>dilakukan  oleh  Rahmad  Syah  dengan  judul  publikasi 
+<br></span><span style="font-family: Times New Roman; font-size:9px">Rancang  Bangun  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Data  Warehouse</span><span style="font-family: Times New Roman; font-size:9px">  Untuk  Analisis 
+<br>Strategi Produksi Penjualan Usulan : PT.XYZ [8]. </span><span style="font-family: Times New Roman,Italic; font-size:9px">Data 
+<br>warehouse</span><span style="font-family: Times New Roman; font-size:9px">  yang  dibangun  menggunakan  proses  ETL 
+<br>yang  masih  melibatkan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">administrator</span><span style="font-family: Times New Roman; font-size:9px">  sebagai  operator 
+<br>atau 
+<br>proses 
+<br>yang  mengerjakan 
+<br>menjadwalkan  proses  ETL  dan  arsitektur  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data 
+<br>warehouse</span><span style="font-family: Times New Roman; font-size:9px"> dibangun dalam penelitian ini menggunakan 
+<br>pendekatan </span><span style="font-family: Times New Roman,Italic; font-size:9px">top</span><span style="font-family: Times New Roman; font-size:9px"> </span><span style="font-family: Times New Roman,Italic; font-size:9px">down</span><span style="font-family: Times New Roman; font-size:9px">.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:440px; top:1315px; width:55px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">kerja  ETL 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:1367px; width:226px; height:125px;"><span style="font-family: Times New Roman; font-size:9px">Saat  ini  banyak  </span><span style="font-family: Times New Roman,Italic; font-size:9px">tool</span><span style="font-family: Times New Roman; font-size:9px">  atau  </span><span style="font-family: Times New Roman,Italic; font-size:9px">engine</span><span style="font-family: Times New Roman; font-size:9px">  ETL  komersial  yang 
+<br>disediakan oleh beberapa </span><span style="font-family: Times New Roman,Italic; font-size:9px">developer software</span><span style="font-family: Times New Roman; font-size:9px">. </span><span style="font-family: Times New Roman,Italic; font-size:9px">Tool</span><span style="font-family: Times New Roman; font-size:9px"> ETL 
+<br>yang terkenal menyediakan antarmuka pengguna grafis 
+<br>(GUI)  dimana  </span><span style="font-family: Times New Roman,Italic; font-size:9px">user</span><span style="font-family: Times New Roman; font-size:9px">  bisa  menentukan  aliran  data  dari 
+<br>sumber  ke  tujuan  secara  visual.  Meskipun  ini  mudah 
+<br>digunakan dan  mudah  memberikan  visual proses ETL, 
+<br>ada 
+<br>juga  kelemahan  yang  berhubungan  dengan 
+<br>pemrograman  grafis  semacam  ini  dari  program  ETL. 
+<br>Beberapa  masalah  yang  ditemui  adalah  sulit  untuk 
+<br>mengekspresikan  solusi  mereka  yang  sesuai  dengan 
+<br>komponen standar yang tersedia di </span><span style="font-family: Times New Roman,Italic; font-size:9px">editor</span><span style="font-family: Times New Roman; font-size:9px"> grafis [9]. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:367px; top:1499px; width:62px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">itu  penelitian 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:1499px; width:226px; height:113px;"><span style="font-family: Times New Roman; font-size:9px">Oleh  karena 
+<br>ini  akan  mencoba 
+<br>membangun  </span><span style="font-family: Times New Roman,Italic; font-size:9px">tool</span><span style="font-family: Times New Roman; font-size:9px">  </span><span style="font-family: Times New Roman,Italic; font-size:9px">engine</span><span style="font-family: Times New Roman; font-size:9px">  ETL  menggunakan  bahasa 
+<br>pemrograman  Python,  dengan  sifat  </span><span style="font-family: Times New Roman,Italic; font-size:9px">open  source</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px">sehingga  bisa  menyesuaikan  dengan  kondisi  </span><span style="font-family: Times New Roman,Italic; font-size:9px">database</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br>sumber  dan  tujuan  yang  diinginkan  oleh  perusahaan. 
+<br>Cara  eksekusi  proses  juga  bisa  secara  manual  dan 
+<br>otomatis.  Pendekatan  arsitektur  pembangunan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data 
+<br>warehouse</span><span style="font-family: Times New Roman; font-size:9px">  dalam  penelitian 
+<br>ini  dilakukan  secara 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">bottom  up</span><span style="font-family: Times New Roman; font-size:9px">  artinya  data  warehouse  dibentuk  dari 
+<br>kumpulan </span><span style="font-family: Times New Roman,Italic; font-size:9px">data mart</span><span style="font-family: Times New Roman; font-size:9px">. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:1620px; width:94px; height:10px;"><span style="font-family: Times New Roman,Bold; font-size:9px">2.</span><span style="font-family: Arial,Bold; font-size:9px">  </span><span style="font-family: Times New Roman,Bold; font-size:9px">Metode Penelitian 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:1638px; width:226px; height:44px;"><span style="font-family: Times New Roman; font-size:9px">Penelitian Rancang Bangun Engine ETL menggunakan 
+<br></span><span style="font-family: Times New Roman; font-size:9px">Bahasa  Python 
+<br>ini  menggunakan  konsep  metode 
+<br>penelitian  kuantitatif  yaitu  hasil  yang  didaptkan  dari 
+<br>penelitian  ini  merupakan  sebuah  realitas  dan  variable 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:118px; top:1690px; width:360px; height:34px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br>Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi) Vol</span><span style="font-family: Times New Roman,Bold; font-size:9px"> </span><span style="font-family: Times New Roman; font-size:9px">. 3 No. 2 (2019) 113 – 123 
+<br>114 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:1726px; width:2px; height:21px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:69px; top:1002px; width:457px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:69px; top:1713px; width:457px; height:0px;"></span>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:1833px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:1833px;"><a name="3">Page 3</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:118px; top:1870px; width:360px; height:22px;"><span style="font-family: Times New Roman; font-size:9px">I Made Suwija Putra, Dewa Komang Tri Adhitya Putra 
+<br>Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi) Vol</span><span style="font-family: Times New Roman,Bold; font-size:9px"> </span><span style="font-family: Times New Roman; font-size:9px">. 3 No. 2 (2019) 113 – 123 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:1896px; width:226px; height:32px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br>bisa  diidentifikasi  dan  diukur  dengan  dengan  alur 
+<br>penelitian seperti pada Gambar 1 di bawah ini.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:210px; top:1959px; width:44px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">itu,  studi 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:130px; top:1971px; width:92px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">untuk  memberikan 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:1936px; width:226px; height:124px;"><span style="font-family: Times New Roman; font-size:9px">Penelitian  dimulai  dengan  mengidentifikasi  masalah 
+<br>yang  ditemukan  seperti  diuraikan  dalam  sub  bab 
+<br>literatur 
+<br>pendahuluan.  Berangkat  dari 
+<br>diperlukan 
+<br>dari 
+<br>permasalahan.  Dengan  pengetahuan  yang  cukup, 
+<br>langkah  selanjutnya  adalah  mendesain  rancangan  data 
+<br>multidimensional  pada  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  warehouse</span><span style="font-family: Times New Roman; font-size:9px">,  alur  mesin 
+<br>ETL  dan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">graphic</span><span style="font-family: Times New Roman; font-size:9px">  </span><span style="font-family: Times New Roman,Italic; font-size:9px">user 
+<br>inteface</span><span style="font-family: Times New Roman; font-size:9px">  yang  kemudian 
+<br>diimplemenasikan  ke  dalam  sebuah  program  yang 
+<br>dibangun  dengan  bahasa  Python  untuk  mesin  ETl  dan 
+<br>bahasa PHP untuk sistem OLAP.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:238px; top:1971px; width:25px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">solusi 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:2069px; width:226px; height:44px;"><span style="font-family: Times New Roman; font-size:9px">Tahapan selajutnya adalah melakukan uji coba terhadap 
+<br>sistem  yang  sudah  dibangun,  hingga  tidak  terjadi 
+<br>kesalahan  proses  ETL  serta  mendokumentasikan 
+<br>sistem. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:524px; top:2089px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:311px; top:2103px; width:204px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">Gambar 1. Gambaran Umum Sistem ETL </span><span style="font-family: Times New Roman,Italic; font-size:8px">Data warehouse</span><span style="font-family: Times New Roman; font-size:8px"> dari 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:387px; top:2117px; width:53px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">database OLTP  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:333px; top:2206px; width:34px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">berhasil 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:379px; top:2206px; width:41px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">di-</span><span style="font-family: Times New Roman,Italic; font-size:9px">extract</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:432px; top:2206px; width:41px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">kemudian 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:433px; top:2149px; width:74px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">  Dari</span><span style="font-family: Times New Roman,Italic; font-size:9px">  database 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:2137px; width:226px; height:240px;"><span style="font-family: Times New Roman; font-size:9px">Data pada </span><span style="font-family: Times New Roman,Italic; font-size:9px">database</span><span style="font-family: Times New Roman; font-size:9px"> sumber OLTP dalam penelitian ini 
+<br>bernama  </span><span style="font-family: Times New Roman,Italic; font-size:9px">database</span><span style="font-family: Times New Roman; font-size:9px">  db_toko. 
+<br>ini 
+<br></span><span style="font-family: Times New Roman; font-size:9px">dilakukan proses  </span><span style="font-family: Times New Roman,Italic; font-size:9px">extract</span><span style="font-family: Times New Roman; font-size:9px"> dan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">transform</span><span style="font-family: Times New Roman; font-size:9px">. Proses  </span><span style="font-family: Times New Roman,Italic; font-size:9px">extract</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br>yaitu  mengambil  seluruh  data  yang  diperlukan  sesuai 
+<br>dengan inisialiasai tabel-tabel yang bersesuaian dengan 
+<br>tabel  yang  ada  di  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  warehouse</span><span style="font-family: Times New Roman; font-size:9px">  (dwh_toko).  Data 
+<br>dilakukan 
+<br>yang 
+<br>penyamaan 
+<br>struktur  dengan  struktur  pada  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data 
+<br>warehouse  </span><span style="font-family: Times New Roman; font-size:9px">dan  pembersihan  yang  disebut  proses 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">transform</span><span style="font-family: Times New Roman; font-size:9px">.  Kedua  proses  tersebut  dilakukan  oleh  satu 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">engine</span><span style="font-family: Times New Roman; font-size:9px">  yang  bernama  Extract-Transform  Engine. 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">Engine</span><span style="font-family: Times New Roman; font-size:9px">  ini  menghasilkan  data  </span><span style="font-family: Times New Roman,Italic; font-size:9px">extract</span><span style="font-family: Times New Roman; font-size:9px">  yang  telah  di-
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">transform</span><span style="font-family: Times New Roman; font-size:9px">  dan  tersimpan  ke  dalam  file  format  JSON 
+<br>contoh  seperti  yang  diuraikan  pada  sub  bab  2.5.  File 
+<br>JSON  tersebut  akan  dibaca  oleh  </span><span style="font-family: Times New Roman,Italic; font-size:9px">service</span><span style="font-family: Times New Roman; font-size:9px">  </span><span style="font-family: Times New Roman,Italic; font-size:9px">load</span><span style="font-family: Times New Roman; font-size:9px">  di  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data 
+<br>warehouse</span><span style="font-family: Times New Roman; font-size:9px">.  File  JSON  juga  disimpan  ke  dalam  </span><span style="font-family: Times New Roman,Italic; font-size:9px">cloud</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">server</span><span style="font-family: Times New Roman; font-size:9px">  secara  otomatis,  hal  ini  berfungsi  sebagai 
+<br>pengamanan  serta  </span><span style="font-family: Times New Roman,Italic; font-size:9px">backup  file</span><span style="font-family: Times New Roman; font-size:9px">  dari  hasil  Extract-
+<br>Transform  Engine  agar  jika  terjadi  permaslahan  pada 
+<br>server  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  warehouse</span><span style="font-family: Times New Roman; font-size:9px">,  perusahaan  masih  punya 
+<br>backup data di luar. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:283px; top:2416px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:2385px; width:226px; height:78px;"><span style="font-family: Times New Roman; font-size:9px">Langkah  selanjutnya  yaitu  membaca  file  JSON  yang 
+<br>berisi  data  hasil  proses  </span><span style="font-family: Times New Roman,Italic; font-size:9px">extract</span><span style="font-family: Times New Roman; font-size:9px">  dan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">transform</span><span style="font-family: Times New Roman; font-size:9px">  dengan 
+<br>memanggil </span><span style="font-family: Times New Roman,Italic; font-size:9px">engine service</span><span style="font-family: Times New Roman; font-size:9px"> yang bernama Load Engine. 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">Engine</span><span style="font-family: Times New Roman; font-size:9px">  ini  akan  membaca  isi  </span><span style="font-family: Times New Roman,Italic; font-size:9px">file</span><span style="font-family: Times New Roman; font-size:9px">  dan  mempadankan 
+<br>data  tersebut  ke  dalam  struktur  dimensional  pada  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data 
+<br>warehouse</span><span style="font-family: Times New Roman; font-size:9px">  yang  sebelumnya  sudah  dirancang  dengan 
+<br>menggunakan pendekatan Kimball (</span><span style="font-family: Times New Roman,Italic; font-size:9px">bottom -up</span><span style="font-family: Times New Roman; font-size:9px">). 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:2471px; width:226px; height:90px;"><span style="font-family: Times New Roman; font-size:9px">Pendekatan  Kimball  dalam  pembangunan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Data 
+<br>warehouse</span><span style="font-family: Times New Roman; font-size:9px">  dimulai  dengan  membangun  tabel  yang 
+<br>terdiri  dari  tabel  fakta  dan  dimensi.  Tabel  fakta 
+<br>berisikan metrik yang biasa data recordnya berasal dari 
+<br>tabel transaksi di </span><span style="font-family: Times New Roman,Italic; font-size:9px">relational</span><span style="font-family: Times New Roman; font-size:9px"> </span><span style="font-family: Times New Roman,Italic; font-size:9px">database</span><span style="font-family: Times New Roman; font-size:9px"> dan tabel dimensi 
+<br>berisikan  atribut  yang  data  recordnya  berasalah  dari 
+<br></span><span style="font-family: Times New Roman; font-size:9px">tabel  master  di  </span><span style="font-family: Times New Roman,Italic; font-size:9px">relational</span><span style="font-family: Times New Roman; font-size:9px">  </span><span style="font-family: Times New Roman,Italic; font-size:9px">database</span><span style="font-family: Times New Roman; font-size:9px">.  Pendekatan  ini 
+<br>tidak memperhatikan aturan normalisasi [10]. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:141px; top:2431px; width:83px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">Gambar 1 Alur penelitian 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:2458px; width:121px; height:10px;"><span style="font-family: Times New Roman,Italic; font-size:9px">2.1</span><span style="font-family: Arial,Italic; font-size:9px">  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Gambaran Umum Sistem 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:2475px; width:226px; height:78px;"><span style="font-family: Times New Roman; font-size:9px">Sistem  ETL  yang  dibangun  dalam  penelitian  ini 
+<br>mengambil  contoh  kasus  pada 
+<br>toko  elektronik 
+<br>komputer. Terdapat tahapan-tahapan dalam proses ETL 
+<br>mulai  dari  tahap  insialisasi  </span><span style="font-family: Times New Roman,Italic; font-size:9px">database</span><span style="font-family: Times New Roman; font-size:9px">  sumber  hingga 
+<br>menjadi  data  yang  bisa  dianalisis  sesuai  kebutuhan  di 
+<br>dalam  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  warehouse</span><span style="font-family: Times New Roman; font-size:9px">.  Gambaran  umum  sistem  pada 
+<br>penelitian ini dapat dilihat pada Gambar 1. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:2440px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:2618px; width:2px; height:21px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:118px; top:2582px; width:360px; height:34px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br>Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi) Vol</span><span style="font-family: Times New Roman,Bold; font-size:9px"> </span><span style="font-family: Times New Roman; font-size:9px">. 3 No. 2 (2019) 113 – 123 
+<br>115 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:69px; top:1894px; width:457px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:69px; top:2605px; width:457px; height:0px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:81px; top:2119px; width:201px; height:304px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:300px; top:1906px; width:223px; height:190px;"></div><span style="position:absolute; border: gray 1px solid; left:0px; top:2725px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:2725px;"><a name="4">Page 4</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:118px; top:2762px; width:360px; height:22px;"><span style="font-family: Times New Roman; font-size:9px">I Made Suwija Putra, Dewa Komang Tri Adhitya Putra 
+<br>Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi) Vol</span><span style="font-family: Times New Roman,Bold; font-size:9px"> </span><span style="font-family: Times New Roman; font-size:9px">. 3 No. 2 (2019) 113 – 123 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:2788px; width:226px; height:101px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br>Proses  ETL  yang  dibangun  bisa  dijalankan  dengan  2 
+<br>cara  yaitu  cara  manual,  dimana  proses  ETL  akan 
+<br>berjalan  jika  </span><span style="font-family: Times New Roman,Italic; font-size:9px">user  administrator  database</span><span style="font-family: Times New Roman; font-size:9px">  menekan 
+<br>tombol  proses  yang  terdapat  pada  </span><span style="font-family: Times New Roman,Italic; font-size:9px">interface</span><span style="font-family: Times New Roman; font-size:9px">  </span><span style="font-family: Times New Roman,Italic; font-size:9px">engine</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br>ETL.  Cara  yang  kedua  adalah  proses  otomatis  yang 
+<br>dibuat  khusus  dengan  konsep  proses  yang  terjadwal 
+<br>sehingga  proses  ETL  akan  berjalan  otomatis  sesuai 
+<br>dengan jadwal yang sudah ditentukan sebelumnya.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:2897px; width:226px; height:21px;"><span style="font-family: Times New Roman; font-size:9px">Data yang telah berhasil disimpan pada </span><span style="font-family: Times New Roman,Italic; font-size:9px">data warehouse</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br>kemudian  sudah  siap  untuk  dianalisis  sehingga  bisa 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:2799px; width:226px; height:32px;"><span style="font-family: Times New Roman; font-size:9px">menghasilkan  informasi  dalam  bentuk  laporan  sesuai 
+<br>dengan  kebutuhan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">user</span><span style="font-family: Times New Roman; font-size:9px">  pimpinan.  Laporan-laporan 
+<br>tersebut seperti: 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:2839px; width:226px; height:21px;"><span style="font-family: Times New Roman; font-size:9px">a.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Laporan transaksi penjualan berdasarkan per bulan. 
+<br>b.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Laporan transaksi penjualan barang berdasarkan tiap 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:2874px; width:226px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">c.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Laporan pegawai terhadap transaksi penjualan yang 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:314px; top:2863px; width:33px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">cabang. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:314px; top:2885px; width:39px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">ditangani.
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:215px; top:3184px; width:167px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">Gambar 2. Rancangan </span><span style="font-family: Times New Roman,Italic; font-size:8px">database</span><span style="font-family: Times New Roman; font-size:8px"> percobaan db_toko 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:480px; top:3169px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:474px; top:3442px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:163px; top:3457px; width:270px; height:8px;"><span style="font-family: Times New Roman; font-size:8px"> Gambar 3. Rancangan data multidimensional percobaan </span><span style="font-family: Times New Roman,Italic; font-size:8px">data warehouse</span><span style="font-family: Times New Roman; font-size:8px"> dwh_toko 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:118px; top:3474px; width:360px; height:34px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br>Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi) Vol</span><span style="font-family: Times New Roman,Bold; font-size:9px"> </span><span style="font-family: Times New Roman; font-size:9px">. 3 No. 2 (2019) 113 – 123 
+<br>116 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:3510px; width:2px; height:21px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:69px; top:2786px; width:457px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:69px; top:3497px; width:457px; height:0px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:128px; top:2919px; width:351px; height:258px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:121px; top:3203px; width:353px; height:246px;"></div><span style="position:absolute; border: gray 1px solid; left:0px; top:3617px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:3617px;"><a name="5">Page 5</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:118px; top:3654px; width:360px; height:22px;"><span style="font-family: Times New Roman; font-size:9px">I Made Suwija Putra, Dewa Komang Tri Adhitya Putra 
+<br>Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi) Vol</span><span style="font-family: Times New Roman,Bold; font-size:9px"> </span><span style="font-family: Times New Roman; font-size:9px">. 3 No. 2 (2019) 113 – 123 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:3679px; width:133px; height:21px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">2.2</span><span style="font-family: Arial,Italic; font-size:9px">  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Rancangan Database OLTP 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:3691px; width:76px; height:10px;"><span style="font-family: Times New Roman,Italic; font-size:9px">2.5</span><span style="font-family: Arial,Italic; font-size:9px">  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Format JSON 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:3708px; width:226px; height:56px;"><span style="font-family: Times New Roman; font-size:9px">Data 
+<br>transaksi  pada  </span><span style="font-family: Times New Roman,Italic; font-size:9px">database</span><span style="font-family: Times New Roman; font-size:9px">  OLTP  db_toko 
+<br>menyimpan  seluruh  data  transaksional  pembelian  di 
+<br>toko  elektronik  komputer.  OLTP  ini  menggunakan 
+<br>relasional  </span><span style="font-family: Times New Roman,Italic; font-size:9px">database</span><span style="font-family: Times New Roman; font-size:9px">.  Rancangan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">database</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br>konsep 
+<br>db_toko dapat dilihat pada Gambar 2. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:3772px; width:226px; height:170px;"><span style="font-family: Times New Roman,Italic; font-size:9px">Database</span><span style="font-family: Times New Roman; font-size:9px">  db_toko  terdapat  10  tabel.  Tabel  tersebut 
+<br>yaitu 
+<br>tb_barang  yang  menyimpan  data  barang, 
+<br>tb_kategori_barang  yang  menyimpan  kategori-kategori 
+<br>barang,  tb_supplier  yang  menyimpan  data  para  suplier 
+<br>barang, tb_pembeli yang menyimpan data para pembeli 
+<br>barang  di  toko,  tb_cabang  yang  menyimpan  data 
+<br>cabang  yang  dimiliki  toko,  dan  tb_pegawai  yang 
+<br>menyimpan  data  pegawai  yang  bersentuhan  langsung 
+<br>terhadap  transaksi  di  sistem.  Data  transaksi  penjualan 
+<br>pada  </span><span style="font-family: Times New Roman,Italic; font-size:9px">database</span><span style="font-family: Times New Roman; font-size:9px">  ini  tersimpan  pada  tabel  tb_pembelian 
+<br>dan  tb_detil_pembelian.  Tabel  lainnya  yaitu  tabel 
+<br>history  yang  digunakan  untuk  menyimpan  log  data 
+<br>yang  sudah  berhasil  dibawa  ke  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  warehouse</span><span style="font-family: Times New Roman; font-size:9px">,  serta 
+<br>tabel  json  yang  menyimpan  konversi  data  menjadi 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">script</span><span style="font-family: Times New Roman; font-size:9px"> json. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:3950px; width:138px; height:10px;"><span style="font-family: Times New Roman,Italic; font-size:9px">2.3</span><span style="font-family: Arial,Italic; font-size:9px">  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Rancangan Data warehouse 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:3968px; width:226px; height:90px;"><span style="font-family: Times New Roman; font-size:9px">Data  hasil  proses  ETL  nantinya  akan  disimpan  ke 
+<br>dalam  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  warehouse</span><span style="font-family: Times New Roman; font-size:9px">.  Rancangan  struktur  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data 
+<br>warehouse</span><span style="font-family: Times New Roman; font-size:9px">  yang  dibangun  yaitu  menggunakan  skema 
+<br>bintang.  Skema  tersebut  terdiri  dari  tabel  fakta  dan 
+<br>tabel  dimensi  akan  mengelilingi  tabel  fakta  atau  yang 
+<br>disebut 
+<br>database  multidimensional[11]. 
+<br>Rancangan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  warehouse</span><span style="font-family: Times New Roman; font-size:9px">  yang  digunakan  dapat 
+<br>dilihat pada Gambar 3. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:113px; top:4025px; width:31px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">dengan 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:153px; top:4100px; width:19px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">fact, 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:118px; top:4100px; width:22px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">yaitu 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:4066px; width:226px; height:113px;"><span style="font-family: Times New Roman; font-size:9px">Rancangan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  warehouse</span><span style="font-family: Times New Roman; font-size:9px">  yang  berbentuk  skema 
+<br>bintang  dalam  kasus  ini  terdiri  dari  7  tabel  dengan 
+<br>masing-masing 1 tabel fakta dan 4 tabel dimensi. Tabel 
+<br>tersebut 
+<br>dim_pegawai, 
+<br>dim_pembeli,  dim_cabang,  dan  dim_barang.  Tabel 
+<br>history dan tabel json digunakan masing-masing untuk 
+<br>menyimpan  history  data  yang  masuk  dan  menyimpan 
+<br>script  json.  Rancangan  tersebut  dapat  dimanfaatkan 
+<br>untuk  membentuk  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  mart</span><span style="font-family: Times New Roman; font-size:9px">  yang  sesuai  dengan 
+<br>kebutuhan pengguna. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:187px; top:4100px; width:37px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">tb_fakta, 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:4187px; width:69px; height:10px;"><span style="font-family: Times New Roman,Italic; font-size:9px">2.4</span><span style="font-family: Arial,Italic; font-size:9px">  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Tabel Bantu 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:4204px; width:226px; height:125px;"><span style="font-family: Times New Roman; font-size:9px">Tabel  bantu  yang  dimaksud  di  penelitian  ini  adalah 
+<br>tabel tambahan yang digunakan untuk menyimpan data 
+<br>riwayat (</span><span style="font-family: Times New Roman,Italic; font-size:9px">history</span><span style="font-family: Times New Roman; font-size:9px">) dari proses </span><span style="font-family: Times New Roman,Italic; font-size:9px">extract</span><span style="font-family: Times New Roman; font-size:9px">-</span><span style="font-family: Times New Roman,Italic; font-size:9px">transform</span><span style="font-family: Times New Roman; font-size:9px"> ataupun 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">load</span><span style="font-family: Times New Roman; font-size:9px"> yang telah dilakukan. Terdapat 2 tabel bantu yaitu 
+<br>tabel tb_history dan tb_json. Tabel tb_history berfungsi 
+<br>menyimpan data log dari proses yang telah berhasil di-
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">extract,  transform</span><span style="font-family: Times New Roman; font-size:9px">  ataupun  </span><span style="font-family: Times New Roman,Italic; font-size:9px">load</span><span style="font-family: Times New Roman; font-size:9px">.  Sedangkan  tb_json 
+<br>berfungsi  menyimpan  nama  </span><span style="font-family: Times New Roman,Italic; font-size:9px">file</span><span style="font-family: Times New Roman; font-size:9px">  JSON  yang  berisikan 
+<br>hasil  proses  </span><span style="font-family: Times New Roman,Italic; font-size:9px">extract  </span><span style="font-family: Times New Roman; font-size:9px">dan</span><span style="font-family: Times New Roman,Italic; font-size:9px">  transform</span><span style="font-family: Times New Roman; font-size:9px">  untuk  dicatat  dan 
+<br>dialokasikan  untuk  di  upload  ke  </span><span style="font-family: Times New Roman,Italic; font-size:9px">cloud</span><span style="font-family: Times New Roman; font-size:9px">  sebagai  </span><span style="font-family: Times New Roman,Italic; font-size:9px">backup 
+<br>file</span><span style="font-family: Times New Roman; font-size:9px">. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:3708px; width:226px; height:101px;"><span style="font-family: Times New Roman; font-size:9px">File JSON dalam mesin ETL ini dipergunakan sebagai 
+<br>penyimpanan  data  dari  hasil  proses  </span><span style="font-family: Times New Roman,Italic; font-size:9px">extract</span><span style="font-family: Times New Roman; font-size:9px">-</span><span style="font-family: Times New Roman,Italic; font-size:9px">transform</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">database</span><span style="font-family: Times New Roman; font-size:9px">  OLTP  kemudian  dipakai  oleh  mesin  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Load 
+<br>Engine</span><span style="font-family: Times New Roman; font-size:9px">  untuk  membawah  data  sehingga  bermuara 
+<br>menuju ke masing-masing tabel dimensi dan tabel fakta 
+<br>yang ada di </span><span style="font-family: Times New Roman,Italic; font-size:9px">data warehouse</span><span style="font-family: Times New Roman; font-size:9px">. Di bawah ini adalah salah 
+<br>contoh  format  isian  file  JSON  yang  diambil  dari  data 
+<br>barang  di  OLTP  yang  akan  bermuara  ke  dimensi 
+<br>barang di </span><span style="font-family: Times New Roman,Italic; font-size:9px">data warehouse</span><span style="font-family: Times New Roman; font-size:9px">. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:3819px; width:92px; height:9px;"><span style="font-family: Lucida Console; font-size:9px">JSON Data Barang 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:320px; top:3830px; width:202px; height:64px;"><span style="font-family: Lucida Console; font-size:8px">[ 
+<br>  { 
+<br>    &quot;id_barang&quot;: &lt;&lt;id_barang1&gt;&gt;, 
+<br>    &quot;nama_supplier&quot;: &quot;&lt;&lt;nama_suplier1&gt;&gt;&quot;, 
+<br>    &quot;nama_kategori&quot;: &quot;&lt;&lt;kategori1&gt;&gt;&quot;, 
+<br>    &quot;nama_barang&quot;: &quot;&lt;&lt;nama_barang1&gt;&gt;&quot;, 
+<br>    &quot;harga_barang&quot;: &lt;&lt;harga1&gt;&gt;, 
+<br>    &quot;alamat_supplier&quot;: &quot;&lt;&lt;alamat2&gt;&gt;&quot; 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:309px; top:3894px; width:33px; height:16px;"><span style="font-family: Lucida Console; font-size:8px">    }, 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:309px; top:3910px; width:213px; height:80px;"><span style="font-family: Lucida Console; font-size:8px">  { 
+<br>    &quot;id_barang&quot;: &lt;&lt;id_barang2&gt;&gt;, 
+<br>    &quot;nama_supplier&quot;: &quot;&lt;&lt;nama_suplier2&gt;&gt;&quot;, 
+<br>    &quot;nama_kategori&quot;: &quot;&lt;&lt;kategori2&gt;&gt;&quot;, 
+<br>    &quot;nama_barang&quot;: &quot;&lt;&lt;nama_barang2&gt;&gt;&quot;, 
+<br>    &quot;harga_barang&quot;: &lt;&lt;harga2&gt;&gt;, 
+<br>    &quot;alamat_supplier&quot;: &quot;&lt;&lt;alamat2&gt;&gt;&quot; 
+<br> 
+<br>    } 
+<br>] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:3992px; width:114px; height:21px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman,Bold; font-size:9px">3</span><span style="font-family: Arial,Bold; font-size:9px">  </span><span style="font-family: Times New Roman,Bold; font-size:9px">Hasil dan Pembahasan 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:4021px; width:226px; height:101px;"><span style="font-family: Times New Roman; font-size:9px">Hasil  dari  penelitian  ini  adalah  mengimplementasikan 
+<br>dan menguji mesin ETL yang telah dirancang pada bab 
+<br>sebelumnya untuk bisa memberikan kesimpulan apakah 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">engine</span><span style="font-family: Times New Roman; font-size:9px"> ETL sudah bisa bekerja sesuai dengan harapan. 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">Engine</span><span style="font-family: Times New Roman; font-size:9px"> ETL berkerja dengan 2 pilihan yaitu bisa secara 
+<br>manual 
+<br>dengan 
+<br>atau 
+<br>penjadwalan yang ditentukan sebelumnya. 
+<br> 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">3.1</span><span style="font-family: Arial,Italic; font-size:9px">  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Manual ETL 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:448px; top:4079px; width:36px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">otomatis 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:342px; top:4079px; width:28px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">proses 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:410px; top:4079px; width:27px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">secara 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:4131px; width:226px; height:78px;"><span style="font-family: Times New Roman; font-size:9px">Manual  ETL  merupakan  salah  saru  pilihan  cara  untuk 
+<br>menjalankan  proses  extract,  transform  dan  load  secara 
+<br>manual.  Artinya  engine  ETL  akan  bekerja  dengan 
+<br>bantuan  user  sebagai  administrator  untuk  menjalankan 
+<br>service  yang  ada  dalam  Engine  ETL.  Tampilan 
+<br>interface  pada  pilihan  Manual  ETL  dapat  dilihat  pada 
+<br>Gambar 4. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:4217px; width:226px; height:124px;"><span style="font-family: Times New Roman; font-size:9px">Gambar  4  merupakan  tampilan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">interface</span><span style="font-family: Times New Roman; font-size:9px">  pada  </span><span style="font-family: Times New Roman,Italic; font-size:9px">engine</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br>ETL  yang  digunakan  menjalankan  proses  </span><span style="font-family: Times New Roman,Italic; font-size:9px">extract</span><span style="font-family: Times New Roman; font-size:9px">, 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">transform</span><span style="font-family: Times New Roman; font-size:9px">  dan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">load</span><span style="font-family: Times New Roman; font-size:9px">  secara  manual.  Terdapat  button 
+<br>“Mulai Proses </span><span style="font-family: Times New Roman,Italic; font-size:9px">Extract</span><span style="font-family: Times New Roman; font-size:9px">”, “Mulai Proses Load”, “Refresh 
+<br>Tabel” dan “Hapus Data ETL”.  Sebelum menjalankan 
+<br>proses tersebut, </span><span style="font-family: Times New Roman,Italic; font-size:9px">user</span><span style="font-family: Times New Roman; font-size:9px"> terlebih dahulu sudah menentukan 
+<br>database sumber (OLTP) dan tujuan (</span><span style="font-family: Times New Roman,Italic; font-size:9px">Data warehouse</span><span style="font-family: Times New Roman; font-size:9px">) 
+<br>yang  dipakai  sampai  pada  level  tabel-tabel  yang  akan 
+<br>bersesuaian.  Saat  proses  berlangsung  </span><span style="font-family: Times New Roman,Italic; font-size:9px">user</span><span style="font-family: Times New Roman; font-size:9px">  dapat 
+<br>melihat  hasil  dari  proses  </span><span style="font-family: Times New Roman,Italic; font-size:9px">extract</span><span style="font-family: Times New Roman; font-size:9px">  dan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">load</span><span style="font-family: Times New Roman; font-size:9px">  yang 
+<br></span><span style="font-family: Times New Roman; font-size:9px">dilakukan. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:4350px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:118px; top:4366px; width:360px; height:34px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br>Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi) Vol</span><span style="font-family: Times New Roman,Bold; font-size:9px"> </span><span style="font-family: Times New Roman; font-size:9px">. 3 No. 2 (2019) 113 – 123 
+<br>117 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:4402px; width:2px; height:21px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:69px; top:3678px; width:457px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:69px; top:4389px; width:457px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:299px; top:3817px; width:227px; height:1px;"></span>
+<span style="position:absolute; border: black 1px solid; left:299px; top:3829px; width:227px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:3991px; width:218px; height:0px;"></span>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:4509px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:4509px;"><a name="6">Page 6</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:118px; top:4546px; width:360px; height:22px;"><span style="font-family: Times New Roman; font-size:9px">I Made Suwija Putra, Dewa Komang Tri Adhitya Putra 
+<br>Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi) Vol</span><span style="font-family: Times New Roman,Bold; font-size:9px"> </span><span style="font-family: Times New Roman; font-size:9px">. 3 No. 2 (2019) 113 – 123 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:4583px; width:226px; height:44px;"><span style="font-family: Times New Roman,Italic; font-size:9px">Output</span><span style="font-family: Times New Roman; font-size:9px">  dari  Extract  Transform  Engine  ini  ditampilkan 
+<br>di dalam </span><span style="font-family: Times New Roman,Italic; font-size:9px">interface</span><span style="font-family: Times New Roman; font-size:9px"> ETL. Hasil ini berisikan jumlah data 
+<br>yang  berhasil  diekstrak  dan  ditransformasikan  dari 
+<br>tabel yang dipilih. Seperti yang terlihat pada Gambar 6. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:294px; top:4766px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:120px; top:4781px; width:125px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">Gambar 4. GUI ETL (Tampilan Awal) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:4796px; width:226px; height:136px;"><span style="font-family: Times New Roman; font-size:9px">Proses  ETL  yang  pertama  adalah  </span><span style="font-family: Times New Roman,Italic; font-size:9px">extract</span><span style="font-family: Times New Roman; font-size:9px">  data  yaitu 
+<br>mengambil data dari tabel yang ada di </span><span style="font-family: Times New Roman,Italic; font-size:9px">database</span><span style="font-family: Times New Roman; font-size:9px"> sumber 
+<br>yang  telah  ditentukan  sebelumnya.  Kemudian  proses 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">transform</span><span style="font-family: Times New Roman; font-size:9px">  (konversi  dan  pembersihan  data)  akan 
+<br></span><span style="font-family: Times New Roman; font-size:9px">mengikuti  aturan  dari  pasangan  tabel  antara  tabel 
+<br>master dengan tabel dimensi dan tabel transaksi dengan 
+<br>tabel  fakta  di  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  warehouse</span><span style="font-family: Times New Roman; font-size:9px">.  Kedua  proses  ini  akan 
+<br>dieksekusi  dengan  memilih  button  “Mulai  Proses 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">flowchart</span><span style="font-family: Times New Roman; font-size:9px">  </span><span style="font-family: Times New Roman,Italic; font-size:9px">extract  </span><span style="font-family: Times New Roman; font-size:9px">dan 
+<br>Extract”.  Berikut  adalah 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">transform</span><span style="font-family: Times New Roman; font-size:9px">  data  yang  mengambarkan  alur  tiap  proses 
+<br>yang  dijalani  oleh  Extract  Transform  Engine  dapat 
+<br>dilihat pada Gambar 5. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:524px; top:4806px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:352px; top:4821px; width:122px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">Gambar 6. </span><span style="font-family: Times New Roman,Italic; font-size:8px">Interface</span><span style="font-family: Times New Roman; font-size:8px"> ETL </span><span style="font-family: Times New Roman,Italic; font-size:8px">extract</span><span style="font-family: Times New Roman; font-size:8px"> data 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:4836px; width:226px; height:147px;"><span style="font-family: Times New Roman; font-size:9px">Terlihat pada Gambar 6, </span><span style="font-family: Times New Roman,Italic; font-size:9px">output</span><span style="font-family: Times New Roman; font-size:9px"> yang ditampilkan pada 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">engine</span><span style="font-family: Times New Roman; font-size:9px"> ETL adalah sebuah </span><span style="font-family: Times New Roman,Italic; font-size:9px">print</span><span style="font-family: Times New Roman; font-size:9px"> </span><span style="font-family: Times New Roman,Italic; font-size:9px">text</span><span style="font-family: Times New Roman; font-size:9px"> “Data transaksi id: 
+<br>1  telah  diekstrak”  yang  menandakan  bahwa  proses 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">extract</span><span style="font-family: Times New Roman; font-size:9px">  dan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">transform  </span><span style="font-family: Times New Roman; font-size:9px">data  berhasil  dilakukan  untuk 
+<br>transaksi  yang  mempunyai  id  1.  Engine  ETL  juga 
+<br>menampilkan  data  waktu  yang  diperlukan 
+<br>saat 
+<br>melakukan  proses  </span><span style="font-family: Times New Roman,Italic; font-size:9px">extract</span><span style="font-family: Times New Roman; font-size:9px">  dan 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">transform</span><span style="font-family: Times New Roman; font-size:9px">  seperti 
+<br>Gambar 6, terlihat waktu yang diperlukan untuk proses 
+<br>data.  Contoh  sebanyak  1000  data  diperlukan  waktu 
+<br>ini  akan 
+<br>eksekusi  sebesar  8.1563  detik.  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Output</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br>disimpan dalam bentuk file JSON yang secara otomatis 
+<br>akan diupload ke dalam </span><span style="font-family: Times New Roman,Italic; font-size:9px">cloud server </span><span style="font-family: Times New Roman; font-size:9px">sebagai cadangan 
+<br>data.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:4992px; width:226px; height:102px;"><span style="font-family: Times New Roman; font-size:9px">Setelah menjalankan proses </span><span style="font-family: Times New Roman,Italic; font-size:9px">extract </span><span style="font-family: Times New Roman; font-size:9px">dan </span><span style="font-family: Times New Roman,Italic; font-size:9px">transform</span><span style="font-family: Times New Roman; font-size:9px"> data. 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">User</span><span style="font-family: Times New Roman; font-size:9px">  baru  bisa  melakukan  proses 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">load  </span><span style="font-family: Times New Roman; font-size:9px">ke  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data 
+<br>warehouse</span><span style="font-family: Times New Roman; font-size:9px"> yaitu dengan memilih tombol “Mulai Proses 
+<br>Load”  di  sebelah  kanan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">interface  engine</span><span style="font-family: Times New Roman; font-size:9px">  ETL  seperti 
+<br>ini  berfungsi  untuk 
+<br>pada  Gambar  4.  Tombol 
+<br>memasukkan  data  ke  dalam  skema  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  warehouse</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br>yang  sudah  dibuat.  Adapun 
+<br>langkah  prosesnya 
+<br>digambarkan  pada  </span><span style="font-family: Times New Roman,Italic; font-size:9px">flowchart</span><span style="font-family: Times New Roman; font-size:9px">  </span><span style="font-family: Times New Roman,Italic; font-size:9px">engine</span><span style="font-family: Times New Roman; font-size:9px">  </span><span style="font-family: Times New Roman,Italic; font-size:9px">load</span><span style="font-family: Times New Roman; font-size:9px">  data  yang 
+<br>dapat dilihat pada Gambar 7. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:5101px; width:226px; height:113px;"><span style="font-family: Times New Roman; font-size:9px">Gambar  7  merupakan  alur  dari  proses  Load  Engine 
+<br>pada </span><span style="font-family: Times New Roman,Italic; font-size:9px">engine</span><span style="font-family: Times New Roman; font-size:9px"> ETL. Proses diawali dengan membaca file 
+<br>JSON  yang  sudah  dihasilkan  oleh  Extract  Transform 
+<br>Engine  sebelumnya,  kemudian  file  JSON  dieksekusi 
+<br>oleh  Load  Engine  dengan  menterjemahkan  data, 
+<br>format, dan  mengecek versi data  kemudian  melakukan 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">insert</span><span style="font-family: Times New Roman; font-size:9px">  ke  tabel  fakta  dan  tabel  dimensi  di  dalam  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data 
+<br>warehouse</span><span style="font-family: Times New Roman; font-size:9px">.    </span><span style="font-family: Times New Roman,Italic; font-size:9px">Output</span><span style="font-family: Times New Roman; font-size:9px">  pada  proses  Load  Engine  akan 
+<br>ditampilkan di dalam </span><span style="font-family: Times New Roman,Italic; font-size:9px">interface</span><span style="font-family: Times New Roman; font-size:9px"> </span><span style="font-family: Times New Roman,Italic; font-size:9px">engine</span><span style="font-family: Times New Roman; font-size:9px"> ETL seperti yang 
+<br>terlihat pada Gambar 8. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:105px; top:5235px; width:155px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">Gambar 5. Flowchart Extract Transform Engine 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:288px; top:5221px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:5222px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:118px; top:5258px; width:360px; height:34px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br>Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi) Vol</span><span style="font-family: Times New Roman,Bold; font-size:9px"> </span><span style="font-family: Times New Roman; font-size:9px">. 3 No. 2 (2019) 113 – 123 
+<br>118 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:4571px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:5294px; width:2px; height:21px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:69px; top:4569px; width:457px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:69px; top:5281px; width:457px; height:0px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:70px; top:4582px; width:223px; height:192px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:76px; top:4939px; width:211px; height:288px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:300px; top:4634px; width:224px; height:179px;"></div><span style="position:absolute; border: gray 1px solid; left:0px; top:5401px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:5401px;"><a name="7">Page 7</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:118px; top:5438px; width:360px; height:22px;"><span style="font-family: Times New Roman; font-size:9px">I Made Suwija Putra, Dewa Komang Tri Adhitya Putra 
+<br>Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi) Vol</span><span style="font-family: Times New Roman,Bold; font-size:9px"> </span><span style="font-family: Times New Roman; font-size:9px">. 3 No. 2 (2019) 113 – 123 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:524px; top:5647px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:337px; top:5661px; width:152px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">Gambar 9. Refresh Tabel dan Hapus Data ETL 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:297px; top:5724px; width:2px; height:8px;"><span style="font-family: Times New Roman; font-size:8px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:5677px; width:226px; height:113px;"><span style="font-family: Times New Roman; font-size:9px">Gambar 9 merupakan tampilan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">engine</span><span style="font-family: Times New Roman; font-size:9px"> ETL yang telah 
+<br>menampilkan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">output</span><span style="font-family: Times New Roman; font-size:9px">  jika  menekan  button  “Refresh 
+<br>Tabel”.  Output  yang  dihasilkan  oleh  proses  “Refresh 
+<br>Tabel”  adalah  menampilkan  data  </span><span style="font-family: Times New Roman,Italic; font-size:9px">history</span><span style="font-family: Times New Roman; font-size:9px">  untuk 
+<br></span><span style="font-family: Times New Roman; font-size:9px">mengetahui data apa saja yang telah berhasil di </span><span style="font-family: Times New Roman,Italic; font-size:9px">extract</span><span style="font-family: Times New Roman; font-size:9px">, 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">transform</span><span style="font-family: Times New Roman; font-size:9px">  dan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">load</span><span style="font-family: Times New Roman; font-size:9px">  dari  sumber  </span><span style="font-family: Times New Roman,Italic; font-size:9px">database</span><span style="font-family: Times New Roman; font-size:9px">  pada  proses 
+<br>terakhir dilakukan. terlihat pada Gambar 9, sebelah kiri 
+<br>menampilkan  data  </span><span style="font-family: Times New Roman,Italic; font-size:9px">history</span><span style="font-family: Times New Roman; font-size:9px">  dari  </span><span style="font-family: Times New Roman,Italic; font-size:9px">database</span><span style="font-family: Times New Roman; font-size:9px">  OLTP  yaitu 
+<br>tabel tb_history dan disebelah kanan menampilkan data 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">history</span><span style="font-family: Times New Roman; font-size:9px"> dari </span><span style="font-family: Times New Roman,Italic; font-size:9px">data warehouse</span><span style="font-family: Times New Roman; font-size:9px">.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:5798px; width:226px; height:136px;"><span style="font-family: Times New Roman,Italic; font-size:9px">Button</span><span style="font-family: Times New Roman; font-size:9px">  “Hapus  Data  ETL”  berfungsi  menghapus  atau 
+<br>mengkosongkan  data  pada  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  warehouse</span><span style="font-family: Times New Roman; font-size:9px">,  kecuali 
+<br>data </span><span style="font-family: Times New Roman,Italic; font-size:9px">history</span><span style="font-family: Times New Roman; font-size:9px"> yang tidak terhapus. Hal ini dengan asumsi 
+<br>bahwa  data  yang  sebelumnya  sudah  dipindahkan  ke 
+<br>arsip  data.  Hal  tersebut  berguna  agar  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  warehouse</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br>yang  aktif 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">load</span><span style="font-family: Times New Roman; font-size:9px">  dalam 
+<br>tidak  mengalami  </span><span style="font-family: Times New Roman,Italic; font-size:9px">over 
+<br></span><span style="font-family: Times New Roman; font-size:9px">penyimpanan data karena faktor kapasitas penyimpanan 
+<br>sumber daya di setiap perusahaan berbeda-beda. Proses 
+<br>ini  berhasil  ditandai  dengan  menampilkan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">output</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br>berupa  </span><span style="font-family: Times New Roman,Italic; font-size:9px">print</span><span style="font-family: Times New Roman; font-size:9px">  </span><span style="font-family: Times New Roman,Italic; font-size:9px">text</span><span style="font-family: Times New Roman; font-size:9px">  “Seluruh  tabel  di  dwh_toko  telah  di-
+<br>Reset”  pada  bagian  bawah  </span><span style="font-family: Times New Roman,Italic; font-size:9px">interface</span><span style="font-family: Times New Roman; font-size:9px">  ETL  seperti  yang 
+<br>terlihat pada Gambar 9. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:294px; top:5913px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:5942px; width:81px; height:10px;"><span style="font-family: Times New Roman,Italic; font-size:9px">3.2</span><span style="font-family: Arial,Italic; font-size:9px">  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Automatic ETL 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:5959px; width:226px; height:67px;"><span style="font-family: Times New Roman; font-size:9px">Automatic ETL merupakan sebuah fitur pengembangan 
+<br>alternatif  dari  Manual  ETL  di  </span><span style="font-family: Times New Roman,Italic; font-size:9px">engine</span><span style="font-family: Times New Roman; font-size:9px">  ETL  yang 
+<br>digunakan untuk menjalankan proses </span><span style="font-family: Times New Roman,Italic; font-size:9px">extract</span><span style="font-family: Times New Roman; font-size:9px">, </span><span style="font-family: Times New Roman,Italic; font-size:9px">transform</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px">dan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">load  </span><span style="font-family: Times New Roman; font-size:9px">secara  otomatis.  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Engine</span><span style="font-family: Times New Roman; font-size:9px">  ETL  akan  bekerja 
+<br>secara  otomatis  karena  </span><span style="font-family: Times New Roman,Italic; font-size:9px">service</span><span style="font-family: Times New Roman; font-size:9px">  akan  menjalankan 
+<br>proses sesuai penjadwalan yang telah ditentukan. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:6034px; width:226px; height:67px;"><span style="font-family: Times New Roman; font-size:9px">Dalam  </span><span style="font-family: Times New Roman,Italic; font-size:9px">interface</span><span style="font-family: Times New Roman; font-size:9px">  ETL  fitur  ini  bisa  dijalankan  dengan 
+<br>cara  memilih  </span><span style="font-family: Times New Roman,Italic; font-size:9px">button</span><span style="font-family: Times New Roman; font-size:9px">  “Automatic  Extract  Transform 
+<br>Load” yang terdapat di pojok kiri seperti yang ada pada 
+<br>Gambar  4.  Setelah  itu  akan  muncul  tampilan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">interface</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br>pada  </span><span style="font-family: Times New Roman,Italic; font-size:9px">engine</span><span style="font-family: Times New Roman; font-size:9px">  Automatic  ETL,  dapat  dilihat  pada 
+<br>Gambar 10 di bawah ini. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:126px; top:5737px; width:113px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">Gambar 7. Flowchart Load Engine 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:126px; top:5928px; width:114px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">Gambar 8. </span><span style="font-family: Times New Roman,Italic; font-size:8px">Interface</span><span style="font-family: Times New Roman; font-size:8px"> ETL </span><span style="font-family: Times New Roman,Italic; font-size:8px">load</span><span style="font-family: Times New Roman; font-size:8px"> data 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:5944px; width:226px; height:113px;"><span style="font-family: Times New Roman; font-size:9px">Gambar 8 merupakan tampilan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">engine</span><span style="font-family: Times New Roman; font-size:9px"> ETL yang telah 
+<br>melakukan  proses  </span><span style="font-family: Times New Roman,Italic; font-size:9px">load</span><span style="font-family: Times New Roman; font-size:9px">  data.  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Output</span><span style="font-family: Times New Roman; font-size:9px">  yang  ditampilkan 
+<br>pada </span><span style="font-family: Times New Roman,Italic; font-size:9px">engine</span><span style="font-family: Times New Roman; font-size:9px"> ETL adalah sebuah </span><span style="font-family: Times New Roman,Italic; font-size:9px">print</span><span style="font-family: Times New Roman; font-size:9px"> </span><span style="font-family: Times New Roman,Italic; font-size:9px">text</span><span style="font-family: Times New Roman; font-size:9px"> “Data Barang 
+<br>id: 1 telah ter-record” yang menandakan bahwa proses 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">load</span><span style="font-family: Times New Roman; font-size:9px"> data pada record tersebut ke tabel </span><span style="font-family: Times New Roman,Italic; font-size:9px">data warehouse 
+<br></span><span style="font-family: Times New Roman; font-size:9px">dengan  id  transaksi  1  telah  berhasil  dilakukan.  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Engine</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br>ETL  juga  menampilkan  data  waktu  yang  diperlukan 
+<br>saat  melakukan  proses  </span><span style="font-family: Times New Roman,Italic; font-size:9px">load</span><span style="font-family: Times New Roman; font-size:9px">  seperti  pada  Gambar  8 
+<br>terlihat  waktu  yang  diperlukan  adalah  0.5755  detik 
+<br>untuk 1000 data.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:6065px; width:226px; height:44px;"><span style="font-family: Times New Roman; font-size:9px">Selain kedua </span><span style="font-family: Times New Roman,Italic; font-size:9px">engine</span><span style="font-family: Times New Roman; font-size:9px"> tersebut di atas, juga terdapat fitur 
+<br>“Refresh  Tabel”  dan  “Hapus  Data  ETL”.  Kedua  fitur 
+<br>ini adalah fitur tambahan guna menunjang hal-hal yang 
+<br>bersifat teknis. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:118px; top:6150px; width:360px; height:34px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br>Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi) Vol</span><span style="font-family: Times New Roman,Bold; font-size:9px"> </span><span style="font-family: Times New Roman; font-size:9px">. 3 No. 2 (2019) 113 – 123 
+<br>119 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:5463px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:6186px; width:2px; height:21px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:69px; top:5461px; width:457px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:69px; top:6172px; width:457px; height:0px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:70px; top:5474px; width:226px; height:256px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:70px; top:5751px; width:224px; height:170px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:300px; top:5474px; width:224px; height:180px;"></div><span style="position:absolute; border: gray 1px solid; left:0px; top:6293px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:6293px;"><a name="8">Page 8</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:118px; top:6330px; width:360px; height:22px;"><span style="font-family: Times New Roman; font-size:9px">I Made Suwija Putra, Dewa Komang Tri Adhitya Putra 
+<br>Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi) Vol</span><span style="font-family: Times New Roman,Bold; font-size:9px"> </span><span style="font-family: Times New Roman; font-size:9px">. 3 No. 2 (2019) 113 – 123 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:6367px; width:98px; height:10px;"><span style="font-family: Times New Roman,Italic; font-size:9px">3.3</span><span style="font-family: Arial,Italic; font-size:9px">  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Hasil Sistem OLAP 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:6384px; width:226px; height:90px;"><span style="font-family: Times New Roman; font-size:9px">Penelitian ini juga membangun sistem analisa data yang 
+<br>disebut  dengan  OLAP  (</span><span style="font-family: Times New Roman,Italic; font-size:9px">Online  Analytical  Processing</span><span style="font-family: Times New Roman; font-size:9px">) 
+<br>yang  dimana  ditujukan  untuk  pengguna  manajemen 
+<br>atas  dalam  perusahaan  guna  kebutuhan 
+<br>level 
+<br>menunjang  pengambilan  suatu  keputusan.  Sistem  ini 
+<br>menyediakan  laporan-laporan  seperti  yang  disebutkan 
+<br>pada sub bab 2.1. Gambar 11 merupakan tampilan awal 
+<br>pada aplikasi OLAP. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:295px; top:6436px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:6482px; width:226px; height:67px;"><span style="font-family: Times New Roman; font-size:9px">Gambar  11  merupakan 
+<br>tampilan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">dashboard</span><span style="font-family: Times New Roman; font-size:9px">  pada 
+<br>aplikasi  OLAP  yang  menampilkan  total  pemasukan 
+<br>pada  seluruh  cabang  toko,  informasi  mengenai  cabang 
+<br>informasi  mengenai 
+<br>terbanyak, 
+<br>dengan  penjualan 
+<br>barang  terlaris  dan  informasi  mengenai  proses  </span><span style="font-family: Times New Roman,Italic; font-size:9px">load</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br>ETL terakhir (versi data terakhir).  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:6557px; width:226px; height:55px;"><span style="font-family: Times New Roman; font-size:9px">Aplikasi  OLAP  mengambil  data  dari  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  mart</span><span style="font-family: Times New Roman; font-size:9px">  yang 
+<br>merupakan  bagian  penunjang  dari  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  warehouse</span><span style="font-family: Times New Roman; font-size:9px">. 
+<br>Berikut  ini  adalah  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  mart</span><span style="font-family: Times New Roman; font-size:9px">  yang  tersedia  pada 
+<br>penelitian  yang  merupakan  hasil  dari  ETL  yang  sudah 
+<br>diproses dari sebuah database transakasi toko. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:137px; top:6450px; width:92px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">Gambar 10. Automatic ETL 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:6466px; width:226px; height:147px;"><span style="font-family: Times New Roman; font-size:9px">Gambar  10  pada  bagian  (a)  merupakan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">interface</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br>“Automatic  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Extract</span><span style="font-family: Times New Roman; font-size:9px">  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Transform</span><span style="font-family: Times New Roman; font-size:9px">  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Load</span><span style="font-family: Times New Roman; font-size:9px">”  yang  berisi 
+<br>konfigurasi mengenai jumlah hari. Input jumlah hari ini 
+<br>fungsinya  adalah  mengatur  setiap  berapa  hari  sekali 
+<br>yang  diinginkan  untuk  melakukan  proses  </span><span style="font-family: Times New Roman,Italic; font-size:9px">extract</span><span style="font-family: Times New Roman; font-size:9px">, 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">transform</span><span style="font-family: Times New Roman; font-size:9px">  dan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">load</span><span style="font-family: Times New Roman; font-size:9px">  secara  otomatis.  Gambar  10  pada 
+<br>bagian  (b)  merupakan  tampilan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">interface</span><span style="font-family: Times New Roman; font-size:9px">  Automatic 
+<br>ETL yang menandakan bahwa </span><span style="font-family: Times New Roman,Italic; font-size:9px">service</span><span style="font-family: Times New Roman; font-size:9px"> proses ETL telah 
+<br>dijalankan,  dan  proses  tersebut  bekerja  dibalik  layar. 
+<br>User  bisa  juga  menghentikan  Proses  ETL  yang  sudah 
+<br>dijadwalkan  dengan  memilih  </span><span style="font-family: Times New Roman,Italic; font-size:9px">button</span><span style="font-family: Times New Roman; font-size:9px">  “Hentikan  Proses 
+<br>ETL”  sehingga  </span><span style="font-family: Times New Roman,Italic; font-size:9px">engine</span><span style="font-family: Times New Roman; font-size:9px">  ETL  akan  berhenti  bekerja 
+<br>secara otomatis. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:6621px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:297px; top:6829px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:297px; top:7021px; width:2px; height:8px;"><span style="font-family: Times New Roman; font-size:8px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:159px; top:6814px; width:278px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">Gambar 11. Tampilan </span><span style="font-family: Times New Roman,Italic; font-size:8px">dashboard</span><span style="font-family: Times New Roman; font-size:8px"> sistem OLAP yang berisikan rekapan data penjualan 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:464px; top:6799px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:459px; top:6991px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:117px; top:7006px; width:363px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">Gambar 12. a. Hasil ETL berupa Data Mart Barang, b. Diagram Pie penjualan sebuah barang di beberapa cabang 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:118px; top:7042px; width:360px; height:34px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br>Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi) Vol</span><span style="font-family: Times New Roman,Bold; font-size:9px"> </span><span style="font-family: Times New Roman; font-size:9px">. 3 No. 2 (2019) 113 – 123 
+<br>120 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:6355px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:7078px; width:2px; height:21px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:69px; top:6353px; width:457px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:69px; top:7064px; width:457px; height:0px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:70px; top:6365px; width:224px; height:77px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:131px; top:6637px; width:332px; height:169px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:135px; top:6839px; width:324px; height:159px;"></div><span style="position:absolute; border: gray 1px solid; left:0px; top:7185px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:7185px;"><a name="9">Page 9</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:118px; top:7221px; width:360px; height:22px;"><span style="font-family: Times New Roman; font-size:9px">I Made Suwija Putra, Dewa Komang Tri Adhitya Putra 
+<br>Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi) Vol</span><span style="font-family: Times New Roman,Bold; font-size:9px"> </span><span style="font-family: Times New Roman; font-size:9px">. 3 No. 2 (2019) 113 – 123 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:297px; top:7259px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:297px; top:7713px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:130px; top:7458px; width:336px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">Gambar 13. a. Hasil ETL berupa Data Mart Cabang, b. Diagram Pie penjualan barang di cabang tertentu 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:549px; top:7497px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:109px; top:7698px; width:378px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">Gambar 14. a. Hasil ETL berupa Data Mart Pegawai, b. Diagram Pie penjualan yang dilakukan oleh seorang pegawai 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:474px; top:7689px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:535px; top:7725px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:105px; top:7897px; width:386px; height:9px;"><span style="font-family: Times New Roman; font-size:8px">Gambar 15. a. Hasil ETL berupa Data Mart Pembeli, b. Diagram Pie pemebelian yang dilakukan oleh seorang</span><span style="font-family: Times New Roman; font-size:9px"> </span><span style="font-family: Times New Roman,Italic; font-size:8px">customer</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:118px; top:7934px; width:360px; height:34px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br>Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi) Vol</span><span style="font-family: Times New Roman,Bold; font-size:9px"> </span><span style="font-family: Times New Roman; font-size:9px">. 3 No. 2 (2019) 113 – 123 
+<br>121 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:467px; top:7443px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:465px; top:7890px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:7247px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:7474px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:7914px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:7970px; width:2px; height:21px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:69px; top:7245px; width:457px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:69px; top:7956px; width:457px; height:0px;"></span>
+<div style="position:absolute; border: figure 1px solid; writing-mode:False; left:128px; top:7269px; width:339px; height:182px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:120px; top:7496px; width:353px; height:200px;"></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:129px; top:7723px; width:335px; height:174px;"></div><span style="position:absolute; border: gray 1px solid; left:0px; top:8077px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:8077px;"><a name="10">Page 10</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:119px; top:8113px; width:361px; height:21px;"><span style="font-family: Times New Roman; font-size:9px">Edy, Ferdiansyah, Wahyu Pramusinto, Sejati Waluyo 
+<br>Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi) Vol. 3 No. 2 (2019) 113 – 123  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:8138px; width:88px; height:21px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br>a.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Data Mart Barang 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:8167px; width:226px; height:44px;"><span style="font-family: Times New Roman; font-size:9px">Data Mart Barang merupakan menu yang menampilkan 
+<br>informasi  mengenai  data  penjualan  barang  dalam 
+<br>jangka  wantu  tertentu.  Tampilan  Data  Mart  Barang 
+<br>dapat dilihat pada Gambar 12. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:8219px; width:226px; height:159px;"><span style="font-family: Times New Roman; font-size:9px">Gambar  12  bagian  (a)  merupakan  tampilan  Data  Mart 
+<br>Barang  pada  aplikasi  OLAP  yaitu  menampilkan 
+<br>informasi  mengenai  penjualan  barang  pada  waktu 
+<br>tertentu  dengan  memilih  nama  barang,  tahun  berapa, 
+<br>dan pada bulan ke berapa. Contoh pada tahun 2018 dan 
+<br>bulan  ke  10  ada  barang  berupa  Carger  Laptop  dengan 
+<br>harga  Rp.  500.000  pada  toko  cabang  xxx  terjual 
+<br>sebanyak  19  dan  total  harga  menjadi  Rp.  9.500.000. 
+<br>Gambar  12  bagian  (b)  merupakan  tampilan  sebuah 
+<br>diagram  pie  yang  memberikan  informasi  mengenai 
+<br>persentase penjualan Carger Laptop di toko cabang xxx 
+<br>pada tahun 2018 dan bulan ke 10. Dalam data mart ini 
+<br>juga  terdapat  fasilitas  </span><span style="font-family: Times New Roman,Italic; font-size:9px">export</span><span style="font-family: Times New Roman; font-size:9px">  data  menuju  ke  format 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">excel.</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:8386px; width:89px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">b.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Data Mart Cabang 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:134px; top:8415px; width:116px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">informasi  mengenai  data 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:8404px; width:226px; height:55px;"><span style="font-family: Times New Roman; font-size:9px">yang 
+<br>Data  Mart  Cabang  merupakan  menu 
+<br>menampilkan 
+<br>transaksi 
+<br>penjualan  tiap  cabang  dalam  jangka  waktu  tertentu. 
+<br>Tampilan Data Mart Cabang dapat dilihat pada Gambar 
+<br>13. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:188px; top:8490px; width:85px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">transaksi  penjualan 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:8467px; width:226px; height:182px;"><span style="font-family: Times New Roman; font-size:9px">Gambar  13  bagian  (a)  merupakan  tampilan  Data  Mart 
+<br>Cabang  pada  aplikasi  OLAP  yang  menampilkan 
+<br>informasi  mengenai  data 
+<br>tiap 
+<br>cabang dengan cara memilih nama cabang, selanjutnya 
+<br>memilih waktu pada tahun berapa dan bulan ke berapa. 
+<br>Contoh data transaksi pada tahun 2018 dan bulan ke 10 
+<br>toko  cabang  xxx.  Gambar  13  bagian  (b) 
+<br>yaitu 
+<br>sebuah  diagram  pie  yang 
+<br>merupakan 
+<br>tampilan 
+<br>memberikan 
+<br>informasi  mengenai  persentase  data 
+<br>transaksi penjualan pada toko cabang xxx, seperti pada 
+<br>tahun 2018 dan bulan ke 10 yaitu Carger  Laptop yang 
+<br>memiliki  persentase 
+<br>terbanyak  yaitu  17.6%  yang 
+<br>menandakan bahwa transaksi Carger Laptop pada toko 
+<br>cabang  xxx  merupakan  yang  paling  banyak  diantara 
+<br>barang  lainnya.  Dalam  data  mart  ini  juga  terdapat 
+<br>fasilitas </span><span style="font-family: Times New Roman,Italic; font-size:9px">export</span><span style="font-family: Times New Roman; font-size:9px"> data menuju ke format </span><span style="font-family: Times New Roman,Italic; font-size:9px">excel</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:8657px; width:93px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">c.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Data Mart Pegawai 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:8675px; width:226px; height:55px;"><span style="font-family: Times New Roman; font-size:9px">Data  Mart  Pegawai  merupakan  menu 
+<br>yang 
+<br>menampilkan  informasi  mengenai  data  transaksi  yang 
+<br>dilayani  oleh  pegawai  dalam  jangka  waktu  tertentu. 
+<br>Tampilan  Data  Mart  Pegawai  dapat  dilihat  pada 
+<br>Gambar 14. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:8149px; width:226px; height:67px;"><span style="font-family: Times New Roman; font-size:9px">pada  tahun  2018  bulan  ke  10.  Gambar  14  bagian  (b) 
+<br>tampilan 
+<br>merupakan 
+<br>sebuah  diagram  pie  yang 
+<br>memberikan 
+<br>informasi  mengenai  persentase  data 
+<br>transaksi yang dilayani oleh seluruh pegawai yaitu pada 
+<br>tahun  2018  bulan  ke  10.  Dalam  data  mart  ini  juga 
+<br>terdapat fasilitas </span><span style="font-family: Times New Roman,Italic; font-size:9px">export</span><span style="font-family: Times New Roman; font-size:9px"> data menuju ke format </span><span style="font-family: Times New Roman,Italic; font-size:9px">excel.</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:8224px; width:92px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">d.</span><span style="font-family: Arial; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">Data Mart Pembeli 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:8242px; width:226px; height:44px;"><span style="font-family: Times New Roman; font-size:9px">yang 
+<br>Data  Mart  Pembeli  merupakan  menu 
+<br>transaksi 
+<br>menampilkan 
+<br>pembeli  pada  jangka  waktu  tertentu.  Tampilan  Data 
+<br>Mart Pembeli dapat dilihat pada Gambar 15. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:364px; top:8254px; width:116px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">informasi  mengenai  data 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:8294px; width:226px; height:125px;"><span style="font-family: Times New Roman; font-size:9px">Gambar  15  bagian  (a)  merupakan  tampilan  Data  Mart 
+<br>Pembeli  pada  aplikasi  OLAP  yaitu  menampilkan 
+<br>informasi  mengenai  data  transaksi  pembeli  perbulan 
+<br>dengan memilih nama pembeli, pada tahun berapa dan 
+<br>bulan  ke  berapa.  Contoh  data 
+<br>transaksi  pembeli 
+<br>bernama Adi pada tahun 2018 bulan ke 10. Gambar 15 
+<br>bagian  (b)  merupakan  tampilan  sebuah  diagram  pie 
+<br>yang  memberikan  informasi  mengenai  persentase  data 
+<br>transaksi seluruh pembeli pada tahun 2018 bulan ke 10. 
+<br></span><span style="font-family: Times New Roman; font-size:9px">Dalam  data  mart  ini  juga  terdapat  fasilitas  </span><span style="font-family: Times New Roman,Italic; font-size:9px">export</span><span style="font-family: Times New Roman; font-size:9px">  data 
+<br></span><span style="font-family: Times New Roman; font-size:9px">menuju ke format </span><span style="font-family: Times New Roman,Italic; font-size:9px">excel.</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:8427px; width:68px; height:10px;"><span style="font-family: Times New Roman,Bold; font-size:9px">4</span><span style="font-family: Arial,Bold; font-size:9px">  </span><span style="font-family: Times New Roman,Bold; font-size:9px">Kesimpulan 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:8444px; width:226px; height:262px;"><span style="font-family: Times New Roman; font-size:9px">Dari  hasil  implementasi  dan  pengujian  sistem  yang 
+<br>telah dilakukan dalam penelitian ini dapat disimpulkan 
+<br>bahwa  dengan  menggunakan  bahasa  pemrograman 
+<br>Python  dapat  dibangun  </span><span style="font-family: Times New Roman,Italic; font-size:9px">engine</span><span style="font-family: Times New Roman; font-size:9px">  ETL  yang  bisa  bekerja 
+<br>secara  manual  maupun  otomatis  dengan  menggunakan 
+<br>penjadwalan  di  dalamnya.  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Engine</span><span style="font-family: Times New Roman; font-size:9px">  ETL  yang  dibangun 
+<br>telah  mampu  menjalankan  proses  </span><span style="font-family: Times New Roman,Italic; font-size:9px">extract</span><span style="font-family: Times New Roman; font-size:9px">,  </span><span style="font-family: Times New Roman,Italic; font-size:9px">transform</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br>dan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">load</span><span style="font-family: Times New Roman; font-size:9px">  dari  </span><span style="font-family: Times New Roman,Italic; font-size:9px">database</span><span style="font-family: Times New Roman; font-size:9px">  sumber  OLTP  (db_toko) 
+<br>menuju  database  tujuan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  warehouse</span><span style="font-family: Times New Roman; font-size:9px">  (dwh_toko) 
+<br>dengan  menghasilkan  waktu  proses  yang  cepat 
+<br>sehingga  ketersediaan  data  pada  </span><span style="font-family: Times New Roman,Italic; font-size:9px">data  warehouse</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br>perusahaan  tersebut  selalu  terjaga.  Ketersediaan  data 
+<br>dalam  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Data  warehouse</span><span style="font-family: Times New Roman; font-size:9px">  sangat  bergantung  kepada 
+<br>kinerja </span><span style="font-family: Times New Roman,Italic; font-size:9px">engine</span><span style="font-family: Times New Roman; font-size:9px"> ETL yang yang digunakan apakah sudah 
+<br>stabil  pada  proses  mengambil, 
+<br>bekerja  dengan 
+<br>menyamakan struktur dan  menaruh data ke dalam </span><span style="font-family: Times New Roman,Italic; font-size:9px">data 
+<br>warehouse</span><span style="font-family: Times New Roman; font-size:9px">,  diharapkan  dengan  penerapan  </span><span style="font-family: Times New Roman,Italic; font-size:9px">engine</span><span style="font-family: Times New Roman; font-size:9px">  ETL 
+<br>ini  dalam  suatu  perusahaan  dapat  memberikan  solusi 
+<br>persoalan  dalam  ketersediaan  data  guna  menunjang 
+<br>proses pengambilan sebuah  keputusan  yang selama ini 
+<br></span><span style="font-family: Times New Roman; font-size:9px">masih  terkendala  di  perusahaan  yang  banyak  memiliki 
+<br>cabang  sehingga  perusahaan  ke  depan  bisa  lebih 
+<br>kompetitif dengan perusahaan lainnya. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:8721px; width:71px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Daftar Rujukan 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:8738px; width:226px; height:78px;"><span style="font-family: Times New Roman; font-size:9px">Gambar  14  bagian  (a)  merupakan  tampilan  Data  Mart 
+<br>Pegawai  pada  aplikasi  OLAP  yaitu  menampilkan 
+<br>informasi  mengenai  data  transaksi  yang  dilayani  oleh 
+<br>pegawai  perbulan  dengan  memilih  nama  pegawai, 
+<br>selanjutnya  memilih  pada  tahun  berapa  dan  bulan  ke 
+<br></span><span style="font-family: Times New Roman; font-size:9px">berapa.  Contoh  adalah  data  transaksi  sebanyak  10 
+<br>pembeli  oleh  pegawai  dengan  nama  Agung  Hercules 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:8738px; width:11px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">[1] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:8756px; width:11px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">[2] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:8775px; width:11px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">[3] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:8802px; width:11px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">[4] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:321px; top:8738px; width:204px; height:81px;"><span style="font-family: Times New Roman; font-size:8px">J. O’Brien and G. Marakas, </span><span style="font-family: Times New Roman,Italic; font-size:8px">Management Information Systems</span><span style="font-family: Times New Roman; font-size:8px">, 
+<br>Tenth Edit. 2011. 
+<br>S.  Lim,  “</span><span style="font-family: Times New Roman,Italic; font-size:8px">Data  warehouse</span><span style="font-family: Times New Roman; font-size:8px">  Untuk  Pengelolaan  Penjualan  Pada 
+<br>Pt. Lippo Karawaci, Tbk.,” </span><span style="font-family: Times New Roman,Italic; font-size:8px">J. Ilm. SISFOTENIKA</span><span style="font-family: Times New Roman; font-size:8px">, 2012. 
+<br>F.  Y.  Al  Irsyadi,  “Implementasi  </span><span style="font-family: Times New Roman,Italic; font-size:8px">Data  warehouse</span><span style="font-family: Times New Roman; font-size:8px">  dan  Data 
+<br>Mining  untuk  Penentuan  Rencana  Strategis  Penjualan  Batik 
+<br>(Studi Kasus Batik Mahkota Laweyan),” </span><span style="font-family: Times New Roman,Italic; font-size:8px">KomuniTi</span><span style="font-family: Times New Roman; font-size:8px">, 2014. 
+<br>T.  Connolly  and  C.  Begg,  </span><span style="font-family: Times New Roman,Italic; font-size:8px">Pearson  Database  Systems  A 
+<br>Implementation  and 
+<br>to  Design 
+<br>Practical  Approach 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:119px; top:8825px; width:359px; height:34px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br>Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi) Vol. 3 No. 2 (2019) 112 – 123 
+<br>122 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:8862px; width:2px; height:21px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:69px; top:8136px; width:457px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:69px; top:8848px; width:457px; height:0px;"></span>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:8969px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:8969px;"><a name="11">Page 11</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:119px; top:9005px; width:361px; height:21px;"><span style="font-family: Times New Roman; font-size:9px">Edy, Ferdiansyah, Wahyu Pramusinto, Sejati Waluyo 
+<br>Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi) Vol. 3 No. 2 (2019) 113 – 123  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:91px; top:9041px; width:127px; height:8px;"><span style="font-family: Times New Roman,Italic; font-size:8px">Management 6th Global Edition</span><span style="font-family: Times New Roman; font-size:8px">. 2014. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:321px; top:9041px; width:89px; height:8px;"><span style="font-family: Times New Roman,Italic; font-size:8px">Penelit. Tek. Inform.</span><span style="font-family: Times New Roman; font-size:8px">, 2014. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:9050px; width:226px; height:35px;"><span style="font-family: Times New Roman; font-size:8px">[5]  A.  Simitsis,  P.  Vassiliadis,  T.  Sellis,  C.  Of,  and  I.  Of, 
+<br>“Modeling  and  Optimization  of  Extraction-Transformation-
+<br>Loading  (ETL)  Processes  in  </span><span style="font-family: Times New Roman,Italic; font-size:8px">Data  warehouse</span><span style="font-family: Times New Roman; font-size:8px">  Environments,” 
+<br>2004. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:9106px; width:11px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">[7] 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:9087px; width:226px; height:54px;"><span style="font-family: Times New Roman; font-size:8px">[6]  K.  Haryono,  “Penerapan  </span><span style="font-family: Times New Roman,Italic; font-size:8px">data  warehouse</span><span style="font-family: Times New Roman; font-size:8px">  dalam  pengelolaan 
+<br>sistem keuangan daerah,” </span><span style="font-family: Times New Roman,Italic; font-size:8px">J. Warehouse.</span><span style="font-family: Times New Roman; font-size:8px">, vol. 1, pp. 1–9, 2005. 
+<br>L. Muñoz, J.-N. Mazón, and J. Trujillo, “Automatic generation 
+<br>of  ETL  processes  from  conceptual  models,”  in  </span><span style="font-family: Times New Roman,Italic; font-size:8px">Proceeding  of 
+<br>the ACM twelfth international workshop on Data warehousing 
+<br>and OLAP - DOLAP ’09</span><span style="font-family: Times New Roman; font-size:8px">, 2009. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:9142px; width:226px; height:17px;"><span style="font-family: Times New Roman; font-size:8px">[8]  R.  Syah,  “Rancang  Bangun  </span><span style="font-family: Times New Roman,Italic; font-size:8px">Data  warehouse</span><span style="font-family: Times New Roman; font-size:8px">  untuk  Analisis 
+<br>Strategi  Produksi  Penjualan  Usulan :  PT.XYZ,”  </span><span style="font-family: Times New Roman,Italic; font-size:8px">TECHSI  -  J. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:9050px; width:226px; height:44px;"><span style="font-family: Times New Roman; font-size:8px">[9]  C.  Thomsen  and  T.  B.  Pedersen,  “pygrametl:  a  powerful 
+<br>programming 
+<br>extract-transform-load 
+<br>programmers,”  in  </span><span style="font-family: Times New Roman,Italic; font-size:8px">DOLAP 09  Proceeding of the  ACM  twelfth 
+<br>international  workshop  on  Data  warehousing  and  OLAP</span><span style="font-family: Times New Roman; font-size:8px">, 
+<br>2009, pp. 49–56. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:379px; top:9060px; width:37px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">framework 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:429px; top:9060px; width:11px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">for 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:9096px; width:226px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">[10]  R.  Kimball  and  J.  Caserta,  </span><span style="font-family: Times New Roman,Italic; font-size:8px">The  Data  warehouse  ETL  Toolkit</span><span style="font-family: Times New Roman; font-size:8px">. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:321px; top:9106px; width:20px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">2014. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:9115px; width:226px; height:35px;"><span style="font-family: Times New Roman; font-size:8px">[11]  D.  Schuff,  K.  Corral,  and  O.  Turetken,  “Comparing  the 
+<br>understandability  of  alternative  </span><span style="font-family: Times New Roman,Italic; font-size:8px">data  warehouse</span><span style="font-family: Times New Roman; font-size:8px">  schemas:  An 
+<br>empirical study,” </span><span style="font-family: Times New Roman,Italic; font-size:8px">Decis. Support Syst.</span><span style="font-family: Times New Roman; font-size:8px">, vol. 52, no. 1, pp. 9–20, 
+<br>Dec. 2011. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:300px; top:9161px; width:2px; height:274px;"><span style="font-family: Times New Roman; font-size:8px"> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br></span><span style="font-family: Times New Roman; font-size:8px"> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:119px; top:9717px; width:359px; height:34px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br>Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi) Vol. 3 No. 2 (2019) 112 – 123 
+<br>123 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:9030px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:9161px; width:2px; height:293px;"><span style="font-family: Times New Roman; font-size:8px"> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br></span><span style="font-family: Times New Roman; font-size:8px"> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:70px; top:9754px; width:2px; height:21px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:69px; top:9028px; width:457px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:69px; top:9740px; width:457px; height:0px;"></span>
+<div style="position:absolute; top:0px;">Page: <a href="#1">1</a>, <a href="#2">2</a>, <a href="#3">3</a>, <a href="#4">4</a>, <a href="#5">5</a>, <a href="#6">6</a>, <a href="#7">7</a>, <a href="#8">8</a>, <a href="#9">9</a>, <a href="#10">10</a>, <a href="#11">11</a></div>
+</body></html>

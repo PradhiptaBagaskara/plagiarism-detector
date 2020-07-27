@@ -1,0 +1,1608 @@
+Jurnal Informatika: Jurnal Pengembangan IT (JPIT), Vol.03, No.03, September 2018  
+
+DOI: 10.30591/jpit.v3i3.912    
+
+ ISSN: 2477-5126     
+
+e-ISSN: 2548-9356 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Evaluasi Website Perguruan Tinggi Menggunakan 
+
+Metode Usability Testing 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Agus Setiawan1*), R. Arri Widyanto2 
+1,2Program Studi Teknik Informatika, Fakultas Teknik, Universitas Muhammadiyah Magelang 
+1,2Jl. Mayjend Bambang Soegeng km 5 Mertoyudan, Magelang, 56172, Indonesia 
+email: 1*setiawan@ummgl.ac.id, 2arri_w@ummgl.ac.id 
+
+Received: 27 April 2018; Revised: 1 Oktober 2018; Accepted: 17 Oktober 2018 
+
+Copyright ©2018, Politeknik Harapan Bersama, Tegal 
+
+ 
+
+ 
+
+Abstract  -  Utilization  of  information  technology  on  this  day  has 
+
+penelitian  ini  menyimpulkan  bahwa  website  Perguruan  Tinggi 
+
+become  an  unavoidable  need.  Utilization  of  website  as  a 
+
+mempunyai  nilai  akhir  2.77  di  mana  nilai  ini  masih  pada 
+
+promotion  event  of  an  institution  or  organisation  still  not 
+
+kategori  baik.  Nilai  terendah  dari  kelima  aspek  usability  ada 
+
+optimal  because  not  follow  usability  aspect/usability.  The 
+
+pada aspek Errors yaitu mendapatkan nilai 2.65. 
+
+interface  of  the  university  website  should  be  a  reflection  of  the 
+
+ 
+
+university  itself.  Evaluation  of  the  interface  of  the  university 
+
+website should be done to find out how high the usability level of 
+
+university  website  development.  Using  usability  testing  method 
+
+is  expected  to  be  able  to  measure  the  usability  level  of  the 
+
+university  website  to  maximise  the  promotion  of  Higher 
+
+Education in cyberspace. Methods to measure using quantitative 
+
+methods  by  spreading  questionnaires  to  the  respondents. 
+
+Research 
+
+indicators  use  usability 
+
+indicators  that 
+
+include 
+
+Learnability, Memorability, Efficiency, Errors, and Satisfaction. 
+
+The  questionnaire  tested  its  validity  and  reliability  before  use. 
+
+Questionnaires  are  distributed  freely  to  internal  and  external 
+
+residents  of  Higher  Education.  95  Respondents  filled  out 
+
+questionnaires  that  had  been  scattered.  Assessment  method 
+
+using  a  Likert  scale  with  four  levels,  namely:  Strongly  Agree; 
+
+Agree;  Disagree;  Strongly  Disagree.  The  results  of  this  study 
+
+concluded  that  the  university  website  has  a  final  value  of  2.77 
+
+where  this  value  is  still  in  the  excellent  category.  The  lowest 
+
+value  of  the  five  aspects  of  usability  is  in  the  Errors  aspect  of 
+
+obtaining a value of 2.65.  
+
+Kata  Kunci    human-computer 
+
+interaction,  usability,  user 
+
+interface, user experience 
+
+I. 
+
+PENDAHULUAN 
+
+Pemanfaatan  teknologi  informasi  pada  hari  ini  sudah 
+
+menjadi  kebutuhan  yang  tidak  bisa  dihindarkan  [1]–[3]. 
+
+Menurut  data  APJII  pengguna  internet  Indonesia  pada  bulan 
+
+Januari tahun 2016 sudah mencapai 88 juta [4], [5] Tentunya 
+
+penggunaan 
+
+internet 
+
+ini  akan  setiap  waktu  mengalami 
+
+peningkatan, karena pemerintah dan swasta terus memberikan 
+
+fasiilitas  yang  semakin  lama  semakin  menjangkau  daerah 
+
+baru  daerah  pelosok  [6],  [7].  Dalam  menggunakan  internet 
+
+perlu  menemukan  sumber  yang  sah  dan  terpercaya  sehingga 
+
+perlu memahami etika berinternet [1], [8]. 
+
+Website  merupakan  situs  berbasis  teknologi  web  yang 
+
+memungkinkan  pengguna  mendapatkan 
+
+informasi  dari 
+
+berselancar  (browsing).  Pengguna  komputer  yang  terhubung 
+
+dengan 
+
+internet  dapat  berselancar  untuk  mendapatkan 
+
+informasi dengan mengunjungi website – website yang sudah 
+
+Abstrak  Pemanfaatan teknologi informasi pada hari ini sudah 
+
+menjadi  kebutuhan  yang  tidak  bisa  dihindarkan.  Pemanfaatan 
+
+tersebar  di  dunia  maya.  Universitas  Muhammadiyah 
+
+website  sebagai  ajang  promosi  sebuah  lembaga  atau  organisasi 
+
+masih  belum  optimal  karena  belum  mengikuti  aspek 
+
+kebergunaan / usability. Tampilan antarmuka website Perguruan 
+
+Tinggi  perlu  menjadi  cerminan  dari  Perguruan  Tinggi  itu 
+
+sendiri.  Evaluasi 
+
+terhadap 
+
+tampilan  antarmuka  website 
+
+Perguruan  Tinggi  perlu  dilakukan  untuk  mengetahui  seberapa 
+
+tinggi  level  usability  dari  pengembangan  website  Perguruan 
+
+Tinggi.  Menggunakan  metode  usability  testing  ini  diharapkan 
+
+mampu mengukur level usability dari website Perguruan Tinggi 
+
+Magelang  (UMMgl)  mempunyai  website  sebagai  wajah  di 
+
+dunia  maya  dengan  alamat  situs  http://ummgl.ac.id,  melalui 
+
+website  dengan  alamat  tersebut  dapat  digunakan  untuk 
+
+mendapatkan  informasi  tentang  UMMgl.  Namun  demikian, 
+
+pemanfaatan  website 
+
+sebagai 
+
+ajang  promosi  belum 
+
+mendapatkan  perhatian  yang  lebih  di  dunia  pendidikan. 
+
+Website  masih  dianggap  sebagai  fasilitas  pendukung  yang 
+
+bisa  dikatakan  asal  ada.  Banyak  website  yang  tidak  dikelola 
+
+untuk  memaksimalkan  ajang  promosi  Perguruan  Tinggi  di 
+
+dan  tidak  diperbaharui  sesuai  dengan  perkembangan  jaman 
+
+dunia  maya.  Metode  untuk  mengukur  menggunakan  metode 
+
+kuantitatif dengan menyebar kuesioner kepada para responden. 
+
+Indikator  penelitian  memakai  indikator  usability  yang  meliputi 
+
+Learnability,  Memorability,  Efficiency,  Errors,  dan  Satisfaction. 
+
+Sebelum  digunakan  kuesioner  diuji validasi dan reliabilitasnya. 
+
+Kuesioner  disebar  bebas  kepada  warga  internal  dan  eksternal 
+
+Perguruan  Tinggi.  95  Responden  mengisi  kuesioner  yang  telah 
+
+disebar dengan skala likert dengan empat jenjang, yaitu: Sangat 
+
+Setuju;  Setuju;  Tidak  Setuju;  Sangat  Tidak  Setuju.  Hasil 
+
+*) Corresponding author: (Agus Setiawan) 
+
+Email: setiawan@ummgl.ac.id 
+
+dan  menyesuaikan  target  dari  pengguna  yang  menggunakan 
+
+website itu nantinya.  
+
+Salah satu solusi penyelesaian masalah untuk memberikan 
+
+tampilan  dari  antarmuka  yang  memuaskan  untuk  para 
+
+pengguna  yang  mengakses  website  dari  UMMgl  adalah 
+
+mengacu  pada  indikator  dari  aspek  usability.  Pemanfaatan 
+
+website  sebagai  ajang  promosi  sebuah  lembaga  perlu  diukur 
+
+kebergunaannya  untuk  mengetahui  seberapa  pengguna  puas 
+
+dengan  tata  letak  dari  tampilan  antarmuka  website  tersebut. 
+
+Masih  berbicara  tentang  tata  letak  belum  lagi  berbicara 
+
+Agus Setiawan: Evaluasi Website Perguruan Tinggi… 
+
+ 
+
+295 
+
+Jurnal Informatika: Jurnal Pengembangan IT (JPIT), Vol.03, No.03, September 2018  
+
+DOI: 10.30591/jpit.v3i3.912    
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ ISSN: 2477-5126     
+
+e-ISSN: 2548-9356 
+
+ 
+
+ 
+
+tentang isi dari sebuah website sebagai ajang promosi di dunia 
+
+Penelitian terkait dengan evaluasi antarmuka website yang 
+
+maya. UMMgl yang mempunyai website dengan alamat situs 
+
+menghasilkan  rekomendasi  perbaikan  secara  detail  masih 
+
+http://ummgl.ac.id  perlu  di  ukur  untuk  meningkatkan 
+
+belum banyak dilakukan.  Rekomendasi perbaikan antarmuka 
+
+kepuasan pada pengunjung website-nya.  
+
+website  dilakukan  berdasarkan  analisis  nilai  terendah  dari 
+
+Tujuan  dari  penelitian 
+
+ini  adalah  untuk  mengukur 
+
+masing  –  masing  variabel  penelitian.  Sehingga  nilai  yang 
+
+antarmuka  website  UMMgl  untuk  memberikan  rekomendasi 
+
+terendah  dapat  diketahui  untuk  dilakukan  perbaikan  melalui 
+
+perbaikan  secara  detail  mengikuti  aspek  usability  yang 
+
+rekomendasi berdasarkan evaluasi tersebut. 
+
+nantinya dapat memuaskan para pengunjung website sehingga 
+
+mampu  meningkatkan  jumlah  pengunjung  website  UMMgl 
+
+sebagai media promosi. 
+
+ 
+
+II. 
+
+PENELITIAN YANG TERKAIT 
+
+III. 
+
+METODE PENELITIAN 
+
+Metode  penelitian  yang  digunakan  oleh  peneliti 
+
+menggunakan metode survei dengan memakai kuesioner yang 
+
+disebar  kepada  responden,  responden  dalam  penelitian  ini 
+
+adalah  civitas  akademika  UMMgl  sebagai  pengguna  website 
+
+Menurut  Nan  Yu,  Website  dijaman  sekarang  ini  perlu 
+
+dan  para  pihak  eksternal  yang  bersedia  untuk  memberikan 
+
+dikembangkan dengan desain untuk tampilan pada perangkat 
+
+penilaian  menggunakan  instrumen  yang  telah  disediakan. 
+
+mobile  atau  pada 
+
+layar  yang 
+
+terbatas,  karena  dengan 
+
+Kuesioner  yang disusun berisi daftar pertanyaan berdasarkan 
+
+portabilitasnya  sekarang  banyak  orang  mengakses  website 
+
+aspek usability. Tahapan penelitian dapat digambarkan sesuai 
+
+melalui  perangkat  mobile-nya  [9].  Menurut  (MZ,  2016) 
+
+dengan Gbr 1. 
+
+dalam  artikelnya  juga  mengevaluasi  website  Universitas 
+
+ 
+
+Janabadra  yang  mempunyai  kesimpulan  nilai  terendah  ada 
+
+pada  faktor  memorability,  walaupun  masih  kategori  cukup 
+
+namun  masih perlu pengembangan untuk  meningkatnya agar 
+
+pengunjung  lebih  mudah  menyerap  informasi  yang  disajikan 
+
+[10].  Penelitian  serupa  juga  dilakukan  oleh  (Sulasih  & 
+
+Tarmuji, 2015) yang menganalisa website Universitas Ahmad 
+
+Dahlan  menggunakan  instrumen  dengan  model  jawaban 
+
+“IYA” dan “TIDAK” memberikan kesimpulan bahwa website 
+
+UAD  masih  perlu  pengembangan,  namun  belum  detail 
+
+rekomendasi  dari  perbaikan  yang  perlu  dilakukan  [11]. 
+
+Berkaitan  dengan  pengujian 
+
+lain  yang  memanfaatkan 
+
+usability 
+
+testing 
+
+juga  sesuai  dengan  ISO  9126  yang 
+
+mempunyai  4  faktor  atau  aspek  yang  diujikan,  adalah 
+
+usability, functionality, portability, dan efficiency [12]. 
+
+Penelitian  terdahulu  yang  dilakukan  oleh  Venkatesh  dkk 
+
+ini  juga  menerapkan  usability  testing.  Namun  ini  dilakukan 
+
+untuk  menguji  website  lembaga  amal  dari  Obamacare. 
+
+Venkatesh mengembangkan instrument penelitian ini menjadi 
+
+16  dimensi  dan  jumlah  responden  sejumlah  374  [13]. 
+
+Venkatesh memberikan rekomendasi pada hasil penelitiannya 
+
+untuk fokus pada website kesehatan milik pemerintah. 
+
+Ekmel cetin dalam penelitiannya yang berjudul A Study on 
+
+an  Educational  Website’s  Usability  melakukan  penelitian 
+
+yang  fokus  pada  struktrur  interaksi  pada  website  Morpa 
+
+ 
+
+Campus.  Penelitian  dilakukan  dengan  memberikan  beberapa 
+
+kegiatan dari yang sangat mudah sampai yang sulit. Tiga hal 
+
+utama yang menjadi fokus adalah Efficiency, Ease of Use, dan 
+
+Satisfaction 
+
+[14].  Rekomendasi  penelitian  yang  sudah 
+
+dilakukan  Ekmel  adalah  menghapus  beberapa  tombol  dan 
+
+mengganti  beberapa  symbol  tombol  agar  mudah  dipahami 
+
+dan lebih mudah digunakan [14]. 
+
+Nan  Yu  dan  Jun  Kong  pada  penelitiannya  fokus  pada 
+
+pengujian  pengalaman  pengguna  menggunakan  web-browser 
+
+dengan  layar  terbatas  atau  kecil  pada  smartphone.  Penelitian 
+
+ini  memberikan  rekomendasi  dasar  pada  segenap  interface 
+
+designer  bagaimana  membangun  antarmuka  pada  layar  yang 
+
+terbatas  [9].  Nan  Yu  berpendapat  bahwa  tampilan  yang 
+
+melebar dapat memberikan kecepatan pembacaan dan mudah 
+
+digunakan  pada  web  untuk  kategori  berita.  Kelemahan  dari 
+
+penelitian  ini  adalah  rentang  umur  dari  penelitian  ini  antara 
+
+18-30 tahun. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Mulai 
+
+Persiapan Penelitian 
+
+Penyusunan Instrumen 
+
+Penelitian 
+
+Pengujian Objek 
+
+Penyajian Hasil 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Selesai 
+
+ 
+
+ 
+
+Gbr. 1 Tahapan Penelitian 
+
+A.  Persiapan Penelitian 
+
+Pada  tahapan ini peneliti  mempersiapkan  segala  hal  yang 
+
+akan  dilakukan  dalam  penelitian.  Kegiatan  pendukung  itu 
+
+adalah  penulis  melakukan  studi  literatur  untuk  mendapatkan 
+
+bahan  kajian  yang  sesuai  dengan  topik  penelitian.  Penulis 
+
+mengkaji  beberapa  model  penilaian  website  menggunakan 
+
+metode  usability  testing.  Penulis  juga  melakukan  telaah 
+
+teknologi  yang  mutakhir  untuk  mendukung  penelitian  yang 
+
+dilakukan.  Selain  itu  penulis  mengkaji  sistem  yang  sedang 
+
+berjalan  untuk  mengobservasi  objek  penelitian  agar  tidak 
+
+luput dari penilaian. 
+
+ 
+
+B.  Penyusunan Instrumen Penelitian 
+
+Instrumen penelitian berupa angket yang disusun menurut 
+
+indikator dari aspek usablitity yang meliputi hal – hal sebagai 
+
+berikut [4]: 
+
+  Kemudahan untuk digunakan, 
+
+  Model Interaksi website yang jelas dan mudah 
+
+Agus Setiawan: Evaluasi Website Perguruan Tinggi… 
+
+ 
+
+296 
+
+Jurnal Informatika: Jurnal Pengembangan IT (JPIT), Vol.03, No.03, September 2018  
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ ISSN: 2477-5126     
+
+e-ISSN: 2548-9356 
+
+ 
+
+ 
+
+18 
+
+ 
+
+D.  Penyajian Hasil 
+
+SEBARAN KUESIONER PADA TIAP ASPEK USABILITY 
+
+No 
+
+Aspek 
+
+Indikator 
+
+Butir 
+
+usability.  
+
+TABEL II 
+
+DOI: 10.30591/jpit.v3i3.912    
+
+  Navigasi yang mudah, 
+
+  Tampilan atraktif, 
+
+  Tampilan sesuai jenis website, 
+
+  Ada tambahan pengetahuan dari informasi website, 
+
+  Penyusunan tata letak informasi tepat, 
+
+  Alamat website mudah dicari. 
+
+Penyusunan  instrumen  menjadi  hal  yang  penting  karena 
+
+instrumen ini akan digunakan nantinya untuk mengukur objek 
+
+penelitian.  Sesuai  dengan  fungsinya  sebagai  alat  ukur  maka 
+
+penulis  harus  memastikan  alat  ukur  tersebut  valid  dan 
+
+reliabel.  Pada  Tabel  I,  terlihat  indikator  –  indikator  sesuai 
+
+dengan aspek usability. 
+
+TABEL I 
+
+JUMLAH BUTIR KUESIONER 
+
+No. 
+
+Indikator 
+
+Learnability [A] 
+
+2  Memorability [B] 
+
+Efficiency [C] 
+
+Errors [D] 
+
+Satisfaction[E] 
+
+Total 
+
+Butir 
+
+Pertanyaan 
+
+Nomor 
+
+Butir 
+
+5 
+
+3 
+
+3 
+
+3 
+
+4 
+
+1,2,3,4,5 
+
+6,7,8 
+
+9,10,11 
+
+12,13,14 
+
+15,16,17,18 
+
+Learnability 
+
+[A] 
+
+Memorability 
+
+[B] 
+
+Errors [D] 
+
+Website mudah dipelajari 
+
+Informasi spesifik 
+
+Penyajian  konten  mudah 
+
+dipahami 
+
+Alur navigasi mudah 
+
+Tidak 
+
+membutuhkan 
+
+instruksi khusus 
+
+Website mudah diingat 
+
+Alur 
+
+navigasi  mudah 
+
+diingat 
+
+Kecepatan akses menu 
+
+informasi 
+
+Kesalahan website 
+
+Keaktifan menu 
+
+Kenyamanan 
+
+tampilan 
+
+Kenyamanan  penjelajahan 
+
+website 
+
+website 
+
+konten 
+
+Kesesuaian  dengan  judul 
+
+dan konten 
+
+1 
+
+2 
+
+3 
+
+4 
+
+5 
+
+6 
+
+7,8 
+
+9 
+
+10,11 
+
+12 
+
+13,14 
+
+15 
+
+16 
+
+17 
+
+18 
+
+Efficiency [C] 
+
+Kecepatan  mendapatkan 
+
+5 
+
+Satisfaction[E] 
+
+Keluwesan  tata  letak  dan 
+
+Menurut  [15],  instrumen  yang  valid  adalah  apabila 
+
+instrumen  dapat  mengukur  apa  yang  seharusnya  diukur. 
+
+Instrumen  dapat  dikatakan  valid 
+
+jika  alat  ukur  yang 
+
+digunakan untuk mendapatkan data itu valid. Instrumen yang 
+
+reliabel adalah instumen yang saat dipergunakan berulangkali 
+
+untuk  mengukur  obyek  yang  sama,  akan  menghasilkan  data 
+
+yang  konsisten  dan  stabil.  Indeks  validitas  instrumen  yang 
+
+dipakai dalam penelitian ini dapat dicermati dari nilai r pada 
+
+kolom  corrected  item-total  correlation,  saat  nilai  r  hasilnya 
+
+ 
+
+1 
+
+3 
+
+4 
+
+5 
+
+1 
+
+2 
+
+3 
+
+4 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+positif  dan  lebih  besar  dari  r tabel,  maka  butir/item  itu  valid 
+
+[16].  Nilai  r  hasil  pada  kolom  corrected-item-total-
+
+correlation  akan  lebih  teliti  jika  kita  dibandingkan  nilai 
+
+koefisien  korelasi  momen  produk  dengan  Pearson. 
+
+Berdasrakan kaitan besarannya angka korelasi ini, maka item 
+
+dari  variabel  yang  dipakai  dikatakan  valid  jika  memiliki 
+
+koefisien  minimal  0.3  [16].  Ketentuan  validitas  ini  adalah 
+
+syarat  minimum,  seperti  yang  jelaskan  oleh  ahli  yaitu  
+
+Cronbach (1970) yang dikutip  [17]. Jika angka korelasi hasil 
+
+perhitungan  lebih  besar  dari  angka  kritis,  maka  butir/item 
+
+pertanyaan  tersebut  valid  dan  signifikan.  Sebaliknya,  jika 
+
+angka  korelasi  hasil perhitungan  lebih  kecil  dari angka kritis 
+
+tabel korelasi, maka item pertanyaan tersebut dapat dikatakan 
+
+tidak signifikan dan harus diperbaiki bahkan digugurkan [17]. 
+
+C.  Pengujian Objek Penelitian 
+
+Pengujian  objek  penelitian  dilakukan  menggunakan 
+
+kuesioner.  Kuesioner  disebar  umum  kepada  para  pengakses 
+
+website  UMMgl.  Sebelum  melakukan  pengisian  terhadap 
+
+kuesioner,  para  responden  diminta  untuk  mengakses  website 
+
+UMMgl  pada  laman  http://ummgl.ac.id/  terlebih  dahulu, 
+
+sebaran kuesioner seperti pada Tabel II. 
+
+ 
+
+ 
+
+Hasil  pengukuran  terhadap  website  UMMgl  ditampilkan 
+
+berdasarkan  masing–masing  indikator  aspek  dari  usability. 
+
+Penulis akan merata–rata hasil pengukuran namun tetap akan 
+
+melihat  masing–masing  nilai  dari 
+
+indikator  penyusun 
+
+IV. 
+
+HASIL DAN PEMBAHASAN 
+
+Hasil  penyebaran  kuesioner  didapatkan  95  responden 
+
+yang  telah  mengisi  dan  menilai  website  UMMgl.  Hasil 
+
+pengisian  ini  kemudian  dilakukan  pengujian  validasi  dan 
+
+reliabilitas menggunakan perangkat lunak SPSS. Berdasarkan 
+
+uji  validasi  menggunakan  SPSS  dengan  melihat  R-Tabel 
+
+dengan jumlah responden 95 orang, maka didapatkan R-Tabel 
+
+0.236.  Dengan  melihat  hasil  uji  validasi  ini  R-Hitung 
+
+mempunyai  nilai 
+
+lebih  besar  dari  R-Tabel,  sehingga 
+
+dinyatakan valid, dapat dilihat pada Tabel III.  
+
+Sedangkan  uji  Reliabilitas  menggunakan  SPSS  juga 
+
+dilakukan  agar  dipastikan  hasil  pengukuran  ini  dipastikan 
+
+reliabel.  Hasil  pengujian  dapat  dilihat  pada Tabel IV.  Sesuai 
+
+dengan  hasil  yang  diperoleh  yaitu  0.948  maka  ini  termasuk 
+
+kategori  “sangat  dapat  dipercaya”.  Sehingga  100  %  hasil 
+
+pengukuran dari 95 responden dinyatakan valid dan reliabel. 
+
+Setelah  semua  hasil  pengukuran  diuji  validasi  dan 
+
+reliabilitasnya, maka penulis melanjutkan dengan menghitung 
+
+nilai  usability  website  UMMgl.  Berdasarkan  Tabel  VI 
+
+diperoleh  nilai  masing  –  masing  indikator  penyusun  pada 
+
+aspek  usability.    Dapat  dilihat  bahwa  hasil  pengukuran 
+
+usability  semua  item  pernyataan  dari  item  1  sampai  dengan 
+
+item 18 mendapatkan nilai diatas 2. Sehingga dengan arti ini 
+
+maka semua pernyataan mendapatkan nilai yang baik bahkan 
+
+ada  yang  mendekati  nilai  maksimum  yaitu  sangat  baik. 
+
+Dengan  mendapatkan  hasil  pengukuran  ini  maka  dapat 
+
+diambil  sebuah  kesimpulan  juga  untuk  meningkatkan  dan 
+
+memperbaiki 
+
+nilai 
+
+yang  masih  minimum 
+
+dan 
+
+mempertahankan nilai yang sudah tinggi. Namun dari itu nilai 
+
+masih dibawah 3 sehingga semua aspek usability masih perlu 
+
+ditingkatkan.  Perbaikan  website  Perguruan  Tinggi  dapat 
+
+Agus Setiawan: Evaluasi Website Perguruan Tinggi… 
+
+ 
+
+297 
+
+Jurnal Informatika: Jurnal Pengembangan IT (JPIT), Vol.03, No.03, September 2018  
+
+DOI: 10.30591/jpit.v3i3.912    
+
+ ISSN: 2477-5126     
+
+e-ISSN: 2548-9356 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+dilakukan  dengan  memperhatikan  dengan  seksama  apa  saja 
+
+yang  menjadi  indikator  penentu  agar  nilai  website  ini  sangat 
+
+baik dari aspek usability. 
+
+ 
+
+ 
+
+ 
+
+TABEL III 
+
+HASIL UJI VALIDASI INSTRUMEN 
+
+Kode 
+
+R-Hitung 
+
+R-Table 
+
+NILAI MASING-MASING INDIKATOR PADA ASPEK USABILITY 
+
+TABEL VI 
+
+Rerata 
+
+Rerata 
+
+/Indikator 
+
+2.83 
+
+ 
+
+A1 
+
+A2 
+
+A3 
+
+A4 
+
+A5 
+
+B1 
+
+B2 
+
+B3 
+
+C1 
+
+C2 
+
+C3 
+
+D1 
+
+D2 
+
+D3 
+
+E1 
+
+E2 
+
+E3 
+
+E4 
+
+2.94 
+
+2.80 
+
+2.82 
+
+2.82 
+
+2.77 
+
+2.87 
+
+2.80 
+
+2.83 
+
+2.75 
+
+2.73 
+
+2.71 
+
+2.59 
+
+2.62 
+
+2.74 
+
+2.77 
+
+2.80 
+
+2.78 
+
+2.82 
+
+ 
+
+ 
+
+ 
+
+ 
+
+2.84 
+
+2.73 
+
+2.65 
+
+2.79 
+
+ 
+
+A1 
+
+A2 
+
+A3 
+
+A4 
+
+A5 
+
+B1 
+
+B2 
+
+B3 
+
+C1 
+
+C2 
+
+C3 
+
+D1 
+
+D2 
+
+D3 
+
+E1 
+
+E2 
+
+E3 
+
+E4 
+
+.236 
+
+.236 
+
+.236 
+
+.236 
+
+.236 
+
+.236 
+
+.236 
+
+.236 
+
+.236 
+
+.236 
+
+.236 
+
+.236 
+
+.236 
+
+.236 
+
+.236 
+
+.236 
+
+.236 
+
+.236 
+
+.799 
+
+.734 
+
+.803 
+
+.689 
+
+.739 
+
+.696 
+
+.712 
+
+.706 
+
+.657 
+
+.730 
+
+.764 
+
+.453 
+
+.631 
+
+.636 
+
+.674 
+
+.790 
+
+.572 
+
+.700 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+HASIL UJI RELIABILITAS INSTRUMEN 
+
+Gbr. 2 Posisi hasil Pengukuran terhadap Skala Likert 
+
+ 
+
+ 
+
+ 
+
+TABEL IV 
+
+Cronbach's 
+
+Items 
+
+Cronbach
+
+Alpha Based on 
+
+'s Alpha 
+
+Standardized 
+
+N of Items 
+
+.948 
+
+.949 
+
+18 
+
+SUMMARY HASIL PENGUJIAN TERHADAP 95 RESPONDEN 
+
+TABEL V 
+
+ 
+
+Cases  Valid 
+
+Excludeda 
+
+Total 
+
+N 
+
+% 
+
+95  100.0 
+
+0 
+
+.0 
+
+95  100.0 
+
+ 
+
+Hasil akhir dari menghitung rerata semua item pernyataan 
+
+didapatkanlah  nilai sebesar 2.77 yang dapat dilihat pada Gbr 
+
+2.  Dapat  dilihat  sesuai  dengan  Gbr.  2  maka  posisi  website 
+
+UMMgl masuk pada kategori Baik. 
+
+Penelitian lanjutan dari penelitian ini adalah nantinya akan 
+
+diukur  juga  tingkat  usability  menggunakan  metode  Guerilla 
+
+Usability  Testing  untuk  mendapatkan  evaluasi  yang  berbeda 
+
+dan  mendapatkan  hasil  pengukuran  yang  lebih  detail  dengan 
+
+melibatkan  pengguna  atau  responden  diukur  dari  segi  User 
+
+Interface dan User Experience.  
+
+V. 
+
+KESIMPULAN 
+
+Berdasarkan  hasil  pengukuran  tingkat  usability  website 
+
+UMMgl  dengan  nilai  2.77  dengan  skala  0–4,  maka  website 
+
+UMMgl dinyatakan pada kategori  website  yang usable. Nilai 
+
+tertinggi  pengukuran  ada  pada  Memorability  dengan  nilai 
+
+2.84 yang artinya adalah website mudah diingat navigasi dan 
+
+tata  letak  untuk  mendapatkan  informasi.  Nilai  terendah  ada 
+
+pada  Errors  dengan  nilai  2.65  yang  mempunyai  arti  bahwa 
+
+Agus Setiawan: Evaluasi Website Perguruan Tinggi… 
+
+ 
+
+298 
+
+Jurnal Informatika: Jurnal Pengembangan IT (JPIT), Vol.03, No.03, September 2018  
+
+DOI: 10.30591/jpit.v3i3.912    
+
+ ISSN: 2477-5126     
+
+e-ISSN: 2548-9356 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+website  masih  banyak  ditemui  error  pada  tautan  menu  dan 
+
+navigasi  (broken  link).  Saran  penelitian  berikutnya  adalah 
+
+pengukuran usability yang dilengkapi dengan beberapa model 
+
+penugasan 
+
+atau 
+
+task. 
+
+Penugasan 
+
+dilakukan 
+
+untuk 
+
+menyelesaikan beberapa tugas dari tugas yang mudah sampai 
+
+[5] 
+
+[6] 
+
+[7] 
+
+yang sulit (memerlukan beberapa langkah). 
+
+UCAPAN TERIMA KASIH 
+
+Penulis  mengucapkan  terimakasih  yang  sebesar-besarnya 
+
+kepada  pihak  LP3M  Universitas  Muhammadiyah  Magelang 
+
+yang 
+
+telah  memberikan 
+
+kesempatan 
+
+dengan 
+
+hibah 
+
+penelitiannya, dan Kepada para responden yang penulis tidak 
+
+[10] 
+
+bisa menyebutkan satu per satu. 
+
+ 
+
+DAFTAR PUSTAKA 
+
+[1] 
+
+A.  Setiawan,  “Analisis  Sistem  Informasi  Orang  Tua  Wali 
+
+Mahasiswa 
+
+berbasis  Website 
+
+Studi  Kasus  Universitas 
+
+Muhammadiyah Magelang,” J. Inform. UPGRIS, vol. 2, no. 1, pp. 
+
+8–17, 2016. 
+
+[2] 
+
+A.  Setiawan  and  R.  Widaryanto,  “Hubungan  Orang  Tua  Wali 
+
+Mahasiswa  dengan  Perguruaan  Tinggi  dalam  Sistem  Informasi 
+
+Orang  Tua  Wali  Mahasiswa,”  in  The  6th  University  Research 
+
+Colloquium, 2017, pp. 1–6. 
+
+Wireless Sensor Network Berbasis Internet of Things untuk Sistem 
+
+Pemantauan  Kualitas  Air  dan  Tanah  Pertanian,”  J.  Inform.  J. 
+
+Pengemb. IT, vol. 3, no. 2, pp. 285–289, 2018. 
+
+[4] 
+
+APJII,  “PROFIL  PENGGUNA  INTERNET  INDONESIA  2016,” 
+
+2016. . 
+
+I. Banyumurti, “Statistik Internet Indonesia 2016,” 2016. . 
+
+Y.  Paragian,  “Dalam  5  tahun  terakhir,  jumlah  pengguna  internet 
+
+Indonesia naik 430 persen (GRAFIK),” 2014. . 
+
+A.  Setiawan  and  R.  Widaryanto,  “Mobile  CRM  student-parent 
+
+information system,” IOP Conf. Ser. Mater. Sci. Eng., vol. 403, p. 
+
+12076, Oct. 2018. 
+
+[8] 
+
+D.  B.  Napitupulu,  “Evaluasi  Kualitas  Website  Universitas  XYZ 
+
+Dengan  Pendekata  Webqual  [Evaluation  of  XYZ  University 
+
+Website  Quality  Based  on  Webqual  Approach],”  Bul.  Pos  dan 
+
+Telekomun., vol. 14, no. 1, p. 51, 2016. 
+
+[9] 
+
+N. Yu and J. Kong, “User experience with web browsing on small 
+
+screens:  Experimental  investigations  of  mobile-page  interface 
+
+design  and  homepage  design  for  news  websites,”  Inf.  Sci.  (Ny)., 
+
+vol. 330, pp. 427–443, 2016. 
+
+Y.  MZ,  “Evaluasi  Penggunaan  Website  Universitas  Janabadra 
+
+Dengan  Menggunakan  Metode  Usability  Testing,”  Inf.  Interaktif, 
+
+vol. 1, no. 1, pp. 34–43, 2016. 
+
+[11] 
+
+D.  Sulasih 
+
+and  A.  Tarmuji, 
+
+“ANALISIS  WEBSITE 
+
+UNIVERSITAS  AHMAD  DAHLAN  DENGAN  METODE 
+
+USABILITY TESTING,” J. Sarj. Tek. Inform., vol. 3, no. 2, 2015. 
+
+[12] 
+
+A.  Zulkarnais,  P.  Prasetyawan,  and  A.  Sucipto,  “Game  Edukasi 
+
+Pengenalan  Cerita  Rakyat  Lampung  Pada  Platform  Android,”  J. 
+
+Inform. J. Pengemb. IT, vol. 3, no. 1, pp. 96–102, 2018. 
+
+[13] 
+
+V.  Venkatesh,  H.  Hoehle,  and  R.  Aljafari,  “A  usability  evaluation 
+
+of the Obamacare website,” Gov. Inf. Q., vol. 31, no. 4, 2014. 
+
+[14] 
+
+E.  Çetin  and  S.  Özdemir,  “A  Study  on  an  Educational  Website’s 
+
+Usability,” Procedia - Soc. Behav. Sci., vol. 83, pp. 683–688, 2013. 
+
+[15] 
+
+Sugiyono,  Metode  Penelitian  Kuantitatif,  Kualitatif  dan  R&D. 
+
+[16] 
+
+A. Saifuddin,  Reliabilitas dan Validitas (Edisi 4). Pustaka Pelajar, 
+
+2012. 
+
+[17] 
+
+U. Sekaran, Metode Riset Bisnis. Salemba Empat, 2006. 
+
+[3] 
+
+U.  Syafiqoh,  S.  Sunardi,  and  A.  Yudhana,  “Pengembangan 
+
+Bandung: Alfabeta, 2009. 
+
+Agus Setiawan: Evaluasi Website Perguruan Tinggi… 
+
+ 
+
+299 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+

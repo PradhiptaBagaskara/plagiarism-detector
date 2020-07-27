@@ -1,0 +1,1544 @@
+Terbit online pada laman web jurnal : http://jurnal.iaii.or.id 
+
+JURNAL RESTI 
+(Rekayasa Sistem dan Teknologi I nformasi)  
+Vol. 2 No. 3 (2018) 800 – 806 
+
+ISSN : 2580-0760  (media online) 
+
+ 
+
+ 
+Pengujian Sistem Pendukung Keputusan Penjurusan SMA di Banten 
+menggunakan Metode Black Box 
+
+Tri Yani Akhirinaa , Dwi Yulistyantib, Ana Rusmardianac, Ulfa Pauziahd 
+aProgram Studi Informatika, fakultas Teknik dan Ilmu Komputer, Universitas Indraprasta PGRI, triyani.akhirina@unindra.ac.id 
+bProgram Studi Informatika, fakultas Teknik dan Ilmu Komputer, Universitas Indraprasta PGRI, dwi.yulistyanti@unindra.ac.id 
+cProgram Studi Informatika, fakultas Teknik dan Ilmu Komputer, Universitas Indraprasta PGRI, ana.rusmardiana@unindra.ac.id 
+dProgram Studi Informatika, fakultas Teknik dan Ilmu Komputer, Universitas Indraprasta PGRI, ulfa.pauziah@unindra.ac.id 
+
+The Decision Support System (DSS) of SMA major which had been tested in Banten was a system obtained from the former 
+research, as it was expected to help private schools in Banten for students' major. This system has been developed through 
+Fuzzy Tsukamoto's method in obtaining students' major. Fuzzy Tsukamoto requires three determinant factors, namely: skill, 
+interest and aptitude. Fuzzyfication is carried out to get a firmed score of IPA and IPS. After the two scores are obtained, the 
+comparison of those  highest  scores  is  conducted  to  determine the  recommendation.  In  the process  of  manual data  testing, 
+Fuzzy Tsukamoto can be applied in students' major in Banten, with 98% of its accuracy level. After manual testing, Decision 
+Support  System  of  SMA  major  is  designed  by  using  Research  and  Development  (R  &  D)  as  its  developing  system  and  by 
+Unified Modeling Language (UML) as its designing analysis. The objective of this research aims  at measuring the quality 
+testing process of the application that is based on the aspects of  functionality, reliability, usability, dan efficiency testingby 
+employing the black box method. Based on the measurement Black Box Method, the Decision Support System of SMA major 
+gets very goodvield, as it can be applied to be as SMA major recommendation in Banten. 
+
+Keywords: decision support system, SMA major, Fuzzy Tsukamoto, Black Box Method 
+
+Abstract 
+
+Abstrak 
+
+Penjurusan siswa merupakan hal rutin yang dilakukan pada Sekolah  Menengah Atas (SMA). Hadirnya sebuah tools berupa 
+Sistem  Pendukung  Keputusan  (SPK)  Penjurusan  SMA  yang  telah  di  ujicobakan  di  tiga  belas  sekolah  swasta  di  Banten, 
+merupakan  suatu  sistem  yang  dihasilkan  dari  penelitian  terdahulu.  Kehadiran  SPK  Penjurusan  SMA  ini  sangat  membantu 
+dalam  pengambilan  keputusan  penjurusan  siswa  khususnya  SMA  swasta  di  Banten.SPK  ini  menitikberatkan  penjurusan 
+berdasarkan  tiga  variabel  yaitu  kemampuan,  bakat  dan  minat.  Tujuan  dari penelitian  ini  adalah pengujian  kualitas  aplikasi 
+berdasarkan  aspek  functionality,  reliability,  usability,  dan  efficiencytesting  dengan  menggunakan  pengujian  Black  Box. 
+Metode  pengumpulan  data  yang  digunakan  pada  penelitian  ini  adalah  dengan  melakukan  penyebaran  kuisioner  dan 
+wawancara  dengan  penanggung  jawabpenjurusan  dalam  hal  ini  bidang  kurikulum  dan  kesiswaaan  pada  tiga  belas  sekolah 
+yang telah menggunakan SPK Penjurusan Siswa. Hasil pengumpulan data dan wawancara ini dioleh sehingga memperoleh 
+informasi bahwa SPK Penjurusan SMA ini masuk katagori SANGAT BAIK dengan rata-rata  persentase nilai aktual sebesar 
+89,88%. Berdasarkan hasil tersebut, hal ini menunjukan bahwa SPK Penjurusan SMA yang telah digunakan oleh penangung 
+jawab  penjurusan  siswa  di  13  sekolah,  sistem  tersebut  memiliki  kulaitas  yang  sangat  baik  dalam  membantu  pengambilan 
+keputusan penjurusan siswa berdasarkan kemampuan, bakat dan minat siswa. 
+
+Kata kunci:sistem pendukung keputusan, penjurusan SMA, metode Black Box 
+
+© 2018Jurnal RESTI
+
+1.  Pendahuluan  
+
+Penjurusan  siswa  Sekolah  Menengah  Atas  (SMA) 
+merupakan suatu hal yang rutin dilaksanakan di seluruh 
+lingkungan  SMA  di  Indonesia,  baik  sekolah  negeri 
+maupun  swasta.    Di  Banten,  penjurusan  siswa  SMA 
+sekolah  negeri 
+telah  menggunakan  sistem  yang 
+terintegrasi  dengan  baik,  dengan  menggunakan  portal 
+https://siap-ppdb.com/banten. Sistem tersebut disiapkan 
+oleh  pemerintah  propinsi  untuk  memudahkan  pihak 
+
+siswa  pada 
+
+sekolah  dalam  penjaringan 
+tahap 
+penerimaan  dan  peminatan  atau  penjurusan  siswa.  
+Akan  tetapi  berbeda  halnya  dengan  sekolah  swasta. 
+Untuk  sekolah  swasta  masih  belum  memiliki  sistem 
+terintegrasi  yang  baik  untuk  penjurusan  siswanya. 
+Ruang  lingkup  penelitian  ini  mengambil  data  di 
+Sekolah  Menengah  Atas  di  Banten,  khususnya  SMA 
+swasta.    Melihat  kondisi  di  Banten,  masih  banyak 
+sekolah-sekolah SMA yang masih menggunakan sistem 
+manual  dalam  penjurusan  siswanya.    Ditambah  lagi 
+
+ Diterima Redaksi : 04-11-2018 | Selesai Revisi : 22-11-2018 | Diterbitkan Online : 22-12-2018 
+800 
+
+ 
+ 
+
+Tri Yani Akhirina, Dwi Yulistyanti, Ana Rusmardiana, Ulfa Pauziah 
+Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi)  Vol. 2 No. 3 (2018) 800– 806  
+
+ 
+dengan  kesenjangan  kondisi  sekolah  SMA  swasta  dan 
+negeri, 
+sangat 
+terutama  didaerah  plosok  yang 
+memprihatinkan [1]. 
+
+bakat 
+
+sesuai 
+
+dengan  minat, 
+
+Berdasarkan UU Pendidikan Nasional No. 20 pasal 12 
+poin  1  (b)  berbunyi  “Setiap  Peserta  didik  pada  setiap 
+satuan  pendidikan  berhak  memperolah  pelayanan 
+pendidikan 
+dan 
+kemampuannya”  [2]. SPK  Penjurusan  SMA  tentunya 
+rekomendasi 
+diharapkan  mampu  memberikan 
+keputusan  yang  baik  berdasarkan  minat,  bakat  dan 
+kemampuan dan juga memberikan informasi yang baik 
+bagi  penggunanya.  Saat  ini,  pengelolaan  informasi 
+yang  cepat  dan  akurat  menjadi  hal  yang  sangat 
+dibutuhkan karena ketersediaan informasi yang banyak 
+dan  distribusinya  yang  cepat  dari  sumber    informasi 
+sampai pengguna informasi[3]. 
+
+Sebuah 
+apabila 
+software  dikatakan  berkualitas 
+memenuhi  tiga  ketentuan  pokok.  Ketentuan  pokok 
+tersebut  adalah 
+terpenuhinya  kebutuhan  pemakai, 
+terpenuhi-nya  standar  pengembangan  software,  dan 
+terpenuhinya  sejumlah  kriteria  implisit.  Hal  ini  berarti 
+bahwa  jika  salah  satu  ketentuan  tersebut  tidak  dapat 
+dipenuhi, maka software yang bersangkutan tidak dapat 
+dikatakan memiliki kualitas yang baik [4]. 
+
+SPK  tersebut  telah  di  ujicobakan  di  tiga  belas  SMA 
+Swasta  di  Banten  sebagai  tahapan  untuk  implementasi 
+sistem.  Untuk  mengimplementasikan  sistem  tersebut 
+tentunya  diperlukan  suatu  pengujian  kelayakan  SPK 
+tersebut.    Kualitas  aplikasi  perangkat  lunak  dapat 
+digunakan  sebagai  acuan  dalam  membuat  produk  dan 
+dapat  diukur  oleh  orang  yang  menggunakannya. 
+Kualitas  perangkat 
+lunak  merupakan  pemenuhan 
+terhadap  kebutuhan  fungsional  dan  kinerja  yang 
+didokumentasi-kan  secara  eksplisit,  pengembangan 
+standar  yang  didokumentasikan  secara  eksplisit,  dan 
+sifat-sifat 
+implisit  yang  diharapkan  dari  se-buah 
+software  yang  dibangun  secara  profesional  [5].Salah 
+satu metode pengujian kelayakan yang peneliti gunakan 
+adalah menggunakan metode Black Box.  
+
+Tujuan  dari  penelitian  ini  adalah  menguji  sistem 
+tersebut  berdasarkan  aspek  fungsionalitas,  realibilitas, 
+useability  dan  efficencyapakah  dapat  berjalan  dengan 
+baik dan mampu memenuhi kebutuhan pengguna dalam 
+penjurusan  siswa  SMA  swasta  di  Banten.  Selain  itu, 
+diharapakan  SPK  Penjurusan  SMA  dapat  diterapkan 
+sebagai  tools  yang  membantu  pihak  sekolah  dalam 
+penjurusan  siswa  berdasarkan  minat,  bakat  dan 
+kemampuannya. 
+
+2.  Tinjauan Pustaka 
+
+2.1Pengujian Perangkat Lunak(Software) 
+
+Pengujian  perangkat  lunak  atau  software  merupakan 
+sangat  deperlukan  untuk 
+suatu 
+langkah  yang 
+memamstikan  bahwa  perangkat 
+telah 
+dihasilkan  mampu berjalan dengan baik  sesuai dengan 
+
+lunak  yang 
+
+lunak 
+
+pemodelan 
+
+terintegrasi  dalam 
+
+telah  ditentukan  sebelumnya, 
+fungsionalitas  yang 
+sehingga  dapat  diketahui  bahwa  perangkat 
+lunak 
+tersebut  telah  sesuai  dengan  tujuan  yang  ingin  dicapai 
+oleh  perangkat  lunak  tersebut.Sistem  dari  kualitas 
+perangkat 
+tiga  disiplin 
+pengembangan 
+aplikasiyaitu: 
+(process), pemodelan pengukuran produk(product), dan 
+pemodelan  manajemen  dan  interaksi  manusia  (human) 
+[6].  Pengembang  atau  penguji 
+sangat 
+diperlukan  sesi  khusus  untuk  dilakukan  pengujian 
+program    yang  sudah  dibuat  agar  kesalahan  ataupun 
+kekurangan  dapat  dideteksi  sejak  dini  dan  dapat 
+perbaiki secepatnya [7].  
+
+software 
+
+proses 
+
+apabila 
+software  dikatakan  berkualitas 
+Sebuah 
+memenuhi  tiga  ketentuan  pokok.  Ketentuan  pokok 
+tersebut  adalah 
+terpenuhinya  kebutuhan  pemakai, 
+terpenuhi-nya  standar  pengembangan  software,  dan 
+terpenuhinya  sejumlah kriteria implisit. Hal ini berarti 
+bahwa  jika  salah  satu  ketentuan  tersebut  tidak  dapat 
+dipenuhi,  maka  software  yang  bersangkutan  tidak 
+dapat dikatakan memiliki kualitas yang baik [8].  
+
+sistem 
+
+integritas  data,  dan  membantu 
+
+informasi  merupakan  proses 
+Pengujian 
+mengumpulkan  dan  mengevaluasi  fakta-fakta  untuk 
+menentukan apakah sistem informasi melindungi aset, 
+memiliki 
+tujuan 
+organisasi  dapat  tercapai  [9].  Pengujian  perangkat 
+lunak  terdiri  dari  dua  proses  yaitu  verivikasi  dan 
+validasi.  Proses  verifikasi  menunjuk  kepada  kumpulan 
+aktifitas yang memastikan bahwa perangkat lunak telah 
+mengimplementasi  sebuah  fungsi  spesifik.  Dan  proses 
+validasi  menunjuk  kepada  sebuah  kumpulan  berbeda 
+dari aktivitas yang memastikan bahwa perangkat lunak 
+yang 
+terhadap 
+kebutuhan customer [7]. 
+
+telah  dibangun  dapat  ditelusuri 
+
+Pengujian perangkat lunakmerapukan suatu tahap yang 
+dilaksanakan  dalam  proses  rekayasa  perangkat  lunak 
+atau software engineering. Sejumlah strategi pengujian 
+perangkat  lunak  telah  diusulkan  di  dalam  literatur. 
+Semuanyamenyediakan  template  untuk  pengujian  bagi 
+pembuat  perangkat  lunak.  Dalam  hal  ini,  semuanya 
+harus memiliki karakteristik umum berupa [7]: 
+
+1.  Testing  dimulai  pada  level  modul  dan  bekerja 
+keluar  kearah  integrasi  pada  system  berbasiskan 
+computer. 
+
+2.  Teknik testing yang berbeda sesuai dengan poin-
+
+poin yang berbeda pada waktunya. 
+
+3.  Testing diadakan oleh pembuat/pengembang 
+
+Software  dan  untuk  proyek  yang  besar  oleh 
+group testing yang independent. 
+
+4.  Testing  dan  Debugging  adalah      aktivitas  yang 
+berbeda  tetapi  debugging  harus  diakomodasikan 
+pada setiap strategi testing. 
+
+ 
+Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi)  Vol. 2 No. 3 (2018) 800– 806  
+801 
+
+ 
+ 
+
+Tri Yani Akhirina, Dwi Yulistyanti, Ana Rusmardiana, Ulfa Pauziah 
+Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi)  Vol. 2 No. 3 (2018) 800– 806  
+
+ 
+
+2.3  Metode Black Box Testing 
+
+Black Box Testing berfokus pada spesifikasi fungsional 
+dari  perangkat  lunak.  Tester  dapat  mendefinisikan 
+kumpulan  kondisi  input  dan  melakukan  pengetesan 
+pada spesifikasi fungsional program. Black Box Testing 
+bukanlah  solusi  alternatif  dari  White  Box  Testing  tapi 
+lebih merupakan pelengkap untuk menguji hal-hal yang 
+tidak dicakup oleh White Box Testing[10]. 
+
+Metode  pengujian  Black  Box  testing  adalah  suatu 
+metode yang mengijinkan pengujian secara acak, tanpa 
+perencanaan  dan  dapat  dilakukan  oleh  beberapa  orang 
+yang 
+secara  detail  mengenai 
+spesifikasi dari sistem tersebut.  Dalam menguji sebuah 
+sistem  informasi  orang  yang  paling  sesuai  dalam 
+melakukan pengujian adalah pengguna atau user [11]. 
+
+tidak  memahami 
+
+BlackBoxTesting  cenderung  untuk  menemukan  lima 
+hal, diantaranya pertama, menemukan fungsi yang tidak 
+benar  atau  tidak  ada.    Kedua,    kesalahan  antarmuka 
+(interface  errors).  Ketiga,    menemukan  kesalahan  pada 
+struktur data dan akses basis data. Keempat, menemukan 
+kesalahan  performansi  (performance  errors).  Dan  yang 
+terakhir 
+kesalahan 
+inisialisasi  dan  terminasi  [10].  Pengujian  didesain 
+untuk menjawab pertanyaan-pertanyaanberikut: 
+
+untuk  menuemukan 
+
+adalah 
+
+1.  Bagaimana 
+
+fungsi-fungsi  diuji 
+
+agar 
+
+dapat 
+
+2.  Input seperti apa yang dapat menjadi bahan kasus 
+
+dinyatakan valid? 
+
+uji yang baik? 
+
+3.  Apakah system sensitive pada input-input tertentu? 
+4.  Bagaimana sekumpulan data dapat diisolasi? 
+5.  Berapa  banyak  rata-rata  data  dan  jumlah  data 
+
+yang dapat ditangani sistem? 
+
+6.  Efek apa  yang   dapat  membuat kombinasi data 
+
+ditangani spesifik pada operasi sistem? 
+ 
+
+2.4  Konsep Dasar SPK Penjurusan SMA  
+
+Sistem  Pendukung  Keputusan  (SPK) Penjurusan  SMA 
+merupakan  sebuah  sistem  berbasis  web.  Dalam 
+merekomendasikan  hasil  penjurusan  menggunakan 
+metode  Fuzzy  Tsukamoto.  Terdapat  dua  kelompok 
+penilaian untuk IPA dan IPS, masing-masing penilaian 
+terdapat  3  variabel  input  dan  satu  variabel  output. 
+Variabel inputnya adalah kemampuan, bakat dan minat 
+sedangkan variabel outputnya adalah Jurusan [12]. 
+
+Terdapat  tiga  menu  utama  dalam  SPK  Penjurusan 
+SMA.    Pertama,  Data  Siswa.    Pada  menu  data  siswa, 
+pengguna  dapat  melakukan  proses  input,  update  dan 
+delete data siswa.   
+
+Kedua,  Penjurusan  Siswa.    Pada  menu  ini  user  harus 
+melakukan  inpun  nomor  induk  siswa  terlebih  dahulu 
+setelah itu baru masuk ke lembar input data penjurusan.  
+Ada  tiga  kelompok  variabel  utama  yaitu  kemampuan,  
+diperoleh  dari  nilai  raport  siswa  untuk  nilai  tegas  IPA 
+dan  nilai  tegas  IPS.  Bakat,  pada  variabel  ini  diisikan 
+nilai hasil tes langsung siswa. Dan yang terakhir adalah 
+
+minat,  merupakan  hasil  wawancara  dengan  guru 
+bimbingan  konseling.    Setelah  seluruh  data  terinput 
+maka  klik  proses  untuk  melihat  hasil  dari  variabel 
+output  yaitu  penjurusan.    Setelah  hasil  keluar  barulah 
+dapat disimpan.   
+
+Menu  utama  yang  ketiga  adalah  Report  penjurusan.  
+Pada  menu  ini  user  dapat  melihat  hasil  rekomendasi 
+penjurusan 
+data  
+berdasarkan nis, IPA atau IPS. 
+
+dengan  melakukan 
+
+pencarian 
+
+2.5  Penelitian yang Relevan 
+
+ISO  9126. 
+dengan 
+
+telah  dilakukan  untuk  menguji 
+Suatu  penelitian 
+kelayakan  suatu  perangkat 
+lunak  dengan  nama 
+perpustakaan  Senayan  Library  Management  System 
+  Aspek-aspek 
+(SLiMS)  berdasarkan 
+penilaian 
+Functionality 
+berkaitan 
+(Fungsionalitas),  Reliability  (Kehandalan),  Usability 
+(Kebergunaan),  Efficiency  (Efisiensi),  Maintainability 
+(Pemeliharaan),  dan  Portability  (Portabilitas)  untuk 
+dilakukan  pengujian  kualitas  aplikasi  SLiMS.  Hasil 
+dari  penelitian  ini    adalah  aplikasi  SLiMS  termasuk 
+Sehingga 
+dalam 
+kesimpulannya  adalah  aplikasi  SLiMS 
+ternyata 
+memiliki  kualitas  sangat  baik  dan  sangat  membantu 
+dalam  pengelolaan  perpustakaan  yang  ada  di 
+perguruan tinggi terutama pengguna utama yaitu pihak 
+penanggung jawab perpustakaan [3]. 
+
+SANGAT  BAIK. 
+
+kategori 
+
+pada 
+
+Penelitian  lain  juga  telah  dilakukan  adalah  telah  
+dicoba  diterapkan  pengujian  dengan  menggunakan 
+teknik  Black  Box  Testing.  Metoda  Black  Box 
+  cara  pengujian 
+Testingyang  digunakan  adalah 
+Boundary  Value  Analysis  terhadap  fungsi  tambah 
+kelas 
+Kelulusan 
+SNMPTN.Hasil pengujian menunjukkan bahwa masih 
+terdapat  banyak  kekurangan  saat  melakukan  validasi 
+data yang akan dimasukkan, yang dapat menyebabkan 
+data tersimpan pada database tidak sesuai dengan data 
+yang  diharapkan.  Dari  hasil  pengujian  dapat 
+digunakan  sebagai  masukan  untuk  memperbaiki 
+aplikasi [7]. 
+
+Aplikasi 
+
+Prediksi 
+
+  Dalam  penelitian 
+
+Penelitian  berikutnya,  merupakan  sebuah  jurnal  studi 
+literartur berkaitan dengan pengujian kotak hitam dan 
+pengujian  kotak  putih  dalam  menguji  sebuah  sistem 
+informasi. 
+ini  memberikan 
+gambaran  yang  jelas  mekanisme  pengujian  kedua 
+  Pengujian  kotak  hitam  dapat 
+metode 
+dilakukan 
+dengan 
+pengembang 
+respondennya  adalah  pengguna  atau  user,  sedangkan 
+pengujian  kotak  putih  responden  harus  orang  yang 
+mengerti perancangan sistem   [11]. 
+
+tersebut. 
+oleh 
+
+sistem 
+
+3.   Metodologi Penelitian 
+
+Penelitian  menggunakan  metode  kuantitatif  deskriptif. 
+Dimana pengumpulan data dan informasi sangat terkait 
+dengan  user  requirement  yang  menggunakan  Sistem 
+Pendukung  Keputusan  Penjurusan  SMA  di  Banten. 
+
+ 
+Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi)  Vol. 2 No. 3 (2018) 800– 806  
+802 
+
+ 
+ 
+
+Tri Yani Akhirina, Dwi Yulistyanti, Ana Rusmardiana, Ulfa Pauziah 
+Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi)  Vol. 2 No. 3 (2018) 800– 806  
+
+ 
+Data dan informasi diperoleh dari data primer dan data 
+sekunder.  Data  primer,  diperoleh    dengan  melakukan 
+penyebaran  kuisoner  SPK  PenjurusanSMA  di  Banten 
+dengan  cara  mendampingi  responden  saat  pengujian 
+berlangsung,  sedangkan  data  sekunder  diperoleh 
+melalui  studi  pustaka,  yaitu  melalui  studi  literatur  dan 
+tulisan ilmiah tentang Black Box testing. 
+
+3.1 Data Primer 
+
+functionality 
+
+Untuk  data  primer,  diperoleh  dari  pengisian  kuesioner 
+yang  terdiri  dari  25  pertanyaan  yang  dibagi  menjadi 
+empat  bagian  yaitu 
+(fungsionalitas), 
+reliability  (kehandalan),  usability  (kebergunaan)  dan 
+efficiency  (efisiensi).Dengan  responden  sebanyak  26 
+(dua  puluh  enam) 
+responden  yang  merupakan 
+penanggung  jawab  penjurusan  siswa  yang  berasal  dari 
+13 (tiga belas) sekolah swasta (tabel 1) di Banten yang 
+telah  uji  coba  menggunakan  sistem  SPK  Penjurusan 
+SMA. 
+
+Tabel 1.Daftar Sekolah Swasta Responden Uji Coba SPK Penjurusan 
+SMA 
+
+No. 
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+10 
+11 
+12 
+13 
+
+Nama Sekolah 
+
+SMA Nusantara Plus 
+SMA PGRI 56 Ciputat 
+SMA Muhammadiah Ciputat 
+SMA Al-Mukhtariah 
+SMA Nusantara Binuang 
+SMAPlus Al Kairiyah Badumusalam 
+MA Al-Khiriyah 
+SMA Ma’Arif 
+MA Nasyrul ’Ulum Bani Sholeh  
+SMA La Tahzan 
+SMA PGRI Rangkasbitung 
+MA Masyriqul Anwar 
+MA Annizhomiyyah 
+
+Wilayah 
+Tangerang 
+Tangerang 
+Tangerang 
+Serang 
+Serang 
+Serang 
+Cilegon 
+Cilegon 
+Cilegon 
+Lebak 
+Lebak 
+Pandeglang 
+Pandeglang 
+
+ 
+Dalam  pengisian  kuisioner  Responden  mengisi  sesuai 
+terkait 
+pendapat  mereka  mengenai  pengalaman 
+penggunaan  aplikasi  SPK  penjurusan  SMA.  Variabel 
+yang  diukur  dalam  penelitian  ini  adalah  berdasarkan 
+pengalaman  pengguna SPK penjurusan SMA terhadap 
+kualitas  sistem  dengan  Blackbox  testing  berdasarkan 
+aspekfunctionality 
+reliability 
+(kehandalan),  usability  (kebergunaan)  dan  efficiency 
+(efisiensi). Pada tabel 2 merupakan pembobotan di tiap 
+kriteria  jawaban  responden  berdasarkan  skala  linkert 
+sebagai indikator dalam mengukur sikap, pendapat dan 
+persepsi 
+pengalamannya 
+terhadap 
+menggunakan SPK Penjurusan SMA. 
+
+(fungsionalitas), 
+
+responden 
+
+ 
+
+Tabel 2.Bobot Kriteria Jawaban 
+
+Kriteria Jawaban 
+Sangat Setuju (SS) 
+Setuju (S) 
+Ragu-ragu (R) 
+Tidak Setuju (TS) 
+Sangat Tidak Setuju (STS) 
+
+Bobot 
+5 
+4 
+3 
+2 
+1 
+
+ 
+Pengisian  kuesioner  sudah  dilakukan  oleh  para 
+penanggung 
+dengan 
+memberikan penilaian berdasarkan kritria jawaban dan 
+
+penjurusan 
+
+siswa, 
+
+jawab 
+
+bobot  masing-masing  dari  tiap  kriteria  yang  dapat 
+dilihat  pada  tabel  2.  Terdapat  sekitar  25 
+  butir 
+pernyataan  yang  mewakili  masing-masing  aspek 
+Functionality, 
+dan 
+Efficiencydenganpemetaan  variabel,  sub  variabel  serta 
+indikator  penilaian  terhadap  SPK  penjurusan  SMA 
+dalam  menghasilkan  pertanyaaan  maupun  pernyataan 
+pada insturmen penelitian pada tabel 3 berikut. 
+
+Reliability, 
+
+Usability 
+
+Tabel 3.Kisi-kisi Insturmen 
+
+Variabel 
+
+Sub Variabel 
+
+Total 
+
+ 
+ 
+ 
+ 
+
+Functionality  Suitability (ST) 
+Accuracy (AC) 
+Security (SC) 
+Interoperability (IP) 
+Compliance (CP) 
+Maturity (MT) 
+Fault tolerance (FT) 
+Recoverability (RC) 
+Understandibility(US) 
+Learnability (LB) 
+Operability (OB) 
+Attractiveness (AT) 
+Time behavior (TB) 
+Resource behavior (RB) 
+Total Pertanyaan 
+
+Reliability 
+ 
+ 
+Usability  
+ 
+ 
+ 
+Efficiency 
+ 
+
+Nomor 
+Pertanyaan 
+1,2 
+3,4 
+5,6 
+7,8 
+9 
+10,11 
+12,13 
+14 
+15,16 
+17,18 
+19,20 
+21,22 
+23,24 
+25 
+
+2 
+2 
+2 
+2 
+1 
+2 
+2 
+1 
+2 
+2 
+2 
+2 
+2 
+1 
+25 
+
+selesai  maka 
+
+ 
+Setelah  pengambilan  data 
+tahap 
+selanjutnya adalah pengolahan data dengan menghitung 
+jumlah  responden  yang  berpendapat  sangat  setuju, 
+setuju,  ragu-ragu,  tidak  setuju    dan  sangat  tidak  setuju 
+terhadap  masing-masing  point  pertanyaan  semua 
+atribut  dan  masing-masing  aspek  yaitu  Functionality, 
+Reliability,  Usability  dan  Efficiency.  Total  jawaban 
+responden  dari  masing-masing  pertanyaan  dilakukan 
+perhutungan  berdasarkan  skala  linkert  dengan    rumus 
+total  jawaban  x  jumlah  responden  x  bobot  kriteria 
+untuk mendapatkan skor aktual. Kemudian skor aktual 
+dibandingkan dengan skor ideal adalah skor atau bobot 
+tertinggi sehingga diperoleh rumus jumlah pertanyaan x 
+skor  kritria  tertinggi.  Untuk  mendapatkan  persentase 
+skor  aktual  maka  hasilnya  dikalikan  seratus  persen 
+seperti rumus (1).  
+
+Persentase Skor Aktual = 
+
+ 
+
+(1) 
+
+Persentase skor aktual  untuk menentukan  kriteria hasil 
+uji  kelayakan  berdasarkan 
+tabel  4.  Seluruh  data 
+kuisioner diolah dan dihitung berdasarkan pembobotan 
+yang telah diproleh untuk mendapatkan persentase skor 
+aktual  dengan rumus(1). 
+
+Tabel 4. Kriteria Persentase Tanggapan RespondenTerhadap Skor 
+Ideal (Sumber : ISO 9126) 
+
+Persentase (%) Jumlah Skor 
+20,00% –36,00% 
+36,01% – 52,00% 
+52,01% – 68,00% 
+68,01% – 84,00% 
+84,01% – 100% 
+
+Kriteria 
+Tidak Baik 
+Kurang Baik 
+Cukup 
+Baik  
+Sangat Baik 
+
+ 
+Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi)  Vol. 2 No. 3 (2018) 800– 806  
+803 
+
+ 
+ 
+
+SkorAktual
+SkorIdeal
+
+%100x
+
+Tri Yani Akhirina, Dwi Yulistyanti, Ana Rusmardiana, Ulfa Pauziah 
+Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi)  Vol. 2 No. 3 (2018) 800– 806  
+
+ 
+Catatan: Batas bawah 20% diperoleh dari 1/5 dari batas 
+atas 100%. 
+
+4.   Hasil dan Pembahasan 
+
+4.1Tampilan Sistem Pendukung Keputusan Penjurusan 
+SMA 
+
+Berikut ini adalah tampilan yang dihasilkan dari Sistem 
+Pendukung  Keputusan  Penjurusan  SMA  yang  telah 
+dihasilkan oleh peneliti [13]. 
+
+ 
+Gambar 1. Tampilan Awal SPK Penjurusan SMA 
+
+Pada  gambar  1  merupakan  tampilan  awal  sebelum 
+masuk  ke  Sistem  Pendukung  Keputusan  Penjurusan 
+SMA.    Pada  tampilan  tersebut  user  diminta  untuk 
+memilih  berdasarkan  nama  sekolah,  lalu  tekan  tombol 
+kirim untuk masuk kehalaman login yang terdapat pada 
+gambar 2. 
+
+Gambar 4. Tampilan Penentuan Jurusan SPK Penjurusan SMA 
+
+Pada  gambar  3  ada 
+tiga  kriteria  utama  yaitu 
+kemampuan yang diperoleh dari nilai rapot, bakat yang 
+diperoleh dari hasil tes tertulis dan yang terakhir adalah 
+minat berdasarkan hasil wawancara. 
+
+ 
+
+ 
+
+Gambar 2. Tampilan Login SPK Penjurusan SMA 
+
+Pada gambar 2 merupakan tampilan login, dimana user 
+harus  memasukan  Nama  akun  dan  Sandi  untuk  dapat 
+mengakses  data  ke  Sistem  Pendukung  Keputusan 
+Penjurusan SMA. 
+
+Gambar 3. Tampilan Utama SPK Penjurusan SMA 
+
+Pada  gambar  3  merupakan  tampilan  Utama  SPK 
+Penjurusan  SMA.  Menu  utamanya  adalah  data  siswa, 
+Penjurusan  dan  Report  Penjurusan.    Untuk  data  siswa 
+user  dapat  melakukan  read,  write,  edit  dan  delete  data 
+tersebut.  Pada menu penjurusan user (gambar 4) dapat 
+melakukan 
+input  nilai  yang  dibutuhkan  dalam 
+penentuan  jurusan.    Data  yang  diperoleh  akan  di  oleh 
+menggunakan  metode  Fuzzy  Tsukamoto  sehingga 
+diperoleh hasil rekomendasi penjurusan.  
+
+ 
+
+ 
+
+Gambar 5. Tampilan Report Penjurusan 
+
+Pada  gambar  5  merupakan  tampilan  report  hasil 
+penjurusan,  dimana  ada  dua  cara  untuk  melihatnya 
+dengan  menggunakan  search  engine  berdasarkan  data 
+nomor induk siswa atau dengan memilih jurusan. 
+
+4.2Hasil Analisis Data Seluruh Aspek Pengujian Black 
+Box Testing 
+
+Dasar  yang  digunakan  untuk  menentukan  pengujian 
+semua  aspek  instrumen  penelitian  dalam  blackbox 
+tastingadalahmenghitung  total  responden  dikali  bobot 
+kriteria  jawaban  berdasarkan  skala  linkert  (lihat  tabel 
+2).  Untuk  mendapatkan  skor  aktual.    Berikut  adalah 
+perhitungan skor aktual berdasarkan skala linkert, total 
+terhadap  25  butir 
+responden 
+jawaban  dari  26 
+pertanyaan: 
+
+a.  Sangat Setuju = 356 pernyataan x 5 = 1780 
+b.  Setuju = 259 pernyataan x 4 = 1036 
+c.  Ragu-ragu = 35 pernyataan x 3 = 105 
+d.  Tidak Setuju = 0 pernyataan x 2 = 0 
+e.  Sangat Tidak Setuju = 0 pernyataan x 1 = 0 
+
+Total keseluruhan skor aktual dari seluruh aspek adalah 
+1780  +  1036  +105  +0+0  =  2921.    Setelah  diperoleh 
+skor  aktual  maka  dilakukan  pencarian  skor  ideal  dari 
+seluruh  aspek  pada  black  box  testing.  Berikut  adalah 
+perhitungan skor ideal setiap aspek. 
+
+ 
+Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi)  Vol. 2 No. 3 (2018) 800– 806  
+804 
+
+ 
+ 
+
+Tri Yani Akhirina, Dwi Yulistyanti, Ana Rusmardiana, Ulfa Pauziah 
+Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi)  Vol. 2 No. 3 (2018) 800– 806  
+
+a.  Functionality    =  26  responden  x  5  x  9  butir 
+
+b.  Reliabilty  =  26  responden  x  5  x  5  butir 
+
+c.  Usability  =  26  responden  x  5  x    8  butir 
+
+d.  Efficiency    =  26  responden  x  5  x  3  butir 
+
+pertanyaan = 1170 
+
+pertanyaan  = 576 
+
+pertanyaan =  1040 
+
+pertanyaan = 390 
+
+Total  skor  ideal  seluruh  aspek  pengujian  adalah  3176.  
+Setelah di peroleh data skor aktual dan skor ideal maka 
+hasil 
+tersebut  dilakuan  pengolahan  data  untuk 
+mendapatkan  persentase  skor  aktual  sesuai  dengan 
+rumus (1). 
+
+SS 
+S 
+R 
+TS 
+STS 
+
+Persentase Skor Aktual = 
+
+  (1) 
+
+Berdasarkan hasil persentase skor Aktual seluruh aspek 
+pengujian  maka  kriteria  penilaian  yang  diperoleh 
+berdasarkan tabel 4, SPK Penjursan SMA berada pada 
+kriteria  sangat  baik.  Artinya  SPK  Penjurusan  SMA 
+yang  telah  di  uji  cobakan  di  13  sekolah  swasta  di 
+Banten (lihat tabel 1) sangat baik dalam membantu dan 
+memberikan  rekomendasi  dalam  penjurusan  siswa 
+berdasarkan kemampuan, bakat dan minat siswa. 
+
+4.3 Hasil Pengujian  Aspek Functionality 
+
+Aspek functionality (fungsionalitas), pada pengujian ini 
+mengukur  kemampuan  SPK  Penjurusan  SMA  dalam 
+menyediakan fungsi sesuai kebutuhan pengguna, ketika 
+digunakan  dalam  kondisi  tertentu.  Dimana  pada  aspek 
+ini  terdapat  9  pertanyaan    berkaitan  dengan  Suitability 
+(ST),  Accuracy(AC),  Security  (SC),  Interoperability 
+(IP),  Compliance  (CP).  Hasilnya  dapat  dilihat  pada 
+tabel 5. 
+
+Tabel 5.Hasil Pengujian Aspek Functionality 
+
+6 
+
+7 
+
+IP 
+
+ST 
+
+Bobot 
+
+AC 
+3 
+4 
+6  18 
+
+Kriteria 
+Jawaban 
+ 
+
+SS 
+S 
+R 
+TS 
+STS 
+
+1 
+2 
+5  20  24 
+5 
+4 
+1 
+3 
+0 
+2 
+0 
+1 
+
+Functionality 
+SC 
+5 
+8 
+6  21  16  15 
+5  10  11 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+J.Responden  26  26  26  26  26  26  26  26 
+S. Aktual 
+S. Ideal 
+Persentase Skor AktualFunctionality 
+
+CP 
+9 
+15 
+11 
+0 
+0 
+0 
+26 
+123 128 108 120 103 125 120 119  119 
+130 130 130 130 130 130 130 130  130 
+
+6  13 
+7 
+2 
+0 
+0 
+0 
+0 
+
+2  18 
+0  2 
+0 
+0 
+0 
+0 
+
+Total 
+
+704 
+324 
+36 
+0 
+0 
+
+ 
+
+1065 
+1170 
+91,03% 
+
+ 
+Pada aspek  Functionality  memperoleh hasil persentase 
+Skor  aktualnya  sebesar  91,03%.  Berdasarkan  hasil 
+tersebut,  kemampuan  SPK  Penjurusan  SMA  dalam 
+menyediakan 
+fungsi  sesuai  kebutuhan  pengguna  
+berdasarkan tabel 4 termasuk kriteria Sangat Baik. 
+
+4.4Hasil Pengujian  AspekReliability 
+
+Aspek reliability (kehandalan), pengujian ini dilakukan 
+untuk  mengukur  kemampuan  SPK  Penjurusan  SMA 
+
+untuk  mempertahankan  tingkat  kinerja  tertentu,  ketika 
+digunakan  dalam  kondisi  tertentu.  Dimana  terdapat  5 
+pertanyaan yang berkaitan dengan Maturity(MT), Fault 
+tolerance(FT)  danRecoverability(RC).  Berikut 
+ini 
+adalah tabel 6 hasil pengujian  aspek reliability. 
+
+Tabel 6.Hasil Pengujian Aspek Realibility 
+
+RC 
+14 
+
+21 
+5 
+0 
+0 
+0 
+26 
+125 
+130 
+
+Total 
+
+320 
+232 
+24 
+0 
+0 
+ 
+576 
+650 
+88,62% 
+
+Kriteria 
+Jawaban 
+
+Bobot 
+
+MT 
+
+Realibility 
+
+FT 
+
+11 
+
+12 
+
+13 
+
+5 
+4 
+3 
+2 
+1 
+
+10 
+15 
+7 
+4 
+0 
+0 
+26 
+115 
+130 
+
+0 
+25 
+1 
+0 
+0 
+26 
+103 
+130 
+
+11 
+12 
+3 
+0 
+0 
+26 
+112 
+130 
+
+17 
+9 
+0 
+0 
+0 
+26 
+121 
+130 
+
+J.Responden 
+S. Aktual 
+S. Ideal 
+Persentase Skor Aktual Realibility 
+ 
+Pada  aspek  Realibility  memperoleh  hasil  persentase 
+Skor  aktualnya  sebesar  88,62%  ,  berdasarkan  hasil 
+tersebut  SPK  Penjurusan  SMA  memperoleh  hasil 
+sangat baik berdasarkan tabel 4. 
+
+4.5 Hasil Pengujian Aspek Usability 
+
+terdiri 
+
+indikator 
+
+penilaiannya 
+(US), 
+
+Aspek  Usability  merupakan  pengujian  selanjutnya. 
+Dimana 
+dari 
+Learnability(LB), 
+Understandibility 
+Operability(OB) 
+yang 
+dipetakan  dengan  8  pertanyaan.  Pengujian  ini  untuk 
+melihatkemampuan  SPK  Penjurusan  SMA  untuk 
+dipahami,  dipelajari,  digunakan,  dan  menarik  bagi 
+pengguna, ketika digunakan dalam kondisi tertentu. 
+
+Attractiveness(AT) 
+
+dan 
+
+Tabel 6.Hasil Pengujian Aspek Usability 
+
+SS 
+S 
+R 
+TS 
+STS 
+
+Kriteria 
+Jawaban 
+
+Bobot 
+
+Usability 
+
+Total 
+
+5 
+4 
+3 
+2 
+1 
+
+US 
+
+LB 
+
+OB 
+
+AT 
+
+5 
+1 
+0 
+0 
+
+15  16  17  18  19  20  21  22 
+6  16  23  11  15 
+20  22  19 
+3  13  11 
+4 
+0 
+2 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+26  26  26  26  26  26  26  26 
+123 126 123 108 120 127 113 119 
+130 130 130 130 130 130 130 130 
+
+7  18  10 
+0 
+2 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+
+660 
+284 
+15 
+0 
+0 
+ 
+959 
+1040 
+92,21% 
+
+J.Responden 
+S. Aktual 
+S. Ideal 
+Persentase Skor Aktual Usability 
+
+ 
+Pada aspek Usability memperoleh hasil persentase Skor 
+aktualnya  sebesar  92,01%.  Berdasarkan  tabel  1,  hasil 
+tersebut mengindikasikan kemampuan SPK Penjurusan 
+SMA  dari segi aspek Usabilitysangatlah baik. 
+
+4.6 Hasil pengujian Aspek Efficiency 
+
+Aspek  yang  terakhir  adalahAspek  Efficiency,  dimana 
+pada  aspek  ini  pengujian  untuk  melihat  kemampuan 
+SPK penjurusan dalam memberikan kinerja yang sesuai 
+dan 
+jumlah  sumber  daya  yang 
+digunakan pada saat keadaan tersebut. Terdiri dari tiga 
+pertanyaan  yang  berkaitan  dengan  dua  aspek  yaitu 
+
+terhadap 
+
+relatif 
+
+ 
+Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi)  Vol. 2 No. 3 (2018) 800– 806  
+805 
+
+ 
+
+ 
+ 
+
+2921
+3176
+
+x
+%99,89%100
+
+
+Tri Yani Akhirina, Dwi Yulistyanti, Ana Rusmardiana, Ulfa Pauziah 
+Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi)  Vol. 2 No. 3 (2018) 800– 806  
+
+ 
+behavior(TB)danResource 
+Time 
+Hasilnya tertuang pada tabel berikut. 
+
+behavior(RB). 
+
+Tabel 7.Hasil Pengujian Aspek Efficiency 
+
+Bobot 
+
+Efficiency 
+
+Total 
+
+TB 
+
+23 
+
+24 
+
+RB 
+25 
+
+5.2 Saran 
+
+berbanding  skor  ideal  sebesar  89,88%  dengan  Kriteria 
+Sangat  Baik.  Sehingga  SPK  Penjurusan  tersebut  layak 
+digunakan  dan  diterapkan  sebagai  Sistem  Pendukung 
+Keputusan Penjurusan SMA di Banten. 
+
+Kriteria 
+Jawaban 
+
+SS 
+S 
+R 
+TS 
+STS 
+
+J.Responden 
+S. Aktual 
+S. Ideal 
+
+5 
+4 
+3 
+2 
+1 
+
+15 
+10 
+1 
+0 
+0 
+26 
+ 
+130 
+
+0 
+20 
+6 
+0 
+0 
+26 
+ 
+130 
+
+4 
+19 
+3 
+0 
+0 
+26 
+ 
+130 
+
+85 
+196 
+30 
+0 
+0 
+ 
+321 
+390 
+82,31% 
+
+Persentase Skor Aktual Efficiency 
+
+ 
+Pada  aspek  Efficiencymemperoleh  hasil  persentase 
+Skor  aktualnya  sebesar  82,31%.  Berdasarkan  hasil 
+SMA 
+tersebut, 
+tabel  1 
+dalamperforma  kinerjanya 
+termasuk kriteria Baik. 
+
+  berdasarkan 
+
+kemampuan 
+
+Penjurusan 
+
+SPK 
+
+Penelitian  ini  dapat  dilanjutkan  dengan  menggunakan 
+metode  pengujian  perangkat  lunak  lain  seperti  IS0 
+9162. 
+
+Ucapan Terima Kasih 
+
+Terima  kasih  kepada  Direktorat  Riset  dan  Pengabdian 
+Masyarakat,  Direktorat  Jenderal  Penguatan  Riset  dan 
+Pengembangan  Kementerian  Riset,  Teknologi,  dan 
+Pendidikan  Tinggi  sesuai  dengan  Surat  Perjanjian 
+Penugasan  Pelaksanaan  Hibah  PenelitianNomor: 
+032/KM/PNT/2018,  Tanggal  6  Maret  2018.  Dan 
+kepada    LPPM  Universitas  Indraprasta  PGRI  yang 
+telah  memberikan  dukungan  baik  secara  materil  dan 
+spiritual sehingga terlaksananya penelitian ini. 
+
+4.7  Rekapitulasi  Hasil  Seluruh  Aspek  Pengujian  SPK 
+Penjurusan SMA 
+
+Daftar Rujukan 
+
+Berdasarkan  analisis  data  yang  diperoleh  dari 
+kuesioner,  berikut  rekapitulasi  hasil  pengujian  kualitas 
+berdasarkan  empat  aspek  kualitas  perangkat  lunak 
+terhadap  SPK 
+menurut  ISO  9126  pada 
+Penjurusan SMA dapat dilihat pada tabel 8 berikut. 
+
+tabel  1 
+
+Tabel 8. Rekapitulasi Hasil Pengujian SPK Penjurusan SMA 
+
+Aspek 
+
+Kriteria 
+
+Persentase 
+Skor Aktual 
+91,03% 
+88,62% 
+92,21% 
+82,31% 
+89,88% 
+
+Skor 
+Ideal 
+
+Skor 
+Aktual 
+1065 
+576 
+959 
+321 
+2921 
+
+1170 
+650 
+1042 
+390 
+3250 
+
+Sangat Baik 
+Sangat Baik 
+Sangat Baik 
+Baik 
+Sangat Baik 
+
+Functionality 
+Realibility 
+Usability 
+Efficiency 
+Total 
+ 
+Berdasarkan  table  8,  dapat  disimpulkan  bahwa  tingkat 
+kualitas perangkat lunak Sistem Pendukung Keputusan 
+Penjurusan  SMA  secara  keseluruhan  dalam  kriteria 
+Sangat  Baik,  dengan  persentase89,88%.  Terdapat  tiga 
+aspek  kualitas  dengen  kriteria  Sangat  Baik,  aspek 
+tertinggi  adalah  berdasarkan  aspek  Usabilitydengan 
+persentase 
+aspek 
+Functionalitydengan  91,03%.  Aspek  Reliabilitydengan 
+persentase  sebesar  88,62%,  sedangkan  aspek  kualitas 
+terendah  adalah  dari  aspek  Efficiency  dengan 
+persentase sebesar 82,31% dengan kriteria Baik. 
+
+sebesar92,21%, 
+
+selajutnya 
+
+5.   Kesimpulan 
+
+5.1 Simpulan 
+
+Berdasarkan  hasil  pengujian  menggunakan  metode 
+terhadap  Sistem  Pendukung 
+Black  Box  Testing 
+Keputusan    Penjurusan  SMA  yang  telah  dilaksanakan 
+di  13  Sekolah  Swasta  di  Banten  dengan  jumlah 
+responden  sebanyak  26  responden.  Hasil  kesimpulan 
+yang  diperoleh  bahwa  peringkat  kualitas  perangkat 
+tersebut  mendapat  persentase  skor  aktual 
+lunak 
+
+[1]  A. Rusmardiana, T. Y. Akhirina, D. Yulistyanti, and U. Pauziah, 
+“Analisis  Penentuan 
+Jurusan  Sekolah  Menengah  Atas 
+berdasarkan Metode Fuzzy Tsukamoto dan Algoritma K-Nearest 
+Neighbor ( K-NN ),” pp. 123–132, 2017. 
+-,  “Undang-Undang  Republik  Indonesia  Nomor  20  Tahun  2003 
+Tentang Sistem Pendidikan Nasional”, 2003. 
+
+[2] 
+
+[3]  P. Dwi and A. Pamungkas, “ISO 9126 Untuk Pengujian Kualitas 
+Aplikasi  Perpustakaan  Senayan  Library  Management  System 
+(SLiMS),”  J.  RESTI    (Rekayasa  Sist.  dan  Teknol.  Informasi)  , 
+vol. 2, no. 2, pp. 465–471, 2018. 
+
+[4]  F.  Abror  and  H.  Jati,  “Pengembangan  Dan  Analisis  Kualitas 
+Aplikasi  Penilaian  E-Learning  Smk  Berbasis  Iso  19796-1  Di 
+Yogyakarta,”  J.  Pendidik.  Vokasi,  vol.  Vol.6,  no.  Universitas 
+Negeri Yogyakarta, p. 15, 2016. 
+
+[5]  R. Dunn, “software Quality.” Prentice Hall, New Jersey, 1990. 
+[6]  Yaudi;  Imam,  “Menilai  Kualitas  Perangkat  Lunak  [Online],” 
+
+2008. (Updated: 10 Okt 2008) 
+Available at : https://janeman.wordpress.com/2008/03/26/46/ 
+[Accessed 11 Okt 2018] 
+
+[7]  M.  S.  Mustaqbal,  R.  F.  Firdaus,  and  H.  Rahmadi,  “(  Studi 
+Kasus :  Aplikasi  Prediksi  Kelulusan SNMPTN  ),”  Penguji.  Apl. 
+Menggunakan Black Box Test. Bound. Value Anal. (Studi Kasus  
+Apl. Prediksi Kelulusan SNMPTN), vol. I, no. 3, p. 34, 2015. 
+[8]   j Simarmata, “Rekayasa Perangkat Lunak,Ed. 1.” Penerbit Andi, 
+
+Yogyakarta, 2010. 
+
+[9]  Bhat,  A;  Quadri,  S.M.K,  “Equivalence  Class  Partitioning  and 
+Boundary  Value  Analysis  =  A  review,”  2nd  Int.  Conf. Comput. 
+Sustain. Glob. Dev., p. 2015, 2015. 
+
+[10] Turman,  “Tutorial  Cara  Melakukan  Pengujian  Black  Box  dan 
+Contoh Pengujiannya [Online],” 2016. (Updated: 26 Des 2016) 
+Available  at  :  http://www.kuncikomputer.com/umum/tutorial-
+cara-melakukan-pengujian-black-box-dan-contoh-pengujiannya/ 
+[Accessed 11 Okt 2018] 
+
+[11] Kristina,  G.  Hoendarto,  and  S.  Tendean,  “Penggunaan  metode 
+kotak  hitam  dan  kotak  putih  dalam  menguji  sebuah  produk 
+sistem inormasi,” J. InTekSis, vol. 4, no. 1, pp. 1–11, 2017. 
+[12] U.  Yulistyanti,  D.;  Akhirina,  T.Y.;Rusmardiana,  A.;  Pauziah, 
+“Prototipe  Sistem  Pendukung  Keputusan  Penjurusan  SMA  di 
+Banten  dengan  Metode  Fuzzy  Tsukamoto,”  Pros.  Semin.  Nas. 
+Ris.  dan  Inov.  Teknol.  (SEMNAS  RISTEK)  2018,  pp.  165–170, 
+2018. 
+
+[13] U.  Rusmardiana,  Ana;  Akhirina,  T.Y.;  Yulistyanti,  D;  Pauziah, 
+“A  Web-based  High  School  Major Decision  Support  System  in 
+Banten Using Tsukamoto ’ s Fuzzy Method,” pp. 239–244, 2018. 
+
+ 
+Jurnal RESTI (Rekayasa Sistem dan Teknologi Informasi)  Vol. 2 No. 3 (2018) 800– 806  
+806 
+
+ 
+ 
+
+

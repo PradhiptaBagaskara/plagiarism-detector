@@ -1,0 +1,1118 @@
+ 
+
+ 
+
+ 
+
+JNTETI, Vol. 7, No. 4, November 2018 
+
+Penentuan Kualitas Air untuk Perkembangan Ikan Lele 
+Sangkuriang Menggunakan Metode Fuzzy SAW 
+Dony M Sihotang1 
+
+Abstract—The  purpose  of  this  paper  is  to  implement  Fuzzy 
+Simple Additive Weighting (F-SAW) method in determination of 
+water quality for the development of Sangkuriang catfish, using 
+six  criteria,  i.e.  temperature, pH,  DO,  brightness,  plankton,  and 
+odor,  using  15  alternatives  (pool).  There  are  two  test  scenarios 
+that  have  been  done  in  this  research  to  obtain  system  accuracy 
+level,  which  are:  1)  result  of  system  compared  with  assessment 
+from  an  expert;  and  2)  the results  of  the  system  compared with 
+assumption  of  the  study  that  the  alternative  with  the  best  data 
+should  be  ranked  first  and  the  alternative  with  the  worst  data 
+should be rated last. The results obtained from the first scenario 
+shows  the  level  of  accuracy  is  87%,  while  the  results  obtained 
+from the second scenario shows 100% accuracy rate. 
+ 
+
+ini 
+
+adalah 
+
+dari  makalah 
+
+Intisari—Tujuan 
+
+untuk 
+mengimplementasikan  metode  Fuzzy  Simple  Additive  Weighting 
+(F-SAW)  dalam  penentuan  kualitas  air  untuk  perkembangan 
+ikan  lele  Sangkuriang,  dengan  menggunakan  enam  kriteria, 
+yaitu  suhu,  pH,  DO,  kecerahan,  kadar  plankton,  dan  bau, 
+dengan  menggunakan  15  alternatif  (kolam).  Terdapat  dua 
+skenario  pengujian  yang  telah  dilakukan  dalam  makalah  ini 
+untuk memperoleh tingkat  akurasi  sistem, yaitu:  1)  hasil  sistem 
+dibandingkan dengan penilaian dari seorang pakar; dan 2) hasil 
+sistem  dibandingkan  dengan  asumsi  bahwa  alternatif  dengan 
+data  terbaik  harus  mendapat  peringkat  pertama  dan  alternatif 
+dengan data terburuk harus mendapat peringkat terakhir. Hasil 
+yang  diperoleh  dari  skenario  pertama  menunjukkan  tingkat 
+akurasi  mencapai  87%,  sedangkan  hasil  yang  diperoleh  dari 
+skenario kedua menunjukan tingkat akurasi mencapai 100%. 
+ 
+Kata  Kunci—Kualitas  air, 
+Pendukung Keputusan, F-SAW. 
+
+lele  Sangkuriang,  Sistem 
+
+ikan 
+
+I.  PENDAHULUAN 
+
+Ikan  lele  merupakan  salah  satu  jenis  ikan  air  tawar  yang 
+saat  ini  sudah  banyak  dikonsumsi  masyarakat.  Selain  untuk 
+konsumsi  lokal,  lele  telah  mulai  diekspor  dan  permintaannya 
+cukup besar. Tingkat kenaikan produksi konsumsi lele secara 
+nasional kenaikannya sebesar 18,3%  per tahun [1]. 
+
+Untuk  wilayah  Provinsi  Nusa  Tenggara  Timur  (NTT), 
+tingkat kebutuhan benih ikan lele juga meningkat pesat. Pada 
+tahun  1999  dibutuhkan  156  juta  ekor,  pada  tahun  2009 
+dibutuhkan  360  juta  ekor,  hingga  pada  akhir  tahun  2019 
+diperkirakan akan dibutuhkan 1,9 milyar ekor, atau meningkat 
+46% per tahun [2]. 
+
+Desa Noekele adalah salah satu desa dengan kelompok tani 
+di  Kabupaten  Kupang,  NTT,  sehingga  menjadi  sasaran  bagi 
+
+ 
+
+1Dosen,  Jurusan  Ilmu  Komputer  Universitas  Nusa  Cendana, 
+Jl.Adisucipto Penfui Undana, Kota Kupang, Nusa Tenggara Timur, 
+INDONESIA 
+fax:  0380-881597;  e-mail: 
+dmsihotang99@gmail.com) 
+ 
+
+(tlp:  0380-881597; 
+
+pemerintah  daerah  untuk  budi  daya  ikan  lele.  Menurut  para 
+pembudidaya  ikan  lele  di  Balai  Benih  Ikan  Sentral  (BBIS) 
+Noekele–Kupang,  setidaknya  dibutuhkan  waktu  tiga  bulan 
+untuk  dapat  memastikan  benih  ikan  lele  dapat  berkembang 
+biak menjadi lele dewasa dan siap diproduksi.  
+
+Air  merupakan  komponen  atau  media  yang  penting  bagi 
+kehidupan  ikan.  Hubungan  antara  kualitas  air  dengan  tingkat 
+produksi  ikan  dapat  diukur  dengan  parameter-parameter 
+seperti suhu, salinitas, warna, plankton, kadar oksigen, tingkat 
+pH,  karbondioksida,  amonia,  dan  hidrogen  sulfida  [3]. 
+Tentunya  setiap  parameter 
+tersebut  mempunyai  standar 
+ukuran  kelayakan  untuk  setiap  jenis  ikan  dan  air  serta  peran 
+setiap parameter dalam meningkatkan kualitas air.  
+
+Berbagai  penelitian  dalam  domain  kualitas  air  untuk 
+perikanan  telah  banyak  dilakukan  dengan  berbagai  macam 
+permasalahan  dan  metode  penyelesaiannya.  Salah  satu  cara 
+mengukur kualitas air untuk budidaya ikan lele adalah dengan 
+membangun teknologi probiotik dan membandingkan dengan 
+kondisi  nonprobiotik  dengan  memperhatikan  parameter 
+kualitas  air,  yaitu  suhu,  oksigen,  PH,  dan  amonia  [4]. 
+Kelayakan  yang  dipakai  untuk  suhu  adalah  27-300C,  O2 
+adalah  >  5  mg/L,  pH  adalah  6,5-8,5,  dan  amonia  adalah  0,2 
+ppm.  Pendekatan 
+lain  yang  dapat  digunakan  dalam 
+menyelesaikan  persoalan  manajemen  kualitas  air  untuk 
+perikanan  adalah  menggunakan  aplikasi  Sistem  Pendukung 
+Keputusan (SPK) [5].  
+
+Terdapat banyak metode dalam SPK, tetapi metode Simple 
+Additive Weighting (SAW) merupakan algoritme yang paling 
+banyak  digunakan  dalam  sistem  pendukung  keputusan  [6]. 
+Metode  SAW  adalah  metode  konvensional  dalam  SPK  yang 
+tidak dapat mengatasi masalah ketidakpastian. Padahal dalam 
+penentuan  kualitas  air,  terdapat  juga  parameter-parameter 
+yang  bersifat  tidak  pasti  (uncertainty)  seperti  kecerahan  dan 
+bau.  Untuk  mengatasi  masalah-masalah  yang  tidak  pasti 
+tersebut, dapat digunakan konsep logika fuzzy [7]. 
+
+II.  METODE YANG DIUSULKAN 
+
+dapat 
+
+Teori 
+
+fuzzy 
+
+himpunan 
+
+digunakan 
+
+untuk 
+merepresentasikan  masalah  ketidakpastian.  Sebuah  bilangan 
+fuzzy  biasa  memiliki  himpunan  fuzzy  yang  ditandai  dengan 
+pemberian interval dari 0 sampai 1 [8]. Fuzzy SAW (F-SAW) 
+merupakan  penggabungan  metode  SAW  dengan 
+logika 
+fuzzy.  Perbedaannya  dengan  SAW  adalah 
+matematika 
+implementasi nilai pada matriks perbandingan, yakni diwakili 
+oleh  tiga  variabel  (a,  b,  c)  yang  disebut  Triangular  Fuzzy 
+Numbers  (TFN).  Hal  ini  berarti  nilai  yang  ditemukan  bukan 
+satu  melainkan  tiga,  sesuai  dengan  fungsi  keanggotaan 
+segitiga yang meliputi tiga bobot berurutan [9]. 
+
+Secara  umum,  prosedur  F-SAW  mengikuti 
+
+langkah-
+
+langkah sebagai berikut [10]. 
+
+ISSN 2301 – 4156 
+
+Dony M. Sihotang: Penentuan Kualitas Air untuk ... 
+
+372
+
+JNTETI, Vol. 7, No. 4, November 2018 
+
+a.  Membuat  matriks  keputusan  (kriteria  terhadap  alternatif) 
+untuk semua kriteria yang nilainya berupa bilangan fuzzy. 
+b.  Untuk  dapat  memperoleh  nilai  pada  setiap  kriteria  maka 
+dibuat  fungsi  keanggotaan  fuzzy  untuk  mengklasifikasi 
+nilai setiap kriteria. Fungsi keanggotaan fuzzy berdasarkan 
+persamaan kurva trapesium [11]. 
+
+c.  Menghitung  nilai  rata-rata  dari  bilangan  fuzzy,  nilai 
+defuzzification, dan bobot ternormalisasi setiap kriteria. 
+
+     
+
+    
+
+      
+        
+   
+ 
+
+                             
+
+(1) 
+
+dengan: 
+
+   = nilai rata-rata dari bilangan fuzzy, 
+   
+
+   = bilangan fuzzy untuk setiap kriteria pada setiap 
+
+   =  jumlah  bilangan  pada  TFN  (Triangular  Fuzzy 
+
+alternatif, 
+
+Numbers). 
+
+   
+
+       
+
+ 
+
+ 
+
+dengan: 
+
+  = nilai defuzzifikasi, 
+  = bilangan fuzzy terkecil, 
+  = bilangan fuzzy tengah, 
+  = bilangan fuzzy terbesar. 
+
+    
+
+  
+  
+   
+
+ 
+
+∑
+
+dengan: 
+
+   = bobot untuk kriteria ke-i, 
+    = nilai defuzzification kriteria ke-i, 
+ 
+∑   
+   
+
+ = total nilai defuzzifikasi setiap kriteria. 
+
+d.  Menentukan  rating  kecocokan  dari  setiap  nilai  terhadap 
+
+setiap kriteria dalam setiap alternatif. 
+
+e.  Menghitung  nilai  rata-rata  dari  angka  fuzzy  (    ),  nilai 
+defuzzification  (e)  dari  setiap  kriteria  dalam  setiap 
+alternatif. 
+
+f.  Membuat  matriks  keputusan  untuk  semua  alternatif  dan 
+
+kriteria. 
+
+     
+
+   
+
+ 
+ 
+
+   
+ 
+
+ 
+ 
+{
+
+   
+ 
+   
+
+(   )
+ 
+
+(   )
+
+dengan: 
+      
+     
+
+= rating kinerja matriks ternormalisasi, 
+= nilai alternatif terhadap kriteria, i = 
+
+alternatif, j = kriteria, 
+
+   (   ) = nilai terbesar dari alternatif i terhadap 
+
+   (   ) = nilai terkecil dari alternatif i terhadap 
+
+kriteria j, 
+
+kriteria j. 
+
+g.  Membuat  matriks 
+
+ternormalisasi  dari  setiap  kriteria 
+
+terhadap setiap alternatif. 
+
+(2) 
+
+(3) 
+
+ (4) 
+
+    [
+
+   
+              
+   
+
+            
+
+       
+            
+
+] 
+
+ 
+
+ 
+
+dengan: 
+
+  = matriks ternormalisasi. 
+
+h.  Menentukan total nilai dari setiap alternatif. 
+
+ 
+     ∑        
+   
+
+. 
+
+(5) 
+
+Nilai  Vi  yang  lebih  besar  mengidentifikasikan  bahwa 
+
+alternatif Ai lebih terpilih.  
+
+Mulai  
+
+Input Kriteria  Suhu, 
+DO, pH, Kecerahan 
+secara numerik 
+
+Input Kriteria Kadar 
+Plankton dan Bau 
+secara linguistik 
+
+Input 
+alternatif 
+
+Konversi ke  
+bilangan fuzzy  
+
+Input Bobot 
+kriteria 
+(linguistik)  
+
+Bilangan fuzzy untuk 
+setiap kriteria dan bobotnya   
+
+Proses F-SAW  
+
+Hasil Peringkat alternatif 
+
+Uji Akurasi 
+
+Tingkat Akurasi 
+
+Selesai   
+
+ 
+
+Gbr. 1 Metodologi penelitian. 
+
+ikan 
+
+Ikan 
+
+jenis 
+
+lele  Sangkuriang  adalah 
+
+lele  yang 
+diperkenalkan  oleh  Balai  Besar  Pengembangan  Budidaya  Air 
+Tawar  (BBPBAT)  Sukabumi  pada  tahun  2004.  Ikan  lele 
+Sangkuriang  merupakan  hasil  perbaikan  genetik  melalui  cara 
+silang  balik  (backcross)  antara  induk  betina  generasi  kedua 
+(F2)  dari  lele  Dumbo  yang  pertama  kali  didatangkan  pada 
+tahun 1985 dengan induk jantan lele Dumbo generasi keenam 
+(F6).  Perkawinan  dilakukan  melalui  dua  tahap,  pertama 
+mengawinkan  indukan  betina  F2  dengan  indukan  jantan  F2, 
+sehingga  dihasilkan  lele  Dumbo  jantan  F2-6.  Tahap  kedua 
+yaitu lele Dumbo F2-6 jantan dikawinkan lagi dengan indukan 
+F2  sehingga  menghasilkan  ikan  lele  Sangkuriang.  Lamanya 
+proses  perkawinan  ini  mengakibatkan  ikan  lele  Sangkuriang 
+baru diperoleh setelah empat tahun penyilangan [12]. 
+
+Dalam  hal  pembudidayaan  ikan  lele,  pelaku  usaha  atau 
+pembudidaya  ikan  lele  harus  jeli  dan  harus  tepat  dalam 
+menentukan jenis air untuk budidaya ikan lele. Air yang dapat 
+
+Dony M. Sihotang: Penentuan Kualitas Air untuk ... 
+
+ 
+
+ISSN 2301 – 4156 
+
+373
+
+ 
+
+ 
+
+JNTETI, Vol. 7, No. 4, November 2018 
+
+digunakan  untuk  budidaya  ikan  lele  sendiri  harus  memiliki 
+suhu  antara  25-32  derajat,  DO/kadar  oksigen  lebih  besar 
+5mg/L,  warna/kecerahan,  debit  air,  kadar  plankton,  dan  pH 
+yang layak untuk perkembangan hidup ikan lele [13].  
+
+III.  METODOLOGI 
+
+Telah dilakukan beberapa tahapan atau langkah kerja dalam 
+penelitian  ini,  seperti  persiapan  data,  konversi  ke  nilai  fuzzy, 
+proses F-SAW, dan pengujian. 
+
+Gbr.  1  menunjukan  proses  penelitian  dimulai  dari 
+memasukkan  data  alternatif  dan  kriteria.  Tabel  I  menyajikan 
+fungsi  keanggotan  setiap  kriteria,  sedangkan  Tabel  II 
+menunjukkan  hasil  pengukuran  terhadap  suhu,  DO,  pH,  dan 
+kecerahan,  serta  hasil  penilaian  terhadap  kadar  plankton  dan 
+bau  yang  digunakan  sebagai  masukan  ke  sistem.  Proses 
+selanjutnya  adalah  melakukan  konversi  nilai  setiap  kriteria 
+tersebut  menjadi  bilangan 
+fungsi 
+keanggotaannya. 
+
+fuzzy  berdasarkan 
+
+TABEL I 
+FUNGSI KEANGGOTAAN SETIAP KRITERIA 
+
+Fungsi 
+keanggotaan 
+suhu 
+
+Fungsi 
+keanggotaan 
+DO 
+
+Fungsi 
+keanggotaan 
+pH 
+
+Fungsi 
+keanggotaan 
+kecerahan 
+
+Fungsi 
+keanggotaan 
+kadar 
+plankton 
+
+Fungsi 
+keanggotaan 
+bau 
+
+Bobot tersebut juga akan dikonversi ke bilangan fuzzy dengan 
+menggunakan  fungsi  keanggotaan  seperti  pada  kriteria  bau 
+dalam Tabel I. 
+Setelah 
+
+yang 
+(X) 
+ternormalisasi  dan  bobot  preferensi 
+(W),  maka  dapat 
+dilakukan  proses  menentukan  ranking  dengan  menentukan 
+vektor V menggunakan (5). 
+
+terbentuk  matriks 
+
+keputusan 
+
+IV.  HASIL DAN PEMBAHASAN  
+
+sistem, 
+
+Telah  dilakukan  uji  akurasi  untuk  memastikan  bahwa 
+metode  F-SAW  dapat  digunakan  pada  penentuan  kualitas  air  
+untuk perkembangan ikan lele Sangkuriang. Untuk mengukur 
+keakurasian 
+yaitu 
+digunakan 
+membandingkan hasil sistem dengan hasil penilaian pakar dan 
+yang  kedua  membandingkan  hasil  sistem  dengan  asumsi 
+terbaik  harus  menempati 
+bahwa  alternatif  dengan  data 
+peringkat  pertama  sedangkan  alternatif  dengan  data  terburuk 
+harus menempati peringkat terakhir. 
+
+skenario, 
+
+dua 
+
+A.  Membandingkan Hasil Sistem dengan Hasil Penilaian 
+
+Pakar  
+Pemberian  peringkat  terhadap  lima  belas  wadah  diberikan 
+oleh  pakar  dari  Jurusan  Perikanan  Politeknik  Pertanian 
+Kupang,  Jhoy  Dida,  S.Pi.  Tabel  II  menunjukkan  hasil 
+perbandingan pemberian peringkat oleh pakar dan pemberian 
+peringkat oleh sistem. 
+
+TABEL II 
+HASIL PERBANDINGAN RANKING  OLEH PAKAR DENGAN RANKING OLEH 
+SISTEM 
+
+Kece 
+rahan 
+
+Bau 
+
+Pa- 
+kar 
+
+Sis- 
+tem 
+
+27 
+
+Alter-
+Natif 
+
+Suhu  DO  pH 
+
+Kriteria 
+Plank 
+ton 
+Kolam1 
+28,25  7,85  9,56  ST 
+Kolam2 
+T 
+28,5  7,42  7,91 
+Kolam3 
+4  7,07  ST 
+Kolam4 
+29,25  8,15  7,68  ST 
+Kolam5 
+29,25  8,1  7,52  ST 
+Kolam6 
+29  7,3  7,65  ST 
+Kolam7 
+28,75  6,7  7,89  ST 
+Kolam8 
+29,5  7,15  8,04  ST 
+Kolam9 
+29  7,87  7,75  ST 
+T 
+Kolam10 
+27  4,75  7,42 
+T 
+30,5  8,85  7,96 
+Kolam11 
+T 
+Kolam12  28,75  7,27  7,62 
+S 
+Kolam13  29,25  8,45  7,59 
+T 
+Kolam14 
+30,5  7,47  7,66 
+S 
+Kolam15  19,25  1,92  5,25 
+
+30  SB 
+40  SB 
+42,5  SB 
+41,25  SB 
+35,75  SB 
+36,25  B 
+46,25  SB 
+43,75  SB 
+35,75  B 
+38,75  B 
+39,75  B 
+34,25  B 
+36,75  CB 
+36,75  B 
+34  CB 
+
+12  12 
+6 
+6 
+1 
+1 
+4 
+5 
+5 
+4 
+7 
+7 
+3 
+3 
+2 
+2 
+8 
+8 
+9 
+9 
+13  13 
+10  10 
+14  14 
+11  11 
+15  15 
+
+Tabel  II  menunjukan  kolam  4  dan  kolam  5  mendapat 
+peringkat  yang  berbeda  dari  sistem  dan  pakar.  Setelah  hasil 
+sistem  dan  hasil  pakar  diperoleh,  maka  dapat  dilakukan 
+perhitungan  nilai  akurasi  dan  nilai  misclassification  rate 
+sebagai berikut. 
+
+         
+
+                               
+
+                             
+
+        
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Nilai  µ  dari  setiap  kriteria  digunakan  sebagai  elemen  dari 
+matriks  keputusan  (X).  Matriks  keputusan  (X)  kemudian 
+dinormalisasi. Di sisi lain, pengambil keputusan juga memberi 
+bobot preferensi (W) terhadap semua kriteria secara linguistik. 
+
+ 
+
+ 
+
+     = 
+
+       
+
+  
+
+  
+
+     = 87%. 
+
+ 
+
+ 
+
+ 
+
+ISSN 2301 – 4156 
+
+Dony M. Sihotang: Penentuan Kualitas Air untuk ... 
+
+374
+
+JNTETI, Vol. 7, No. 4, November 2018 
+
+                   
+
+                                     
+                             
+
+       
+
+= 
+
+ 
+
+  
+
+       
+
+= 13%. 
+
+Prediksi  kolam  dengan  proses  menentukan  ranking  yang 
+sama  antara  sistem  dengan  penilaian  pakar  pertama  yang 
+berhasil  diidentifikasi  dengan  benar  hasil  uji  akurasi  adalah 
+sebesar 87%  dan  nilai misclasification rate adalah 13%. 
+
+B.  Mambandingkan Hasil Sistem dengan Asumsi  
+
+Pada  tahapan  pengujian  ini,  diasumsikan  bahwa  alternatif 
+dengan  data  terbaik  harus  menempati  peringkat  pertama 
+sedangkan  alternatif  dengan  data  terburuk  harus  menempati 
+peringkat  terakhir.  Untuk  kepentingan  pengujian  ini,  telah 
+dibangkitkan data untuk setiap kriteria. Data tersebut disajikan 
+pada Tabel III.  
+
+TABEL III 
+DATA SETIAP KRITERIA TERHADAP SETIAP ALTERNATIF 
+
+Suhu 
+(ºc) 
+
+DO 
+(ppm) 
+
+pH 
+
+Bau 
+
+Kecerahan 
+(cm) 
+
+Kriteria 
+
+kadar 
+plankton 
+(sel/liter) 
+
+ 
+Nama 
+kolam 
+
+B1 
+
+B2 
+
+B3 
+
+B4 
+
+B5 
+
+B6 
+
+B7 
+
+B8 
+
+B9 
+
+B10 
+
+B11 
+
+B12 
+
+B13 
+
+B14 
+
+B15 
+
+28,25 
+
+7,85 
+
+9,56 
+
+28,5 
+
+7,42 
+
+7,91 
+
+27 
+
+4 
+
+7,07 
+
+29,25 
+
+8,15 
+
+7,68 
+
+29,25 
+
+8,1 
+
+7,52 
+
+29 
+
+7,3 
+
+7,6 
+
+28,75 
+
+6,7 
+
+7,89 
+
+29,5 
+
+7,15 
+
+8,04 
+
+29 
+
+27 
+
+7,87 
+
+7,75 
+
+4,75 
+
+7,42 
+
+30,5 
+
+8,85 
+
+7,96 
+
+28,75 
+
+7,27 
+
+7,62 
+
+29,25 
+
+8,45 
+
+7,59 
+
+30,5 
+
+7,47 
+
+7,66 
+
+19,25 
+
+1,92 
+
+5,25 
+
+ST 
+
+T 
+
+ST 
+
+ST 
+
+ST 
+
+ST 
+
+ST 
+
+ST 
+
+ST 
+
+T 
+
+T 
+
+T 
+
+T 
+
+T 
+
+S 
+
+30 
+
+40 
+
+42,5 
+
+41,25 
+
+35,75 
+
+36,25 
+
+46,25 
+
+43,75 
+
+35,75 
+
+38,75 
+
+39,75 
+
+34,25 
+
+36,75 
+
+36,75 
+
+34 
+
+SB 
+
+SB 
+
+SB 
+
+SB 
+
+SB 
+
+B 
+
+SB 
+
+SB 
+
+B 
+
+B 
+
+B 
+
+B 
+
+C 
+
+B 
+
+C 
+
+Tabel  III  menunjukkan  data  yang  paling  baik  (ideal)  ada 
+pada wadah B3 dan yang paling buruk (tidak  ideal) ada pada 
+wadah  B15,  sehingga  sesuai  dengan  hipotesis,  wadah  B3 
+harus  berada  pada  peringkat  pertama  dan  wadah  15  harus 
+berada  pada  peringkat  terakhir.  Gbr.  2  adalah  hasil  proses 
+penentuan  ranking  yang  diberikan  oleh  sistem.  Berdasarkan 
+hasil  uji  tersebut,  dapat  dihitung  nilai  akurasi  dan  nilai 
+misclasification rate sebagai berikut. 
+
+         
+
+                               
+                             
+
+        
+
+ 
+
+ 
+
+ 
+
+ 
+
+ =   
+  
+
+       
+
+ = 100% 
+
+ 
+
+ 
+
+       
+
+= 
+
+ 
+
+  
+
+= 0% 
+
+                   
+
+                                     
+                             
+
+       
+
+Gbr. 2 Screenshot hasil peringkat oleh sistem. 
+
+ 
+
+Gbr.  2  menunjukkan  hasil  akurasi  peringkat  oleh  sistem 
+
+adalah 100% dan uji misclassification rate adalah 0%. 
+
+V.  KESIMPULAN 
+
+Dari  skenario  pengujian  pertama,  diperoleh  dua  hasil 
+peringkat  yang  berbeda  antara  hasil  sistem  dengan  hasil 
+penilaian pakar, sehingga nilai akurasi yang diperoleh adalah 
+87% dengan  nilai error rate adalah sebesar 13%.  
+
+Sedangkan  pada  skenario  pengujian  kedua,  diberikan 
+hipotesis awal pada data untuk kemudian dilakukan penentuan 
+ranking.  Hasil  penentuan  ranking  yang  diperoleh  setelah 
+sistem  dijalankan  menghasilkan  kesamaan  proses  antara 
+sistem  yang  dibangun  dengan  hasil  hipotesis  yang  diberikan, 
+sehingga  diperoleh  nilai  akurasi  sebesar  100%  dengan  error 
+rate bernilai 0%. 
+
+Dony M. Sihotang: Penentuan Kualitas Air untuk ... 
+
+ 
+
+ISSN 2301 – 4156 
+
+375
+
+ 
+
+JNTETI, Vol. 7, No. 4, November 2018 
+
+Sistem  pendukung  keputusan  yang  telah  dibangun  dapat 
+membantu  kepala  laboratorium  untuk  mengambil  keputusan 
+dalam  menentukan  wadah  air  yang  berkualitas  baik  untuk 
+kelangsungan  hidup  benih  ikan  lele  Sangkuriang  dengan 
+kriteria-kriteria yang sudah ditentukan. Berdasarkan tingginya 
+nilai  persentase  akurasi  yang  diperoleh,  dapat  disimpulkan  
+bahwa sistem yang dibangun layak digunakan sebagai  sistem 
+penunjang  keputusan  dalam  pemilihan  wadah  air  berkualitas 
+untuk perkembangan ikan lele Sangkuriang. 
+
+VI. SARAN
+
+Dalam sistem yang dibangun, nilai range untuk kriteria bau 
+dan  kadar  plankton  masih  bersifat  subjektif  karena  langsung 
+diberikan  oleh  kepala 
+laboratorium,  dilihat  dari  hasil 
+pengukuran.  Penelitian  selanjutnya  dapat  menggunakan 
+metode-metode ilmiah yang dapat menangani pemberian nilai 
+range, sehingga diharapkan sistem  mampu  memberikan hasil 
+yang lebih akurat.  
+
+Penelitian selanjutnya diharapkan dapat memberi tambahan 
+kriteria  dalam  penyelesaian  kasus  menentukan  wadah  air 
+berkualitas.  
+
+REFERENSI 
+[1]  R.  Zulkarnain  dan  T.  Susilowati,  “Sistem  Pendukung  Keputusan 
+Pemilihan  Bibit  Ikan  Lele  Berkualitas  Menggunakan  Metode  SAW,” 
+Proc. KMSI, 2015, hal 434-441. 
+"Provinsi  NTT  dalam  Angka,”  Badan  Pusat  Statistik  Provinsi  Nusa 
+Tenggara Timur, 2015. 
+
+[2] 
+
+[3]  C.E.  Boyd,  “Water  Quality  Management  in  Aquaculture”,  Indian 
+
+Council of Agricultural Research, 1984. 
+
+[4]  D.  Rachmawati,  I.  Samidjan,  dan  H.  Setyono,  “Manajemen  Kualitas 
+Air  Media  Budidaya  Ikan  Lele  Sangkuriang  dengan  Teknik  Probiotik 
+pada Kolam Terpal di Desa Vokasi Reksosari,” Pena Akuatika, Vol. 12, 
+No. 1, hal. 24-32, 2015. 
+P.S.  Leung,  “Multiple  Criteria  Decision  Making  Applications  in 
+Fishery  Managementater,”  Int.  J.  Environmental  Technology  and 
+Management, Vol. 6, No. 1-2, 2006. 
+
+[5] 
+
+[6]  Adriyendi,  “Multi-Attribute  Decision  Making  Using  Simple  Additive 
+Weighting  and  Weighted  Product  in  Food  Choice,”  I.J.  Information 
+Engineering and Electronic Business, Vol. 6, hal. 8-14, 2015.  
+
+[7]  D.M.  Sihotang,  “Perbandingan  Metode  Skoring  dan  Metode  Fuzzy 
+dalam Penentuan Zona Resiko Malaria di Pulau Flores,” JNTETI., Vol. 
+5, No. 4, hal. 302–308, Nov. 2016. 
+
+[8]  W.  Wang,  “Smallest  Confidence  Intervals  for  One  Binomial 
+Proportion,”  Journal  of  Statistical  Planning  and  Inference,  Vol.  136, 
+hal. 4293-4306, 2006. 
+E.  Irfan    dan   K.  Nilsen,    “Comparison    of  Fuzzy    AHP    and    Fuzzy  
+TOPSIS    Methods    for    Facility    Location  Selection,”    International  
+Journal  advanced  Manufacturing Technology, Vol. 39, No. 7-8, hal. 
+783-795, 2008. 
+
+[9] 
+
+[10]  M.K  Sagar,  P.  Jayaswal,  dan  K.  Kushwah,  “Exploring  Fuzzy  SAW 
+Method  for  Maintenance  Strategy  Selection  Problem  of  Material 
+Handling  Equipment,”  International  Journal  of  Current  Engineering 
+and Technology,  Vol. 3, No. 2, hal. 600-605, 2013. 
+
+[11]  E.  Sediyono,  A.  Setiawan,  dan  D.R.  Kaparang,  “Fuzzy  Simple 
+Additive Weighting Algorithm to Determine Land Suitability for Crop 
+International  Journal  of  Computer 
+in  Minahasa  Tenggara,” 
+Applications, Vol. 84, No. 7, hal. 26-29, 2013. 
+
+[12]  Muktiani,  Budidaya  Lele  Sangkuriang  dengan  Kolam  Terpal, 
+
+Yogyakarta, Indonesia:  Penerbit Pustaka Paru Press, 2011. 
+
+[13]  “Volume Produksi Lele,” Direktorat Perikanan, 2014. 
+
+ISSN 2301 – 4156 
+
+Dony M. Sihotang: Penentuan Kualitas Air untuk ... 
+
+376
+
+

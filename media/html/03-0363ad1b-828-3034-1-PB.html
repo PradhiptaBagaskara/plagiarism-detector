@@ -1,0 +1,1212 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html">
+</head><body>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:50px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:50px;"><a name="1">Page 1</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:72px; width:321px; height:31px;"><span style="font-family: Times New Roman,Italic; font-size:9px">Jurnal Informatika: Jurnal Pengembangan IT (JPIT), Vol.03, No.02, Mei 2018  
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:276px; top:84px; width:2px; height:20px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:294px; top:95px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:330px; top:95px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:366px; top:95px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:402px; top:95px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:438px; top:95px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:474px; top:72px; width:80px; height:31px;"><span style="font-family: Times New Roman; font-size:9px"> ISSN: 2477-5126 
+<br>e-ISSN: 2548-9356 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:582px; top:84px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:63px; top:107px; width:474px; height:72px;"><span style="font-family: Times New Roman; font-size:21px">A Comparison of Text Classification Methods k-NN, 
+<br>Naïve Bayes, and Support Vector Machine for News 
+<br>Classification</span><span style="font-family: Times New Roman; font-size:18px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:182px; width:2px; height:21px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:107px; top:204px; width:382px; height:103px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Fanny</span><span style="font-family: Times New Roman,Bold; font-size:6px">1*)</span><span style="font-family: Times New Roman,Bold; font-size:9px">, Yohan Muliono</span><span style="font-family: Times New Roman,Bold; font-size:6px">2</span><span style="font-family: Times New Roman,Bold; font-size:9px">, Fidelson Tanzil</span><span style="font-family: Times New Roman,Bold; font-size:6px">3 
+<br></span><span style="font-family: Times New Roman; font-size:6px">1,2,3</span><span style="font-family: Times New Roman; font-size:9px">School of Computer Science, Bina Nusantara University, Jakarta 
+<br></span><span style="font-family: Times New Roman; font-size:6px">1,2,3</span><span style="font-family: Times New Roman; font-size:9px">Jl. Kh. Syahdan No.9, RT.6/RW.12, Palmerah, Jakarta Barat, DKI Jakarta 11480, Indonesia 
+<br>email: </span><span style="font-family: Times New Roman; font-size:6px">1</span><span style="font-family: Times New Roman; font-size:9px">fanny.sa@binus.edu, </span><span style="font-family: Times New Roman; font-size:6px">2</span><span style="font-family: Times New Roman; font-size:9px">ymuliono@binus.edu, </span><span style="font-family: Times New Roman; font-size:6px">3</span><span style="font-family: Times New Roman; font-size:9px">fitanzil@binus.edu  
+<br> 
+<br> 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">Received: 9 April 2018; Revised: 7 Mei 2018; Accepted: 13 Mei 2018 
+<br>Copyright ©2018 Politeknik Harapan Bersama Tegal. All rights reserved 
+<br></span><span style="font-family: Times New Roman; font-size:11px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:309px; width:251px; height:443px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman,BoldItalic; font-size:9px">Abstract 
+<br>  </span><span style="font-family: Times New Roman,Bold; font-size:9px">In  this  era,  a  rapid  thriving  Internet  occasionally 
+<br>complicates users to retrieve news category furthermore if there 
+<br>are plentiful of news to be categorized. News categorization is a 
+<br>technique can be used to retrieve a category of news which gives 
+<br>easiness  for  users.  Internet  has  vast  amounts  of  information 
+<br></span><span style="font-family: Times New Roman,Bold; font-size:9px">especially  at  news.  Therefore,  accurate  and  speedy  access  is 
+<br></span><span style="font-family: Times New Roman,Bold; font-size:9px">becoming  ever  more  difficult.  This  paper  compares  a  news 
+<br>categorization  using  </span><span style="font-family: Times New Roman,BoldItalic; font-size:9px">k</span><span style="font-family: Times New Roman,Bold; font-size:9px">-Nearest  Neighbor,  Naive  Bayes  and 
+<br>Support Vector Machine. Using vary of variables and through a 
+<br>several steps of preprocessing which proving k-Nearest Neighbor 
+<br>is  producing  a  capable  accuracy  competes with  Support  Vector 
+<br>Machine whereas Naive Bayes producing just an average result, 
+<br>not as good as </span><span style="font-family: Times New Roman,BoldItalic; font-size:9px">k</span><span style="font-family: Times New Roman,Bold; font-size:9px">-Nearest Neighbor and Support Vector Machine 
+<br>yet  as  bad  as  </span><span style="font-family: Times New Roman,BoldItalic; font-size:9px">k</span><span style="font-family: Times New Roman,Bold; font-size:9px">-Nearest  Neighbor  and  Support  Vector  Machine 
+<br>ever reach. As the results, </span><span style="font-family: Times New Roman,BoldItalic; font-size:9px">k</span><span style="font-family: Times New Roman,Bold; font-size:9px">-Nearest Neighbor using correlation 
+<br>measurement type produces the best result of this experiment.  </span><span style="font-family: Times New Roman,BoldItalic; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman,BoldItalic; font-size:12px"> 
+<br></span><span style="font-family: Times New Roman,BoldItalic; font-size:9px">Abstrak</span><span style="font-family: Times New Roman,Bold; font-size:9px">  </span><span style="font-family: Symbol; font-size:9px"></span><span style="font-family: Times New Roman,Bold; font-size:9px">  Pada  zaman  sekarang,  perkembangan  internet  yang 
+<br>begitu pesat kadang-kadang mempersulit pengkategorian berita 
+<br>apalagi  jika  ada  banyak  berita  yang  harus  dikategorikan. 
+<br>Kategorisasi  berita  adalah  teknik  yang  bisa  digunakan  untuk 
+<br>mengambil  kategori  berita  yang  memberi  kemudahan  bagi 
+<br>pembaca  berita.  Internet  memiliki  sejumlah  besar  informasi 
+<br>terutama di berita. Oleh karena itu akses yang akurat dan cepat 
+<br>menjadi semakin sulit. Makalah ini mengulas kategorisasi berita 
+<br>dengan  menggunakan  </span><span style="font-family: Times New Roman,BoldItalic; font-size:9px">k-Nearest  Neighbor</span><span style="font-family: Times New Roman,Bold; font-size:9px">,  </span><span style="font-family: Times New Roman,BoldItalic; font-size:9px">Naive  Bayes</span><span style="font-family: Times New Roman,Bold; font-size:9px">  dan 
+<br></span><span style="font-family: Times New Roman,BoldItalic; font-size:9px">Support  Vector  Machine</span><span style="font-family: Times New Roman,Bold; font-size:9px">.  Penggunaan  berbagai  variabel  dan 
+<br>melalui  beberapa  tahap  </span><span style="font-family: Times New Roman,BoldItalic; font-size:9px">preprocessing</span><span style="font-family: Times New Roman,Bold; font-size:9px">  yang  membuktikan  </span><span style="font-family: Times New Roman,BoldItalic; font-size:9px">k-
+<br>Nearest  Neighbor</span><span style="font-family: Times New Roman,Bold; font-size:9px">  menghasilkan  akurasi  yang  mampu  bersaing 
+<br>dengan  </span><span style="font-family: Times New Roman,BoldItalic; font-size:9px">Support  Vector  Machine</span><span style="font-family: Times New Roman,Bold; font-size:9px">  sedangkan  </span><span style="font-family: Times New Roman,BoldItalic; font-size:9px">Naive  Bayes</span><span style="font-family: Times New Roman,Bold; font-size:9px">  hanya 
+<br>menghasilkan  hasil  rata-rata,  tidak  sebagus  </span><span style="font-family: Times New Roman,BoldItalic; font-size:9px">k-Nearest  Neighbor</span><span style="font-family: Times New Roman,Bold; font-size:9px"> 
+<br>dan  </span><span style="font-family: Times New Roman,BoldItalic; font-size:9px">Support  Vector  Machine</span><span style="font-family: Times New Roman,Bold; font-size:9px">  namun  juga  tidak  memberikan 
+<br>hasil  yang  seburuk  yang  dihasilkan  dengan  teknik  </span><span style="font-family: Times New Roman,BoldItalic; font-size:9px">k-Nearest 
+<br>Neighbor</span><span style="font-family: Times New Roman,Bold; font-size:9px">  dan  </span><span style="font-family: Times New Roman,BoldItalic; font-size:9px">Support  Vector  Machine</span><span style="font-family: Times New Roman,Bold; font-size:9px">.  Sebagai  hasil  yang 
+<br>tipe  pengukuran 
+<br>didapatkan,  </span><span style="font-family: Times New Roman,BoldItalic; font-size:9px">k-Nearest  Neighbor  </span><span style="font-family: Times New Roman,Bold; font-size:9px">dengan 
+<br></span><span style="font-family: Times New Roman,BoldItalic; font-size:9px">correlation </span><span style="font-family: Times New Roman,Bold; font-size:9px">memberikan hasil yang terbaik dan konsisten selama 
+<br>eksperimen  dengan  parameter  dan  validasi  data  yang  berbeda-
+<br>beda. 
+<br></span><span style="font-family: Times New Roman; font-size:12px"> 
+<br></span><span style="font-family: Times New Roman,BoldItalic; font-size:9px">Kata  Kunci</span><span style="font-family: Times New Roman,Bold; font-size:9px">  </span><span style="font-family: Symbol; font-size:9px"></span><span style="font-family: Times New Roman,Bold; font-size:9px">  news  classification,  news,  information  retrieval, 
+<br>text classification. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:41px; top:767px; width:139px; height:21px;"><span style="font-family: Times New Roman; font-size:9px">*) </span><span style="font-family: Times New Roman,Bold; font-size:9px">Corresponding author:</span><span style="font-family: Times New Roman; font-size:9px"> Fanny 
+<br>Email: fanny.sa@binus.edu 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:802px; width:140px; height:67px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman,Bold; font-size:9px">Fanny</span><span style="font-family: Times New Roman; font-size:9px">: A Comparison of Text …  
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:373px; top:333px; width:8px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">I.</span><span style="font-family: Arial; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:333px; width:252px; height:90px;"><span style="font-family: Times New Roman; font-size:9px">INTRODUCTION 
+<br>Along with the currently issue about big data and the rapid 
+<br>development of internet, information retrieval and text mining 
+<br>has become a popular research field in the  world. Especially 
+<br></span><span style="font-family: Times New Roman; font-size:9px">in the field of data or text classification [1].  
+<br>Study  on  text  classification  abroad  dated  back  to  the  late 
+<br>1957,  [2]  done  some  research  works  and  propose  a  text 
+<br>classification using word frequency method.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:425px; width:251px; height:44px;"><span style="font-family: Times New Roman; font-size:9px">The first text classification research has been held in 1960 
+<br>[3],  then  the  other  expansion  of  text  classification    has  been 
+<br>done  in  many  area  like  text  information  retrieval,  electronic 
+<br>meetings, and text filtering [1]. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:471px; width:251px; height:136px;"><span style="font-family: Times New Roman; font-size:9px">This  research  conducts  an  experiment  to  compares  three 
+<br>most  popular  methods  of  text  classification:  </span><span style="font-family: Times New Roman,Italic; font-size:9px">k</span><span style="font-family: Times New Roman; font-size:9px">-Nearest 
+<br>Neighbor,  Naïve  Bayes,  and  Support  Vector  Machine  in 
+<br>News  Categorization  to  classify  the  category  of  news  in 
+<br>English  using  several  pre-processing  texts  that  will  be 
+<br>explained in II. A several experiments will be conducts in this 
+<br>research involving 6 news categories:  Entertainment, Health, 
+<br>Sports,  Economy,  Politics  and  Technology,  with  90  samples 
+<br>of  each  category  cited  from  Fox  news,  New  York  Times, 
+<br>ABC news, and BBC. The main purpose of this research is to 
+<br>find a best method to categorize a news so that the text can be 
+<br>categorized without thoroughly read a full text.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:317px; top:609px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:355px; top:632px; width:11px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">II.</span><span style="font-family: Arial; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:386px; top:632px; width:107px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">LITERATURE</span><span style="font-family: Times New Roman; font-size:8px"> </span><span style="font-family: Times New Roman; font-size:9px">STUDIES 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:644px; width:72px; height:10px;"><span style="font-family: Times New Roman,Italic; font-size:9px">A.</span><span style="font-family: Arial,Italic; font-size:9px">  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Classification 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:655px; width:251px; height:101px;"><span style="font-family: Times New Roman; font-size:9px">In  classification  there  are  two  general  problems  of 
+<br>knowledge,  the  first  one  is  there  already  an  underlying  joint 
+<br>distribution  complete  statistical  knowledge  of  observation  x 
+<br>and  the  true  category  θ  or  there  is  no  knowledge  of  the 
+<br>underlying distribution except that which can be inferred from 
+<br>samples [4]. For the first problem, a standard Bayes analysis 
+<br>can  be  used  to  provides  an  optimal  decision,  in  another 
+<br>problem, Nearest Neighbor has been proven good to solve the 
+<br>problem in several ways [4-6]. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:759px; width:252px; height:33px;"><span style="font-family: Times New Roman; font-size:9px">One of classification problem that necessary to discuss is 
+<br>text  classification.  In  information  retrieval  and  text  mining, 
+<br>classification is an important foundation. The main task is to 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:276px; top:849px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:534px; top:847px; width:21px; height:12px;"><span style="font-family: Times New Roman; font-size:12px">157 
+<br></span></div><div style="position:absolute; border: figure 1px solid; writing-mode:False; left:78px; top:320px; width:6px; height:10px;"></div><span style="position:absolute; border: black 1px solid; left:41px; top:759px; width:247px; height:0px;"></span>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:941px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:941px;"><a name="2">Page 2</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:330px; top:985px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:294px; top:985px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:276px; top:974px; width:2px; height:20px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:962px; width:321px; height:204px;"><span style="font-family: Times New Roman,Italic; font-size:9px">Jurnal Informatika: Jurnal Pengembangan IT (JPIT), Vol.03, No.02, Mei 2018  
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px">assign  a  document  to  the  predefined  categories  according  its 
+<br>content  and  the  training  samples  [7].  Text  classification  has 
+<br>been used significantly, like for email filtering in government 
+<br>departments  or  companies,  spam  mail  detection 
+<br>[8], 
+<br>knowledge enrichment [9], and in news articles classification 
+<br>[10].  The  email  filtering  can  spread  out  emails  to  the 
+<br>corresponding departments according to the content, not only 
+<br>for filtering junk mails. Text classification also used in search 
+<br>engine  in  the  website  for  filtering  the  content  that  users 
+<br>concerned  or  not  and  interested  or  not  as  well  [1].  The 
+<br>processes  of  indexing  is  start  by  reads  a  received  document, 
+<br>chooses  one or several of the index terms from  the  “corpus” 
+<br>and  then  maps  the  selected  terms  with  the  given  categories, 
+<br>the assignment of terms to each document is either it applies 
+<br>to the document or categories in question or not [3]. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:474px; top:962px; width:80px; height:31px;"><span style="font-family: Times New Roman; font-size:9px"> ISSN: 2477-5126 
+<br>e-ISSN: 2548-9356 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:582px; top:974px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:366px; top:985px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:402px; top:985px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:438px; top:985px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:996px; width:251px; height:21px;"><span style="font-family: Times New Roman; font-size:9px">set. The purpose of removing these characters  is to reducing 
+<br>processing times and some unimportant words. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:1019px; width:251px; height:55px;"><span style="font-family: Times New Roman,Italic; font-size:9px">Step 4: Stemming</span><span style="font-family: Times New Roman; font-size:9px">. The purpose of stemming is to change 
+<br>affixes  words  to  its  root  words,  For  Example  ‘driving’, 
+<br>‘drives’  have  a  same  meaning  with  ‘drive’  so  the  affixes  ‘-
+<br>ing’,’-s’ will be removed and changed according to the words 
+<br>and stemmer rules. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:1076px; width:251px; height:159px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br>After the document has been proceed,  the next process is 
+<br>to produce the contents by transforming a full text documents 
+<br>to  a  document  vectors.  This  process  is  prepared  to  decrease 
+<br>the  complexity  of  text  documents  and  make  the  handling 
+<br>process easier. The transformation process is by using a Bag 
+<br>of Words representation assuming that each feature is a single 
+<br>token  [17].  The  bag  of  words  will  contain  a  term  and  term 
+<br>frequency with its categories. Term Frequency is the number 
+<br>of how many times the x words appear in category y [18]. A 
+<br>word can be described as a term if a word appears many time 
+<br>in  1  classification  documents,  if  a  word  appears  in  many 
+<br>categories  of  documents,  the  word  will  not  be  counted  as  a 
+<br>term. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:1237px; width:252px; height:55px;"><span style="font-family: Times New Roman; font-size:9px">The  next  process  is  validation.  Validation  is  the  main 
+<br>process  of  this  paper  objectives,  where  in  validation,  news 
+<br>classification  is  obtained.  The  classification  process  covers 
+<br></span><span style="font-family: Times New Roman; font-size:9px">the  process  of  splitting  the  data  for  training  and  testing, 
+<br>classifier selection, and the result of classification. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:340px; top:1307px; width:15px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">IV.</span><span style="font-family: Arial; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:1307px; width:252px; height:113px;"><span style="font-family: Times New Roman; font-size:9px">EXPERIMENT</span><span style="font-family: Times New Roman; font-size:8px"> </span><span style="font-family: Times New Roman; font-size:9px">AND</span><span style="font-family: Times New Roman; font-size:8px"> </span><span style="font-family: Times New Roman; font-size:9px">RESULT 
+<br>For  the  experiment,  this  paper  uses  the  documents  that 
+<br>collected  from  some  news  like  ABC  news,  Fox  news,  New 
+<br>York  Times,  and  BBC  news  like  has  been  explained  in 
+<br>section  I.  The  documents  are  divide  into  6  categories: 
+<br>entertainment,  health,  economy/business,  technology,  sports, 
+<br>and politic with 30 total data (documents) for each category. 
+<br>This paper does three times of experiment. The parameter for 
+<br>process  the  documents  for  those  three  experiments  is  shown 
+<br>in table I.   
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:346px; top:1433px; width:165px; height:17px;"><span style="font-family: Times New Roman; font-size:8px">T</span><span style="font-family: Times New Roman; font-size:6px">ABLE </span><span style="font-family: Times New Roman; font-size:8px">I 
+<br>PARAMETER</span><span style="font-family: Times New Roman; font-size:6px"> </span><span style="font-family: Times New Roman; font-size:8px">FOR</span><span style="font-family: Times New Roman; font-size:6px"> </span><span style="font-family: Times New Roman; font-size:8px">DOCUMENT</span><span style="font-family: Times New Roman; font-size:6px"> </span><span style="font-family: Times New Roman; font-size:8px">PROCESSING 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:331px; top:1453px; width:47px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Parameter 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:453px; top:1453px; width:48px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Mode Uses 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:310px; top:1466px; width:54px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Tokenization 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:408px; top:1466px; width:72px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Non-letters mode 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:310px; top:1484px; width:80px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Filtering stopwords 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:408px; top:1484px; width:69px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">English standard 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:310px; top:1502px; width:89px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Filtering  tokens  (by 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:408px; top:1502px; width:140px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Minimum 4 characters, maximum 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:310px; top:1519px; width:30px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">length) 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:310px; top:1536px; width:43px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Stemming 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:408px; top:1519px; width:55px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">25 characters 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:408px; top:1536px; width:115px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Lovins, porter, and wordNet 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:357px; top:1577px; width:144px; height:17px;"><span style="font-family: Times New Roman; font-size:8px">T</span><span style="font-family: Times New Roman; font-size:6px">ABLE </span><span style="font-family: Times New Roman; font-size:8px">III 
+<br>SPLIT</span><span style="font-family: Times New Roman; font-size:6px"> </span><span style="font-family: Times New Roman; font-size:8px">VALIDATION</span><span style="font-family: Times New Roman; font-size:6px"> </span><span style="font-family: Times New Roman; font-size:8px">FOR</span><span style="font-family: Times New Roman; font-size:6px"> </span><span style="font-family: Times New Roman; font-size:8px">EXPERIMENT 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:314px; top:1596px; width:53px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Experiment 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:377px; top:1596px; width:60px; height:36px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Total Data 
+<br>per Category 
+<br></span><span style="font-family: Times New Roman; font-size:9px">30 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:450px; top:1596px; width:44px; height:36px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Data for 
+<br>Training 
+<br></span><span style="font-family: Times New Roman; font-size:9px">70% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:505px; top:1596px; width:39px; height:36px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Data for 
+<br>Testing 
+<br></span><span style="font-family: Times New Roman; font-size:9px">30% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:426px; top:1641px; width:12px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">30 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:426px; top:1659px; width:12px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">30 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:474px; top:1641px; width:20px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">70% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:474px; top:1659px; width:20px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">80% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:524px; top:1641px; width:20px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">30% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:524px; top:1659px; width:20px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">20% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:337px; top:1623px; width:6px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">I 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:335px; top:1641px; width:10px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">II 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:333px; top:1659px; width:14px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">III 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:316px; top:1422px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:316px; top:1554px; width:2px; height:21px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:316px; top:1676px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:276px; top:1748px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:534px; top:1747px; width:21px; height:12px;"><span style="font-family: Times New Roman; font-size:12px">158 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:1180px; width:61px; height:10px;"><span style="font-family: Times New Roman,Italic; font-size:9px">B.</span><span style="font-family: Arial,Italic; font-size:9px">  </span><span style="font-family: Times New Roman,Italic; font-size:9px">Classifiers  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:1191px; width:252px; height:67px;"><span style="font-family: Times New Roman; font-size:9px">In  classification  there  are  two  general  problems  of 
+<br>knowledge, the first one is the traditional </span><span style="font-family: Times New Roman,Italic; font-size:9px">k-Nearest Neighbor</span><span style="font-family: Times New Roman; font-size:9px"> 
+<br>text classification. For classification, this method used all the 
+<br>training data sets which make the training process calculation 
+<br>become more complex and can not shows the different results 
+<br>from the different samples [11]. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:1260px; width:252px; height:78px;"><span style="font-family: Times New Roman; font-size:9px">The  next  method  is  Naive  Bayes  classifier,  which  is 
+<br></span><span style="font-family: Times New Roman; font-size:9px">known  as  a  simple  Bayesian  classification  algorithm.  This 
+<br>method  is  still  used  for  text  classification  because  it  is  fast 
+<br>and easy to implement [12-13]. These probabilistic approach 
+<br>makes a tough assumption about the process of generating the 
+<br>data, and which uses a collection of labeled training  samples 
+<br>to estimate the parameters of generative models [14]. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:1341px; width:251px; height:102px;"><span style="font-family: Times New Roman; font-size:9px">The  third  method  is  Support  Vector  Machine  (SVM), 
+<br>which are based on structural risk minimization [15]. The idea 
+<br>is to find which hypothesis h that has the smallest true error. 
+<br>An  upper  bound  can  be  used.  For  connecting  the    error  of  a 
+<br>hypothesis  h  with  the  error  of  hypothesis  on  the  training  set 
+<br>and  the  complexity,  we  can  use  the  upper  bound.  When 
+<br>learning  about  text  classifiers,  it  will  deal  with  large  feature 
+<br>(more than 10000 dimensions) [16]. SVM is recommended to 
+<br>using for handling large feature of data sets.</span><span style="font-family: Times New Roman,Italic; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:1168px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:1444px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:105px; top:1468px; width:15px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">III.</span><span style="font-family: Arial; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:139px; top:1468px; width:80px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">METHODOLOGY 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:1479px; width:251px; height:90px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br>The  methodology  in  classify  the  documents  (news) 
+<br>divides  into  two  main  processes.  Those  are  processing 
+<br>document  and  validation  for  classifying.  Before  validation 
+<br></span><span style="font-family: Times New Roman; font-size:9px">process, the  document has been  processed before to ease the 
+<br>classification  by  removing  some  unimportant  words  org 
+<br>characters. There are four steps in process the documents, as 
+<br>follows:  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:1571px; width:251px; height:44px;"><span style="font-family: Times New Roman,Italic; font-size:9px">Step  1:  Tokenization</span><span style="font-family: Times New Roman; font-size:9px">.  In  tokenization  process,  the  non-
+<br>letters characters are removed. The purpose of this process is 
+<br>to remove the character that not necessary for the information 
+<br>retrieval. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:1617px; width:251px; height:33px;"><span style="font-family: Times New Roman,Italic; font-size:9px">Step  2:  Filtering  stopwords</span><span style="font-family: Times New Roman; font-size:9px">.  In  filtering  stopwords,  the 
+<br>stopwords  character  is  removed.  It  is  because  the  stopwords 
+<br>will not be useful for information retrieval from document. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:1652px; width:251px; height:32px;"><span style="font-family: Times New Roman,Italic; font-size:9px">Step 3: Filtering tokens (by length)</span><span style="font-family: Times New Roman; font-size:9px">. In this step, the word 
+<br>that out of the range that has been set before will be remove. 
+<br>In this step, the minimum and maximum length of character is 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:1701px; width:140px; height:67px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman,Bold; font-size:9px">Fanny</span><span style="font-family: Times New Roman; font-size:9px">: A Comparison of Text …  
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px"> 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:304px; top:1451px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:304px; top:1451px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:1451px; width:97px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:402px; top:1451px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:402px; top:1451px; width:148px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:551px; top:1451px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:551px; top:1451px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:304px; top:1451px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:402px; top:1451px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:551px; top:1451px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:304px; top:1464px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:1464px; width:97px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:402px; top:1464px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:402px; top:1464px; width:148px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:551px; top:1464px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:304px; top:1465px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:402px; top:1465px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:551px; top:1465px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:304px; top:1482px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:1482px; width:97px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:402px; top:1482px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:402px; top:1482px; width:148px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:551px; top:1482px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:304px; top:1482px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:402px; top:1482px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:551px; top:1482px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:304px; top:1500px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:1500px; width:97px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:402px; top:1500px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:402px; top:1500px; width:148px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:551px; top:1500px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:304px; top:1500px; width:0px; height:34px;"></span>
+<span style="position:absolute; border: black 1px solid; left:402px; top:1500px; width:0px; height:34px;"></span>
+<span style="position:absolute; border: black 1px solid; left:551px; top:1500px; width:0px; height:34px;"></span>
+<span style="position:absolute; border: black 1px solid; left:304px; top:1535px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:1535px; width:97px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:402px; top:1535px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:402px; top:1535px; width:148px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:551px; top:1535px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:304px; top:1535px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:304px; top:1553px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:304px; top:1553px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:305px; top:1553px; width:97px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:402px; top:1535px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:402px; top:1553px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:402px; top:1553px; width:148px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:551px; top:1535px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:551px; top:1553px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:551px; top:1553px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:1594px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:1594px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:1594px; width:61px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:370px; top:1594px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:370px; top:1594px; width:70px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:441px; top:1594px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:441px; top:1594px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:1594px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:1594px; width:49px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:1594px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:1594px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:1595px; width:0px; height:26px;"></span>
+<span style="position:absolute; border: black 1px solid; left:370px; top:1595px; width:0px; height:26px;"></span>
+<span style="position:absolute; border: black 1px solid; left:441px; top:1595px; width:0px; height:26px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:1595px; width:0px; height:26px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:1595px; width:0px; height:26px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:1621px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:1621px; width:61px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:370px; top:1621px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:370px; top:1621px; width:70px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:441px; top:1621px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:441px; top:1621px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:1621px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:1621px; width:49px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:1621px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:1622px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:370px; top:1622px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:441px; top:1622px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:1622px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:1622px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:1639px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:1639px; width:61px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:370px; top:1639px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:370px; top:1639px; width:70px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:441px; top:1639px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:441px; top:1639px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:1639px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:1639px; width:49px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:1639px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:1640px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:370px; top:1640px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:441px; top:1640px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:1640px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:1640px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:1657px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:1657px; width:61px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:370px; top:1657px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:370px; top:1657px; width:70px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:441px; top:1657px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:441px; top:1657px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:1657px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:1657px; width:49px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:1657px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:1657px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:1675px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:1675px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:1675px; width:61px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:370px; top:1657px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:370px; top:1675px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:370px; top:1675px; width:70px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:441px; top:1657px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:441px; top:1675px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:441px; top:1675px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:1657px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:1675px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:1675px; width:49px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:1657px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:1675px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:1675px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:1833px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:1833px;"><a name="3">Page 3</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:1854px; width:321px; height:31px;"><span style="font-family: Times New Roman,Italic; font-size:9px">Jurnal Informatika: Jurnal Pengembangan IT (JPIT), Vol.03, No.02, Mei 2018  
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:276px; top:1866px; width:2px; height:20px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:294px; top:1877px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:330px; top:1877px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:366px; top:1877px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:402px; top:1877px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:438px; top:1877px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:474px; top:1854px; width:80px; height:31px;"><span style="font-family: Times New Roman; font-size:9px"> ISSN: 2477-5126 
+<br>e-ISSN: 2548-9356 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:582px; top:1866px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:1888px; width:251px; height:136px;"><span style="font-family: Times New Roman; font-size:9px">After  the  document  processing,  the  next  process  is 
+<br>validation. The first step is splitting the data for training data 
+<br>and  testing  data.  This  division  shown  in  table  II.  The  data 
+<br>distribution  for  learning  and  testing  will  not  be  random 
+<br>condition.  In  that  case,  every  time  the  experiments  will 
+<br>produce  same  results,  if  the  data  used  for  the  experiments  is 
+<br>identical.  First  and  second  experiment  use  70%  of  total  data 
+<br>for training and 30% of total data for testing. Same treatment 
+<br>will  be  done  to  experiment  2.  And  for  the  last  experiment, 
+<br>data  for  training  will  be  increased  to  80%  to  see  the 
+<br>convergence  of  the  result  after  two  times  doing  experiments 
+<br>with using different data. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:2026px; width:251px; height:67px;"><span style="font-family: Times New Roman; font-size:9px">The  last  step  in  validation  is  classification  process.  The 
+<br>parameter  used  for  experiment  in  classification  is  shown  in 
+<br>table III and by using that parameter, the experiment run, and 
+<br>the  result  is  obtained.  The  first  experiment  result  shown  in 
+<br>table IV. 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:1888px; width:251px; height:33px;"><span style="font-family: Times New Roman; font-size:9px">sure  the  accuracy  of  result,  this  research  conducts  a  second 
+<br>experiment using different data but with same treatment. The 
+<br>result of the second experiment shown in table V. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:381px; top:1933px; width:95px; height:17px;"><span style="font-family: Times New Roman; font-size:8px">T</span><span style="font-family: Times New Roman; font-size:6px">ABLE </span><span style="font-family: Times New Roman; font-size:8px">V 
+<br>EXPERIMENT</span><span style="font-family: Times New Roman; font-size:6px"> </span><span style="font-family: Times New Roman; font-size:8px">#II</span><span style="font-family: Times New Roman; font-size:6px"> </span><span style="font-family: Times New Roman; font-size:8px">RESULT 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:454px; top:1953px; width:41px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Stemmer 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:334px; top:1960px; width:43px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Classifier 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:350px; top:1980px; width:42px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Euclidean 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:420px; top:1980px; width:75px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">84.44%  82.22% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:415px; top:1967px; width:30px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Porter 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:464px; top:1967px; width:79px; height:23px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Lovin  Wordnet 
+<br></span><span style="font-family: Times New Roman; font-size:9px">88.89% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:315px; top:1998px; width:25px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">k-NN 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:350px; top:1998px; width:30px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Cosine</span><span style="font-family: Times New Roman,Bold; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:420px; top:1998px; width:75px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">84.44%  82.22% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:511px; top:1998px; width:33px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">88.89% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:350px; top:2016px; width:48px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Correlation</span><span style="font-family: Times New Roman,Bold; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:420px; top:2016px; width:75px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">84.44%  80.00% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:511px; top:2016px; width:33px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">93.33% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:329px; top:2034px; width:54px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Naïve Bayes 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:420px; top:2033px; width:75px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">64.29%</span><span style="font-family: Times New Roman,Bold; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">64.29% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:511px; top:2033px; width:33px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">71.11% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:350px; top:2051px; width:21px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">RBF</span><span style="font-family: Times New Roman,Bold; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:420px; top:2051px; width:75px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">15.56%  15.56% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:511px; top:2051px; width:33px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">82.22% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:315px; top:2069px; width:24px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">SVM 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:350px; top:2069px; width:28px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Linear</span><span style="font-family: Times New Roman,Bold; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:420px; top:2069px; width:75px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">84.44%  77.78% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:511px; top:2069px; width:33px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">82.22% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:350px; top:2087px; width:36px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Sigmoid</span><span style="font-family: Times New Roman,Bold; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:420px; top:2087px; width:75px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">84.44%  77.78% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:511px; top:2087px; width:33px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">82.12% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:316px; top:1922px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:316px; top:2104px; width:2px; height:21px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:103px; top:2094px; width:130px; height:17px;"><span style="font-family: Times New Roman; font-size:8px">T</span><span style="font-family: Times New Roman; font-size:6px">ABLE </span><span style="font-family: Times New Roman; font-size:8px">IIIII 
+<br>CLASSIFIER</span><span style="font-family: Times New Roman; font-size:6px"> </span><span style="font-family: Times New Roman; font-size:8px">FOR</span><span style="font-family: Times New Roman; font-size:6px"> </span><span style="font-family: Times New Roman; font-size:8px">CLASSIFICATION 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:93px; top:2114px; width:43px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Classifier 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:192px; top:2114px; width:24px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Type 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:154px; top:2127px; width:80px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Euclidean Distance 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:101px; top:2145px; width:25px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">k-NN 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:154px; top:2145px; width:72px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Cosine Similarity</span><span style="font-family: Times New Roman,Bold; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:154px; top:2163px; width:90px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Correlation Similarity</span><span style="font-family: Times New Roman,Bold; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:87px; top:2181px; width:54px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Naïve Bayes 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:154px; top:2181px; width:93px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Estimation Mode: Full</span><span style="font-family: Times New Roman,Bold; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:102px; top:2216px; width:24px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">SVM 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:154px; top:2198px; width:21px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">RBF</span><span style="font-family: Times New Roman,Bold; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:154px; top:2216px; width:28px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Linear</span><span style="font-family: Times New Roman,Bold; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:154px; top:2234px; width:36px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Sigmoid</span><span style="font-family: Times New Roman,Bold; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:56px; top:2252px; width:2px; height:21px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:121px; top:2274px; width:92px; height:17px;"><span style="font-family: Times New Roman; font-size:8px">T</span><span style="font-family: Times New Roman; font-size:6px">ABLE </span><span style="font-family: Times New Roman; font-size:8px">IVV 
+<br>EXPERIMENT</span><span style="font-family: Times New Roman; font-size:6px"> </span><span style="font-family: Times New Roman; font-size:8px">#I</span><span style="font-family: Times New Roman; font-size:6px"> </span><span style="font-family: Times New Roman; font-size:8px">RESULT 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:194px; top:2294px; width:41px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Stemmer 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:74px; top:2301px; width:43px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Classifier 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:89px; top:2321px; width:42px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Euclidean 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:159px; top:2321px; width:75px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">17.86%  17.86% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:154px; top:2308px; width:30px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Porter 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:203px; top:2308px; width:79px; height:23px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Lovin  Wordnet 
+<br></span><span style="font-family: Times New Roman; font-size:9px">17.86% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:54px; top:2339px; width:25px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">k-NN 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:89px; top:2339px; width:30px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Cosine</span><span style="font-family: Times New Roman,Bold; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:171px; top:2339px; width:62px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">75%  78.57% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:250px; top:2339px; width:33px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">80.36% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:89px; top:2356px; width:48px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Correlation</span><span style="font-family: Times New Roman,Bold; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:159px; top:2356px; width:75px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">82.14%  82.14% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:250px; top:2356px; width:33px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">76.79% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:68px; top:2374px; width:54px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Naïve Bayes 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:159px; top:2374px; width:75px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">64.29%</span><span style="font-family: Times New Roman,Bold; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">66.07% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:250px; top:2374px; width:33px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">62.50% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:89px; top:2392px; width:21px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">RBF</span><span style="font-family: Times New Roman,Bold; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:159px; top:2392px; width:75px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">64.29%  64.29% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:250px; top:2392px; width:33px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">62.50% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:54px; top:2410px; width:24px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">SVM 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:89px; top:2410px; width:28px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Linear</span><span style="font-family: Times New Roman,Bold; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:159px; top:2410px; width:75px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">64.29%  64.29% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:250px; top:2410px; width:33px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">62.50% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:89px; top:2428px; width:36px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Sigmoid</span><span style="font-family: Times New Roman,Bold; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:159px; top:2428px; width:75px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">64.29%  64.29% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:250px; top:2428px; width:33px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">62.50% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:2445px; width:251px; height:136px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br>From  the  result  of  first  experiment,  it  shows  some 
+<br>interesting points. By using a different stemmer, the result of 
+<br>classification  will  be  different.  For  </span><span style="font-family: Times New Roman,Italic; font-size:9px">k</span><span style="font-family: Times New Roman; font-size:9px">-NN,  the  result  is 
+<br>surprisingly  bad  using  Euclidean  measurement  type,  but  for 
+<br>the  cosine  and  correlation  measurement  type  the  result  is 
+<br>good. For the Naïve Bayes classifier, the result is in average, 
+<br>not  as  good  as  </span><span style="font-family: Times New Roman,Italic; font-size:9px">k</span><span style="font-family: Times New Roman; font-size:9px">-NN  using  correlation  measurement  and  not 
+<br>as  bad  as  </span><span style="font-family: Times New Roman,Italic; font-size:9px">k</span><span style="font-family: Times New Roman; font-size:9px">-NN  using  euclidean.  And  for  SVM,  the  result  is 
+<br></span><span style="font-family: Times New Roman; font-size:9px">average  like  Naïve  Bayes.  As  the  result  of  this  experiment, 
+<br>the highest accurate classifier result is </span><span style="font-family: Times New Roman,Italic; font-size:9px">k</span><span style="font-family: Times New Roman; font-size:9px">-NN using porter and 
+<br>lovin  stemmer  with  correlation  measurement  type.  To  make 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:2593px; width:140px; height:67px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman,Bold; font-size:9px">Fanny</span><span style="font-family: Times New Roman; font-size:9px">: A Comparison of Text …  
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:380px; top:2127px; width:98px; height:17px;"><span style="font-family: Times New Roman; font-size:8px">T</span><span style="font-family: Times New Roman; font-size:6px">ABLE </span><span style="font-family: Times New Roman; font-size:8px">VI 
+<br>EXPERIMENT</span><span style="font-family: Times New Roman; font-size:6px"> </span><span style="font-family: Times New Roman; font-size:8px">#III</span><span style="font-family: Times New Roman; font-size:6px"> </span><span style="font-family: Times New Roman; font-size:8px">RESULT 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:454px; top:2147px; width:41px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Stemmer 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:334px; top:2153px; width:43px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Classifier 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:350px; top:2174px; width:42px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Euclidean 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:420px; top:2174px; width:75px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">86.11%  83.33% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:415px; top:2160px; width:30px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Porter 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:464px; top:2160px; width:79px; height:23px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Lovin  Wordnet 
+<br></span><span style="font-family: Times New Roman; font-size:9px">86.11% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:315px; top:2192px; width:25px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">k-NN 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:350px; top:2191px; width:30px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Cosine</span><span style="font-family: Times New Roman,Bold; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:420px; top:2191px; width:75px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">83.33%  83.33% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:511px; top:2191px; width:33px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">86.11% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:350px; top:2209px; width:48px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Correlation</span><span style="font-family: Times New Roman,Bold; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:420px; top:2209px; width:75px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">86.11%  83.33% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:511px; top:2209px; width:33px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">86.11% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:329px; top:2227px; width:54px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">Naïve Bayes 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:420px; top:2227px; width:75px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">64.29%</span><span style="font-family: Times New Roman,Bold; font-size:9px">  </span><span style="font-family: Times New Roman; font-size:9px">64.29% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:511px; top:2227px; width:33px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">77.78% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:350px; top:2245px; width:21px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">RBF</span><span style="font-family: Times New Roman,Bold; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:425px; top:2245px; width:28px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">5.56% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:467px; top:2245px; width:28px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">5.56% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:516px; top:2245px; width:28px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">5.56% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:315px; top:2263px; width:24px; height:9px;"><span style="font-family: Times New Roman,Bold; font-size:9px">SVM 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:350px; top:2263px; width:28px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Linear</span><span style="font-family: Times New Roman,Bold; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:420px; top:2263px; width:75px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">80.56%  83.33% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:511px; top:2263px; width:33px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">86.11% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:350px; top:2280px; width:36px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">Sigmoid</span><span style="font-family: Times New Roman,Bold; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:420px; top:2280px; width:75px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">80.56%  83.33% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:511px; top:2280px; width:33px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">86.11% 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:2298px; width:252px; height:182px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br>Unlike  the  first  experiment  held  before,  this  experiment 
+<br>shows  that  </span><span style="font-family: Times New Roman,Italic; font-size:9px">k</span><span style="font-family: Times New Roman; font-size:9px">-NN  is  surprisingly  good  regardless  of  the 
+<br>variables  used.  Naïve  Bayes  still  doing  like  before  a  good 
+<br>result  but  not  as  well  as  </span><span style="font-family: Times New Roman,Italic; font-size:9px">k</span><span style="font-family: Times New Roman; font-size:9px">-NN.  However,  SVM  in  this 
+<br>experiment  shows  a  bad  result  using  RBF  regardless  of 
+<br>stemmer used, but SVM also produce a good result which can 
+<br>equally good as compared to  </span><span style="font-family: Times New Roman,Italic; font-size:9px">k</span><span style="font-family: Times New Roman; font-size:9px">-NN. And the best result goes 
+<br>to  </span><span style="font-family: Times New Roman,Italic; font-size:9px">k</span><span style="font-family: Times New Roman; font-size:9px">-NN  and  SVM  which  </span><span style="font-family: Times New Roman,Italic; font-size:9px">k</span><span style="font-family: Times New Roman; font-size:9px">-NN  using  porter  stemmer  with 
+<br>euclidean,  cosine,  and  correlation  measurement  type  and 
+<br></span><span style="font-family: Times New Roman; font-size:9px">SVM using porter stemmer in linear and sigmoid kernel type. 
+<br>For the last experiment, different data will be used as well, 
+<br>and the training rate of data will be increased to 80% and the 
+<br>testing will be 20% to check whether anything different if the 
+<br>testing  data  increased.  The  result  of  this  last  experiment 
+<br>shown in table VI. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:2482px; width:251px; height:101px;"><span style="font-family: Times New Roman; font-size:9px">Similar like the first and second experiment,  the result of 
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px">k</span><span style="font-family: Times New Roman; font-size:9px">-NN is good regardless of the variables and stemmer. Naïve 
+<br>Bayes still perform a good classification but not as well as </span><span style="font-family: Times New Roman,Italic; font-size:9px">k</span><span style="font-family: Times New Roman; font-size:9px">-
+<br>NN. The interesting points here is SVM once again, produce a 
+<br>bad  result  in  RBF  kernel  type.  And  the  highest  accurate 
+<br></span><span style="font-family: Times New Roman; font-size:9px">classifier  still  goes  to  </span><span style="font-family: Times New Roman,Italic; font-size:9px">k</span><span style="font-family: Times New Roman; font-size:9px">-NN  and  SVM  like  the  other 
+<br>experiments  with  porter  and  wordNet  using  euclidean  and 
+<br>correlation  measurement  type  for  </span><span style="font-family: Times New Roman,Italic; font-size:9px">k</span><span style="font-family: Times New Roman; font-size:9px">-NN  and  wordNet  using 
+<br>linear and sigmoid kernel type for SVM. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:276px; top:2640px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:534px; top:2638px; width:21px; height:12px;"><span style="font-family: Times New Roman; font-size:12px">159 
+<br></span></div><span style="position:absolute; border: black 1px solid; left:77px; top:2112px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:77px; top:2112px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:77px; top:2112px; width:70px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:148px; top:2112px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:149px; top:2112px; width:107px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:256px; top:2112px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:256px; top:2112px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:77px; top:2112px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:148px; top:2112px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:256px; top:2112px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:77px; top:2126px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:77px; top:2126px; width:70px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:148px; top:2126px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:149px; top:2126px; width:107px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:256px; top:2126px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:77px; top:2126px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:148px; top:2126px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:256px; top:2126px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:77px; top:2143px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:148px; top:2143px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:149px; top:2143px; width:107px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:256px; top:2143px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:77px; top:2144px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:148px; top:2144px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:256px; top:2144px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:77px; top:2161px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:148px; top:2161px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:149px; top:2161px; width:107px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:256px; top:2161px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:77px; top:2162px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:148px; top:2162px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:256px; top:2162px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:77px; top:2179px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:77px; top:2179px; width:70px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:148px; top:2179px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:149px; top:2179px; width:107px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:256px; top:2179px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:77px; top:2179px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:148px; top:2179px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:256px; top:2179px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:77px; top:2197px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:77px; top:2197px; width:70px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:148px; top:2197px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:149px; top:2197px; width:107px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:256px; top:2197px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:77px; top:2197px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:148px; top:2197px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:256px; top:2197px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:77px; top:2214px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:148px; top:2214px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:149px; top:2214px; width:107px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:256px; top:2214px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:77px; top:2215px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:148px; top:2215px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:256px; top:2215px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:77px; top:2232px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:148px; top:2232px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:149px; top:2232px; width:107px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:256px; top:2232px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:77px; top:2233px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:77px; top:2250px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:77px; top:2250px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:77px; top:2250px; width:70px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:148px; top:2233px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:148px; top:2250px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:149px; top:2250px; width:107px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:256px; top:2233px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:256px; top:2250px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:256px; top:2250px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:47px; top:2292px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:47px; top:2292px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:48px; top:2292px; width:92px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:140px; top:2292px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:141px; top:2292px; width:145px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:2292px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:2292px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:47px; top:2292px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:140px; top:2292px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:2292px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:47px; top:2306px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:140px; top:2306px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:141px; top:2306px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:195px; top:2306px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:196px; top:2306px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2306px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2306px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:2306px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:47px; top:2306px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:140px; top:2306px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:195px; top:2306px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2306px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:2306px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:47px; top:2319px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:48px; top:2319px; width:35px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:83px; top:2319px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:84px; top:2319px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:140px; top:2319px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:141px; top:2319px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:195px; top:2319px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:196px; top:2319px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2319px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2319px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:2319px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:47px; top:2320px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:83px; top:2320px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:140px; top:2320px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:195px; top:2320px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2320px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:2320px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:47px; top:2337px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:83px; top:2337px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:84px; top:2337px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:140px; top:2337px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:141px; top:2337px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:195px; top:2337px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:196px; top:2337px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2337px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2337px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:2337px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:47px; top:2338px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:83px; top:2338px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:140px; top:2338px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:195px; top:2338px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2338px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:2338px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:47px; top:2355px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:83px; top:2355px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:84px; top:2355px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:140px; top:2355px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:141px; top:2355px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:195px; top:2355px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:196px; top:2355px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2355px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2355px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:2355px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:47px; top:2355px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:83px; top:2355px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:140px; top:2355px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:195px; top:2355px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2355px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:2355px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:47px; top:2373px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:48px; top:2373px; width:35px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:83px; top:2373px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:84px; top:2373px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:140px; top:2373px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:141px; top:2373px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:195px; top:2373px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:196px; top:2373px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2373px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2373px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:2373px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:47px; top:2373px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:140px; top:2373px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:195px; top:2373px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2373px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:2373px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:47px; top:2390px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:48px; top:2390px; width:35px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:83px; top:2390px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:84px; top:2390px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:140px; top:2390px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:141px; top:2390px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:195px; top:2390px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:196px; top:2390px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2390px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2390px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:2390px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:47px; top:2391px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:83px; top:2391px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:140px; top:2391px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:195px; top:2391px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2391px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:2391px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:47px; top:2408px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:83px; top:2408px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:84px; top:2408px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:140px; top:2408px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:141px; top:2408px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:195px; top:2408px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:196px; top:2408px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2408px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2408px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:2408px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:47px; top:2409px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:83px; top:2409px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:140px; top:2409px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:195px; top:2409px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2409px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:2409px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:47px; top:2426px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:83px; top:2426px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:84px; top:2426px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:140px; top:2426px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:141px; top:2426px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:195px; top:2426px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:196px; top:2426px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2426px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2426px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:2426px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:47px; top:2426px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:47px; top:2444px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:47px; top:2444px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:48px; top:2444px; width:35px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:83px; top:2426px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:83px; top:2444px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:84px; top:2444px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:140px; top:2426px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:140px; top:2444px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:141px; top:2444px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:195px; top:2426px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:195px; top:2444px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:196px; top:2444px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2426px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2444px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:237px; top:2444px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:2426px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:2444px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:286px; top:2444px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:1951px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:1951px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:309px; top:1951px; width:92px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:1951px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:1951px; width:145px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:1951px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:1951px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:1951px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:1951px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:1951px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:1965px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:1965px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:1965px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:1965px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:1965px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:1965px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:1965px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:1965px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:1965px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:1965px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:1965px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:1965px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:1965px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:1978px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:309px; top:1978px; width:35px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:1978px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:345px; top:1978px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:1978px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:1978px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:1978px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:1978px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:1978px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:1978px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:1978px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:1979px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:1979px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:1979px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:1979px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:1979px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:1979px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:1996px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:1996px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:345px; top:1996px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:1996px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:1996px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:1996px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:1996px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:1996px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:1996px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:1996px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:1997px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:1997px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:1997px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:1997px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:1997px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:1997px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2014px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:2014px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:345px; top:2014px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2014px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2014px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2014px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2014px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2014px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:2014px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2014px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2014px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:2014px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2014px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2014px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2014px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2014px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2032px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:309px; top:2032px; width:35px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:2032px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:345px; top:2032px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2032px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2032px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2032px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2032px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2032px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:2032px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2032px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2032px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2032px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2032px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2032px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2032px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2049px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:309px; top:2049px; width:35px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:2049px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:345px; top:2049px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2049px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2049px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2049px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2049px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2049px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:2049px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2049px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2050px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:2050px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2050px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2050px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2050px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2050px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2067px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:2067px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:345px; top:2067px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2067px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2067px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2067px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2067px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2067px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:2067px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2067px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2068px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:2068px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2068px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2068px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2068px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2068px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2085px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:2085px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:345px; top:2085px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2085px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2085px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2085px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2085px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2085px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:2085px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2085px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2085px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2103px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2103px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:309px; top:2103px; width:35px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:2085px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:2103px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:345px; top:2103px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2085px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2103px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2103px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2085px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2103px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2103px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2085px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2103px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:2103px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2085px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2103px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2103px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2145px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2145px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:309px; top:2145px; width:92px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2145px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2145px; width:145px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2145px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2145px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2145px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2145px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2145px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2158px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2158px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2158px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2158px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2158px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2158px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:2158px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2158px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2159px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2159px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2159px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2159px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2159px; width:0px; height:13px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2172px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:309px; top:2172px; width:35px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:2172px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:345px; top:2172px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2172px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2172px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2172px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2172px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2172px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:2172px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2172px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2173px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:2173px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2173px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2173px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2173px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2173px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2190px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:2190px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:345px; top:2190px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2190px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2190px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2190px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2190px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2190px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:2190px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2190px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2190px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:2190px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2190px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2190px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2190px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2190px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2208px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:2208px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:345px; top:2208px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2208px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2208px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2208px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2208px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2208px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:2208px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2208px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2208px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:2208px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2208px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2208px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2208px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2208px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2225px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:309px; top:2225px; width:35px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:2225px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:345px; top:2225px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2225px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2225px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2225px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2225px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2225px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:2225px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2225px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2226px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2226px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2226px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2226px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2226px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2243px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:309px; top:2243px; width:35px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:2243px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:345px; top:2243px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2243px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2243px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2243px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2243px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2243px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:2243px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2243px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2243px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:2243px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2243px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2243px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2243px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2243px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2261px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:2261px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:345px; top:2261px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2261px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2261px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2261px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2261px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2261px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:2261px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2261px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2261px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:2261px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2261px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2261px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2261px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2261px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2278px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:2278px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:345px; top:2278px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2278px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2278px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2278px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2278px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2278px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:2278px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2278px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2279px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2296px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:308px; top:2296px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:309px; top:2296px; width:35px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:2279px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:344px; top:2296px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:345px; top:2296px; width:56px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2279px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2296px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:401px; top:2296px; width:54px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2279px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2296px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:456px; top:2296px; width:41px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2279px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:497px; top:2296px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:498px; top:2296px; width:48px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2279px; width:0px; height:17px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2296px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: black 1px solid; left:547px; top:2296px; width:0px; height:0px;"></span>
+<span style="position:absolute; border: gray 1px solid; left:0px; top:2725px; width:595px; height:841px;"></span>
+<div style="position:absolute; top:2725px;"><a name="4">Page 4</a></div>
+<div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:2746px; width:321px; height:31px;"><span style="font-family: Times New Roman,Italic; font-size:9px">Jurnal Informatika: Jurnal Pengembangan IT (JPIT), Vol.03, No.02, Mei 2018  
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:276px; top:2758px; width:2px; height:20px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:330px; top:2769px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:294px; top:2769px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:474px; top:2746px; width:80px; height:31px;"><span style="font-family: Times New Roman; font-size:9px"> ISSN: 2477-5126 
+<br>e-ISSN: 2548-9356 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:582px; top:2758px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:114px; top:2780px; width:12px; height:10px;"><span style="font-family: Times New Roman; font-size:9px">V.</span><span style="font-family: Arial; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:2780px; width:251px; height:136px;"><span style="font-family: Times New Roman; font-size:9px">CONCLUSION 
+<br>From  three  experiments  has  been  held,  Naïve  Bayes 
+<br>shows  a  stable  result,  Naïve  Bayes  Classifier  never  been  the 
+<br>worst nor the best, shows a stable performance, appropriate to 
+<br>a  low  risk  taker  for  use  Naïve  Bayes  for  classifier  and  a  big 
+<br>statistical learning data for naïve bayes, without expecting the 
+<br>best  result  of  it,  for  k-NN  it  surprisingly  good  for  a  few 
+<br>training  data  and  nearly  produce  an  accurate  result  for  three 
+<br>time.  Although  k-NN  ever  get  a  worst  result  regardless  of 
+<br>that,  k-NN  is  being  the  best  for  three  times  also.  Whereas 
+<br>SVM  Classifier  still  performs  a  random  result  can  produce 
+<br>equally well as k-NN but sometimes the performance drops. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:2918px; width:251px; height:67px;"><span style="font-family: Times New Roman; font-size:9px">For  the  future  works,  a  similar  experiment  can  be  held, 
+<br>using different variables and classifiers. Keep using k-NN and 
+<br>SVM as a comparison. Naïve Bayes already shows an average 
+<br>performance,  different  classifiers  should  be  replacing  Naïve 
+<br>Bayes.  Different  categories  of  news  can  show  a  different 
+<br>result also.  
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:146px; top:2999px; width:65px; height:9px;"><span style="font-family: Times New Roman; font-size:9px">REFERENCES 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:3010px; width:251px; height:26px;"><span style="font-family: Times New Roman; font-size:8px">[1]</span><span style="font-family: Arial; font-size:8px">  </span><span style="font-family: Times New Roman; font-size:8px">Z.  Yong,  L.  Youwen,  and  X.  Shixiong,  “An  Improved  KNN  Text 
+<br>Classification Algorithm Based on Clustering,” J. Comput., vol. 4, no. 
+<br>3, pp. 230–237, 2009. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:3037px; width:251px; height:26px;"><span style="font-family: Times New Roman; font-size:8px">[2]</span><span style="font-family: Arial; font-size:8px">  </span><span style="font-family: Times New Roman; font-size:8px">H.  P.  Luhn,  “A  Statistical  Approach  to  Mechanized  Encoding  and 
+<br>Searching of Literary Information,” IBM J. Res. Dev., vol. 1, no. 4, pp. 
+<br></span><span style="font-family: Times New Roman; font-size:8px">309–317, 1957. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:3065px; width:251px; height:26px;"><span style="font-family: Times New Roman; font-size:8px">[3]</span><span style="font-family: Arial; font-size:8px">  </span><span style="font-family: Times New Roman; font-size:8px">M. E. Maron and J. L. Kuhns, “On Relevance, Probabilistic Indexing 
+<br>and Information Retrieval,” J. ACM, vol. 7, no. 3, pp. 216–244, 1960. 
+<br>[4]</span><span style="font-family: Arial; font-size:8px">  </span><span style="font-family: Times New Roman; font-size:8px">T. Cover and P. Hart, “Nearest neighbor pattern classification,” IEEE 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:63px; top:3093px; width:164px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">Trans. Inf. Theory, vol. 13, no. 1, pp. 21–27, 1967. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:3102px; width:251px; height:27px;"><span style="font-family: Times New Roman; font-size:8px">[5]</span><span style="font-family: Arial; font-size:8px">  </span><span style="font-family: Times New Roman; font-size:8px">T.  Kanungo,  D.  M.  Mount,  N.  S.  Netanyahu,  C.  D.  Piatko,  R. 
+<br>Silverman, and a. Y. Wu, “An efficient k-means clustering algorithm: 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:366px; top:2769px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:324px; top:2769px; width:229px; height:27px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:8px">analysis and implementation,” IEEE Trans. Pattern Anal. Mach. Intell., 
+<br>vol. 24, no. 7, pp. 881–892, 2002. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:402px; top:2769px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:2798px; width:251px; height:44px;"><span style="font-family: Times New Roman; font-size:8px">[6]</span><span style="font-family: Arial; font-size:8px">  </span><span style="font-family: Times New Roman; font-size:8px">M.-L. Zhang and Z.-H. Zhou, “A k-nearest neighbor-based algorithm 
+<br>for multi-label classification,” vol. 2, pp. 718 – 721 Vol. 2, 2005. 
+<br>[7]</span><span style="font-family: Arial; font-size:8px">  </span><span style="font-family: Times New Roman; font-size:8px">X.  X.  Su  Jinshu,  Zhang  Bofeng,  “Advances  in  Machine  Learning 
+<br>Based Text Categorization,” J. Chem. Inf. Model., vol. 53, pp. 1689–
+<br>1699, 2013. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:2844px; width:251px; height:63px;"><span style="font-family: Times New Roman; font-size:8px">[8]</span><span style="font-family: Arial; font-size:8px">  </span><span style="font-family: Times New Roman; font-size:8px">D. Sharma, “Experimental Analysis of KNN with Naive Bayes, SVM 
+<br>and Naive Bayes Algorithms for Spam Mail Detection,” vol. 8491, no. 
+<br>4, pp. 225–228, 2016. 
+<br>S.  Hassan,  M.  Rafi,  and  M.  S.  Shaikh,  “Comparing  SVM  and  Naïve 
+<br>Bayes classifiers for text categorization with Wikitology as knowledge 
+<br>enrichment,”  Proc.  14th  IEEE  Int.  Multitopic  Conf.  2011,  INMIC 
+<br>2011, pp. 31–34, 2011. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:2871px; width:11px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">[9]</span><span style="font-family: Arial; font-size:8px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:2908px; width:251px; height:26px;"><span style="font-family: Times New Roman; font-size:8px">[10]</span><span style="font-family: Arial; font-size:8px">  </span><span style="font-family: Times New Roman; font-size:8px">L.  Pradhan,  N.  A.  Taneja,  C.  Dixit,  and  M.  Suhag,  “Comparison  of 
+<br>Text Classifiers on News Articles,”  Int. Res. J. Eng. Technol., vol. 4, 
+<br>no. 3, pp. 2513–2517, 2017. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:2936px; width:251px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">[11]</span><span style="font-family: Arial; font-size:8px">  </span><span style="font-family: Times New Roman; font-size:8px">S.  Tan,  “An  effective  refinement  strategy  for  KNN  text  classifier,” 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:324px; top:2945px; width:173px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">Expert Syst. Appl., vol. 30, no. 2, pp. 290–298, 2006. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:2954px; width:251px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">[12]</span><span style="font-family: Arial; font-size:8px">  </span><span style="font-family: Times New Roman; font-size:8px">D.  D.  Lewis,  “Representation  and  learning  in  information  retrieval,” 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:324px; top:2963px; width:42px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">vol. 7, 1992. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:2973px; width:251px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">[13]</span><span style="font-family: Arial; font-size:8px">  </span><span style="font-family: Times New Roman; font-size:8px">J. D. M. Rennie, L. Shih, J. Teevan, and D. R. Karger, “Tackling the 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:324px; top:2982px; width:222px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">Poor Assumptions of Naive Bayes Text Classifiers,” no. 1973, 2003. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:2991px; width:251px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">[14]</span><span style="font-family: Arial; font-size:8px">  </span><span style="font-family: Times New Roman; font-size:8px">A.  Mccallum  and  K.  Nigam,  “A  Comparison  of  Event  Models  for 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:324px; top:3000px; width:128px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">Naive Bayes Text Classi cation,” 1997. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:3009px; width:251px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">[15]</span><span style="font-family: Arial; font-size:8px">  </span><span style="font-family: Times New Roman; font-size:8px">V.  Vapnik,  The  Nature  of  Statistical  Learning  Theory.  New  York: 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:324px; top:3019px; width:51px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">Springer, 1995. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:3028px; width:251px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">[16]</span><span style="font-family: Arial; font-size:8px">  </span><span style="font-family: Times New Roman; font-size:8px">T.  Joachims,  “Text  Categorization  with  Support  Vector  Machines: 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:324px; top:3037px; width:160px; height:8px;"><span style="font-family: Times New Roman; font-size:8px">Learning with Many Relevant Features,” pp. 2–7. 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:3046px; width:251px; height:54px;"><span style="font-family: Times New Roman; font-size:6px">[17]</span><span style="font-family: Arial; font-size:6px">  </span><span style="font-family: Times New Roman; font-size:8px">Y.  Zhang,  R.  Jin,  and  Z.  H.  Zhou,  “Understanding  bag-of-words 
+<br></span><span style="font-family: Times New Roman; font-size:8px">model:  A statistical framework,” Int. J. Mach. Learn. Cybern., vol. 1, 
+<br>no. 1–4, pp. 43–52, 2010.</span><span style="font-family: Times New Roman; font-size:6px"> 
+<br></span><span style="font-family: Times New Roman; font-size:8px">a.  Selamat,  H.  Yanagimoto,  and  S.  Omatu,  “Web  news  classification 
+<br>using  neural  networks  based  on  PCA,”  Proc.  41st  SICE  Annu.  Conf. 
+<br>SICE 2002., vol. 4, pp. 2389–2394, 2002.</span><span style="font-family: Times New Roman; font-size:6px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:303px; top:3075px; width:13px; height:7px;"><span style="font-family: Times New Roman; font-size:6px">[18]</span><span style="font-family: Arial; font-size:6px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:42px; top:3485px; width:140px; height:67px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br> 
+<br></span><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span><span style="font-family: Times New Roman,Bold; font-size:9px">Fanny</span><span style="font-family: Times New Roman; font-size:9px">: A Comparison of Text …  
+<br></span><span style="font-family: Times New Roman,Italic; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:276px; top:3532px; width:2px; height:9px;"><span style="font-family: Times New Roman; font-size:9px"> 
+<br></span></div><div style="position:absolute; border: textbox 1px solid; writing-mode:lr-tb; left:534px; top:3530px; width:21px; height:12px;"><span style="font-family: Times New Roman; font-size:12px">160 
+<br></span></div><div style="position:absolute; top:0px;">Page: <a href="#1">1</a>, <a href="#2">2</a>, <a href="#3">3</a>, <a href="#4">4</a></div>
+</body></html>

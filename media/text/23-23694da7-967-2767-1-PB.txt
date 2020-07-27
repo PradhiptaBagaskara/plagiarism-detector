@@ -1,0 +1,913 @@
+INFOTEKJAR : JURNAL NASIONAL INFORMATIKADANTEKNOLOGIJARINGAN- VOL. 3 NO. 2 (2019) EDISI MARET 
+
+ 
+
+Available onlineat : http://bit.ly/InfoTekJar 
+
+InfoTekJar :Jurnal Nasional 
+
+InformatikadanTeknologiJaringan 
+
+ 
+
+ISSN (Print) 2540-7597|ISSN (Online) 2540-7600 
+
+ 
+
+Sistem  Informasi  Penilaian  Pemberitaan  Hoax  dengan  Metode 
+
+Perbandingan dan Algoritma AHP 
+
+Farid Syaumi Rizki Ginting, Rizalul Akram  
+
+Fakultas Teknik,Universitas Samudra, Aceh, 24416, Langsa : Indonesia 
+
+Hoax  News,  AHP  Algoritm,  Berita  Hoax, 
+
+The  use  of  social  media  in  Indonesia  is  currently  developing  tremendously.  Even  so,  the 
+
+development of information technology life in the real world is not in accordance with life in 
+
+ 
+
+A B S T R A C T  
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+KEYWORDS 
+
+Algoritma AHP 
+
+CORRESPONDENCE 
+
+Phone: +6285262712727 
+
+E-mail: faridsyaumil@gmail.com 
+
+cyberspace. 
+
+Social  media  is  now  delivering  news  on  false  information  (fraud),  provocation,  slander, 
+
+intolerance  and  anti-Pancasila  attitudes.  Technological  advances  in  the  era  of  globalization 
+
+So  from  that  information  system  is  intended  to  educate  the  public,  in  order  to  be  able  to 
+
+made information so quickly sent wide. 
+
+distinguish between truly deceptive news. 
+
+The  method  used  in  this  information  system  uses  the  AHP  (Analytical  Hierarchy  Process) 
+
+method, the AHP (Analytical Hierarchy Process) method which is used as a representation of 
+
+a complex problem in a multi-level structure where the first level is a goal, which is discussed 
+
+by factor level, criteria , sub criteria, and so on down to the last level of the alternative. 
+
+So from this information system we can see which news is true and which news is lying, by 
+
+looking  at  the  results  of  the  AHP  (Analytical  Hierarchy  Process)  process  which  graphs  the 
+
+results. 
+
+ 
+
+Pemanfaatan  media  sosial  di  Indonesia  saat  ini  berkembang  luar  biasa.  Meski  begitu, 
+
+perkembangan teknologi informasi kehidupan di dunia nyata tidak pararel dengan kehidupan 
+
+di  dunia  maya.  Media  sosial  kini  dipenuhi  berita  informasi  palsu  (hoax),  provokasi,  fitnah, 
+
+sikap intoleran dan anti Pancasila. Kemajuan teknologi di era globalisasi membuat informasi 
+
+begitu cepat beredar luas. 
+
+Maka  dari  itu  sistem  informasi  ini  bertujuan  untuk  mengedukasi  masyarakat,  agar  dapat 
+
+membedakan berita yang benar maupun yang hoax. 
+
+Metode  yang  digunakan  dalam  sistem  informasi  ini  adalah  menggunakan  metode  AHP 
+
+(Analytical  Hierarchy  Process),  metode  AHP  (Analytical  Hierarchy  Process)  digunakan 
+
+sebagai  suatu  representasi  dari  sebuah  permasalahan  yang  kompleks  dalam  suatu  struktur 
+
+multi level dimana level pertama adalah tujuan, yang diikuti level faktor, kriteria, sub kriteria, 
+
+dan seterusnya ke bawah hingga level terakhir dari alternatif.  
+
+Jadi dari sistem informasi ini kita dapat melihat berita mana yang benar dan berita mana yang 
+
+hoax, dengan melihat hasil dari proses AHP (Analytical Hierarchy Process ) yang berbentuk 
+
+grafik hasil. 
+
+PENDAHULUAN 
+
+        
+
+Pemanfaatan media sosial di Indonesia saat ini berkembang luar 
+
+biasa.  Meski  begitu,  perkembangan 
+
+teknologi 
+
+informasi 
+
+kehidupan  di  dunia  nyata  tidak  pararel  dengan  kehidupan  di 
+
+dunia  maya.  Media  sosial  kini  dipenuhi  berita  informasi  palsu 
+
+(hoax),  provokasi,  fitnah,  sikap  intoleran  dan  anti  Pancasila. 
+
+Kemajuan teknologi di era globalisasi membuat informasi begitu 
+
+cepat beredar luas. 
+
+ 
+
+ 
+
+Keberadaan  internet  sebagai  media  online  membuat  informasi 
+
+yang  belum  terverifikasi  benar  dan  tidaknya  tersebar  cepat. 
+
+Hanya  dalam  hitungan  detik,  suatu  peristiwa  sudah  bisa 
+
+langsung  tersebar  dan  diakses  oleh  pengguna  internet  melalui 
+
+media  sosial.  Melalui  media  sosial,  ratusan  bahkan  ribuan 
+
+informasi  disebar  setiap  harinya.  Bahkan  orang  kadang  belum 
+
+sempat  memahami  materi  informasi,  reaksi  atas  informasi 
+
+tersebut sudah lebih dulu terlihat. 
+
+ 
+
+ 
+
+Memang, media sosial memberikan kemerdekaan seluas-luasnya 
+
+bagi  para  pengguna  untuk  mengekspresikan  dirinya,  sikapnya, 
+
+pandangan  hidupnya,  pendapatnya,  atau  mungkin  sekadar 
+
+menumpahkan unek-uneknya Kita patut prihatin dengan kondisi 
+
+saat  ini,  cukup  banyak  orang  yang  menggunakan  media  sosial 
+
+untuk menyebarkan kebencian dan provokasi. 
+
+Keadaan  tersebut  di  satu  sisi  bisa  menjadi  potensi  yang 
+
+menguntungkan,  namun  di  sisi  lainnya  bisa  menjadi  sebuah 
+
+ancaman  atau  setidaknya  malah  memberikan  dampak  negatif 
+
+DOI: https://doi.org/10.30743/infotekjar.v3i2.967 
+
+ 
+
+Attribution-NonCommercial 4.0 International. Some rights reserved 
+
+FARID SYAUMI RIZKI GINTING / INFOTEKJAR :JURNAL NASIONAL INFORMATIKADANTEKNOLOGIJARINGAN- VOL. 3 NO. 2 (2019) EDISI MARET 
+
+yang  mengarah  perpecahan.  Sebagaimana  kita  ketahui  bahwa 
+
+ini.  Database  atau hasil  data  yang  dikumpulkan  ini bisa berupa 
+
+akhir-akhir  ini  penyebaran  berita  ujaran  kebencian,  bentuk-
+
+hubungan, tabel dan bentuk data lain yang berhubungan dengan 
+
+bentuk  intoleransi  dan  informasi  palsu  (hoax)  sedang  marak 
+
+informasi  yang  dibutuhkan.  Ada  juga  komponen  terakhir  yang 
+
+menghiasi  jagad  media  sosial  Indonesia.  Hal  ini  berlangsung 
+
+disebut  sebagai  komunikasi  data  dan  jaringan  komputer  yang 
+
+khususnya  pada  situasi  politik  tertentu,  misalnya  pada  saat 
+
+merupakan sebuah sistem penghubung yang membuat resources 
+
+Pemilu,  Pilpres  dan  pada  masa  Pilkada  serentak  di  beberapa 
+
+bisa digunakan atau diakses secara bersamaan dan diakses oleh 
+
+wilayah  di 
+
+Indonesia,  dimana 
+
+terdapat 
+
+indikasi  adanya 
+
+banyak pemakai. 
+
+persaingan  politik  dan  kampanye  hitam  yang  juga  dilakukan 
+
+melalui media sosial. 
+
+        
+
+Aspek  manusia  dan  teknologi  memiliki  peran  yang  penting 
+
+dalam pelaksanaannya. Kombinasi beberapa elemen pendukung 
+
+Maka  sistem  informasi  ini  dibuat  agar  dapat  mengedukasi 
+
+akan  menentukan 
+
+informasi 
+
+yang 
+
+didapatkan.  Apa 
+
+masyarakat 
+
+bahwa 
+
+sistem 
+
+ini 
+
+bekerja 
+
+dengan 
+
+cara 
+
+pentingnya sistem  informasi dalam  bidang  kehidupan  sehari-
+
+membandingkan  antara  satu  website  dengan  website  lainnya 
+
+hari?  Tidak  hanya  usaha  besar  saja  yang  membutuhkannya, 
+
+sehingga  masyarakat dapat  mengetahui berita mana  yang benar 
+
+pekerjaan sederhana seperti warung juga memerlukannya. 
+
+dan berita mana yang mengandung hoax. 
+
+        
+
+Masyarakat dapat menilai dan melihat perbedaan antara website 
+
+mendapatkan  informasi  mengenai  jenis  barang  yang  dijual, 
+
+satu dengan website yang lainnya dalam bentuk grafik sehingga 
+
+harga, cara pembelian, dan lain-lain.  
+
+Dengan  adanya  sistem  ini  maka  memudahkan  konsumen 
+
+masyarakat  bisa  sadar  untuk  memilih  berita  dari  website  yang 
+
+telah  terpercaya  dan  masyarakat  terhindar  dari  yang  namanya 
+
+Sistem Pendukung Keputusan 
+
+perpecahan  karena  masyarakat  telah  mengetahui  berita  mana 
+
+yang hoax dan berita mana yang benar. 
+
+ 
+
+ 
+
+KAJIAN PUSTAKA 
+
+ 
+
+Sistem Informasi 
+
+Secara sederhana pengertian sistem informasi bisa didefinisikan 
+
+sebagai sebuah sistem yang mana terdiri dari teknologi atau alat, 
+
+media yang digunakan, prosedur yang terorganisir, serta sumber 
+
+daya  manusia  yang  didalamnya  bekerja  sebagai  sebuah 
+
+kombinasi  membentuk  sebuah  sistem  yang 
+
+terorganisir. 
+
+Kombinasi  antara  teknologi  dan  manusia  ini  bekerja  untuk 
+
+mendapatkan sebuah informasi yang kemudian digunakan untuk 
+
+mendukung 
+
+suatu  manajemen  guna  mengambil 
+
+sebuah 
+
+kebijakan atau keputusan. ( Abdul Kadir, 2014 : 6). 
+
+ 
+
+Komponen  sistem  informasi  terdiri  dari  berbagai  hal  yang 
+
+memiliki  fungsi  masing-masing  namun  tetap  memiliki  tujuan 
+
+untuk  membentuk  satu  informasi  yang  valid.  Ada  6  komponen 
+
+utama  dalam  sistem  informasi  yang  harus  ada  sehingga  bisa 
+
+terbentuk  sebuah  sistem  yang  bisa  bekerja  dengan  baik. 
+
+Komponen-komponen  itu  antara  lain  yang  pertama  adalah 
+
+Hardware  (perangkat  keras).  Perangkat  keras  ini  meliputi 
+
+berbagai  piranti  fisik  yang  dibutuhkan  guna  mendapatkan  dan 
+
+mengolah  data  informasi.  Contoh  komponen  ini  misalnya 
+
+komputer.  Komponen  kedua  adalah  perangkat  lunak  (software) 
+
+atau  yang  juga  biasa  disebut  sebagai  program.  Software  atau 
+
+program ini adalah kumpulan instruksi-instruksi yang membuat 
+
+perangkat keras bisa mengolah data yang didapatkan. 
+
+Komponen  selanjutnya  adalah  prosedur  yang  mana  merupakan 
+
+aturan  yang  digunakan  untuk  mengolah  atau  memproses  data 
+
+yang  didapatkan  guna  menghasilkan  output  yang  digunakan. 
+
+Komponen keempat dari Sisfo adalah manusia atau sumber daya 
+
+yang  mengoperasikan  dua  komponen  pertama  dan  bekerja 
+
+berdasarkan  prosedur  yang  ditentukan.  Manusia  atau  sumber 
+
+daya manusia inilah yang akan bertanggung jawab secara penuh 
+
+terhadap proses pengembangan dan juga penggunaan output dari 
+
+sistem informasi. 
+
+Sedangkan hasil informasi yang dikumpulkan akan dibuat dalam 
+
+bentuk database yang merupakan komponen kelima dari sistem 
+
+Sistem 
+
+pendukung 
+
+keputusan 
+
+adalah 
+
+sebuah 
+
+himpunan/kumpulan prosedur berbasis model untuk memproses 
+
+data  dan  pertimbangan  untuk  membantu  manajemen  dalam 
+
+pembuatan keputusannya ( Little, 1970 : 20). 
+
+  Sistem  pendukung  keputusan  sebagai  sekumpulan 
+
+tools 
+
+komputer  yang  terintegrasi  yang  mengijinkan  seorang  decision 
+
+maker  untuk  berinteraksi  langsung  dengan  komputer  untuk 
+
+menciptakan informasi yang berguna dalam membuat keputusan 
+
+semi  terstruktur  dan  keputusan  tak  terstruktur  yang  tidak 
+
+terantisipasi (Hick, 1993 : 4). 
+
+  Sistem Pendukung Keputusan (SPK) adalah sebuah sistem yang 
+
+mampu  memberikan  kemampuan  pemecahan  masalah  maupun 
+
+kemampuan  pengkomunikasian  untuk  masalah  dengan  kondisi 
+
+semi terstruktur dan tak terstruktur. Sistem ini digunakan untuk 
+
+membantu  pengambilan  keputusan  dalam 
+
+situasi 
+
+semi 
+
+terstruktur  dan  situasi  yang  tidak  terstruktur,  dimana  tak 
+
+seorangpun  tahu  secara  pasti  bagaimana  keputusan  seharusnya 
+
+dibuat (Turban, 2001 : 6). 
+
+  Decision  Support  Systems  (DSS)  atau  system  pendukung 
+
+keputusan  adalah  serangkaian  kelas  tertentu  dari  beberapa 
+
+sistem  informasi  terkomputerisasi  yang  mendukung  kegiatan 
+
+pengambilan  keputusan  bisnis  dan  organisasi.  Suatu  DSS  yang 
+
+dirancang dengan benar adalah suatu system berbasis perangkat 
+
+lunak  interaktif  yang  dimaksudkan  untuk  membantu  para 
+
+pengambil  keputusan  mengkompilasi  informasi  yang  berguna 
+
+dari data mentah, dokumen, pengetahuan pribadi, danmodel dari 
+
+beberapa  bisnis  untuk  mengidentifikasikan  masalah  dan 
+
+memecahkan berbagai masalah dan mengambil keputusan. 
+
+  Pengertian  sistem  pendukung  keputusan  secara  adalah  bagian 
+
+dari  sistem  informasi  berbasis  komputer  termasuk  sistem 
+
+berbasis   pengetahuan  atau  manajemen  pengetahuan  yang 
+
+dipakai  untuk  mendukung  pengambilan  keputusan  dalam  suatu 
+
+organisasi atau perusahaan. Dapat juga dikatakan sebagai sistem 
+
+komputer  yang  mengolah  data  menjadi 
+
+informasi  untuk 
+
+mengambil  keputusan  dari  masalah  semi  terstruktur  yang 
+
+spesifik. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+58 
+
+Farid Syaumi Rizki Ginting 
+
+ 
+
+DOI: https://doi.org/10.30743/infotekjar.v3i2.967 
+
+ 
+
+Ada  dua  alasan  utama  untuk  menyatakan  suatu  tindakan  akan 
+
+FARID SYAUMI RIZKI GINTING / INFOTEKJAR :JURNAL NASIONAL INFORMATIKADANTEKNOLOGIJARINGAN- VOL. 3 NO. 2 (2019) EDISI MARET 
+
+Metode Analytical Hierarchy Process ( AHP ) 
+
+menginputkan  nilai  prefensi  dan  yang  terakhir  menginputkan 
+
+data  alternatif,  lalu  masuk  kedalam  proses  spk-ahp  dimana 
+
+Proses  hierarki  adalah  suatu  model  yang  memberikan 
+
+didalam program ini sistem akan membuat hierarki berdasarkan 
+
+kesempatan  bagi  perorangan  atau  kelompok  untuk  membangun 
+
+waktu pertama upload dari berita yang disebarkan oleh beberapa 
+
+gagasan-gagasan  dan  mendefinisikan  persoalan  dengan  cara 
+
+website,  setelah  di  hierarki  maka  akan  di  dapatkan  nilai  dari 
+
+membuat  asumsi  mereka  masing-masing  dan  memperoleh 
+
+beberapa  kriteria  setelah  itu  akan  menghasilkan  nilai  setelah 
+
+pemecahan yang diinginkan darinya (Thomas L.Saaty, 1993 : 6). 
+
+dijumlahkan nilai dari beberapa kriteria tersebut. 
+
+lebih  baik  dibanding  tindakan  lain.  AHP  merupakan  suatu 
+
+Untuk  nilai  terendah  maka  berita  itu  otomatis  hoax,  dan  jika 
+
+model  pendukung  keputusan  yang  dikembangkan  oleh  Thomas 
+
+berita  itu  bernilai  tertinggi  maka  berita  itu  benar  kemudian 
+
+L. Saaty.  
+
+ 
+
+otomatis akan berbentuk grafik sehingga lebih mudah dipahami 
+
+masyarakat luas. 
+
+Model  pendukung  keputusan  ini  akan  menguraikan  masalah 
+
+multi  faktor  atau  multi  kriteria  yang  kompleks  menjadi  suatu 
+
+Data Flow Diagram  
+
+hirarki,  menurut  Saaty  (1993),  hirarki  didefinisikan  sebagai 
+
+Data Flow Diagram adalah diagram yang menggambarkan arus 
+
+suatu  representasi  dari  sebuah  permasalahan  yang  kompleks 
+
+dari data sistem. DFD sering digunakan untuk menggambarkan 
+
+dalam  suatu  struktur  multi  level  dimana  level  pertama  adalah 
+
+suatu  sistem  yang  telah  ada  atau  sistem  baru  yang  akan 
+
+tujuan,  yang  diikuti  level  faktor,  kriteria,  sub  kriteria,  dan 
+
+dikembangkan 
+
+secara 
+
+logika 
+
+tanpa  mempertimbangkan 
+
+seterusnya ke bawah hingga level terakhir dari alternatif. 
+
+lingkungan fisik dimana data tersebut mengalir. 
+
+ 
+
+ 
+
+  
+
+ 
+
+Dengan  hirarki,  suatu  masalah  yang  kompleks  dapat  diuraikan 
+
+ke  dalam  kelompoknya  yang  kemudian  diatur  menjadi  suatu 
+
+bentuk  dari  hierarki  sehingga  permasalahan  akan  tampak  lebih 
+
+terstruktur dan sistematis. 
+
+METODOLOGI PENELITIAN 
+
+Sistem Informasi Pemberantasan Berita Hoax (SIPBH) 
+
+Sistem  informasi  pemberantasan  berita  hoax  adalah  sistem 
+
+informasi untuk memberantas berita bohong atau hoax. Metode 
+
+yang  digunakan  dalam  sistem  ini  adalah  metode  spk  ahp, 
+
+dimana  metode  ini  akan  membandingkan  beberapa  website 
+
+dengan  beberapa  kriterianya,  sehingga  nanti  setelah  semua 
+
+kriteria  di  bandingkan  maka  akan  kita  dapatkan  nilai  terendah 
+
+dan  nilai  tertinggi  dari  beberapa  website,  untuk  nilai  tertinggi 
+
+website  benar  dan 
+
+jika 
+
+rendah  maka  website 
+
+tersebut 
+
+menyebarkan berita hoax. 
+
+Proses hierarki dari sistem informasi ini adalah dengan mencari 
+
+berita  yang  sama  dalam  beberapa  website  yang  terdeteksi  oleh 
+
+sistem  informasi  ini,  kemudian  di  hierarki  berdasarkan  waktu 
+
+upload  nya,  hierarki 
+
+itulah  yang  nanti  dinamakan  data 
+
+alternatifnya. 
+
+ 
+
+Flowchart 
+
+ 
+
+Admin melakukan proses kriteria topik berita, nilai prefensi, dan 
+
+alternatif topik berita kemudian menghasilkan file nilai prefensi, 
+
+file kriteria topik berita dan file alternatif topik berita, kemudian 
+
+dilakukan  proses  SPK  AHP  dan menghasilkan  file  grafik  topik 
+
+berita,  dan  masyarakat  dapat  melihat  file  grafik  tersebut, 
+
+kemudian  admin  dapat  mengedit  data  untuk  memperbaharui 
+
+berita  dan  admin  juga  dapat  menghapus  topik  berita  jika  topik 
+
+berita tidak sesuai. 
+
+HASIL DAN PEMBAHASAN 
+
+Data Kriteria 
+
+ 
+
+Ini  merupakan  kriteria  dari  hoax  yang  pertama  yaitu  situs 
+
+terverifikasi kepolisian, tingkat kepopuleran itus, jumlah artikel, 
+
+kemudian  penulis  telah  terverifikasi  kepolisian,  dan  yang 
+
+terakhir  berita  dapat  dipertanggung  jawabkan  oleh  situs  yang 
+
+telah mengeluarkan berita tersebut. Dan masing-masing kriteria 
+
+memiliki  nilai  tersendiri  seperti  yang  terdapat  di  dalam  tabel 
+
+Pada  gambar  diatas  dapat  dilihat  bahwasanya  sistem  bekerja 
+
+dengan 
+
+cara  menginputkan 
+
+data 
+
+kriteria, 
+
+kemudian 
+
+ 
+
+diatas. 
+
+DOI: https://doi.org/10.30743/infotekjar.v3i2.967 
+
+ 
+
+Farid Syaumi Rizki Ginting 
+
+59 
+
+  
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+FARID SYAUMI RIZKI GINTING / INFOTEKJAR :JURNAL NASIONAL INFORMATIKADANTEKNOLOGIJARINGAN- VOL. 3 NO. 2 (2019) EDISI MARET 
+
+Data Nilai Prefensi 
+
+www.tukinem.site  karena  website 
+
+tersebut  memiliki  nilai 
+
+terendah dari website yang di bandingkan. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Di  dalam  data  nilai  prefensi  terdapat  nilai  dan  keterangan, 
+
+umtuk nilai 9 maka mutlak sangat di percaya, untuk nilai 1 tidak 
+
+maupun yang hoax. 
+
+dapat dipercaya. 
+
+Data Alternatif 
+
+Dan ini merupakan contoh dari website yang ingin dibandingkan 
+
+berdasarkan berita yang sama. Di dalam data alternatif terdapat 
+
+id alternatif dan nama alternatif. 
+
+Data Alternatif Menurut Kriteria 
+
+Saran 
+
+ 
+
+ 
+
+PENUTUP 
+
+Kesimpulan 
+
+1. 
+
+Sistem 
+
+Informasi 
+
+ini  bertujuan  untuk  mengedukasi 
+
+masyarakat,  agar  dapat  membedakan  berita  yang  benar 
+
+2.  Kegaduhan  di  media  sosial  dapat 
+
+teratasi  karena 
+
+masyarakat  sudahlebih  mengetahui  website  mana  yang 
+
+3.  Semakin berkurangnya berita hoax dengan sistem informasi 
+
+4.  Masyarakat dapat mengetahui kebenaran berita dari website 
+
+dipercaya nya. 
+
+ini. 
+
+yang terpercaya. 
+
+5.  Sistem  informasi  ini  dapat  membuat  orang  yang  sering 
+
+menyebarkan  hoax  untuk  tidak  menyebarkan  hoax  di 
+
+karenakan  sistem  ini  dapat  membandingkan  beberapa  situs 
+
+yang  memiliki  informasi  yang  sama  sehingga  masyarakat 
+
+lebih pintar dalam menyikapi berita hoax. 
+
+ 
+
+ 
+
+ 
+
+Untuk  meningkatkan  kinerja  dan  menyempurnakan  penelitian 
+
+yang telah dibuat, peneliti memberikan saran sebagai berikut: 
+
+1.  Penelitian 
+
+ini  dapat  dikembangkan  dengan 
+
+cara 
+
+menggabungkan  atau  membandingkan  dengan  algoritma 
+
+klasifikasi  lain  untuk  mendapatkan  hasil  perangkingan 
+
+yang lebih baik. 
+
+2.  Sebaiknya jumlah data alternatif ditambah, sehingga dapat 
+
+diperoleh hasil akurasi yang lebih baik.  
+
+DAFTAR PUSTAKA 
+
+: Andi Offset 
+
+Abdul Kadir. (2014). Pengenalan Sistem Informasi. Yogyakarta 
+
+Ansyori, dkk. (2014). Pengembangan Sistem Pemberitaan Pada 
+
+Surat  Kabar  Harian  Swara  Lampung  Berbasis  Web.  Bandar 
+
+Lampung. Teknik Informatika:Universitas Mulawarman 
+
+Ini  merupakan  hasil  untuk  analisa  data  alternatif  menurut 
+
+kriteria  berarti  sistem  menganalisa  data  alternatif  menurut 
+
+kriteria yang sudah dan telah ditetapkan sebelumnya. 
+
+Hasil Data Alternatif Menurut Kriteria 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Setelah ditemukan nilai dari semua kriteria maka data alternatif 
+
+dapat  di  rangking  berdasarkan  data  nilai  terendah  hingga  data 
+
+Ardianto, dkk. (2007). Dasar-Dasar Public Relations. Bandung : 
+
+ 
+
+Simbiosa Rekatama. 
+
+Effendy,  dkk.  2006.  Hubungan  Masyarakat  :  Suatu  Studi 
+
+Komunikasi. Bandung : Remaja Rosdakarya 
+
+Grafik  Hasil  Data  Alternatif  Menurut  Kriteria 
+
+Hick. 1993. Sistem Pendukung Keputusan. California : Amerika 
+
+nilai tertinggi. 
+
+Perangkingan 
+
+Jefkins,  Frank.  (2004).  Public  Relations.  Jakarta  :  PT.  Gelora 
+
+Little. 1970. Sistem Pendukung Keputusan. Harvard  : Amerika 
+
+Ruslan,  Rosady.  (2010).  Manajemen  Public  Relations  dan 
+
+Media  Komunikasi.  Edisi  Pertama.  Jakarta:  PT.  Rajagrafindo 
+
+Serikat 
+
+Aksara Pertama. 
+
+Serikat 
+
+Persada. 
+
+Thomas, L. Saaty. (1993). Analytical Hierarchy Process .Texas 
+
+: Amerika Serikat 
+
+Inilah  hasil  perangkingan  dari  semua  kriteria  dan  ditemukan 
+
+bahwasanya 
+
+situs 
+
+yang  menyebarkan 
+
+hoax 
+
+adalah 
+
+60 
+
+Farid Syaumi Rizki Ginting 
+
+ 
+
+DOI: https://doi.org/10.30743/infotekjar.v3i2.967 
+
+ 
+
+ 
+
+ 
+
+ 
+
+

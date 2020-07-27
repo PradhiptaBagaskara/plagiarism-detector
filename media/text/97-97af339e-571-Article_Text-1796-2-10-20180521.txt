@@ -1,0 +1,1249 @@
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+REKAYASA PERANGKAT LUNAK APLIKASI KEPUTUSAN MULTI KRITERIA DENGAN 
+
+ALGORITMA ANALYTIC NETWORK PROCESS BERBASIS ANDROID 
+
+Arbi Juniar Setiawan, Ucuk Darusalam, dan Septi Andryana 
+
+Teknik Informatika, Fakultas Teknologi Komunikasi dan Informatika Universitas Nasional 
+
+Jl. Sawo Manila, Pejaten, Pasar Minggu, Jakarta Selatan 12520 
+
+Telp. (021)7806700 – 7806462 
+
+Email: arbijs7@gmail.com, ucuk.darusalam@gmail.com, septi.andryana@gmail.com 
+
+Multi-criteria decision-making is one of the techniques in determining a choice of several alternative 
+
+options.  There  are  several  methods  in  making  decisions,  one  of  which  is  ANP  (Analytic  Network 
+
+Process). ANP is a development of AHP (Analytic Hierarchy Process) method. AHP is a hierarchical 
+
+method in which any existing criteria will be compared first which will produce an ordinary matrix. 
+
+While ANP is a network method that compares all things including criteria and alternatives that exist 
+
+so as to obtain a super matrix is very complex. Currently ANP method is not only calculated but already 
+
+there  is  software  support  one  of  them  is  Super  Decisions.  The  software  can  be  used  to  generate  a 
+
+decision  by  the  ANP  method.  Every  software must have advantages and disadvantages.  That's  why 
+
+there is a need for software development that has been there before to appear new software better. 
+
+Keyword:  Decision  Support,  Multiple  Criteria  Decision  Making,  Analytic  Network  Process,  Super 
+
+Decisions Software, Linear Algebra, Android Applications. 
+
+Pengambilan keputusan multi kriteria merupakan salah satu teknik dalam menentukan sebuah pilihan 
+
+dari beberapa alternatif pilihan. Ada beberapa metode dalam mengambil keputusan, salah satunya yaitu 
+
+ANP  (Analytic  Network  Process).  ANP  merupakan  pengembangan  dari  metode  AHP  (Analytic 
+
+Hierarchy  Process).  AHP  merupakan  sebuah  metode  yang  berbentuk  hirarki  dimana  setiap  kriteria 
+
+yang ada akan dibandingkan terlebih dahulu yang akan menghasilkan sebuah matriks biasa. Sedangkan 
+
+ANP  merupakan  sebuah  metode  jaringan  yang  membandingkan  semua  hal  termasuk  kriteria  dan 
+
+alternatif yang ada sehingga mendapatkan suatu super matriks yang sangat kompleks. Saat ini metode 
+
+ANP  tidak hanya dihitung tetapi sudah ada aplikasi penunjang salah satunya yaitu  Super Decisions. 
+
+Aplikasi  tersebut  bisa  digunakan  untuk  menghasilkan  suatu keputusan  dengan  metode  ANP.  Setiap 
+
+aplikasi pasti memiliki kelebihan maupun kekurangan. Untuk itulah diperlukan adanya pengembangan 
+
+aplikasi yang sudah ada sebelumnya agar muncul aplikasi baru yang lebih baik. 
+
+Kata kunci: Penunjang Keputusan, Pengambilan Keputusan Multi Kriteria, Analytic Network Process, 
+
+Software Super Decisions, Aljabar Linier, Android. 
+
+1.  Pendahuluan 
+
+terbaik  dari sejumlah alternatif berdasarkan bebe-
+
+rapa kriteria tertentu. Kriteria biasanya berupa uku-
+
+Sistem pengambilan keputusan (Decision Support 
+
+ran-ukuran, aturan-aturan atau standar  yang  digu-
+
+System)  merupakan  bagian  dari  sistem  komputer 
+
+nakan dalam pengambilan keputusan [1]. Terdapat 
+
+yang  berfungsi  mengolah  data  menjadi  informasi 
+
+beberapa teknik atau metode dalam MCDM, salah 
+
+untuk  mengambil  keputusan  dari  masalah  semi-
+
+satunya  yaitu  Analytic  Network  Process  (ANP). 
+
+terstruktur  yang  spesifik.  DSS  selalu  mengalami 
+
+Metode ANP merupakan pengembangan dari me-
+
+perkembangan  hingga  saat  ini,  tidak  terkecuali 
+
+tode  (Analytic  Hierarchy  Process)  AHP  [2-5]. 
+
+pada sebuah instansi, organisasi maupun diri priba-
+
+AHP merupakan metode untuk memecahkan suatu 
+
+di. Sistem pendukung keputusan digunakan untuk 
+
+situasi  yang  komplek  tidak  terstruktur  kedalam 
+
+mendukung keputusan dari berbagai macam alter-
+
+beberapa  komponen  dalam  susunan  yang  hirarki, 
+
+natif yang diberikan, dengan harapan pengambilan 
+
+dengan memberi nilai subjektif tentang pentingnya 
+
+keputusan tersebut dapat membantu proses perma-
+
+setiap variabel secara relatif, dan menetapkan va-
+
+salahan dengan baik dan lancar. Multi Criteria De-
+
+riabel  mana  yang  memiliki  prioritas paling  tinggi 
+
+cision Making (MCDM) adalah suatu metode  pe-
+
+guna  mempengaruhi  hasil  pada  situasi  tersebut. 
+
+ngambilan keputusan untuk menetapkan alternatif 
+
+Sedangkan  ANP  merupakan  sebuah  metode  yang 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Abstract 
+
+Abstrak 
+
+ 
+
+33 
+
+34 Jurnal Sistem Informasi (Journal of Information System), Volume 14, Issue 1, April 2018 
+
+Gambar 1. Alur Research and Development 
+
+ 
+
+ 
+
+ 
+
+Gambar 2. Network Model Analytic Network Process (ANP). 
+
+Elements or nodes merupakan kriteria dan alternative. Cluster 
+
+adalah elemen dengan karakteristik umum 
+
+ 
+
+ 
+
+ 
+
+berbentuk jaringan. ANP mengijinkan adanya inte-
+
+2.  Metode 
+
+raksi dan umpan balik  dari elemen-elemen dalam 
+
+ 
+
+cluster (inner dependence) dan antar cluster (outer 
+
+Metode yang digunakan dalam penelitian ini ada-
+
+dependence) [6,7]. 
+
+lah  metode  R&D  (Research  and  Development). 
+
+Pengambilan keputusan merupakan suatu hal 
+
+Hal ini sesuai dengan tujuan penelitian, yaitu untuk 
+
+yang pasti dilakukan dalam menentukan suatu pi-
+
+mengembangkan  aplikasi  penunjang  keputusan. 
+
+lihan. Dalam mengambil suatu keputusan membu-
+
+Research  and  Development  adalah  metode  pene-
+
+tuhkan  adanya  kriteria  sebelum memutuskan  pili-
+
+litian yang digunakan untuk menghasilkan produk 
+
+han dari berbagai alternatif yang ada. Kriteria me-
+
+tertentu dengan menguji keefektifan produk terse-
+
+nunjukkan  definisi  masalah  dalam  bentuk  yang 
+
+but. Metode ini digunakan untuk mengembangkan 
+
+nyata dan kadang dianggap sebagai sasaran atau tu-
+
+atau memvalidasi  produk-produk  yang  digunakan 
+
+juan  yang  akan  dicapai.  Analisis  atas  kriteria  di-
+
+dalam pendidikan dan pembelajaran. Jadi penggu-
+
+lakukan  untuk  memperoleh  seperangkat  standar 
+
+naan  metode  penelitian  R&D  sejalan  dengan  apa 
+
+pengukuran, untuk kemudian dijadikan sebagai al-
+
+yang  dikemukakan  oleh  para  ahli  juga  sesuai  de-
+
+at  dalam  membandingkan  berbagai  alternatif.  Pe-
+
+ngan  tujuan  dari  penelitian  ini  [12].  Untuk  lebih 
+
+ngambilan  keputusan  saat  ini  sudah  dengan  cara 
+
+jelasnya akan dijelaskan pada Gambar 1. Pada me-
+
+yang modern yaitu dengan bantuan sebuah aplika-
+
+tode ini dilakukan 3 tahapan, yaitu: 
+
+si. Akan tetapi belum banyak aplikasi yang berper-
+
+an dalam membantu untuk mengambil suatu kepu-
+
+Tahap Pengembangan Produk 
+
+tusan. Super Decisions merupakan salah satu apli-
+
+kasi yang digunakan untuk mengambil keputusan. 
+
+Pada tahap ini dilakukan perancangan dan pembu-
+
+Aplikasi  tersebut  menggunakan  metode  ANP  un-
+
+atan dari aplikasi yang nantinya dari perancangan 
+
+tuk  proses  dan  hasil  keputusannya  [8-11].  Untuk 
+
+dan  pembuatan  akan  digabungkan  menjadi  satu 
+
+selanjutnya terkait metode ANP, akan menjadi ba-
+
+kesatuan aplikasi. 
+
+hasan utama dalam penelitian ini dengan membuat 
+
+sebuah  aplikasi  yang  merupakan  pengembangan 
+
+Tahap Uji Coba 
+
+dari Super Decisions ataupun aplikasi lain yang su-
+
+dah ada sebelumnya. 
+
+Setelah pada tahap pertama selesai akan divalidasi 
+
+Tujuan penelitian ini adalah menciptakan se-
+
+terlebih dahulu, jika masih terdapat kesalahan akan 
+
+buah aplikasi berbasis android yang mudah untuk 
+
+dilakukan  revisi  dan  kembali  ke  tahap  pertama. 
+
+dimengerti dan digunakan. Serta dengan tidak me-
+
+Tapi  jika  sudah  benar  maka  akan  dilanjutkan  uji 
+
+nghilangkan keakuratan data yang akan dihasilkan 
+
+coba pada aplikasi tersebut dengan cara mengolah 
+
+dan efektifitas waktu  yang diberikan dari aplikasi 
+
+data yang sudah ada lalu melakukan penilaian pada 
+
+yang akan diciptakan. 
+
+hasil pengolahan data tersebut. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Arbi Juniar Setiawan, et al., Rekayasa Perangkat Lunak Aplikasi Keputusan 35 
+
+TABEL 1. 
+
+SPESIFIKASI SMARTPHONE 
+
+ 
+
+Spesifikasi 
+
+Smartphone I 
+
+Spesifikasi 
+
+Smartphone II 
+
+Merk 
+
+Xiaomi Redmi 
+
+Xperia M5 Dual 
+
+RAM 
+
+Sistem 
+
+Operasi 
+
+Note 3 
+
+3 GB 
+
+4 GB 
+
+Android OS 
+
+Android OS 6.0 
+
+5.0.2 (Lollipop) 
+
+(Marshmallow) 
+
+TABEL 2 
+
+PENGUJIAN TINGKAT KECEPATAN 
+
+Pergantian Scene 
+
+Smartphone I 
+
+Smartphone II 
+
+Splash screen 
+
+Super Decision 
+
+Create Decision 
+
+History 
+
+Tutorial 
+
+About 
+
+5 Detik 
+
+2 Detik 
+
+1 Detik 
+
+2 Detik 
+
+2 Detik 
+
+1 Detik 
+
+3 Detik 
+
+2 Detik 
+
+1 Detik 
+
+1 Detik 
+
+1 Detik 
+
+1 Detik 
+
+ 
+
+ 
+
+Gambar 3. Flow Chart Perancangan Aplikasi 
+
+ 
+
+ 
+
+ 
+
+Tahap Perbaikan Produk 
+
+maupun fungsi yang ada didalamnya pun juga. Da-
+
+lam perancangan sistem  yang dibuat adalah suatu 
+
+pengembangan aplikasi sistem penunjang keputus-
+
+an  berbasis  android.  Dengan  demikian,  peneliti 
+
+membuat  perancangan  sistem  yang  sudah ada  se-
+
+belumnya dengan pembaharuan yang nantinya ak-
+
+ 
+
+ 
+
+Tahap  terakhir  yaitu  diadakannya  perbaikan  pada 
+
+an diintegrasikan menjadi suatu kesatuan dan men-
+
+sistem yang sudah dibuat jika memang diperlukan 
+
+jadi aplikasi yang dapat berfungsi dan berguna se-
+
+adanya  perbaikan,  lalu  selanjutnya  bisa  ditarik 
+
+bagaimana yang diharapkan.  
+
+kesimpulan dari aplikasi tersebut untuk pembuatan 
+
+Gambar 3 menunjukkan alur perancangan ta-
+
+laporan secara keseluruhan. 
+
+mpilan rekayasa perangkat lunak aplikasi keputu-
+
+san  yang  akan  dibuat.  Sementara  itu,  aplikasi  di-
+
+Analytic Network Process (ANP) merupakan 
+
+kembangkan  dalam  environment  Android  studio 
+
+teori  matematika  yang  memungkinkan  seseorang 
+
+dengan  menggunakan  bahasa  pemrograman  Java, 
+
+untuk  memperlakukan  dependence  dan  feedback 
+
+PHP, MySQL. Desain dibangun menggunakan pe-
+
+secara  sistematis  yang  dapat  menangkap  dan  me-
+
+rangkat lunak Adobe Photoshop pada sistem  ope-
+
+ngkombinasi faktor-faktor tangible dan intangible 
+
+rasi Windows. Spesifikasi Komputer yang diguna-
+
+[13].  ANP  terdiri  dari  dua  bagian,  yang  pertama 
+
+kan  di  antaranya  adalah  menggunakan  processor 
+
+adalah  kontrol  hirarki  atau  jaringan  kriteria  dan 
+
+Intel  Core  i5  3337U  (1.8  Ghz),  750  GB  (Serial 
+
+subkriteria  yang  mengontrol  interaksi  dan  yang 
+
+ATA, 5400 Rpm); RAM sebesar 4 GB DDR3 SO-
+
+kedua adalah suatu jaringan yang menggambarkan 
+
+DIM  1600  MHz  dan  VGA  dengan  Nvidia  GT 
+
+saling  mempengaruhi  antara  elemen-elemen.  Se-
+
+720M (2GB). 
+
+perti pada Gambar 2 yang menjelaskan secara sing-
+
+Rancangan tampilan aplikasi kemudian ditu-
+
+kat Network Model dari ANP. 
+
+angkan secara runut dalam bentuk storyboard. Ga-
+
+Pada Gambar 2 dapat dijelaskan mengenai ta-
+
+mbar 4 merupakan storyboard gambaran mengenai 
+
+hapan pembentukan  Cluster pada Network Model 
+
+skenario dari rekayasa perangkat lunak aplikasi ke-
+
+ANP yaitu: Tahapan pertama adalah kontrol hierar-
+
+putusan multi kriteria dengan metode ANP. 
+
+ki yang menunjukkan keterkaitan kriteria dan sub 
+
+kriterianya.  Pada  kontrol  ini  tidak  membutuhkan 
+
+3.  Hasil dan Analisis 
+
+struktur hierarki seperti pada metode AHP. Taha-
+
+pan berikutnya yaitu kontrol keterkaitan yang me-
+
+Implementasi 
+
+nunjukkan adanya saling keterkaitan antar kriteria 
+
+ 
+
+ 
+
+ 
+
+atau cluster. 
+
+Implementasi merupakan tahapan untuk mengubah 
+
+Perancangan  suatu  sistem  yang  akan  dibuat 
+
+hasil dari rancangan system yang telah disusun ber-
+
+merupakan suatu tahapan yang sangat penting da-
+
+dasarkan alur dan storyboard menjadi bentuk nya-
+
+lam membuat suatu program ataupun melanjutkan 
+
+ta, dalam hal ini berupa rekayasa perangkat lunak 
+
+ke langkah selanjutnya, karena dengan perencana-
+
+aplikasi  keputusan  yang  berjalan  pada  platform 
+
+an tersebut diharapkan mendapatkan hasil yang ba-
+
+android. Pemilihan pembuatan aplikasi ini bertuju-
+
+ik  dan  maksimal  bukan  hanya  dari  segi  tampilan 
+
+an untuk mengembangkan aplikasi  penunjang ke-
+
+ 
+
+36 Jurnal Sistem Informasi (Journal of Information System), Volume 14, Issue 1, April 2018 
+
+ 
+
+ 
+
+ 
+
+ 
+
+(a) 
+
+(b) 
+
+(d) 
+
+(e) 
+
+(c) 
+
+ 
+
+Gambar 4. Storyboard Aplikasi Keputusan: (a) Splash Screen, tampilan awal aplikasi sebelum masuk ke menu utama; (b) Tampilan 
+
+Main Menu/ Menu Awal yang berisi button Create Decision, History, Tutorials, About, dan Exit; (c) Tampilan pada Menu “Create 
+
+Decision” berisi beberapa step, untuk step awal yaitu form input untuk memasukkan tujuan dari pengambilan keputusan, lalu 
+
+selanjutnya mengikut step yang telah disediakan; (d) Pada menu “History” terdapat list mengenai data pengambilan keputusan yang 
+
+telah dilakukan sebelumnya; (e) Menu “About” terdapat informasi mengenai aplikasi dan tentang pembuat aplikasi 
+
+putusan di bidang teknologi informatika dengan ju-
+
+ternatif tersebut. Pada inputan alternatif tidak diba-
+
+dul  rekayasa  perangkat  lunak  aplikasi  keputusan 
+
+tasi jumlah yang akan dimasukkan. 
+
+multi  kriteria  dengan  algoritma  analytic  network 
+
+process berbasis android. Gambar 5 menunjukkan 
+
+Scene Perbandingan Alternatif 
+
+beberapa tampilan aplikasi keputusan. 
+
+Splash Screen 
+
+Tampilan  Input  Perbandingan  Alternatif  merupa-
+
+kan tampilan untuk membuat sebuah perbandingan 
+
+antara semua  alternatif terhadap setiap  node pada 
+
+Splash  Screen  merupakan  sebuah  tampilan  awal 
+
+cluster kriteria (Lampiran Gambar I). 
+
+atau pembuka suatu aplikasi yang akan digunakan 
+
+sebelum memasuki tampilan menu utama. 
+
+Scene Perbandingan Kriteria 
+
+Scene Main Menu 
+
+Pada tampilan ini pengguna harus memasukkan pe-
+
+rbandingan  antara  semua  kriteria  yang  ada  terha-
+
+Tampilan Main Menu merupakan tampilan utama 
+
+dap setiap  node  pada cluster  alternatif (Lampiran 
+
+dari  aplikasi  keputusan  ini.  Di  dalam  halaman 
+
+Gambar II). 
+
+menu utama ini terdiri dari beberapa tombol pilihan 
+
+yang dapat diakses untuk pengguna, yaitu tombol 
+
+Scene Hasil Seleksi 
+
+“Create Decision”, “History”, “Tutorial”, “About”, 
+
+Tampilan ini merupakan Scene terakhir pada Menu 
+
+“Setting”, dan “Exit”. 
+
+Scene Create Decision Step 1 
+
+Create Decision. Tampilan ini menunjukkan kepa-
+
+da  pengguna  berupa  hasil  akhir  yang  didapatkan 
+
+untuk  menentukan  peringkat  alternatif  yang  bisa 
+
+Tampilan Input Goal merupakan tampilan langkah 
+
+digunakan dalam pengambilan keputusan (Lampi-
+
+pertama dalam membuat suatu keputusan, pada ta-
+
+ran Gambar III). 
+
+mpilan  ini  pengguna  harus  memasukkan  tujuan 
+
+ 
+
+dari pengambilan keputusan tersebut. Setelah me-
+
+Scene History 
+
+masukkan  tujuan,  langkah  berikutnya  yaitu  klik 
+
+Tampilan  History  merupakan  tampilan  yang  me-
+
+tombol Next untuk ke tahap berikutnya. 
+
+Scene Create Decision Step 2 
+
+nunjukkan data pengambilan keputusan yang telah 
+
+dilakukan  sebelumnya  oleh  pengguna.  Pada  tam-
+
+pilan  ini  pengguna  dapat  melihat  keputusan  yang 
+
+Tampilan Input Criteria merupakan tampilan yang 
+
+telah  dibuat  beserta  tanggal  keputusan  itu  dibuat, 
+
+mewajibkan pengguna memasukkan beberapa kri-
+
+menyalin  keputusan  sebelumnya,  dan  menghapus 
+
+teria yang mendukung dalam tujuannya  mengam-
+
+data keputusan yang telah ada (Lampiran Gambar 
+
+bil  sebuah  keputusan.  Pada  inputan  kriteria  tidak 
+
+IV (a)).  
+
+dibatasi jumlah yang ingin dimasukkan. 
+
+Scene Tutorial 
+
+Scene Create Decision Step 3 
+
+Tampilan Tutorial merupakan tampilan yang berisi 
+
+Tampilan  Input  Alternative  merupakan  tampilan 
+
+tentang  tata  cara  penggunaan  aplikasi  dari  setiap 
+
+yang mewajibkan pengguna memasukkan bebera-
+
+fitur menu yang ada (Lampiran Gambar IV (d)). 
+
+pa alternatif pilihan yang nantinya pada hasil akhir 
+
+akan diberikan suatu keputusan untuk memilih al-
+
+Scene About 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Arbi Juniar Setiawan, et al., Rekayasa Perangkat Lunak Aplikasi Keputusan 37 
+
+(a) 
+
+ 
+
+(b) 
+
+ 
+
+(c) 
+
+ 
+
+(d) 
+
+ 
+
+ 
+
+(e) 
+
+Gambar 5. Tampilan Aplikasi Keputusan: (a) Splash Screen; (b) Tampilan Main Menu; (c) Tampilan pada Menu “Create 
+
+Decision” step 1; (d) Tampilan pada Menu “Create Decision” step 2; (e) Tampilan pada Menu “Create Decision” step 3 
+
+Tampilan  About  merupakan  tampilan  yang  berisi 
+
+Selain  itu,  dilakukan  pula  pengujian  black 
+
+informasi mengenai aplikasi dan informasi menge-
+
+box. Pengujian black box bertujuan untuk mengeta-
+
+nai pembuat aplikasi (Lampiran Gambar IV (c)). 
+
+hui  fungsi  perangkat  lunak  dalam  pengoperasian 
+
+ 
+
+ 
+
+Pengujian Aplikasi 
+
+aplikasi dan hasil uji black box dari aplikasi. Tabel 
+
+3  menunjukkan  hasil  uji  coba  black  box.  Berda-
+
+sarkan tabel  tersebut, virtual  button  yang diguna-
+
+Dalam pengujian aplikasi ini spesifikasi smartpho-
+
+kan sudah berjalan sesuai dengan yang diharapkan 
+
+ne dan tingkat kecepatannya diuji. Hasil pengujian-
+
+oleh user atau pengguna. 
+
+nya dapat dilihat pada Tabel 1 dan 2. Dari pengu-
+
+jian  tersebut,  bahwa  tingkat  kecepatan  masing-
+
+4.  Kesimpulan 
+
+masing smartphone memiliki tingkat kecepatan ya-
+
+ 
+
+ 
+
+ng berbeda namun kecepatan yang dominan untuk 
+
+Aplikasi  penunjang  keputusan  berbasis  Android 
+
+aplikasi ini menggunakan smartphone II yang ber-
+
+bisa dijadikan pilihan tepat dalam membantu  me-
+
+spesifikasi tinggi. 
+
+nyelesaikan  persoalan  mengenai  pengambilan ke-
+
+ 
+
+ 
+
+38 Jurnal Sistem Informasi (Journal of Information System), Volume 14, Issue 1, April 2018 
+
+No 
+
+Pengujian 
+
+Input 
+
+Output 
+
+Create Decision  Klik Create Decision  Tampilan membuat keputusan baru 
+
+TABEL 3.  
+
+HASIL UJI COBA BLACK BOX 
+
+1 
+
+2 
+
+3 
+
+4 
+
+5 
+
+History 
+
+Tutorial 
+
+About 
+
+Exit 
+
+Klik History 
+
+Klik Tutorial 
+
+Klik About 
+
+Klik Exit 
+
+Tampilan data keputusan yang pernah dibuat 
+
+Tampilan cara penggunaan aplikasi 
+
+Tampilan informasi aplikasi dan informasi data pembuat  Tampilan [√] 
+
+Keluar dari aplikasi 
+
+ 
+
+Kesimpulan 
+
+Tampilan [√] 
+
+Tampilan [√] 
+
+Tampilan [√] 
+
+Tampilan [√] 
+
+putusan. Kemampuan-kemampuan yang bisa dian-
+
+dalkan dari aplikasi tersebut antara lain: 1) kemu-
+
+with  ANP  method.”  Expert  Systems  with 
+
+Applications 38.3 (2011): 1417-1424. 
+
+dahan dalam penggunaan; 2) inputan pada kriteria 
+
+[8]  LIU, Rui, et al. Introduction to the ANP Super 
+
+dan alternatif tidak dibatasi; dan 3) pada hasil akhir 
+
+diberikan  grafik  agar  pengguna  bisa  lebih  detail 
+
+mengetahui perbandingan antara setiap kriteria ma-
+
+Decisions  Software  and  Its  Application  [J]. 
+
+Systems  Engineering-theory  &  Practice, 
+
+2003, 8: 024. 
+
+upun setiap alternatif 
+
+[9]  Baity, Rizky Dwi, and Chainardy Congrone-
+
+Ucapan Terima Kasih 
+
+Terima kasih penulis ucapkan kepada Allah SWT, 
+
+Kedua  orang  tua,  teman–teman,  dan  dosen  pem-
+
+bimbing yang telah bersedia membantu penulis da-
+
+Keputusan Multi Kriteria dengan Algoritma Ana-
+
+lytic Network Process (ANP) Berbasis Android. 
+
+Referensi 
+
+goro. “Business Excellence and ICT as Ena-
+
+bler:  Sustainable  Supplier  Evaluation  Using 
+
+Super  Decision  Software  and  Analytic  Net-
+
+work Process (ANP).” International Journal 
+
+of  Applied  Engineering  Research  9.22 
+
+(2014): 12819-12826. 
+
+lection  based  on  quality  criteria  using  the 
+
+analytic network process.” Abstract and App-
+
+lied Analysis. Vol. 2014. Hindawi Publishing 
+
+Corporation, 2014. 
+
+[11]  Adams, William JL, and Rozann Saaty. “Su-
+
+lam membuat Rekayasa Perangkat Lunak Aplikasi 
+
+[10]  Nazir, Shah,  et  al.  “Software  component se-
+
+[1]  Velasquez, Mark, and Patrick T. Hester. “An 
+
+per Decisions Software Guide.” Super Deci-
+
+analysis  of  multi  criteria  decision  making 
+
+sions 9 (2003). 
+
+methods.”International  Journal  of  Operati-
+
+[12]  Haryati,  Sri.  “Research  and  Development 
+
+ons Research 10.2 (2013): 56-66. 
+
+(R&D)  sebagai Salah Satu  Model Penelitian 
+
+[2]  Ergu,  Daji,  et  al.  “Analytic  network  process 
+
+dalam Bidang Pendidikan.” (2013). 
+
+in 
+
+risk 
+
+assessment 
+
+and 
+
+decision 
+
+[13]  Azis, Iwan J. “Analytic network process with 
+
+analysis.”Computers & Operations Research 
+
+42 (2014): 58-74. 
+
+[3]  Zafeirakopoulos,  Ilke  Bereketli,  and  Mujde 
+
+Erol  Genevois.  “An  Analytic  Network  Pro-
+
+cess  approach  for  the  environmental  aspect 
+
+feedback influence: a new approach to impact 
+
+study.” Paper for Seminar Organized by De-
+
+partment  of  Urban  and  Regional  Planning, 
+
+University  of  Illinois  at  Urbana-Campaign. 
+
+2003. 
+
+selection  problem—A case study for a  hand 
+
+[14]  Mulyanto, A., et al. “Implementation of ANP 
+
+blender.”  Environmental  Impact  Assessment 
+
+Review 54 (2015): 101-109. 
+
+[4]  Zavadskas,  Edmundas  Kazimieras,  Zenonas 
+
+Turskis,  and  Simona  Kildienė.  “State  of  art 
+
+surveys  of  overviews  on  MCDM/MADM 
+
+Method in Determining Supplier to Improve 
+
+Service  towards  Supermarket  Consumers.” 
+
+IOP  Conference  Series:  Materials  Science 
+
+and  Engineering.  Vol.  180.  No.  1.  IOP  Pu-
+
+blishing, 2017. 
+
+methods.” Technological and economic deve-
+
+[15]  Rekik, Rim, Ilhem Kallel, and Adel M. Aliv-
+
+lopment of economy 20.1 (2014): 165-179. 
+
+[5]  Khademi, Navid, et al. “An algorithm for the 
+
+analytic  network  process  (ANP)  structure 
+
+design.”  Journal  of  Multi‐Criteria  Decision 
+
+mi. “Ranking criteria based on fuzzy ANP for 
+
+assessing  E-commerce  web  sites.”  Systems, 
+
+Man, and Cybernetics (SMC), 2016 IEEE In-
+
+ternational Conference on. IEEE, 2016. 
+
+Analysis 19.1-2 (2012): 33-55. 
+
+[16]  Amin, Ruhul. “Penerapan Metode Analytical 
+
+[6]  SAATY,  Thomas  L.  Analytic  network  pro-
+
+cess.  In:  Encyclopedia  of  Operations  Rese-
+
+arch and Management Science. Springer US, 
+
+2001. p. 28-35. 
+
+Network Process (Anp) Pada Pemilihan Wi-
+
+sata Pantai Untuk Dikembangkan Di Gunung 
+
+Kidul.”  Konferensi  Nasional  Ilmu  Sosial  & 
+
+Teknologi 1.1 (2013). 
+
+[7]  Yang, Jiann Liang, and Gwo-Hshiung Tzeng. 
+
+[17]  Pernadi,  Dody,  and  Andri  Hanafi.  “Imple-
+
+“An  integrated  MCDM  technique  combined 
+
+with DEMATEL for a novel cluster-weighted 
+
+mentasi Analytical Hierarchy Process (AHP) 
+
+untuk  Penilaian Kinerja  pada Bagian  Custo-
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Arbi Juniar Setiawan, et al., Rekayasa Perangkat Lunak Aplikasi Keputusan 39 
+
+mer Service Representative (CSR) di PT. Ba-
+
+[21]  Pungkasanti, Prind Triajeng, and Titis Handa-
+
+nk Permata Tbk.” Jurnal Ilmiah KOMPUTA-
+
+SI 14.1 (2017). 
+
+[18]  Meier, Reto. “Android Application Develop-
+
+yani.  “Penerapan  analytic  network  process 
+
+(ANP)  pada  sistem  pendukung  keputusan.” 
+
+Jurnal Transformatika 14.2 (2017): 66-71. 
+
+ment.” Framework(2009): 318. 
+
+[22]  Purbasari,  Rohmi  Julia,  M.  Shohibul  Kahfi, 
+
+[19]  Azis, I. J., 2003, Analytic network process wi-
+
+th feedback influence: a new approach to im-
+
+pact study, Prepared for a seminar organized 
+
+by  the  Department  of  Urban  and  Regional 
+
+Planning,  University  of  Illinoisat  Urbana-
+
+and Mahmuddin Yunus. “Pengembangan ap-
+
+likasi  android  sebagai  media  pembelajaran 
+
+matematika  pada  materi  dimensi  tiga  untuk 
+
+siswa  SMA  kelas  X.”Jurnal  Online  Univer-
+
+sitas Negeri Malang1.4 (2013). 
+
+Champaign, in  conjunction  with the  Investi-
+
+[23]  Meier, Reto. Professional Android 4 applica-
+
+ture Ceremony for Professor John Kim, Web-
+
+tion development. John Wiley & Sons, 2012. 
+
+site: 
+
+http://www.iwanazis.net/papers/Azis-
+
+[24]  Charland, Andre, and Brian Leroux. “Mobile 
+
+JKIM-Paper.pdf. 
+
+[20]  Chung, et. al., 2006, Complex graphs and net-
+
+works.  Providence,  RI:  American  Mathema-
+
+49-53.
+
+application  development:  web  vs.  native. 
+
+”Communications  of  the  ACM54.5  (2011): 
+
+tical Society. 
+
+Lampiran 
+
+ 
+
+ 
+
+Lampiran Gambar I. Tampilan Input Perbandingan Alternatif 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Lampiran Gambar II. Tampilan Input Perbandingan Kriteria 
+
+ 
+
+40 Jurnal Sistem Informasi (Journal of Information System), Volume 14, Issue 1, April 2018 
+
+Lampiran Gambar III. Tampilan Hasil Seleksi 
+
+ 
+
+ 
+
+ 
+
+(a) 
+
+ 
+
+ 
+
+(c) 
+
+ 
+
+(b) 
+
+ 
+
+Lampiran Gambar IV. Tampilan Aplikasi Keputusan: (a) History; (b) Tutorial; (c) About 
+
+ 
+
+ 
+
+ 
+
+
