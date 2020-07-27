@@ -13,7 +13,7 @@ import django_heroku
 BASE_DIR    = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_DIR = Path(__file__).parent
 
-APP_NAME = config('APP_NAME', default='Winnowing Fingerprinting and Document plagiarsm check')
+APP_NAME = config('APP_NAME', default='Rabin Karp Fingerprinting and Document plagiarsm check')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY', default='S#perS3crEt_5548')

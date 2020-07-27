@@ -22,7 +22,7 @@
 
         <div class="card">
             <div class="card-header">
-              <h3 class="d-inline">Similarity Chart</h3><div class="card-header-actions"><button class="btn btn-sm btn-pill btn-success" data-toggle="collapse" data-target="#similar_el" aria-expanded="false" aria-controls="similar_el">+</button></div>
+              <h3 class="d-inline">Distance Chart</h3><div class="card-header-actions"><button class="btn btn-sm btn-pill btn-success" data-toggle="collapse" data-target="#similar_el" aria-expanded="false" aria-controls="similar_el">+</button></div>
             </div>
             <div class="collapse" id="similar_el">
               <div class="card-body">
@@ -32,9 +32,9 @@
               </div>
             </div>
 
-            <div class="card-header" data-toggle="collapse" data-target="#distance_el" aria-expanded="false" aria-controls="distance_el">
+            <!-- <div class="card-header" data-toggle="collapse" data-target="#distance_el" aria-expanded="false" aria-controls="distance_el">
               <h3 class="d-inline">Distance Chart</h3><div class="card-header-actions"><button class="btn btn-sm btn-pill btn-success" data-toggle="collapse" data-target="#distance_el" aria-expanded="false" aria-controls="distance_el">+</button></div>
-            </div>
+            </div> -->
             <div class="collapse" id="distance_el">
             <div class="card-body">
                 <div class="c-chart-wrapper">
@@ -117,18 +117,6 @@ var lineChart = new Chart(document.getElementById('similar_chart'), {
           pointBorderColor: 'rgba(192,255,177,1)',
           data: [...{{ document.get_similarity.jaccard }}]
         },
-    ]
-  },
-  options: {
-    responsive: true
-  }
-}); // eslint-disable-next-line no-unused-vars
-
-var barChart = new Chart(document.getElementById('distance_chart'), {
-  type: 'horizontalBar',
-  data: {
-    labels: [...{{ document.get_similarity.label | safe }}],
-    datasets: [
         {
           label: 'Euclidean',
           backgroundColor: 'rgba(203,66,220,1.0)',
@@ -172,15 +160,7 @@ var barChart = new Chart(document.getElementById('distance_chart'), {
     ]
   },
   options: {
-    responsive: true,
-    scales: {
-        xAxes: [
-            {stacked: true}
-        ],
-        yAxes: [
-            {stacked: true}
-        ]
-    }
+    responsive: true
   }
 }); // eslint-disable-next-line no-unused-vars
 
