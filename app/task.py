@@ -119,7 +119,7 @@ def projson():
     return pathh
 
 
-# @threadpool
+@threadpool
 def process_file_by_path(path, username='admin'):
     _, ext = os.path.splitext(path)
     original_filename = os.path.basename(path)
@@ -154,7 +154,7 @@ def process_file_by_path(path, username='admin'):
     return sf.id
 
 
-# @threadpool
+@threadpool
 def finishing_dataset(id):
     try:
         sf = Document.objects.get(id=id)
@@ -175,7 +175,7 @@ def finishing_dataset(id):
 
 
 # for user document
-# @threadpool
+@threadpool
 def process_doc(id):
     try:
         sf = Document.objects.get(id=id)  # filename
@@ -220,7 +220,7 @@ def translate_and_finish():
         # time.sleep(5)
 
 
-# @threadpool
+@threadpool
 def check_similarity(id):
     from sklearn.preprocessing import normalize
     from sklearn.metrics.pairwise import pairwise_distances
@@ -365,7 +365,7 @@ def check_similarity(id):
     sf.save()
     process_time(sf.id.hex, type="SIMILARITY", start=start)
 
-# @threadpool
+@threadpool
 def refingerprint():
     docs = Document.objects.all()
 

@@ -1,9 +1,9 @@
 <table id="similarity-table" class="table table-responsive table-hover">
   <thead>
     <tr>
-        <th>#</th>
-        <th>Title</th>
-        <th>Author</th>
+        <!-- <th>#</th> -->
+        <!-- <th>Title</th>
+        <th>Author</th> -->
         <th>Filename</th>
         <th>Dice</th>
         <th>Jaccard</th>
@@ -17,15 +17,15 @@
   </thead>
   <tbody>
     {% for item in data %}
-    <tr class="hide">
+    <!-- <tr class="hide">
       <td class="expand-btn">
           <div class="btn-group">
               <button class="btn btn-sm btn-success">{{ forloop.counter }}</button>
               <button class="btn btn-sm btn-success expand">+</button>
           </div>
-      </td>
-      <td>{{ item.dataset.title }}</td>
-      <td>{{ item.dataset.author }}</td>
+      </td> -->
+      <!-- <td>{{ item.dataset.title }}</td>
+      <td>{{ item.dataset.author }}</td> -->
       <td>{{ item.dataset.original_filename }}</td>
       <td>{{ item.dice }}</td>
       <td>{{ item.jaccard }}</td>
@@ -36,7 +36,7 @@
       <td>{{ item.weighted }}</td>
       <td>{{ item.mahalanobis }}</td>
     </tr>
-    <tr style="display: none">
+    <!-- <tr style="display: none">
       <td colspan="12" class="p-0">
         <table class="table">
           <tr>
@@ -53,7 +53,7 @@
           </tr>
         </table>
       </td>
-    </tr>
+    </tr> -->
     {% endfor %}
   </tbody>
 </table>
