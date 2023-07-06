@@ -2,7 +2,7 @@ Django==3.1.13
 django_heroku==0.3.1
 nltk==3.4.5
 numpy==1.18.2
-scipy==1.4.1
+scipy==1.10.0
 scikit_learn==0.22.2.post1
 unipath==1.1
 pdfminer.six==20200402
